@@ -1,0 +1,31 @@
+lang: "en"
+
+language:
+  label: "Language"
+  en: "English"
+  zh-CN: "Simplified Chinese"
+  zh-TW: "Traditional Chinese"
+
+ui:
+  confirm: "Confirm"
+  cancel: "Cancel"
+  close: "Close"
+  loading: "Loading..."
+  search: "Search"
+
+menu:
+  home: "Home"
+  settings: "Settings"
+  maps: "Maps"
+  locations: "Locations"
+
+buttons:
+  apply: "Apply"
+  ok: "OK"
+  yes: "Yes"
+  no: "No"
+
+errors:
+  unknown: "An unknown error occurred."
+  network: "Network connection error."
+  notFound: "Resource not found."

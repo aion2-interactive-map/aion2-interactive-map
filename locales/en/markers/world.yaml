@@ -1,0 +1,26 @@
+locations:
+  tpPoint:
+    starterTown:
+      name: "Starter Town"
+      type: "Teleport Point"
+      description: "Your adventure begins here."
+
+  dungeon:
+    ancientRuins:
+      name: "Ancient Ruins"
+      type: "Dungeon"
+      description: "Monsters, loot, and bad decisions await among the ruins."
+
+gatheringPoints:
+  mining:
+    starterMine:
+      name: "Starter Mine"
+      type: "Mining Node"
+      description: "A small mining node near the starting town, perfect for early resources."
+
+questPoints:
+  mainQuest:
+    mainQuestStart:
+      name: "Main Quest Start"
+      type: "Main Quest"
+      description: "The main story begins here."

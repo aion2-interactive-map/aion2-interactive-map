@@ -1,0 +1,31 @@
+lang: "zh-TW"
+
+language:
+  label: "語言"
+  en: "英文"
+  zh-CN: "簡體中文"
+  zh-TW: "繁體中文"
+
+ui:
+  confirm: "確認"
+  cancel: "取消"
+  close: "關閉"
+  loading: "載入中..."
+  search: "搜尋"
+
+menu:
+  home: "首頁"
+  settings: "設定"
+  maps: "地圖"
+  locations: "地點"
+
+buttons:
+  apply: "套用"
+  ok: "確認"
+  yes: "是"
+  no: "否"
+
+errors:
+  unknown: "發生未知錯誤。"
+  network: "網路連線錯誤。"
+  notFound: "找不到資源。"

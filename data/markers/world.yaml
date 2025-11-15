@@ -1,0 +1,86 @@
+version: 1
+
+# World map markers (for 2275 x 1285 map)
+# Positions: [y, x]
+
+locations:
+  tpPoint:
+    starterTown:
+      position: [640, 1120]
+    westGate:
+      position: [820, 350]
+    eastGate:
+      position: [600, 1850]
+
+  npc:
+    blacksmith:
+      position: [660, 1180]
+    innkeeper:
+      position: [700, 1100]
+    mageTrainer:
+      position: [550, 1600]
+
+  dungeon:
+    ancientRuins:
+      position: [200, 900]
+    shadowCave:
+      position: [1050, 700]
+
+gatheringPoints:
+  mining:
+    ironVein1:
+      position: [300, 200]
+    ironVein2:
+      position: [350, 250]
+    silverOre:
+      position: [500, 300]
+
+  herb:
+    healingHerb1:
+      position: [900, 400]
+    healingHerb2:
+      position: [950, 450]
+
+  wood:
+    oakTree:
+      position: [400, 1800]
+    pineTree:
+      position: [450, 1750]
+
+questPoints:
+  mainQuest:
+    awakening:
+      position: [600, 1120]
+    sealedTemple:
+      position: [350, 900]
+
+  sideQuest:
+    lostBag:
+      position: [850, 600]
+    missingChild:
+      position: [1000, 1200]
+
+  dailyQuest:
+    huntBoars:
+      position: [700, 400]
+    gatherHerbs:
+      position: [920, 450]
+
+enemies:
+  normal:
+    boar1:
+      position: [720, 380]
+    boar2:
+      position: [760, 360]
+    wolfPack:
+      position: [1020, 900]
+
+  elite:
+    forestGuardian:
+      position: [430, 1700]
+    caveWatcher:
+      position: [1100, 750]
+
+  boss:
+    dragonLord:
+      position: [200, 1500]

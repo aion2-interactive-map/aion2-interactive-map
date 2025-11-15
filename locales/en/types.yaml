@@ -1,0 +1,42 @@
+categories:
+  locations:
+    name: "Locations"
+  gatheringPoints:
+    name: "Gathering Points"
+  questPoints:
+    name: "Quest Points"
+  enemies:
+    name: "Enemies"
+
+subtypes:
+  locations:
+    tpPoint:
+      name: "Teleport Point"
+    npc:
+      name: "NPC"
+    dungeon:
+      name: "Dungeon"
+
+  gatheringPoints:
+    mining:
+      name: "Mining Node"
+    herb:
+      name: "Herb Node"
+    wood:
+      name: "Wood Node"
+
+  questPoints:
+    mainQuest:
+      name: "Main Quest"
+    sideQuest:
+      name: "Side Quest"
+    dailyQuest:
+      name: "Daily Quest"
+
+  enemies:
+    normal:
+      name: "Normal Enemy"
+    elite:
+      name: "Elite Enemy"
+    boss:
+      name: "Boss"

@@ -1,0 +1,58 @@
+version: 1
+
+categories:
+  - id: "locations"
+    color: "#4CAF50"
+    icon: "faLocationDot"
+    subtypes:
+      - id: "tpPoint"
+        icon: "faLocationDot"
+        color: "#00FFAA"
+      - id: "npc"
+        icon: "faUser"
+        color: "#FFAA00"
+      - id: "dungeon"
+        icon: "faDoorOpen"
+        color: "#FF4444"
+
+  - id: "gatheringPoints"
+    color: "#FFB300"
+    icon: "faMountain"
+    subtypes:
+      - id: "mining"
+        icon: "faMountain"
+        color: "#00C0FF"
+      - id: "herb"
+        icon: "faLeaf"
+        color: "#33CC33"
+      - id: "wood"
+        icon: "faTree"
+        color: "#228B22"
+
+  - id: "questPoints"
+    color: "#42A5F5"
+    icon: "faScroll"
+    subtypes:
+      - id: "mainQuest"
+        icon: "faScroll"
+        color: "#FFD700"
+      - id: "sideQuest"
+        icon: "faStar"
+        color: "#FF66FF"
+      - id: "dailyQuest"
+        icon: "faCalendarDay"
+        color: "#00BBFF"
+
+  - id: "enemies"
+    color: "#E53935"
+    icon: "faSkull"
+    subtypes:
+      - id: "normal"
+        icon: "faSkull"
+        color: "#DD0000"
+      - id: "elite"
+        icon: "faSkull"
+        color: "#A80000"
+      - id: "boss"
+        icon: "faSkull"
+        color: "#8B0000"

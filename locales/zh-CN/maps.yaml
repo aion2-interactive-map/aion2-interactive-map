@@ -1,0 +1,7 @@
+world:
+  name: "世界地图"
+  description: "一個廣闊的開放世界，擁有多樣的區域與冒險內容。"
+
+dungeon:
+  name: "古代地牢"
+  description: "一座神祕的地下迷宮，由古老的力量守護。"

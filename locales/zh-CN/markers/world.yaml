@@ -1,0 +1,26 @@
+locations:
+  tpPoint:
+    starterTown:
+      name: "起始小镇"
+      type: "传送点"
+      description: "你的冒险将在这里开始。"
+
+  dungeon:
+    ancientRuins:
+      name: "古代遗迹"
+      type: "地牢"
+      description: "怪物、宝物和不明智的决定在遗迹中等待着你。"
+
+gatheringPoints:
+  mining:
+    starterMine:
+      name: "新手矿点"
+      type: "矿点"
+      description: "起始小镇附近的一处小型矿点，非常适合前期采集。"
+
+questPoints:
+  mainQuest:
+    mainQuestStart:
+      name: "主线任务起点"
+      type: "主线任务"
+      description: "主线故事将从这里展开。"

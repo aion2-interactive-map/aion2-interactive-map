@@ -1,0 +1,7 @@
+world:
+  name: "World Map"
+  description: "A vast overworld filled with diverse regions and adventures."
+
+dungeon:
+  name: "Ancient Dungeon"
+  description: "A mysterious underground labyrinth guarded by ancient forces."

@@ -1,0 +1,21 @@
+version: 1
+
+maps:
+  - id: "world"
+    imageUrl: "/images/maps/aion2.webp"
+    width: 2275
+    height: 1285
+    order: 1
+
+#  - id: "dungeon"
+#    imageUrl: "/maps/dungeon.png"
+#    width: 2048
+#    height: 2048
+#    order: 2
+
+  # Example extension:
+  # - id: "city"
+  #   imageUrl: "/maps/city.png"
+  #   width: 4096
+  #   height: 4096
+  #   order: 3
