@@ -7,6 +7,13 @@ locations:
   tpPoint:
     starterTown:
       position: [1120, 640]
+      images:
+        - "/images/markers/world/aion2.webp"
+        - "/images/markers/world/OkmycKZ.png"
+        - "/images/markers/world/aion2.webp"
+        - "/images/markers/world/OkmycKZ.png"
+        - "/images/markers/world/aion2.webp"
+        - "/images/markers/world/OkmycKZ.png"
     westGate:
       position: [350, 820]
     eastGate:
