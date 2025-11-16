@@ -33,3 +33,7 @@ errors:
   unknown: "發生未知錯誤。"
   network: "網路連線錯誤。"
   notFound: "找不到資源。"
+
+markerActions:
+  markCompleted: "標記為已完成"
+  markNotCompleted: "已完成"

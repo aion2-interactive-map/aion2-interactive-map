@@ -33,3 +33,7 @@ errors:
   unknown: "An unknown error occurred."
   network: "Network connection error."
   notFound: "Resource not found."
+
+markerActions:
+  markCompleted: "Mark as completed"
+  markNotCompleted: "Completed"

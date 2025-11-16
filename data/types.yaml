@@ -22,9 +22,11 @@ categories:
       - id: "mining"
         icon: "faMountain"
         color: "#00C0FF"
+        canComplete: true
       - id: "herb"
         icon: "faLeaf"
         color: "#33CC33"
+        canComplete: true
       - id: "wood"
         icon: "faTree"
         color: "#228B22"
