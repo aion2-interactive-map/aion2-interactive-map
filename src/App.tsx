@@ -21,6 +21,8 @@ const App: React.FC = () => {
     () => new Set(),
   );
 
+  const [showLabels, setShowLabels] = useState<boolean>(true);
+
   // Initialize selected map
   useEffect(() => {
     if (!selectedMapId && maps.length > 0) {
@@ -96,6 +98,8 @@ const App: React.FC = () => {
           subtypeCounts={subtypeCounts}
           visibleSubtypes={visibleSubtypes}
           onToggleSubtype={handleToggleSubtype}
+          showLabels={showLabels}
+          onToggleShowLabels={setShowLabels}
         />
 
         <GameMapView
@@ -104,6 +108,7 @@ const App: React.FC = () => {
           mapRef={mapRef}
           visibleSubtypes={visibleSubtypes}
           types={types}
+          showLabels={showLabels}
         />
       </div>
     </div>

@@ -1,4 +1,5 @@
 lang: "zh-TW"
+siteTitle: "AION2 互動地圖"
 
 language:
   label: "語言"
@@ -17,7 +18,8 @@ menu:
   home: "首頁"
   settings: "設定"
   maps: "地圖"
-  locations: "地點"
+  markerTypes: "標記類型"
+  showNamesOnPins: "在標記上顯示名稱"
 
 buttons:
   apply: "套用"

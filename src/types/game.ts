@@ -1,55 +1,59 @@
-import type { Map as LeafletMap } from "leaflet";
+// src/types/game.ts
+import type L from "leaflet";
 
-export type GameMapMeta = {
+/**
+ * Map metadata for background image + coordinate system.
+ */
+export interface GameMapMeta {
   id: string;
+  /** Public URL to the map image (relative to BASE_URL in YAML). */
   imageUrl: string;
+  /** Map width in "x" units (e.g., pixels). */
   width: number;
+  /** Map height in "y" units (e.g., pixels). */
   height: number;
-  order?: number;
-};
+}
 
-export type MapsFile = {
-  version: number;
-  maps: GameMapMeta[];
-};
-
-export type MarkerTypeSubtype = {
+/**
+ * Subtype inside a marker category, e.g.:
+ * - locations.tpPoint
+ * - gatheringPoints.mining
+ */
+export interface MarkerTypeSubtype {
   id: string;
-  iconId?: string;
-};
-
-export type MarkerTypeCategory = {
-  id: string;
+  /** Font Awesome icon name, e.g. "faMapPin", "faTree". */
+  icon?: string;
+  /** Hex color string for the pin body, e.g. "#FFAA00". */
   color?: string;
-  iconId?: string;
+}
+
+/**
+ * Marker category, e.g.:
+ * - locations
+ * - gatheringPoints
+ * - questPoints
+ * - enemies
+ */
+export interface MarkerTypeCategory {
+  id: string;
+  icon?: string;
+  color?: string;
   subtypes: MarkerTypeSubtype[];
-};
+}
 
-export type TypesFile = {
-  version: number;
-  categories: MarkerTypeCategory[];
-};
-
-// Raw markers YAML shape: category -> subtype -> markerId -> { position: [...] }
-export type RawMarkersFile = {
-  version: number;
-  [categoryId: string]:
-    | number
-    | {
-    [subtypeId: string]: {
-      [markerId: string]: {
-        position: [number, number];
-        // future: visible, minZoom, tags, etc.
-      };
-    };
-  };
-};
-
-export type MarkerInstance = {
+/**
+ * A concrete marker instance on a map.
+ *
+ * IMPORTANT: position is [x, y] everywhere in our app.
+ * When passing to Leaflet, we convert to [y, x].
+ */
+export interface MarkerInstance {
   id: string;
   categoryId: string;
   subtypeId: string;
+  /** [x, y] in map coordinates. */
   position: [number, number];
-};
+}
 
-export type MapRef = LeafletMap | null;
+/** Reference to the Leaflet map instance. */
+export type MapRef = L.Map;

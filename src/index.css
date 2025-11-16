@@ -28,3 +28,13 @@ body {
     width: 100%;
     height: 100%;
 }
+
+.leaflet-tooltip {
+    border-radius: 4px !important;
+    --tooltip-bg: rgba(0, 0, 0, 0.8);
+}
+
+.leaflet-tooltip::before {
+    border-top-color: var(--tooltip-bg) !important;
+}
+

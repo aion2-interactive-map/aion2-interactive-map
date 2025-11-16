@@ -1,38 +1,61 @@
-import React, { useState } from "react";
-import { Button } from "@heroui/react";
+// src/components/TopNavbar.tsx
+import React from "react";
+import { Navbar, NavbarBrand, NavbarContent } from "@heroui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
+import { faGlobe, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { useTranslation } from "react-i18next";
 
 import LanguageSwitcher from "./LanguageSwitcher";
+import { useTheme } from "../hooks/useTheme";
 
 const TopNavbar: React.FC = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const { t } = useTranslation();
+  const { theme, toggleTheme } = useTheme();
 
-  const toggleDarkMode = () => {
-    const newState = !darkMode;
-    setDarkMode(newState);
-
-    if (newState) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  };
+  const isDark = theme === "dark";
 
   return (
-    <div className="w-full h-14 flex items-center justify-end px-4 border-b border-default-200 bg-content1/80 backdrop-blur-md gap-4">
+    <Navbar maxWidth="full" className="border-b border-default-200">
 
-      {/* Language switcher (icon dropdown) */}
-      <LanguageSwitcher />
-
-      {/* Dark mode toggle */}
-      <Button isIconOnly variant="light" onPress={toggleDarkMode}>
-        <FontAwesomeIcon
-          icon={darkMode ? faSun : faMoon}
-          className="text-xl"
+      {/* LEFT: Logo + Title */}
+      <NavbarBrand className="flex items-center gap-2 select-none cursor-default">
+        <img
+          src={`${import.meta.env.BASE_URL}aion2.webp`}
+          alt="AION2 Logo"
+          className="w-8 h-8 object-contain"
         />
-      </Button>
-    </div>
+        <span className="font-semibold text-lg tracking-wide">
+          {t("common:siteTitle", "AION2 Interactive Map")}
+        </span>
+      </NavbarBrand>
+
+      {/* RIGHT: Language switcher + theme switch */}
+      <NavbarContent justify="end" className="flex items-center gap-4">
+
+        {/* Language Switcher Icon */}
+        <LanguageSwitcher>
+          <button
+            className="text-default-600 hover:text-default-900 transition-colors"
+            aria-label="Change Language"
+          >
+            <FontAwesomeIcon icon={faGlobe} className="text-lg" />
+          </button>
+        </LanguageSwitcher>
+
+        {/* Theme toggle */}
+        <button
+          onClick={toggleTheme}
+          aria-label="Toggle theme"
+          className="text-default-600 hover:text-default-900 transition-colors"
+        >
+          <FontAwesomeIcon
+            icon={isDark ? faSun : faMoon}
+            className="text-lg"
+          />
+        </button>
+
+      </NavbarContent>
+    </Navbar>
   );
 };
 

@@ -1,15 +1,15 @@
 // src/components/MapSidebar.tsx
 import React, { useState } from "react";
-import { Card, Button, Spinner } from "@heroui/react";
+import { Card, Button, Spinner, Switch } from "@heroui/react";
 import { useTranslation } from "react-i18next";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import * as SolidIcons from "@fortawesome/free-solid-svg-icons";
+import type { IconDefinition } from "@fortawesome/free-solid-svg-icons";
+
 import type {
   GameMapMeta,
   MarkerTypeCategory,
 } from "../types/game";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import * as SolidIcons from "@fortawesome/free-solid-svg-icons";
-import type { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 
 type Props = {
   maps: GameMapMeta[];
@@ -20,6 +20,9 @@ type Props = {
   subtypeCounts: Map<string, number>;
   visibleSubtypes: Set<string>;
   onToggleSubtype: (categoryId: string, subtypeId: string) => void;
+
+  showLabels: boolean;
+  onToggleShowLabels: (value: boolean) => void;
 };
 
 const MapSidebar: React.FC<Props> = ({
@@ -31,10 +34,11 @@ const MapSidebar: React.FC<Props> = ({
                                        subtypeCounts,
                                        visibleSubtypes,
                                        onToggleSubtype,
+                                       showLabels,
+                                       onToggleShowLabels,
                                      }) => {
-  const { t } = useTranslation(["maps", "types"]);
+  const { t } = useTranslation();
 
-  // Track collapsed categories: if in set → collapsed
   const [collapsedCategories, setCollapsedCategories] = useState<
     Set<string>
   >(new Set());
@@ -53,7 +57,7 @@ const MapSidebar: React.FC<Props> = ({
       {/* Map selection */}
       <Card className="p-3">
         <h2 className="text-sm font-semibold mb-2">
-          {t("maps:listTitle", "Maps")}
+          {t("common:menu.maps", "Maps")}
         </h2>
         <div className="flex flex-col gap-2">
           {maps.map((map) => (
@@ -64,25 +68,27 @@ const MapSidebar: React.FC<Props> = ({
               className="justify-start"
               onPress={() => onMapChange(map.id)}
             >
-              {t(`maps:${map.id}.name`)}
+              {t(`maps:${map.id}.name`, map.id)}
             </Button>
           ))}
         </div>
       </Card>
 
-      {/* Categories & subtypes */}
-      <Card className="p-3 flex-1 overflow-auto">
-        <h2 className="text-sm font-semibold mb-2">
-          {t("types:listTitle", "Marker Types")}
-        </h2>
+      {/* Categories & subtypes + label toggle */}
+      <Card className="p-3 flex-1 overflow-auto flex flex-col gap-3">
+        <div className="flex items-center justify-between">
+          <h2 className="text-sm font-semibold">
+            {t("common:menu.markerTypes", "Marker Types")}
+          </h2>
+        </div>
 
         {loadingMarkers && (
-          <div className="flex items-center gap-2 text-xs text-default-500 mb-2">
+          <div className="flex items-center gap-2 text-xs text-default-500">
             <Spinner size="sm" /> <span>Loading markers...</span>
           </div>
         )}
 
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 flex-1 overflow-auto">
           {types.map((cat) => {
             const isCollapsed = collapsedCategories.has(cat.id);
 
@@ -103,7 +109,10 @@ const MapSidebar: React.FC<Props> = ({
                       }
                       className="text-[10px]"
                     />
-                    {t(`types:categories.${cat.id}.name`)}
+                    {t(
+                      `types:categories.${cat.id}.name`,
+                      cat.id,
+                    )}
                   </span>
                 </button>
 
@@ -114,8 +123,8 @@ const MapSidebar: React.FC<Props> = ({
                       const count = subtypeCounts.get(key) ?? 0;
                       const active = visibleSubtypes.has(key);
 
-                      // Icon comes directly from YAML: sub.icon or fallback to cat.icon
-                      const iconName = (sub as any).icon || (cat as any).icon;
+                      const iconName =
+                        (sub as any).icon || (cat as any).icon;
                       const icon: IconDefinition =
                         (SolidIcons as any)[iconName] ??
                         (SolidIcons.faCircleDot as IconDefinition);
@@ -140,6 +149,7 @@ const MapSidebar: React.FC<Props> = ({
                             <span className="truncate text-left">
                               {t(
                                 `types:subtypes.${cat.id}.${sub.id}.name`,
+                                sub.id,
                               )}
                             </span>
                           </span>
@@ -160,6 +170,19 @@ const MapSidebar: React.FC<Props> = ({
               No marker types loaded.
             </p>
           )}
+        </div>
+
+        {/* Label visibility toggle */}
+        <div className="pt-2 border-t border-default-200 mt-2">
+          <Switch
+            size="sm"
+            isSelected={showLabels}
+            onValueChange={onToggleShowLabels}
+          >
+            <span className="text-xs text-default-600">
+              {t("common:menu.showNamesOnPins", "Show names on pins")}
+            </span>
+          </Switch>
         </div>
       </Card>
     </aside>

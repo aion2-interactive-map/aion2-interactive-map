@@ -6,6 +6,9 @@ import App from './App';
 import './index.css';
 import 'leaflet/dist/leaflet.css'; // Leaflet default styles
 import './i18n';
+import { applyTheme } from "./utils/preTheme";
+
+applyTheme();
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
