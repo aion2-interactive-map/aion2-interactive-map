@@ -188,7 +188,7 @@ const GameMarker: React.FC<Props> = ({
           permanent
           direction="top"
           offset={[0, -38]} // your chosen offset
-          className="!bg-black/80 !text-white !border-none !px-1.5 !py-0.5 !text-[11px]"
+          className="game-marker-tooltip"
         >
           {localizedName}
         </Tooltip>

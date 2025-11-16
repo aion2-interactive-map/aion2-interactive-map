@@ -31,11 +31,10 @@ body {
 
 .leaflet-tooltip {
     border-radius: 4px !important;
-    --tooltip-bg: rgba(0, 0, 0, 0.8);
 }
 
 .leaflet-tooltip::before {
-    border-top-color: var(--tooltip-bg) !important;
+    border-top-color: hsl(var(--heroui-content1)) !important;
 }
 
 /* Remove the white frame and padding around popup */
@@ -49,4 +48,21 @@ body {
 .leaflet-popup-content {
     margin: 0 !important;
     padding: 0 !important;
+}
+
+/* Theme-aware tooltip for markers */
+.leaflet-tooltip.game-marker-tooltip {
+    background: hsl(var(--heroui-content1));
+    color: hsl(var(--heroui-foreground));
+    border: 1px solid hsl(var(--heroui-default-200));
+    padding: 2px 6px;
+    font-size: 11px;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+}
+
+/* Match tip (arrow) color to the tooltip background */
+.leaflet-tooltip.game-marker-tooltip .leaflet-tooltip-tip {
+    background: hsl(var(--heroui-content1));
+    border: 1px solid hsl(var(--heroui-default-200));
 }
