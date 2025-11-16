@@ -20,6 +20,8 @@ menu:
   maps: "地图"
   markerTypes: "标记类型"
   showNamesOnPins: "在标记上显示名称"
+  showAllMarkers: "全部显示"
+  hideAllMarkers: "全部隐藏"
 
 buttons:
   apply: "应用"

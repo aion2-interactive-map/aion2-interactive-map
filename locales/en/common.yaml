@@ -20,6 +20,8 @@ menu:
   maps: "Maps"
   markerTypes: "Marker Types"
   showNamesOnPins: "Show names on pins"
+  showAllMarkers: "Show all"
+  hideAllMarkers: "Hide all"
 
 buttons:
   apply: "Apply"
