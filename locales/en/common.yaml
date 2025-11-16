@@ -1,4 +1,5 @@
 lang: "en"
+siteTitle: "AION2 Interactive Map"
 
 language:
   label: "Language"
@@ -17,7 +18,8 @@ menu:
   home: "Home"
   settings: "Settings"
   maps: "Maps"
-  locations: "Locations"
+  markerTypes: "Marker Types"
+  showNamesOnPins: "Show names on pins"
 
 buttons:
   apply: "Apply"

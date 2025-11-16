@@ -1,4 +1,5 @@
 lang: "zh-CN"
+siteTitle: "AION2 互动地图"
 
 language:
   label: "语言"
@@ -17,7 +18,8 @@ menu:
   home: "首页"
   settings: "设置"
   maps: "地图"
-  locations: "地点"
+  markerTypes: "标记类型"
+  showNamesOnPins: "在标记上显示名称"
 
 buttons:
   apply: "应用"

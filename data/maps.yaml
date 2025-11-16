@@ -7,11 +7,11 @@ maps:
     height: 1285
     order: 1
 
-#  - id: "dungeon"
-#    imageUrl: "/maps/dungeon.png"
-#    width: 2048
-#    height: 2048
-#    order: 2
+  - id: "dungeon"
+    imageUrl: "/images/maps/OkmycKZ.png"
+    width: 1206
+    height: 679
+    order: 2
 
   # Example extension:
   # - id: "city"

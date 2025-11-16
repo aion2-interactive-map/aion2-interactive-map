@@ -1,26 +1,108 @@
 locations:
   tpPoint:
     starterTown:
-      name: "起始小镇"
-      type: "传送点"
-      description: "你的冒险将在这里开始。"
+      name: "新手村"
+      description: "冒险的起点，大部分玩家首次登陆的安全区域。"
+    westGate:
+      name: "西门"
+      description: "通往西侧丘陵与林地的城门，附近常有巡逻守卫。"
+    eastGate:
+      name: "东门"
+      description: "面向东部平原的主要出口，是前往野外的要道。"
+
+  npc:
+    blacksmith:
+      name: "铁匠"
+      description: "负责修理和打造装备的铁匠，能锻造基础武器与防具。"
+    innkeeper:
+      name: "旅店老板"
+      description: "提供休息与补给的旅店老板，是重置复活点的关键NPC。"
+    mageTrainer:
+      name: "法师训练师"
+      description: "引导法师学习新法术与提升魔力的导师。"
 
   dungeon:
     ancientRuins:
-      name: "古代遗迹"
-      type: "地牢"
-      description: "怪物、宝物和不明智的决定在遗迹中等待着你。"
+      name: "远古遗迹"
+      description: "被时间掩埋的古老遗迹，传说深处封印着强大的力量。"
+    shadowCave:
+      name: "暗影洞窟"
+      description: "常年不见天日的洞窟，栖息着暗属性怪物与未知生物。"
 
 gatheringPoints:
   mining:
-    starterMine:
-      name: "新手矿点"
-      type: "矿点"
-      description: "起始小镇附近的一处小型矿点，非常适合前期采集。"
+    ironVein1:
+      name: "铁矿脉 I"
+      description: "富含铁矿石的矿点，是新手采矿的好去处。"
+    ironVein2:
+      name: "铁矿脉 II"
+      description: "另一处铁矿资源点，刷新速度较为稳定。"
+    silverOre:
+      name: "银矿石矿点"
+      description: "产出银矿石的稀有矿点，用于制作更高级的装备。"
+
+  herb:
+    healingHerb1:
+      name: "治愈草丛 I"
+      description: "可采集基础治疗药草的草丛，常被炼金师光顾。"
+    healingHerb2:
+      name: "治愈草丛 II"
+      description: "另一片治疗药草分布区，适合完成采集任务。"
+
+  wood:
+    oakTree:
+      name: "橡木采伐点"
+      description: "可以砍伐橡木原木的树林，是木工的重要资源来源。"
+    pineTree:
+      name: "松木采伐点"
+      description: "生长着大量松树的区域，用于采集松木材料。"
 
 questPoints:
   mainQuest:
-    mainQuestStart:
-      name: "主线任务起点"
-      type: "主线任务"
-      description: "主线故事将从这里展开。"
+    awakening:
+      name: "主线：觉醒"
+      description: "主线故事的开端，角色从沉睡中苏醒，踏入新的世界。"
+    sealedTemple:
+      name: "主线：封印神殿"
+      description: "调查被封印的古老神殿，揭开世界异变的源头。"
+
+  sideQuest:
+    lostBag:
+      name: "支线：遗失的包裹"
+      description: "帮助村民找回在野外遗失的包裹，途中可能遇到小怪。"
+    missingChild:
+      name: "支线：走失的孩子"
+      description: "在附近区域寻找走失的孩子，并安全护送回村庄。"
+
+  dailyQuest:
+    huntBoars:
+      name: "日常：猎杀野猪"
+      description: "每天可重复的狩猎任务，击败一定数量的野猪获取报酬。"
+    gatherHerbs:
+      name: "日常：采集药草"
+      description: "采集指定数量的药草上交，用于维持村庄的药剂供应。"
+
+enemies:
+  normal:
+    boar1:
+      name: "野猪 I"
+      description: "出没在村庄附近的普通野猪，攻击力中等。"
+    boar2:
+      name: "野猪 II"
+      description: "与野猪 I 同类型的怪物，经常成群活动。"
+    wolfPack:
+      name: "狼群"
+      description: "在平原与林地游荡的狼群，成群出现时较为危险。"
+
+  elite:
+    forestGuardian:
+      name: "森林守卫者"
+      description: "守护森林深处的精英怪物，拥有较高生命与攻击。"
+    caveWatcher:
+      name: "洞窟监视者"
+      description: "暗影洞窟中的精英怪，负责“看守”入侵的冒险者。"
+
+  boss:
+    dragonLord:
+      name: "龙王"
+      description: "栖息在世界边缘的强大Boss，据说掌握着毁灭性的龙息之力。"
