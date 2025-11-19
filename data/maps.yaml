@@ -1,21 +1,15 @@
 version: 1
 
 maps:
-  - id: "world"
-    imageUrl: "/images/maps/aion2.webp"
-    width: 2275
-    height: 1285
+  - id: "World_L_A"
+    tileWidth: 1024
+    tileHeight: 1024
+    tilesCountX: 8
+    tilesCountY: 8
     order: 1
-
-  - id: "dungeon"
-    imageUrl: "/images/maps/OkmycKZ.png"
-    width: 1206
-    height: 679
+  - id: "World_D_A"
+    tileWidth: 1024
+    tileHeight: 1024
+    tilesCountX: 8
+    tilesCountY: 8
     order: 2
-
-  # Example extension:
-  # - id: "city"
-  #   imageUrl: "/maps/city.png"
-  #   width: 4096
-  #   height: 4096
-  #   order: 3
