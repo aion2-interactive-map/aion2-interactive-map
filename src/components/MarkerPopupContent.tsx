@@ -81,7 +81,7 @@ const MarkerPopupContent: React.FC<Props> = ({
           <Button
             size="sm"
             variant="flat"
-            color={completed ? "success" : "default"}
+            color={completed ? "success" : "primary"}
             onPress={onToggleCompleted}
           >
             {completed
