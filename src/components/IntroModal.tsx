@@ -23,6 +23,11 @@ const IntroModal: React.FC<IntroModalProps> = ({isOpen, onClose}) => {
   const [showImageOverlay, setShowImageOverlay] = useState<boolean>(false);
   const alipayUrl = getStaticUrl("images/alipay.webp");
 
+  const handleCloseAll = () => {
+    setShowImageOverlay(false);
+    onClose();
+  };
+
   return (
     <>
       {/* Fullscreen image overlay ABOVE the modal */}
@@ -42,7 +47,7 @@ const IntroModal: React.FC<IntroModalProps> = ({isOpen, onClose}) => {
       <Modal
         isOpen={isOpen}
         onOpenChange={(open) => {
-          if (!open) onClose();
+          if (!open) handleCloseAll();
         }}
         size="md"
         backdrop="blur"
