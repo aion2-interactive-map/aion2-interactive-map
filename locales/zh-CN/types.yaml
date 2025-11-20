@@ -1,42 +1,25 @@
 categories:
-  locations:
-    name: "地点"
-  gatheringPoints:
-    name: "采集点"
-  questPoints:
-    name: "任务点"
-  enemies:
-    name: "敌人"
-
+  collection:
+    name: 收集品
+  gathering:
+    name: 采集点
+  location:
+    name: 地点
+  quest:
+    name: 任务
 subtypes:
-  locations:
-    tpPoint:
-      name: "传送点"
-    npc:
-      name: "NPC"
-    dungeon:
-      name: "地牢"
-
-  gatheringPoints:
-    mining:
-      name: "矿点"
-    herb:
-      name: "草药点"
-    wood:
-      name: "伐木点"
-
-  questPoints:
-    mainQuest:
-      name: "主线任务"
-    sideQuest:
-      name: "支线任务"
-    dailyQuest:
-      name: "日常任务"
-
-  enemies:
-    normal:
-      name: "普通敌人"
-    elite:
-      name: "精英敌人"
-    boss:
-      name: "Boss"
+  monolithMaterial:
+    description: 主神痕迹
+    name: 主神痕迹
+  occupation:
+    description: 驻地
+    name: 驻地
+  seal:
+    description: ''
+    name: 封印副本
+  teleport:
+    description: 奇柏利斯克
+    name: 传送点
+  village:
+    description: ''
+    name: 地区

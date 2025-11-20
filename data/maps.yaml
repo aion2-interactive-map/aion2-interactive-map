@@ -1,15 +1,19 @@
-version: 1
-
 maps:
-  - id: "World_L_A"
-    tileWidth: 1024
-    tileHeight: 1024
-    tilesCountX: 8
-    tilesCountY: 8
-    order: 1
-  - id: "World_D_A"
-    tileWidth: 1024
-    tileHeight: 1024
-    tilesCountX: 8
-    tilesCountY: 8
-    order: 2
+- id: 656dc90f-7933-41f5-93da-f2510246d092
+  isVisible: true
+  name: World_L_A
+  order: 0
+  tileHeight: 1024
+  tileWidth: 1024
+  tilesCountX: 8
+  tilesCountY: 8
+  type: light
+- id: 9b980434-b463-4628-a702-00bee85a2c7a
+  isVisible: true
+  name: World_D_A
+  order: 1
+  tileHeight: 1024
+  tileWidth: 1024
+  tilesCountX: 8
+  tilesCountY: 8
+  type: dark
