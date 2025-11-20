@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchYaml } from "../utils/yamlLoader";
+import { useYamlLoader } from "../hooks/useYamlLoader";
 import type {
   GameMapMeta,
   MapsFile,
@@ -11,15 +11,17 @@ export function useGameData() {
   const [maps, setMaps] = useState<GameMapMeta[]>([]);
   const [types, setTypes] = useState<MarkerTypeCategory[]>([]);
   const [loading, setLoading] = useState(true);
+  const loadYaml = useYamlLoader();
 
   useEffect(() => {
     let cancelled = false;
+    console.log("useGameData");
 
     async function load() {
       try {
         const [mapsData, typesData] = await Promise.all([
-          fetchYaml<MapsFile>("data/maps.yaml"),
-          fetchYaml<TypesFile>("data/types.yaml"),
+          loadYaml<MapsFile>("data/maps.yaml"),
+          loadYaml<TypesFile>("data/types.yaml"),
         ]);
 
         if (cancelled) return;
@@ -36,7 +38,7 @@ export function useGameData() {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [loadYaml]);
 
   return { maps, types, loading };
 }

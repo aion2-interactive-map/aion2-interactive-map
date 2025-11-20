@@ -9,8 +9,9 @@ import type {
   GameMapMeta,
   MapRef,
   MarkerInstance,
-  MarkerTypeCategory,
+  MarkerTypeCategory, MarkerTypeSubtype,
 } from "../types/game";
+import {getStaticUrl} from "../utils/url.ts";
 
 
 type CursorTrackerProps = {
@@ -42,6 +43,7 @@ type Props = {
   mapRef: React.RefObject<MapRef>;
   visibleSubtypes: Set<string>;
   types: MarkerTypeCategory[];
+  subtypes: Map<string, MarkerTypeSubtype>;
   showLabels: boolean;
   completedSet: Set<string>;
   toggleMarkerCompleted: (marker: MarkerInstance) => void;
@@ -89,6 +91,7 @@ const GameMapView: React.FC<Props> = ({
                                         mapRef,
                                         visibleSubtypes,
                                         types,
+                                        subtypes,
                                         showLabels,
                                         completedSet,
                                         toggleMarkerCompleted,
@@ -129,8 +132,6 @@ const GameMapView: React.FC<Props> = ({
     width / 2,
   ];
 
-  const base = import.meta.env.BASE_URL ?? "/";
-
   const tileOverlays = [];
   for (let row = 0; row < selectedMap.tilesCountY; row++) {
     for (let col = 0; col < selectedMap.tilesCountX; col++) {
@@ -144,8 +145,8 @@ const GameMapView: React.FC<Props> = ({
       ];
       const rowStr = row.toString().padStart(2, "0");
       const colStr = col.toString().padStart(2, "0");
-      const relPath = `UI/Map/WorldMap/${selectedMap.id}/Res/${selectedMap.id}_${colStr}_${rowStr}.png`;
-      const url = base + relPath.replace(/^\//, "");
+      const relPath = `UI/Map/WorldMap/${selectedMap.name}/Res/${selectedMap.name}_${colStr}_${rowStr}.png`;
+      const url = getStaticUrl(relPath);
       tileOverlays.push(
         <ImageOverlay
           key={`tile-${row}-${col}`}
@@ -156,10 +157,6 @@ const GameMapView: React.FC<Props> = ({
 
     }
   }
-
-
-
-
 
   return (
     <div className="flex-1 relative" onClick={() => setContextMenu(null)}>
@@ -193,16 +190,15 @@ const GameMapView: React.FC<Props> = ({
 
         {markers
           .filter((m) =>
-            visibleSubtypes.has(
-              `${m.categoryId}::${m.subtypeId}`,
-            ),
+            visibleSubtypes.has(m.subtype),
           )
           .map((m) => (
             <GameMarker
-              key={`${m.categoryId}-${m.subtypeId}-${m.id}`}
-              mapId={selectedMap.id}
+              key={m.id}
+              map={selectedMap}
               marker={m}
               types={types}
+              subtypes={subtypes}
               showLabel={showLabels}
               completedSet={completedSet}
               toggleMarkerCompleted={toggleMarkerCompleted}

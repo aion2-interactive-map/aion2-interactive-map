@@ -10,7 +10,7 @@ import { Spinner } from "@heroui/react";
 import { useGameData } from "./hooks/useGameData";
 import { useMarkers } from "./hooks/useMarkers";
 
-import type { GameMapMeta, MapRef } from "./types/game";
+import type {GameMapMeta, MapRef, MarkerTypeSubtype} from "./types/game";
 import {getQueryParam, setQueryParam} from "./utils/url.ts";
 
 const App: React.FC = () => {
@@ -23,8 +23,7 @@ const App: React.FC = () => {
   const [visibleSubtypes, setVisibleSubtypes] = useState<Set<string>>(
     () => new Set(),
   );
-  const [allSubtypes, setAllSubtypes] = useState<Set<string>>(new Set());
-
+  const [allSubtypes, setAllSubtypes] = useState<Map<string, MarkerTypeSubtype>>(new Map());
   const [showLabels, setShowLabels] = useState<boolean>(true);
 
   // Initialize selected map
@@ -35,11 +34,11 @@ const App: React.FC = () => {
       return;
     }
     const initial = getQueryParam("map");
-    if (initial && maps.some((m) => m.id === initial)) {
+    if (initial && maps.some((m) => m.name === initial)) {
       setSelectedMapId(initial);
     } else if (maps.length > 0 && !selectedMapId) {
       // optional fallback: load first map
-      const first = maps[0].id;
+      const first = maps[0].name;
       setSelectedMapId(first);
       setQueryParam("map", first);
     }
@@ -49,10 +48,11 @@ const App: React.FC = () => {
   useEffect(() => {
     if (!selectedMapId || types.length === 0) return;
 
-    const all = new Set<string>();
+    const all = new Map<string, MarkerTypeSubtype>();
     types.forEach((cat) => {
       cat.subtypes.forEach((sub) => {
-        all.add(`${cat.id}::${sub.id}`);
+        sub.category = cat.name;
+        all.set(sub.name, sub);
       });
     });
     setAllSubtypes(all);
@@ -72,7 +72,7 @@ const App: React.FC = () => {
         const validKeys = new Set<string>();
         types.forEach((cat) => {
           cat.subtypes.forEach((sub) => {
-            validKeys.add(`${cat.id}::${sub.id}`);
+            validKeys.add(sub.name);
           });
         });
 
@@ -88,7 +88,7 @@ const App: React.FC = () => {
       }
     }
     // Default: all visible for this map
-    setVisibleSubtypes(all);
+    setVisibleSubtypes(new Set(all.keys()));
 
   }, [selectedMapId, types]);
 
@@ -117,7 +117,7 @@ const App: React.FC = () => {
   } = useMarkers(selectedMapId);
 
   const selectedMap: GameMapMeta | null = useMemo(
-    () => maps.find((m) => m.id === selectedMapId) ?? null,
+    () => maps.find((m) => m.name === selectedMapId) ?? null,
     [maps, selectedMapId],
   );
 
@@ -126,7 +126,7 @@ const App: React.FC = () => {
   const handleMapChange = (mapId: string) => {
     setSelectedMapId(mapId);
     const map = mapRef.current;
-    const meta = maps.find((m) => m.id === mapId);
+    const meta = maps.find((m) => m.name === mapId);
     if (map && meta) {
       const height = meta.tileWidth * meta?.tilesCountX;
       const width = meta.tileWidth * meta?.tilesCountY;
@@ -137,18 +137,17 @@ const App: React.FC = () => {
     }
   };
 
-  const handleToggleSubtype = (categoryId: string, subtypeId: string) => {
-    const key = `${categoryId}::${subtypeId}`;
+  const handleToggleSubtype = (subtypeId: string) => {
     setVisibleSubtypes((prev) => {
       const next = new Set(prev);
-      if (next.has(key)) next.delete(key);
-      else next.add(key);
+      if (next.has(subtypeId)) next.delete(subtypeId);
+      else next.add(subtypeId);
       return next;
     });
   };
 
   const handleShowAllSubtypes = () => {
-    setVisibleSubtypes(new Set(allSubtypes));
+    setVisibleSubtypes(new Set(allSubtypes.keys()));
   };
 
   const handleHideAllSubtypes = () => {
@@ -190,6 +189,7 @@ const App: React.FC = () => {
           mapRef={mapRef}
           visibleSubtypes={visibleSubtypes}
           types={types}
+          subtypes={allSubtypes}
           showLabels={showLabels}
           completedSet={completedSet}
           toggleMarkerCompleted={toggleMarkerCompleted}

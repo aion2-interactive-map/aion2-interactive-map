@@ -4,6 +4,7 @@ import { initReactI18next } from "react-i18next";
 import HttpBackend from "i18next-http-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
 import { parse } from "yaml";
+import {getBackendLoadPath} from "./hooks/useDataMode.tsx";
 
 // ---- Language config --------------------------------------
 
@@ -14,11 +15,6 @@ export const SUPPORTED_LANGUAGES: LanguageCode[] = [
   "zh-CN",
   "zh-TW",
 ];
-
-const rawBase = import.meta.env.BASE_URL ?? "/";
-const base =
-  rawBase.endsWith("/") ? rawBase : `${rawBase}/`; // normalize
-
 
 // ---- i18n initialization -----------------------------------
 
@@ -31,11 +27,11 @@ i18n
     fallbackLng: "zh-CN",
     supportedLngs: SUPPORTED_LANGUAGES,
 
-    ns: ["common", "maps", "markers", "types"],
+    ns: ["common", "maps", "types"],
     defaultNS: "common",
 
     backend: {
-      loadPath: `${base}locales/{{lng}}/{{ns}}.yaml`,
+      loadPath: getBackendLoadPath(),
       parse: (data: string) => parse(data),
     },
 

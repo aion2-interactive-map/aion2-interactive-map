@@ -7,6 +7,7 @@ import './index.css';
 import 'leaflet/dist/leaflet.css'; // Leaflet default styles
 import './i18n';
 import { applyTheme } from "./utils/preTheme";
+import { DataModeProvider } from "./hooks/useDataMode";
 
 applyTheme();
 
@@ -14,7 +15,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     {/* You can pass locale/theme props later if you like */}
     <HeroUIProvider>
-      <App />
+      <DataModeProvider>
+        <App />
+      </DataModeProvider>
     </HeroUIProvider>
   </React.StrictMode>,
 );

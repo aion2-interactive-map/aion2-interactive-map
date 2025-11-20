@@ -2,11 +2,9 @@
 import React, { useState } from "react";
 import { Card, Button, Spinner, Switch } from "@heroui/react";
 import { useTranslation } from "react-i18next";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import * as SolidIcons from "@fortawesome/free-solid-svg-icons";
-import type { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 
 import type { GameMapMeta, MarkerTypeCategory } from "../types/game";
+import { parseIconUrl } from "../utils/url.ts";
 
 type Props = {
   maps: GameMapMeta[];
@@ -17,7 +15,7 @@ type Props = {
   subtypeCounts: Map<string, number>;
   completedCounts: Map<string, number>;
   visibleSubtypes: Set<string>;
-  onToggleSubtype: (categoryId: string, subtypeId: string) => void;
+  onToggleSubtype: (subtypeId: string) => void;
 
   showLabels: boolean;
   onToggleShowLabels: (value: boolean) => void;
@@ -42,6 +40,7 @@ const MapSidebar: React.FC<Props> = ({
                                        onHideAllSubtypes,
                                      }) => {
   const { t } = useTranslation();
+  const selectedMap = maps.find(m => m.name === selectedMapId);
 
   const [collapsedCategories, setCollapsedCategories] = useState<
     Set<string>
@@ -66,13 +65,13 @@ const MapSidebar: React.FC<Props> = ({
         <div className="grid grid-cols-2 gap-2">
           {maps.map((map) => (
             <Button
-              key={map.id}
+              key={map.name}
               size="sm"
-              variant={map.id === selectedMapId ? "solid" : "light"}
+              variant={map.name === selectedMapId ? "solid" : "light"}
               className="justify-between"
-              onPress={() => onMapChange(map.id)}
+              onPress={() => onMapChange(map.name)}
             >
-              {t(`maps:${map.id}.name`, map.id)}
+              {t(`maps:${map.name}.name`, map.name)}
             </Button>
           ))}
           {maps.length === 0 && (
@@ -84,7 +83,8 @@ const MapSidebar: React.FC<Props> = ({
       </Card>
 
       {/* Marker types */}
-      <Card className="p-3 flex-1 overflow-auto flex flex-col gap-3">
+      {selectedMap && (
+        <Card className="p-3 flex-1 overflow-auto flex flex-col gap-3">
         <div className="flex items-center justify-between">
           <h2 className="text-sm font-semibold">
             {t("common:menu.markerTypes", "Marker Types")}
@@ -117,27 +117,20 @@ const MapSidebar: React.FC<Props> = ({
 
         <div className="flex flex-col gap-2">
           {types.map((cat) => {
-            const isCollapsed = collapsedCategories.has(cat.id);
+            const isCollapsed = collapsedCategories.has(cat.name);
 
             return (
-              <div key={cat.id} className="border border-default-200 rounded-md">
+              <div key={cat.name} className="border border-default-200 rounded-md">
                 <button
                   type="button"
-                  onClick={() => toggleCategory(cat.id)}
+                  onClick={() => toggleCategory(cat.name)}
                   className="w-full flex items-center justify-between px-2 py-1.5 bg-content1 hover:bg-default-100 transition-colors"
                 >
                   <span className="flex items-center gap-2 text-xs font-semibold">
-                    <FontAwesomeIcon
-                      icon={
-                        ((SolidIcons as any)[cat.icon || "faFolder"] as IconDefinition) ??
-                        (SolidIcons.faFolder as IconDefinition)
-                      }
-                      className="text-[12px]"
-                    />
                     <span>
                       {t(
-                        `types:categories.${cat.id}.name`,
-                        cat.id,
+                        `types:categories.${cat.name}.name`,
+                        cat.name,
                       )}
                     </span>
                   </span>
@@ -149,23 +142,18 @@ const MapSidebar: React.FC<Props> = ({
                 {!isCollapsed && (
                   <div className="grid grid-cols-2 gap-1 p-1.5">
                     {cat.subtypes.map((sub) => {
-                      const key = `${cat.id}::${sub.id}`;
+                      const key = sub.name;
                       const total = subtypeCounts.get(key) ?? 0;
                       const completed = completedCounts.get(key) ?? 0;
                       const active = visibleSubtypes.has(key);
-                      const canComplete = (sub as any).canComplete === true;
-
-                      const iconName =
-                        (sub as any).icon || (cat as any).icon;
-                      const icon: IconDefinition =
-                        (SolidIcons as any)[iconName] ??
-                        (SolidIcons.faCircleDot as IconDefinition);
+                      const canComplete = sub.canComplete === true;
+                      const iconName = sub.icon || cat.icon || "";
 
                       return (
                         <button
-                          key={sub.id}
+                          key={sub.name}
                           type="button"
-                          onClick={() => onToggleSubtype(cat.id, sub.id)}
+                          onClick={() => onToggleSubtype(sub.name)}
                           className={[
                             "flex items-center justify-between text-xs px-2 py-1 rounded border transition-colors",
                             active
@@ -174,18 +162,19 @@ const MapSidebar: React.FC<Props> = ({
                           ].join(" ")}
                         >
                           <span className="flex items-center gap-1 min-w-0">
-                            <FontAwesomeIcon
-                              icon={icon}
-                              className="text-[11px]"
+                            <img
+                              src={parseIconUrl(iconName, selectedMap)}
+                              alt=""
+                              className="w-[20px] h-[20px] object-contain inline-block"
                             />
                             <span className="truncate text-left">
                               {t(
-                                `types:subtypes.${cat.id}.${sub.id}.name`,
-                                sub.id,
+                                `types:subtypes.${sub.name}.name`,
+                                sub.name,
                               )}
                             </span>
                           </span>
-                          <span className="text-[11px] text-default-500 ml-2">
+                          <span className="text-[12px] text-default-500 ml-2">
                             {canComplete ? `${completed}/${total}` : total}
                           </span>
                         </button>
@@ -217,6 +206,7 @@ const MapSidebar: React.FC<Props> = ({
           </Switch>
         </div>
       </Card>
+      )}
     </aside>
   );
 };

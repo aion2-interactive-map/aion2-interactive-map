@@ -6,16 +6,19 @@ import {
   NavbarContent,
 } from "@heroui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { faMoon, faSun, faCloud, faDatabase } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
 
 import { useTheme } from "../hooks/useTheme";
 import LanguageSwitcher from "./LanguageSwitcher";
+import {useDataMode} from "../hooks/useDataMode.tsx";
 
 const TopNavbar: React.FC = () => {
   const { t } = useTranslation(); // we use fully-qualified keys like common:siteTitle
   const { theme, toggleTheme } = useTheme();
   const isDark = theme === "dark";
+  const { dataMode, toggleDataMode } = useDataMode();
+  const isStatic = dataMode === "static";
 
   return (
     <Navbar
@@ -51,6 +54,20 @@ const TopNavbar: React.FC = () => {
         >
           <FontAwesomeIcon
             icon={isDark ? faSun : faMoon}
+            className="text-lg"
+          />
+        </button>
+
+        {/* Data mode toggle */}
+        <button
+          type="button"
+          onClick={toggleDataMode}
+          aria-label="Toggle theme"
+          className="text-default-600 hover:text-default-900 transition-colors"
+          style={{display: "none"}}
+        >
+          <FontAwesomeIcon
+            icon={isStatic ? faDatabase : faCloud}
             className="text-lg"
           />
         </button>

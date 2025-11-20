@@ -1,65 +1,48 @@
 // src/components/GameMarker.tsx
-import React from "react";
+import React, {memo} from "react";
 import { Marker, Tooltip, Popup } from "react-leaflet";
 import { useTranslation } from "react-i18next";
 import L from "leaflet";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import * as SolidIcons from "@fortawesome/free-solid-svg-icons";
 import { faLocationPin, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import { renderToString } from "react-dom/server";
 
 import MarkerPopupContent from "./MarkerPopupContent";
 
-import type { MarkerInstance, MarkerTypeCategory } from "../types/game";
-import type { IconDefinition } from "@fortawesome/free-solid-svg-icons";
+import type {GameMapMeta, MarkerInstance, MarkerTypeCategory, MarkerTypeSubtype} from "../types/game";
+import {parseIconUrl} from "../utils/url.ts";
 
 type Props = {
-  mapId: string;
+  map: GameMapMeta;
   marker: MarkerInstance;
   types: MarkerTypeCategory[];
+  subtypes: Map<string, MarkerTypeSubtype>;
   showLabel: boolean;
   completedSet: Set<string>;
   toggleMarkerCompleted: (marker: MarkerInstance) => void;
 };
 
 /** Lookup icon definition from YAML (by category/subtype). */
-function getSubtypeIconDef(
-  types: MarkerTypeCategory[],
-  categoryId: string,
-  subtypeId: string,
-): IconDefinition {
-  const cat = types.find((c) => c.id === categoryId);
-  const sub = cat?.subtypes.find((s) => s.id === subtypeId) || null;
-
-  const iconName =
-    (sub as any)?.icon || (cat as any)?.icon || "faCircleDot";
-
-  return (
-    ((SolidIcons as any)[iconName] as IconDefinition) ||
-    (SolidIcons.faCircleDot as IconDefinition)
-  );
+function getSubtypeIconDef(sub: MarkerTypeSubtype | undefined, map: GameMapMeta): string {
+  return parseIconUrl(sub?.icon || "", map);
 }
 
 /** Lookup color from YAML (subtype > category > default). */
 function getSubtypeColor(
-  types: MarkerTypeCategory[],
-  categoryId: string,
-  subtypeId: string,
+  sub?: MarkerTypeSubtype, cat?: MarkerTypeCategory,
 ): string {
-  const cat = types.find((c) => c.id === categoryId);
-  const sub = cat?.subtypes.find((s) => s.id === subtypeId) || null;
-
+  return "#FFFFFF";
   return (
-    (sub as any)?.color ||
-    (cat as any)?.color ||
+    sub?.color ||
+    cat?.color ||
     "#E53935"
   );
 }
 
 /** Create a FA-based location pin icon. */
 function createPinIcon(
-  innerIcon: IconDefinition,
+  innerIcon: string,
   pinColor: string,
   completed: boolean,
 ): L.DivIcon {
@@ -86,18 +69,21 @@ function createPinIcon(
       />
 
       {/* Inner icon shifted a bit upwards */}
-      <FontAwesomeIcon
-        icon={innerIcon}
+      <img
+        src={innerIcon}  // string URL to your subtype icon
+        alt=""
         style={{
           position: "absolute",
-          fontSize: "14px",
-          color: "white",
+          width: "20px",
+          height: "20px",
           top: "6px",
           left: "50%",
           transform: "translateX(-50%)",
+          objectFit: "contain",
+          pointerEvents: "none",
+          zIndex: "10000"
         }}
       />
-
       {completed && (
         <FontAwesomeIcon
           icon={faCheckCircle}
@@ -122,25 +108,49 @@ function createPinIcon(
   });
 }
 
-const GameMarker: React.FC<Props> = ({
-                                       mapId,
+const GameMarkerInner: React.FC<Props> = ({
+                                       map,
                                        marker,
                                        types,
+                                       subtypes,
                                        showLabel,
                                        completedSet,
                                        toggleMarkerCompleted,
                                      }) => {
-  // marker.position is [x, y] in our data model
-  const [x, y] = marker.position;
 
   // Namespace for this map's markers (ensures markers/world.yaml loads)
-  const markerNs = `markers/${mapId}`;
+  // console.log(marker)
+  const markerNs = `markers/${map.name}`;
   const { t } = useTranslation(markerNs);
 
-  const markerKeyPrefix = `${markerNs}:${marker.categoryId}.${marker.subtypeId}.${marker.id}`;
+  const markerKeyPrefix = `${markerNs}:${marker.id}`;
+
+  // Find subtype and category definition
+  const sub = subtypes.get(marker.subtype);
+  const cat = types.find((c) => c.name === sub?.category);
+
+  // Category & subtype labels from types namespace (fully-qualified keys)
+  const categoryLabel = t(
+    `types:categories.${cat?.name}.name`,
+  );
+  const subtypeLabel = t(
+    `types:subtypes.${sub?.name}.name`,
+  );
+  const canComplete = !!sub?.canComplete;
+
+  // Completion key is stored per map in useMarkers; here we just build the same key
+  const completedKey = marker.id;
+  const isCompleted = completedSet.has(completedKey);
+
+  // find icon and color
+  const innerIcon = getSubtypeIconDef(sub, map);
+  const pinColor = getSubtypeColor(sub, cat);
+
+  const icon = createPinIcon(innerIcon, pinColor, isCompleted);
 
   // Localized marker name with fallback to id
-  const localizedName = t(`${markerKeyPrefix}.name`, marker.id);
+  // const localizedName = t(`${markerKeyPrefix}.name`, marker.id);
+  const localizedName = subtypeLabel;
 
   // Localized description with fallback text
   const description = t(
@@ -148,39 +158,9 @@ const GameMarker: React.FC<Props> = ({
     "No description available yet.",
   );
 
-  // Category & subtype labels from types namespace (fully-qualified keys)
-  const categoryLabel = t(
-    `types:categories.${marker.categoryId}.name`,
-  );
-  const subtypeLabel = t(
-    `types:subtypes.${marker.categoryId}.${marker.subtypeId}.name`,
-  );
-
-  const innerIcon = getSubtypeIconDef(
-    types,
-    marker.categoryId,
-    marker.subtypeId,
-  );
-  const pinColor = getSubtypeColor(
-    types,
-    marker.categoryId,
-    marker.subtypeId,
-  );
-
-  // Find subtype definition to check canComplete
-  const cat = types.find((c) => c.id === marker.categoryId);
-  const sub = cat?.subtypes.find((s) => s.id === marker.subtypeId) || null;
-  const canComplete = !!sub?.canComplete;
-
-  // Completion key is stored per map in useMarkers; here we just build the same key
-  const completedKey = `${marker.categoryId}::${marker.subtypeId}::${marker.id}`;
-  const isCompleted = completedSet.has(completedKey);
-
-  const icon = createPinIcon(innerIcon, pinColor, isCompleted);
-
   return (
     <Marker
-      position={new L.LatLng(y, x)}
+      position={new L.LatLng(marker.y, marker.x)}
       icon={icon}
     >
       {showLabel && (
@@ -199,8 +179,8 @@ const GameMarker: React.FC<Props> = ({
           name={localizedName}
           categoryLabel={categoryLabel}
           subtypeLabel={subtypeLabel}
-          x={x}
-          y={y}
+          x={marker.x}
+          y={marker.y}
           images={marker.images}
           description={description}
           canComplete={canComplete}
@@ -211,5 +191,7 @@ const GameMarker: React.FC<Props> = ({
     </Marker>
   );
 };
+
+const GameMarker = memo(GameMarkerInner);
 
 export default GameMarker;

@@ -6,6 +6,8 @@ import type L from "leaflet";
  */
 export interface GameMapMeta {
   id: string;
+  name: string;
+  type: string;
   tileWidth: number;
   tileHeight: number;
   tilesCountX: number;
@@ -19,6 +21,8 @@ export interface GameMapMeta {
  */
 export interface MarkerTypeSubtype {
   id: string;
+  name: string;
+  category: string;
   /** Font Awesome icon name, e.g. "faMapPin", "faTree". */
   icon?: string;
   /** Hex color string for the pin body, e.g. "#FFAA00". */
@@ -36,6 +40,7 @@ export interface MarkerTypeSubtype {
  */
 export interface MarkerTypeCategory {
   id: string;
+  name: string;
   icon?: string;
   color?: string;
   subtypes: MarkerTypeSubtype[];
@@ -49,10 +54,10 @@ export interface MarkerTypeCategory {
  */
 export interface MarkerInstance {
   id: string;
-  categoryId: string;
-  subtypeId: string;
-  /** [x, y] in map coordinates. */
-  position: [number, number];
+  // categoryId: string;
+  subtype: string;
+  x: number;
+  y: number;
   images: string[];
 }
 
@@ -74,7 +79,7 @@ export type MapRef = L.Map | null;
  *     height: 1285
  */
 export interface MapsFile {
-  version: number;
+  // version: number;
   maps: GameMapMeta[];
 }
 
@@ -89,7 +94,7 @@ export interface MapsFile {
  *     subtypes: [...]
  */
 export interface TypesFile {
-  version: number;
+  // version: number;
   categories: MarkerTypeCategory[];
 }
 
@@ -102,7 +107,8 @@ export interface TypesFile {
  * So we keep it intentionally loose apart from the 'version' field.
  */
 export interface RawMarkersFile {
-  version: number;
+  // version: number;
   // categories, gatheringPoints, questPoints, enemies, etc.
-  [categoryId: string]: any;
+  // [categoryId: string]: any;
+  markers: MarkerInstance[];
 }
