@@ -37,3 +37,14 @@ errors:
 markerActions:
   markCompleted: "标记为已完成"
   markNotCompleted: "已完成"
+
+introModal:
+  title: "欢迎来到 AION2 互动地图"
+  body: | 
+    永恒之塔2交流群：246681864
+    BUG及点位分享：Suyn77 
+    广告位火热招商中~！
+    
+    工作组成员：苏烟、双酿、言本卿、小海、粥棵儿、阡陌夕晨、Marry
+    热心的小伙伴们：物语、落花千树、笛声青案梦长安、不知水玄月
+  hint: ""

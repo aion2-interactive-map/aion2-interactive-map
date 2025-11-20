@@ -37,3 +37,6 @@ errors:
 markerActions:
   markCompleted: "Mark as completed"
   markNotCompleted: "Completed"
+
+introModal:
+  title: "Welcome to AION2 Interactive Map"
