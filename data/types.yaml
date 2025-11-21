@@ -7,25 +7,25 @@ categories:
   subtypes:
   - canComplete: false
     color: '#000000'
-    icon: UI/Resource/Texture/Icon/UT_Marker_TeleportArtifact_Light_Engraved.png
+    icon: UI/Resource/Texture/Icon/UT_Marker_TeleportArtifact_Light_Engraved.webp
     id: 033dc3f8-d7a5-40fd-83b3-45fbaa66971f
     name: teleport
     order: 0
   - canComplete: false
     color: '#000000'
-    icon: UI/Resource/Texture/Icon/UT_Marker_Vlillage.png
+    icon: UI/Resource/Texture/Icon/UT_Marker_Vlillage.webp
     id: 08b22208-6113-410d-b33a-5e140f3830d5
     name: village
     order: 1
   - canComplete: false
     color: '#000000'
-    icon: UI/Resource/Texture/Icon/UT_Marker_Exploration_Seal.png
+    icon: UI/Resource/Texture/Icon/UT_Marker_Exploration_Seal.webp
     id: d4da5e97-d46a-4b3c-9d90-afd6941a19ee
     name: seal
     order: 2
   - canComplete: false
     color: '#000000'
-    icon: UI/Resource/Texture/Icon/UT_Marker_Exploration_Occupation.png
+    icon: UI/Resource/Texture/Icon/UT_Marker_Exploration_Occupation.webp
     id: 111de9ef-0b75-4de0-9dc5-730c0f181947
     name: occupation
     order: 3
@@ -49,7 +49,7 @@ categories:
   subtypes:
   - canComplete: true
     color: '#000000'
-    icon: UI/Resource/Texture/Item/ETC/Icon_Item_Monolith_Material_L_001.png
+    icon: UI/Resource/Texture/Item/ETC/Icon_Item_Monolith_Material_L_001.webp
     id: 8c336fdf-a1cd-4d9c-8b76-f6466bbb726e
     name: monolithMaterial
     order: 0

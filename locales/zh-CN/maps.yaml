@@ -1,6 +1,24 @@
+Abyss_Reshanta_A:
+  description: 深渊A
+  name: 深渊A
+Abyss_Reshanta_B:
+  description: 深渊B
+  name: 深渊B
 World_D_A:
   description: 魔族大地图
-  name: 魔族A
+  name: 亚尔特盖德（魔）
+World_D_B:
+  description: 魔族大地图B（解包）
+  name: 魔族B
+World_D_Starter:
+  description: 魔族新手村
+  name: 初始地图（魔）
 World_L_A:
   description: 天族大地图
-  name: 天族A
+  name: 斐尔特朗（天）
+World_L_B:
+  description: 天族大地图B（解包）
+  name: 天族B
+World_L_Starter:
+  description: 天族新手村
+  name: 初始地图（天）
