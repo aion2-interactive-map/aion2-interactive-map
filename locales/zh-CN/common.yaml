@@ -41,6 +41,7 @@ markerActions:
   markNotCompleted: "已完成"
 
 introModal:
+  version: "版本"
   title: "欢迎来到 AION2 互动地图"
   body: | 
     永恒之塔2交流群：246681864
@@ -52,4 +53,3 @@ introModal:
     工作组成员：苏烟、双酿、言本卿、小海、粥棵儿、阡陌夕晨、Marry
     热心的小伙伴们：物语、落花千树、笛声青案梦长安、不知水玄月
   hint: "游戏攻略网站维护需要大量时间和精力，如果想要支持我们，可以通过下面的支付宝二维码，你的小小心意是支持我们的动力"
-  version: "版本"
