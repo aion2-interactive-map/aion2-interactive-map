@@ -43,6 +43,17 @@ const TopNavbar: React.FC<TopNavbarProps> = ({ onOpenIntroModal }) => {
         </span>
       </NavbarBrand>
 
+      <div
+        className="
+          absolute left-1/2 top-1/2
+          -translate-x-1/2 -translate-y-1/2
+          pointer-events-none
+          text-sm font-medium text-default-600
+        "
+      >
+        {t("announcement", "Welcome to AION2 Interactive Map!")}
+      </div>
+
       {/* RIGHT: Language switcher + theme toggle */}
       <NavbarContent
         justify="end"
