@@ -8,6 +8,12 @@ categories:
   quest:
     name: 任务
 subtypes:
+  battlefield:
+    description: 地区（战场）
+    name: 地区（战场）
+  hiddenCube:
+    description: 隐藏背包
+    name: 隐藏背包
   monolithMaterial:
     description: 主神痕迹
     name: 主神痕迹
@@ -22,4 +28,4 @@ subtypes:
     name: 传送点
   village:
     description: ''
-    name: 地区
+    name: 地区（村庄）

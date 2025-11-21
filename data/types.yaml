@@ -7,25 +7,41 @@ categories:
   subtypes:
   - canComplete: false
     color: '#000000'
+    hideTooltip: false
     icon: UI/Resource/Texture/Icon/UT_Marker_TeleportArtifact_Light_Engraved.webp
+    iconScale: 1.25
     id: 033dc3f8-d7a5-40fd-83b3-45fbaa66971f
     name: teleport
     order: 0
   - canComplete: false
     color: '#000000'
+    hideTooltip: false
     icon: UI/Resource/Texture/Icon/UT_Marker_Vlillage.webp
+    iconScale: 1.25
     id: 08b22208-6113-410d-b33a-5e140f3830d5
     name: village
     order: 1
   - canComplete: false
     color: '#000000'
+    hideTooltip: false
+    icon: UI/Resource/Texture/Icon/UT_Marker_BattleField.webp
+    iconScale: 1.25
+    id: 08951176-20f3-46fd-818c-f6271c922684
+    name: battlefield
+    order: 2
+  - canComplete: false
+    color: '#000000'
+    hideTooltip: false
     icon: UI/Resource/Texture/Icon/UT_Marker_Exploration_Seal.webp
+    iconScale: 1.25
     id: d4da5e97-d46a-4b3c-9d90-afd6941a19ee
     name: seal
     order: 2
   - canComplete: false
     color: '#000000'
+    hideTooltip: false
     icon: UI/Resource/Texture/Icon/UT_Marker_Exploration_Occupation.webp
+    iconScale: 1.25
     id: 111de9ef-0b75-4de0-9dc5-730c0f181947
     name: occupation
     order: 3
@@ -38,18 +54,28 @@ categories:
 - color: '#000000'
   icon: ''
   id: 559c0e87-1f70-4e38-ae37-cacb71cb7a41
-  name: quest
-  order: 2
-  subtypes: []
-- color: '#000000'
-  icon: ''
-  id: 67fd0858-18ea-40f0-9fb4-f2bedd6c5274
   name: collection
-  order: 3
+  order: 2
   subtypes:
   - canComplete: true
     color: '#000000'
-    icon: UI/Resource/Texture/Item/ETC/Icon_Item_Monolith_Material_L_001.webp
+    hideTooltip: true
+    icon: images/Monolith_Material_Light.webp
+    iconScale: 1.0
     id: 8c336fdf-a1cd-4d9c-8b76-f6466bbb726e
     name: monolithMaterial
     order: 0
+  - canComplete: false
+    color: '#000000'
+    hideTooltip: true
+    icon: images/HiddenCube.webp
+    iconScale: 1.0
+    id: 07258887-ab0d-4293-a5e8-6d73d5578e65
+    name: hiddenCube
+    order: 1
+- color: '#000000'
+  icon: ''
+  id: 67fd0858-18ea-40f0-9fb4-f2bedd6c5274
+  name: quest
+  order: 3
+  subtypes: []

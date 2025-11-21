@@ -1,7 +1,18 @@
-world:
-  name: "World Map"
-  description: "A vast overworld filled with diverse regions and adventures."
-
-dungeon:
-  name: "Ancient Dungeon"
-  description: "A mysterious underground labyrinth guarded by ancient forces."
+Abyss_Reshanta_A:
+  description: Abyss Reshanta A
+  name: Abyss Reshanta A
+Abyss_Reshanta_B:
+  description: Abyss Reshanta B
+  name: Abyss Reshanta B
+World_D_A:
+  description: Altgard (Dark)
+  name: Altgard (Dark)
+World_D_Starter:
+  description: Starter (Dark)
+  name: Starter (Dark)
+World_L_A:
+  description: Verteron (Light)
+  name: Verteron (Light)
+World_L_Starter:
+  description: Starter (Light)
+  name: Starter (Light)
