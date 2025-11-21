@@ -1,0 +1,156 @@
+AltamiaCanyon:
+  description: 阿塔米亞峽谷
+  name: 阿塔米亞峽谷
+AullaeuFuneralIsland:
+  description: 阿爾拉烏葬禮島
+  name: 阿爾拉烏葬禮島
+AullaeuVillage:
+  description: 阿爾拉烏部落
+  name: 阿爾拉烏部落
+BasfeltRuins:
+  description: 巴斯斐爾特廢墟
+  name: 巴斯斐爾特廢墟
+BasfeltWaterfall:
+  description: 巴斯斐爾特瀑布
+  name: 巴斯斐爾特瀑布
+BattlescarMound:
+  description: 激戰之丘
+  name: 激戰之丘
+BlackClawVillage:
+  description: 黑爪部落
+  name: 黑爪部落
+CalderonCanyon:
+  description: 科巴利亞峽谷
+  name: 科巴利亞峽谷
+CrimsonIsle:
+  description: 紅玉之島
+  name: 紅玉之島
+DawnLegionBase:
+  description: 黎明軍團基地
+  name: 黎明軍團基地
+DranaPlantation:
+  description: 德拉那栽培地
+  name: 德拉那栽培地
+Dranactus:
+  description: 德拉那克圖斯
+  name: 德拉那克圖斯
+DredgionCrashSite:
+  description: 德雷得奇安失事地
+  name: 德雷得奇安失事地
+EasternAltamiaHighland:
+  description: 阿爾塔米亞高原東部
+  name: 阿爾塔米亞高原東部
+EasternCantasValley:
+  description: 坎塔斯溪谷東部
+  name: 坎塔斯溪谷東部
+EasternGribadeHighland:
+  description: 葛利巴德丘陵地東部
+  name: 葛利巴德丘陵地東部
+EasternTolbasForest:
+  description: 托爾巴斯森林東部
+  name: 托爾巴斯森林東部
+EllunRiverMarsh:
+  description: 艾爾倫河沼澤
+  name: 艾爾倫河沼澤
+EllunRiverMeadow:
+  description: 艾爾倫河草地
+  name: 艾爾倫河草地
+EllunRiverMidstream:
+  description: 艾爾倫河中游
+  name: 艾爾倫河中游
+EternalIsle:
+  description: 永恆之島
+  name: 永恆之島
+FafniteDeposit:
+  description: 法夫奈特埋藏地
+  name: 法夫奈特埋藏地
+ForestofExiles:
+  description: 流放者之森
+  name: 流放者之森
+GardenoftheIllusionGod:
+  description: 幻影神庭院
+  name: 幻影神庭院
+IdunsLake:
+  description: 伊頓湖
+  name: 伊頓湖
+ImmortalIsle:
+  description: 不滅之島
+  name: 不滅之島
+ImpetusiumSquare:
+  description: 因派圖西姆廣場
+  name: 因派圖西姆廣場
+KrakaFootpath:
+  description: 庫拉卡坡道
+  name: 庫拉卡坡道
+LagtaFortress:
+  description: 拉格塔要塞
+  name: 拉格塔要塞
+MahindelCliff:
+  description: 瑪辛戴爾峭壁
+  name: 瑪辛戴爾峭壁
+MoslanForest:
+  description: 瑪斯蘭森林
+  name: 瑪斯蘭森林
+NahidBrigadeFortress:
+  description: 納希德軍團要塞
+  name: 納希德軍團要塞
+NamelessCemetery:
+  description: 無名墓地
+  name: 無名墓地
+NornirAssembly:
+  description: 諾爾尼爾集會所
+  name: 諾爾尼爾集會所
+NorthernTolbasForest:
+  description: 托爾巴斯森林北部
+  name: 托爾巴斯森林北部
+PilgrimsRidge:
+  description: 朝聖者山路
+  name: 朝聖者山路
+PurifyingForest:
+  description: 淨化之森
+  name: 淨化之森
+SafeHaven:
+  description: 逃亡者村莊
+  name: 逃亡者村莊
+SanctumOutpost:
+  description: 聖所監視哨所
+  name: 聖所監視哨所
+ScarletForest:
+  description: 紅色森林
+  name: 紅色森林
+SilentHill:
+  description: 寂靜山丘
+  name: 寂靜山丘
+SouthernAltamiaHighland:
+  description: 阿爾塔米亞高原南部
+  name: 阿爾塔米亞高原南部
+SouthernGribadeHighland:
+  description: 葛利巴德丘陵地南部
+  name: 葛利巴德丘陵地南部
+SouthernTolbasForest:
+  description: 托爾巴斯森林南部
+  name: 托爾巴斯森林南部
+SpiritIsle:
+  description: 精靈之島
+  name: 精靈之島
+TraneinHighland:
+  description: 特拉內因丘陵地
+  name: 特拉內因丘陵地
+Uruthumheim:
+  description: 烏爾通海姆
+  name: 烏爾通海姆
+VerteronFortressRuins:
+  description: 裴爾特朗要塞廢墟
+  name: 裴爾特朗要塞廢墟
+WesternAltamiaHighland:
+  description: 阿爾塔米亞高原西部
+  name: 阿爾塔米亞高原西部
+WesternCantasValley:
+  description: 坎塔斯溪谷西部
+  name: 坎塔斯溪谷西部
+WesternGribadeHighland:
+  description: 葛利巴德丘陵地西部
+  name: 葛利巴德丘陵地西部
+ZumionVillage:
+  description: 祖米昂村莊
+  name: 祖米昂村莊
