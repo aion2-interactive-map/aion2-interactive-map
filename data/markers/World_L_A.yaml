@@ -2,2235 +2,1915 @@ markers:
 - category: collection
   id: 38f4124a-a94a-4033-848a-53e4d93d2262
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3960.0
   y: 5208.0
 - category: collection
   id: 472f973c-c823-4926-a306-e446f37ef368
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3236.0
   y: 4734.0
 - category: collection
   id: 6f471243-65dc-43ad-9c29-e83bcb27a2fb
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4066.0
   y: 4937.0
 - category: collection
   id: 66263d26-8e9a-41b1-98f1-03c079a37469
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4016.0
   y: 5186.0
 - category: collection
   id: 7d2bb186-5cc3-4138-a6b2-7e0111fb9623
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4072.0
   y: 5202.0
 - category: collection
   id: 1682df7d-6d82-468d-a614-7197d13538f2
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4138.0
   y: 5105.0
 - category: collection
   id: ea798af0-2fcd-40e1-8be0-2235390125b1
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4185.0
   y: 4927.0
 - category: collection
   id: 01553329-cddc-47b9-b4e3-ba943d9b324e
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3640.0
   y: 4637.0
 - category: collection
   id: 8fb047f9-76b9-4888-bf43-3983341f1a2f
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3909.0
   y: 4502.0
 - category: collection
   id: 2629f2eb-387e-4aa5-b7fc-e2cdf305a636
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3790.0
   y: 4475.0
 - category: collection
   id: d303e4e3-4862-427a-b1e7-38d5d324e227
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3595.0
   y: 4275.0
 - category: collection
   id: d5928adc-ef6d-4583-bd2d-4269341ddb21
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3702.0
   y: 4119.0
 - category: collection
   id: 983b38cc-cc98-4012-a0fd-04ffd7beee58
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4006.0
   y: 4191.0
 - category: collection
   id: 190e1531-0237-424c-ba36-add906c4a749
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4108.0
   y: 4015.0
 - category: collection
   id: 79da3132-e5d6-4a29-872e-9411dab577b4
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3947.0
   y: 3985.0
 - category: collection
   id: ed7d8ff6-0286-4b66-bc6f-91379ca0b03a
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3933.0
   y: 4072.0
 - category: collection
   id: 4ccde4a6-01b6-4314-bd91-a50c12be297c
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3256.0
   y: 4067.0
 - category: collection
   id: 57722588-b2c1-4ac1-b590-1c2bf2c48583
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3030.0
   y: 4962.0
 - category: collection
   id: b0ed11ad-be7f-4faf-a2ec-e7ad14c24d71
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3726.0
   y: 4579.0
 - category: collection
   id: 4177df39-80e1-4863-862b-6ed61f9f3425
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3279.0
   y: 4391.0
 - category: collection
   id: 5d2efac8-2c18-495d-aaef-d2c91122b7e1
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4272.0
   y: 4667.0
 - category: collection
   id: fec945b8-2593-4484-beaf-67abd6afe0e9
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 2982.0
   y: 5189.0
 - category: collection
   id: 58912d6d-1320-48e3-a606-a9e6c3f596e1
   name: ''
-  regionId: !!python/object/apply:asyncpg.pgproto.pgproto.UUID
-  - !!binary |
-    qxHuDn4RQq2dmKY9E3SQxA==
+  region: DawnLegionBase
   subtype: monolithMaterial
   x: 2979.0
   y: 5123.0
 - category: collection
   id: 64fe5c94-c93d-42b2-80ce-90e533efef78
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4734.0
   y: 3236.0
 - category: collection
   id: 5d76ba66-11ae-4d5e-b655-5cb818946de5
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3016.0
   y: 4240.0
 - category: collection
   id: 9faba42f-c730-4374-8a19-156cd9e50feb
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3653.0
   y: 4993.0
 - category: collection
   id: 739a7f37-dbb6-4caa-aa03-3495fc6219ac
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3709.0
   y: 4193.0
 - category: collection
   id: 21cfd77c-8770-4af8-8598-2a8a4532402c
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3611.0
   y: 3747.0
 - category: collection
   id: 1ab40fa4-eff2-442d-83b5-b9b6f73d914d
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3665.0
   y: 3651.0
 - category: collection
   id: 189a3b93-2f5d-4f33-b995-e0250c0ed577
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3207.0
   y: 3736.0
 - category: collection
   id: 47956f36-fe45-42c4-af1f-eb49aa166727
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 2889.0
   y: 5096.0
 - category: collection
   id: 16f3d6af-ae50-4575-8779-b50cc05fd154
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 2991.0
   y: 5242.0
 - category: collection
   id: 3a718256-fa36-44b8-894c-d49194ed864e
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 2991.0
   y: 5242.0
 - category: collection
   id: 52ea3dfc-1f1d-4407-919f-2de86caaa122
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 2961.0
   y: 5172.0
 - category: location
   id: 2ff12ef9-6317-48d4-84a6-7cca9905beee
   name: 黎明军团基地
-  regionId: null
   subtype: teleport
   x: 2981.0
   y: 5170.0
 - category: location
   id: 952537e7-0a8a-4742-a024-550554680ac3
   name: 溪谷监视哨所
-  regionId: null
   subtype: teleport
   x: 3162.0
   y: 4854.0
 - category: location
   id: cbf40708-d332-49c2-b261-641b6dd214f4
   name: 坎塔斯溪谷西部营地
-  regionId: null
   subtype: teleport
   x: 2990.0
   y: 4593.0
 - category: location
   id: 1f031b1c-95d6-4b66-a022-3a1a8690eeec
   name: 海岸营帐
-  regionId: null
   subtype: teleport
   x: 3143.0
   y: 4431.0
 - category: location
   id: 8ed1c656-fd6e-4b64-8a35-b08e49ffaee3
   name: 沼泽监视哨所
-  regionId: null
   subtype: teleport
   x: 3867.0
   y: 4794.0
 - category: location
   id: aa87e417-621c-4678-99dc-3961df292cb0
   name: 倒塌的斐尔特朗结界塔
-  regionId: null
   subtype: teleport
   x: 4045.0
   y: 5164.0
 - category: location
   id: 7a1fdea4-5565-4daa-ba59-e993340ca75c
   name: 坎塔斯溪谷东部营地
-  regionId: null
   subtype: teleport
   x: 3369.0
   y: 4815.0
 - category: location
   id: ea3c8375-fa53-4c6e-95f4-57298b7fe8a1
   name: 精灵休息处
-  regionId: null
   subtype: teleport
   x: 4424.0
   y: 5139.0
 - category: location
   id: 5f334a9e-bdae-40bc-80fa-7caedfce0a90
   name: 幻影天培尔营地
-  regionId: null
   subtype: teleport
   x: 3907.0
   y: 4539.0
 - category: location
   id: 0f310a22-7edf-4ce4-8dff-4d58ea68dfb6
   name: 遗迹探险营地
-  regionId: null
   subtype: teleport
   x: 3438.0
   y: 4121.0
 - category: location
   id: 1bacf715-6079-40a9-9561-4a708911b3a6
   name: 废墟前藏身处
-  regionId: null
   subtype: teleport
   x: 3673.0
   y: 4253.0
 - category: location
   id: 821ac64f-705b-45d5-9ac6-e630d79edd3c
   name: 倒塌的柱子
-  regionId: null
   subtype: teleport
   x: 4001.0
   y: 4104.0
 - category: location
   id: f5432610-67ea-4d7a-bb56-7a3c19332e94
   name: 黎明军团临时哨所
-  regionId: null
   subtype: teleport
   x: 3854.0
   y: 3649.0
 - category: location
   id: d8ba6dce-aca6-45be-92a1-72748a472326
   name: 微风商会总部
-  regionId: null
   subtype: teleport
   x: 3243.0
   y: 3694.0
 - category: location
   id: 226e716d-a52c-4abb-9f3c-5e863ff43413
   name: 南部树古车站
-  regionId: null
   subtype: teleport
   x: 3388.0
   y: 3508.0
 - category: location
   id: 36ab5c1d-f4f1-4c4d-9b36-b3ef1689819f
   name: 托儿巴斯森林外围
-  regionId: null
   subtype: teleport
   x: 3064.0
   y: 3453.0
 - category: location
   id: 5e66bf2d-53e2-4f3b-bc78-8e2c56a3ea2e
   name: 亚斯汀佣兵团据点
-  regionId: null
   subtype: teleport
   x: 3445.0
   y: 3226.0
 - category: location
   id: c933a390-ea02-4c6e-a6ef-e917dde0b2f5
   name: 东部树古车站
-  regionId: null
   subtype: teleport
   x: 3748.0
   y: 3530.0
 - category: location
   id: f030c709-ec7a-423a-9477-f69fd9620d0c
   name: 阿尔拉乌部落边境
-  regionId: null
   subtype: teleport
   x: 3860.0
   y: 3358.0
 - category: location
   id: 0d4d8ad6-5fa9-43f4-89fd-5e9c32e0054d
   name: 废弃微风分所
-  regionId: null
   subtype: teleport
   x: 3673.0
   y: 2925.0
 - category: location
   id: a93e91f9-04a5-46a1-9fb2-04b3de32b0a6
   name: 祖米昂村庄
-  regionId: null
   subtype: teleport
   x: 4708.0
   y: 3924.0
 - category: location
   id: e7fec432-c704-4337-a8ed-c4428a989bb4
   name: 岩石山丘监视哨所
-  regionId: null
   subtype: teleport
   x: 4455.0
   y: 3501.0
 - category: location
   id: 7bd65d38-267c-4265-83d6-ae77534b3e93
   name: 峡谷营地
-  regionId: null
   subtype: teleport
   x: 4895.0
   y: 3449.0
 - category: location
   id: 172cf3a8-0dd0-409e-8a8b-0065399530a0
   name: 清醒的警戒哨所
-  regionId: null
   subtype: teleport
   x: 5310.0
   y: 3745.0
 - category: location
   id: 5d33d64d-eeda-4cb5-9985-24b48a9ae8f5
   name: 净化之丘
-  regionId: null
   subtype: teleport
   x: 5719.0
   y: 3671.0
 - category: location
   id: b47cf722-3211-4a16-98a9-7d456ab23c6c
   name: 诺托斯军团哨所
-  regionId: null
   subtype: teleport
   x: 5235.0
   y: 4553.0
 - category: location
   id: 50082305-4419-4ebc-a83e-174683bd61e1
   name: 奴工休息处
-  regionId: null
   subtype: teleport
   x: 4935.0
   y: 4642.0
 - category: location
   id: ea4e3187-46fb-4490-95bc-2f989fcfda13
   name: 德拉那运输哨所
-  regionId: null
   subtype: teleport
   x: 5334.0
   y: 4730.0
 - category: location
   id: fce1aa76-e434-44f6-b463-9b8eda162099
   name: 野兽猎人营地
-  regionId: null
   subtype: teleport
   x: 4563.0
   y: 2920.0
 - category: location
   id: 799b6758-69ff-4f17-90b9-7b612d147bd4
   name: 朝圣者休息处
-  regionId: null
   subtype: teleport
   x: 4893.0
   y: 2609.0
 - category: location
   id: c1cbb36d-270c-4e34-b1f4-4950fbf6f7ce
   name: 红色森林观察地
-  regionId: null
   subtype: teleport
   x: 4870.0
   y: 5153.0
 - category: location
   id: 25c360fe-39e8-40ea-81bf-d5cb98f6d5b2
   name: 纳西德废弃物处理场
-  regionId: null
   subtype: teleport
   x: 5473.0
   y: 5424.0
 - category: location
   id: e22ddc2b-35c8-4af4-bcce-eef331e0c8c9
   name: 红玉之岛哨所
-  regionId: null
   subtype: teleport
   x: 5006.0
   y: 6007.0
 - category: location
   id: eb195660-e015-4ed1-b910-32e9ed3ede10
   name: 库拉卡坡道废水下游
-  regionId: null
   subtype: teleport
   x: 4281.0
   y: 4801.0
 - category: location
   id: 6302e04a-697f-4dd1-b57b-6fea2b3fdc0e
   name: 法莫斯的农场
-  regionId: null
   subtype: teleport
   x: 3444.0
   y: 4331.0
 - category: location
   id: fc837f0e-b40f-43cd-83ce-64012866c569
   name: 坎塔斯溪谷蘑菇树顶部
-  regionId: null
   subtype: teleport
   x: 3543.0
   y: 5035.0
 - category: location
   id: 0bfd0d02-c085-4912-8624-d433dab3a21c
   name: 幻影祈祷室入口
-  regionId: null
   subtype: teleport
   x: 3861.0
   y: 4002.0
 - category: location
   id: 3e6f7f6c-89a6-46ba-bf03-b9ad608babf1
   name: 艾尔倫河中游池塘
-  regionId: null
   subtype: teleport
   x: 3114.0
   y: 4011.0
 - category: location
   id: 8ceebebe-0da5-47b5-b965-2ada5239a587
   name: 流放者之森
-  regionId: null
   subtype: teleport
   x: 3466.0
   y: 2684.0
 - category: location
   id: 1dc00815-6bea-4acc-850f-e5a699ba526d
   name: 阿尔拉乌葬礼岛
-  regionId: null
   subtype: teleport
   x: 2815.0
   y: 3425.0
 - category: location
   id: 010cec84-8e74-4552-a247-5433ba88b7c5
   name: 高原尽头营地
-  regionId: null
   subtype: teleport
   x: 4689.0
   y: 2469.0
 - category: location
   id: 291e5b1c-6a20-4fb5-80ae-b6e9905c3ec2
   name: 坎塔斯溪谷空中岛
-  regionId: null
   subtype: teleport
   x: 2532.0
   y: 4679.0
 - category: location
   id: fc0f01e3-9bdb-4f8b-b9fa-01a57a23f9fa
   name: 坎塔斯溪谷蘑菇树顶端
-  regionId: null
   subtype: teleport
   x: 3596.0
   y: 4700.0
 - category: location
   id: 0d905d73-638f-43a3-b1a2-3e08319e4a02
   name: 艾尔倫河沼泽峭壁
-  regionId: null
   subtype: teleport
   x: 3745.0
   y: 5021.0
 - category: location
   id: a9b0a139-62fd-4652-8742-3bad8d85bc51
   name: 艾尔倫河中游高原
-  regionId: null
   subtype: teleport
   x: 2999.0
   y: 3759.0
 - category: location
   id: 3c9aa67b-b828-4102-81ec-bdddd8a38455
   name: 斐尔特朗要塞山谷
-  regionId: null
   subtype: teleport
   x: 4233.0
   y: 4186.0
 - category: location
   id: 5d1f76ae-f3cf-4b97-b07e-c215f3a9b3c9
   name: 阿尔拉乌部落空中岛
-  regionId: null
   subtype: teleport
   x: 3442.0
   y: 2499.0
 - category: location
   id: 7a55c978-5ade-45b7-81dc-9ebc2afe8e0c
   name: 阿尔拉乌部落山谷
-  regionId: null
   subtype: teleport
   x: 3905.0
   y: 2644.0
 - category: location
   id: 7a39630f-1c30-4fa4-b845-0612a1abd3b5
   name: 祖米昂石像
-  regionId: null
   subtype: teleport
   x: 4469.0
   y: 3897.0
 - category: location
   id: 49692b31-3dae-43e6-83a8-653b6a29c3df
   name: 祖米昂神殿朝圣之路
-  regionId: null
   subtype: teleport
   x: 4120.0
   y: 3213.0
 - category: location
   id: c463b435-cf5a-40a4-911f-3bfa65adb860
   name: 阿尔塔米亚高原遗迹地
-  regionId: null
   subtype: teleport
   x: 5514.0
   y: 3891.0
 - category: location
   id: 215ad48b-9cfd-4930-9332-23044d051a1c
   name: 昔日祖米昂神殿遗址
-  regionId: null
   subtype: teleport
   x: 5190.0
   y: 3464.0
 - category: location
   id: 389850ba-89a9-461f-ab63-2c67e73b6b5b
   name: 峡谷空中岛
-  regionId: null
   subtype: teleport
   x: 5145.0
   y: 3061.0
 - category: location
   id: 5d4c9dd1-bb01-41b1-9075-f8c546ccd8d4
   name: 风之伤痕
-  regionId: null
   subtype: teleport
   x: 4806.0
   y: 2952.0
 - category: location
   id: e7b049eb-a51e-4e0d-964f-a28ca83efc1d
   name: 阿尔塔米亚南部海岸峭壁
-  regionId: null
   subtype: teleport
   x: 4536.0
   y: 2366.0
 - category: location
   id: b3717663-31b6-4c79-a02f-58b389335faa
   name: 库拉卡坡道营地
-  regionId: null
   subtype: teleport
   x: 5092.0
   y: 4117.0
 - category: location
   id: b335de89-eff5-4eea-9b75-274d90d4517a
   name: 库拉卡上坡
-  regionId: null
   subtype: teleport
   x: 4449.0
   y: 4447.0
 - category: location
   id: 48e9c9bb-ae2a-4a47-952b-1b28f8dd9d6e
   name: 纳希德军团要塞山丘
-  regionId: null
   subtype: teleport
   x: 5885.0
   y: 4416.0
 - category: collection
   id: 97e740b4-5bce-4854-8495-85a7b9b49728
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3193.0
   y: 4710.0
 - category: location
   id: d3929b56-c9fd-482e-9939-35f5f73538cd
   name: 红落叶树林
-  regionId: null
   subtype: teleport
   x: 4631.0
   y: 4865.0
 - category: location
   id: afeb9856-2f7e-400b-9997-2aa12b7d09f1
   name: 幻影神庭西侧观景台
-  regionId: null
   subtype: teleport
   x: 5026.0
   y: 2253.0
 - category: location
   id: 88c604d5-e041-49a5-bc42-55f431055b64
   name: 幻影神庭东侧观景台
-  regionId: null
   subtype: teleport
   x: 5364.0
   y: 2664.0
 - category: collection
   id: d742675b-2635-4af9-a8da-e330c01ce1cb
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4027.0
   y: 4266.0
 - category: collection
   id: 317f4bb4-2239-4ea8-8819-d14eb1c12e26
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 2922.0
   y: 5243.0
 - category: collection
   id: 1bdaa360-7795-4d9d-990f-c5bc23319b9a
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3253.0
   y: 4600.0
 - category: collection
   id: 535d1a47-cc74-4f97-a93b-df0deca0d53f
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3265.0
   y: 4647.0
 - category: collection
   id: 8fef6a3e-3470-4514-8472-2da2ffed8158
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 2932.0
   y: 5189.0
 - category: collection
   id: cbfbb8bb-59d1-47bf-9b11-76aef62ac4c3
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3013.0
   y: 5123.0
 - category: collection
   id: 3e6faa14-d30d-445d-bcc4-85d1c2d738f2
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3240.0
   y: 4330.0
 - category: collection
   id: 9559a1d6-6dbf-41c6-a62a-22b73cd6c5b4
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3017.0
   y: 5020.0
 - category: collection
   id: d11aaea1-8142-40ad-b173-3772ca4d5a89
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 2995.0
   y: 5222.0
 - category: collection
   id: 8d10307b-3098-4fa8-a152-2683e1a7dc57
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3058.0
   y: 4405.0
 - category: collection
   id: a74eade9-21d8-4223-9f09-81321e586b7a
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3090.0
   y: 4354.0
 - category: collection
   id: 3e094b72-0d59-4e77-9a1a-5257354ae863
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 2866.0
   y: 5154.0
 - category: collection
   id: ce8dcc10-2e28-4cb2-bf3e-53d7c8814adb
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3100.0
   y: 4240.0
 - category: collection
   id: b0d2f761-7618-4847-ac1c-8097ab5a789e
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 2969.0
   y: 4618.0
 - category: collection
   id: 637883e7-f408-43c6-ad28-3abca775e252
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3148.0
   y: 4708.0
 - category: collection
   id: 5f677b37-c42a-4b1f-b39f-c73a45dec359
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3119.0
   y: 4726.0
 - category: collection
   id: 7b863288-b9a9-417c-8fc1-114f50e8465b
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3222.0
   y: 4666.0
 - category: collection
   id: 535edce0-5623-4e4b-b815-d474fc0201a5
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3102.0
   y: 5083.0
 - category: collection
   id: 34107de2-781e-47a5-ad68-3abcef2661ae
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3299.0
   y: 4607.0
 - category: collection
   id: 9c88be83-d731-4446-8dc1-b7ba310d7b3e
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3321.0
   y: 4556.0
 - category: collection
   id: 172739e2-7315-4b02-b9aa-6eb270cf8df3
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3341.0
   y: 4488.0
 - category: collection
   id: b9ce3ea0-2852-41ca-89fe-d5d8e8ef8b3c
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3363.0
   y: 4461.0
 - category: collection
   id: 34c01b60-23fe-4313-a4c0-23d2119a5a99
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3349.0
   y: 4438.0
 - category: collection
   id: f7cb0365-304f-4162-85a7-9c98c43a7287
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3117.0
   y: 5127.0
 - category: collection
   id: aa13e386-cdb1-492e-911c-1e5a5d408ce5
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3051.0
   y: 5159.0
 - category: collection
   id: 920e0a9c-58c5-4bd5-9dc9-d4fd99451db0
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3120.0
   y: 4587.0
 - category: collection
   id: e8f5a3ed-f3f4-4d0f-83e1-b3e62755091c
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3728.0
   y: 4904.0
 - category: collection
   id: e89f51d0-133e-4be0-9ff5-3af799106f50
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3797.0
   y: 4844.0
 - category: collection
   id: a545ecf2-b068-4896-a349-b2a619951a74
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3889.0
   y: 4760.0
 - category: collection
   id: cac026f9-a13f-4860-aa8b-ada362af07d8
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3797.0
   y: 4619.0
 - category: collection
   id: bff4472d-c2b2-407e-980c-ffb457696a19
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3667.0
   y: 4476.0
 - category: collection
   id: 13533794-0472-4a2c-a29a-0f979ac18e3f
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3607.0
   y: 4501.0
 - category: collection
   id: 7d2a4a2b-d164-4b1e-a37c-0e7b5b4c851c
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3562.0
   y: 4763.0
 - category: collection
   id: 108c3a35-70d4-4322-a2bf-bc0903898a2d
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3518.0
   y: 4809.0
 - category: collection
   id: 1f888b12-0ad0-413b-9a21-65761e3a2d09
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 2932.0
   y: 5319.0
 - category: collection
   id: 8cf503be-1959-4863-a077-f7d5ba6855d4
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3061.0
   y: 4767.0
 - category: collection
   id: 7d9cadd2-77b0-4ad0-a18c-9ffff1232baf
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3355.0
   y: 3509.0
 - category: collection
   id: 7868477c-22ac-4377-a21c-0bcc6099b265
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3445.0
   y: 3499.0
 - category: collection
   id: e624df12-e347-42cb-910f-555a0448f7d6
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3360.0
   y: 3343.0
 - category: collection
   id: d5c5e858-b995-4dcf-871e-b8dc4a7dc9a7
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3432.0
   y: 3270.0
 - category: collection
   id: d73d1c40-34dd-46c6-8564-74767d261124
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3489.0
   y: 3262.0
 - category: collection
   id: 077d64e1-5d46-43bc-b658-04f295d596f4
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3766.0
   y: 3223.0
 - category: collection
   id: 05ae7443-cdbb-4275-b710-d7779db25903
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3845.0
   y: 3310.0
 - category: collection
   id: 41f01c24-91dd-4255-85ab-5aee2b252f30
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3886.0
   y: 3367.0
 - category: collection
   id: ef11f150-ab2f-4495-a3f1-a9fa94ba9fc6
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3853.0
   y: 3348.0
 - category: collection
   id: 30815887-bcc4-4118-a173-c6fa59266db1
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3390.0
   y: 4807.0
 - category: collection
   id: 9b1dac42-fc39-4dab-a3b8-e3bf6c72bcdd
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3953.0
   y: 4208.0
 - category: collection
   id: a17fc103-5ff8-4690-b279-84039ddb6aaa
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4051.0
   y: 4103.0
 - category: collection
   id: a241682c-8960-49a8-b43b-55fff0a168eb
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3970.0
   y: 4076.0
 - category: collection
   id: 95e995cb-20bb-4837-8566-e4951fb97461
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3838.0
   y: 4041.0
 - category: collection
   id: daac1428-5e37-48a0-8fc4-2db7fc31c297
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4159.0
   y: 4157.0
 - category: collection
   id: 59f60fb1-6a16-4fae-b16b-99d617494037
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4223.0
   y: 4135.0
 - category: collection
   id: 596e5201-eb45-4904-8ad8-079846f6d2c1
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3351.0
   y: 4943.0
 - category: collection
   id: fc004129-2834-4efb-a0a2-950f6f5b16b9
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3794.0
   y: 4248.0
 - category: collection
   id: 37c93462-197e-43eb-be63-cb238dc30ec1
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3809.0
   y: 4142.0
 - category: collection
   id: cf5c7196-52fc-49e6-ad83-76401dd52914
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3895.0
   y: 3879.0
 - category: collection
   id: 566999af-33db-4598-b066-8b265d8934ad
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3535.0
   y: 4991.0
 - category: collection
   id: 6009b4c0-dd79-4311-b987-d98d2c4d6106
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4151.0
   y: 4517.0
 - category: collection
   id: 43c7cc61-1b22-429d-a76b-1daf56ca7de4
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4331.0
   y: 4877.0
 - category: collection
   id: 475fec51-28cf-40cc-9583-53a20065dcb4
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4154.0
   y: 5019.0
 - category: collection
   id: 11ac73ff-baa5-45bd-bdd6-1eda4ab269d3
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4071.0
   y: 5037.0
 - category: collection
   id: d8c83147-892e-44e1-8cea-c54fdd915f47
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3439.0
   y: 4501.0
 - category: collection
   id: 788dc1a7-91c3-408e-a673-c44059a976be
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3427.0
   y: 4365.0
 - category: collection
   id: 4095951d-7126-4c86-963a-5629d2cb09a8
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3468.0
   y: 5037.0
 - category: collection
   id: a7c80f19-74d7-4fe0-a166-5cbea52c2195
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3874.0
   y: 3844.0
 - category: collection
   id: 9945669e-ee6a-4204-ab74-378bdf2d0d51
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3716.0
   y: 4376.0
 - category: collection
   id: 90c3e6aa-304f-45e6-a8b5-ce720b5adb43
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3633.0
   y: 4318.0
 - category: collection
   id: 529c56ba-a268-4b7a-be23-85cac5a1f2a2
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3617.0
   y: 4313.0
 - category: collection
   id: b59e5e29-21c2-42bd-a483-28d4b977918a
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3591.0
   y: 4297.0
 - category: collection
   id: 51effc06-af35-4444-929b-fd268a8f2fab
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3957.0
   y: 4324.0
 - category: collection
   id: f14b8cc8-57b9-436b-bede-7991a3e82689
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3977.0
   y: 4375.0
 - category: collection
   id: c2f387b3-cb30-4cb1-92eb-cacd99bcbc64
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3368.0
   y: 3635.0
 - category: collection
   id: 3b7ab28b-cff3-45a0-9593-d8c0c2f7a8b4
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4008.0
   y: 4181.0
 - category: collection
   id: f834c545-91df-4e13-acd1-97f8507ac222
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3237.0
   y: 3647.0
 - category: collection
   id: 3b1533a4-8cc2-47db-a80d-3f843c1a3988
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3490.0
   y: 3686.0
 - category: collection
   id: 239e05f5-65d5-4734-b82f-7860280d6312
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3858.0
   y: 3646.0
 - category: collection
   id: cf2ee84d-fa5a-4853-adc1-3a353d8e700a
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4029.0
   y: 3970.0
 - category: collection
   id: 0bdb44b5-960b-4f05-b11a-3a725ba7001e
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3597.0
   y: 3990.0
 - category: collection
   id: 4d21634a-6a00-4366-97fd-cf087215f7b6
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3413.0
   y: 4297.0
 - category: collection
   id: a962ca3d-3bd1-445d-bfc8-0dc2fb1a976f
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3744.0
   y: 3999.0
 - category: collection
   id: c0c807ac-7155-47f7-90e7-47e5e55339e7
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3777.0
   y: 5066.0
 - category: collection
   id: 294d92df-5a4e-4a75-b796-499fc037ae47
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3795.0
   y: 3865.0
 - category: collection
   id: 30e0e069-7d11-4de1-88f6-19d70f4fe3f1
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3157.0
   y: 4102.0
 - category: collection
   id: 7779ccbd-1b12-4660-b9f7-9f156b61d21e
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3582.0
   y: 3698.0
 - category: collection
   id: 2a8b729b-612a-4bce-b9d7-0b1893646392
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3533.0
   y: 3177.0
 - category: collection
   id: 0d71b21a-a682-4d88-b0cd-ca2df26c704a
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3738.0
   y: 3175.0
 - category: collection
   id: 19624dec-1536-431e-891c-16d74d4cf857
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3735.0
   y: 3142.0
 - category: collection
   id: 98066d17-b406-4c46-8918-25fd3710745f
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4232.0
   y: 4093.0
 - category: collection
   id: 2be32a28-3609-40c0-9c0c-d2b1cc10b830
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3858.0
   y: 3757.0
 - category: collection
   id: 3fca4b77-6f0f-48f7-a08f-d5247de98f41
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4228.0
   y: 3981.0
 - category: collection
   id: 3c43c31f-f5da-4ba0-a064-9402eecd643c
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4252.0
   y: 4168.0
 - category: collection
   id: 4108538f-8cff-4271-a8c1-c1ed1b157780
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4456.0
   y: 4138.0
 - category: collection
   id: 99c1ef6e-76b0-4e8d-af2a-ef310b5ee330
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4385.0
   y: 4082.0
 - category: collection
   id: 71880fdb-5ba5-4e31-8b18-cc52a26d4f39
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3727.0
   y: 2865.0
 - category: collection
   id: 87dee76b-b473-4e8c-8aa0-99389480f94f
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3722.0
   y: 2948.0
 - category: collection
   id: ec2d856e-d52c-4ad6-a888-bff2194c62f3
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3809.0
   y: 2916.0
 - category: collection
   id: fbae853b-c2cd-461f-9e75-9a048d9549ce
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3690.0
   y: 2936.0
 - category: collection
   id: d59b00aa-1655-4882-a844-86a858f8e78d
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3675.0
   y: 2909.0
 - category: collection
   id: 315bf8d0-b69a-4000-aa2f-49d55321e300
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4302.0
   y: 3885.0
 - category: collection
   id: 09690daf-b4b2-45d5-a120-54809d02e1da
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3850.0
   y: 2683.0
 - category: collection
   id: e7545bff-4e53-44ed-af7a-48dc10eabc33
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3862.0
   y: 2597.0
 - category: collection
   id: dcecc488-a6cb-44a5-b2d8-3facfd56bfd0
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3782.0
   y: 2481.0
 - category: collection
   id: 7089f260-1b45-40e3-ac27-c65de67bdd92
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4339.0
   y: 3932.0
 - category: collection
   id: eae2ebc3-572d-40f3-8971-8254815e78ad
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3833.0
   y: 3060.0
 - category: collection
   id: a3a3f6b5-b388-40f1-91ae-61bb670d0eb0
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3928.0
   y: 3065.0
 - category: collection
   id: 5c25079c-4271-40c8-8901-69c2ae0ca776
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5326.0
   y: 3779.0
 - category: collection
   id: 65769a59-8997-401c-b5ae-127e2dd8de1f
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5548.0
   y: 3837.0
 - category: collection
   id: b4917d5d-4367-4d54-8eb5-4b342c14a3bf
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5816.0
   y: 3848.0
 - category: collection
   id: 3f5dcef0-ce7a-4a8d-9279-61ed21956b43
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5772.0
   y: 3859.0
 - category: collection
   id: 59695e71-84b2-4e6c-bc1d-6faa1280df5c
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4844.0
   y: 3531.0
 - category: collection
   id: 98b3356c-02e6-481d-8fd6-b2069a767ec8
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5008.0
   y: 3369.0
 - category: collection
   id: 4a09e945-5c26-4e17-bbc6-08d4673ea014
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4096.0
   y: 3814.0
 - category: collection
   id: 2b2a69b3-aa5a-452f-9977-0cf47188fc8b
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5074.0
   y: 3290.0
 - category: collection
   id: a43eadc1-b92e-4c16-abea-aa791d0ee5e3
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4100.0
   y: 3626.0
 - category: collection
   id: d88bc076-0282-42bc-b9be-56a508348f46
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4610.0
   y: 3975.0
 - category: collection
   id: d4eb9b60-3071-451a-9cdb-9aa4551e1fee
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4697.0
   y: 3830.0
 - category: collection
   id: a2aa2730-d137-45ee-850b-9e2f7a5e6409
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4846.0
   y: 3815.0
 - category: collection
   id: f6d29144-a5ed-4b8d-b2a6-ef791650632a
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4747.0
   y: 4016.0
 - category: collection
   id: 981750a9-cfe4-44be-af0d-40fb4763f372
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4797.0
   y: 3985.0
 - category: collection
   id: c7a688dc-2976-45bb-b527-5484f8ff6f1f
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4142.0
   y: 4073.0
 - category: collection
   id: 88aa82f1-773a-43d8-80af-c9d0af52af87
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 2954.0
   y: 5066.0
 - category: collection
   id: b21ea6a2-bd61-40cc-bb92-8347a12e88b2
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 2937.0
   y: 5075.0
 - category: collection
   id: 0a400fa5-2bd9-4f25-b566-37c584e0c103
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3236.0
   y: 5206.0
 - category: collection
   id: d2ee568a-6ea5-48a9-93cb-46c991c23bce
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3147.0
   y: 5407.0
 - category: collection
   id: 72e149e3-509e-4c23-a505-0d4b34700d33
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3720.0
   y: 4065.0
 - category: collection
   id: 4011e717-f7c4-4684-a97f-56a538af8b19
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4698.0
   y: 3963.0
 - category: collection
   id: 63b8c6e0-eed1-472d-bb7f-422d4a4fb6a0
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3331.0
   y: 4992.0
 - category: collection
   id: 917b3f51-18b9-4edf-ad64-8c916010ad80
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4610.0
   y: 3772.0
 - category: collection
   id: a7ed85e5-3bde-4db0-9346-20532a4d783e
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4485.0
   y: 3527.0
 - category: collection
   id: aa8bb125-bb7e-4221-8b5a-8f32d7de8872
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4503.0
   y: 3245.0
 - category: collection
   id: 05ac8925-1eb9-4269-89d4-4748bac7361f
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3905.0
   y: 4300.0
 - category: collection
   id: f9ee4be1-6731-4124-b07a-fe6e8f0f8940
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4415.0
   y: 3217.0
 - category: collection
   id: 705066f4-e5c4-4aad-ab77-44d6c67931e8
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4286.0
   y: 3181.0
 - category: collection
   id: e0d2753d-e636-4677-9523-fadc16d9b9a4
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3569.0
   y: 4085.0
 - category: collection
   id: cda98ee3-cf5a-4c63-83f4-2f4c6850edeb
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3713.0
   y: 3881.0
 - category: collection
   id: ba201cd6-96da-44ba-b3d8-8e7d5c9b5353
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3568.0
   y: 4085.0
 - category: collection
   id: 9ce81f5d-1d02-40e0-9874-68103df0836d
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3699.0
   y: 3680.0
 - category: collection
   id: a1cbc667-344c-4654-86cc-1c9748d02c47
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4537.0
   y: 3569.0
 - category: collection
   id: b2f0eccf-3718-4391-915f-285829abfd82
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4751.0
   y: 3411.0
 - category: collection
   id: 2f36a374-517e-4e55-a99b-14ae701d4ce3
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4812.0
   y: 3414.0
 - category: collection
   id: 2ea91c05-0f67-41ea-a859-cf6064564ff2
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4902.0
   y: 3440.0
 - category: collection
   id: 913417b1-2b3f-4122-82aa-616bda627c80
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4580.0
   y: 4048.0
 - category: collection
   id: 87b3edd5-b077-4a4c-bf18-fafdff250da9
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5274.0
   y: 3716.0
 - category: collection
   id: 53889be9-194d-4b5f-a536-22e50b06fc21
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4380.0
   y: 5201.0
 - category: collection
   id: 611aa8e1-74da-49d5-b4b2-889d30a05148
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4480.0
   y: 5156.0
 - category: collection
   id: a20e46c3-1409-4e48-994b-3255b2b09853
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3895.0
   y: 5107.0
 - category: collection
   id: 3ab367d7-9224-45cf-a42d-f3c66bae2978
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4065.0
   y: 4778.0
 - category: collection
   id: fec5456d-2ac9-43cc-b0f1-17f865318956
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5026.0
   y: 2258.0
 - category: collection
   id: 75ad5a86-a3d0-45d2-9230-9a0badd18287
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5026.0
   y: 2258.0
 - category: collection
   id: bb29408c-29a8-4925-8b7b-15aadd8536cd
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4963.0
   y: 2259.0
 - category: collection
   id: b336c14f-08a0-4810-aad6-471b386c95eb
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5066.0
   y: 2265.0
 - category: collection
   id: 45aaae54-d62b-405c-bbd4-4662fcdebbe8
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5047.0
   y: 2329.0
 - category: collection
   id: 7a392424-523f-4033-9504-eebd50518cda
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5002.0
   y: 2421.0
 - category: collection
   id: bf9e38fa-93a6-46cb-a7fc-d9e20395df3b
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4961.0
   y: 2436.0
 - category: collection
   id: b30683b7-70bb-4468-8bf5-73d303e1897d
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4874.0
   y: 2353.0
 - category: collection
   id: 463347f8-7a86-4176-9301-73180900f97f
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5161.0
   y: 2437.0
 - category: collection
   id: 5aec49d6-b4ef-4cd8-bd26-c0f007b2c2ea
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5118.0
   y: 2495.0
 - category: collection
   id: 21fdc96f-8d4d-4277-9cb3-cc41b016a2eb
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5204.0
   y: 2596.0
 - category: collection
   id: 6a26337e-9961-4e8f-9afd-068bc9df464e
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4985.0
   y: 2560.0
 - category: collection
   id: 50734941-5313-45e9-b4c0-db6d581b24e9
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4926.0
   y: 2581.0
 - category: collection
   id: b69d2159-1589-4e98-8801-e97cd30a5c9e
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4847.0
   y: 2607.0
 - category: collection
   id: 09c2f76e-486c-421b-9b61-4a15a1f761a3
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5362.0
   y: 2683.0
 - category: collection
   id: 61caa748-5b50-4aec-8cdb-0e65be6877a9
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5117.0
   y: 2768.0
 - category: collection
   id: 575859ea-9e6f-474d-9b55-4f92325db068
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4732.0
   y: 2604.0
 - category: collection
   id: 07262c81-c495-4e58-9a8f-00385c253f79
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4660.0
   y: 2776.0
 - category: collection
   id: e0bfa469-050f-4b28-99ee-d210557e7d85
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4548.0
   y: 2352.0
 - category: collection
   id: c826e5bb-c768-4d79-8780-aa7d9f4f500f
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4829.0
   y: 3056.0
 - category: collection
   id: 760e5034-03a8-4e4c-bc83-da0191d29ae1
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4878.0
   y: 3178.0
 - category: collection
   id: 9c434ed2-2a4e-43e1-86ed-5fe117d93d1f
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4962.0
   y: 3390.0
 - category: collection
   id: cead2251-f427-46f7-ba50-55b3725eb979
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5034.0
   y: 4387.0
 - category: collection
   id: ebebd1d0-9350-40ac-95f2-514f357e05fc
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5081.0
   y: 4348.0
 - category: collection
   id: 68489a46-d232-485a-9860-63fd5fd24bdc
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5187.0
   y: 4356.0
 - category: collection
   id: befcd08c-0fa4-4401-bd85-3e758c81bf5a
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5164.0
   y: 4474.0
 - category: collection
   id: 2c03e5ef-9eab-4301-900d-1d9d569647c2
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5042.0
   y: 4749.0
 - category: collection
   id: d9d77604-7c57-42a4-9e7b-afd8ba898178
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5231.0
   y: 4824.0
 - category: collection
   id: b7b40bc8-030f-422d-bb3c-07f1e7a3689c
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5026.0
   y: 5093.0
 - category: collection
   id: 53809ef8-1d1a-4358-a0c8-a94fd8cb083e
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4949.0
   y: 4965.0
 - category: collection
   id: 86607198-85d4-4c0a-83b7-8d7fb919b835
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5308.0
   y: 5095.0
 - category: collection
   id: 3333181c-af87-4131-a66c-32486c904ba4
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5075.0
   y: 4358.0
 - category: collection
   id: 3a846f98-07c4-4637-ac36-17fc79b89e72
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5216.0
   y: 4720.0
 - category: collection
   id: 40267fc0-b39b-4d31-a234-7cc4565d3a6d
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4973.0
   y: 4716.0
 - category: collection
   id: 04f71839-ab1b-4444-b190-c3ecb79b5c3b
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5217.0
   y: 4556.0
 - category: collection
   id: b982fe42-0701-4139-95ae-4d18b00fbc98
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5258.0
   y: 4660.0
 - category: collection
   id: a79e56f8-08f5-4f69-ae61-9ead467b6b23
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5183.0
   y: 4875.0
 - category: collection
   id: f8df7f82-0dd8-4245-89b0-97194545e18d
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5090.0
   y: 5024.0
 - category: collection
   id: bcd7b474-b6c2-42ec-b827-5553c32cfb22
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5520.0
   y: 5137.0
 - category: collection
   id: f7ad9e99-4543-4e7f-9e32-2b9bc40c32c2
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5116.0
   y: 5189.0
 - category: collection
   id: 18405719-0edb-4c4e-acc0-6beea916ea55
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5068.0
   y: 5241.0
 - category: collection
   id: 8c7e0812-3ee5-4a76-8263-f54e8be1b56d
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5110.0
   y: 5329.0
 - category: collection
   id: 49726556-2e9f-4978-96bd-89e2d10e1196
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4977.0
   y: 5191.0
 - category: collection
   id: 3d592169-b440-47ab-93f9-cd68eb57b191
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4844.0
   y: 5203.0
 - category: collection
   id: a9fd92d0-f733-4d6f-8e0c-acb160b44719
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4866.0
   y: 5180.0
 - category: collection
   id: ea9a0673-7270-4ebc-a1f6-6d6744ad9f23
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4863.0
   y: 5134.0
 - category: collection
   id: 41fdd9c2-7bbc-4222-87fd-899e58f2812f
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4758.0
   y: 5112.0
 - category: collection
   id: 03bea744-7b7a-4f98-981d-217af2da16ec
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4891.0
   y: 5051.0
 - category: collection
   id: fe04cac5-dd0e-44cc-bb72-d56dd1e32f1c
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5402.0
   y: 5437.0
 - category: collection
   id: 6c248ca5-848a-4514-bdd0-1d1e3cc933c1
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4988.0
   y: 5491.0
 - category: collection
   id: 859b0530-cb36-42a7-abfb-fcb9e501d775
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4451.0
   y: 4476.0
 - category: collection
   id: 2dded8b6-c338-4920-841e-76a5ad9a5077
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5042.0
   y: 6024.0
 - category: collection
   id: 77ff7285-ad5e-4d41-88ac-4c4523c3f997
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5145.0
   y: 6164.0
 - category: collection
   id: 7f6f2cf5-ab9d-4150-b434-a5d3afaca851
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5135.0
   y: 6018.0
 - category: collection
   id: 5e5b71e0-8e3c-4248-ae04-6e85ffa5e24c
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4990.0
   y: 5998.0
 - category: collection
   id: b79e61ee-d256-4112-9b10-4a8d2cc3c5f1
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4907.0
   y: 6167.0
 - category: collection
   id: 3ddc3264-baff-49d4-867f-58606fbf9f62
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4873.0
   y: 6159.0
 - category: collection
   id: d6bc0c85-92f3-44aa-9344-2a13ab0a0455
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4993.0
   y: 6241.0
 - category: collection
   id: 6834316d-528d-4372-8834-5375fe18e5dd
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5052.0
   y: 6223.0
 - category: collection
   id: 7b386b23-ce46-4c9b-851f-4dfb2a6eb74a
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5162.0
   y: 6218.0
 - category: collection
   id: f6bc2683-f6a6-4354-ba66-039eaa1fa5c5
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3893.0
   y: 3470.0
 - category: collection
   id: 500370a3-f569-4a1c-af1c-29e70ee3ece4
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5071.0
   y: 6309.0
 - category: collection
   id: 7e5c698a-aea0-468d-9c37-c077288f126c
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5031.0
   y: 6280.0
 - category: collection
   id: b14b12bc-7d04-491a-83a8-acbd0624b4fe
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5111.0
   y: 6279.0
 - category: collection
   id: 3866a082-5965-49ef-875e-3d9be80fd01e
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5174.0
   y: 6297.0
 - category: collection
   id: 437f3cd0-2fcf-4ccf-8dd3-dcd51e09fdaa
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3279.0
   y: 3709.0
 - category: collection
   id: 60bbaf24-99ad-4034-ab01-0608f4e52659
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5273.0
   y: 3440.0
 - category: collection
   id: 65795245-7af0-4eec-90c7-bdc89b71bb05
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5532.0
   y: 3614.0
 - category: collection
   id: d8d4c268-9c52-4a9a-a766-98598f65f218
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5164.0
   y: 3679.0
 - category: collection
   id: 3ef968ec-4e5c-4f35-8dfd-05320673293d
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5091.0
   y: 4807.0
 - category: collection
   id: 10cb7495-f2e2-47be-b798-0ec3c0daa2d8
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5071.0
   y: 4589.0
 - category: collection
   id: 9ead0d3c-e699-4182-98d9-e052e1ac7e47
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4961.0
   y: 4854.0
 - category: collection
   id: 58e595c3-8c89-4a05-9d8b-cd4d643d826c
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 4924.0
   y: 4912.0
 - category: collection
   id: 9fbde7eb-b9c1-4672-9b00-5e67f7883828
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3073.0
   y: 5139.0
 - category: collection
   id: be64f4b4-e1b8-4425-a51a-a3a77a765634
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 5001.0
   y: 5121.0
 - category: collection
   id: b5a1ee6e-c537-4087-8876-db398de7f637
   name: ''
-  regionId: null
   subtype: monolithMaterial
   x: 3085.0
   y: 3487.0
