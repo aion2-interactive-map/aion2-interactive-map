@@ -18,6 +18,7 @@ menu:
   home: "首页"
   settings: "设置"
   maps: "地图"
+  regions: "区域"
   markerTypes: "标记类型"
   showNamesOnPins: "在标记上显示名称"
   showAllMarkers: "全部显示"

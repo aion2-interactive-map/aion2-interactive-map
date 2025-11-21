@@ -18,6 +18,7 @@ menu:
   home: "首頁"
   settings: "設定"
   maps: "地圖"
+  regions: "區域"
   markerTypes: "標記類型"
   showNamesOnPins: "在標記上顯示名稱"
   showAllMarkers: "全部顯示"

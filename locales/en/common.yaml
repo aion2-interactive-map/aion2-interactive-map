@@ -18,6 +18,7 @@ menu:
   home: "Home"
   settings: "Settings"
   maps: "Maps"
+  regions: "Regions"
   markerTypes: "Marker Types"
   showNamesOnPins: "Show names on pins"
   showAllMarkers: "Show all"
