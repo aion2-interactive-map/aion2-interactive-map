@@ -1,6 +1,6 @@
 lang: "en"
 siteTitle: "AION2 Interactive Map"
-announcement: "All 560 monolith positions for both maps updated, screenshots will be added later."
+announcement: "200 monolith positions for in Abyss updated, screenshots will be added later."
 
 language:
   label: "Language"
@@ -24,6 +24,8 @@ menu:
   showNamesOnPins: "Show names on pins"
   showAllMarkers: "Show all"
   hideAllMarkers: "Hide all"
+  clearMarkerCompleted: "Clear completed markers"
+  clearMarkerCompletedBody: "Do you want to clear all completed marker in this map?"
 
 buttons:
   apply: "Apply"
@@ -63,11 +65,11 @@ introModal:
 
     ### Team Members
 
-    **苏烟、双酿 (tc-imba)、言本卿、小海、粥棵儿、阡陌夕晨、Marry**
+    **苏烟、双酿(tc-imba)、物语、阡陌夕晨、小海、言本卿、粥棵儿、落花千树、Marry、焦糖云朵大麦茶、煎饺**
 
     ### Special Thanks to Our Supporters
 
-    **物语、落花千树、笛声青案梦长安、不知水玄月、次不次薯条ono、饭特稀、澜芳华、阿姐收手吧、魔1–汐见琴音、11111、地对地导弹**
+    **笛声青案梦长安、不知水玄月、次不次薯条ono、饭特稀、澜芳华、阿姐收手吧、魔1–汐见琴音、11111、地对地导弹**
 
   hint: |-
     Maintaining a game guide website requires a tremendous amount of time and effort. If you wish to support us, you may do so via the Alipay QR code below — your kindness is what keeps this project moving forward ❤
