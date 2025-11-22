@@ -118,6 +118,12 @@ export function useMarkers(selectedMapId: string | null) {
     [buildCompletedKey],
   );
 
+  const clearMarkerCompleted = useCallback(
+    () => {
+      setCompletedSet(new Set());
+    }, [],
+  )
+
   // --- Completed counts per subtype (X in X/N) ---
   const completedCounts = useMemo(() => {
     const map = new Map<string, number>();
@@ -143,5 +149,6 @@ export function useMarkers(selectedMapId: string | null) {
     completedSet,
     completedCounts,
     toggleMarkerCompleted,
+    clearMarkerCompleted,
   };
 }

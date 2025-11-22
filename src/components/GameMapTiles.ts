@@ -77,7 +77,7 @@ const GameMapTiles: React.FC<GameTilesProps> = ({ selectedMap }) => {
       maxZoom: map.getMaxZoom(),
       maxNativeZoom: 0,
       minNativeZoom: 0,
-      opacity: 0.15,
+      opacity: 0.3,
     });
 
     watermarkLayer.addTo(map);

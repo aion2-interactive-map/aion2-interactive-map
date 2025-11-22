@@ -1,6 +1,16 @@
 // src/components/MapSidebar.tsx
-import React from "react";
-import {Button, Spinner, Switch, Accordion, AccordionItem} from "@heroui/react";
+import React, {useState} from "react";
+import {
+  Button,
+  Spinner,
+  Switch,
+  Accordion,
+  AccordionItem,
+  Modal,
+  ModalContent,
+  ModalHeader,
+  ModalBody, ModalFooter
+} from "@heroui/react";
 import {useTranslation} from "react-i18next";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faChevronLeft, faChevronRight} from "@fortawesome/free-solid-svg-icons";
@@ -32,6 +42,8 @@ type Props = {
 
   collapsed: boolean;
   onToggleCollapsed: () => void;
+
+  onClearMarkerCompleted: () => void;
 };
 
 const MapSidebar: React.FC<Props> = ({
@@ -53,8 +65,10 @@ const MapSidebar: React.FC<Props> = ({
                                        onHideAllSubtypes,
                                        collapsed,
                                        onToggleCollapsed,
+                                       onClearMarkerCompleted,
                                      }) => {
   const selectedMap = maps.find(m => m.name === selectedMapId);
+  const [isClearCompletedModalOpen, setIsClearCompletedModalOpen] = useState(false);
 
   const regionNs = `regions/${selectedMapId}`;
   const {t} = useTranslation(regionNs);
@@ -247,10 +261,19 @@ const MapSidebar: React.FC<Props> = ({
                   isSelected={showLabels}
                   onValueChange={onToggleShowLabels}
                 >
-      <span className="text-xs text-default-600">
-        {t("common:menu.showNamesOnPins", "Show names on pins")}
-      </span>
+    <span className="text-xs text-default-600">
+      {t("common:menu.showNamesOnPins", "Show names on pins")}
+    </span>
                 </Switch>
+
+                {/* Clear all marks button */}
+                <Button
+                  size="sm"
+                  variant="light"
+                  onPress={() => setIsClearCompletedModalOpen(true)}
+                >
+                  {t("common:menu.clearMarkerCompleted")}
+                </Button>
               </div>
             </AccordionItem>
           ) : null}
@@ -297,6 +320,36 @@ const MapSidebar: React.FC<Props> = ({
             ) : null}
 
           </Accordion>
+          <Modal
+            isOpen={isClearCompletedModalOpen}
+            onOpenChange={(open) => !open && setIsClearCompletedModalOpen(false)}
+            classNames={{
+              wrapper: "z-[20000]", // stay above map & tooltips
+            }}
+          >
+            <ModalContent>
+              {(close) => (
+                <>
+                  <ModalHeader>{t("common:menu.clearMarkerCompleted")}</ModalHeader>
+                  <ModalBody>{t("common:menu.clearMarkerCompletedBody")}</ModalBody>
+                  <ModalFooter>
+                    <Button variant="light" onPress={close}>
+                      {t("common:ui.cancel")}
+                    </Button>
+                    <Button
+                      color="danger"
+                      onPress={() => {
+                        onClearMarkerCompleted();
+                        close();
+                      }}
+                    >
+                      {t("common:ui.confirm")}
+                    </Button>
+                  </ModalFooter>
+                </>
+              )}
+            </ModalContent>
+          </Modal>
         </div>
       )}
     </aside>

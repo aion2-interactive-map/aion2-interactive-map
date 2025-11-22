@@ -65,6 +65,7 @@ const App: React.FC = () => {
     completedSet,
     completedCounts,
     toggleMarkerCompleted,
+    clearMarkerCompleted,
   } = useMarkers(selectedMapId);
 
   // visibleSubtypes: key = `${categoryId}::${subtypeId}`
@@ -225,6 +226,7 @@ const App: React.FC = () => {
           onHideAllSubtypes={handleHideAllSubtypes}
           collapsed={sidebarCollapsed}
           onToggleCollapsed={() => setSidebarCollapsed((prev) => !prev)}
+          onClearMarkerCompleted={clearMarkerCompleted}
         />
 
         <GameMapView
@@ -238,6 +240,7 @@ const App: React.FC = () => {
           completedSet={completedSet}
           toggleMarkerCompleted={toggleMarkerCompleted}
         />
+
       </div>
     </div>
   );

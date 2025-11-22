@@ -2,9 +2,9 @@
 import React, {useState} from "react";
 import { useTranslation } from "react-i18next";
 import {Button, Card, Modal, ModalContent, ModalBody} from "@heroui/react";
-import { resolveAssets } from "../utils/resolveAsset";
 import EmblaCarouselThumbs from "./EmblaCarousel/EmblaCarouselThumbs.tsx";
 import EmblaCarouselGallery from "./EmblaCarousel/EmblaCarouselGallery.tsx";
+import {getStaticUrl} from "../utils/url.ts";
 
 type Props = {
   name: string;
@@ -36,7 +36,8 @@ const MarkerPopupContent: React.FC<Props> = ({
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const hasImages = images && images.length > 0;
-  const resolvedImages = resolveAssets(images);
+  const resolvedSmallImages = images?.map(image => getStaticUrl(image + "_small.webp"));
+  const resolvedNormalImages = images?.map(image => getStaticUrl(image + "_normal.webp"));
 
   return (
     <Card
@@ -61,7 +62,7 @@ const MarkerPopupContent: React.FC<Props> = ({
       {hasImages && (
         <div className="w-full h-28 rounded-md bg-black/10 dark:bg-white/10">
           <EmblaCarouselThumbs
-            images={resolvedImages}
+            images={resolvedSmallImages}
             selectedIndex={selectedIndex}
             onSelect={(idx) => {
               setSelectedIndex(idx);
@@ -100,7 +101,7 @@ const MarkerPopupContent: React.FC<Props> = ({
         isDismissable
         hideCloseButton
         classNames={{
-          wrapper: "z-[9999]", // stay above map & tooltips
+          wrapper: "z-[20000]", // stay above map & tooltips
           base: "bg-transparent shadow-none",
         }}
       >
@@ -127,7 +128,7 @@ const MarkerPopupContent: React.FC<Props> = ({
                 </button>
 
                 <EmblaCarouselGallery
-                  images={resolvedImages}
+                  images={resolvedNormalImages}
                   selectedIndex={selectedIndex}
                   onSelect={setSelectedIndex}
                 />
