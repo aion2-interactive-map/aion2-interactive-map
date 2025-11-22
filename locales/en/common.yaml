@@ -43,17 +43,33 @@ markerActions:
 introModal:
   version: "Version"
   title: "Welcome to AION2 Interactive Map"
-  body: |
-    Discord: https://discord.gg/gfKfK7SR
-    
-    Bug reports & marker sharing - please contact via Discord
-    Advertising space is available — please contact via Discord
-  
-    If the map cannot load properly, it may be due to high server load. You can try switching the online version (cloud icon in the upper-right corner) to the offline version. However, offline data may update slightly slower.
+  body: |-
+    The website is built and maintained by the **苏烟攻略组 (Suyn AION2 Team)**. We promise that this site will **always remain free**, and all daily operations rely solely on **voluntary donations**. We will never sell, trade, or charge for this website on any platform (such as Goofish, Taobao, TikTok). Please stay alert and beware of scams! If you obtained this website by paying money, please request a **refund** and report the seller. If you encounter impersonators posting fake versions of our content, please help **report** them — thank you!
 
-    Project team members: 苏烟、双酿、言本卿、小海、粥棵儿、阡陌夕晨、Marry
-    Contributors: 物语、落花千树、笛声青案梦长安、不知水玄月、次不次薯条ono、饭特稀、澜芳华、阿姐收手吧、魔1-汐見琴音、11111、地对地导弹
+    The site developer (**tc-imba**) is a firm supporter and contributor to the open-source community. All code and resources of this website are released under the **GNU GPL license**.
 
-  hint: | 
-    Maintaining the game guide website requires significant time and effort. If you'd like to support us, you can use the Alipay QR code below — your small contribution is our motivation to continue improving.
+    If any individual or organization **violates the GPL license** and redistributes the site's code or resources in any form (free or paid), we will **reserve all rights to pursue legal responsibility**.
+
+    ### Communication & Contact
+
+    - **Aion 2 Discussion Discord:** https://discord.gg/gfKfK7SR
+    - **Bug reports & marker sharing**: please contact via Discord
+    - **Advertisement inquiries**: please contact via Discord
+
+    ### If the map fails to load
+
+    It may be due to high server load.  
+    You may switch the top-right **online mode (cloud icon)** to **offline mode**, though offline data updates may be slightly delayed.
+
+    ### Team Members
+
+    **苏烟、双酿 (tc-imba)、言本卿、小海、粥棵儿、阡陌夕晨、Marry**
+
+    ### Special Thanks to Our Supporters
+
+    **物语、落花千树、笛声青案梦长安、不知水玄月、次不次薯条ono、饭特稀、澜芳华、阿姐收手吧、魔1–汐见琴音、11111、地对地导弹**
+
+  hint: |-
+    Maintaining a game guide website requires a tremendous amount of time and effort. If you wish to support us, you may do so via the Alipay QR code below — your kindness is what keeps this project moving forward ❤
+
   
