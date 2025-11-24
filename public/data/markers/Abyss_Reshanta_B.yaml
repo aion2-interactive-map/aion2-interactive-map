@@ -1,1 +1,7 @@
-markers: []
+markers:
+- category: collection
+  id: 2ff60c62-a1c8-4df1-836e-89e48f726209
+  name: ''
+  subtype: hiddenCube
+  x: 1304.0
+  y: 1204.0

@@ -24,18 +24,18 @@ categories:
   - canComplete: false
     color: '#000000'
     hideTooltip: false
-    icon: UI/Resource/Texture/Icon/UT_Marker_BattleField.webp
-    iconScale: 1.25
-    id: 08951176-20f3-46fd-818c-f6271c922684
-    name: battlefield
-    order: 2
-  - canComplete: false
-    color: '#000000'
-    hideTooltip: false
     icon: UI/Resource/Texture/Icon/UT_Marker_Exploration_Seal.webp
     iconScale: 1.25
     id: d4da5e97-d46a-4b3c-9d90-afd6941a19ee
     name: seal
+    order: 2
+  - canComplete: false
+    color: '#000000'
+    hideTooltip: false
+    icon: UI/Resource/Texture/Icon/UT_Marker_BattleField.webp
+    iconScale: 1.25
+    id: 08951176-20f3-46fd-818c-f6271c922684
+    name: battlefield
     order: 2
   - canComplete: false
     color: '#000000'
