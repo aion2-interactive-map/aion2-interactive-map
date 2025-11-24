@@ -10,6 +10,17 @@
 /* Dark mode variant so `.dark` on <html> or <body> works */
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+    --color-topnavbar: #E3EDF2;
+    --background-image-sidebar: linear-gradient(180deg, #CCEDFF 0%, #FFFFFF 65%);
+}
+
+.dark {
+    --color-topnavbar: #393047;
+    --background-image-sidebar: #2C293A;
+}
+
+
 html,
 body,
 #root {

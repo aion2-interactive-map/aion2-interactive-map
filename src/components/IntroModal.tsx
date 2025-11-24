@@ -72,18 +72,18 @@ const IntroModal: React.FC<IntroModalProps> = ({isOpen, onClose}) => {
                 <span className="text-base font-semibold">
                   {t("introModal.title")}
                 </span>
-                <span className="text-xs text-default-500">
+                <span className="text-xs text-default-700">
                   {`${t("introModal.version", "Version")} ${__BUILD_GIT_COMMIT__.substring(0, 6)} (${buildTime})`}
                 </span>
               </ModalHeader>
               <ModalBody className="space-y-3">
                 {/* Markdown body */}
-                <div className="text-sm text-default-600 prose prose-sm dark:prose-invert max-w-none">
+                <div className="text-sm prose prose-sm dark:prose-invert max-w-none">
                   <ReactMarkdown remarkPlugins={[remarkGfm]}>{t("introModal.body")}</ReactMarkdown>
                 </div>
 
                 {/* Markdown hint */}
-                <div className="text-sm text-default-600 prose prose-sm dark:prose-invert max-w-none">
+                <div className="text-sm prose prose-sm dark:prose-invert max-w-none">
                   <ReactMarkdown remarkPlugins={[remarkGfm]}>{t("introModal.hint")}</ReactMarkdown>
                 </div>
               </ModalBody>

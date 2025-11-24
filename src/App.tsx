@@ -6,13 +6,21 @@ import MapSidebar from "./components/MapSidebar";
 import GameMapView from "./components/GameMapView";
 import IntroModal from "./components/IntroModal";
 
-import { Spinner } from "@heroui/react";
+import LeftSidebar from "./components/SiderBar/LeftSidebar";
+import RightSidebar from "./components/SiderBar/RightSidebar";
+
+
+import {Spinner} from "@heroui/react";
 
 import { useGameData } from "./hooks/useGameData";
 import { useMarkers } from "./hooks/useMarkers";
 
 import type {GameMapMeta, MapRef, MarkerTypeSubtype} from "./types/game";
 import {getQueryParam, setQueryParam} from "./utils/url.ts";
+import DismissableAlert from "./components/DismissableAlert.tsx";
+import {useTranslation} from "react-i18next";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 const VISIBLE_SUBTYPES_STORAGE_PREFIX = "aion2.visibleSubtypes.v1.";
 const VISIBLE_REGIONS_STORAGE_PREFIX = "aion2.visibleRegions.v1.";
@@ -54,7 +62,7 @@ const loadVisibleData = (prefix: string, selectedMapId: string | null, validKeys
 
 const App: React.FC = () => {
 
-
+  const { t } = useTranslation();
   const { maps, types, loading: loadingGameData } = useGameData();
   const [selectedMapId, setSelectedMapId] = useState<string | null>(null);
   const {
@@ -75,6 +83,7 @@ const App: React.FC = () => {
   const [showLabels, setShowLabels] = useState<boolean>(true);
   const [sidebarCollapsed, setSidebarCollapsed] = useState<boolean>(false);
   const [isIntroOpen, setIsIntroOpen] = useState<boolean>(true);
+  const [isAlertOpen, setIsAlertOpen] = useState(true);
 
   // Initialize selected map
   useEffect(() => {
@@ -206,7 +215,25 @@ const App: React.FC = () => {
         onClose={() => setIsIntroOpen(false)}
       />
 
+
+      {isAlertOpen && (
+        <div className="fixed top-[72px] left-1/2 -translate-x-1/2 z-[9999] h-[52px]">
+          <DismissableAlert
+            color="warning"
+            onClose={() => setIsAlertOpen(false)}
+          >
+            <div className="text-xs prose prose-xs max-w-none">
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>{t("introModal.alert")}</ReactMarkdown>
+            </div>
+            </DismissableAlert>
+        </div>
+      )}
+
       <div className="flex flex-1 overflow-hidden">
+        <LeftSidebar />
+
+        <RightSidebar />
+
         <MapSidebar
           maps={maps}
           regions={regions}

@@ -78,7 +78,7 @@ const MapSidebar: React.FC<Props> = ({
       className={`
     relative h-full border-r border-default bg-content1
     transition-all duration-300 flex flex-col space-y-2
-    ${collapsed ? "w-[0px]" : "w-96 px-2 py-2"}
+    ${collapsed ? "w-[0px]" : "w-[370px] px-2 py-2"}
   `}
     >
       {/* Collapse handle */}

@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faMoon, faSun, faCloud, faDatabase, faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
 
-import { useTheme } from "../hooks/useTheme";
+import {useTheme} from "@/context/ThemeContext";
 import LanguageSwitcher from "./LanguageSwitcher";
 import {useDataMode} from "../hooks/useDataMode.tsx";
 import {getStaticUrl} from "../utils/url.ts";
@@ -29,7 +29,7 @@ const TopNavbar: React.FC<TopNavbarProps> = ({ onOpenIntroModal }) => {
   return (
     <Navbar
       maxWidth="full"
-      className="border-b border-default-200 px-4"
+      className="border-b border-default-200 px-4 h-[60px] bg-topnavbar"
     >
       {/* LEFT: Logo + Title */}
       <NavbarBrand className="flex items-center gap-2 select-none cursor-default">
@@ -48,7 +48,7 @@ const TopNavbar: React.FC<TopNavbarProps> = ({ onOpenIntroModal }) => {
           absolute left-1/2 top-1/2
           -translate-x-1/2 -translate-y-1/2
           pointer-events-none
-          text-sm font-medium text-default-600
+          text-sm font-medium
         "
       >
         {t("announcement", "Welcome to AION2 Interactive Map!")}
