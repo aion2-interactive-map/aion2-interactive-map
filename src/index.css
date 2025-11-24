@@ -13,11 +13,13 @@
 @theme {
     --color-topnavbar: #E3EDF2;
     --background-image-sidebar: linear-gradient(180deg, #CCEDFF 0%, #FFFFFF 65%);
+    --color-sidebar-collapse: #D3E2EA
 }
 
 .dark {
     --color-topnavbar: #393047;
     --background-image-sidebar: #2C293A;
+    --color-sidebar-collapse: #4C4A52;
 }
 
 

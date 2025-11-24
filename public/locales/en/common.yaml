@@ -21,10 +21,10 @@ menu:
   maps: "Maps"
   regions: "Regions"
   markerTypes: "Marker Types"
-  showNamesOnPins: "Show names on pins"
+  showNamesOnPins: "Show names"
   showAllMarkers: "Show all"
   hideAllMarkers: "Hide all"
-  clearMarkerCompleted: "Clear completed markers"
+  clearMarkerCompleted: "Clear completed"
   clearMarkerCompletedBody: "Do you want to clear all completed marker in this map?"
 
 buttons:
@@ -75,3 +75,12 @@ introModal:
     Maintaining a game guide website requires a tremendous amount of time and effort. If you wish to support us, you may do so via the Alipay QR code below — your kindness is what keeps this project moving forward ❤
 
   
+rightSidebar:
+  members:
+    title: "Members"
+  contact:
+    title: "Communication & Contact"
+    content: |
+      1. **Aion 2 Discussion Discord:** https://discord.gg/gfKfK7SR
+      2. **Bug reports & marker sharing**: please contact via Discord
+      3. **Advertisement inquiries**: please contact via Discord

@@ -40,7 +40,6 @@ function loadInitialTheme(): Theme {
 // Apply theme to <html>
 function applyTheme(theme: Theme) {
   if (typeof document === "undefined") return;
-
   const root = document.documentElement;
   if (theme === "dark") root.classList.add("dark");
   else root.classList.remove("dark");
@@ -76,7 +75,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 export function useTheme() {
   const ctx = useContext(ThemeContext);
   if (!ctx) {
-    throw new Error("useTheme must be used within a ThemeProvider");
+    throw new Error("useTheme must be used within a <ThemeProvider>");
   }
   return ctx;
 }

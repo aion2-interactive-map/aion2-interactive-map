@@ -1,15 +1,38 @@
-// src/hooks/useMarkers.ts
-import { useCallback, useEffect, useMemo, useState } from "react";
-import type {MarkerInstance, RawMarkersFile, RawRegionsFile, RegionInstance} from "../types/game";
-import { useYamlLoader } from "../hooks/useYamlLoader";
+import React, {createContext, useCallback, useContext, useEffect, useMemo, useState} from "react";
+import type {MarkerInstance, RawMarkersFile, RawRegionsFile, RegionInstance} from "@/types/game.ts";
+import {useYamlLoader} from "@/hooks/useYamlLoader.ts";
+import {useGameMap} from "@/context/GameMapContext.tsx";
+
+type MarkersContextValue = {
+  markers: MarkerInstance[];
+  regions: RegionInstance[];
+  loading: boolean;
+  showLabels: boolean;
+  setShowLabels: (value: boolean) => void;
+  subtypeCounts: Map<string, number>;
+  completedSet: Set<string>;
+  completedCounts: Map<string, number>;
+  toggleMarkerCompleted: (marker: MarkerInstance) => void;
+  clearMarkerCompleted: () => void;
+}
+
+const MarkersContext = createContext<MarkersContextValue | null>(null);
+
+type MarkersProviderProps = {
+  children: React.ReactNode;
+};
 
 const COMPLETED_STORAGE_PREFIX = "aion2.completedMarkers.v1.";
 
-export function useMarkers(selectedMapId: string | null) {
+
+export const MarkersProvider = ({children}: MarkersProviderProps) => {
   const [markers, setMarkers] = useState<MarkerInstance[]>([]);
   const [regions, setRegions] = useState<RegionInstance[]>([]);
   const [loading, setLoading] = useState(false);
+  const [showLabels, setShowLabels] = useState<boolean>(true);
   const loadYaml = useYamlLoader();
+  const { selectedMap } = useGameMap();
+
 
   // Set of completed marker keys for the *current map*.
   // Keys are "categoryId::subtypeId::markerId".
@@ -26,7 +49,7 @@ export function useMarkers(selectedMapId: string | null) {
 
   // --- Load markers for the selected map ---
   useEffect(() => {
-    if (!selectedMapId) {
+    if (!selectedMap) {
       setMarkers([]);
       setRegions([]);
       return;
@@ -38,11 +61,11 @@ export function useMarkers(selectedMapId: string | null) {
       setLoading(true);
       try {
         const raw = await loadYaml<RawMarkersFile>(
-          `data/markers/${selectedMapId}.yaml`,
+          `data/markers/${selectedMap?.name}.yaml`,
         );
         if (cancelled) return;
         const rawRegion = await loadYaml<RawRegionsFile>(
-          `data/regions/${selectedMapId}.yaml`,
+          `data/regions/${selectedMap?.name}.yaml`,
         )
         setMarkers(raw.markers);
         setRegions(rawRegion.regions);
@@ -61,7 +84,7 @@ export function useMarkers(selectedMapId: string | null) {
     return () => {
       cancelled = true;
     };
-  }, [selectedMapId, loadYaml]);
+  }, [selectedMap, loadYaml]);
 
   // --- Total marker counts per subtype (N) ---
   const subtypeCounts = useMemo(() => {
@@ -75,12 +98,12 @@ export function useMarkers(selectedMapId: string | null) {
 
   // --- Load completion state per map from localStorage ---
   useEffect(() => {
-    if (!selectedMapId) {
+    if (!selectedMap) {
       setCompletedSet(new Set());
       return;
     }
 
-    const storageKey = `${COMPLETED_STORAGE_PREFIX}${selectedMapId}`;
+    const storageKey = `${COMPLETED_STORAGE_PREFIX}${selectedMap.name}`;
     const raw = localStorage.getItem(storageKey);
     if (!raw) {
       setCompletedSet(new Set());
@@ -93,15 +116,15 @@ export function useMarkers(selectedMapId: string | null) {
     } catch {
       setCompletedSet(new Set());
     }
-  }, [selectedMapId]);
+  }, [selectedMap]);
 
   // --- Save completion state per map to localStorage ---
   useEffect(() => {
-    if (!selectedMapId) return;
-    const storageKey = `${COMPLETED_STORAGE_PREFIX}${selectedMapId}`;
+    if (!selectedMap) return;
+    const storageKey = `${COMPLETED_STORAGE_PREFIX}${selectedMap.name}`;
     const arr = Array.from(completedSet);
     localStorage.setItem(storageKey, JSON.stringify(arr));
-  }, [completedSet, selectedMapId]);
+  }, [completedSet, selectedMap]);
 
   // --- Toggle a marker's completed state ---
   const toggleMarkerCompleted = useCallback(
@@ -139,16 +162,28 @@ export function useMarkers(selectedMapId: string | null) {
     return map;
   }, [markers, completedSet, buildCompletedKey]);
 
-  return {
-    markers,
-    regions,
-    loading,
-    subtypeCounts,
+  return (
+    <MarkersContext.Provider value={{
+      markers,
+      regions,
+      loading,
+      showLabels,
+      setShowLabels,
+      subtypeCounts,
+      completedSet,
+      completedCounts,
+      toggleMarkerCompleted,
+      clearMarkerCompleted,
+    }}>
+      {children}
+    </MarkersContext.Provider>
+  );
+}
 
-    // NEW for completion feature:
-    completedSet,
-    completedCounts,
-    toggleMarkerCompleted,
-    clearMarkerCompleted,
-  };
+export function useMarkers(): MarkersContextValue {
+  const ctx = useContext(MarkersContext);
+  if (!ctx) {
+    throw new Error("useMarkers must be used inside <MarkersProvider>");
+  }
+  return ctx;
 }

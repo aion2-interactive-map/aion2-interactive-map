@@ -21,11 +21,13 @@ menu:
   maps: "地图"
   regions: "区域"
   markerTypes: "标记类型"
-  showNamesOnPins: "在标记上显示名称"
+  showNamesOnPins: "显示标记名称"
   showAllMarkers: "全部显示"
   hideAllMarkers: "全部隐藏"
   clearMarkerCompleted: "清除已完成标记"
   clearMarkerCompletedBody: "你确定要清除这张地图所有的已完成标记吗？"
+  expand: "展开"
+  collapse: "收起"
 
 buttons:
   apply: "应用"
@@ -73,3 +75,16 @@ introModal:
     **笛声青案梦长安、不知水玄月、次不次薯条ono、饭特稀、澜芳华、阿姐收手吧、魔1–汐见琴音、11111、地对地导弹**
 
   hint: "游戏攻略网站维护需要大量时间和精力，如果想要支持我们，可以通过下面的支付宝二维码，你的小小心意是支持我们的动力"
+
+rightSidebar:
+  members:
+    title: "工作组成员"
+    content: "苏烟、双酿、物语、阡陌夕晨、小海、言本卿、粥棵儿、落花千树、Marry、焦糖云朵大麦茶、煎饺"
+  contact:
+    title: "交流与联系方式"
+    content: |
+      1. 永恒之塔 2 交流群： 246681864（已满）、197791140
+      2. 广告位招商：微信 liuyh615
+      3. 点位分享及 bug 反馈： 微信 ybq1385、a18543910451
+      4. 永恒之塔224小时高效代肝代打强化：微信 suyn456
+

@@ -38,7 +38,7 @@ const CursorTracker: React.FC<CursorTrackerProps> = ({ onUpdate }) => {
 };
 
 type Props = {
-  selectedMap: GameMapMeta | null;
+  selectedMap?: GameMapMeta;
   markers: MarkerInstance[];
   mapRef: React.RefObject<MapRef>;
   visibleSubtypes: Set<string>;

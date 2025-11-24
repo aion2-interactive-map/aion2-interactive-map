@@ -3,6 +3,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faChevronLeft, faChevronRight} from "@fortawesome/free-solid-svg-icons";
 import {getStaticUrl} from "@/utils/url.ts";
 import {useTheme} from "@/context/ThemeContext";
+import {useTranslation} from "react-i18next";
 
 type SidebarWrapperProps = {
   side: "left" | "right";       // determines positioning & button direction
@@ -17,6 +18,7 @@ const SidebarWrapper: React.FC<SidebarWrapperProps> = ({
                                                          collapsedWidth = 0,
                                                          children,
                                                        }) => {
+  const { t } = useTranslation("common");
   const [collapsed, setCollapsed] = useState(false);
   const {theme} = useTheme();
   const isDark = theme === "dark";
@@ -54,7 +56,7 @@ const SidebarWrapper: React.FC<SidebarWrapperProps> = ({
         onClick={toggle}
         className={`
           absolute top-[100px] flex flex-col items-center justify-center z-[20000] 
-          w-8 h-12 bg-[#D3E2EA] text-default-700 select-none
+          w-8 h-12 bg-sidebar-collapse text-default-700 select-none
           ${isLeft ? "right-0 translate-x-full rounded-r-md rounded-l-none" : "left-0 -translate-x-full rounded-l-md rounded-r-none"}
         `}
       >
@@ -64,7 +66,7 @@ const SidebarWrapper: React.FC<SidebarWrapperProps> = ({
         />
         {/* Multilingual safe label (wrap allowed) */}
         <span className="text-[10px] leading-tight mt-0.5 whitespace-normal text-center px-0.5">
-          {collapsed ? (isLeft ? "展开" : "Expand") : (isLeft ? "收起" : "Collapse")}
+          {collapsed ? t("menu.expand", "Expand") : t("menu.collapse", "Collapse")}
         </span>
       </button>
     </aside>

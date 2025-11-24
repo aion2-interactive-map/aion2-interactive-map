@@ -9,18 +9,27 @@ import './i18n';
 import {applyTheme} from "./utils/preTheme";
 import {DataModeProvider} from "./hooks/useDataMode";
 import {ThemeProvider} from "@/context/ThemeContext";
+import {GameDataProvider} from "@/context/GameDataContext.tsx";
+import {GameMapProvider} from "@/context/GameMapContext.tsx";
+import {MarkersProvider} from "@/context/MarkersContext.tsx";
 
 applyTheme();
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     {/* You can pass locale/theme props later if you like */}
+    <ThemeProvider>
     <HeroUIProvider>
-      <ThemeProvider>
         <DataModeProvider>
-          <App/>
+          <GameMapProvider>
+            <MarkersProvider>
+              <GameDataProvider>
+                <App/>
+              </GameDataProvider>
+            </MarkersProvider>
+          </GameMapProvider>
         </DataModeProvider>
-      </ThemeProvider>
     </HeroUIProvider>
+    </ThemeProvider>
   </React.StrictMode>,
 );

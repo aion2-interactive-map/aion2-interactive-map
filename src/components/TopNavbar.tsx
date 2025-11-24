@@ -7,7 +7,7 @@ import {
   NavbarContent,
 } from "@heroui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faMoon, faSun, faCloud, faDatabase, faCircleInfo } from "@fortawesome/free-solid-svg-icons";
+import {faMoon, faSun, faCloud, faDatabase } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
 
 import {useTheme} from "@/context/ThemeContext";
@@ -15,11 +15,8 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import {useDataMode} from "../hooks/useDataMode.tsx";
 import {getStaticUrl} from "../utils/url.ts";
 
-type TopNavbarProps = {
-  onOpenIntroModal?: () => void;
-};
 
-const TopNavbar: React.FC<TopNavbarProps> = ({ onOpenIntroModal }) => {
+const TopNavbar: React.FC = ( ) => {
   const { t } = useTranslation(); // we use fully-qualified keys like common:siteTitle
   const { theme, toggleTheme } = useTheme();
   const isDark = theme === "dark";
@@ -29,30 +26,22 @@ const TopNavbar: React.FC<TopNavbarProps> = ({ onOpenIntroModal }) => {
   return (
     <Navbar
       maxWidth="full"
-      className="border-b border-default-200 px-4 h-[60px] bg-topnavbar"
+      className="border-b border-default-200 h-[60px] bg-topnavbar"
+      classNames={{
+        wrapper: "px-5"
+      }}
     >
       {/* LEFT: Logo + Title */}
-      <NavbarBrand className="flex items-center gap-2 select-none cursor-default">
+      <NavbarBrand className="flex items-center gap-4 select-none cursor-default">
         <img
-          src={`${import.meta.env.BASE_URL}aion2.webp`}
+          src={getStaticUrl(isDark ? "images/GroupLogoDark.webp" : "images/GroupLogoLight.webp")}
           alt="AION2 Logo"
-          className="w-8 h-8 object-contain"
+          className="w-[100px] h-[38px] object-contain"
         />
-        <span className="font-semibold text-lg tracking-wide">
-          {t("common:siteTitle", "AION2 Interactive Map")}
+        <span className="text-[14px] leading-[14px] font-normal tracking-wide">
+          {t("announcement", "Welcome to AION2 Interactive Map!")}
         </span>
       </NavbarBrand>
-
-      <div
-        className="
-          absolute left-1/2 top-1/2
-          -translate-x-1/2 -translate-y-1/2
-          pointer-events-none
-          text-sm font-medium
-        "
-      >
-        {t("announcement", "Welcome to AION2 Interactive Map!")}
-      </div>
 
       {/* RIGHT: Language switcher + theme toggle */}
       <NavbarContent
@@ -87,9 +76,9 @@ const TopNavbar: React.FC<TopNavbarProps> = ({ onOpenIntroModal }) => {
         </Button>
 
 
-        <Button isIconOnly variant="light" onPress={onOpenIntroModal}>
+        {/*<Button isIconOnly variant="light" onPress={onOpenIntroModal}>
           <FontAwesomeIcon icon={faCircleInfo} className="text-lg" />
-        </Button>
+        </Button>*/}
 
       </NavbarContent>
     </Navbar>
