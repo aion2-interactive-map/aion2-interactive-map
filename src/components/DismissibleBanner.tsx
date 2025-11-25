@@ -87,6 +87,7 @@ const DismissibleBanner: React.FC<Props> = ({
         width,
         height,
       }}
+      datatype="advertisement"
     >
       <a href={href} target="_blank">
         <img

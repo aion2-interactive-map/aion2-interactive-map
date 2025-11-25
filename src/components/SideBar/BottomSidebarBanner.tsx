@@ -19,6 +19,7 @@ const BottomSidebarBanner: React.FC<BottomSidebarBannerProps> = ({
         flex items-center justify-center text-center
       "
       style={{ height }}
+      datatype="advertisement"
     >
       <a href={href} target="_blank">
         <img

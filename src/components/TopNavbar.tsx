@@ -50,7 +50,7 @@ const TopNavbar: React.FC = () => {
       >
         {import.meta.env.VITE_REGION === "CHINA" && (
 
-          <a href="https://m.flashkrypton.com/?ch=10004&gameConfigId=286&autoShow=0#/community" target="_blank">
+          <a href="https://m.flashkrypton.com/?ch=10004&gameConfigId=286&autoShow=0#/community" target="_blank" datatype="advertisement">
             <img
               src={getStaticUrl("images/shanke.webp")}
               alt="Banner"
