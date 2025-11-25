@@ -6,9 +6,9 @@ import {
   NavbarBrand,
   NavbarContent,
 } from "@heroui/react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faMoon, faSun, faCloud, faDatabase } from "@fortawesome/free-solid-svg-icons";
-import { useTranslation } from "react-i18next";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faMoon, faSun, faCloud, faDatabase} from "@fortawesome/free-solid-svg-icons";
+import {useTranslation} from "react-i18next";
 
 import {useTheme} from "@/context/ThemeContext";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -16,11 +16,11 @@ import {useDataMode} from "../hooks/useDataMode.tsx";
 import {getStaticUrl} from "../utils/url.ts";
 
 
-const TopNavbar: React.FC = ( ) => {
-  const { t } = useTranslation(); // we use fully-qualified keys like common:siteTitle
-  const { theme, toggleTheme } = useTheme();
+const TopNavbar: React.FC = () => {
+  const {t} = useTranslation(); // we use fully-qualified keys like common:siteTitle
+  const {theme, toggleTheme} = useTheme();
   const isDark = theme === "dark";
-  const { dataMode, toggleDataMode } = useDataMode();
+  const {dataMode, toggleDataMode} = useDataMode();
   const isStatic = dataMode === "static";
 
   return (
@@ -48,16 +48,19 @@ const TopNavbar: React.FC = ( ) => {
         justify="end"
         className="flex items-center gap-1"
       >
-        <a href="https://m.flashkrypton.com/?ch=10004&gameConfigId=286&autoShow=0#/community" target="_blank">
-          <img
-            src={getStaticUrl("images/shanke.webp")}
-            alt="Banner"
-            className="h-10 w-auto object-contain select-none pointer-events-none"
-          />
-        </a>
+        {import.meta.env.VITE_REGION === "CHINA" && (
+
+          <a href="https://m.flashkrypton.com/?ch=10004&gameConfigId=286&autoShow=0#/community" target="_blank">
+            <img
+              src={getStaticUrl("images/shanke.webp")}
+              alt="Banner"
+              className="h-10 w-auto object-contain select-none pointer-events-none"
+            />
+          </a>
+        )}
 
         {/* Language switcher (owns its own button & dropdown) */}
-        <LanguageSwitcher />
+        <LanguageSwitcher/>
 
         {/* Theme toggle */}
         <Button isIconOnly variant="light" onPress={toggleTheme}>

@@ -11,7 +11,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faAlipay} from "@fortawesome/free-brands-svg-icons";
 
 const RightSidebar: React.FC = () => {
-  const { t } = useTranslation("common");
+  const {t} = useTranslation("common");
   const [showImageOverlay, setShowImageOverlay] = useState<boolean>(false);
   const alipayUrl = getStaticUrl("images/alipay.webp");
 
@@ -62,11 +62,13 @@ const RightSidebar: React.FC = () => {
           </div>
         </AccordionItem>
       </Accordion>
-      <BottomSidebarBanner
-        href="https://www.pxb7.com/buy/175178554941486/1?channelId=184939419369543&activityCode=yhzt2sl"
-        imageUrl={getStaticUrl("images/PangXieRight.webp")}
-        height={274}
-      />
+      {import.meta.env.VITE_REGION === "CHINA" && (
+        <BottomSidebarBanner
+          href="https://www.pxb7.com/buy/175178554941486/1?channelId=184939419369543&activityCode=yhzt2sl"
+          imageUrl={getStaticUrl("images/PangXieRight.webp")}
+          height={274}
+        />
+      )}
     </SidebarWrapper>
   );
 };

@@ -81,20 +81,22 @@ const App: React.FC = () => {
         </div>
       )}
 
-      <DismissibleBanner
-        imageUrl={getStaticUrl("images/qiyou.webp")}
-        width={800}
-        height={120}
-        position="bottom-center"
-      />
+      { import.meta.env.VITE_REGION === "CHINA" && <>
+        <DismissibleBanner
+          imageUrl={getStaticUrl("images/qiyou.webp")}
+          width={800}
+          height={120}
+          position="bottom-center"
+        />
 
-      <DismissibleBanner
-        imageUrl={getStaticUrl("images/PangXieMiddle.webp")}
-        width={400}
-        height={420}
-        position="middle-center"
-        href="https://www.pxb7.com/buy/175178554941486/1?channelId=184939419369543&activityCode=yhzt2sl"
-      />
+        <DismissibleBanner
+          imageUrl={getStaticUrl("images/PangXieMiddle.webp")}
+          width={400}
+          height={420}
+          position="middle-center"
+          href="https://www.pxb7.com/buy/175178554941486/1?channelId=184939419369543&activityCode=yhzt2sl"
+        />
+      </>}
 
       <div className="flex flex-1 overflow-hidden">
         <LeftSidebar />

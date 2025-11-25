@@ -12,8 +12,8 @@ import BottomSidebarBanner from "@/components/SideBar/BottomSidebarBanner.tsx";
 import {getStaticUrl} from "@/utils/url.ts";
 
 const LeftSidebar: React.FC = () => {
-  const { t } = useTranslation();
-  const { selectedMap } = useGameMap();
+  const {t} = useTranslation();
+  const {selectedMap} = useGameMap();
 
   return (
     <SidebarWrapper side="left" width={370}>
@@ -37,11 +37,13 @@ const LeftSidebar: React.FC = () => {
           </AccordionItem>
         ) : null}
       </Accordion>
-      <BottomSidebarBanner
-        href="https://www.pxb7.com/buy/175178554941486/1?channelId=184939419369543&activityCode=yhzt2sl"
-        imageUrl={getStaticUrl("images/PangXieLeft.webp")}
-        height={220}
-      />
+      {import.meta.env.VITE_REGION === "CHINA" && (
+        <BottomSidebarBanner
+          href="https://www.pxb7.com/buy/175178554941486/1?channelId=184939419369543&activityCode=yhzt2sl"
+          imageUrl={getStaticUrl("images/PangXieLeft.webp")}
+          height={220}
+        />
+      )}
     </SidebarWrapper>
   );
 };
