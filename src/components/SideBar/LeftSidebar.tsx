@@ -5,9 +5,11 @@ import Logo from "./Logo.tsx";
 import SelectMap from "@/components/SideBar/SelectMap.tsx";
 import MarkerTypes from "@/components/SideBar/MarkerTypes.tsx";
 
-import {Accordion, AccordionItem, Divider} from "@heroui/react";
+import {Accordion, AccordionItem} from "@heroui/react";
 import {useTranslation} from "react-i18next";
 import {makeAccordionTitle} from "@/components/SideBar/makeAccordionTitle.tsx";
+import BottomSidebarBanner from "@/components/SideBar/BottomSidebarBanner.tsx";
+import {getStaticUrl} from "@/utils/url.ts";
 
 const LeftSidebar: React.FC = () => {
   const { t } = useTranslation();
@@ -35,7 +37,10 @@ const LeftSidebar: React.FC = () => {
           </AccordionItem>
         ) : null}
       </Accordion>
-      <Divider className="mt-4" />
+      <BottomSidebarBanner
+        imageUrl={getStaticUrl("images/PangXieLeft.webp")}
+        height={220}
+      />
     </SidebarWrapper>
   );
 };
