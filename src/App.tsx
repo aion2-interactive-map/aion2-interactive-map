@@ -19,7 +19,7 @@ import {useTranslation} from "react-i18next";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import {useGameMap} from "@/context/GameMapContext.tsx";
-import DismissibleBottomBanner from "@/components/DismissibleBottomBanner.tsx";
+import DismissibleBanner from "@/components/DismissibleBanner.tsx";
 import {getStaticUrl} from "@/utils/url.ts";
 
 const App: React.FC = () => {
@@ -47,7 +47,6 @@ const App: React.FC = () => {
 
   // const [isIntroOpen, setIsIntroOpen] = useState<boolean>(true);
   const [isAlertOpen, setIsAlertOpen] = useState(true);
-  const bannerUrl = getStaticUrl("images/qiyou.webp");
 
   if (loading && !selectedMap) {
     return (
@@ -82,7 +81,19 @@ const App: React.FC = () => {
         </div>
       )}
 
-      <DismissibleBottomBanner imageUrl={bannerUrl} />
+      <DismissibleBanner
+        imageUrl={getStaticUrl("images/qiyou.webp")}
+        width={800}
+        height={120}
+        position="bottom-center"
+      />
+
+      <DismissibleBanner
+        imageUrl={getStaticUrl("images/PangXieMiddle.webp")}
+        width={400}
+        height={420}
+        position="middle-center"
+      />
 
       <div className="flex flex-1 overflow-hidden">
         <LeftSidebar />
