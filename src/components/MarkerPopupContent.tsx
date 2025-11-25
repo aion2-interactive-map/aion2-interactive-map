@@ -1,7 +1,7 @@
 // src/components/MarkerPopupContent.tsx
 import React, {useState} from "react";
 import { useTranslation } from "react-i18next";
-import {Button, Card, Modal, ModalContent, ModalBody} from "@heroui/react";
+import {Button, Card, Modal, ModalContent, ModalBody, Divider} from "@heroui/react";
 import EmblaCarouselThumbs from "./EmblaCarousel/EmblaCarouselThumbs.tsx";
 import EmblaCarouselGallery from "./EmblaCarousel/EmblaCarouselGallery.tsx";
 import {getStaticUrl} from "../utils/url.ts";
@@ -44,28 +44,33 @@ const MarkerPopupContent: React.FC<Props> = ({
   return (
     <Card
       className="
-      min-w-[260px] max-w-[360px]
-      p-3 space-y-2 text-xs leading-snug
-      bg-content1 text-foreground
+      w-[360px]
+      p-5 text-xs leading-snug
+      text-foreground
+      bg-sidebar
+      space-y-5
     "
       radius="sm"
     >
       {/* Title */}
-      <h3 className="text-sm font-semibold">{name}</h3>
+      <div className="text-[18px] leading-[18px] font-bold">{name}</div>
 
       {/* Category / subtype + coordinates */}
-      <p className="text-[11px] text-default-500">
+      <div className="text-[14px] leading-[14px]">
         {categoryLabel} / {subtypeLabel}{" "}
         <span className="opacity-80">
           ({x.toFixed(0)}, {y.toFixed(0)})
         </span>
         {regionLabel ? ` / ${regionLabel}` : null}
-      </p>
+      </div>
 
+      <Divider/>
 
+      {/* Description */}
+      {description && (<div className="text-[14px] leading-[14px]">{description}</div>)}
 
       {hasImages && (
-        <div className="w-full h-28 rounded-md bg-black/10 dark:bg-white/10">
+        <div className="w-full h-28 rounded-md ">
           <EmblaCarouselThumbs
             images={resolvedSmallImages}
             selectedIndex={selectedIndex}
@@ -77,13 +82,10 @@ const MarkerPopupContent: React.FC<Props> = ({
         </div>
       )}
 
-      {/* Description */}
-      <div className="pt-1 border-t border-default-200">
-        <p className="text-[11px] text-default-600">{description}</p>
-      </div>
+      <Divider />
 
       {canComplete && (
-        <div className="pt-1">
+        <div className="flex">
           <Button
             size="sm"
             variant="flat"
