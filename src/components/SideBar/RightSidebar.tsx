@@ -27,7 +27,7 @@ const RightSidebar: React.FC = () => {
             <ReactMarkdown remarkPlugins={[remarkGfm]}>{t("rightSidebar.members.content")}</ReactMarkdown>
           </div>
         </AccordionItem>
-        <AccordionItem key="members" title={makeAccordionTitle(t("rightSidebar.contact.title"))}>
+        <AccordionItem key="contact" title={makeAccordionTitle(t("rightSidebar.contact.title"))}>
           <div className="text-sm prose prose-sm dark:prose-invert max-w-none">
             <ReactMarkdown remarkPlugins={[remarkGfm]}>{t("rightSidebar.contact.content")}</ReactMarkdown>
           </div>

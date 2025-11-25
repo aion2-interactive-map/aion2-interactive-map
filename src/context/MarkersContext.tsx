@@ -1,5 +1,5 @@
 import React, {createContext, useCallback, useContext, useEffect, useMemo, useState} from "react";
-import type {MarkerInstance, RawMarkersFile, RawRegionsFile, RegionInstance} from "@/types/game.ts";
+import type {GameMapMeta, MarkerInstance, RawMarkersFile, RawRegionsFile, RegionInstance} from "@/types/game.ts";
 import {useYamlLoader} from "@/hooks/useYamlLoader.ts";
 import {useGameMap} from "@/context/GameMapContext.tsx";
 
@@ -119,12 +119,12 @@ export const MarkersProvider = ({children}: MarkersProviderProps) => {
   }, [selectedMap]);
 
   // --- Save completion state per map to localStorage ---
-  useEffect(() => {
-    if (!selectedMap) return;
+
+  const saveCompletedMarkers = (selectedMap: GameMapMeta, data: Set<string>) => {
     const storageKey = `${COMPLETED_STORAGE_PREFIX}${selectedMap.name}`;
-    const arr = Array.from(completedSet);
+    const arr = Array.from(data);
     localStorage.setItem(storageKey, JSON.stringify(arr));
-  }, [completedSet, selectedMap]);
+  };
 
   // --- Toggle a marker's completed state ---
   const toggleMarkerCompleted = useCallback(
@@ -135,16 +135,22 @@ export const MarkersProvider = ({children}: MarkersProviderProps) => {
         const next = new Set(prev);
         if (next.has(key)) next.delete(key);
         else next.add(key);
+        if (selectedMap) {
+          saveCompletedMarkers(selectedMap, next);
+        }
         return next;
       });
     },
-    [buildCompletedKey],
+    [selectedMap, buildCompletedKey],
   );
 
   const clearMarkerCompleted = useCallback(
     () => {
-      setCompletedSet(new Set());
-    }, [],
+      if (selectedMap) {
+        setCompletedSet(new Set());
+        saveCompletedMarkers(selectedMap, new Set());
+      }
+    }, [selectedMap],
   )
 
   // --- Completed counts per subtype (X in X/N) ---
