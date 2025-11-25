@@ -10,6 +10,7 @@ type Props = {
   name: string;
   categoryLabel: string;
   subtypeLabel: string;
+  regionLabel: string;
   x: number;
   y: number;
   images: string[];
@@ -23,6 +24,7 @@ const MarkerPopupContent: React.FC<Props> = ({
                                                name,
                                                categoryLabel,
                                                subtypeLabel,
+                                               regionLabel,
                                                x,
                                                y,
                                                images,
@@ -57,7 +59,10 @@ const MarkerPopupContent: React.FC<Props> = ({
         <span className="opacity-80">
           ({x.toFixed(0)}, {y.toFixed(0)})
         </span>
+        {regionLabel ? ` / ${regionLabel}` : null}
       </p>
+
+
 
       {hasImages && (
         <div className="w-full h-28 rounded-md bg-black/10 dark:bg-white/10">

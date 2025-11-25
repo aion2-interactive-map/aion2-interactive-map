@@ -38,6 +38,7 @@ const LeftSidebar: React.FC = () => {
         ) : null}
       </Accordion>
       <BottomSidebarBanner
+        href="https://www.pxb7.com/buy/175178554941486/1?channelId=184939419369543&activityCode=yhzt2sl"
         imageUrl={getStaticUrl("images/PangXieLeft.webp")}
         height={220}
       />

@@ -63,6 +63,7 @@ const RightSidebar: React.FC = () => {
         </AccordionItem>
       </Accordion>
       <BottomSidebarBanner
+        href="https://www.pxb7.com/buy/175178554941486/1?channelId=184939419369543&activityCode=yhzt2sl"
         imageUrl={getStaticUrl("images/PangXieRight.webp")}
         height={274}
       />

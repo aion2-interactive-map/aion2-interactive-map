@@ -59,6 +59,7 @@ export interface MarkerInstance {
   id: string;
   // categoryId: string;
   subtype: string;
+  region?: string;
   x: number;
   y: number;
   images: string[];

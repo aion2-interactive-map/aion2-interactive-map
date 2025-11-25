@@ -93,6 +93,7 @@ const App: React.FC = () => {
         width={400}
         height={420}
         position="middle-center"
+        href="https://www.pxb7.com/buy/175178554941486/1?channelId=184939419369543&activityCode=yhzt2sl"
       />
 
       <div className="flex flex-1 overflow-hidden">

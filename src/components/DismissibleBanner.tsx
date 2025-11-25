@@ -1,7 +1,7 @@
 // src/components/common/DismissibleBanner.tsx
-import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import React, {useState} from "react";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faTimes} from "@fortawesome/free-solid-svg-icons";
 
 type BannerPosition =
   | "bottom-center"
@@ -12,6 +12,7 @@ type BannerPosition =
   | "middle-right";
 
 type Props = {
+  href?: string;
   imageUrl: string;
   height?: number;       // default 120px
   width?: number;        // default 800px
@@ -20,6 +21,7 @@ type Props = {
 };
 
 const DismissibleBanner: React.FC<Props> = ({
+                                              href,
                                               imageUrl,
                                               width = 800,
                                               height = 120,
@@ -84,12 +86,18 @@ const DismissibleBanner: React.FC<Props> = ({
         ...extraOffsetStyle,
         width,
         height,
-        backgroundImage: `url(${imageUrl})`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
       }}
     >
+      <a href={href} target="_blank">
+        <img
+          src={imageUrl}
+          alt=""
+          className="
+            w-full h-full mx-auto
+            object-contain
+          "
+        />
+      </a>
       {/* Close button */}
       <button
         onClick={() => setVisible(false)}
@@ -100,7 +108,7 @@ const DismissibleBanner: React.FC<Props> = ({
           flex items-center justify-center text-white
         "
       >
-        <FontAwesomeIcon icon={faTimes} className="text-lg" />
+        <FontAwesomeIcon icon={faTimes} className="text-lg"/>
       </button>
     </div>
   );

@@ -75,7 +75,6 @@ const TopNavbar: React.FC = ( ) => {
           />
         </Button>
 
-
         {/*<Button isIconOnly variant="light" onPress={onOpenIntroModal}>
           <FontAwesomeIcon icon={faCircleInfo} className="text-lg" />
         </Button>*/}

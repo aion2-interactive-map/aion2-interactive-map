@@ -110,9 +110,11 @@ const GameMarkerInner: React.FC<Props> = ({
   // Namespace for this map's markers (ensures markers/world.yaml loads)
   // console.log(marker)
   const markerNs = `markers/${map.name}`;
-  const { t } = useTranslation(markerNs);
+  const regionNs = `regions/${map.name}`;
+  const { t } = useTranslation([markerNs, regionNs]);
 
   const markerKeyPrefix = `${markerNs}:${marker.id}`;
+  const regionKeyPrefix = `${regionNs}:${marker.region}`;
 
   // Find subtype and category definition
   const sub = subtypes.get(marker.subtype);
@@ -125,6 +127,8 @@ const GameMarkerInner: React.FC<Props> = ({
   const subtypeLabel = t(
     `types:subtypes.${sub?.name}.name`,
   );
+  const regionLabel = marker.region ? t(`${regionKeyPrefix}.name`) : "";
+  console.log(marker.region)
   const iconScale = sub?.iconScale || 1.0;
   const canComplete = !!sub?.canComplete;
   const hideTooltip = !!sub?.hideTooltip;
@@ -172,6 +176,7 @@ const GameMarkerInner: React.FC<Props> = ({
           name={localizedName}
           categoryLabel={categoryLabel}
           subtypeLabel={subtypeLabel}
+          regionLabel={regionLabel}
           x={marker.x}
           y={marker.y}
           images={marker.images}

@@ -4,11 +4,13 @@ import React from "react";
 type BottomSidebarBannerProps = {
   imageUrl: string;
   height: number;  // Banner height
+  href: string;
 };
 
 const BottomSidebarBanner: React.FC<BottomSidebarBannerProps> = ({
                                                                    imageUrl,
                                                                    height,
+                                                                   href,
                                                                  }) => {
   return (
     <div
@@ -18,14 +20,16 @@ const BottomSidebarBanner: React.FC<BottomSidebarBannerProps> = ({
       "
       style={{ height }}
     >
-      <img
-        src={imageUrl}
-        alt=""
-        className="
-          w-full h-full mx-auto
-          object-contain
-        "
-      />
+      <a href={href} target="_blank">
+        <img
+          src={imageUrl}
+          alt=""
+          className="
+            w-full h-full mx-auto
+            object-contain
+          "
+        />
+      </a>
     </div>
   );
 };
