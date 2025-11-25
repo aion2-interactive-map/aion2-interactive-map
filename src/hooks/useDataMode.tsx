@@ -65,16 +65,17 @@ export function getBackendLoadPath(mode: DataMode = DEFAULT_DATA_MODE)  {
     const lng = lngs[0];
     const ns = nss[0];
     if (ns === "common") {
-      return `${staticBase}/locales/${lng}/${ns}.yaml`;
+      return `${staticBase}/locales/${lng}/${ns}.yaml?build=${__BUILD_GIT_COMMIT__}`;
+    } else if (ns === "regions") {
+      return "";
     }
-    return `${base}/locales/${lng}/${ns}.yaml`;
+    return `${base}/locales/${lng}/${ns}.yaml?build=${__BUILD_GIT_COMMIT__}`;
   };
 }
 
 function updateI18nForMode(mode: DataMode) {
   console.log("updateI18nForMode:", mode);
-  const backend: any =
-    (i18n.services as any).backendConnector?.backend ?? null;
+  const backend = i18n.services.backendConnector?.backend ?? null;
 
   if (backend) {
     backend.options = backend.options || {};
