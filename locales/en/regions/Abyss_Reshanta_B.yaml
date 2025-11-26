@@ -133,6 +133,9 @@ SouthernTolbasForest:
 SpiritIsle:
   description: Spirit Isle
   name: Spirit Isle
+TolbasForest:
+  description: Tolbas Forest
+  name: Tolbas Forest
 TraneinHighland:
   description: Tranein Highland
   name: Tranein Highland

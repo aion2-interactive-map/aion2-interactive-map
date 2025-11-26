@@ -133,6 +133,9 @@ SouthernTolbasForest:
 SpiritIsle:
   description: 精靈之島
   name: 精靈之島
+TolbasForest:
+  description: 托爾巴斯森林
+  name: 托爾巴斯森林
 TraneinHighland:
   description: 特拉內因丘陵地
   name: 特拉內因丘陵地
