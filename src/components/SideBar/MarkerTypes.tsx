@@ -1,7 +1,7 @@
 // src/components/MarkerTypes.tsx
 
 import React, {useState} from "react";
-import {Button, Switch} from "@heroui/react";
+import {Button} from "@heroui/react";
 import {useTranslation} from "react-i18next";
 import {useGameData} from "@/context/GameDataContext.tsx";
 import {useMarkers} from "@/context/MarkersContext.tsx";
@@ -43,16 +43,10 @@ const MarkerTypes: React.FC = () => {
           </Button>
           <Button
             {...commonButtonProps}
-            // variant={showLabels ? "solid" : "flat"}
+            color={showLabels ? "primary" : "default"}
+            variant={showLabels ? "solid" : "flat"}
             onPress={() => setShowLabels(!showLabels)}
           >
-            <div className="flex items-center">
-              <Switch
-                size="sm"
-                isSelected={showLabels}
-                onValueChange={setShowLabels}
-              />
-            </div>
             {t("menu.showNamesOnPins", "Show Names")}
           </Button>
           <Button
