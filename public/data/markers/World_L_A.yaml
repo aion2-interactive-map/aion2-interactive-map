@@ -4,6 +4,7 @@ markers:
   images:
   - markers_images/DWqVr1vHTInPwErz6YU8Mg
   name: ''
+  region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 3960.0
   y: 5208.0
@@ -12,14 +13,25 @@ markers:
   images:
   - markers_images/JZsNOVOX3Ga21gfflUM4cA
   name: ''
+  region: EasternCantasValley
   subtype: monolithMaterial
   x: 3236.0
   y: 4734.0
+- category: collection
+  id: 3a718256-fa36-44b8-894c-d49194ed864e
+  images:
+  - markers_images/gAi10uojuoz4mKXjY5XWug
+  name: ''
+  region: DawnLegionBase
+  subtype: monolithMaterial
+  x: 2991.0
+  y: 5242.0
 - category: collection
   id: 6f471243-65dc-43ad-9c29-e83bcb27a2fb
   images:
   - markers_images/_cagYJczK_5TytXG7H1W9g
   name: ''
+  region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 4066.0
   y: 4937.0
@@ -28,6 +40,7 @@ markers:
   images:
   - markers_images/IPgLC_ELlHsE4clGB4KfjA
   name: ''
+  region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 4016.0
   y: 5186.0
@@ -35,7 +48,8 @@ markers:
   id: 7d2bb186-5cc3-4138-a6b2-7e0111fb9623
   images:
   - markers_images/moy7m--I73AJskXoZ7jFkg
-  name: ''
+  name: 在天上
+  region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 4072.0
   y: 5202.0
@@ -44,6 +58,7 @@ markers:
   images:
   - markers_images/gN_iy1--lPFQUHfjxM_N0A
   name: ''
+  region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 4138.0
   y: 5105.0
@@ -52,6 +67,7 @@ markers:
   images:
   - markers_images/RRA8T4sHeqUr985bzVg-OA
   name: ''
+  region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 4185.0
   y: 4927.0
@@ -60,6 +76,7 @@ markers:
   images:
   - markers_images/xYOhXA7Ok3nb4ezKuPhfSg
   name: ''
+  region: EllunRiverMeadow
   subtype: monolithMaterial
   x: 3640.0
   y: 4637.0
@@ -68,6 +85,7 @@ markers:
   images:
   - markers_images/QDaE7vHHzgo94-dGa7BwJQ
   name: ''
+  region: EllunRiverMeadow
   subtype: monolithMaterial
   x: 3909.0
   y: 4502.0
@@ -76,6 +94,7 @@ markers:
   images:
   - markers_images/CUguQmRrE6QQyq9sITe2Rg
   name: ''
+  region: EllunRiverMeadow
   subtype: monolithMaterial
   x: 3790.0
   y: 4475.0
@@ -84,6 +103,7 @@ markers:
   images:
   - markers_images/eXaOKg-AnOLSjykkOPAClg
   name: ''
+  region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3595.0
   y: 4275.0
@@ -92,6 +112,7 @@ markers:
   images:
   - markers_images/FtQKAt_1NiXkjydk1jPmfA
   name: ''
+  region: VerteronFortressRuins
   subtype: monolithMaterial
   x: 4006.0
   y: 4191.0
@@ -100,6 +121,7 @@ markers:
   images:
   - markers_images/UDDmoGeHNjSMAfXhllBx0Q
   name: ''
+  region: VerteronFortressRuins
   subtype: monolithMaterial
   x: 4108.0
   y: 4015.0
@@ -108,6 +130,7 @@ markers:
   images:
   - markers_images/M7A3_undviT4AYSPFoidXQ
   name: ''
+  region: VerteronFortressRuins
   subtype: monolithMaterial
   x: 3947.0
   y: 3985.0
@@ -116,6 +139,7 @@ markers:
   images:
   - markers_images/El-pRdub9tjwjtt7lV7EGQ
   name: ''
+  region: VerteronFortressRuins
   subtype: monolithMaterial
   x: 3933.0
   y: 4072.0
@@ -124,6 +148,7 @@ markers:
   images:
   - markers_images/qU4tx1u_I8kev0K3NLE2RQ
   name: ''
+  region: DawnLegionBase
   subtype: monolithMaterial
   x: 3030.0
   y: 4962.0
@@ -132,6 +157,7 @@ markers:
   images:
   - markers_images/ShL-HRGksprapX1kbMpLBQ
   name: ''
+  region: EllunRiverMeadow
   subtype: monolithMaterial
   x: 3726.0
   y: 4579.0
@@ -140,6 +166,7 @@ markers:
   images:
   - markers_images/HGx5DYcgr4vHz7Pv6THbHQ
   name: ''
+  region: KrakaFootpath
   subtype: monolithMaterial
   x: 4272.0
   y: 4667.0
@@ -148,6 +175,7 @@ markers:
   images:
   - markers_images/YT15c4yUSds7NBpiQzog6w
   name: ''
+  region: DawnLegionBase
   subtype: monolithMaterial
   x: 2982.0
   y: 5189.0
@@ -165,6 +193,7 @@ markers:
   images:
   - markers_images/HRVjgvfCTwgEXh6bzrvHNw
   name: ''
+  region: EasternCantasValley
   subtype: monolithMaterial
   x: 3653.0
   y: 4993.0
@@ -173,42 +202,30 @@ markers:
   images:
   - markers_images/geYabK9KMHnmVyP5QHNP3g
   name: ''
+  region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3709.0
   y: 4193.0
 - category: collection
   id: 21cfd77c-8770-4af8-8598-2a8a4532402c
   name: ''
+  region: NorthernTolbasForest
   subtype: monolithMaterial
   x: 3611.0
   y: 3747.0
 - category: collection
   id: 189a3b93-2f5d-4f33-b995-e0250c0ed577
   name: ''
+  region: NorthernTolbasForest
   subtype: monolithMaterial
   x: 3207.0
   y: 3736.0
-- category: collection
-  id: 47956f36-fe45-42c4-af1f-eb49aa166727
-  images:
-  - markers_images/dgQ09FrUo_gMYfP75W_Pyg
-  name: ''
-  subtype: monolithMaterial
-  x: 2889.0
-  y: 5096.0
-- category: collection
-  id: 3a718256-fa36-44b8-894c-d49194ed864e
-  images:
-  - markers_images/gAi10uojuoz4mKXjY5XWug
-  name: ''
-  subtype: monolithMaterial
-  x: 2991.0
-  y: 5242.0
 - category: collection
   id: 52ea3dfc-1f1d-4407-919f-2de86caaa122
   images:
   - markers_images/dhlkM05-4ihINGnOcoZJOg
   name: ''
+  region: DawnLegionBase
   subtype: monolithMaterial
   x: 2961.0
   y: 5172.0
@@ -236,6 +253,15 @@ markers:
   subtype: teleport
   x: 3143.0
   y: 4431.0
+- category: collection
+  id: 47956f36-fe45-42c4-af1f-eb49aa166727
+  images:
+  - markers_images/dgQ09FrUo_gMYfP75W_Pyg
+  name: ''
+  region: DawnLegionBase
+  subtype: monolithMaterial
+  x: 2889.0
+  y: 5096.0
 - category: location
   id: 8ed1c656-fd6e-4b64-8a35-b08e49ffaee3
   name: 沼泽监视哨所
@@ -565,6 +591,7 @@ markers:
   images:
   - markers_images/2CpLKTuF6QfmUtA8nHEifw
   name: ''
+  region: EasternCantasValley
   subtype: monolithMaterial
   x: 3193.0
   y: 4710.0
@@ -591,6 +618,7 @@ markers:
   images:
   - markers_images/gDKkYsGjWqrFz1-Pbpvx0A
   name: ''
+  region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 4027.0
   y: 4266.0
@@ -599,6 +627,7 @@ markers:
   images:
   - markers_images/PODlPhaXE5zX2g2_bHiPNg
   name: ''
+  region: DawnLegionBase
   subtype: monolithMaterial
   x: 2922.0
   y: 5243.0
@@ -607,6 +636,7 @@ markers:
   images:
   - markers_images/K04_bs0nsmt9hR_iw2gGkw
   name: ''
+  region: WesternCantasValley
   subtype: monolithMaterial
   x: 3253.0
   y: 4600.0
@@ -615,6 +645,7 @@ markers:
   images:
   - markers_images/U5m6EosSD5Yf5VtFHIJTcw
   name: ''
+  region: WesternCantasValley
   subtype: monolithMaterial
   x: 3265.0
   y: 4647.0
@@ -623,6 +654,7 @@ markers:
   images:
   - markers_images/WdR3hkAquilhzCB8jcqFkg
   name: ''
+  region: DawnLegionBase
   subtype: monolithMaterial
   x: 2932.0
   y: 5189.0
@@ -631,6 +663,7 @@ markers:
   images:
   - markers_images/Igzrx54NwlEyp5f5lSoqrg
   name: ''
+  region: DawnLegionBase
   subtype: monolithMaterial
   x: 3013.0
   y: 5123.0
@@ -639,6 +672,7 @@ markers:
   images:
   - markers_images/ZSxpX8dbfMLDc1jZzF2kvg
   name: ''
+  region: WesternCantasValley
   subtype: monolithMaterial
   x: 3240.0
   y: 4330.0
@@ -647,6 +681,7 @@ markers:
   images:
   - markers_images/2dT50frJ59izhJes6cSPSQ
   name: ''
+  region: DawnLegionBase
   subtype: monolithMaterial
   x: 3017.0
   y: 5020.0
@@ -655,6 +690,7 @@ markers:
   images:
   - markers_images/xMQYd6cyITrR5tbM33t-bA
   name: ''
+  region: DawnLegionBase
   subtype: monolithMaterial
   x: 2995.0
   y: 5222.0
@@ -663,6 +699,7 @@ markers:
   images:
   - markers_images/LACN2mY3_YNcwPDTe4wPGg
   name: ''
+  region: WesternCantasValley
   subtype: monolithMaterial
   x: 3058.0
   y: 4405.0
@@ -671,6 +708,7 @@ markers:
   images:
   - markers_images/8y-B5s2I6Kd9EHiCQGNgbw
   name: ''
+  region: WesternCantasValley
   subtype: monolithMaterial
   x: 3090.0
   y: 4354.0
@@ -679,6 +717,7 @@ markers:
   images:
   - markers_images/ViPPNGEZYnbHQN8LUHYgYg
   name: ''
+  region: DawnLegionBase
   subtype: monolithMaterial
   x: 2866.0
   y: 5154.0
@@ -687,6 +726,7 @@ markers:
   images:
   - markers_images/dWKkxA-FFQgLqNI2EVaB4Q
   name: ''
+  region: WesternCantasValley
   subtype: monolithMaterial
   x: 3100.0
   y: 4240.0
@@ -695,6 +735,7 @@ markers:
   images:
   - markers_images/fpzwhuM-7eiUIH6JLt9euQ
   name: ''
+  region: WesternCantasValley
   subtype: monolithMaterial
   x: 2969.0
   y: 4618.0
@@ -703,6 +744,7 @@ markers:
   images:
   - markers_images/E4w-fvRJEVnyLcoxjbavzQ
   name: ''
+  region: EasternCantasValley
   subtype: monolithMaterial
   x: 3148.0
   y: 4708.0
@@ -711,6 +753,7 @@ markers:
   images:
   - markers_images/YJZFQ-YPwY-wsTC9txgqhg
   name: ''
+  region: EasternCantasValley
   subtype: monolithMaterial
   x: 3119.0
   y: 4726.0
@@ -719,6 +762,7 @@ markers:
   images:
   - markers_images/ZhCovWDdk6kd2BCcCkGeag
   name: ''
+  region: WesternCantasValley
   subtype: monolithMaterial
   x: 3222.0
   y: 4666.0
@@ -727,6 +771,7 @@ markers:
   images:
   - markers_images/cXaf85r9uCcn-NFmX1lOrQ
   name: ''
+  region: DawnLegionBase
   subtype: monolithMaterial
   x: 3102.0
   y: 5083.0
@@ -735,6 +780,7 @@ markers:
   images:
   - markers_images/X268lOGYg8WPFFOJ_scs0w
   name: ''
+  region: WesternCantasValley
   subtype: monolithMaterial
   x: 3299.0
   y: 4607.0
@@ -743,6 +789,7 @@ markers:
   images:
   - markers_images/ssw6_a9OoQx2Hrjtjg8lhA
   name: ''
+  region: WesternCantasValley
   subtype: monolithMaterial
   x: 3321.0
   y: 4556.0
@@ -751,6 +798,7 @@ markers:
   images:
   - markers_images/67ZQZSkIsP1XAXUOAsVPIA
   name: ''
+  region: WesternCantasValley
   subtype: monolithMaterial
   x: 3341.0
   y: 4488.0
@@ -759,6 +807,7 @@ markers:
   images:
   - markers_images/1dMPXQyy5v8WXXtbCLiR2A
   name: ''
+  region: WesternCantasValley
   subtype: monolithMaterial
   x: 3363.0
   y: 4461.0
@@ -767,6 +816,7 @@ markers:
   images:
   - markers_images/MqkHboDkegheM3iMhVxmvg
   name: ''
+  region: WesternCantasValley
   subtype: monolithMaterial
   x: 3349.0
   y: 4438.0
@@ -775,6 +825,7 @@ markers:
   images:
   - markers_images/3_ffZMbVXdyoh-4hRtrWow
   name: ''
+  region: DawnLegionBase
   subtype: monolithMaterial
   x: 3117.0
   y: 5127.0
@@ -783,6 +834,7 @@ markers:
   images:
   - markers_images/RuaGj9gDiqV2WUEitKDSZw
   name: ''
+  region: DawnLegionBase
   subtype: monolithMaterial
   x: 3051.0
   y: 5159.0
@@ -791,6 +843,7 @@ markers:
   images:
   - markers_images/uORPLJ-o9hWHt80CGFDP9A
   name: ''
+  region: WesternCantasValley
   subtype: monolithMaterial
   x: 3120.0
   y: 4587.0
@@ -799,6 +852,7 @@ markers:
   images:
   - markers_images/aYuUCKjeiSSZLGvNU-ybpQ
   name: ''
+  region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 3728.0
   y: 4904.0
@@ -807,6 +861,7 @@ markers:
   images:
   - markers_images/TW1cOeqn62VYOcnAlrg0dg
   name: ''
+  region: EllunRiverMeadow
   subtype: monolithMaterial
   x: 3797.0
   y: 4844.0
@@ -815,6 +870,7 @@ markers:
   images:
   - markers_images/7iLAO8fLV9VZLUzovVGnVQ
   name: ''
+  region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 3889.0
   y: 4760.0
@@ -823,6 +879,7 @@ markers:
   images:
   - markers_images/Vt4pBVi2ClET0SMlbQXfCA
   name: ''
+  region: EllunRiverMeadow
   subtype: monolithMaterial
   x: 3797.0
   y: 4619.0
@@ -831,6 +888,7 @@ markers:
   images:
   - markers_images/ZIB8x1O5pLoxY_uwvHLntQ
   name: ''
+  region: EllunRiverMeadow
   subtype: monolithMaterial
   x: 3667.0
   y: 4476.0
@@ -839,6 +897,7 @@ markers:
   images:
   - markers_images/RbNZQa0Ed4w25_WHRgzg9A
   name: ''
+  region: WesternCantasValley
   subtype: monolithMaterial
   x: 3607.0
   y: 4501.0
@@ -847,6 +906,7 @@ markers:
   images:
   - markers_images/vJ5B1GnG7ItK-Fcw7aGB7w
   name: ''
+  region: EasternCantasValley
   subtype: monolithMaterial
   x: 3562.0
   y: 4763.0
@@ -855,6 +915,7 @@ markers:
   images:
   - markers_images/qi9klMle_K19fNOGf5K4tg
   name: ''
+  region: EasternCantasValley
   subtype: monolithMaterial
   x: 3518.0
   y: 4809.0
@@ -863,6 +924,7 @@ markers:
   images:
   - markers_images/LxIDMYHWQ5hmvEdMzVltvw
   name: ''
+  region: DawnLegionBase
   subtype: monolithMaterial
   x: 2932.0
   y: 5319.0
@@ -871,30 +933,35 @@ markers:
   images:
   - markers_images/pGxEWA-Da8aifP2fk_nQjw
   name: ''
+  region: WesternCantasValley
   subtype: monolithMaterial
   x: 3061.0
   y: 4767.0
 - category: collection
   id: 7d9cadd2-77b0-4ad0-a18c-9ffff1232baf
   name: ''
+  region: SouthernTolbasForest
   subtype: monolithMaterial
   x: 3355.0
   y: 3509.0
 - category: collection
   id: 7868477c-22ac-4377-a21c-0bcc6099b265
   name: ''
+  region: SouthernTolbasForest
   subtype: monolithMaterial
   x: 3445.0
   y: 3499.0
 - category: collection
   id: e624df12-e347-42cb-910f-555a0448f7d6
   name: ''
+  region: SouthernTolbasForest
   subtype: monolithMaterial
   x: 3360.0
   y: 3343.0
 - category: collection
   id: d5c5e858-b995-4dcf-871e-b8dc4a7dc9a7
   name: ''
+  region: SouthernTolbasForest
   subtype: monolithMaterial
   x: 3432.0
   y: 3270.0
@@ -903,6 +970,7 @@ markers:
   images:
   - markers_images/IQ_9UFZLwhdUT0hEdS1z7w
   name: ''
+  region: SouthernTolbasForest
   subtype: monolithMaterial
   x: 3489.0
   y: 3262.0
@@ -911,6 +979,7 @@ markers:
   images:
   - markers_images/wA0Vw28bMZe2z-eOPZQKHQ
   name: ''
+  region: TolbasForest
   subtype: monolithMaterial
   x: 3766.0
   y: 3223.0
@@ -919,12 +988,14 @@ markers:
   images:
   - markers_images/VJtQ-Bzi3MwD9AgQRjH6nA
   name: ''
+  region: AullaeuVillage
   subtype: monolithMaterial
   x: 3845.0
   y: 3310.0
 - category: collection
   id: 41f01c24-91dd-4255-85ab-5aee2b252f30
   name: ''
+  region: EasternTolbasForest
   subtype: monolithMaterial
   x: 3886.0
   y: 3367.0
@@ -933,6 +1004,7 @@ markers:
   images:
   - markers_images/yFiB6lxqhEWwPJe_Kd8Czg
   name: ''
+  region: EasternTolbasForest
   subtype: monolithMaterial
   x: 3853.0
   y: 3348.0
@@ -941,6 +1013,7 @@ markers:
   images:
   - markers_images/UVmDZFrE98H4AmZPdeycpg
   name: ''
+  region: EasternCantasValley
   subtype: monolithMaterial
   x: 3390.0
   y: 4807.0
@@ -949,6 +1022,7 @@ markers:
   images:
   - markers_images/gd2qSQ2ulG3IvtWfCuYrrQ
   name: ''
+  region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3953.0
   y: 4208.0
@@ -957,6 +1031,7 @@ markers:
   images:
   - markers_images/mzW3R3PULAJVpIQ0pOX-ew
   name: ''
+  region: VerteronFortressRuins
   subtype: monolithMaterial
   x: 4051.0
   y: 4103.0
@@ -965,6 +1040,7 @@ markers:
   images:
   - markers_images/bJ_Iq0W4W7VwxV3ecV5dKw
   name: ''
+  region: VerteronFortressRuins
   subtype: monolithMaterial
   x: 3970.0
   y: 4076.0
@@ -973,6 +1049,7 @@ markers:
   images:
   - markers_images/gPVhP2ORfj22XmOc1HQQnw
   name: ''
+  region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3838.0
   y: 4041.0
@@ -981,6 +1058,7 @@ markers:
   images:
   - markers_images/zG85EbLnQPKQ4nU4wLQVdQ
   name: ''
+  region: VerteronFortressRuins
   subtype: monolithMaterial
   x: 4159.0
   y: 4157.0
@@ -989,6 +1067,7 @@ markers:
   images:
   - markers_images/joHS0gRR3Ln6loQaJJsHgQ
   name: ''
+  region: VerteronFortressRuins
   subtype: monolithMaterial
   x: 4223.0
   y: 4135.0
@@ -997,6 +1076,7 @@ markers:
   images:
   - markers_images/nT-WCJZUYXaVKFjBZdYl9Q
   name: ''
+  region: EasternCantasValley
   subtype: monolithMaterial
   x: 3351.0
   y: 4943.0
@@ -1005,6 +1085,7 @@ markers:
   images:
   - markers_images/vKk0xHjD9Zj23KvZIRPphw
   name: ''
+  region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3794.0
   y: 4248.0
@@ -1013,12 +1094,14 @@ markers:
   images:
   - markers_images/9LhH7W_CyMnhBgiM0Jg1Vw
   name: ''
+  region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3809.0
   y: 4142.0
 - category: collection
   id: cf5c7196-52fc-49e6-ad83-76401dd52914
   name: ''
+  region: PilgrimsRidge
   subtype: monolithMaterial
   x: 3895.0
   y: 3879.0
@@ -1027,6 +1110,7 @@ markers:
   images:
   - markers_images/Xvat6EQZRA9898ieSgHO1Q
   name: ''
+  region: EasternCantasValley
   subtype: monolithMaterial
   x: 3535.0
   y: 4991.0
@@ -1035,6 +1119,7 @@ markers:
   images:
   - markers_images/YtgKcWKk2_3k6cBF3jm6TQ
   name: ''
+  region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 4151.0
   y: 4517.0
@@ -1043,6 +1128,7 @@ markers:
   images:
   - markers_images/46I_S6drXrQRqPcVDOT_Nw
   name: ''
+  region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 4331.0
   y: 4877.0
@@ -1051,6 +1137,7 @@ markers:
   images:
   - markers_images/ka-o4EOzYSQOA5ahgDAEfw
   name: ''
+  region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 4154.0
   y: 5019.0
@@ -1059,6 +1146,7 @@ markers:
   images:
   - markers_images/k_U-uFQdgdMxY5i7tfEwMA
   name: ''
+  region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 4071.0
   y: 5037.0
@@ -1067,6 +1155,7 @@ markers:
   images:
   - markers_images/GrQJOZOPU0tBWd6MNGI3YQ
   name: ''
+  region: EasternCantasValley
   subtype: monolithMaterial
   x: 3439.0
   y: 4501.0
@@ -1075,6 +1164,7 @@ markers:
   images:
   - markers_images/lQmgKMJc_Aqdi2xeYP8kGA
   name: ''
+  region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3427.0
   y: 4365.0
@@ -1083,12 +1173,14 @@ markers:
   images:
   - markers_images/gf-cpiTGT2Jas8NFP5fqrw
   name: ''
+  region: EasternCantasValley
   subtype: monolithMaterial
   x: 3468.0
   y: 5037.0
 - category: collection
   id: a7c80f19-74d7-4fe0-a166-5cbea52c2195
   name: ''
+  region: PilgrimsRidge
   subtype: monolithMaterial
   x: 3874.0
   y: 3844.0
@@ -1097,6 +1189,7 @@ markers:
   images:
   - markers_images/zwb_vv_85WWDtOzmiKa8UA
   name: ''
+  region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3716.0
   y: 4376.0
@@ -1105,6 +1198,7 @@ markers:
   images:
   - markers_images/VcnI-LT5KD2aPLYN54qQ5A
   name: ''
+  region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3633.0
   y: 4318.0
@@ -1113,6 +1207,7 @@ markers:
   images:
   - markers_images/eXaOKg-AnOLSjykkOPAClg
   name: ''
+  region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3617.0
   y: 4313.0
@@ -1121,6 +1216,7 @@ markers:
   images:
   - markers_images/eXaOKg-AnOLSjykkOPAClg
   name: ''
+  region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3591.0
   y: 4297.0
@@ -1129,6 +1225,7 @@ markers:
   images:
   - markers_images/3mqHF4N9BOZsBSJVcvjE6A
   name: ''
+  region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3957.0
   y: 4324.0
@@ -1137,12 +1234,14 @@ markers:
   images:
   - markers_images/GPztQR-07Hc1ojmav3RMtg
   name: ''
+  region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3977.0
   y: 4375.0
 - category: collection
   id: c2f387b3-cb30-4cb1-92eb-cacd99bcbc64
   name: ''
+  region: NorthernTolbasForest
   subtype: monolithMaterial
   x: 3368.0
   y: 3635.0
@@ -1151,6 +1250,7 @@ markers:
   images:
   - markers_images/UXo_ZEFTlm-cAtuyJZj9jA
   name: ''
+  region: VerteronFortressRuins
   subtype: monolithMaterial
   x: 4008.0
   y: 4181.0
@@ -1159,12 +1259,14 @@ markers:
   images:
   - markers_images/q-BFovTx7dKCZAjielaSyw
   name: ''
+  region: NorthernTolbasForest
   subtype: monolithMaterial
   x: 3237.0
   y: 3647.0
 - category: collection
   id: 3b1533a4-8cc2-47db-a80d-3f843c1a3988
   name: ''
+  region: NorthernTolbasForest
   subtype: monolithMaterial
   x: 3490.0
   y: 3686.0
@@ -1173,6 +1275,7 @@ markers:
   images:
   - markers_images/W_ZVuT3KMFA4qUv8Fszesg
   name: ''
+  region: PilgrimsRidge
   subtype: monolithMaterial
   x: 3858.0
   y: 3646.0
@@ -1181,6 +1284,7 @@ markers:
   images:
   - markers_images/xZ17eFjJRqJw0n5HCYwMMA
   name: ''
+  region: VerteronFortressRuins
   subtype: monolithMaterial
   x: 4029.0
   y: 3970.0
@@ -1189,6 +1293,7 @@ markers:
   images:
   - markers_images/ZNwOF6DOjLHN6bXPPVOEcg
   name: ''
+  region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3597.0
   y: 3990.0
@@ -1197,6 +1302,7 @@ markers:
   images:
   - markers_images/kYVVVMDBUkOY7YcPIZV4sg
   name: ''
+  region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3413.0
   y: 4297.0
@@ -1205,6 +1311,7 @@ markers:
   images:
   - markers_images/1mv-oOoML_KiI6r61nHouA
   name: ''
+  region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3744.0
   y: 3999.0
@@ -1213,6 +1320,7 @@ markers:
   images:
   - markers_images/2qFVa8Bqyxa91DTCcmXGxA
   name: ''
+  region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 3777.0
   y: 5066.0
@@ -1221,6 +1329,7 @@ markers:
   images:
   - markers_images/15dJX1PWW4bZ9XApm5pZLw
   name: ''
+  region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3795.0
   y: 3865.0
@@ -1229,12 +1338,14 @@ markers:
   images:
   - markers_images/O-0V9T8HV_MqReBo69GlSQ
   name: ''
+  region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3157.0
   y: 4102.0
 - category: collection
   id: 7779ccbd-1b12-4660-b9f7-9f156b61d21e
   name: ''
+  region: NorthernTolbasForest
   subtype: monolithMaterial
   x: 3582.0
   y: 3698.0
@@ -1243,6 +1354,7 @@ markers:
   images:
   - markers_images/hRzbUGs7LQIbGz0LvGYikQ
   name: ''
+  region: SouthernTolbasForest
   subtype: monolithMaterial
   x: 3533.0
   y: 3177.0
@@ -1251,6 +1363,7 @@ markers:
   images:
   - markers_images/_kPlv1nrKUqgpIo882m6Kw
   name: ''
+  region: TolbasForest
   subtype: monolithMaterial
   x: 3738.0
   y: 3175.0
@@ -1259,6 +1372,7 @@ markers:
   images:
   - markers_images/8ceTsK7KxHo8-E93zj-IZQ
   name: ''
+  region: TolbasForest
   subtype: monolithMaterial
   x: 3735.0
   y: 3142.0
@@ -1267,18 +1381,21 @@ markers:
   images:
   - markers_images/M_xKjvyNPVB4N5JE7X18hw
   name: ''
+  region: VerteronFortressRuins
   subtype: monolithMaterial
   x: 4232.0
   y: 4093.0
 - category: collection
   id: 2be32a28-3609-40c0-9c0c-d2b1cc10b830
   name: ''
+  region: PilgrimsRidge
   subtype: monolithMaterial
   x: 3858.0
   y: 3757.0
 - category: collection
   id: 3fca4b77-6f0f-48f7-a08f-d5247de98f41
   name: ''
+  region: PilgrimsRidge
   subtype: monolithMaterial
   x: 4228.0
   y: 3981.0
@@ -1287,6 +1404,7 @@ markers:
   images:
   - markers_images/zTgRZI34UPVPLof3rPwyxw
   name: ''
+  region: VerteronFortressRuins
   subtype: monolithMaterial
   x: 4252.0
   y: 4168.0
@@ -1295,6 +1413,7 @@ markers:
   images:
   - markers_images/jPykewoRSpZNffJxDWCD3g
   name: ''
+  region: ZumionVillage
   subtype: monolithMaterial
   x: 4456.0
   y: 4138.0
@@ -1303,6 +1422,7 @@ markers:
   images:
   - markers_images/qoCQzelkrqYkCTU5ZmhmMQ
   name: ''
+  region: VerteronFortressRuins
   subtype: monolithMaterial
   x: 4385.0
   y: 4082.0
@@ -1311,12 +1431,14 @@ markers:
   images:
   - markers_images/XWVfILepvpTSkGsa_pHULQ
   name: ''
+  region: ForestofExiles
   subtype: monolithMaterial
   x: 3727.0
   y: 2865.0
 - category: collection
   id: 87dee76b-b473-4e8c-8aa0-99389480f94f
   name: ''
+  region: ForestofExiles
   subtype: monolithMaterial
   x: 3722.0
   y: 2948.0
@@ -1325,6 +1447,7 @@ markers:
   images:
   - markers_images/cNL9YPF_0eXLE8Ykaca2zw
   name: ''
+  region: ForestofExiles
   subtype: monolithMaterial
   x: 3809.0
   y: 2916.0
@@ -1333,6 +1456,7 @@ markers:
   images:
   - markers_images/HUdRjqPd72JMnfVVifrwwA
   name: ''
+  region: ForestofExiles
   subtype: monolithMaterial
   x: 3690.0
   y: 2936.0
@@ -1341,12 +1465,14 @@ markers:
   images:
   - markers_images/wXe7aVWWPaR5qW_P5b2unQ
   name: ''
+  region: ForestofExiles
   subtype: monolithMaterial
   x: 3675.0
   y: 2909.0
 - category: collection
   id: 315bf8d0-b69a-4000-aa2f-49d55321e300
   name: ''
+  region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4302.0
   y: 3885.0
@@ -1355,6 +1481,7 @@ markers:
   images:
   - markers_images/9DFkXG9bjx7oWS_JxuAlfg
   name: ''
+  region: AullaeuVillage
   subtype: monolithMaterial
   x: 3850.0
   y: 2683.0
@@ -1363,18 +1490,21 @@ markers:
   images:
   - markers_images/F2VnH_9EH8p_BM3MfKshPA
   name: ''
+  region: AullaeuVillage
   subtype: monolithMaterial
   x: 3862.0
   y: 2597.0
 - category: collection
   id: dcecc488-a6cb-44a5-b2d8-3facfd56bfd0
   name: ''
+  region: AullaeuVillage
   subtype: monolithMaterial
   x: 3782.0
   y: 2481.0
 - category: collection
   id: 7089f260-1b45-40e3-ac27-c65de67bdd92
   name: ''
+  region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4339.0
   y: 3932.0
@@ -1383,6 +1513,7 @@ markers:
   images:
   - markers_images/EbPaPl3TeqBtTzlsRGtFcA
   name: ''
+  region: AullaeuVillage
   subtype: monolithMaterial
   x: 3833.0
   y: 3060.0
@@ -1391,6 +1522,7 @@ markers:
   images:
   - markers_images/WmzLxLDSJSaFMELm382iRg
   name: ''
+  region: EasternAltamiaHighland
   subtype: monolithMaterial
   x: 5326.0
   y: 3779.0
@@ -1399,6 +1531,7 @@ markers:
   images:
   - markers_images/-w5QN74FxC7vBFqu7VuSVg
   name: ''
+  region: EasternAltamiaHighland
   subtype: monolithMaterial
   x: 5548.0
   y: 3837.0
@@ -1407,6 +1540,7 @@ markers:
   images:
   - markers_images/9vFRgcBOn_19Dm3SE6JbaQ
   name: ''
+  region: EasternAltamiaHighland
   subtype: monolithMaterial
   x: 5816.0
   y: 3848.0
@@ -1415,6 +1549,7 @@ markers:
   images:
   - markers_images/lxeMgVW8HeVDvrMwSSBPIg
   name: ''
+  region: EasternAltamiaHighland
   subtype: monolithMaterial
   x: 5772.0
   y: 3859.0
@@ -1423,6 +1558,7 @@ markers:
   images:
   - markers_images/YdLvpbx3qOQrR5VxjqBIIQ
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 4844.0
   y: 3531.0
@@ -1431,12 +1567,14 @@ markers:
   images:
   - markers_images/q5ufD7wRQx_rxK7oKFDkXg
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 5008.0
   y: 3369.0
 - category: collection
   id: 4a09e945-5c26-4e17-bbc6-08d4673ea014
   name: ''
+  region: PilgrimsRidge
   subtype: monolithMaterial
   x: 4096.0
   y: 3814.0
@@ -1445,12 +1583,14 @@ markers:
   images:
   - markers_images/gp0JWiZOWuTmgfn-25H96A
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 5074.0
   y: 3290.0
 - category: collection
   id: a43eadc1-b92e-4c16-abea-aa791d0ee5e3
   name: ''
+  region: PilgrimsRidge
   subtype: monolithMaterial
   x: 4100.0
   y: 3626.0
@@ -1459,6 +1599,7 @@ markers:
   images:
   - markers_images/PvmdEyaJ2556W2cOFbrevA
   name: ''
+  region: ZumionVillage
   subtype: monolithMaterial
   x: 4610.0
   y: 3975.0
@@ -1467,6 +1608,7 @@ markers:
   images:
   - markers_images/Tzr6sWMO42LKi1ee9rmcBA
   name: ''
+  region: ZumionVillage
   subtype: monolithMaterial
   x: 4697.0
   y: 3830.0
@@ -1475,6 +1617,7 @@ markers:
   images:
   - markers_images/m0EZyWFDEYuDa1M_PpYXDA
   name: ''
+  region: EasternAltamiaHighland
   subtype: monolithMaterial
   x: 4846.0
   y: 3815.0
@@ -1483,6 +1626,7 @@ markers:
   images:
   - markers_images/KRb5H1_fX2aMAceJnINtdg
   name: ''
+  region: ZumionVillage
   subtype: monolithMaterial
   x: 4747.0
   y: 4016.0
@@ -1491,6 +1635,7 @@ markers:
   images:
   - markers_images/mLQWJOAs9pGPRB6wLq-GPQ
   name: ''
+  region: ZumionVillage
   subtype: monolithMaterial
   x: 4797.0
   y: 3985.0
@@ -1499,6 +1644,7 @@ markers:
   images:
   - markers_images/C-PyMDJEKSSjBNfqryWcDQ
   name: ''
+  region: VerteronFortressRuins
   subtype: monolithMaterial
   x: 4142.0
   y: 4073.0
@@ -1507,6 +1653,7 @@ markers:
   images:
   - markers_images/ChpyKjgiyEIOu62NSa7dwA
   name: ''
+  region: DawnLegionBase
   subtype: monolithMaterial
   x: 2954.0
   y: 5066.0
@@ -1515,6 +1662,7 @@ markers:
   images:
   - markers_images/IEugxVnZXennhoURKZCEiw
   name: ''
+  region: DawnLegionBase
   subtype: monolithMaterial
   x: 2937.0
   y: 5075.0
@@ -1523,6 +1671,7 @@ markers:
   images:
   - markers_images/u59cGKNSti93DUkn1iqxmA
   name: ''
+  region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3720.0
   y: 4065.0
@@ -1531,6 +1680,7 @@ markers:
   images:
   - markers_images/4S6B45ZDsJx_5I21_dje5g
   name: ''
+  region: ZumionVillage
   subtype: monolithMaterial
   x: 4698.0
   y: 3963.0
@@ -1539,6 +1689,7 @@ markers:
   images:
   - markers_images/jTfnjTGbHQWnEr9DzXt-aw
   name: ''
+  region: EasternCantasValley
   subtype: monolithMaterial
   x: 3331.0
   y: 4992.0
@@ -1547,6 +1698,7 @@ markers:
   images:
   - markers_images/BX4mkF-fyWX7kPBYg5vQZw
   name: ''
+  region: ZumionVillage
   subtype: monolithMaterial
   x: 4610.0
   y: 3772.0
@@ -1555,6 +1707,7 @@ markers:
   images:
   - markers_images/je-d0y-JXAAiVFmSURxblQ
   name: ''
+  region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4485.0
   y: 3527.0
@@ -1563,6 +1716,7 @@ markers:
   images:
   - markers_images/LSHAmTqptv1qsOmb-jr3rw
   name: ''
+  region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4503.0
   y: 3245.0
@@ -1571,6 +1725,7 @@ markers:
   images:
   - markers_images/biW-jqgS3c1R9LVBLq3kWQ
   name: ''
+  region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3905.0
   y: 4300.0
@@ -1579,6 +1734,7 @@ markers:
   images:
   - markers_images/Zse4zBwoQw9D8YO9GV1NIw
   name: ''
+  region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4415.0
   y: 3217.0
@@ -1587,6 +1743,7 @@ markers:
   images:
   - markers_images/QNNT9imCRTfDO6Tc8ah7zQ
   name: ''
+  region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4286.0
   y: 3181.0
@@ -1595,6 +1752,7 @@ markers:
   images:
   - markers_images/aF_LZ6MidP9LLWkOgjQSvQ
   name: ''
+  region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3569.0
   y: 4085.0
@@ -1603,12 +1761,14 @@ markers:
   images:
   - markers_images/UKnsqXnrrgdD6kSgMDBmLA
   name: ''
+  region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3713.0
   y: 3881.0
 - category: collection
   id: 9ce81f5d-1d02-40e0-9874-68103df0836d
   name: ''
+  region: EasternTolbasForest
   subtype: monolithMaterial
   x: 3699.0
   y: 3680.0
@@ -1617,6 +1777,7 @@ markers:
   images:
   - markers_images/1dp5-lhuz-n50a0ZcW6INA
   name: ''
+  region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4537.0
   y: 3569.0
@@ -1625,6 +1786,7 @@ markers:
   images:
   - markers_images/pj0cysMrjpRXb5S6BuqjaQ
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 4751.0
   y: 3411.0
@@ -1633,6 +1795,7 @@ markers:
   images:
   - markers_images/jrE2tZpmC2T6iqBhTcfJSg
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 4812.0
   y: 3414.0
@@ -1641,6 +1804,7 @@ markers:
   images:
   - markers_images/1AFROjAaYS0jB5LihjxSTA
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 4902.0
   y: 3440.0
@@ -1649,6 +1813,7 @@ markers:
   images:
   - markers_images/GJ3gerFkfqcO_P555B70sQ
   name: ''
+  region: ZumionVillage
   subtype: monolithMaterial
   x: 4580.0
   y: 4048.0
@@ -1657,6 +1822,7 @@ markers:
   images:
   - markers_images/in939Mc__74B63idIq4JNg
   name: ''
+  region: EasternAltamiaHighland
   subtype: monolithMaterial
   x: 5274.0
   y: 3716.0
@@ -1665,6 +1831,7 @@ markers:
   images:
   - markers_images/k8tOwbV9txh75V7U1r06qw
   name: ''
+  region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 4380.0
   y: 5201.0
@@ -1673,6 +1840,7 @@ markers:
   images:
   - markers_images/5nY85T_M7TT4gZOnZBkjFg
   name: ''
+  region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 4480.0
   y: 5156.0
@@ -1681,6 +1849,7 @@ markers:
   images:
   - markers_images/M_gCdMu7oOX-prSh2x-qKQ
   name: ''
+  region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 3895.0
   y: 5107.0
@@ -1689,24 +1858,28 @@ markers:
   images:
   - markers_images/2Bj8uz-SpWtgEEzvyOYKjw
   name: ''
+  region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 4065.0
   y: 4778.0
 - category: collection
   id: fec5456d-2ac9-43cc-b0f1-17f865318956
   name: ''
+  region: GardenoftheIllusionGod
   subtype: monolithMaterial
   x: 5026.0
   y: 2258.0
 - category: collection
   id: bb29408c-29a8-4925-8b7b-15aadd8536cd
   name: ''
+  region: GardenoftheIllusionGod
   subtype: monolithMaterial
   x: 4963.0
   y: 2259.0
 - category: collection
   id: b336c14f-08a0-4810-aad6-471b386c95eb
   name: ''
+  region: GardenoftheIllusionGod
   subtype: monolithMaterial
   x: 5066.0
   y: 2265.0
@@ -1715,6 +1888,7 @@ markers:
   images:
   - markers_images/Gi2keXsoNetS4dwtPrqbRw
   name: ''
+  region: GardenoftheIllusionGod
   subtype: monolithMaterial
   x: 5047.0
   y: 2329.0
@@ -1723,6 +1897,7 @@ markers:
   images:
   - markers_images/RCEskklGx59ACw371BQpMQ
   name: ''
+  region: GardenoftheIllusionGod
   subtype: monolithMaterial
   x: 5002.0
   y: 2421.0
@@ -1731,6 +1906,7 @@ markers:
   images:
   - markers_images/Mf54Ph-vVn3oqhwouCbP6g
   name: ''
+  region: GardenoftheIllusionGod
   subtype: monolithMaterial
   x: 4961.0
   y: 2436.0
@@ -1739,48 +1915,56 @@ markers:
   images:
   - markers_images/jZxZ8ruIZtsOviXEVWqNig
   name: ''
+  region: GardenoftheIllusionGod
   subtype: monolithMaterial
   x: 4874.0
   y: 2353.0
 - category: collection
   id: 463347f8-7a86-4176-9301-73180900f97f
   name: ''
+  region: GardenoftheIllusionGod
   subtype: monolithMaterial
   x: 5161.0
   y: 2437.0
 - category: collection
   id: 5aec49d6-b4ef-4cd8-bd26-c0f007b2c2ea
   name: ''
+  region: GardenoftheIllusionGod
   subtype: monolithMaterial
   x: 5118.0
   y: 2495.0
 - category: collection
   id: 21fdc96f-8d4d-4277-9cb3-cc41b016a2eb
   name: ''
+  region: GardenoftheIllusionGod
   subtype: monolithMaterial
   x: 5204.0
   y: 2596.0
 - category: collection
   id: 6a26337e-9961-4e8f-9afd-068bc9df464e
   name: ''
+  region: GardenoftheIllusionGod
   subtype: monolithMaterial
   x: 4985.0
   y: 2560.0
 - category: collection
   id: 50734941-5313-45e9-b4c0-db6d581b24e9
   name: ''
+  region: GardenoftheIllusionGod
   subtype: monolithMaterial
   x: 4926.0
   y: 2581.0
 - category: collection
   id: b69d2159-1589-4e98-8801-e97cd30a5c9e
   name: ''
+  region: GardenoftheIllusionGod
   subtype: monolithMaterial
   x: 4847.0
   y: 2607.0
 - category: collection
   id: 61caa748-5b50-4aec-8cdb-0e65be6877a9
   name: ''
+  region: GardenoftheIllusionGod
   subtype: monolithMaterial
   x: 5117.0
   y: 2768.0
@@ -1789,6 +1973,7 @@ markers:
   images:
   - markers_images/NrVZn9Ga0rZAkTHNquxnOQ
   name: ''
+  region: SouthernAltamiaHighland
   subtype: monolithMaterial
   x: 4732.0
   y: 2604.0
@@ -1797,6 +1982,7 @@ markers:
   images:
   - markers_images/4iF1HS0SFqb3XEfySvssIg
   name: ''
+  region: SouthernAltamiaHighland
   subtype: monolithMaterial
   x: 4660.0
   y: 2776.0
@@ -1805,6 +1991,7 @@ markers:
   images:
   - markers_images/AYAO0NXgPa4iRCsRdq2uFQ
   name: ''
+  region: SouthernAltamiaHighland
   subtype: monolithMaterial
   x: 4548.0
   y: 2352.0
@@ -1813,6 +2000,7 @@ markers:
   images:
   - markers_images/vJmTHWYIxJ_intap5GITGQ
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 4829.0
   y: 3056.0
@@ -1821,6 +2009,7 @@ markers:
   images:
   - markers_images/61nq9u3PU4NpqpNuxyTsMg
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 4878.0
   y: 3178.0
@@ -1829,6 +2018,7 @@ markers:
   images:
   - markers_images/ffGa07KK1YzcYxd3UBneYw
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 4962.0
   y: 3390.0
@@ -1837,6 +2027,7 @@ markers:
   images:
   - markers_images/xsryfddSaJQ83pUf64VBKA
   name: ''
+  region: KrakaFootpath
   subtype: monolithMaterial
   x: 5034.0
   y: 4387.0
@@ -1845,6 +2036,7 @@ markers:
   images:
   - markers_images/odZiUdPqP1JzKyp7tSSKbA
   name: ''
+  region: KrakaFootpath
   subtype: monolithMaterial
   x: 5187.0
   y: 4356.0
@@ -1853,6 +2045,7 @@ markers:
   images:
   - markers_images/MUHTuJogBPUz1kh3hCwSfw
   name: ''
+  region: DranaPlantation
   subtype: monolithMaterial
   x: 5164.0
   y: 4474.0
@@ -1861,12 +2054,14 @@ markers:
   images:
   - markers_images/C_8k0CxO178ITwD5S3ssDg
   name: ''
+  region: DranaPlantation
   subtype: monolithMaterial
   x: 5042.0
   y: 4749.0
 - category: collection
   id: d9d77604-7c57-42a4-9e7b-afd8ba898178
   name: ''
+  region: DranaPlantation
   subtype: monolithMaterial
   x: 5231.0
   y: 4824.0
@@ -1875,6 +2070,7 @@ markers:
   images:
   - markers_images/KF8YRBsNuctnp0Befzhs9A
   name: ''
+  region: ScarletForest
   subtype: monolithMaterial
   x: 5026.0
   y: 5093.0
@@ -1883,6 +2079,7 @@ markers:
   images:
   - markers_images/I-NDmufBHiv8znPluoMH5A
   name: ''
+  region: ScarletForest
   subtype: monolithMaterial
   x: 4949.0
   y: 4965.0
@@ -1891,12 +2088,14 @@ markers:
   images:
   - markers_images/2mphE1oZEHw4XwD9QSBl4w
   name: ''
+  region: DranaPlantation
   subtype: monolithMaterial
   x: 5308.0
   y: 5095.0
 - category: collection
   id: 3a846f98-07c4-4637-ac36-17fc79b89e72
   name: ''
+  region: DranaPlantation
   subtype: monolithMaterial
   x: 5216.0
   y: 4720.0
@@ -1905,12 +2104,14 @@ markers:
   images:
   - markers_images/Ttdb7yOv6ird1TLbzL_s6w
   name: ''
+  region: DranaPlantation
   subtype: monolithMaterial
   x: 4973.0
   y: 4716.0
 - category: collection
   id: 04f71839-ab1b-4444-b190-c3ecb79b5c3b
   name: ''
+  region: DranaPlantation
   subtype: monolithMaterial
   x: 5217.0
   y: 4556.0
@@ -1919,12 +2120,14 @@ markers:
   images:
   - markers_images/9ouG_xAchCiQD6qSJousQQ
   name: ''
+  region: DranaPlantation
   subtype: monolithMaterial
   x: 5258.0
   y: 4660.0
 - category: collection
   id: a79e56f8-08f5-4f69-ae61-9ead467b6b23
   name: ''
+  region: DranaPlantation
   subtype: monolithMaterial
   x: 5183.0
   y: 4875.0
@@ -1933,6 +2136,7 @@ markers:
   images:
   - markers_images/7bR8s4fEDW9oyGCmLcANoQ
   name: ''
+  region: DranaPlantation
   subtype: monolithMaterial
   x: 5090.0
   y: 5024.0
@@ -1941,6 +2145,7 @@ markers:
   images:
   - markers_images/MpgiOgaUUIn1agju7W8sPA
   name: ''
+  region: NahidBrigadeFortress
   subtype: monolithMaterial
   x: 5520.0
   y: 5137.0
@@ -1949,6 +2154,7 @@ markers:
   images:
   - markers_images/-BKMytW_D1Wc0vLc15HP6A
   name: ''
+  region: ScarletForest
   subtype: monolithMaterial
   x: 5116.0
   y: 5189.0
@@ -1957,6 +2163,7 @@ markers:
   images:
   - markers_images/-tDxyEYQNlASHFYr3vmw2A
   name: ''
+  region: ScarletForest
   subtype: monolithMaterial
   x: 5068.0
   y: 5241.0
@@ -1965,6 +2172,7 @@ markers:
   images:
   - markers_images/ZIHO6JmTmfuOEmpLX_Oocg
   name: ''
+  region: ScarletForest
   subtype: monolithMaterial
   x: 5110.0
   y: 5329.0
@@ -1973,6 +2181,7 @@ markers:
   images:
   - markers_images/Vm7_lbdcZquBVxIVdVmXyw
   name: ''
+  region: ScarletForest
   subtype: monolithMaterial
   x: 4977.0
   y: 5191.0
@@ -1981,6 +2190,7 @@ markers:
   images:
   - markers_images/22EAJk_qNQVKKAOIINmRRg
   name: ''
+  region: ScarletForest
   subtype: monolithMaterial
   x: 4844.0
   y: 5203.0
@@ -1989,6 +2199,7 @@ markers:
   images:
   - markers_images/8hAgfij1B8_SFB9YWn2-uQ
   name: ''
+  region: ScarletForest
   subtype: monolithMaterial
   x: 4866.0
   y: 5180.0
@@ -1997,6 +2208,7 @@ markers:
   images:
   - markers_images/dnMNyx0TTffhUTZ8cec4ig
   name: ''
+  region: ScarletForest
   subtype: monolithMaterial
   x: 4863.0
   y: 5134.0
@@ -2005,18 +2217,21 @@ markers:
   images:
   - markers_images/i-NjsZlpJJSqitVZhUys-Q
   name: ''
+  region: ScarletForest
   subtype: monolithMaterial
   x: 4758.0
   y: 5112.0
 - category: collection
   id: 03bea744-7b7a-4f98-981d-217af2da16ec
   name: ''
+  region: ScarletForest
   subtype: monolithMaterial
   x: 4891.0
   y: 5051.0
 - category: collection
   id: fe04cac5-dd0e-44cc-bb72-d56dd1e32f1c
   name: ''
+  region: NahidBrigadeFortress
   subtype: monolithMaterial
   x: 5402.0
   y: 5437.0
@@ -2025,6 +2240,7 @@ markers:
   images:
   - markers_images/XsQ0r8uFqTxLrOlvDf3ccQ
   name: ''
+  region: ScarletForest
   subtype: monolithMaterial
   x: 4988.0
   y: 5491.0
@@ -2033,6 +2249,7 @@ markers:
   images:
   - markers_images/3tNuhdaoxNz5c8qiDG04VQ
   name: ''
+  region: KrakaFootpath
   subtype: monolithMaterial
   x: 4451.0
   y: 4476.0
@@ -2041,6 +2258,7 @@ markers:
   images:
   - markers_images/qWwRaGXW7EWuGW52oJAQtw
   name: ''
+  region: CrimsonIsle
   subtype: monolithMaterial
   x: 5042.0
   y: 6024.0
@@ -2049,6 +2267,7 @@ markers:
   images:
   - markers_images/Y26fN4LC56DY_-osA4WpqQ
   name: ''
+  region: CrimsonIsle
   subtype: monolithMaterial
   x: 5145.0
   y: 6164.0
@@ -2057,6 +2276,7 @@ markers:
   images:
   - markers_images/pMuehkjVOT1Quv-U70C_mQ
   name: ''
+  region: CrimsonIsle
   subtype: monolithMaterial
   x: 5135.0
   y: 6018.0
@@ -2065,6 +2285,7 @@ markers:
   images:
   - markers_images/-E9HGoV0yR1qXlKkmEat6g
   name: ''
+  region: CrimsonIsle
   subtype: monolithMaterial
   x: 4990.0
   y: 5998.0
@@ -2073,6 +2294,7 @@ markers:
   images:
   - markers_images/piz6KR5GURez0sFyvxTvcQ
   name: ''
+  region: CrimsonIsle
   subtype: monolithMaterial
   x: 4907.0
   y: 6167.0
@@ -2081,6 +2303,7 @@ markers:
   images:
   - markers_images/8AJCDh7KgtWFHLtDMpHL4Q
   name: ''
+  region: CrimsonIsle
   subtype: monolithMaterial
   x: 4873.0
   y: 6159.0
@@ -2089,6 +2312,7 @@ markers:
   images:
   - markers_images/qbA8ho7leyrLAfWYyo9knQ
   name: ''
+  region: CrimsonIsle
   subtype: monolithMaterial
   x: 4993.0
   y: 6241.0
@@ -2097,6 +2321,7 @@ markers:
   images:
   - markers_images/vZnhCU4ihEgEBmV8cU_Lsg
   name: ''
+  region: CrimsonIsle
   subtype: monolithMaterial
   x: 5052.0
   y: 6223.0
@@ -2105,12 +2330,14 @@ markers:
   images:
   - markers_images/RiMDvC-Bk4nB18fZqUyfWA
   name: ''
+  region: CrimsonIsle
   subtype: monolithMaterial
   x: 5162.0
   y: 6218.0
 - category: collection
   id: f6bc2683-f6a6-4354-ba66-039eaa1fa5c5
   name: ''
+  region: EasternTolbasForest
   subtype: monolithMaterial
   x: 3893.0
   y: 3470.0
@@ -2119,6 +2346,7 @@ markers:
   images:
   - markers_images/bOJV1x8H0FNMqXSnjO8mdg
   name: ''
+  region: CrimsonIsle
   subtype: monolithMaterial
   x: 5071.0
   y: 6309.0
@@ -2127,6 +2355,7 @@ markers:
   images:
   - markers_images/H9BJke25nxYA2pOC_dpCMQ
   name: ''
+  region: CrimsonIsle
   subtype: monolithMaterial
   x: 5031.0
   y: 6280.0
@@ -2135,6 +2364,7 @@ markers:
   images:
   - markers_images/yvwMbNYOp7Ul-vkGtypFjA
   name: ''
+  region: CrimsonIsle
   subtype: monolithMaterial
   x: 5111.0
   y: 6279.0
@@ -2143,12 +2373,14 @@ markers:
   images:
   - markers_images/IxXyq3tE-08hMsg1G1s4iQ
   name: ''
+  region: CrimsonIsle
   subtype: monolithMaterial
   x: 5174.0
   y: 6297.0
 - category: collection
   id: 437f3cd0-2fcf-4ccf-8dd3-dcd51e09fdaa
   name: ''
+  region: NorthernTolbasForest
   subtype: monolithMaterial
   x: 3279.0
   y: 3709.0
@@ -2157,6 +2389,7 @@ markers:
   images:
   - markers_images/SSRDblb0poz5vIJMXALQyQ
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 5273.0
   y: 3440.0
@@ -2165,18 +2398,21 @@ markers:
   images:
   - markers_images/fTGKvN5UZ6Ye2TymeUAqAQ
   name: ''
+  region: EasternAltamiaHighland
   subtype: monolithMaterial
   x: 5532.0
   y: 3614.0
 - category: collection
   id: d8d4c268-9c52-4a9a-a766-98598f65f218
   name: ''
+  region: EasternAltamiaHighland
   subtype: monolithMaterial
   x: 5164.0
   y: 3679.0
 - category: collection
   id: 3ef968ec-4e5c-4f35-8dfd-05320673293d
   name: ''
+  region: DranaPlantation
   subtype: monolithMaterial
   x: 5091.0
   y: 4807.0
@@ -2185,6 +2421,7 @@ markers:
   images:
   - markers_images/82GJmZg5EfwiLW2e_Vw3SQ
   name: ''
+  region: DranaPlantation
   subtype: monolithMaterial
   x: 5071.0
   y: 4589.0
@@ -2193,6 +2430,7 @@ markers:
   images:
   - markers_images/p_rQUuYdf1KXH9oyXgW1gQ
   name: ''
+  region: DranaPlantation
   subtype: monolithMaterial
   x: 4961.0
   y: 4854.0
@@ -2201,6 +2439,7 @@ markers:
   images:
   - markers_images/VETDRpkgoKUFRTv-xIEATg
   name: ''
+  region: DranaPlantation
   subtype: monolithMaterial
   x: 4924.0
   y: 4912.0
@@ -2209,6 +2448,7 @@ markers:
   images:
   - markers_images/6P48aPt6U_rJxOrNsM0zJQ
   name: ''
+  region: DawnLegionBase
   subtype: monolithMaterial
   x: 3073.0
   y: 5139.0
@@ -2217,6 +2457,7 @@ markers:
   images:
   - markers_images/t7dj7uZu447cHN2mkDRLPQ
   name: ''
+  region: ScarletForest
   subtype: monolithMaterial
   x: 5001.0
   y: 5121.0
@@ -2225,6 +2466,7 @@ markers:
   images:
   - markers_images/QhoiAoJ-y0l-SuAXiKH3qQ
   name: ''
+  region: TolbasForest
   subtype: monolithMaterial
   x: 3085.0
   y: 3487.0
@@ -2233,6 +2475,7 @@ markers:
   images:
   - markers_images/bGHGI4AwYrqa9TEo_XtFBw
   name: ''
+  region: EasternCantasValley
   subtype: monolithMaterial
   x: 3284.0
   y: 4834.0
@@ -2241,6 +2484,7 @@ markers:
   images:
   - markers_images/q0giPqqq9TFLEH1Nk95BRw
   name: ''
+  region: WesternCantasValley
   subtype: monolithMaterial
   x: 2983.0
   y: 4499.0
@@ -2249,6 +2493,7 @@ markers:
   images:
   - markers_images/SCc6B6icfpX56KBw97ZLXg
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 1634.0
   y: 1942.0
@@ -2257,6 +2502,7 @@ markers:
   images:
   - markers_images/MZPCUNDxkYCmN4_AMDYRAg
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 1673.0
   y: 1902.0
@@ -2265,6 +2511,7 @@ markers:
   images:
   - markers_images/xr0iBA9-1lBQRGjg9RKYgw
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 1668.0
   y: 1794.0
@@ -2273,6 +2520,7 @@ markers:
   images:
   - markers_images/EqtH0r4f54Q5OdKx0eKtRg
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 1787.0
   y: 1870.0
@@ -2281,6 +2529,7 @@ markers:
   images:
   - markers_images/2kIeiFi33fpvfOwnomoFLQ
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 1831.0
   y: 1811.0
@@ -2289,6 +2538,7 @@ markers:
   images:
   - markers_images/2lVxku9cPFZv7gK-Fu5dIQ
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 1898.0
   y: 1818.0
@@ -2297,6 +2547,7 @@ markers:
   images:
   - markers_images/on9toZ0sa5UmGpfZ9oj23A
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 1987.0
   y: 1900.0
@@ -2305,6 +2556,7 @@ markers:
   images:
   - markers_images/I9WygUqydvBU2aNsJI70dg
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 1987.0
   y: 1854.0
@@ -2313,6 +2565,7 @@ markers:
   images:
   - markers_images/xEkrc0tflF94g7Ef17D4LA
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 2126.0
   y: 1667.0
@@ -2321,6 +2574,7 @@ markers:
   images:
   - markers_images/YCpNLpkBzZ4XDq-X062A1A
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 1900.0
   y: 1755.0
@@ -2329,6 +2583,7 @@ markers:
   images:
   - markers_images/0EqMbepsxGnbeqzogp6xzg
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 1887.0
   y: 1722.0
@@ -2337,6 +2592,7 @@ markers:
   images:
   - markers_images/nlEV66IhVtpXYfOCm0sqaQ
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 2101.0
   y: 1785.0
@@ -2345,6 +2601,7 @@ markers:
   images:
   - markers_images/BGhG1u1QhcJmrqqLMIdJ2A
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 2115.0
   y: 1729.0
@@ -2353,6 +2610,7 @@ markers:
   images:
   - markers_images/A2IbREJRoc2hygpEggmHEQ
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 1963.0
   y: 1696.0
@@ -2361,6 +2619,7 @@ markers:
   images:
   - markers_images/XBxHdnkh2VLHEaIKWPYuWw
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 1948.0
   y: 1717.0
@@ -2369,6 +2628,7 @@ markers:
   images:
   - markers_images/RvnO8TSAz75cXu0NuP4PVQ
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 2106.0
   y: 1626.0
@@ -2377,6 +2637,7 @@ markers:
   images:
   - markers_images/TDWtxmzjHlaYiYPUSZJwOA
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 1754.0
   y: 1670.0
@@ -2385,6 +2646,7 @@ markers:
   images:
   - markers_images/zlbP3-hADRedNLWuQlILEg
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 1996.0
   y: 1659.0
@@ -2393,6 +2655,7 @@ markers:
   images:
   - markers_images/gDC5d4o1mCTtF_zGgjrnnQ
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 1804.0
   y: 1675.0
@@ -2401,6 +2664,7 @@ markers:
   images:
   - markers_images/zGrgSzyLIEApiQLrtO1fPA
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 1766.0
   y: 1551.0
@@ -2409,6 +2673,7 @@ markers:
   images:
   - markers_images/FvG_VLAbfd5yB4Hnn1izRA
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 1672.0
   y: 1607.0
@@ -2417,6 +2682,7 @@ markers:
   images:
   - markers_images/0uriNBd6knliK1tEsM-OxA
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 1851.0
   y: 1527.0
@@ -2425,6 +2691,7 @@ markers:
   images:
   - markers_images/Q2lCMtkfBS2bRK8ztpXiRw
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 1773.0
   y: 1470.0
@@ -2433,6 +2700,7 @@ markers:
   images:
   - markers_images/lMdUO8WX0jVOw1buidXE3g
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 1708.0
   y: 1459.0
@@ -2441,6 +2709,7 @@ markers:
   images:
   - markers_images/KhVJVVf5tJ4M8JexAP5sIA
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 1982.0
   y: 1483.0
@@ -2449,6 +2718,7 @@ markers:
   images:
   - markers_images/jmL4ae1mtWAzg-kzqN2bOA
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 2057.0
   y: 1503.0
@@ -2457,6 +2727,7 @@ markers:
   images:
   - markers_images/OM4YszZfINcHkmK-T6_I2Q
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 2019.0
   y: 1576.0
@@ -2465,6 +2736,7 @@ markers:
   images:
   - markers_images/UKZbzPldCh0L5d6FYOUrzQ
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 1897.0
   y: 1576.0
@@ -2473,12 +2745,14 @@ markers:
   images:
   - markers_images/nd4prKqpIYVWcmooRrzQ9g
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 1919.0
   y: 1587.0
 - category: collection
   id: 2df9c4b0-579d-42b0-8d7c-d9f070d65fcc
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 1954.0
   y: 1618.0
@@ -2487,6 +2761,7 @@ markers:
   images:
   - markers_images/K_mJfuuYRADPcheUbguH2w
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 1578.0
   y: 1498.0
@@ -2495,6 +2770,7 @@ markers:
   images:
   - markers_images/56wCQqhi9VuiirOIT-fnFw
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 1617.0
   y: 1600.0
@@ -2503,6 +2779,7 @@ markers:
   images:
   - markers_images/f-h2d1CJjVdBglPXoNM4hA
   name: ''
+  region: CrimsonIsle
   subtype: monolithMaterial
   x: 5148.0
   y: 6126.0
@@ -2511,6 +2788,7 @@ markers:
   images:
   - markers_images/CzMrHvKoD4L7HLD3S1TVCA
   name: ''
+  region: CrimsonIsle
   subtype: monolithMaterial
   x: 5115.0
   y: 6240.0
@@ -2519,6 +2797,7 @@ markers:
   images:
   - markers_images/1Boh9duFokQgzIHwAbK5nQ
   name: ''
+  region: CrimsonIsle
   subtype: monolithMaterial
   x: 5000.0
   y: 6146.0
@@ -2527,12 +2806,14 @@ markers:
   images:
   - markers_images/YQ7DMAv1mxrvzVIpXGkreA
   name: ''
+  region: ForestofExiles
   subtype: monolithMaterial
   x: 3629.0
   y: 2983.0
 - category: collection
   id: f1f30f98-0e90-4284-9ab2-c0c5ebbeaa3f
   name: ''
+  region: ForestofExiles
   subtype: monolithMaterial
   x: 3567.0
   y: 2884.0
@@ -2541,6 +2822,7 @@ markers:
   images:
   - markers_images/0AAh60pODJLUnLL8X50y9A
   name: ''
+  region: AullaeuVillage
   subtype: monolithMaterial
   x: 3862.0
   y: 3132.0
@@ -2549,12 +2831,14 @@ markers:
   images:
   - markers_images/XoAMEBP7uQHg3GB6Qe_xHg
   name: ''
+  region: AullaeuVillage
   subtype: monolithMaterial
   x: 3832.0
   y: 3111.0
 - category: collection
   id: dbc3d1d3-2f95-407d-a765-37ae41bb5151
   name: ''
+  region: EasternTolbasForest
   subtype: monolithMaterial
   x: 3930.0
   y: 3394.0
@@ -2563,6 +2847,7 @@ markers:
   images:
   - markers_images/zfqqhh2SzpUPOQPpth3Tbw
   name: ''
+  region: EasternTolbasForest
   subtype: monolithMaterial
   x: 3913.0
   y: 3353.0
@@ -2571,6 +2856,7 @@ markers:
   images:
   - markers_images/DKy_5XWMIEDOxUw5Uq7GIQ
   name: ''
+  region: EasternTolbasForest
   subtype: monolithMaterial
   x: 3951.0
   y: 3311.0
@@ -2579,12 +2865,14 @@ markers:
   images:
   - markers_images/g0BBS2-580gTrPu3573GAA
   name: ''
+  region: AullaeuFuneralIsland
   subtype: monolithMaterial
   x: 2852.0
   y: 3383.0
 - category: collection
   id: 86131da1-dd0b-486a-b691-83907b7de357
   name: ''
+  region: NorthernTolbasForest
   subtype: monolithMaterial
   x: 3308.0
   y: 3611.0
@@ -2593,6 +2881,7 @@ markers:
   images:
   - markers_images/YYY35P8fWy3cfibfrZtk1A
   name: ''
+  region: NorthernTolbasForest
   subtype: monolithMaterial
   x: 3238.0
   y: 3717.0
@@ -2601,6 +2890,7 @@ markers:
   images:
   - markers_images/BkTGMeLca0WvVbKP8EKXug
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 4801.0
   y: 2998.0
@@ -2609,6 +2899,7 @@ markers:
   images:
   - markers_images/E2TLhQPl-Q7lTZkScgSsdw
   name: ''
+  region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4797.0
   y: 3121.0
@@ -2617,6 +2908,7 @@ markers:
   images:
   - markers_images/MZ6ocy-ejhTfwZeS6ucU-g
   name: ''
+  region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4821.0
   y: 3132.0
@@ -2625,6 +2917,7 @@ markers:
   images:
   - markers_images/L1T7g7XV2sKtZ0LxZU4oRQ
   name: ''
+  region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4836.0
   y: 3106.0
@@ -2633,6 +2926,7 @@ markers:
   images:
   - markers_images/HT9dpvx4ttupX5FG6aJquA
   name: ''
+  region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4804.0
   y: 3099.0
@@ -2641,6 +2935,7 @@ markers:
   images:
   - markers_images/nkXefaMWQLcSLDCDZsplcQ
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 5083.0
   y: 3378.0
@@ -2649,6 +2944,7 @@ markers:
   images:
   - markers_images/cNovwpgQuzGu-SjgZ_Eydw
   name: ''
+  region: KrakaFootpath
   subtype: monolithMaterial
   x: 5103.0
   y: 4349.0
@@ -2657,6 +2953,7 @@ markers:
   images:
   - markers_images/cNovwpgQuzGu-SjgZ_Eydw
   name: ''
+  region: KrakaFootpath
   subtype: monolithMaterial
   x: 5080.0
   y: 4353.0
@@ -2665,6 +2962,7 @@ markers:
   images:
   - markers_images/cNovwpgQuzGu-SjgZ_Eydw
   name: ''
+  region: KrakaFootpath
   subtype: monolithMaterial
   x: 5067.0
   y: 4364.0
@@ -2673,6 +2971,7 @@ markers:
   images:
   - markers_images/nHiETjqulSOewkEU7ALL2A
   name: ''
+  region: DranaPlantation
   subtype: monolithMaterial
   x: 5352.0
   y: 4822.0
@@ -2681,6 +2980,7 @@ markers:
   images:
   - markers_images/cNovwpgQuzGu-SjgZ_Eydw
   name: ''
+  region: KrakaFootpath
   subtype: monolithMaterial
   x: 5085.0
   y: 4370.0
@@ -2689,6 +2989,7 @@ markers:
   images:
   - markers_images/cNovwpgQuzGu-SjgZ_Eydw
   name: ''
+  region: KrakaFootpath
   subtype: monolithMaterial
   x: 5082.0
   y: 4378.0
@@ -2697,6 +2998,7 @@ markers:
   images:
   - markers_images/XHk4YAOSzX6VsPcEIF4Qqw
   name: ''
+  region: ScarletForest
   subtype: monolithMaterial
   x: 4818.0
   y: 4996.0
@@ -2705,6 +3007,7 @@ markers:
   images:
   - markers_images/CRxwnQ8x5D_OBS_NxUiZIQ
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 2047.0
   y: 1703.0
@@ -2713,6 +3016,7 @@ markers:
   images:
   - markers_images/oIflaiUM45wTEWGmZwgfjQ
   name: ''
+  region: CrimsonIsle
   subtype: monolithMaterial
   x: 4922.0
   y: 6128.0
@@ -2721,6 +3025,7 @@ markers:
   images:
   - markers_images/p11uhrr1ABWnKoKflbgEWw
   name: ''
+  region: WesternCantasValley
   subtype: monolithMaterial
   x: 2525.0
   y: 4744.0
@@ -2729,6 +3034,7 @@ markers:
   images:
   - markers_images/IWXpbFJyy2Txil12pIMe_A
   name: ''
+  region: DawnLegionBase
   subtype: monolithMaterial
   x: 2469.0
   y: 4774.0
@@ -2737,6 +3043,7 @@ markers:
   images:
   - markers_images/oGdxL0796bvM51a3Q4x89A
   name: ''
+  region: AullaeuFuneralIsland
   subtype: monolithMaterial
   x: 2767.0
   y: 3396.0
@@ -2745,6 +3052,7 @@ markers:
   images:
   - markers_images/UjpOcgcLkGWm-hlTxYmBYg
   name: ''
+  region: WesternCantasValley
   subtype: monolithMaterial
   x: 3036.0
   y: 4045.0
@@ -2753,6 +3061,7 @@ markers:
   images:
   - markers_images/cypmw5Qta9_N8tqora5TcQ
   name: ''
+  region: NorthernTolbasForest
   subtype: monolithMaterial
   x: 3037.0
   y: 3750.0
@@ -2761,6 +3070,7 @@ markers:
   images:
   - markers_images/GuOGaa4le7S4_DOwVlS1Bg
   name: ''
+  region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3402.0
   y: 3935.0
@@ -2769,6 +3079,7 @@ markers:
   images:
   - markers_images/uN5iH8KRam3acoN85s689g
   name: ''
+  region: ForestofExiles
   subtype: monolithMaterial
   x: 3330.0
   y: 2939.0
@@ -2777,6 +3088,7 @@ markers:
   images:
   - markers_images/ZSNmvvFU9g2FG9j2-kBEkw
   name: ''
+  region: ForestofExiles
   subtype: monolithMaterial
   x: 3327.0
   y: 2895.0
@@ -2785,6 +3097,7 @@ markers:
   images:
   - markers_images/U2WzXTb3fUK9P5MrHcIkfg
   name: ''
+  region: ForestofExiles
   subtype: monolithMaterial
   x: 3293.0
   y: 2849.0
@@ -2793,6 +3106,7 @@ markers:
   images:
   - markers_images/j-1FREuEeg7abBJmreUBsQ
   name: ''
+  region: ForestofExiles
   subtype: monolithMaterial
   x: 3362.0
   y: 2745.0
@@ -2801,6 +3115,7 @@ markers:
   images:
   - markers_images/XYZaSx0n6AHskKD9YfIIxA
   name: ''
+  region: ForestofExiles
   subtype: monolithMaterial
   x: 3431.0
   y: 2789.0
@@ -2809,6 +3124,7 @@ markers:
   images:
   - markers_images/9mEn-cLJDb4Mo4XIUdIXCQ
   name: ''
+  region: ForestofExiles
   subtype: monolithMaterial
   x: 3423.0
   y: 2909.0
@@ -2817,6 +3133,7 @@ markers:
   images:
   - markers_images/yNpDQjlCmwMM275GXvq7qA
   name: ''
+  region: ForestofExiles
   subtype: monolithMaterial
   x: 3331.0
   y: 2851.0
@@ -2825,6 +3142,7 @@ markers:
   images:
   - markers_images/ngIiUJYX4I1EQ3puQz0Ipw
   name: ''
+  region: AullaeuVillage
   subtype: monolithMaterial
   x: 3573.0
   y: 3164.0
@@ -2833,6 +3151,7 @@ markers:
   images:
   - markers_images/k_FCimdpJjRY-bOKp5EOVQ
   name: ''
+  region: EasternCantasValley
   subtype: monolithMaterial
   x: 3197.0
   y: 4767.0
@@ -2841,6 +3160,7 @@ markers:
   images:
   - markers_images/uFP8jamxlyoRC-kfSnSpgw
   name: ''
+  region: TolbasForest
   subtype: monolithMaterial
   x: 3123.0
   y: 3389.0
@@ -2849,6 +3169,7 @@ markers:
   images:
   - markers_images/bc0Kr1m8sf-pwNMBn7KB3Q
   name: ''
+  region: SouthernTolbasForest
   subtype: monolithMaterial
   x: 3336.0
   y: 3467.0
@@ -2857,6 +3178,7 @@ markers:
   images:
   - markers_images/LmcpW6kx3adn3Xyo1wVySw
   name: ''
+  region: CrimsonIsle
   subtype: monolithMaterial
   x: 4859.0
   y: 6263.0
@@ -2865,6 +3187,7 @@ markers:
   images:
   - markers_images/2x0zQzvoNp-IFuOCI7brbQ
   name: ''
+  region: CrimsonIsle
   subtype: monolithMaterial
   x: 4966.0
   y: 6092.0
@@ -2873,12 +3196,14 @@ markers:
   images:
   - markers_images/uR3gIFKWCTgHbMRSrjflpg
   name: ''
+  region: SouthernTolbasForest
   subtype: monolithMaterial
   x: 3225.0
   y: 3263.0
 - category: collection
   id: 69b7d262-cbb6-48d9-b001-e6983f14c4fe
   name: ''
+  region: NorthernTolbasForest
   subtype: monolithMaterial
   x: 3309.0
   y: 3760.0
@@ -2887,12 +3212,14 @@ markers:
   images:
   - markers_images/Eu7okZQI2QTTrCQz3tENdQ
   name: ''
+  region: SouthernTolbasForest
   subtype: monolithMaterial
   x: 3634.0
   y: 3467.0
 - category: collection
   id: 1a4112c4-090d-478b-a1ad-11a7500cb7cb
   name: ''
+  region: ScarletForest
   subtype: monolithMaterial
   x: 5240.0
   y: 5234.0
@@ -2901,6 +3228,7 @@ markers:
   images:
   - markers_images/SRa7Rx0c77ByUWQhitCJAg
   name: ''
+  region: ScarletForest
   subtype: monolithMaterial
   x: 4754.0
   y: 4812.0
@@ -2909,6 +3237,7 @@ markers:
   images:
   - markers_images/c74k7Y5Ey37J-Rj1jDh9BQ
   name: ''
+  region: DranaPlantation
   subtype: monolithMaterial
   x: 4783.0
   y: 4821.0
@@ -2917,6 +3246,7 @@ markers:
   images:
   - markers_images/9SoHQaqKpMtsoaL3UiEqoQ
   name: ''
+  region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 3850.0
   y: 4822.0
@@ -2925,6 +3255,7 @@ markers:
   images:
   - markers_images/hQz78bTdufeKieqFanNULg
   name: ''
+  region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4593.0
   y: 3544.0
@@ -2933,6 +3264,7 @@ markers:
   images:
   - markers_images/KFGVBuDrfKzg1Ilw8FxaQw
   name: ''
+  region: CrimsonIsle
   subtype: monolithMaterial
   x: 5048.0
   y: 6067.0
@@ -2941,6 +3273,7 @@ markers:
   images:
   - markers_images/7pd3logeyGp_427jJAr5aA
   name: ''
+  region: NorthernTolbasForest
   subtype: monolithMaterial
   x: 3224.0
   y: 3569.0
@@ -2949,6 +3282,7 @@ markers:
   images:
   - markers_images/cNovwpgQuzGu-SjgZ_Eydw
   name: ''
+  region: KrakaFootpath
   subtype: monolithMaterial
   x: 5083.0
   y: 4354.0
@@ -2957,6 +3291,7 @@ markers:
   images:
   - markers_images/aQ7_VI1vKflGYUjZiI6d2w
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 4829.0
   y: 3489.0
@@ -2965,6 +3300,7 @@ markers:
   images:
   - markers_images/cNovwpgQuzGu-SjgZ_Eydw
   name: ''
+  region: KrakaFootpath
   subtype: monolithMaterial
   x: 5059.0
   y: 4369.0
@@ -2973,6 +3309,7 @@ markers:
   images:
   - markers_images/KfYKsxiG7QAOS7XiyC-urA
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 5309.0
   y: 3451.0
@@ -2981,6 +3318,7 @@ markers:
   images:
   - markers_images/PwlmRu4HVk0ZAXyUNFmrsA
   name: ''
+  region: KrakaFootpath
   subtype: monolithMaterial
   x: 5418.0
   y: 4366.0
@@ -2989,6 +3327,7 @@ markers:
   images:
   - markers_images/9kEfT59-cS8D3fgj8Sygbw
   name: ''
+  region: KrakaFootpath
   subtype: monolithMaterial
   x: 5856.0
   y: 4396.0
@@ -2997,6 +3336,7 @@ markers:
   images:
   - markers_images/zMSaXdgucsj_JfWRCJq1kA
   name: ''
+  region: ZumionVillage
   subtype: monolithMaterial
   x: 4694.0
   y: 4076.0
@@ -3005,6 +3345,7 @@ markers:
   images:
   - markers_images/Xwrhv7XCnjejh3ajh2N42Q
   name: ''
+  region: ZumionVillage
   subtype: monolithMaterial
   x: 4675.0
   y: 4131.0
@@ -3013,6 +3354,7 @@ markers:
   images:
   - markers_images/e4vmhjOf7db4zk1ocqPqDw
   name: ''
+  region: ZumionVillage
   subtype: monolithMaterial
   x: 4743.0
   y: 4113.0
@@ -3021,6 +3363,7 @@ markers:
   images:
   - markers_images/XAsNznkmpkMARlAfStlL7w
   name: ''
+  region: ZumionVillage
   subtype: monolithMaterial
   x: 4762.0
   y: 4170.0
@@ -3029,6 +3372,7 @@ markers:
   images:
   - markers_images/xrhmK3vq6o5_So_in-EMjw
   name: ''
+  region: ZumionVillage
   subtype: monolithMaterial
   x: 4817.0
   y: 4058.0
@@ -3037,6 +3381,7 @@ markers:
   images:
   - markers_images/xQF_LWX7u69jf2pQFOo40A
   name: ''
+  region: ZumionVillage
   subtype: monolithMaterial
   x: 4836.0
   y: 4113.0
@@ -3045,6 +3390,7 @@ markers:
   images:
   - markers_images/p7xe6jAL_rCcbqq9mEeZDA
   name: ''
+  region: ZumionVillage
   subtype: monolithMaterial
   x: 4859.0
   y: 4195.0
@@ -3053,6 +3399,7 @@ markers:
   images:
   - markers_images/h2pHzE5o0Q1QyU5UTZt7Dg
   name: ''
+  region: ZumionVillage
   subtype: monolithMaterial
   x: 4922.0
   y: 4239.0
@@ -3061,6 +3408,7 @@ markers:
   images:
   - markers_images/8lSio6gzRRP2WHNjsSYAMw
   name: ''
+  region: ZumionVillage
   subtype: monolithMaterial
   x: 4948.0
   y: 4133.0
@@ -3069,6 +3417,7 @@ markers:
   images:
   - markers_images/cfWM7fwaQ6ynr3glaDvhZg
   name: ''
+  region: ZumionVillage
   subtype: monolithMaterial
   x: 4813.0
   y: 3956.0
@@ -3077,12 +3426,14 @@ markers:
   images:
   - markers_images/485iMMFKcXtqzlUBkZTlTQ
   name: ''
+  region: ZumionVillage
   subtype: monolithMaterial
   x: 4755.0
   y: 3897.0
 - category: collection
   id: e223060b-52d7-4a0d-97dd-bd9517751ce6
   name: ''
+  region: KrakaFootpath
   subtype: monolithMaterial
   x: 5118.0
   y: 4143.0
@@ -3091,6 +3442,7 @@ markers:
   images:
   - markers_images/D74KBey7CFg2pjlCkgTQDQ
   name: ''
+  region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4351.0
   y: 3838.0
@@ -3099,6 +3451,7 @@ markers:
   images:
   - markers_images/1dMkR2cexC_LYJb0RQi_oQ
   name: ''
+  region: VerteronFortressRuins
   subtype: monolithMaterial
   x: 4328.0
   y: 4293.0
@@ -3107,6 +3460,7 @@ markers:
   images:
   - markers_images/zzdyDtNRWZ0MODyzhjldlA
   name: ''
+  region: NorthernTolbasForest
   subtype: monolithMaterial
   x: 3128.0
   y: 3626.0
@@ -3115,6 +3469,7 @@ markers:
   images:
   - markers_images/d4s31lUZGJ8puozNtgYtdA
   name: ''
+  region: EasternTolbasForest
   subtype: monolithMaterial
   x: 3967.0
   y: 3358.0
@@ -3123,6 +3478,7 @@ markers:
   images:
   - markers_images/lUyaD-GjBeFssFO2v6hlDw
   name: ''
+  region: PilgrimsRidge
   subtype: monolithMaterial
   x: 4023.0
   y: 3323.0
@@ -3131,6 +3487,7 @@ markers:
   images:
   - markers_images/d5uQj6bLYl1TPJJYog88SA
   name: ''
+  region: EasternTolbasForest
   subtype: monolithMaterial
   x: 4012.0
   y: 3278.0
@@ -3139,6 +3496,7 @@ markers:
   images:
   - markers_images/9bUTf-3NsiHRE_VahsJzAg
   name: ''
+  region: SouthernTolbasForest
   subtype: monolithMaterial
   x: 3265.0
   y: 3402.0
@@ -3147,6 +3505,7 @@ markers:
   images:
   - markers_images/Fl2F07chlEMxYs3XvhQZ-Q
   name: ''
+  region: TolbasForest
   subtype: monolithMaterial
   x: 3107.0
   y: 3030.0
@@ -3155,6 +3514,7 @@ markers:
   images:
   - markers_images/RM2JVQpn1Cd8tzIj7BjvLA
   name: ''
+  region: AullaeuVillage
   subtype: monolithMaterial
   x: 3239.0
   y: 2526.0
@@ -3163,12 +3523,14 @@ markers:
   images:
   - markers_images/BI4QkNVvgmbx1Zr1mem5rw
   name: ''
+  region: AullaeuVillage
   subtype: monolithMaterial
   x: 3294.0
   y: 2463.0
 - category: collection
   id: 57c66cc6-d637-42d4-9fc5-97bbf8b6f8c0
   name: ''
+  region: GardenoftheIllusionGod
   subtype: monolithMaterial
   x: 5195.0
   y: 2550.0
@@ -3177,6 +3539,7 @@ markers:
   images:
   - markers_images/wQYzp84E8TFnw4_ZG58Tqw
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 1812.0
   y: 1652.0
@@ -3185,6 +3548,7 @@ markers:
   images:
   - markers_images/O2pN2GTYEbrnf_KQBHUX4w
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 1842.0
   y: 1298.0
@@ -3193,6 +3557,7 @@ markers:
   images:
   - markers_images/51FjEPJXH6o3CpWnd-vS9w
   name: ''
+  region: SouthernTolbasForest
   subtype: monolithMaterial
   x: 3236.0
   y: 3453.0
@@ -3201,6 +3566,7 @@ markers:
   images:
   - markers_images/eYVVAVGgZGMs3H1eJ_5FHQ
   name: ''
+  region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3280.0
   y: 4123.0
@@ -3209,6 +3575,7 @@ markers:
   images:
   - markers_images/GjlN5XvmwqBS23GzSyEAmg
   name: ''
+  region: ForestofExiles
   subtype: monolithMaterial
   x: 3594.0
   y: 3040.0
@@ -3217,12 +3584,14 @@ markers:
   images:
   - markers_images/Xjtn8leoZlFweE8QZZwdIQ
   name: ''
+  region: VerteronFortressRuins
   subtype: monolithMaterial
   x: 3888.0
   y: 4120.0
 - category: collection
   id: 62b439f8-92b9-437f-a9e0-c2deb9b8fa41
   name: ''
+  region: DranaPlantation
   subtype: monolithMaterial
   x: 5379.0
   y: 4726.0
@@ -3231,6 +3600,7 @@ markers:
   images:
   - markers_images/gYiaueggFZKzHNAeKplajQ
   name: ''
+  region: SouthernTolbasForest
   subtype: monolithMaterial
   x: 3648.0
   y: 3153.0
@@ -3239,6 +3609,7 @@ markers:
   images:
   - markers_images/Ef50OrlE5dXSXCMtktADDw
   name: ''
+  region: EasternAltamiaHighland
   subtype: monolithMaterial
   x: 5727.0
   y: 3646.0
@@ -3247,6 +3618,7 @@ markers:
   images:
   - markers_images/b5wr_7KAP5CFITILOs79SA
   name: ''
+  region: EasternAltamiaHighland
   subtype: monolithMaterial
   x: 5406.0
   y: 3614.0
@@ -3255,6 +3627,7 @@ markers:
   images:
   - markers_images/G6BOroh4sqfp4E1I5xhvjQ
   name: ''
+  region: EasternAltamiaHighland
   subtype: monolithMaterial
   x: 5272.0
   y: 3842.0
@@ -3263,6 +3636,7 @@ markers:
   images:
   - markers_images/P80l9mzG1rETKIHru_2pLA
   name: ''
+  region: AullaeuVillage
   subtype: monolithMaterial
   x: 3916.0
   y: 3200.0
@@ -3271,6 +3645,7 @@ markers:
   images:
   - markers_images/D46Z9w_KWedkhayQ8rV0fA
   name: ''
+  region: AullaeuVillage
   subtype: monolithMaterial
   x: 3911.0
   y: 3057.0
@@ -3279,6 +3654,7 @@ markers:
   images:
   - markers_images/K_cFxLAU06J0ZTj8YHsWgA
   name: ''
+  region: AullaeuVillage
   subtype: monolithMaterial
   x: 3927.0
   y: 3050.0
@@ -3287,6 +3663,7 @@ markers:
   images:
   - markers_images/ESf0U5MzXe6pTA1tfiNWDg
   name: ''
+  region: ZumionVillage
   subtype: monolithMaterial
   x: 4725.0
   y: 3915.0
@@ -3295,6 +3672,7 @@ markers:
   images:
   - markers_images/iOl33OKnwXgLDxNbc-5zTw
   name: ''
+  region: ZumionVillage
   subtype: monolithMaterial
   x: 4597.0
   y: 4244.0
@@ -3303,6 +3681,7 @@ markers:
   images:
   - markers_images/MB_uwWNRIYLO_V8H5OcxfA
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 4852.0
   y: 3420.0
@@ -3311,6 +3690,7 @@ markers:
   images:
   - markers_images/iE6Qc5yn5-P6Ullp9DNFRg
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 4990.0
   y: 3246.0
@@ -3319,6 +3699,7 @@ markers:
   images:
   - markers_images/E2RSVu28K1p63IdvB5zdgA
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 5213.0
   y: 3523.0
@@ -3327,6 +3708,7 @@ markers:
   images:
   - markers_images/HzJmfeiDxLvZtgcSADPzdQ
   name: ''
+  region: DranaPlantation
   subtype: monolithMaterial
   x: 5524.0
   y: 4757.0
@@ -3335,6 +3717,7 @@ markers:
   images:
   - markers_images/m-jFIXLn5J-DzIhhOxrYBQ
   name: ''
+  region: DranaPlantation
   subtype: monolithMaterial
   x: 5453.0
   y: 4669.0
@@ -3343,12 +3726,14 @@ markers:
   images:
   - markers_images/19WVuIjX_GYXUdHl7IL6LQ
   name: ''
+  region: NahidBrigadeFortress
   subtype: monolithMaterial
   x: 5603.0
   y: 5380.0
 - category: collection
   id: 8207fa35-dbf1-4df5-80d6-e126026378b7
   name: ''
+  region: DranaPlantation
   subtype: monolithMaterial
   x: 5357.0
   y: 4686.0
@@ -3357,6 +3742,7 @@ markers:
   images:
   - markers_images/KghMYkTV4c-4YQ7Q_I94Ew
   name: ''
+  region: TolbasForest
   subtype: monolithMaterial
   x: 3742.0
   y: 3265.0
@@ -3365,6 +3751,7 @@ markers:
   images:
   - markers_images/81pORD1AMSaL7X5_R8V1mg
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 4770.0
   y: 3322.0
@@ -3373,6 +3760,7 @@ markers:
   images:
   - markers_images/9DZEAH4sRnQ2IJoAzTLrng
   name: ''
+  region: ForestofExiles
   subtype: monolithMaterial
   x: 3413.0
   y: 2929.0
@@ -3381,6 +3769,7 @@ markers:
   images:
   - markers_images/lC7mXHV75SHe3q_loPsgBA
   name: ''
+  region: ScarletForest
   subtype: monolithMaterial
   x: 4755.0
   y: 5131.0
@@ -3389,6 +3778,7 @@ markers:
   images:
   - markers_images/w3Fd6wGAMmsaaVRx35UDHQ
   name: ''
+  region: ScarletForest
   subtype: monolithMaterial
   x: 4708.0
   y: 4987.0
@@ -3397,6 +3787,7 @@ markers:
   images:
   - markers_images/Pkbya6_eQcTFm3Z6knl0Cg
   name: ''
+  region: DranaPlantation
   subtype: monolithMaterial
   x: 4702.0
   y: 4847.0
@@ -3405,6 +3796,7 @@ markers:
   images:
   - markers_images/vVKvqqeb-Vcry0YCcfk5lA
   name: ''
+  region: KrakaFootpath
   subtype: monolithMaterial
   x: 4529.0
   y: 4327.0
@@ -3413,6 +3805,7 @@ markers:
   images:
   - markers_images/QD9BnWcoVYSnvE9eoHvyBw
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 2237.0
   y: 1674.0
@@ -3421,6 +3814,7 @@ markers:
   images:
   - markers_images/l8fKg73HT-INwpYZHurXTQ
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 1619.0
   y: 1866.0
@@ -3429,6 +3823,7 @@ markers:
   images:
   - markers_images/yEAz7SrxxNjJcHUzoExSOw
   name: ''
+  region: ForestofExiles
   subtype: monolithMaterial
   x: 3808.0
   y: 2988.0
@@ -3437,6 +3832,7 @@ markers:
   images:
   - markers_images/b8JL_3T_5ns8QGyNWKwWXA
   name: ''
+  region: AullaeuVillage
   subtype: monolithMaterial
   x: 3960.0
   y: 3130.0
@@ -3445,6 +3841,7 @@ markers:
   images:
   - markers_images/VVCa0LJMxQxfdrdryvcW1w
   name: ''
+  region: ForestofExiles
   subtype: monolithMaterial
   x: 3713.0
   y: 3106.0
@@ -3453,6 +3850,7 @@ markers:
   images:
   - markers_images/UK3yEKx2deSod0QQE0m_MQ
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 2020.0
   y: 1360.0
@@ -3461,6 +3859,7 @@ markers:
   images:
   - markers_images/zoNWHbgwoLRY9z6TJwSt1Q
   name: ''
+  region: AullaeuVillage
   subtype: monolithMaterial
   x: 3754.0
   y: 2792.0
@@ -3469,6 +3868,7 @@ markers:
   images:
   - markers_images/NKTMqg5JfcxWrk8pAyrl8g
   name: ''
+  region: AullaeuVillage
   subtype: monolithMaterial
   x: 3731.0
   y: 2788.0
@@ -3477,6 +3877,7 @@ markers:
   images:
   - markers_images/yVjdmemnsJpgl3z2Uce8Cg
   name: ''
+  region: NahidBrigadeFortress
   subtype: monolithMaterial
   x: 5507.0
   y: 5134.0
@@ -3485,6 +3886,7 @@ markers:
   images:
   - markers_images/5dZFKZxZzXvxUV1-_p5jeg
   name: ''
+  region: ForestofExiles
   subtype: monolithMaterial
   x: 3498.0
   y: 2812.0
@@ -3493,6 +3895,7 @@ markers:
   images:
   - markers_images/HzUW3ynS0qYqpubhZ2sVCQ
   name: ''
+  region: DranaPlantation
   subtype: monolithMaterial
   x: 4762.0
   y: 4873.0
@@ -3501,6 +3904,7 @@ markers:
   images:
   - markers_images/LMi7_tSLp5_3NAIU4vpGUQ
   name: ''
+  region: AullaeuVillage
   subtype: monolithMaterial
   x: 3854.0
   y: 2790.0
@@ -3509,6 +3913,7 @@ markers:
   images:
   - markers_images/DNMY0YFhdXQKam9vfaazeQ
   name: ''
+  region: AullaeuVillage
   subtype: monolithMaterial
   x: 3890.0
   y: 2860.0
@@ -3517,18 +3922,21 @@ markers:
   images:
   - markers_images/87c65AMKVIn7FaI0y4bbow
   name: ''
+  region: AullaeuVillage
   subtype: monolithMaterial
   x: 3647.0
   y: 2766.0
 - category: collection
   id: c6af758e-e97d-44d1-baf8-b14aaff98cee
   name: ''
+  region: PilgrimsRidge
   subtype: monolithMaterial
   x: 4229.0
   y: 3429.0
 - category: collection
   id: fb088204-6d9e-480a-bb1c-f2d795883493
   name: ''
+  region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4306.0
   y: 3515.0
@@ -3537,6 +3945,7 @@ markers:
   images:
   - markers_images/BRdz-pkDBnMvjgXfQens1w
   name: ''
+  region: PilgrimsRidge
   subtype: monolithMaterial
   x: 4217.0
   y: 3571.0
@@ -3545,6 +3954,7 @@ markers:
   images:
   - markers_images/5z9VThkrHYR87NcZIE9tZg
   name: ''
+  region: PilgrimsRidge
   subtype: monolithMaterial
   x: 4130.0
   y: 3560.0
@@ -3553,12 +3963,14 @@ markers:
   images:
   - markers_images/TJ0p21DCja98vNMJn2VSOA
   name: ''
+  region: AullaeuVillage
   subtype: monolithMaterial
   x: 3695.0
   y: 2584.0
 - category: collection
   id: 45139481-145a-4170-abb3-f81b4e4afbb8
   name: ''
+  region: ForestofExiles
   subtype: monolithMaterial
   x: 3439.0
   y: 2859.0
@@ -3567,12 +3979,14 @@ markers:
   images:
   - markers_images/ai8LdeTzi9sf-YgiJRMTCg
   name: ''
+  region: NahidBrigadeFortress
   subtype: monolithMaterial
   x: 5687.0
   y: 4943.0
 - category: collection
   id: 3b678ded-0a57-4366-ad43-09e195ed6c08
   name: ''
+  region: DranaPlantation
   subtype: monolithMaterial
   x: 5373.0
   y: 4882.0
@@ -3581,12 +3995,14 @@ markers:
   images:
   - markers_images/OjVKrKwkxY02WrxTIGKctA
   name: ''
+  region: AullaeuVillage
   subtype: monolithMaterial
   x: 3817.0
   y: 3088.0
 - category: collection
   id: b856d614-f4ff-4788-b569-18aaefd1150e
   name: ''
+  region: GardenoftheIllusionGod
   subtype: monolithMaterial
   x: 5115.0
   y: 2583.0
@@ -3595,6 +4011,7 @@ markers:
   images:
   - markers_images/Tz3rOAr5JODQtYy6khqm3g
   name: ''
+  region: SouthernAltamiaHighland
   subtype: monolithMaterial
   x: 4452.0
   y: 2550.0
@@ -3603,6 +4020,7 @@ markers:
   images:
   - markers_images/AM0XmbZv7cLBWMCSesu-4A
   name: ''
+  region: SouthernAltamiaHighland
   subtype: monolithMaterial
   x: 4672.0
   y: 2511.0
@@ -3611,18 +4029,21 @@ markers:
   images:
   - markers_images/3thOn5SunynNCxqoTHkHTg
   name: ''
+  region: SouthernAltamiaHighland
   subtype: monolithMaterial
   x: 4247.0
   y: 2428.0
 - category: collection
   id: 00dc717b-9b0b-4f6c-8db1-f6f7e4978408
   name: ''
+  region: GardenoftheIllusionGod
   subtype: monolithMaterial
   x: 5218.0
   y: 2473.0
 - category: collection
   id: 7446aad2-f21a-479e-be11-a345fea655e5
   name: ''
+  region: GardenoftheIllusionGod
   subtype: monolithMaterial
   x: 4994.0
   y: 2139.0
@@ -3631,6 +4052,7 @@ markers:
   images:
   - markers_images/6onm_lwQKdf_0QkXoDkrXg
   name: ''
+  region: GardenoftheIllusionGod
   subtype: monolithMaterial
   x: 5066.0
   y: 2423.0
@@ -3639,6 +4061,7 @@ markers:
   images:
   - markers_images/R6asxJbjjBZNBecmRU5PNQ
   name: ''
+  region: WesternCantasValley
   subtype: monolithMaterial
   x: 3016.0
   y: 4869.0
@@ -3647,6 +4070,7 @@ markers:
   images:
   - markers_images/Oqvq3X-UU9kVnxmNn9VFcg
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 4681.0
   y: 2864.0
@@ -3655,6 +4079,7 @@ markers:
   images:
   - markers_images/YuabbXIZLAHVvi_ISNplNw
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 4729.0
   y: 2822.0
@@ -3663,6 +4088,7 @@ markers:
   images:
   - markers_images/5y43fjKIBBCymqTpppgAhA
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 4792.0
   y: 2847.0
@@ -3671,6 +4097,7 @@ markers:
   images:
   - markers_images/y8J6OzjOmyu1SP9MeHIOrQ
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 4772.0
   y: 2810.0
@@ -3679,6 +4106,7 @@ markers:
   images:
   - markers_images/w4XcYUSnN24PIditL3s9Tg
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 4814.0
   y: 2782.0
@@ -3687,6 +4115,7 @@ markers:
   images:
   - markers_images/iWrzl2m8Ddcq7MmxCHPukg
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 4857.0
   y: 2782.0
@@ -3695,6 +4124,7 @@ markers:
   images:
   - markers_images/pwPLVxhjuumte4CcEKLyGg
   name: ''
+  region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4564.0
   y: 3123.0
@@ -3703,6 +4133,7 @@ markers:
   images:
   - markers_images/Q9nd91eaAimM8v6zz3wL0Q
   name: ''
+  region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4444.0
   y: 3161.0
@@ -3711,18 +4142,21 @@ markers:
   images:
   - markers_images/3XTp3tATKFInH7ESHGVaYQ
   name: ''
+  region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4411.0
   y: 3151.0
 - category: collection
   id: a5b61f58-6aac-40b9-b0ac-aef836968c76
   name: ''
+  region: GardenoftheIllusionGod
   subtype: monolithMaterial
   x: 5080.0
   y: 2690.0
 - category: collection
   id: 786ac17e-cdff-45c6-9867-c6fb26d4830d
   name: ''
+  region: GardenoftheIllusionGod
   subtype: monolithMaterial
   x: 5102.0
   y: 2695.0
@@ -3731,6 +4165,7 @@ markers:
   images:
   - markers_images/tMZspXLxXrN1O9yhFZRgiQ
   name: ''
+  region: ZumionVillage
   subtype: monolithMaterial
   x: 4589.0
   y: 3903.0
@@ -3739,6 +4174,7 @@ markers:
   images:
   - markers_images/pqKEBpnF7CW7oPaehfWa-g
   name: ''
+  region: ZumionVillage
   subtype: monolithMaterial
   x: 4650.0
   y: 3852.0
@@ -3747,6 +4183,7 @@ markers:
   images:
   - markers_images/AYFcUX7rEry5OKRj5IJgPg
   name: ''
+  region: ZumionVillage
   subtype: monolithMaterial
   x: 4753.0
   y: 3845.0
@@ -3755,6 +4192,7 @@ markers:
   images:
   - markers_images/FuX53XIqStqsc8th7Pl9oA
   name: ''
+  region: ZumionVillage
   subtype: monolithMaterial
   x: 4649.0
   y: 4167.0
@@ -3763,40 +4201,37 @@ markers:
   images:
   - markers_images/q0BqSoh_8EH1FsatLelYZg
   name: ''
+  region: ZumionVillage
   subtype: monolithMaterial
   x: 4566.0
   y: 4115.0
 - category: collection
   id: 3a9e78bc-8b66-460c-8ddc-00aa484496d0
   name: ''
+  region: GardenoftheIllusionGod
   subtype: monolithMaterial
   x: 5362.0
   y: 2664.0
 - category: collection
   id: 855031be-f504-4b41-83f6-714700770ac4
   name: ''
+  region: GardenoftheIllusionGod
   subtype: monolithMaterial
   x: 5402.0
   y: 2617.0
 - category: collection
   id: 1bbd2d82-b807-4797-ab67-34fa0cbfe9bf
   name: ''
+  region: GardenoftheIllusionGod
   subtype: monolithMaterial
   x: 5425.0
   y: 2657.0
-- category: collection
-  id: fc2f4422-6cf2-4136-a42c-916fd4db66af
-  images:
-  - markers_images/n-HtIaiXJyka0iiiuzz1EQ
-  name: ''
-  subtype: monolithMaterial
-  x: 4960.0
-  y: 4065.0
 - category: collection
   id: 19c8ed53-6685-42d4-9878-7e034260a3e1
   images:
   - markers_images/S18onRirZDaRrjBJOrpnjw
   name: ''
+  region: KrakaFootpath
   subtype: monolithMaterial
   x: 5008.0
   y: 4126.0
@@ -3805,12 +4240,14 @@ markers:
   images:
   - markers_images/9zBML66MPTyiqTY3V6WuTw
   name: ''
+  region: EasternAltamiaHighland
   subtype: monolithMaterial
   x: 5045.0
   y: 3870.0
 - category: collection
   id: 71ff9e3d-11f4-46ce-b3fe-f9b341291d03
   name: ''
+  region: KrakaFootpath
   subtype: monolithMaterial
   x: 4997.0
   y: 4265.0
@@ -3819,6 +4256,7 @@ markers:
   images:
   - markers_images/Ika-dOMNdeWdp9F6jV3E0Q
   name: ''
+  region: KrakaFootpath
   subtype: monolithMaterial
   x: 5261.0
   y: 4264.0
@@ -3827,6 +4265,7 @@ markers:
   images:
   - markers_images/8qTjypq2V1gV-0RqctADMw
   name: ''
+  region: DranaPlantation
   subtype: monolithMaterial
   x: 5300.0
   y: 4530.0
@@ -3835,6 +4274,7 @@ markers:
   images:
   - markers_images/9HMrgm0_ez0z78ngOBvDqg
   name: ''
+  region: NahidBrigadeFortress
   subtype: monolithMaterial
   x: 5574.0
   y: 4839.0
@@ -3843,6 +4283,7 @@ markers:
   images:
   - markers_images/yk_1DrFK7Fc_-AGZyJzL1w
   name: ''
+  region: SouthernAltamiaHighland
   subtype: monolithMaterial
   x: 4549.0
   y: 2938.0
@@ -3851,6 +4292,7 @@ markers:
   images:
   - markers_images/Mv85dG8BtinJNv9ETtieDQ
   name: ''
+  region: NahidBrigadeFortress
   subtype: monolithMaterial
   x: 5424.0
   y: 5149.0
@@ -3859,6 +4301,7 @@ markers:
   images:
   - markers_images/swD-M-mnHni_Ki8QafXQYg
   name: ''
+  region: NahidBrigadeFortress
   subtype: monolithMaterial
   x: 5401.0
   y: 5271.0
@@ -3867,6 +4310,7 @@ markers:
   images:
   - markers_images/-wiy1N-oX9VcFXObAs-uww
   name: ''
+  region: NahidBrigadeFortress
   subtype: monolithMaterial
   x: 5471.0
   y: 5264.0
@@ -3875,18 +4319,21 @@ markers:
   images:
   - markers_images/6BssdH3YNrNqeKgVxCDgMg
   name: ''
+  region: NahidBrigadeFortress
   subtype: monolithMaterial
   x: 5455.0
   y: 5275.0
 - category: collection
   id: 968e43e9-77ee-4120-b4ab-8bbff02b8ab6
   name: ''
+  region: NahidBrigadeFortress
   subtype: monolithMaterial
   x: 5466.0
   y: 5379.0
 - category: collection
   id: ca88f580-9b22-46bc-9988-289e0aaa5154
   name: ''
+  region: NahidBrigadeFortress
   subtype: monolithMaterial
   x: 5410.0
   y: 5370.0
@@ -3895,6 +4342,7 @@ markers:
   images:
   - markers_images/YNZB1ckQ7U_S8uaTijhdFw
   name: ''
+  region: KrakaFootpath
   subtype: monolithMaterial
   x: 5070.0
   y: 4031.0
@@ -3903,6 +4351,7 @@ markers:
   images:
   - markers_images/30J6pwjdAopIF9vEMEk-GA
   name: ''
+  region: ZumionVillage
   subtype: monolithMaterial
   x: 4557.0
   y: 3870.0
@@ -3911,6 +4360,7 @@ markers:
   images:
   - markers_images/UD2rBK5ztwhedV5mWsjrFg
   name: ''
+  region: NahidBrigadeFortress
   subtype: monolithMaterial
   x: 5693.0
   y: 5088.0
@@ -3919,6 +4369,7 @@ markers:
   images:
   - markers_images/2_BqUPbt3-NixKeZf_tZ-w
   name: ''
+  region: NahidBrigadeFortress
   subtype: monolithMaterial
   x: 5680.0
   y: 5129.0
@@ -3927,6 +4378,7 @@ markers:
   images:
   - markers_images/L-4ONqxpqavcJ2ZIZAJ43Q
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 5531.0
   y: 3113.0
@@ -3935,6 +4387,7 @@ markers:
   images:
   - markers_images/lp5NyeV16UNkUOyKFC5NWQ
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 5319.0
   y: 3302.0
@@ -3943,6 +4396,7 @@ markers:
   images:
   - markers_images/YvnFyP2PEEMcpLjWA8ym1A
   name: ''
+  region: KrakaFootpath
   subtype: monolithMaterial
   x: 5968.0
   y: 4937.0
@@ -3951,6 +4405,7 @@ markers:
   images:
   - markers_images/4yE76HOcZpWsOMMLwNkEkQ
   name: ''
+  region: EasternAltamiaHighland
   subtype: monolithMaterial
   x: 5404.0
   y: 3368.0
@@ -3959,12 +4414,14 @@ markers:
   images:
   - markers_images/HVEzIcWlxDosaY7GLjfGjg
   name: ''
+  region: KrakaFootpath
   subtype: monolithMaterial
   x: 5926.0
   y: 4815.0
 - category: collection
   id: 6aaefef5-a318-4975-b250-24641c4c0b09
   name: ''
+  region: ScarletForest
   subtype: monolithMaterial
   x: 5192.0
   y: 4928.0
@@ -3973,6 +4430,7 @@ markers:
   images:
   - markers_images/V6vc20MMgFgIs8Xrp-rvaA
   name: ''
+  region: KrakaFootpath
   subtype: monolithMaterial
   x: 6077.0
   y: 4657.0
@@ -3981,6 +4439,7 @@ markers:
   images:
   - markers_images/AUZBw-ZxhJUcbUI8SXXipg
   name: ''
+  region: KrakaFootpath
   subtype: monolithMaterial
   x: 5954.0
   y: 4558.0
@@ -3989,6 +4448,7 @@ markers:
   images:
   - markers_images/Ly6peE30AYgYfONlmtd4qA
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 4974.0
   y: 3521.0
@@ -3997,6 +4457,7 @@ markers:
   images:
   - markers_images/hRPTAYR0C91yyQ5-GqIplA
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 4970.0
   y: 3506.0
@@ -4005,6 +4466,7 @@ markers:
   images:
   - markers_images/hxAVw53rOSwJlz754WDBXg
   name: ''
+  region: KrakaFootpath
   subtype: monolithMaterial
   x: 6128.0
   y: 4503.0
@@ -4013,22 +4475,16 @@ markers:
   images:
   - markers_images/F3WU9wyU11-kQ4qMUrWffQ
   name: ''
+  region: NahidBrigadeFortress
   subtype: monolithMaterial
   x: 5573.0
   y: 4916.0
-- category: collection
-  id: 3e629eaa-7a7a-4b46-9801-14aeedb8e31f
-  images:
-  - markers_images/mKEf7uFPkdNoWtcAT55tog
-  name: ''
-  subtype: monolithMaterial
-  x: 5578.0
-  y: 4649.0
 - category: collection
   id: 081ba4b6-827d-4e9c-af20-fba6c0068fbb
   images:
   - markers_images/atj0vqYmMwHV7jEVSfTrJw
   name: ''
+  region: KrakaFootpath
   subtype: monolithMaterial
   x: 5697.0
   y: 4743.0
@@ -4037,6 +4493,7 @@ markers:
   images:
   - markers_images/a_b2HagWTYKZxKj8QPQfmw
   name: ''
+  region: ZumionVillage
   subtype: monolithMaterial
   x: 4703.0
   y: 4250.0
@@ -4045,6 +4502,7 @@ markers:
   images:
   - markers_images/YLGePh7qY5_8D2MwVgbTnQ
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 5170.0
   y: 3040.0
@@ -4053,6 +4511,7 @@ markers:
   images:
   - markers_images/u9E1XKNxKYq8TYFMFsVIxA
   name: ''
+  region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4248.0
   y: 3783.0
@@ -4061,6 +4520,7 @@ markers:
   images:
   - markers_images/Tq-JTQdSKJh2vUSJUEeavQ
   name: ''
+  region: VerteronFortressRuins
   subtype: monolithMaterial
   x: 4268.0
   y: 4203.0
@@ -4069,6 +4529,7 @@ markers:
   images:
   - markers_images/WVrptiJnufL1MRTY6Gn_rA
   name: ''
+  region: ZumionVillage
   subtype: monolithMaterial
   x: 4543.0
   y: 3965.0
@@ -4077,6 +4538,7 @@ markers:
   images:
   - markers_images/EbOOlvOkgcskMFBtxGl5Qw
   name: ''
+  region: ZumionVillage
   subtype: monolithMaterial
   x: 4763.0
   y: 3948.0
@@ -4085,6 +4547,7 @@ markers:
   images:
   - markers_images/TsMbbLvA_pVvKgn-M-8CMA
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 5053.0
   y: 3226.0
@@ -4093,6 +4556,7 @@ markers:
   images:
   - markers_images/h-8gMZl3ySKuMNS7O2oNxg
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 4975.0
   y: 3207.0
@@ -4101,6 +4565,7 @@ markers:
   images:
   - markers_images/xq1dRITypgFZWRPdRVtp_w
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 4936.0
   y: 3123.0
@@ -4109,6 +4574,7 @@ markers:
   images:
   - markers_images/FYicVwyOor8iPFOXIeQIWQ
   name: ''
+  region: EasternAltamiaHighland
   subtype: monolithMaterial
   x: 5541.0
   y: 3430.0
@@ -4117,6 +4583,7 @@ markers:
   images:
   - markers_images/ujz9pCgl8FfW74dnZJVdkA
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 5175.0
   y: 3037.0
@@ -4125,6 +4592,7 @@ markers:
   images:
   - markers_images/NiMVh6Yt3qZmlRxY0r5ZOw
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 5193.0
   y: 3088.0
@@ -4133,6 +4601,7 @@ markers:
   images:
   - markers_images/NGJ999qvotvvpffd7OIT4g
   name: ''
+  region: AullaeuVillage
   subtype: monolithMaterial
   x: 3611.0
   y: 2633.0
@@ -4141,6 +4610,7 @@ markers:
   images:
   - markers_images/alg4ZPFRltyetompEB6mUA
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 5305.0
   y: 3131.0
@@ -4149,6 +4619,7 @@ markers:
   images:
   - markers_images/kFH6dYpalMVJ2pIb9GubsQ
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 4820.0
   y: 2915.0
@@ -4157,6 +4628,7 @@ markers:
   images:
   - markers_images/Bjza5T0ZZ2AOdOBf7OmzvA
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 5327.0
   y: 3051.0
@@ -4165,22 +4637,16 @@ markers:
   images:
   - markers_images/cNovwpgQuzGu-SjgZ_Eydw
   name: ''
+  region: KrakaFootpath
   subtype: monolithMaterial
   x: 5084.0
   y: 4352.0
-- category: collection
-  id: 7437e283-87dc-4808-a869-d5a2b99ce83a
-  images:
-  - markers_images/n0iNd6uGWBS6JT8_1gqLUg
-  name: ''
-  subtype: monolithMaterial
-  x: 5491.0
-  y: 4556.0
 - category: collection
   id: a77a41d0-66fa-4b4a-ac65-c98ca90b079a
   images:
   - markers_images/Bfje_JBMJH7OxaSS2fI4tg
   name: ''
+  region: KrakaFootpath
   subtype: monolithMaterial
   x: 5858.0
   y: 4445.0
@@ -4189,6 +4655,7 @@ markers:
   images:
   - markers_images/6rcBK-qrqi0V3XdTv6CoFg
   name: ''
+  region: DranaPlantation
   subtype: monolithMaterial
   x: 5478.0
   y: 4729.0
@@ -4197,6 +4664,7 @@ markers:
   images:
   - markers_images/T05fI6TR_wEtn5y57Ep7bA
   name: ''
+  region: ScarletForest
   subtype: monolithMaterial
   x: 5146.0
   y: 4962.0
@@ -4205,6 +4673,7 @@ markers:
   images:
   - markers_images/LuWohN_NvbBIvJBhXNT3-Q
   name: ''
+  region: NahidBrigadeFortress
   subtype: monolithMaterial
   x: 5730.0
   y: 5341.0
@@ -4213,6 +4682,7 @@ markers:
   images:
   - markers_images/tmkqRgIrBNoSg88HwCW5Hw
   name: ''
+  region: NahidBrigadeFortress
   subtype: monolithMaterial
   x: 5746.0
   y: 5291.0
@@ -4221,6 +4691,7 @@ markers:
   images:
   - markers_images/m7Hf9D8H1-AONkZ1FSehyw
   name: ''
+  region: NahidBrigadeFortress
   subtype: monolithMaterial
   x: 5747.0
   y: 5478.0
@@ -4229,12 +4700,14 @@ markers:
   images:
   - markers_images/nsnbf4zhzg-48I5F0e_1Bw
   name: ''
+  region: NahidBrigadeFortress
   subtype: monolithMaterial
   x: 5649.0
   y: 5486.0
 - category: collection
   id: 29d42759-633a-4ef6-956a-0f1efd5fd983
   name: ''
+  region: NahidBrigadeFortress
   subtype: monolithMaterial
   x: 5449.0
   y: 5425.0
@@ -4243,6 +4716,7 @@ markers:
   images:
   - markers_images/DW1JobNBbVqMLBwqZ6SyAg
   name: ''
+  region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 4610.0
   y: 5001.0
@@ -4251,6 +4725,7 @@ markers:
   images:
   - markers_images/l267szF2yxy2ohaXF5bghA
   name: ''
+  region: ScarletForest
   subtype: monolithMaterial
   x: 4647.0
   y: 5031.0
@@ -4259,6 +4734,7 @@ markers:
   images:
   - markers_images/YEQAY0wO1Eycv9eGeTS6og
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 2049.0
   y: 1501.0
@@ -4267,6 +4743,7 @@ markers:
   images:
   - markers_images/jtTzAtr1b4iP6JHuNva-8g
   name: ''
+  region: SouthernTolbasForest
   subtype: monolithMaterial
   x: 3505.0
   y: 3437.0
@@ -4275,6 +4752,7 @@ markers:
   images:
   - markers_images/12vOSt4jUdzz89WyUaU5Cg
   name: ''
+  region: EternalIsle
   subtype: monolithMaterial
   x: 1997.0
   y: 1796.0
@@ -4283,6 +4761,7 @@ markers:
   images:
   - markers_images/xcs8CgY6LNVzGWZu6nQfbg
   name: ''
+  region: SouthernTolbasForest
   subtype: monolithMaterial
   x: 3366.0
   y: 3549.0
@@ -4291,6 +4770,7 @@ markers:
   images:
   - markers_images/5SNEfINYmh4KTS-RqJQ0HQ
   name: ''
+  region: DranaPlantation
   subtype: monolithMaterial
   x: 5238.0
   y: 5171.0
@@ -4299,6 +4779,7 @@ markers:
   images:
   - markers_images/vbbbFvLvQPR71nY4PFt1lw
   name: ''
+  region: DranaPlantation
   subtype: monolithMaterial
   x: 4885.0
   y: 4771.0
@@ -4307,6 +4788,7 @@ markers:
   images:
   - markers_images/l850Jir24sYLOMYYGf-d1Q
   name: ''
+  region: DranaPlantation
   subtype: monolithMaterial
   x: 4936.0
   y: 4777.0
@@ -4315,6 +4797,7 @@ markers:
   images:
   - markers_images/6tQ2JmN8LvZZByqbGaSOiA
   name: ''
+  region: DranaPlantation
   subtype: monolithMaterial
   x: 5013.0
   y: 4672.0
@@ -4323,18 +4806,21 @@ markers:
   images:
   - markers_images/2FjAbHrHBsHEj9-nn5PrNA
   name: ''
+  region: DranaPlantation
   subtype: monolithMaterial
   x: 4964.0
   y: 4597.0
 - category: collection
   id: 123232f2-d5a7-4fb0-81eb-a0d9daac5d94
   name: ''
+  region: AullaeuVillage
   subtype: monolithMaterial
   x: 3990.0
   y: 2986.0
 - category: collection
   id: d487f96a-19cd-45cd-814f-d671537de6f8
   name: ''
+  region: ScarletForest
   subtype: monolithMaterial
   x: 5178.0
   y: 4910.0
@@ -4343,6 +4829,7 @@ markers:
   images:
   - markers_images/jrhLtAcLsEITMfo6LeEp0A
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 5155.0
   y: 3090.0
@@ -4351,6 +4838,7 @@ markers:
   images:
   - markers_images/mGKn_RUAXOKiGF99EXfPSA
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 5279.0
   y: 3096.0
@@ -4359,14 +4847,43 @@ markers:
   images:
   - markers_images/9KT5uSvczqAEGRCRjkgUGA
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 5265.0
   y: 3099.0
+- category: collection
+  id: fc2f4422-6cf2-4136-a42c-916fd4db66af
+  images:
+  - markers_images/n-HtIaiXJyka0iiiuzz1EQ
+  name: ''
+  region: ZumionVillage
+  subtype: monolithMaterial
+  x: 4960.0
+  y: 4065.0
+- category: collection
+  id: 3e629eaa-7a7a-4b46-9801-14aeedb8e31f
+  images:
+  - markers_images/mKEf7uFPkdNoWtcAT55tog
+  name: ''
+  region: KrakaFootpath
+  subtype: monolithMaterial
+  x: 5578.0
+  y: 4649.0
+- category: collection
+  id: 7437e283-87dc-4808-a869-d5a2b99ce83a
+  images:
+  - markers_images/n0iNd6uGWBS6JT8_1gqLUg
+  name: ''
+  region: KrakaFootpath
+  subtype: monolithMaterial
+  x: 5491.0
+  y: 4556.0
 - category: collection
   id: 59487202-f21a-496e-95bd-583ece149b59
   images:
   - markers_images/0WoJhfwmkDNbfhKoLKPk9g
   name: ''
+  region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 4195.0
   y: 5192.0
@@ -4375,6 +4892,7 @@ markers:
   images:
   - markers_images/4yOZqbJZMKLdNFwvMZ50Yw
   name: ''
+  region: ScarletForest
   subtype: monolithMaterial
   x: 4839.0
   y: 5399.0
@@ -4383,6 +4901,7 @@ markers:
   images:
   - markers_images/wnnzjh7aJSoaay4CVoo7Vw
   name: ''
+  region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 4551.0
   y: 4931.0
@@ -4391,12 +4910,14 @@ markers:
   images:
   - markers_images/ZzeaOxtRZblfQNLMtYiwxA
   name: ''
+  region: KrakaFootpath
   subtype: monolithMaterial
   x: 4571.0
   y: 4741.0
 - category: collection
   id: acc410be-8a44-4f07-8fad-103c9e35ef88
   name: ''
+  region: PilgrimsRidge
   subtype: monolithMaterial
   x: 4145.0
   y: 3887.0
@@ -4405,6 +4926,7 @@ markers:
   images:
   - markers_images/OHU2s41f4jKcKT14PrC1KA
   name: ''
+  region: WesternCantasValley
   subtype: monolithMaterial
   x: 2951.0
   y: 4779.0
@@ -4413,6 +4935,7 @@ markers:
   images:
   - markers_images/CCkPaa1YLSSbjspdyI6_ww
   name: ''
+  region: NahidBrigadeFortress
   subtype: monolithMaterial
   x: 5654.0
   y: 5414.0
@@ -4421,6 +4944,7 @@ markers:
   images:
   - markers_images/QiCnYIXoANsZWwIBXdMB2w
   name: ''
+  region: NahidBrigadeFortress
   subtype: monolithMaterial
   x: 5641.0
   y: 5281.0
@@ -4429,6 +4953,7 @@ markers:
   images:
   - markers_images/YwRTRm61fQhB1y3BvB8fwg
   name: ''
+  region: NahidBrigadeFortress
   subtype: monolithMaterial
   x: 5691.0
   y: 5247.0
@@ -4437,6 +4962,7 @@ markers:
   images:
   - markers_images/KsuBichYIszxLlar2VmDsw
   name: ''
+  region: NahidBrigadeFortress
   subtype: monolithMaterial
   x: 5688.0
   y: 5349.0
@@ -4445,6 +4971,7 @@ markers:
   images:
   - markers_images/MroWEhqYYSRsqAZ3rs-c4A
   name: ''
+  region: EasternAltamiaHighland
   subtype: monolithMaterial
   x: 5757.0
   y: 3240.0
@@ -4453,12 +4980,14 @@ markers:
   images:
   - markers_images/8E3p9Lq6Fxl__dgknGtVWA
   name: ''
+  region: GardenoftheIllusionGod
   subtype: monolithMaterial
   x: 4815.0
   y: 2580.0
 - category: collection
   id: 5b84b483-6786-4000-8b62-39b9321df8b3
   name: ''
+  region: GardenoftheIllusionGod
   subtype: monolithMaterial
   x: 5187.0
   y: 2315.0
@@ -4473,6 +5002,7 @@ markers:
   images:
   - markers_images/7e2dafeW71wKNA9BvShSBA
   name: ''
+  region: AullaeuVillage
   subtype: monolithMaterial
   x: 3875.0
   y: 2594.0
@@ -4487,6 +5017,7 @@ markers:
   images:
   - markers_images/QUQFzd_F1SCMr8xOCEVAWg
   name: ''
+  region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 4470.0
   y: 5465.0
@@ -4495,6 +5026,7 @@ markers:
   images:
   - markers_images/8UGehXw1qrnt_4NrNT02Jw
   name: ''
+  region: WesternCantasValley
   subtype: monolithMaterial
   x: 3083.0
   y: 4540.0
@@ -4503,6 +5035,7 @@ markers:
   images:
   - markers_images/eRd1HDtTmHOxgAQ1pLo8oQ
   name: ''
+  region: KrakaFootpath
   subtype: monolithMaterial
   x: 5621.0
   y: 4372.0
@@ -4511,12 +5044,14 @@ markers:
   images:
   - markers_images/RRn5PXA8WSzgJYnWVIWTKg
   name: ''
+  region: KrakaFootpath
   subtype: monolithMaterial
   x: 5579.0
   y: 4338.0
 - category: collection
   id: 531fbcc0-b558-446c-a3ee-b2c7978da31f
   name: ''
+  region: NahidBrigadeFortress
   subtype: monolithMaterial
   x: 5786.0
   y: 5348.0
@@ -4525,6 +5060,7 @@ markers:
   images:
   - markers_images/hXKz2T7KaO-4MYMU57OFbA
   name: ''
+  region: EasternAltamiaHighland
   subtype: monolithMaterial
   x: 5381.0
   y: 3971.0
@@ -4533,6 +5069,7 @@ markers:
   images:
   - markers_images/AKlhciSQdnJk-HxnyykY0g
   name: ''
+  region: KrakaFootpath
   subtype: monolithMaterial
   x: 5401.0
   y: 4265.0
@@ -4571,6 +5108,7 @@ markers:
   images:
   - markers_images/H5D7sw7ydMEvvfjpylhZNg
   name: ''
+  region: AullaeuVillage
   subtype: monolithMaterial
   x: 3976.0
   y: 3108.0
@@ -4615,12 +5153,14 @@ markers:
   images:
   - markers_images/g-oybjLqE3gWA10lDbd4TQ
   name: ''
+  region: KrakaFootpath
   subtype: monolithMaterial
   x: 4539.0
   y: 4545.0
 - category: collection
   id: e261dba6-81ac-4ea2-aa7c-bad5497e620d
   name: ''
+  region: KrakaFootpath
   subtype: monolithMaterial
   x: 4669.0
   y: 4430.0
@@ -4629,6 +5169,7 @@ markers:
   images:
   - markers_images/mlbDvoUINnuSNmIFblw1cg
   name: ''
+  region: KrakaFootpath
   subtype: monolithMaterial
   x: 4723.0
   y: 4619.0
@@ -4661,6 +5202,7 @@ markers:
   images:
   - markers_images/U0e6_nFsUbkVf9jll0De3w
   name: ''
+  region: NahidBrigadeFortress
   subtype: monolithMaterial
   x: 5684.0
   y: 5413.0
@@ -4669,6 +5211,7 @@ markers:
   images:
   - markers_images/OoO7gyFyIME53ZOBWc-sag
   name: ''
+  region: ForestofExiles
   subtype: monolithMaterial
   x: 3480.0
   y: 2968.0
@@ -4677,6 +5220,7 @@ markers:
   images:
   - markers_images/I2rhuW8_xpaQwHfO-Yfp2w
   name: ''
+  region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4479.0
   y: 3679.0
@@ -4685,6 +5229,7 @@ markers:
   images:
   - markers_images/kHaeEs8ft6U9y9RRVyNq9w
   name: ''
+  region: AullaeuVillage
   subtype: monolithMaterial
   x: 3964.0
   y: 3220.0
@@ -4699,6 +5244,7 @@ markers:
   images:
   - markers_images/zr5h8DV_wvQ1AzMHaVoIYw
   name: ''
+  region: NahidBrigadeFortress
   subtype: monolithMaterial
   x: 5544.0
   y: 5342.0
@@ -4707,6 +5253,7 @@ markers:
   images:
   - markers_images/QxD7jEW-QMZnTGKrOVBFrg
   name: ''
+  region: DranaPlantation
   subtype: monolithMaterial
   x: 5378.0
   y: 4998.0
@@ -4715,6 +5262,7 @@ markers:
   images:
   - markers_images/zlUT5yq21-RoM9g2hHPe4A
   name: ''
+  region: NahidBrigadeFortress
   subtype: monolithMaterial
   x: 5451.0
   y: 4983.0
@@ -4723,6 +5271,7 @@ markers:
   images:
   - markers_images/_tlVQTMIAumw9L4WlpDD1w
   name: ''
+  region: NahidBrigadeFortress
   subtype: monolithMaterial
   x: 5802.0
   y: 5191.0
@@ -4731,6 +5280,7 @@ markers:
   images:
   - markers_images/jHhhvUGbzvMcRfTqlnFvOw
   name: ''
+  region: ForestofExiles
   subtype: monolithMaterial
   x: 3508.0
   y: 3050.0
@@ -4739,6 +5289,7 @@ markers:
   images:
   - markers_images/hT_CIBK-G56xUwbIm8Wkvg
   name: ''
+  region: SouthernAltamiaHighland
   subtype: monolithMaterial
   x: 4549.0
   y: 2583.0
@@ -4759,6 +5310,7 @@ markers:
   images:
   - markers_images/LChHvn6wDKw4ItqQpBv67w
   name: ''
+  region: PilgrimsRidge
   subtype: monolithMaterial
   x: 3986.0
   y: 3735.0
@@ -4767,6 +5319,7 @@ markers:
   images:
   - markers_images/9_Ri6Ay7pIjrdONWgcsF7Q
   name: ''
+  region: KrakaFootpath
   subtype: monolithMaterial
   x: 5964.0
   y: 4175.0
@@ -4799,18 +5352,21 @@ markers:
 - category: collection
   id: ce6a9646-d48f-4705-b284-1dc12b1318d4
   name: ''
+  region: ForestofExiles
   subtype: monolithMaterial
   x: 3417.0
   y: 2863.0
 - category: collection
   id: 0383ad29-583a-4d94-85b0-9521eec8d084
   name: ''
+  region: ForestofExiles
   subtype: monolithMaterial
   x: 3389.0
   y: 2952.0
 - category: collection
   id: adbe5355-1a32-4db9-8f36-8a192d432d12
   name: ''
+  region: ForestofExiles
   subtype: monolithMaterial
   x: 3358.0
   y: 2989.0
@@ -4928,7 +5484,7 @@ markers:
   y: 2526.0
 - category: location
   id: 99e81aa0-1a28-46be-88c6-70e37994a786
-  name: EllunRiverMeadow
+  name: 艾尔伦河草地
   region: EllunRiverMeadow
   subtype: battlefield
   x: 3714.0
@@ -5031,6 +5587,7 @@ markers:
   images:
   - markers_images/dmt3VvjRPqazdRr1GtcxNg
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 5116.0
   y: 2998.0
@@ -5219,6 +5776,7 @@ markers:
   images:
   - markers_images/bcnZ0LCkHh4P60fB3Bo_kQ
   name: ''
+  region: AltamiaCanyon
   subtype: monolithMaterial
   x: 5158.0
   y: 3123.0
@@ -5285,9 +5843,34 @@ markers:
 - category: collection
   id: 7f2d18e4-6825-4dd4-80eb-f4ea6ba7012c
   name: ''
+  region: NahidBrigadeFortress
   subtype: monolithMaterial
   x: 5260.0
   y: 5228.0
+- category: collection
+  id: 04200af9-0c59-4df8-853b-51ae27c4724c
+  name: ''
+  subtype: hiddenCube
+  x: 1610.0
+  y: 1915.0
+- category: collection
+  id: 52366cf2-7bcf-4d4b-8187-a7abb2ee70cc
+  name: ''
+  subtype: hiddenCube
+  x: 2781.0
+  y: 4870.0
+- category: collection
+  id: 101055b5-9f6c-45eb-b299-52f1b4dc0809
+  name: ''
+  subtype: hiddenCube
+  x: 3502.0
+  y: 5052.0
+- category: collection
+  id: 3ed03b43-75d2-483d-a7a5-daeffb57c79e
+  name: ''
+  subtype: hiddenCube
+  x: 3208.0
+  y: 4784.0
 - category: collection
   id: ada05e4d-cc3a-42d8-a59b-3fd724680a9e
   name: ''

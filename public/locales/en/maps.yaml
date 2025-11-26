@@ -6,13 +6,13 @@ Abyss_Reshanta_B:
   name: Abyss Reshanta B
 World_D_A:
   description: Altgard (Dark)
-  name: Altgard (Dark)
+  name: Altgard (Asmodian)
 World_D_Starter:
   description: Starter (Dark)
-  name: Starter (Dark)
+  name: Starter (Asmodian)
 World_L_A:
   description: Verteron (Light)
-  name: Verteron (Light)
+  name: Verteron (Elyos)
 World_L_Starter:
   description: Starter (Light)
-  name: Starter (Light)
+  name: Starter (Elyos)

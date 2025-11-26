@@ -28,6 +28,9 @@
 03bea744-7b7a-4f98-981d-217af2da16ec:
   description: ''
   name: ''
+04200af9-0c59-4df8-853b-51ae27c4724c:
+  description: 感谢玩家雷因分享
+  name: ''
 045cdc69-4255-4cb3-b170-446abc55de10:
   description: ''
   name: ''
@@ -100,6 +103,9 @@
 0f310a22-7edf-4ce4-8dff-4d58ea68dfb6:
   description: ''
   name: 遗迹探险营地
+101055b5-9f6c-45eb-b299-52f1b4dc0809:
+  description: 感谢玩家左明明分享
+  name: ''
 108c3a35-70d4-4322-a2bf-bc0903898a2d:
   description: 在天上
   name: ''
@@ -452,7 +458,7 @@
   description: ''
   name: ''
 3a718256-fa36-44b8-894c-d49194ed864e:
-  description: 提交点初始第一个
+  description: ''
   name: ''
 3a846f98-07c4-4637-ac36-17fc79b89e72:
   description: ''
@@ -506,13 +512,18 @@
   description: ''
   name: ''
 3e629eaa-7a7a-4b46-9801-14aeedb8e31f:
-  description: ''
+  description: '在天上
+
+    '
   name: ''
 3e6f7f6c-89a6-46ba-bf03-b9ad608babf1:
   description: ''
   name: 艾尔倫河中游池塘
 3e6faa14-d30d-445d-bcc4-85d1c2d738f2:
   description: ''
+  name: ''
+3ed03b43-75d2-483d-a7a5-daeffb57c79e:
+  description: 感谢玩家左明明分享
   name: ''
 3ef968ec-4e5c-4f35-8dfd-05320673293d:
   description: ''
@@ -599,7 +610,7 @@
   description: ''
   name: ''
 47956f36-fe45-42c4-af1f-eb49aa166727:
-  description: 提交点初始第一个
+  description: ''
   name: ''
 48a6eafb-d622-4e52-9ff0-c539d76925b1:
   description: ''
@@ -660,6 +671,9 @@
   name: ''
 51effc06-af35-4444-929b-fd268a8f2fab:
   description: ''
+  name: ''
+52366cf2-7bcf-4d4b-8187-a7abb2ee70cc:
+  description: 感谢玩家左明明分享
   name: ''
 52515d14-36f6-4ae7-9da8-ffd3d8759cd9:
   description: ''
@@ -971,7 +985,7 @@
   description: ''
   name: ''
 7437e283-87dc-4808-a869-d5a2b99ce83a:
-  description: 在天上
+  description: ''
   name: ''
 7446aad2-f21a-479e-be11-a345fea655e5:
   description: ''
@@ -2120,7 +2134,7 @@ fc0f01e3-9bdb-4f8b-b9fa-01a57a23f9fa:
   description: ''
   name: 坎塔斯溪谷蘑菇树顶端
 fc2f4422-6cf2-4136-a42c-916fd4db66af:
-  description: 在天上！！！
+  description: ''
   name: ''
 fc837f0e-b40f-43cd-83ce-64012866c569:
   description: ''
