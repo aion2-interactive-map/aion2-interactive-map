@@ -70,6 +70,7 @@ export interface RegionInstance {
   id: string;
   name: string;
   type: string;
+  borders: number[][][];
 }
 
 /**

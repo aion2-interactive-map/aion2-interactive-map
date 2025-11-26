@@ -11,7 +11,8 @@ import type {
   MarkerInstance,
   MarkerTypeCategory, MarkerTypeSubtype,
 } from "../types/game";
-import GameMapTiles from "./GameMapTiles.ts";
+import GameMapTiles from "./GameMapTiles.tsx";
+import GameMapBorders from "@/components/GameMapBorders.tsx";
 
 
 type CursorTrackerProps = {
@@ -170,6 +171,7 @@ const GameMapView: React.FC<Props> = ({
         />
 
         <GameMapTiles selectedMap={selectedMap}/>
+        <GameMapBorders />
 
         {markers
           .filter((m) =>
