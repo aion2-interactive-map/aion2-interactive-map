@@ -1,8 +1,13 @@
 // src/components/map/GameMapBorders.tsx
-import React, {useMemo, useState} from "react";
+import React, {useMemo} from "react";
 import {LayerGroup, Polyline, Polygon} from "react-leaflet";
 import {useMarkers} from "@/context/MarkersContext.tsx";
 import type {RegionInstance} from "@/types/game.ts";
+
+type Props = {
+  hoveredRegion?: RegionInstance;
+  setHoveredRegion: (hoveredRegion?: RegionInstance) => void;
+}
 
 // Same idea as backend palette; adjust to your theme
 const REGION_COLORS = ["#ff3c3c", "#3cd23c", "#3c78ff", "#ffd200"];
@@ -19,9 +24,9 @@ function colorIndexFromName(name: string): number {
 const xyToLatLng = ([x, y]: number[]): [number, number] => [y, x];
 
 
-const GameMapBorders: React.FC = () => {
+const GameMapBorders: React.FC<Props> = ({ hoveredRegion, setHoveredRegion }) => {
   const {regions} = useMarkers();
-  const [hoveredRegion, setHoveredRegion] = useState<RegionInstance | undefined>(undefined);
+  // const [hoveredRegion, setHoveredRegion] = useState<RegionInstance | undefined>(undefined);
 
 
   /*  const polylines = useMemo(

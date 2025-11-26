@@ -9,10 +9,11 @@ import type {
   GameMapMeta,
   MapRef,
   MarkerInstance,
-  MarkerTypeCategory, MarkerTypeSubtype,
+  MarkerTypeCategory, MarkerTypeSubtype, RegionInstance,
 } from "../types/game";
 import GameMapTiles from "./GameMapTiles.tsx";
 import GameMapBorders from "@/components/GameMapBorders.tsx";
+import {useTranslation} from "react-i18next";
 
 
 type CursorTrackerProps = {
@@ -101,6 +102,10 @@ const GameMapView: React.FC<Props> = ({
     null,
   );
   const [contextMenu, setContextMenu] = useState<ContextMenuState | null>(null);
+  const [hoveredRegion, setHoveredRegion] = useState<RegionInstance | undefined>(undefined);
+  const regionNs = `regions/${selectedMap?.name}`;
+  const { t } = useTranslation([regionNs]);
+  const regionLabel = hoveredRegion ? t(`${regionNs}:${hoveredRegion.name}.name`) : "";
 
   const handleCopyPosition = useCallback((x: number, y: number) => {
     const text = `${Math.round(x)}, ${Math.round(y)}`;
@@ -171,7 +176,7 @@ const GameMapView: React.FC<Props> = ({
         />
 
         <GameMapTiles selectedMap={selectedMap}/>
-        <GameMapBorders />
+        <GameMapBorders hoveredRegion={hoveredRegion} setHoveredRegion={setHoveredRegion} />
 
         {markers
           .filter((m) =>
@@ -193,7 +198,7 @@ const GameMapView: React.FC<Props> = ({
 
       {cursorPos && (
         <div className="absolute bottom-3 left-3 z-[1000] rounded bg-black/80 text-white text-sm px-3 py-1.5 pointer-events-none shadow-lg backdrop-blur-sm">
-          x: {cursorPos.x.toFixed(0)}, y: {cursorPos.y.toFixed(0)}
+          x: {cursorPos.x.toFixed(0)}, y: {cursorPos.y.toFixed(0)} {regionLabel}
         </div>
       )}
 
