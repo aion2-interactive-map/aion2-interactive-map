@@ -3,7 +3,7 @@ markers:
   id: 38f4124a-a94a-4033-848a-53e4d93d2262
   images:
   - markers_images/DWqVr1vHTInPwErz6YU8Mg
-  name: ''
+  name: '6'
   region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 3960.0
@@ -12,7 +12,7 @@ markers:
   id: 472f973c-c823-4926-a306-e446f37ef368
   images:
   - markers_images/JZsNOVOX3Ga21gfflUM4cA
-  name: ''
+  name: '5'
   region: EasternCantasValley
   subtype: monolithMaterial
   x: 3236.0
@@ -21,7 +21,7 @@ markers:
   id: 3a718256-fa36-44b8-894c-d49194ed864e
   images:
   - markers_images/gAi10uojuoz4mKXjY5XWug
-  name: ''
+  name: '6'
   region: DawnLegionBase
   subtype: monolithMaterial
   x: 2991.0
@@ -30,7 +30,7 @@ markers:
   id: 6f471243-65dc-43ad-9c29-e83bcb27a2fb
   images:
   - markers_images/_cagYJczK_5TytXG7H1W9g
-  name: ''
+  name: '13'
   region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 4066.0
@@ -39,25 +39,16 @@ markers:
   id: 66263d26-8e9a-41b1-98f1-03c079a37469
   images:
   - markers_images/IPgLC_ELlHsE4clGB4KfjA
-  name: ''
+  name: '7'
   region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 4016.0
   y: 5186.0
 - category: collection
-  id: 7d2bb186-5cc3-4138-a6b2-7e0111fb9623
-  images:
-  - markers_images/moy7m--I73AJskXoZ7jFkg
-  name: 在天上
-  region: EllunRiverMarsh
-  subtype: monolithMaterial
-  x: 4072.0
-  y: 5202.0
-- category: collection
   id: 1682df7d-6d82-468d-a614-7197d13538f2
   images:
   - markers_images/gN_iy1--lPFQUHfjxM_N0A
-  name: ''
+  name: '10'
   region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 4138.0
@@ -66,7 +57,7 @@ markers:
   id: ea798af0-2fcd-40e1-8be0-2235390125b1
   images:
   - markers_images/RRA8T4sHeqUr985bzVg-OA
-  name: ''
+  name: '14'
   region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 4185.0
@@ -75,7 +66,7 @@ markers:
   id: 01553329-cddc-47b9-b4e3-ba943d9b324e
   images:
   - markers_images/xYOhXA7Ok3nb4ezKuPhfSg
-  name: ''
+  name: '1'
   region: EllunRiverMeadow
   subtype: monolithMaterial
   x: 3640.0
@@ -84,7 +75,7 @@ markers:
   id: 8fb047f9-76b9-4888-bf43-3983341f1a2f
   images:
   - markers_images/QDaE7vHHzgo94-dGa7BwJQ
-  name: ''
+  name: '4'
   region: EllunRiverMeadow
   subtype: monolithMaterial
   x: 3909.0
@@ -93,7 +84,7 @@ markers:
   id: 2629f2eb-387e-4aa5-b7fc-e2cdf305a636
   images:
   - markers_images/CUguQmRrE6QQyq9sITe2Rg
-  name: ''
+  name: '5'
   region: EllunRiverMeadow
   subtype: monolithMaterial
   x: 3790.0
@@ -102,7 +93,7 @@ markers:
   id: d303e4e3-4862-427a-b1e7-38d5d324e227
   images:
   - markers_images/eXaOKg-AnOLSjykkOPAClg
-  name: ''
+  name: '5'
   region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3595.0
@@ -111,7 +102,7 @@ markers:
   id: 983b38cc-cc98-4012-a0fd-04ffd7beee58
   images:
   - markers_images/FtQKAt_1NiXkjydk1jPmfA
-  name: ''
+  name: '3'
   region: VerteronFortressRuins
   subtype: monolithMaterial
   x: 4006.0
@@ -120,7 +111,7 @@ markers:
   id: 190e1531-0237-424c-ba36-add906c4a749
   images:
   - markers_images/UDDmoGeHNjSMAfXhllBx0Q
-  name: ''
+  name: '9'
   region: VerteronFortressRuins
   subtype: monolithMaterial
   x: 4108.0
@@ -129,7 +120,7 @@ markers:
   id: 79da3132-e5d6-4a29-872e-9411dab577b4
   images:
   - markers_images/M7A3_undviT4AYSPFoidXQ
-  name: ''
+  name: '7'
   region: VerteronFortressRuins
   subtype: monolithMaterial
   x: 3947.0
@@ -138,7 +129,7 @@ markers:
   id: ed7d8ff6-0286-4b66-bc6f-91379ca0b03a
   images:
   - markers_images/El-pRdub9tjwjtt7lV7EGQ
-  name: ''
+  name: '5'
   region: VerteronFortressRuins
   subtype: monolithMaterial
   x: 3933.0
@@ -147,7 +138,7 @@ markers:
   id: 57722588-b2c1-4ac1-b590-1c2bf2c48583
   images:
   - markers_images/qU4tx1u_I8kev0K3NLE2RQ
-  name: ''
+  name: '19'
   region: DawnLegionBase
   subtype: monolithMaterial
   x: 3030.0
@@ -156,7 +147,7 @@ markers:
   id: b0ed11ad-be7f-4faf-a2ec-e7ad14c24d71
   images:
   - markers_images/ShL-HRGksprapX1kbMpLBQ
-  name: ''
+  name: '2'
   region: EllunRiverMeadow
   subtype: monolithMaterial
   x: 3726.0
@@ -174,7 +165,7 @@ markers:
   id: fec945b8-2593-4484-beaf-67abd6afe0e9
   images:
   - markers_images/YT15c4yUSds7NBpiQzog6w
-  name: ''
+  name: '1'
   region: DawnLegionBase
   subtype: monolithMaterial
   x: 2982.0
@@ -183,7 +174,7 @@ markers:
   id: 58912d6d-1320-48e3-a606-a9e6c3f596e1
   images:
   - markers_images/F5YSR9EDM8eDxfOqNY5msg
-  name: ''
+  name: '8'
   region: DawnLegionBase
   subtype: monolithMaterial
   x: 2979.0
@@ -192,7 +183,7 @@ markers:
   id: 9faba42f-c730-4374-8a19-156cd9e50feb
   images:
   - markers_images/HRVjgvfCTwgEXh6bzrvHNw
-  name: ''
+  name: '11'
   region: EasternCantasValley
   subtype: monolithMaterial
   x: 3653.0
@@ -201,21 +192,21 @@ markers:
   id: 739a7f37-dbb6-4caa-aa03-3495fc6219ac
   images:
   - markers_images/geYabK9KMHnmVyP5QHNP3g
-  name: ''
+  name: '10'
   region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3709.0
   y: 4193.0
 - category: collection
   id: 21cfd77c-8770-4af8-8598-2a8a4532402c
-  name: ''
+  name: '13'
   region: NorthernTolbasForest
   subtype: monolithMaterial
   x: 3611.0
   y: 3747.0
 - category: collection
   id: 189a3b93-2f5d-4f33-b995-e0250c0ed577
-  name: ''
+  name: '7'
   region: NorthernTolbasForest
   subtype: monolithMaterial
   x: 3207.0
@@ -224,7 +215,7 @@ markers:
   id: 52ea3dfc-1f1d-4407-919f-2de86caaa122
   images:
   - markers_images/dhlkM05-4ihINGnOcoZJOg
-  name: ''
+  name: '2'
   region: DawnLegionBase
   subtype: monolithMaterial
   x: 2961.0
@@ -257,11 +248,20 @@ markers:
   id: 47956f36-fe45-42c4-af1f-eb49aa166727
   images:
   - markers_images/dgQ09FrUo_gMYfP75W_Pyg
-  name: ''
+  name: '11'
   region: DawnLegionBase
   subtype: monolithMaterial
   x: 2889.0
   y: 5096.0
+- category: collection
+  id: 7d2bb186-5cc3-4138-a6b2-7e0111fb9623
+  images:
+  - markers_images/moy7m--I73AJskXoZ7jFkg
+  name: '8'
+  region: EllunRiverMarsh
+  subtype: monolithMaterial
+  x: 4072.0
+  y: 5202.0
 - category: location
   id: 8ed1c656-fd6e-4b64-8a35-b08e49ffaee3
   name: 沼泽监视哨所
@@ -590,7 +590,7 @@ markers:
   id: 97e740b4-5bce-4854-8495-85a7b9b49728
   images:
   - markers_images/2CpLKTuF6QfmUtA8nHEifw
-  name: ''
+  name: '3'
   region: EasternCantasValley
   subtype: monolithMaterial
   x: 3193.0
@@ -617,7 +617,7 @@ markers:
   id: d742675b-2635-4af9-a8da-e330c01ce1cb
   images:
   - markers_images/gDKkYsGjWqrFz1-Pbpvx0A
-  name: ''
+  name: '16'
   region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 4027.0
@@ -626,7 +626,7 @@ markers:
   id: 317f4bb4-2239-4ea8-8819-d14eb1c12e26
   images:
   - markers_images/PODlPhaXE5zX2g2_bHiPNg
-  name: ''
+  name: '4'
   region: DawnLegionBase
   subtype: monolithMaterial
   x: 2922.0
@@ -635,7 +635,7 @@ markers:
   id: 1bdaa360-7795-4d9d-990f-c5bc23319b9a
   images:
   - markers_images/K04_bs0nsmt9hR_iw2gGkw
-  name: ''
+  name: '19'
   region: WesternCantasValley
   subtype: monolithMaterial
   x: 3253.0
@@ -644,7 +644,7 @@ markers:
   id: 535d1a47-cc74-4f97-a93b-df0deca0d53f
   images:
   - markers_images/U5m6EosSD5Yf5VtFHIJTcw
-  name: ''
+  name: '20'
   region: WesternCantasValley
   subtype: monolithMaterial
   x: 3265.0
@@ -653,7 +653,7 @@ markers:
   id: 8fef6a3e-3470-4514-8472-2da2ffed8158
   images:
   - markers_images/WdR3hkAquilhzCB8jcqFkg
-  name: ''
+  name: '3'
   region: DawnLegionBase
   subtype: monolithMaterial
   x: 2932.0
@@ -662,7 +662,7 @@ markers:
   id: cbfbb8bb-59d1-47bf-9b11-76aef62ac4c3
   images:
   - markers_images/Igzrx54NwlEyp5f5lSoqrg
-  name: ''
+  name: '13'
   region: DawnLegionBase
   subtype: monolithMaterial
   x: 3013.0
@@ -671,7 +671,7 @@ markers:
   id: 3e6faa14-d30d-445d-bcc4-85d1c2d738f2
   images:
   - markers_images/ZSxpX8dbfMLDc1jZzF2kvg
-  name: ''
+  name: '12'
   region: WesternCantasValley
   subtype: monolithMaterial
   x: 3240.0
@@ -680,7 +680,7 @@ markers:
   id: 9559a1d6-6dbf-41c6-a62a-22b73cd6c5b4
   images:
   - markers_images/2dT50frJ59izhJes6cSPSQ
-  name: ''
+  name: '18'
   region: DawnLegionBase
   subtype: monolithMaterial
   x: 3017.0
@@ -689,7 +689,7 @@ markers:
   id: d11aaea1-8142-40ad-b173-3772ca4d5a89
   images:
   - markers_images/xMQYd6cyITrR5tbM33t-bA
-  name: ''
+  name: '5'
   region: DawnLegionBase
   subtype: monolithMaterial
   x: 2995.0
@@ -698,7 +698,7 @@ markers:
   id: 8d10307b-3098-4fa8-a152-2683e1a7dc57
   images:
   - markers_images/LACN2mY3_YNcwPDTe4wPGg
-  name: ''
+  name: '8'
   region: WesternCantasValley
   subtype: monolithMaterial
   x: 3058.0
@@ -707,7 +707,7 @@ markers:
   id: a74eade9-21d8-4223-9f09-81321e586b7a
   images:
   - markers_images/8y-B5s2I6Kd9EHiCQGNgbw
-  name: ''
+  name: '9'
   region: WesternCantasValley
   subtype: monolithMaterial
   x: 3090.0
@@ -716,7 +716,7 @@ markers:
   id: 3e094b72-0d59-4e77-9a1a-5257354ae863
   images:
   - markers_images/ViPPNGEZYnbHQN8LUHYgYg
-  name: ''
+  name: '12'
   region: DawnLegionBase
   subtype: monolithMaterial
   x: 2866.0
@@ -725,7 +725,7 @@ markers:
   id: ce8dcc10-2e28-4cb2-bf3e-53d7c8814adb
   images:
   - markers_images/dWKkxA-FFQgLqNI2EVaB4Q
-  name: ''
+  name: '10'
   region: WesternCantasValley
   subtype: monolithMaterial
   x: 3100.0
@@ -734,7 +734,7 @@ markers:
   id: b0d2f761-7618-4847-ac1c-8097ab5a789e
   images:
   - markers_images/fpzwhuM-7eiUIH6JLt9euQ
-  name: ''
+  name: '4'
   region: WesternCantasValley
   subtype: monolithMaterial
   x: 2969.0
@@ -743,7 +743,7 @@ markers:
   id: 637883e7-f408-43c6-ad28-3abca775e252
   images:
   - markers_images/E4w-fvRJEVnyLcoxjbavzQ
-  name: ''
+  name: '1'
   region: EasternCantasValley
   subtype: monolithMaterial
   x: 3148.0
@@ -752,7 +752,7 @@ markers:
   id: 5f677b37-c42a-4b1f-b39f-c73a45dec359
   images:
   - markers_images/YJZFQ-YPwY-wsTC9txgqhg
-  name: ''
+  name: '2'
   region: EasternCantasValley
   subtype: monolithMaterial
   x: 3119.0
@@ -761,7 +761,7 @@ markers:
   id: 7b863288-b9a9-417c-8fc1-114f50e8465b
   images:
   - markers_images/ZhCovWDdk6kd2BCcCkGeag
-  name: ''
+  name: '21'
   region: WesternCantasValley
   subtype: monolithMaterial
   x: 3222.0
@@ -770,7 +770,7 @@ markers:
   id: 535edce0-5623-4e4b-b815-d474fc0201a5
   images:
   - markers_images/cXaf85r9uCcn-NFmX1lOrQ
-  name: ''
+  name: '17'
   region: DawnLegionBase
   subtype: monolithMaterial
   x: 3102.0
@@ -779,7 +779,7 @@ markers:
   id: 34107de2-781e-47a5-ad68-3abcef2661ae
   images:
   - markers_images/X268lOGYg8WPFFOJ_scs0w
-  name: ''
+  name: '18'
   region: WesternCantasValley
   subtype: monolithMaterial
   x: 3299.0
@@ -788,7 +788,7 @@ markers:
   id: 9c88be83-d731-4446-8dc1-b7ba310d7b3e
   images:
   - markers_images/ssw6_a9OoQx2Hrjtjg8lhA
-  name: ''
+  name: '17'
   region: WesternCantasValley
   subtype: monolithMaterial
   x: 3321.0
@@ -797,7 +797,7 @@ markers:
   id: 172739e2-7315-4b02-b9aa-6eb270cf8df3
   images:
   - markers_images/67ZQZSkIsP1XAXUOAsVPIA
-  name: ''
+  name: '16'
   region: WesternCantasValley
   subtype: monolithMaterial
   x: 3341.0
@@ -806,7 +806,7 @@ markers:
   id: b9ce3ea0-2852-41ca-89fe-d5d8e8ef8b3c
   images:
   - markers_images/1dMPXQyy5v8WXXtbCLiR2A
-  name: ''
+  name: '15'
   region: WesternCantasValley
   subtype: monolithMaterial
   x: 3363.0
@@ -815,7 +815,7 @@ markers:
   id: 34c01b60-23fe-4313-a4c0-23d2119a5a99
   images:
   - markers_images/MqkHboDkegheM3iMhVxmvg
-  name: ''
+  name: '14'
   region: WesternCantasValley
   subtype: monolithMaterial
   x: 3349.0
@@ -824,7 +824,7 @@ markers:
   id: f7cb0365-304f-4162-85a7-9c98c43a7287
   images:
   - markers_images/3_ffZMbVXdyoh-4hRtrWow
-  name: ''
+  name: '16'
   region: DawnLegionBase
   subtype: monolithMaterial
   x: 3117.0
@@ -833,7 +833,7 @@ markers:
   id: aa13e386-cdb1-492e-911c-1e5a5d408ce5
   images:
   - markers_images/RuaGj9gDiqV2WUEitKDSZw
-  name: ''
+  name: '14'
   region: DawnLegionBase
   subtype: monolithMaterial
   x: 3051.0
@@ -842,34 +842,16 @@ markers:
   id: 920e0a9c-58c5-4bd5-9dc9-d4fd99451db0
   images:
   - markers_images/uORPLJ-o9hWHt80CGFDP9A
-  name: ''
+  name: '5'
   region: WesternCantasValley
   subtype: monolithMaterial
   x: 3120.0
   y: 4587.0
 - category: collection
-  id: e8f5a3ed-f3f4-4d0f-83e1-b3e62755091c
-  images:
-  - markers_images/aYuUCKjeiSSZLGvNU-ybpQ
-  name: ''
-  region: EllunRiverMarsh
-  subtype: monolithMaterial
-  x: 3728.0
-  y: 4904.0
-- category: collection
-  id: e89f51d0-133e-4be0-9ff5-3af799106f50
-  images:
-  - markers_images/TW1cOeqn62VYOcnAlrg0dg
-  name: ''
-  region: EllunRiverMeadow
-  subtype: monolithMaterial
-  x: 3797.0
-  y: 4844.0
-- category: collection
   id: a545ecf2-b068-4896-a349-b2a619951a74
   images:
   - markers_images/7iLAO8fLV9VZLUzovVGnVQ
-  name: ''
+  name: '1'
   region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 3889.0
@@ -878,7 +860,7 @@ markers:
   id: cac026f9-a13f-4860-aa8b-ada362af07d8
   images:
   - markers_images/Vt4pBVi2ClET0SMlbQXfCA
-  name: ''
+  name: '3'
   region: EllunRiverMeadow
   subtype: monolithMaterial
   x: 3797.0
@@ -887,25 +869,16 @@ markers:
   id: bff4472d-c2b2-407e-980c-ffb457696a19
   images:
   - markers_images/ZIB8x1O5pLoxY_uwvHLntQ
-  name: ''
+  name: '6'
   region: EllunRiverMeadow
   subtype: monolithMaterial
   x: 3667.0
   y: 4476.0
 - category: collection
-  id: 13533794-0472-4a2c-a29a-0f979ac18e3f
-  images:
-  - markers_images/RbNZQa0Ed4w25_WHRgzg9A
-  name: ''
-  region: WesternCantasValley
-  subtype: monolithMaterial
-  x: 3607.0
-  y: 4501.0
-- category: collection
   id: 7d2a4a2b-d164-4b1e-a37c-0e7b5b4c851c
   images:
   - markers_images/vJ5B1GnG7ItK-Fcw7aGB7w
-  name: ''
+  name: '14'
   region: EasternCantasValley
   subtype: monolithMaterial
   x: 3562.0
@@ -914,7 +887,7 @@ markers:
   id: 108c3a35-70d4-4322-a2bf-bc0903898a2d
   images:
   - markers_images/qi9klMle_K19fNOGf5K4tg
-  name: ''
+  name: '13'
   region: EasternCantasValley
   subtype: monolithMaterial
   x: 3518.0
@@ -923,7 +896,7 @@ markers:
   id: 1f888b12-0ad0-413b-9a21-65761e3a2d09
   images:
   - markers_images/LxIDMYHWQ5hmvEdMzVltvw
-  name: ''
+  name: '7'
   region: DawnLegionBase
   subtype: monolithMaterial
   x: 2932.0
@@ -932,35 +905,35 @@ markers:
   id: 8cf503be-1959-4863-a077-f7d5ba6855d4
   images:
   - markers_images/pGxEWA-Da8aifP2fk_nQjw
-  name: ''
+  name: '1'
   region: WesternCantasValley
   subtype: monolithMaterial
   x: 3061.0
   y: 4767.0
 - category: collection
   id: 7d9cadd2-77b0-4ad0-a18c-9ffff1232baf
-  name: ''
+  name: '5'
   region: SouthernTolbasForest
   subtype: monolithMaterial
   x: 3355.0
   y: 3509.0
 - category: collection
   id: 7868477c-22ac-4377-a21c-0bcc6099b265
-  name: ''
+  name: '3'
   region: SouthernTolbasForest
   subtype: monolithMaterial
   x: 3445.0
   y: 3499.0
 - category: collection
   id: e624df12-e347-42cb-910f-555a0448f7d6
-  name: ''
+  name: '10'
   region: SouthernTolbasForest
   subtype: monolithMaterial
   x: 3360.0
   y: 3343.0
 - category: collection
   id: d5c5e858-b995-4dcf-871e-b8dc4a7dc9a7
-  name: ''
+  name: '11'
   region: SouthernTolbasForest
   subtype: monolithMaterial
   x: 3432.0
@@ -969,7 +942,7 @@ markers:
   id: d73d1c40-34dd-46c6-8564-74767d261124
   images:
   - markers_images/IQ_9UFZLwhdUT0hEdS1z7w
-  name: ''
+  name: '12'
   region: SouthernTolbasForest
   subtype: monolithMaterial
   x: 3489.0
@@ -978,7 +951,7 @@ markers:
   id: 077d64e1-5d46-43bc-b658-04f295d596f4
   images:
   - markers_images/wA0Vw28bMZe2z-eOPZQKHQ
-  name: ''
+  name: '5'
   region: TolbasForest
   subtype: monolithMaterial
   x: 3766.0
@@ -987,14 +960,14 @@ markers:
   id: 05ae7443-cdbb-4275-b710-d7779db25903
   images:
   - markers_images/VJtQ-Bzi3MwD9AgQRjH6nA
-  name: ''
+  name: '1'
   region: EasternTolbasForest
   subtype: monolithMaterial
   x: 3845.0
   y: 3310.0
 - category: collection
   id: 41f01c24-91dd-4255-85ab-5aee2b252f30
-  name: ''
+  name: '3'
   region: EasternTolbasForest
   subtype: monolithMaterial
   x: 3886.0
@@ -1003,7 +976,7 @@ markers:
   id: ef11f150-ab2f-4495-a3f1-a9fa94ba9fc6
   images:
   - markers_images/yFiB6lxqhEWwPJe_Kd8Czg
-  name: ''
+  name: '2'
   region: EasternTolbasForest
   subtype: monolithMaterial
   x: 3853.0
@@ -1012,7 +985,7 @@ markers:
   id: 30815887-bcc4-4118-a173-c6fa59266db1
   images:
   - markers_images/UVmDZFrE98H4AmZPdeycpg
-  name: ''
+  name: '6'
   region: EasternCantasValley
   subtype: monolithMaterial
   x: 3390.0
@@ -1021,7 +994,7 @@ markers:
   id: 9b1dac42-fc39-4dab-a3b8-e3bf6c72bcdd
   images:
   - markers_images/gd2qSQ2ulG3IvtWfCuYrrQ
-  name: ''
+  name: '17'
   region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3953.0
@@ -1030,7 +1003,7 @@ markers:
   id: a17fc103-5ff8-4690-b279-84039ddb6aaa
   images:
   - markers_images/mzW3R3PULAJVpIQ0pOX-ew
-  name: ''
+  name: '1'
   region: VerteronFortressRuins
   subtype: monolithMaterial
   x: 4051.0
@@ -1039,7 +1012,7 @@ markers:
   id: a241682c-8960-49a8-b43b-55fff0a168eb
   images:
   - markers_images/bJ_Iq0W4W7VwxV3ecV5dKw
-  name: ''
+  name: '6'
   region: VerteronFortressRuins
   subtype: monolithMaterial
   x: 3970.0
@@ -1048,7 +1021,7 @@ markers:
   id: 95e995cb-20bb-4837-8566-e4951fb97461
   images:
   - markers_images/gPVhP2ORfj22XmOc1HQQnw
-  name: ''
+  name: '19'
   region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3838.0
@@ -1057,7 +1030,7 @@ markers:
   id: daac1428-5e37-48a0-8fc4-2db7fc31c297
   images:
   - markers_images/zG85EbLnQPKQ4nU4wLQVdQ
-  name: ''
+  name: '11'
   region: VerteronFortressRuins
   subtype: monolithMaterial
   x: 4159.0
@@ -1066,7 +1039,7 @@ markers:
   id: 59f60fb1-6a16-4fae-b16b-99d617494037
   images:
   - markers_images/joHS0gRR3Ln6loQaJJsHgQ
-  name: ''
+  name: '13'
   region: VerteronFortressRuins
   subtype: monolithMaterial
   x: 4223.0
@@ -1075,7 +1048,7 @@ markers:
   id: 596e5201-eb45-4904-8ad8-079846f6d2c1
   images:
   - markers_images/nT-WCJZUYXaVKFjBZdYl9Q
-  name: ''
+  name: '7'
   region: EasternCantasValley
   subtype: monolithMaterial
   x: 3351.0
@@ -1084,7 +1057,7 @@ markers:
   id: fc004129-2834-4efb-a0a2-950f6f5b16b9
   images:
   - markers_images/vKk0xHjD9Zj23KvZIRPphw
-  name: ''
+  name: '11'
   region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3794.0
@@ -1093,14 +1066,14 @@ markers:
   id: 37c93462-197e-43eb-be63-cb238dc30ec1
   images:
   - markers_images/9LhH7W_CyMnhBgiM0Jg1Vw
-  name: ''
+  name: '18'
   region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3809.0
   y: 4142.0
 - category: collection
   id: cf5c7196-52fc-49e6-ad83-76401dd52914
-  name: ''
+  name: '6'
   region: PilgrimsRidge
   subtype: monolithMaterial
   x: 3895.0
@@ -1109,7 +1082,7 @@ markers:
   id: 566999af-33db-4598-b066-8b265d8934ad
   images:
   - markers_images/Xvat6EQZRA9898ieSgHO1Q
-  name: ''
+  name: '10'
   region: EasternCantasValley
   subtype: monolithMaterial
   x: 3535.0
@@ -1118,7 +1091,7 @@ markers:
   id: 6009b4c0-dd79-4311-b987-d98d2c4d6106
   images:
   - markers_images/YtgKcWKk2_3k6cBF3jm6TQ
-  name: ''
+  name: '15'
   region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 4151.0
@@ -1127,7 +1100,7 @@ markers:
   id: 43c7cc61-1b22-429d-a76b-1daf56ca7de4
   images:
   - markers_images/46I_S6drXrQRqPcVDOT_Nw
-  name: ''
+  name: '15'
   region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 4331.0
@@ -1136,7 +1109,7 @@ markers:
   id: 475fec51-28cf-40cc-9583-53a20065dcb4
   images:
   - markers_images/ka-o4EOzYSQOA5ahgDAEfw
-  name: ''
+  name: '12'
   region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 4154.0
@@ -1145,7 +1118,7 @@ markers:
   id: 11ac73ff-baa5-45bd-bdd6-1eda4ab269d3
   images:
   - markers_images/k_U-uFQdgdMxY5i7tfEwMA
-  name: ''
+  name: '11'
   region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 4071.0
@@ -1154,7 +1127,7 @@ markers:
   id: d8c83147-892e-44e1-8cea-c54fdd915f47
   images:
   - markers_images/GrQJOZOPU0tBWd6MNGI3YQ
-  name: ''
+  name: '15'
   region: EasternCantasValley
   subtype: monolithMaterial
   x: 3439.0
@@ -1163,7 +1136,7 @@ markers:
   id: 788dc1a7-91c3-408e-a673-c44059a976be
   images:
   - markers_images/lQmgKMJc_Aqdi2xeYP8kGA
-  name: ''
+  name: '4'
   region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3427.0
@@ -1172,14 +1145,14 @@ markers:
   id: 4095951d-7126-4c86-963a-5629d2cb09a8
   images:
   - markers_images/gf-cpiTGT2Jas8NFP5fqrw
-  name: ''
+  name: '9'
   region: EasternCantasValley
   subtype: monolithMaterial
   x: 3468.0
   y: 5037.0
 - category: collection
   id: a7c80f19-74d7-4fe0-a166-5cbea52c2195
-  name: ''
+  name: '7'
   region: PilgrimsRidge
   subtype: monolithMaterial
   x: 3874.0
@@ -1188,7 +1161,7 @@ markers:
   id: 9945669e-ee6a-4204-ab74-378bdf2d0d51
   images:
   - markers_images/zwb_vv_85WWDtOzmiKa8UA
-  name: ''
+  name: '9'
   region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3716.0
@@ -1197,7 +1170,7 @@ markers:
   id: 90c3e6aa-304f-45e6-a8b5-ce720b5adb43
   images:
   - markers_images/VcnI-LT5KD2aPLYN54qQ5A
-  name: ''
+  name: '8'
   region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3633.0
@@ -1206,7 +1179,7 @@ markers:
   id: 529c56ba-a268-4b7a-be23-85cac5a1f2a2
   images:
   - markers_images/eXaOKg-AnOLSjykkOPAClg
-  name: ''
+  name: '7'
   region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3617.0
@@ -1215,7 +1188,7 @@ markers:
   id: b59e5e29-21c2-42bd-a483-28d4b977918a
   images:
   - markers_images/eXaOKg-AnOLSjykkOPAClg
-  name: ''
+  name: '6'
   region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3591.0
@@ -1224,7 +1197,7 @@ markers:
   id: 51effc06-af35-4444-929b-fd268a8f2fab
   images:
   - markers_images/3mqHF4N9BOZsBSJVcvjE6A
-  name: ''
+  name: '13'
   region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3957.0
@@ -1233,14 +1206,14 @@ markers:
   id: f14b8cc8-57b9-436b-bede-7991a3e82689
   images:
   - markers_images/GPztQR-07Hc1ojmav3RMtg
-  name: ''
+  name: '14'
   region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3977.0
   y: 4375.0
 - category: collection
   id: c2f387b3-cb30-4cb1-92eb-cacd99bcbc64
-  name: ''
+  name: '5'
   region: NorthernTolbasForest
   subtype: monolithMaterial
   x: 3368.0
@@ -1249,7 +1222,7 @@ markers:
   id: 3b7ab28b-cff3-45a0-9593-d8c0c2f7a8b4
   images:
   - markers_images/UXo_ZEFTlm-cAtuyJZj9jA
-  name: ''
+  name: '2'
   region: VerteronFortressRuins
   subtype: monolithMaterial
   x: 4008.0
@@ -1258,14 +1231,14 @@ markers:
   id: f834c545-91df-4e13-acd1-97f8507ac222
   images:
   - markers_images/q-BFovTx7dKCZAjielaSyw
-  name: ''
+  name: '6'
   region: NorthernTolbasForest
   subtype: monolithMaterial
   x: 3237.0
   y: 3647.0
 - category: collection
   id: 3b1533a4-8cc2-47db-a80d-3f843c1a3988
-  name: ''
+  name: '11'
   region: NorthernTolbasForest
   subtype: monolithMaterial
   x: 3490.0
@@ -1274,7 +1247,7 @@ markers:
   id: 239e05f5-65d5-4734-b82f-7860280d6312
   images:
   - markers_images/W_ZVuT3KMFA4qUv8Fszesg
-  name: ''
+  name: '9'
   region: PilgrimsRidge
   subtype: monolithMaterial
   x: 3858.0
@@ -1283,7 +1256,7 @@ markers:
   id: cf2ee84d-fa5a-4853-adc1-3a353d8e700a
   images:
   - markers_images/xZ17eFjJRqJw0n5HCYwMMA
-  name: ''
+  name: '8'
   region: VerteronFortressRuins
   subtype: monolithMaterial
   x: 4029.0
@@ -1292,7 +1265,7 @@ markers:
   id: 0bdb44b5-960b-4f05-b11a-3a725ba7001e
   images:
   - markers_images/ZNwOF6DOjLHN6bXPPVOEcg
-  name: ''
+  name: '24'
   region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3597.0
@@ -1301,7 +1274,7 @@ markers:
   id: 4d21634a-6a00-4366-97fd-cf087215f7b6
   images:
   - markers_images/kYVVVMDBUkOY7YcPIZV4sg
-  name: ''
+  name: '3'
   region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3413.0
@@ -1310,7 +1283,7 @@ markers:
   id: a962ca3d-3bd1-445d-bfc8-0dc2fb1a976f
   images:
   - markers_images/1mv-oOoML_KiI6r61nHouA
-  name: ''
+  name: '21'
   region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3744.0
@@ -1319,7 +1292,7 @@ markers:
   id: c0c807ac-7155-47f7-90e7-47e5e55339e7
   images:
   - markers_images/2qFVa8Bqyxa91DTCcmXGxA
-  name: ''
+  name: '4'
   region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 3777.0
@@ -1328,7 +1301,7 @@ markers:
   id: 294d92df-5a4e-4a75-b796-499fc037ae47
   images:
   - markers_images/15dJX1PWW4bZ9XApm5pZLw
-  name: ''
+  name: '22'
   region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3795.0
@@ -1337,14 +1310,14 @@ markers:
   id: 30e0e069-7d11-4de1-88f6-19d70f4fe3f1
   images:
   - markers_images/O-0V9T8HV_MqReBo69GlSQ
-  name: ''
+  name: '1'
   region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3157.0
   y: 4102.0
 - category: collection
   id: 7779ccbd-1b12-4660-b9f7-9f156b61d21e
-  name: ''
+  name: '12'
   region: NorthernTolbasForest
   subtype: monolithMaterial
   x: 3582.0
@@ -1353,7 +1326,7 @@ markers:
   id: 2a8b729b-612a-4bce-b9d7-0b1893646392
   images:
   - markers_images/hRzbUGs7LQIbGz0LvGYikQ
-  name: ''
+  name: '13'
   region: SouthernTolbasForest
   subtype: monolithMaterial
   x: 3533.0
@@ -1362,7 +1335,7 @@ markers:
   id: 0d71b21a-a682-4d88-b0cd-ca2df26c704a
   images:
   - markers_images/_kPlv1nrKUqgpIo882m6Kw
-  name: ''
+  name: '6'
   region: TolbasForest
   subtype: monolithMaterial
   x: 3738.0
@@ -1371,7 +1344,7 @@ markers:
   id: 19624dec-1536-431e-891c-16d74d4cf857
   images:
   - markers_images/8ceTsK7KxHo8-E93zj-IZQ
-  name: ''
+  name: '7'
   region: TolbasForest
   subtype: monolithMaterial
   x: 3735.0
@@ -1380,21 +1353,21 @@ markers:
   id: 98066d17-b406-4c46-8918-25fd3710745f
   images:
   - markers_images/M_xKjvyNPVB4N5JE7X18hw
-  name: ''
+  name: '12'
   region: VerteronFortressRuins
   subtype: monolithMaterial
   x: 4232.0
   y: 4093.0
 - category: collection
   id: 2be32a28-3609-40c0-9c0c-d2b1cc10b830
-  name: ''
+  name: '8'
   region: PilgrimsRidge
   subtype: monolithMaterial
   x: 3858.0
   y: 3757.0
 - category: collection
   id: 3fca4b77-6f0f-48f7-a08f-d5247de98f41
-  name: ''
+  name: '1'
   region: PilgrimsRidge
   subtype: monolithMaterial
   x: 4228.0
@@ -1403,7 +1376,7 @@ markers:
   id: 3c43c31f-f5da-4ba0-a064-9402eecd643c
   images:
   - markers_images/zTgRZI34UPVPLof3rPwyxw
-  name: ''
+  name: '14'
   region: VerteronFortressRuins
   subtype: monolithMaterial
   x: 4252.0
@@ -1413,7 +1386,7 @@ markers:
   images:
   - markers_images/jPykewoRSpZNffJxDWCD3g
   name: ''
-  region: ZumionVillage
+  region: KrakaFootpath
   subtype: monolithMaterial
   x: 4456.0
   y: 4138.0
@@ -1421,7 +1394,7 @@ markers:
   id: 99c1ef6e-76b0-4e8d-af2a-ef310b5ee330
   images:
   - markers_images/qoCQzelkrqYkCTU5ZmhmMQ
-  name: ''
+  name: '17'
   region: VerteronFortressRuins
   subtype: monolithMaterial
   x: 4385.0
@@ -1438,7 +1411,7 @@ markers:
 - category: collection
   id: 87dee76b-b473-4e8c-8aa0-99389480f94f
   name: ''
-  region: ForestofExiles
+  region: AullaeuVillage
   subtype: monolithMaterial
   x: 3722.0
   y: 2948.0
@@ -1485,6 +1458,33 @@ markers:
   subtype: monolithMaterial
   x: 3850.0
   y: 2683.0
+- category: collection
+  id: 13533794-0472-4a2c-a29a-0f979ac18e3f
+  images:
+  - markers_images/RbNZQa0Ed4w25_WHRgzg9A
+  name: '7'
+  region: EllunRiverMeadow
+  subtype: monolithMaterial
+  x: 3607.0
+  y: 4501.0
+- category: collection
+  id: e89f51d0-133e-4be0-9ff5-3af799106f50
+  images:
+  - markers_images/TW1cOeqn62VYOcnAlrg0dg
+  name: '3'
+  region: EllunRiverMarsh
+  subtype: monolithMaterial
+  x: 3797.0
+  y: 4844.0
+- category: collection
+  id: e8f5a3ed-f3f4-4d0f-83e1-b3e62755091c
+  images:
+  - markers_images/aYuUCKjeiSSZLGvNU-ybpQ
+  name: '12'
+  region: EasternCantasValley
+  subtype: monolithMaterial
+  x: 3728.0
+  y: 4904.0
 - category: collection
   id: e7545bff-4e53-44ed-af7a-48dc10eabc33
   images:
@@ -1573,7 +1573,7 @@ markers:
   y: 3369.0
 - category: collection
   id: 4a09e945-5c26-4e17-bbc6-08d4673ea014
-  name: ''
+  name: '4'
   region: PilgrimsRidge
   subtype: monolithMaterial
   x: 4096.0
@@ -1589,7 +1589,7 @@ markers:
   y: 3290.0
 - category: collection
   id: a43eadc1-b92e-4c16-abea-aa791d0ee5e3
-  name: ''
+  name: '10'
   region: PilgrimsRidge
   subtype: monolithMaterial
   x: 4100.0
@@ -1643,7 +1643,7 @@ markers:
   id: c7a688dc-2976-45bb-b527-5484f8ff6f1f
   images:
   - markers_images/C-PyMDJEKSSjBNfqryWcDQ
-  name: ''
+  name: '10'
   region: VerteronFortressRuins
   subtype: monolithMaterial
   x: 4142.0
@@ -1652,7 +1652,7 @@ markers:
   id: 88aa82f1-773a-43d8-80af-c9d0af52af87
   images:
   - markers_images/ChpyKjgiyEIOu62NSa7dwA
-  name: ''
+  name: '9'
   region: DawnLegionBase
   subtype: monolithMaterial
   x: 2954.0
@@ -1661,7 +1661,7 @@ markers:
   id: b21ea6a2-bd61-40cc-bb92-8347a12e88b2
   images:
   - markers_images/IEugxVnZXennhoURKZCEiw
-  name: ''
+  name: '10'
   region: DawnLegionBase
   subtype: monolithMaterial
   x: 2937.0
@@ -1670,7 +1670,7 @@ markers:
   id: 72e149e3-509e-4c23-a505-0d4b34700d33
   images:
   - markers_images/u59cGKNSti93DUkn1iqxmA
-  name: ''
+  name: '20'
   region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3720.0
@@ -1688,7 +1688,7 @@ markers:
   id: 63b8c6e0-eed1-472d-bb7f-422d4a4fb6a0
   images:
   - markers_images/jTfnjTGbHQWnEr9DzXt-aw
-  name: ''
+  name: '8'
   region: EasternCantasValley
   subtype: monolithMaterial
   x: 3331.0
@@ -1724,7 +1724,7 @@ markers:
   id: 05ac8925-1eb9-4269-89d4-4748bac7361f
   images:
   - markers_images/biW-jqgS3c1R9LVBLq3kWQ
-  name: ''
+  name: '12'
   region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3905.0
@@ -1751,7 +1751,7 @@ markers:
   id: e0d2753d-e636-4677-9523-fadc16d9b9a4
   images:
   - markers_images/aF_LZ6MidP9LLWkOgjQSvQ
-  name: ''
+  name: '25'
   region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3569.0
@@ -1760,14 +1760,14 @@ markers:
   id: cda98ee3-cf5a-4c63-83f4-2f4c6850edeb
   images:
   - markers_images/UKnsqXnrrgdD6kSgMDBmLA
-  name: ''
+  name: '23'
   region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3713.0
   y: 3881.0
 - category: collection
   id: 9ce81f5d-1d02-40e0-9874-68103df0836d
-  name: ''
+  name: '9'
   region: EasternTolbasForest
   subtype: monolithMaterial
   x: 3699.0
@@ -1830,7 +1830,7 @@ markers:
   id: 53889be9-194d-4b5f-a536-22e50b06fc21
   images:
   - markers_images/k8tOwbV9txh75V7U1r06qw
-  name: ''
+  name: '19'
   region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 4380.0
@@ -1839,7 +1839,7 @@ markers:
   id: 611aa8e1-74da-49d5-b4b2-889d30a05148
   images:
   - markers_images/5nY85T_M7TT4gZOnZBkjFg
-  name: ''
+  name: '18'
   region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 4480.0
@@ -1848,7 +1848,7 @@ markers:
   id: a20e46c3-1409-4e48-994b-3255b2b09853
   images:
   - markers_images/M_gCdMu7oOX-prSh2x-qKQ
-  name: ''
+  name: '5'
   region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 3895.0
@@ -1857,7 +1857,7 @@ markers:
   id: 3ab367d7-9224-45cf-a42d-f3c66bae2978
   images:
   - markers_images/2Bj8uz-SpWtgEEzvyOYKjw
-  name: ''
+  name: '13'
   region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 4065.0
@@ -2336,7 +2336,7 @@ markers:
   y: 6218.0
 - category: collection
   id: f6bc2683-f6a6-4354-ba66-039eaa1fa5c5
-  name: ''
+  name: '8'
   region: EasternTolbasForest
   subtype: monolithMaterial
   x: 3893.0
@@ -2379,7 +2379,7 @@ markers:
   y: 6297.0
 - category: collection
   id: 437f3cd0-2fcf-4ccf-8dd3-dcd51e09fdaa
-  name: ''
+  name: '9'
   region: NorthernTolbasForest
   subtype: monolithMaterial
   x: 3279.0
@@ -2447,7 +2447,7 @@ markers:
   id: 9fbde7eb-b9c1-4672-9b00-5e67f7883828
   images:
   - markers_images/6P48aPt6U_rJxOrNsM0zJQ
-  name: ''
+  name: '15'
   region: DawnLegionBase
   subtype: monolithMaterial
   x: 3073.0
@@ -2465,29 +2465,29 @@ markers:
   id: b5a1ee6e-c537-4087-8876-db398de7f637
   images:
   - markers_images/QhoiAoJ-y0l-SuAXiKH3qQ
-  name: ''
+  name: '1'
   region: TolbasForest
   subtype: monolithMaterial
   x: 3085.0
   y: 3487.0
 - category: collection
-  id: 4f4e81ac-a12e-471c-9b79-6a363b6db257
-  images:
-  - markers_images/bGHGI4AwYrqa9TEo_XtFBw
-  name: ''
-  region: EasternCantasValley
-  subtype: monolithMaterial
-  x: 3284.0
-  y: 4834.0
-- category: collection
   id: 31b5fb31-6f06-4fa8-a538-0417c8cc8aa3
   images:
   - markers_images/q0giPqqq9TFLEH1Nk95BRw
-  name: ''
+  name: '7'
   region: WesternCantasValley
   subtype: monolithMaterial
   x: 2983.0
   y: 4499.0
+- category: collection
+  id: 4f4e81ac-a12e-471c-9b79-6a363b6db257
+  images:
+  - markers_images/bGHGI4AwYrqa9TEo_XtFBw
+  name: '22'
+  region: WesternCantasValley
+  subtype: monolithMaterial
+  x: 3284.0
+  y: 4834.0
 - category: collection
   id: bbcc1dd4-d08d-42f6-b7ef-ce43e5fa9165
   images:
@@ -2837,7 +2837,7 @@ markers:
   y: 3111.0
 - category: collection
   id: dbc3d1d3-2f95-407d-a765-37ae41bb5151
-  name: ''
+  name: '7'
   region: EasternTolbasForest
   subtype: monolithMaterial
   x: 3930.0
@@ -2846,7 +2846,7 @@ markers:
   id: beb88415-f3a5-4932-bd18-c77890b6c5e2
   images:
   - markers_images/zfqqhh2SzpUPOQPpth3Tbw
-  name: ''
+  name: '4'
   region: EasternTolbasForest
   subtype: monolithMaterial
   x: 3913.0
@@ -2855,7 +2855,7 @@ markers:
   id: c1cfca12-bbd7-49af-97a1-7ef562d934c7
   images:
   - markers_images/DKy_5XWMIEDOxUw5Uq7GIQ
-  name: ''
+  name: '5'
   region: EasternTolbasForest
   subtype: monolithMaterial
   x: 3951.0
@@ -2871,7 +2871,7 @@ markers:
   y: 3383.0
 - category: collection
   id: 86131da1-dd0b-486a-b691-83907b7de357
-  name: ''
+  name: '4'
   region: NorthernTolbasForest
   subtype: monolithMaterial
   x: 3308.0
@@ -2880,7 +2880,7 @@ markers:
   id: 155f0235-f02e-4f53-b967-154bd21a47f1
   images:
   - markers_images/YYY35P8fWy3cfibfrZtk1A
-  name: ''
+  name: '8'
   region: NorthernTolbasForest
   subtype: monolithMaterial
   x: 3238.0
@@ -3033,7 +3033,7 @@ markers:
   id: a77fad82-00ab-44fe-9310-b91f1e2cc3ba
   images:
   - markers_images/IWXpbFJyy2Txil12pIMe_A
-  name: ''
+  name: '20'
   region: DawnLegionBase
   subtype: monolithMaterial
   x: 2469.0
@@ -3051,7 +3051,7 @@ markers:
   id: 8b9f5ad3-656c-4cbb-a20d-c4fab163e1fc
   images:
   - markers_images/UjpOcgcLkGWm-hlTxYmBYg
-  name: ''
+  name: '11'
   region: WesternCantasValley
   subtype: monolithMaterial
   x: 3036.0
@@ -3060,7 +3060,7 @@ markers:
   id: 2a10fe73-bd07-45b0-9ab6-5ae50eda5785
   images:
   - markers_images/cypmw5Qta9_N8tqora5TcQ
-  name: ''
+  name: '1'
   region: NorthernTolbasForest
   subtype: monolithMaterial
   x: 3037.0
@@ -3069,7 +3069,7 @@ markers:
   id: 9a315d4b-0171-4fea-b92a-7c1623e2f26d
   images:
   - markers_images/GuOGaa4le7S4_DOwVlS1Bg
-  name: ''
+  name: '26'
   region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3402.0
@@ -3150,7 +3150,7 @@ markers:
   id: d8fd25df-d0ac-45f0-88a5-fa18874471df
   images:
   - markers_images/k_FCimdpJjRY-bOKp5EOVQ
-  name: ''
+  name: '4'
   region: EasternCantasValley
   subtype: monolithMaterial
   x: 3197.0
@@ -3159,7 +3159,7 @@ markers:
   id: 6bc0063b-f385-4a1a-8ca3-8fda59b25514
   images:
   - markers_images/uFP8jamxlyoRC-kfSnSpgw
-  name: ''
+  name: '2'
   region: TolbasForest
   subtype: monolithMaterial
   x: 3123.0
@@ -3168,7 +3168,7 @@ markers:
   id: dcce46fa-ac9b-45e8-95c7-7ef2f52eab5b
   images:
   - markers_images/bc0Kr1m8sf-pwNMBn7KB3Q
-  name: ''
+  name: '6'
   region: SouthernTolbasForest
   subtype: monolithMaterial
   x: 3336.0
@@ -3195,14 +3195,14 @@ markers:
   id: f2648ef0-5ae4-465b-ae12-e86c38334ff1
   images:
   - markers_images/uR3gIFKWCTgHbMRSrjflpg
-  name: ''
+  name: '9'
   region: SouthernTolbasForest
   subtype: monolithMaterial
   x: 3225.0
   y: 3263.0
 - category: collection
   id: 69b7d262-cbb6-48d9-b001-e6983f14c4fe
-  name: ''
+  name: '10'
   region: NorthernTolbasForest
   subtype: monolithMaterial
   x: 3309.0
@@ -3211,7 +3211,7 @@ markers:
   id: a4a69796-eb42-4f7b-b714-089c95828aab
   images:
   - markers_images/Eu7okZQI2QTTrCQz3tENdQ
-  name: ''
+  name: '1'
   region: SouthernTolbasForest
   subtype: monolithMaterial
   x: 3634.0
@@ -3228,7 +3228,7 @@ markers:
   images:
   - markers_images/SRa7Rx0c77ByUWQhitCJAg
   name: ''
-  region: ScarletForest
+  region: DranaPlantation
   subtype: monolithMaterial
   x: 4754.0
   y: 4812.0
@@ -3237,7 +3237,7 @@ markers:
   images:
   - markers_images/c74k7Y5Ey37J-Rj1jDh9BQ
   name: ''
-  region: DranaPlantation
+  region: ScarletForest
   subtype: monolithMaterial
   x: 4783.0
   y: 4821.0
@@ -3245,7 +3245,7 @@ markers:
   id: 3426153d-3591-4fc0-ada0-ba29f08fc863
   images:
   - markers_images/9SoHQaqKpMtsoaL3UiEqoQ
-  name: ''
+  name: '2'
   region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 3850.0
@@ -3272,7 +3272,7 @@ markers:
   id: 1c31f824-3c0f-4bde-b268-64848f7d2ef8
   images:
   - markers_images/7pd3logeyGp_427jJAr5aA
-  name: ''
+  name: '3'
   region: NorthernTolbasForest
   subtype: monolithMaterial
   x: 3224.0
@@ -3450,7 +3450,7 @@ markers:
   id: 15b0b9a1-c007-413c-a9b2-8f4449b4e97c
   images:
   - markers_images/1dMkR2cexC_LYJb0RQi_oQ
-  name: ''
+  name: '16'
   region: VerteronFortressRuins
   subtype: monolithMaterial
   x: 4328.0
@@ -3459,7 +3459,7 @@ markers:
   id: a4668c38-f859-43ce-8146-94087e1395cd
   images:
   - markers_images/zzdyDtNRWZ0MODyzhjldlA
-  name: ''
+  name: '2'
   region: NorthernTolbasForest
   subtype: monolithMaterial
   x: 3128.0
@@ -3468,7 +3468,7 @@ markers:
   id: 4c07ae9d-3f7d-4e7f-a30c-d55d917d3f6d
   images:
   - markers_images/d4s31lUZGJ8puozNtgYtdA
-  name: ''
+  name: '6'
   region: EasternTolbasForest
   subtype: monolithMaterial
   x: 3967.0
@@ -3477,7 +3477,7 @@ markers:
   id: e49d68e0-d0c5-492b-b8c6-e89427f24bb6
   images:
   - markers_images/lUyaD-GjBeFssFO2v6hlDw
-  name: ''
+  name: '13'
   region: PilgrimsRidge
   subtype: monolithMaterial
   x: 4023.0
@@ -3495,7 +3495,7 @@ markers:
   id: 6665870a-8ecb-442b-b75f-dab2e51f89c2
   images:
   - markers_images/9bUTf-3NsiHRE_VahsJzAg
-  name: ''
+  name: '8'
   region: SouthernTolbasForest
   subtype: monolithMaterial
   x: 3265.0
@@ -3504,7 +3504,7 @@ markers:
   id: 9e4934f9-6dac-436c-bbc3-7501d9bd52bd
   images:
   - markers_images/Fl2F07chlEMxYs3XvhQZ-Q
-  name: ''
+  name: '3'
   region: TolbasForest
   subtype: monolithMaterial
   x: 3107.0
@@ -3556,7 +3556,7 @@ markers:
   id: 951d5c79-00e7-455b-be29-b76a859e890b
   images:
   - markers_images/51FjEPJXH6o3CpWnd-vS9w
-  name: ''
+  name: '7'
   region: SouthernTolbasForest
   subtype: monolithMaterial
   x: 3236.0
@@ -3565,7 +3565,7 @@ markers:
   id: 7e21f51a-a827-43a8-a696-e5db29d96e71
   images:
   - markers_images/eYVVAVGgZGMs3H1eJ_5FHQ
-  name: ''
+  name: '2'
   region: EllunRiverMidstream
   subtype: monolithMaterial
   x: 3280.0
@@ -3583,7 +3583,7 @@ markers:
   id: edf4bc17-59d8-48e8-81fd-051da32caea4
   images:
   - markers_images/Xjtn8leoZlFweE8QZZwdIQ
-  name: ''
+  name: '4'
   region: VerteronFortressRuins
   subtype: monolithMaterial
   x: 3888.0
@@ -3599,7 +3599,7 @@ markers:
   id: 6119bfc4-f3d5-4980-8e4d-e5c3447f8bf3
   images:
   - markers_images/gYiaueggFZKzHNAeKplajQ
-  name: ''
+  name: '14'
   region: SouthernTolbasForest
   subtype: monolithMaterial
   x: 3648.0
@@ -3741,7 +3741,7 @@ markers:
   id: 45a1691b-7351-4605-92d8-87b77fbd514f
   images:
   - markers_images/KghMYkTV4c-4YQ7Q_I94Ew
-  name: ''
+  name: '4'
   region: TolbasForest
   subtype: monolithMaterial
   x: 3742.0
@@ -3791,15 +3791,6 @@ markers:
   subtype: monolithMaterial
   x: 4702.0
   y: 4847.0
-- category: collection
-  id: c2b9a495-9d6e-418f-81d8-13d270561230
-  images:
-  - markers_images/vVKvqqeb-Vcry0YCcfk5lA
-  name: ''
-  region: KrakaFootpath
-  subtype: monolithMaterial
-  x: 4529.0
-  y: 4327.0
 - category: collection
   id: e98b2644-5c81-4445-9ccc-1a740a2db83a
   images:
@@ -3922,13 +3913,13 @@ markers:
   images:
   - markers_images/87c65AMKVIn7FaI0y4bbow
   name: ''
-  region: AullaeuVillage
+  region: ForestofExiles
   subtype: monolithMaterial
   x: 3647.0
   y: 2766.0
 - category: collection
   id: c6af758e-e97d-44d1-baf8-b14aaff98cee
-  name: ''
+  name: '12'
   region: PilgrimsRidge
   subtype: monolithMaterial
   x: 4229.0
@@ -3945,7 +3936,7 @@ markers:
   images:
   - markers_images/BRdz-pkDBnMvjgXfQens1w
   name: ''
-  region: PilgrimsRidge
+  region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4217.0
   y: 3571.0
@@ -3953,7 +3944,7 @@ markers:
   id: 59661009-1a43-4e65-8164-c69283129bf1
   images:
   - markers_images/5z9VThkrHYR87NcZIE9tZg
-  name: ''
+  name: '11'
   region: PilgrimsRidge
   subtype: monolithMaterial
   x: 4130.0
@@ -4060,7 +4051,7 @@ markers:
   id: 8e61a17b-157d-41d4-824f-5cca3b87bc43
   images:
   - markers_images/R6asxJbjjBZNBecmRU5PNQ
-  name: ''
+  name: '2'
   region: WesternCantasValley
   subtype: monolithMaterial
   x: 3016.0
@@ -4219,6 +4210,15 @@ markers:
   subtype: monolithMaterial
   x: 5402.0
   y: 2617.0
+- category: collection
+  id: c2b9a495-9d6e-418f-81d8-13d270561230
+  images:
+  - markers_images/vVKvqqeb-Vcry0YCcfk5lA
+  name: ''
+  region: ZumionVillage
+  subtype: monolithMaterial
+  x: 4529.0
+  y: 4327.0
 - category: collection
   id: 1bbd2d82-b807-4797-ab67-34fa0cbfe9bf
   name: ''
@@ -4510,8 +4510,8 @@ markers:
   id: d939ef3e-9de2-4c42-b5b6-c7ac96dea9c4
   images:
   - markers_images/u9E1XKNxKYq8TYFMFsVIxA
-  name: ''
-  region: WesternAltamiaHighland
+  name: '3'
+  region: PilgrimsRidge
   subtype: monolithMaterial
   x: 4248.0
   y: 3783.0
@@ -4519,7 +4519,7 @@ markers:
   id: 0bf37acc-4fd8-4e5e-b972-61be2b9a11a1
   images:
   - markers_images/Tq-JTQdSKJh2vUSJUEeavQ
-  name: ''
+  name: '15'
   region: VerteronFortressRuins
   subtype: monolithMaterial
   x: 4268.0
@@ -4715,7 +4715,7 @@ markers:
   id: 61ec9091-5057-48f6-9203-04ad254d1e2d
   images:
   - markers_images/DW1JobNBbVqMLBwqZ6SyAg
-  name: ''
+  name: '17'
   region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 4610.0
@@ -4742,7 +4742,7 @@ markers:
   id: 0e743cc0-ea6d-4ec4-b81e-70968daaa1be
   images:
   - markers_images/jtTzAtr1b4iP6JHuNva-8g
-  name: ''
+  name: '2'
   region: SouthernTolbasForest
   subtype: monolithMaterial
   x: 3505.0
@@ -4760,7 +4760,7 @@ markers:
   id: 19a20ee4-ef3b-4e67-be30-5fef7dee21a6
   images:
   - markers_images/xcs8CgY6LNVzGWZu6nQfbg
-  name: ''
+  name: '4'
   region: SouthernTolbasForest
   subtype: monolithMaterial
   x: 3366.0
@@ -4882,7 +4882,7 @@ markers:
   id: 59487202-f21a-496e-95bd-583ece149b59
   images:
   - markers_images/0WoJhfwmkDNbfhKoLKPk9g
-  name: ''
+  name: '9'
   region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 4195.0
@@ -4900,7 +4900,7 @@ markers:
   id: 27ad3952-061f-4669-9f51-58f9b84c07cd
   images:
   - markers_images/wnnzjh7aJSoaay4CVoo7Vw
-  name: ''
+  name: '16'
   region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 4551.0
@@ -4916,7 +4916,7 @@ markers:
   y: 4741.0
 - category: collection
   id: acc410be-8a44-4f07-8fad-103c9e35ef88
-  name: ''
+  name: '2'
   region: PilgrimsRidge
   subtype: monolithMaterial
   x: 4145.0
@@ -4925,7 +4925,7 @@ markers:
   id: cf8ad5a4-a15f-4379-92a1-5d25413d5af9
   images:
   - markers_images/OHU2s41f4jKcKT14PrC1KA
-  name: ''
+  name: '3'
   region: WesternCantasValley
   subtype: monolithMaterial
   x: 2951.0
@@ -5016,7 +5016,7 @@ markers:
   id: 15785262-9d18-42e8-91c0-6fb95675f303
   images:
   - markers_images/QUQFzd_F1SCMr8xOCEVAWg
-  name: ''
+  name: '21'
   region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 4470.0
@@ -5025,7 +5025,7 @@ markers:
   id: 1b505472-e7bc-4c16-b990-b34692e2e1d8
   images:
   - markers_images/8UGehXw1qrnt_4NrNT02Jw
-  name: ''
+  name: '6'
   region: WesternCantasValley
   subtype: monolithMaterial
   x: 3083.0
@@ -5309,7 +5309,7 @@ markers:
   id: bfb5b304-bbcb-4bf6-89c6-e9ee0432d021
   images:
   - markers_images/LChHvn6wDKw4ItqQpBv67w
-  name: ''
+  name: '5'
   region: PilgrimsRidge
   subtype: monolithMaterial
   x: 3986.0
@@ -5321,8 +5321,8 @@ markers:
   name: ''
   region: KrakaFootpath
   subtype: monolithMaterial
-  x: 5964.0
-  y: 4175.0
+  x: 5955.0
+  y: 4156.0
 - category: collection
   id: 42e9f326-77bc-452a-90c0-7a2c6c2d17bb
   name: ''
@@ -5871,6 +5871,132 @@ markers:
   subtype: hiddenCube
   x: 3208.0
   y: 4784.0
+- category: collection
+  id: 59c0b48d-38e9-48f6-81aa-5adcbbd74cd3
+  name: ''
+  subtype: hiddenCube
+  x: 4941.0
+  y: 5438.0
+- category: collection
+  id: c0c93ecd-d4d6-46e2-845b-ca22c12efa73
+  name: ''
+  subtype: hiddenCube
+  x: 3515.0
+  y: 3032.0
+- category: collection
+  id: 8f063f92-9391-4037-a43b-1b872f5545c5
+  name: ''
+  subtype: hiddenCube
+  x: 5608.0
+  y: 3118.0
+- category: collection
+  id: bb07d1cd-7105-484b-a4ee-3ac4b9f07df2
+  name: ''
+  subtype: hiddenCube
+  x: 5096.0
+  y: 4370.0
+- category: collection
+  id: f1aaf69a-d42d-41cc-8a11-23dfd0e6a995
+  name: ''
+  subtype: hiddenCube
+  x: 4001.0
+  y: 3551.0
+- category: collection
+  id: 9771a261-428c-49f7-bbb1-4539bca8dc7c
+  name: ''
+  subtype: hiddenCube
+  x: 4449.0
+  y: 3824.0
+- category: collection
+  id: 56ff2cde-3653-423f-9c8c-5a807c558efe
+  name: ''
+  subtype: hiddenCube
+  x: 3398.0
+  y: 2992.0
+- category: collection
+  id: 308672ac-df05-4b6c-a922-3f85fa0422f0
+  name: ''
+  subtype: hiddenCube
+  x: 3935.0
+  y: 3234.0
+- category: collection
+  id: 955879c5-4cb0-48f1-908f-6d311f8880bf
+  name: ''
+  subtype: hiddenCube
+  x: 4927.0
+  y: 4837.0
+- category: collection
+  id: 3c7d2258-746b-4de0-a32f-1461a3cbc789
+  name: ''
+  subtype: hiddenCube
+  x: 5249.0
+  y: 5208.0
+- category: collection
+  id: 4d932178-4c74-47d3-bbc8-a3fd49342352
+  name: ''
+  subtype: hiddenCube
+  x: 4733.0
+  y: 4939.0
+- category: collection
+  id: 0c47521b-9e30-4c7f-8de2-b804bf02d858
+  name: ''
+  subtype: hiddenCube
+  x: 4540.0
+  y: 4907.0
+- category: collection
+  id: 413d70de-c54e-4fad-872f-ef15fe01e25f
+  name: ''
+  subtype: hiddenCube
+  x: 3275.0
+  y: 4620.0
+- category: collection
+  id: 16890ced-2995-4398-be1e-04c99d26d51c
+  name: ''
+  subtype: hiddenCube
+  x: 5529.0
+  y: 5314.0
+- category: collection
+  id: 9f1651dd-6561-4f5c-b51f-fc6f0c33def8
+  name: ''
+  subtype: hiddenCube
+  x: 5529.0
+  y: 5314.0
+- category: collection
+  id: bf4be0aa-3047-4f93-b78e-6cfea75544e4
+  name: ''
+  subtype: hiddenCube
+  x: 5529.0
+  y: 5314.0
+- category: collection
+  id: 6d96d288-d2e5-45ea-a6b3-992a8597c1dd
+  name: ''
+  subtype: hiddenCube
+  x: 5529.0
+  y: 5314.0
+- category: collection
+  id: 339089a3-7b33-4cf6-8608-b13cdd0e1152
+  name: ''
+  subtype: hiddenCube
+  x: 5529.0
+  y: 5314.0
+- category: collection
+  id: 99c92b65-7571-4c65-99db-347b58a63dda
+  name: ''
+  subtype: hiddenCube
+  x: 5532.0
+  y: 5305.0
+- category: collection
+  id: 9fe14c5e-fb1d-43db-b3a1-6165d683346d
+  name: ''
+  subtype: hiddenCube
+  x: 5527.0
+  y: 5303.0
+- category: collection
+  id: 97ccfc10-acc8-4bed-9d6d-53be400cf44d
+  name: ''
+  subtype: hiddenCube
+  x: 4543.0
+  y: 4901.0
 - category: collection
   id: ada05e4d-cc3a-42d8-a59b-3fd724680a9e
   name: ''

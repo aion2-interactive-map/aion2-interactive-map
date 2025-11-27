@@ -4,6 +4,7 @@ markers:
   images:
   - markers_images/kVflWdAOcAhyvDzSgaRCNw
   name: ''
+  region: SafeHaven
   subtype: monolithMaterial
   x: 3224.0
   y: 5334.0
@@ -12,6 +13,7 @@ markers:
   images:
   - markers_images/icAWh6sSYtBxoFI8cHtrtg
   name: ''
+  region: SafeHaven
   subtype: monolithMaterial
   x: 3254.0
   y: 5415.0
@@ -20,6 +22,7 @@ markers:
   images:
   - markers_images/IF2VChWlI3jwjF8F7Rh3YA
   name: ''
+  region: SafeHaven
   subtype: monolithMaterial
   x: 3273.0
   y: 5475.0
@@ -28,6 +31,7 @@ markers:
   images:
   - markers_images/SKwRXYMJMTHoD-O4qf-zgw
   name: ''
+  region: DredgionCrashSite
   subtype: monolithMaterial
   x: 3600.0
   y: 4887.0
@@ -36,6 +40,7 @@ markers:
   images:
   - markers_images/1tzfNUnooeZ5DOPCwdIwEw
   name: ''
+  region: DredgionCrashSite
   subtype: monolithMaterial
   x: 3240.0
   y: 4802.0
@@ -44,6 +49,7 @@ markers:
   images:
   - markers_images/ODGbEfKWj3P_8nPqPAHUTQ
   name: ''
+  region: CalderonCanyon
   subtype: monolithMaterial
   x: 3109.0
   y: 4701.0
@@ -52,6 +58,7 @@ markers:
   images:
   - markers_images/SdeFems4NrOq9oEu9E_-1g
   name: ''
+  region: CalderonCanyon
   subtype: monolithMaterial
   x: 3365.0
   y: 4565.0
@@ -60,6 +67,7 @@ markers:
   images:
   - markers_images/7o9lxpAiGLoS_NPCIgOf-Q
   name: ''
+  region: DredgionCrashSite
   subtype: monolithMaterial
   x: 3153.0
   y: 4990.0
@@ -68,6 +76,7 @@ markers:
   images:
   - markers_images/k4gSiHLhU0YLuwoqDICFgA
   name: ''
+  region: TraneinHighland
   subtype: monolithMaterial
   x: 3018.0
   y: 4476.0
@@ -76,6 +85,7 @@ markers:
   images:
   - markers_images/g9paFWbejVKdF625iculqA
   name: ''
+  region: CalderonCanyon
   subtype: monolithMaterial
   x: 2923.0
   y: 4714.0
@@ -84,6 +94,7 @@ markers:
   images:
   - markers_images/gEZbWEbjhtpn6KLF1oj_Wg
   name: ''
+  region: DredgionCrashSite
   subtype: monolithMaterial
   x: 2901.0
   y: 4738.0
@@ -92,6 +103,7 @@ markers:
   images:
   - markers_images/IPvOlCR2_zO3UhaCIYQh8w
   name: ''
+  region: SilentHill
   subtype: monolithMaterial
   x: 2871.0
   y: 4744.0
@@ -100,6 +112,7 @@ markers:
   images:
   - markers_images/jQ85KZ9TInQihtBGgyBPpg
   name: ''
+  region: SilentHill
   subtype: monolithMaterial
   x: 2811.0
   y: 4678.0
@@ -108,6 +121,7 @@ markers:
   images:
   - markers_images/YI58W5boEB275VZpsBnxpw
   name: ''
+  region: NamelessCemetery
   subtype: monolithMaterial
   x: 2740.0
   y: 4854.0
@@ -116,6 +130,7 @@ markers:
   images:
   - markers_images/n0x8tRuxaE-RWmtnBb3bcw
   name: ''
+  region: NamelessCemetery
   subtype: monolithMaterial
   x: 2648.0
   y: 5008.0
@@ -124,6 +139,7 @@ markers:
   images:
   - markers_images/wdW_IYTYgEWBjrIpSZXVdw
   name: ''
+  region: NamelessCemetery
   subtype: monolithMaterial
   x: 2528.0
   y: 4966.0
@@ -132,6 +148,7 @@ markers:
   images:
   - markers_images/uXBB7RMrSDD67q9W5nBJRg
   name: ''
+  region: SanctumOutpost
   subtype: monolithMaterial
   x: 2481.0
   y: 4586.0
@@ -140,6 +157,7 @@ markers:
   images:
   - markers_images/e9_dJZUUGxxVhA69W0AJpg
   name: ''
+  region: SanctumOutpost
   subtype: monolithMaterial
   x: 2560.0
   y: 4476.0
@@ -148,6 +166,7 @@ markers:
   images:
   - markers_images/3D7PYibpP44F0BMNb45IZQ
   name: ''
+  region: SanctumOutpost
   subtype: monolithMaterial
   x: 2642.0
   y: 4475.0
@@ -156,6 +175,7 @@ markers:
   images:
   - markers_images/NMbp5XFi3eda02X7AHhgvg
   name: ''
+  region: SilentHill
   subtype: monolithMaterial
   x: 2199.0
   y: 4599.0
@@ -164,6 +184,7 @@ markers:
   images:
   - markers_images/u2KYrvttKb-XaJASt3elvQ
   name: ''
+  region: SanctumOutpost
   subtype: monolithMaterial
   x: 2041.0
   y: 4582.0
@@ -172,6 +193,7 @@ markers:
   images:
   - markers_images/Uv26_kdOZJCcUrD2BoHc4w
   name: ''
+  region: SanctumOutpost
   subtype: monolithMaterial
   x: 2614.0
   y: 4224.0
@@ -180,6 +202,7 @@ markers:
   images:
   - markers_images/E9XZLLc7rMeKYxbj5_4GJg
   name: ''
+  region: SanctumOutpost
   subtype: monolithMaterial
   x: 2608.0
   y: 4267.0
@@ -188,6 +211,7 @@ markers:
   images:
   - markers_images/2roBBqmBnrvswZ26NieiGw
   name: ''
+  region: SanctumOutpost
   subtype: monolithMaterial
   x: 2578.0
   y: 4265.0
@@ -196,6 +220,7 @@ markers:
   images:
   - markers_images/S6zj6Wz9b0n4ctbgsYeV_g
   name: ''
+  region: MoslanForest
   subtype: monolithMaterial
   x: 3395.0
   y: 4004.0
@@ -204,6 +229,7 @@ markers:
   images:
   - markers_images/Dz-bEwSPzN_fabZsFI7Cyw
   name: ''
+  region: TraneinHighland
   subtype: monolithMaterial
   x: 2879.0
   y: 4334.0
@@ -212,6 +238,7 @@ markers:
   images:
   - markers_images/ma9_rFk9IYVNyfWVfEDX-A
   name: ''
+  region: TraneinHighland
   subtype: monolithMaterial
   x: 2884.0
   y: 4366.0
@@ -220,6 +247,7 @@ markers:
   images:
   - markers_images/sPhknA-RXyv5bmzLyMe85Q
   name: ''
+  region: MoslanForest
   subtype: monolithMaterial
   x: 3611.0
   y: 4044.0
@@ -228,6 +256,7 @@ markers:
   images:
   - markers_images/K0r9NElW27RIoD0qbXv72w
   name: ''
+  region: MoslanForest
   subtype: monolithMaterial
   x: 3145.0
   y: 3997.0
@@ -236,6 +265,7 @@ markers:
   images:
   - markers_images/OQ3Od6Qn5rBVyvlV6z6MPA
   name: ''
+  region: MoslanForest
   subtype: monolithMaterial
   x: 3267.0
   y: 3807.0
@@ -244,6 +274,7 @@ markers:
   images:
   - markers_images/OZG1qD-GRoztbF4ASWOQ2w
   name: ''
+  region: MoslanForest
   subtype: monolithMaterial
   x: 3574.0
   y: 4112.0
@@ -252,6 +283,7 @@ markers:
   images:
   - markers_images/lR71kDIJ2LAYq0ArENIrgQ
   name: ''
+  region: MoslanForest
   subtype: monolithMaterial
   x: 3636.0
   y: 3984.0
@@ -260,6 +292,7 @@ markers:
   images:
   - markers_images/sdS7fYcBpLPq0_mgfgdvDw
   name: ''
+  region: MoslanForest
   subtype: monolithMaterial
   x: 3593.0
   y: 4015.0
@@ -268,6 +301,7 @@ markers:
   images:
   - markers_images/zlyJ_uFqQPeFoEDZ4xa5GQ
   name: ''
+  region: MoslanForest
   subtype: monolithMaterial
   x: 3628.0
   y: 4018.0
@@ -276,6 +310,7 @@ markers:
   images:
   - markers_images/8FxCpWzkj3cVXzCYR2BScw
   name: ''
+  region: MoslanForest
   subtype: monolithMaterial
   x: 3578.0
   y: 4047.0
@@ -284,6 +319,7 @@ markers:
   images:
   - markers_images/WGzebBYs0q_LAxQiba7EEQ
   name: ''
+  region: MoslanForest
   subtype: monolithMaterial
   x: 3552.0
   y: 4036.0
@@ -292,6 +328,7 @@ markers:
   images:
   - markers_images/lligW6HLMxpJ0RbCnzbUFQ
   name: ''
+  region: MoslanForest
   subtype: monolithMaterial
   x: 3711.0
   y: 4001.0
@@ -300,6 +337,7 @@ markers:
   images:
   - markers_images/vVVi0qGY4NN30tB260LIOA
   name: ''
+  region: MoslanForest
   subtype: monolithMaterial
   x: 3718.0
   y: 3816.0
@@ -308,6 +346,7 @@ markers:
   images:
   - markers_images/KUgveSOzwBDVtbhsmPYq7w
   name: ''
+  region: MoslanForest
   subtype: monolithMaterial
   x: 3333.0
   y: 3569.0
@@ -316,6 +355,7 @@ markers:
   images:
   - markers_images/MSjUoE9NnQMm6r--BsLO5A
   name: ''
+  region: MoslanForest
   subtype: monolithMaterial
   x: 3792.0
   y: 3576.0
@@ -324,6 +364,7 @@ markers:
   images:
   - markers_images/oiNIn84jk2nVvX1fctcEZw
   name: ''
+  region: MoslanForest
   subtype: monolithMaterial
   x: 3817.0
   y: 3713.0
@@ -332,6 +373,7 @@ markers:
   images:
   - markers_images/DO2NAkJo1LX8GyHcAqekCA
   name: ''
+  region: MoslanForest
   subtype: monolithMaterial
   x: 3963.0
   y: 3798.0
@@ -340,6 +382,7 @@ markers:
   images:
   - markers_images/CUeYbNCWtHBBzrXUVxLEOw
   name: ''
+  region: MoslanForest
   subtype: monolithMaterial
   x: 3971.0
   y: 3917.0
@@ -348,6 +391,7 @@ markers:
   images:
   - markers_images/i4il5stWzI8VmOVbWiaZKw
   name: ''
+  region: SafeHaven
   subtype: monolithMaterial
   x: 3236.0
   y: 5291.0
@@ -356,6 +400,7 @@ markers:
   images:
   - markers_images/8DNC8fu8EfDB6Y1ZRRnfOg
   name: ''
+  region: MoslanForest
   subtype: monolithMaterial
   x: 4023.0
   y: 3861.0
@@ -364,6 +409,7 @@ markers:
   images:
   - markers_images/oCIL5CBvun25Lanc2LyYjg
   name: ''
+  region: MoslanForest
   subtype: monolithMaterial
   x: 3846.0
   y: 4019.0
@@ -372,6 +418,7 @@ markers:
   images:
   - markers_images/O3eEFrBhasWieOaeoTtnhg
   name: ''
+  region: Uruthumheim
   subtype: monolithMaterial
   x: 4077.0
   y: 4179.0
@@ -380,6 +427,7 @@ markers:
   images:
   - markers_images/l7lKB_NL7JZdPRm_djUyWQ
   name: ''
+  region: Uruthumheim
   subtype: monolithMaterial
   x: 4126.0
   y: 4233.0
@@ -388,6 +436,7 @@ markers:
   images:
   - markers_images/18JkaFaAw5VG5C0U19s4pA
   name: ''
+  region: Uruthumheim
   subtype: monolithMaterial
   x: 4234.0
   y: 4286.0
@@ -396,6 +445,7 @@ markers:
   images:
   - markers_images/CDQW_iwRla7SXH1nmVuPpw
   name: ''
+  region: Uruthumheim
   subtype: monolithMaterial
   x: 4505.0
   y: 4403.0
@@ -404,6 +454,7 @@ markers:
   images:
   - markers_images/_9dhoWQPIErqCUbaLJ78Sg
   name: ''
+  region: Uruthumheim
   subtype: monolithMaterial
   x: 4302.0
   y: 4553.0
@@ -412,6 +463,7 @@ markers:
   images:
   - markers_images/bZr5t3sThqdkXwcHrxQhoA
   name: ''
+  region: NornirAssembly
   subtype: monolithMaterial
   x: 4723.0
   y: 4308.0
@@ -420,6 +472,7 @@ markers:
   images:
   - markers_images/v_1s4TltTOOm_3H70QSAgg
   name: ''
+  region: NornirAssembly
   subtype: monolithMaterial
   x: 4847.0
   y: 4399.0
@@ -428,6 +481,7 @@ markers:
   images:
   - markers_images/YuHKgHUKUcWlEPHTSz3Zxg
   name: ''
+  region: Uruthumheim
   subtype: monolithMaterial
   x: 4157.0
   y: 4577.0
@@ -436,6 +490,7 @@ markers:
   images:
   - markers_images/cCewgjkM5s5SvYAaevz5Mg
   name: ''
+  region: NornirAssembly
   subtype: monolithMaterial
   x: 4751.0
   y: 4226.0
@@ -444,6 +499,7 @@ markers:
   images:
   - markers_images/LEBXT6S2gpt8HzkJC5nEhQ
   name: ''
+  region: NornirAssembly
   subtype: monolithMaterial
   x: 4922.0
   y: 4350.0
@@ -452,6 +508,7 @@ markers:
   images:
   - markers_images/vrz-PBoOW1Eek-8YAttYXQ
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 4280.0
   y: 4754.0
@@ -460,6 +517,7 @@ markers:
   images:
   - markers_images/-nH97EHpCwX457G0Qx_8Vg
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 4357.0
   y: 4794.0
@@ -468,6 +526,7 @@ markers:
   images:
   - markers_images/RR_mtZGxpY8UvQFjDuyRjg
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 4280.0
   y: 4898.0
@@ -476,6 +535,7 @@ markers:
   images:
   - markers_images/Ra7XZYI2uKejU2uK5A_yQg
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 4451.0
   y: 5081.0
@@ -484,6 +544,7 @@ markers:
   images:
   - markers_images/notTYr7EBYbY0msAkrfptw
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 4853.0
   y: 4994.0
@@ -492,6 +553,7 @@ markers:
   images:
   - markers_images/fzWgD5SvJJohRupz4UpDLw
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 4716.0
   y: 4684.0
@@ -500,6 +562,7 @@ markers:
   images:
   - markers_images/L9sRLywoxIMLv_k_x1HYXA
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 5030.0
   y: 4688.0
@@ -508,6 +571,7 @@ markers:
   images:
   - markers_images/ZEixir0VBmM0abQy0dYcmA
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 5053.0
   y: 4763.0
@@ -516,6 +580,7 @@ markers:
   images:
   - markers_images/JFNjOP3wiXUBm1VISmW1TQ
   name: ''
+  region: BattlescarMound
   subtype: monolithMaterial
   x: 4847.0
   y: 5301.0
@@ -524,6 +589,7 @@ markers:
   images:
   - markers_images/6gqsZ_R8dDfndAWdbw7W-g
   name: ''
+  region: BattlescarMound
   subtype: monolithMaterial
   x: 4967.0
   y: 5322.0
@@ -532,6 +598,7 @@ markers:
   images:
   - markers_images/6-iqGBenRjOh1_0OoVxqww
   name: ''
+  region: BattlescarMound
   subtype: monolithMaterial
   x: 5120.0
   y: 5355.0
@@ -546,6 +613,7 @@ markers:
   images:
   - markers_images/ZahkuNI3fy3xgVyxWNI9XA
   name: ''
+  region: SafeHaven
   subtype: monolithMaterial
   x: 3288.0
   y: 5299.0
@@ -560,6 +628,7 @@ markers:
   images:
   - markers_images/cA2pk-oY1tiv6aE38OuwKA
   name: ''
+  region: SafeHaven
   subtype: monolithMaterial
   x: 3183.0
   y: 5466.0
@@ -568,6 +637,7 @@ markers:
   images:
   - markers_images/Bn7fD7DN63xJRAgV0lZtdA
   name: ''
+  region: SafeHaven
   subtype: monolithMaterial
   x: 3137.0
   y: 5504.0
@@ -576,6 +646,7 @@ markers:
   images:
   - markers_images/kVyrceHlHX-q8jVNz-Ngzw
   name: ''
+  region: SafeHaven
   subtype: monolithMaterial
   x: 3236.0
   y: 5197.0
@@ -584,6 +655,7 @@ markers:
   images:
   - markers_images/jKm9qmCrs0Zq2_fKCNdH1A
   name: ''
+  region: SafeHaven
   subtype: monolithMaterial
   x: 3160.0
   y: 5228.0
@@ -592,6 +664,7 @@ markers:
   images:
   - markers_images/qi2znsrb19s1NJXKSEVEdQ
   name: ''
+  region: SafeHaven
   subtype: monolithMaterial
   x: 3181.0
   y: 5257.0
@@ -600,6 +673,7 @@ markers:
   images:
   - markers_images/-nUhKSAzMGyVXDf81XZqJQ
   name: ''
+  region: SafeHaven
   subtype: monolithMaterial
   x: 3135.0
   y: 5314.0
@@ -608,6 +682,7 @@ markers:
   images:
   - markers_images/Mmht3WL2ziDl8ITQC6iGQg
   name: ''
+  region: SafeHaven
   subtype: monolithMaterial
   x: 3115.0
   y: 5340.0
@@ -616,6 +691,7 @@ markers:
   images:
   - markers_images/vVy5Pm8jYrsd4T2oXchUCw
   name: ''
+  region: SafeHaven
   subtype: monolithMaterial
   x: 3032.0
   y: 5343.0
@@ -624,6 +700,7 @@ markers:
   images:
   - markers_images/lhSCjO_lyDrFF7k-8Fk-pw
   name: ''
+  region: SafeHaven
   subtype: monolithMaterial
   x: 3145.0
   y: 5408.0
@@ -632,6 +709,7 @@ markers:
   images:
   - markers_images/PRMVrLlCv7vxXTwd55Bhdw
   name: ''
+  region: SafeHaven
   subtype: monolithMaterial
   x: 3208.0
   y: 5527.0
@@ -640,6 +718,7 @@ markers:
   images:
   - markers_images/GzZeFutlhCxN-i_NdhXw9w
   name: ''
+  region: SafeHaven
   subtype: monolithMaterial
   x: 3257.0
   y: 5532.0
@@ -648,6 +727,7 @@ markers:
   images:
   - markers_images/TPCFvRbxgLz2xw20meaeVw
   name: ''
+  region: SafeHaven
   subtype: monolithMaterial
   x: 3362.0
   y: 5570.0
@@ -656,6 +736,7 @@ markers:
   images:
   - markers_images/dWbTMRZRuYA8WZpgRk95Ow
   name: ''
+  region: SafeHaven
   subtype: monolithMaterial
   x: 3458.0
   y: 5540.0
@@ -664,6 +745,7 @@ markers:
   images:
   - markers_images/OamT65784WhCtT82wMNSlw
   name: ''
+  region: SafeHaven
   subtype: monolithMaterial
   x: 3472.0
   y: 5583.0
@@ -672,6 +754,7 @@ markers:
   images:
   - markers_images/0voCB-0G7KK5Yg_pV4CupQ
   name: ''
+  region: SafeHaven
   subtype: monolithMaterial
   x: 3353.0
   y: 5395.0
@@ -680,6 +763,7 @@ markers:
   images:
   - markers_images/88txrCcq9kXpEZ83guHKDQ
   name: ''
+  region: SafeHaven
   subtype: monolithMaterial
   x: 3366.0
   y: 5461.0
@@ -688,6 +772,7 @@ markers:
   images:
   - markers_images/jHy3yQy7OeLJP8GbtVJt7Q
   name: ''
+  region: SafeHaven
   subtype: monolithMaterial
   x: 3362.0
   y: 5471.0
@@ -696,6 +781,7 @@ markers:
   images:
   - markers_images/pfLRzs6u_SgutUx2H-_3JQ
   name: ''
+  region: SafeHaven
   subtype: monolithMaterial
   x: 2988.0
   y: 5465.0
@@ -704,6 +790,7 @@ markers:
   images:
   - markers_images/8sI89D17f-vPMqdcsdRX8Q
   name: ''
+  region: SafeHaven
   subtype: monolithMaterial
   x: 2958.0
   y: 5458.0
@@ -712,6 +799,7 @@ markers:
   images:
   - markers_images/WRUZZzGOKb72YuYMIT_djg
   name: ''
+  region: SafeHaven
   subtype: monolithMaterial
   x: 2930.0
   y: 5458.0
@@ -720,6 +808,7 @@ markers:
   images:
   - markers_images/iazIFK1hJyMBhZBeYOJZOg
   name: ''
+  region: SafeHaven
   subtype: monolithMaterial
   x: 3220.0
   y: 5382.0
@@ -728,12 +817,14 @@ markers:
   images:
   - markers_images/5B7ZMfamgF5omtIJBCHf8A
   name: ''
+  region: SafeHaven
   subtype: monolithMaterial
   x: 3923.0
   y: 5549.0
 - category: collection
   id: 22896723-375c-4878-8b7e-7c918e77061a
   name: ''
+  region: DredgionCrashSite
   subtype: monolithMaterial
   x: 3302.0
   y: 4696.0
@@ -742,6 +833,7 @@ markers:
   images:
   - markers_images/hxorFMX5-D2TKacebYFeng
   name: ''
+  region: DredgionCrashSite
   subtype: monolithMaterial
   x: 3365.0
   y: 5017.0
@@ -750,6 +842,7 @@ markers:
   images:
   - markers_images/UZ1tQNNEDPdIamnMNrW61w
   name: ''
+  region: DredgionCrashSite
   subtype: monolithMaterial
   x: 3725.0
   y: 4912.0
@@ -758,6 +851,7 @@ markers:
   images:
   - markers_images/pCnOUNu4DPXZE49_iPj8rQ
   name: ''
+  region: DredgionCrashSite
   subtype: monolithMaterial
   x: 3808.0
   y: 5078.0
@@ -766,6 +860,7 @@ markers:
   images:
   - markers_images/YkV1MitnlKQmMTgbSpjzLw
   name: ''
+  region: DredgionCrashSite
   subtype: monolithMaterial
   x: 3779.0
   y: 4728.0
@@ -774,6 +869,7 @@ markers:
   images:
   - markers_images/8ICJP-znAz6FgSnxyYdMVQ
   name: ''
+  region: DredgionCrashSite
   subtype: monolithMaterial
   x: 3655.0
   y: 4794.0
@@ -782,6 +878,7 @@ markers:
   images:
   - markers_images/CzY_kxkIbitXl102JpUE9A
   name: ''
+  region: DredgionCrashSite
   subtype: monolithMaterial
   x: 3323.0
   y: 4827.0
@@ -790,6 +887,7 @@ markers:
   images:
   - markers_images/MbSfuEOG7XKdULTzpE9bbg
   name: ''
+  region: DredgionCrashSite
   subtype: monolithMaterial
   x: 3469.0
   y: 4682.0
@@ -798,6 +896,7 @@ markers:
   images:
   - markers_images/PNDA29ziSlogMMxPsdSlqQ
   name: ''
+  region: DredgionCrashSite
   subtype: monolithMaterial
   x: 3481.0
   y: 4800.0
@@ -806,6 +905,7 @@ markers:
   images:
   - markers_images/SdQLfPRyELbJSC39vfUJaw
   name: ''
+  region: DredgionCrashSite
   subtype: monolithMaterial
   x: 2871.0
   y: 4865.0
@@ -814,6 +914,7 @@ markers:
   images:
   - markers_images/FREqM7xImSW2p-U6I8RTDQ
   name: ''
+  region: DredgionCrashSite
   subtype: monolithMaterial
   x: 3544.0
   y: 4645.0
@@ -822,12 +923,14 @@ markers:
   images:
   - markers_images/aZe28C2AXaQnswC68ax89A
   name: ''
+  region: DredgionCrashSite
   subtype: monolithMaterial
   x: 3415.0
   y: 5000.0
 - category: collection
   id: 520ce937-c1cb-4125-bd84-bbf2039f0a68
   name: ''
+  region: DredgionCrashSite
   subtype: monolithMaterial
   x: 3543.0
   y: 4973.0
@@ -836,6 +939,7 @@ markers:
   images:
   - markers_images/mAphUqa5NRW3zINy83lNEA
   name: ''
+  region: DredgionCrashSite
   subtype: monolithMaterial
   x: 3581.0
   y: 4981.0
@@ -844,6 +948,7 @@ markers:
   images:
   - markers_images/Wq4NYZaorvnMfme2-g7gxw
   name: ''
+  region: DredgionCrashSite
   subtype: monolithMaterial
   x: 3689.0
   y: 5032.0
@@ -852,6 +957,7 @@ markers:
   images:
   - markers_images/2C-6H1NzhjotBSEf_auwNA
   name: ''
+  region: NamelessCemetery
   subtype: monolithMaterial
   x: 2703.0
   y: 4813.0
@@ -860,6 +966,7 @@ markers:
   images:
   - markers_images/RRRT7FuIjhDPSc-kpLaICQ
   name: ''
+  region: NamelessCemetery
   subtype: monolithMaterial
   x: 2735.0
   y: 5018.0
@@ -868,6 +975,7 @@ markers:
   images:
   - markers_images/WKBbawYHAYSyQ1GF6XpDKw
   name: ''
+  region: SouthernGribadeHighland
   subtype: monolithMaterial
   x: 5527.0
   y: 3125.0
@@ -876,6 +984,7 @@ markers:
   images:
   - markers_images/ecfg_tyl6Y6ShU3f1IA2uQ
   name: ''
+  region: IdunsLake
   subtype: monolithMaterial
   x: 5701.0
   y: 3072.0
@@ -884,6 +993,7 @@ markers:
   images:
   - markers_images/tNGjsWaadyjlT6_V90Gfpg
   name: ''
+  region: IdunsLake
   subtype: monolithMaterial
   x: 5743.0
   y: 3088.0
@@ -892,6 +1002,7 @@ markers:
   images:
   - markers_images/BsGjMsK9B1z6KdJ6gE8riQ
   name: ''
+  region: IdunsLake
   subtype: monolithMaterial
   x: 5685.0
   y: 3109.0
@@ -900,6 +1011,7 @@ markers:
   images:
   - markers_images/imuSr96KOPuDuegfQIOfVw
   name: ''
+  region: IdunsLake
   subtype: monolithMaterial
   x: 5700.0
   y: 3122.0
@@ -908,6 +1020,7 @@ markers:
   images:
   - markers_images/yoEh7gGLFYGsm8OC2GyrQQ
   name: ''
+  region: IdunsLake
   subtype: monolithMaterial
   x: 5720.0
   y: 3137.0
@@ -916,6 +1029,7 @@ markers:
   images:
   - markers_images/eZgoAVvoe3KVAv3YRMWm7g
   name: ''
+  region: IdunsLake
   subtype: monolithMaterial
   x: 5692.0
   y: 3132.0
@@ -924,6 +1038,7 @@ markers:
   images:
   - markers_images/3iRPrCOjj63EtQ6LIqObZg
   name: ''
+  region: IdunsLake
   subtype: monolithMaterial
   x: 5665.0
   y: 3142.0
@@ -932,6 +1047,7 @@ markers:
   images:
   - markers_images/ck8a3n3ZnPvXfWyVySD5Cg
   name: ''
+  region: IdunsLake
   subtype: monolithMaterial
   x: 5684.0
   y: 3168.0
@@ -940,6 +1056,7 @@ markers:
   images:
   - markers_images/K05LwtTlCt-8F2a4YokUzQ
   name: ''
+  region: IdunsLake
   subtype: monolithMaterial
   x: 5661.0
   y: 3159.0
@@ -948,6 +1065,7 @@ markers:
   images:
   - markers_images/Aq5FnyMivBxb7FBnf6aoAQ
   name: ''
+  region: IdunsLake
   subtype: monolithMaterial
   x: 5624.0
   y: 3166.0
@@ -956,6 +1074,7 @@ markers:
   images:
   - markers_images/6jGxVOkDHKtd7qi6IuSj9Q
   name: ''
+  region: BlackClawVillage
   subtype: monolithMaterial
   x: 4975.0
   y: 2332.0
@@ -964,6 +1083,7 @@ markers:
   images:
   - markers_images/cdUo_hK8r-Jy2eqqQzoPqw
   name: ''
+  region: BlackClawVillage
   subtype: monolithMaterial
   x: 4986.0
   y: 2662.0
@@ -972,6 +1092,7 @@ markers:
   images:
   - markers_images/CPaQXd97VRoaxDNFnCgP7g
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5424.0
   y: 2454.0
@@ -980,6 +1101,7 @@ markers:
   images:
   - markers_images/NR1sWe7lOSF-omflt4LDGg
   name: ''
+  region: BattlescarMound
   subtype: monolithMaterial
   x: 5173.0
   y: 5220.0
@@ -988,6 +1110,7 @@ markers:
   images:
   - markers_images/-xE00n1WgOzyCt3RhA-zQw
   name: ''
+  region: BasfeltWaterfall
   subtype: monolithMaterial
   x: 5238.0
   y: 5270.0
@@ -996,6 +1119,7 @@ markers:
   images:
   - markers_images/4lMw5jUZlH0qI0fsIJAM8g
   name: ''
+  region: BasfeltWaterfall
   subtype: monolithMaterial
   x: 5481.0
   y: 5255.0
@@ -1004,6 +1128,7 @@ markers:
   images:
   - markers_images/FiS9D1XS5DHOcP856YtvaA
   name: ''
+  region: MoslanForest
   subtype: monolithMaterial
   x: 4012.0
   y: 4251.0
@@ -1012,6 +1137,7 @@ markers:
   images:
   - markers_images/pTERPhC93NgjKMMlI3htcw
   name: ''
+  region: SanctumOutpost
   subtype: monolithMaterial
   x: 2117.0
   y: 4546.0
@@ -1020,6 +1146,7 @@ markers:
   images:
   - markers_images/Tenuj8Ik-TjbxZwoA5B4wg
   name: ''
+  region: SilentHill
   subtype: monolithMaterial
   x: 2331.0
   y: 4546.0
@@ -1028,6 +1155,7 @@ markers:
   images:
   - markers_images/87B8HbChx53nmsM_YVMEFQ
   name: ''
+  region: SanctumOutpost
   subtype: monolithMaterial
   x: 2396.0
   y: 4516.0
@@ -1036,6 +1164,7 @@ markers:
   images:
   - markers_images/QmASp-bdvNIRkYsg0CqysA
   name: ''
+  region: SilentHill
   subtype: monolithMaterial
   x: 2543.0
   y: 4740.0
@@ -1044,6 +1173,7 @@ markers:
   images:
   - markers_images/KA2sHYyaiZzSQU99e9QX7g
   name: ''
+  region: NamelessCemetery
   subtype: monolithMaterial
   x: 2410.0
   y: 4903.0
@@ -1052,6 +1182,7 @@ markers:
   images:
   - markers_images/wOW3gKrYUjmgUh9mg9cWiA
   name: ''
+  region: NamelessCemetery
   subtype: monolithMaterial
   x: 2427.0
   y: 4916.0
@@ -1060,6 +1191,7 @@ markers:
   images:
   - markers_images/kBYljdjzLZZzKTkzm1Iy_g
   name: ''
+  region: NamelessCemetery
   subtype: monolithMaterial
   x: 2493.0
   y: 4922.0
@@ -1068,6 +1200,7 @@ markers:
   images:
   - markers_images/SCXg0NdsnTRXeLXqsYXPDA
   name: ''
+  region: NamelessCemetery
   subtype: monolithMaterial
   x: 2581.0
   y: 4824.0
@@ -1076,6 +1209,7 @@ markers:
   images:
   - markers_images/PVtuYduTVyu8shs34XTgqw
   name: ''
+  region: NamelessCemetery
   subtype: monolithMaterial
   x: 2619.0
   y: 4838.0
@@ -1084,6 +1218,7 @@ markers:
   images:
   - markers_images/XVse3BWa0r-I0r3TLNsi6w
   name: ''
+  region: NamelessCemetery
   subtype: monolithMaterial
   x: 2598.0
   y: 4911.0
@@ -1092,6 +1227,7 @@ markers:
   images:
   - markers_images/165deL7urso9LTvD_XXP1Q
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 1882.0
   y: 2181.0
@@ -1100,6 +1236,7 @@ markers:
   images:
   - markers_images/TrHXkCD76vZxPM5qUvVASg
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 1872.0
   y: 2112.0
@@ -1108,6 +1245,7 @@ markers:
   images:
   - markers_images/-OzbW1rt6iDWLy-YzFJOwg
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 1881.0
   y: 2014.0
@@ -1116,6 +1254,7 @@ markers:
   images:
   - markers_images/UbF1G1etI0tTPq9D4nRAaw
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 1891.0
   y: 2010.0
@@ -1124,6 +1263,7 @@ markers:
   images:
   - markers_images/o8MHKVwZWCegw5xIOo0K0A
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 1892.0
   y: 1966.0
@@ -1132,6 +1272,7 @@ markers:
   images:
   - markers_images/S8vKVFyss81cZ5UBPXfxUQ
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 1934.0
   y: 1934.0
@@ -1140,6 +1281,7 @@ markers:
   images:
   - markers_images/Epr7vsbdJJUkJCc4Siyrxw
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 1936.0
   y: 1805.0
@@ -1148,6 +1290,7 @@ markers:
   images:
   - markers_images/z8TlQPK6fAOOWSux6B_95A
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 2063.0
   y: 2011.0
@@ -1156,6 +1299,7 @@ markers:
   images:
   - markers_images/432LbtRjgo5WiFGP18VyGQ
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 2047.0
   y: 1957.0
@@ -1164,6 +1308,7 @@ markers:
   images:
   - markers_images/uJhmWapRUs89b0iXG5R_Ig
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 2106.0
   y: 1944.0
@@ -1172,6 +1317,7 @@ markers:
   images:
   - markers_images/BDUfSMoAuQJ0PMF2pxSJ3g
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 2099.0
   y: 1883.0
@@ -1180,6 +1326,7 @@ markers:
   images:
   - markers_images/lfb8ixaXH-9h2Q9EAK1zQQ
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 2039.0
   y: 1858.0
@@ -1188,6 +1335,7 @@ markers:
   images:
   - markers_images/SCJ-NqioyFKrpNhPToFNcA
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 2158.0
   y: 1788.0
@@ -1196,6 +1344,7 @@ markers:
   images:
   - markers_images/hYOJIKOeoKy8Fydw0mE7GA
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 2078.0
   y: 1771.0
@@ -1204,6 +1353,7 @@ markers:
   images:
   - markers_images/K8R4urTBEzm1xQH6sunFOQ
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 2253.0
   y: 1778.0
@@ -1212,6 +1362,7 @@ markers:
   images:
   - markers_images/mF7ixBX7brVeRcfCZr2NQg
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 2256.0
   y: 1825.0
@@ -1220,6 +1371,7 @@ markers:
   images:
   - markers_images/nv4E0DkHKcewOEQW_N7K8Q
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 2273.0
   y: 1909.0
@@ -1228,6 +1380,7 @@ markers:
   images:
   - markers_images/GeRzTcoI_txbwotaXYKADg
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 2354.0
   y: 1886.0
@@ -1236,6 +1389,7 @@ markers:
   images:
   - markers_images/sBspizdrADbS1L3M_rzfWw
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 2216.0
   y: 2003.0
@@ -1244,6 +1398,7 @@ markers:
   images:
   - markers_images/TOq7BouBldhHLbjHK51vIA
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 2313.0
   y: 2009.0
@@ -1252,6 +1407,7 @@ markers:
   images:
   - markers_images/9BHajZzRlsZVAkV07trjTw
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 2212.0
   y: 2091.0
@@ -1260,6 +1416,7 @@ markers:
   images:
   - markers_images/LdKpdUb1X1P2BDG4PLfjDQ
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 1864.0
   y: 1744.0
@@ -1268,6 +1425,7 @@ markers:
   images:
   - markers_images/uwJ3StqHUVJODyc-3FLHng
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 1836.0
   y: 1650.0
@@ -1276,6 +1434,7 @@ markers:
   images:
   - markers_images/o4lp37JDNP4rf3Qnx41p6w
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 1911.0
   y: 1615.0
@@ -1284,6 +1443,7 @@ markers:
   images:
   - markers_images/q1ouh9wf4ZJZ61K63BJBFw
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 1898.0
   y: 1628.0
@@ -1292,6 +1452,7 @@ markers:
   images:
   - markers_images/3Jh6LWaj13H1pvFVIySj2g
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 1986.0
   y: 1629.0
@@ -1300,6 +1461,7 @@ markers:
   images:
   - markers_images/LFiCwBBMYkIRPKVIu6W-1g
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 1959.0
   y: 1705.0
@@ -1308,6 +1470,7 @@ markers:
   images:
   - markers_images/nAL_Yo6eJeKxEhWIOFZwcQ
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 1983.0
   y: 1680.0
@@ -1316,6 +1479,7 @@ markers:
   images:
   - markers_images/IrEZ9WKnwawyhudHDTykUw
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 2094.0
   y: 1665.0
@@ -1324,6 +1488,7 @@ markers:
   images:
   - markers_images/_7pc7GU2WT-6_1fK9pYLOg
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 2264.0
   y: 1702.0
@@ -1332,6 +1497,7 @@ markers:
   images:
   - markers_images/8RAVJiT7Quma2T6gH8uvIQ
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 2204.0
   y: 1695.0
@@ -1340,6 +1506,7 @@ markers:
   images:
   - markers_images/LYgfsY7UhJuj87khrrjw3A
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 2207.0
   y: 1654.0
@@ -1348,12 +1515,14 @@ markers:
   images:
   - markers_images/xjwRbZRhw-T-Xv_XRKB9zQ
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 2011.0
   y: 1476.0
 - category: collection
   id: 02a33a51-6096-4937-9891-edbf8320cf97
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 2231.0
   y: 1623.0
@@ -1362,6 +1531,7 @@ markers:
   images:
   - markers_images/c5XsWt3Mk5ptiIChKWSQaA
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 2168.0
   y: 1663.0
@@ -1370,12 +1540,14 @@ markers:
   images:
   - markers_images/4vNafD6TuP2MT-abFBXV7A
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 1758.0
   y: 1549.0
 - category: collection
   id: 60bb6800-5c8d-4b03-9c47-e1d0a48efe96
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 2330.0
   y: 1500.0
@@ -1384,6 +1556,7 @@ markers:
   images:
   - markers_images/R2TOiNGvOjLXEcsG0wzyLw
   name: ''
+  region: DredgionCrashSite
   subtype: monolithMaterial
   x: 3316.0
   y: 4816.0
@@ -1392,6 +1565,7 @@ markers:
   images:
   - markers_images/3-IN5IZVkxERDe0aGTLYcg
   name: ''
+  region: WesternGribadeHighland
   subtype: monolithMaterial
   x: 4913.0
   y: 3325.0
@@ -1400,6 +1574,7 @@ markers:
   images:
   - markers_images/H9Q0k09fw2_KiyoKQx4hfw
   name: ''
+  region: WesternGribadeHighland
   subtype: monolithMaterial
   x: 5021.0
   y: 3398.0
@@ -1408,6 +1583,7 @@ markers:
   images:
   - markers_images/GdnJTJ53kFBOBW-3hOoVRA
   name: ''
+  region: WesternGribadeHighland
   subtype: monolithMaterial
   x: 5029.0
   y: 3216.0
@@ -1416,6 +1592,7 @@ markers:
   images:
   - markers_images/I7nT49Btma0AcWE-aj12eQ
   name: ''
+  region: WesternGribadeHighland
   subtype: monolithMaterial
   x: 4926.0
   y: 3500.0
@@ -1424,6 +1601,7 @@ markers:
   images:
   - markers_images/3jzJgFTgJmVbYfNFnzyqbA
   name: ''
+  region: WesternGribadeHighland
   subtype: monolithMaterial
   x: 5099.0
   y: 3275.0
@@ -1432,6 +1610,7 @@ markers:
   images:
   - markers_images/WT_CBChIix6Ugpa-VBt_rQ
   name: ''
+  region: WesternGribadeHighland
   subtype: monolithMaterial
   x: 5128.0
   y: 3261.0
@@ -1440,6 +1619,7 @@ markers:
   images:
   - markers_images/i5-R-QBpk7WGxObt6CAkuQ
   name: ''
+  region: FafniteDeposit
   subtype: monolithMaterial
   x: 5175.0
   y: 3506.0
@@ -1448,6 +1628,7 @@ markers:
   images:
   - markers_images/X_aYwEwTVD0AT46IsIu0XA
   name: ''
+  region: FafniteDeposit
   subtype: monolithMaterial
   x: 5207.0
   y: 3530.0
@@ -1456,6 +1637,7 @@ markers:
   images:
   - markers_images/xeaMiuICDp2tXfpK9iPg6Q
   name: ''
+  region: FafniteDeposit
   subtype: monolithMaterial
   x: 5277.0
   y: 3482.0
@@ -1464,18 +1646,21 @@ markers:
   images:
   - markers_images/lT09i60e6JCI8oM0S4bYrw
   name: ''
+  region: FafniteDeposit
   subtype: monolithMaterial
   x: 5398.0
   y: 3413.0
 - category: collection
   id: d68db4a8-f3f5-4a08-8c95-4309606c19d5
   name: ''
+  region: IdunsLake
   subtype: monolithMaterial
   x: 5518.0
   y: 3303.0
 - category: collection
   id: 8c31d621-4dfc-4ea4-afef-4e7789aa5583
   name: ''
+  region: IdunsLake
   subtype: monolithMaterial
   x: 5552.0
   y: 3273.0
@@ -1484,6 +1669,7 @@ markers:
   images:
   - markers_images/wvEQezyCBIJVTQqubu6g_Q
   name: ''
+  region: EasternGribadeHighland
   subtype: monolithMaterial
   x: 5703.0
   y: 3436.0
@@ -1492,6 +1678,7 @@ markers:
   images:
   - markers_images/yBnVcfV6zc8h9w_KwlPNEA
   name: ''
+  region: IdunsLake
   subtype: monolithMaterial
   x: 5732.0
   y: 3284.0
@@ -1500,6 +1687,7 @@ markers:
   images:
   - markers_images/kQGFJM6FF6_ap-H3_79yvA
   name: ''
+  region: IdunsLake
   subtype: monolithMaterial
   x: 5818.0
   y: 3273.0
@@ -1508,6 +1696,7 @@ markers:
   images:
   - markers_images/Projjzbalx5ctvuaFs3V3g
   name: ''
+  region: WesternGribadeHighland
   subtype: monolithMaterial
   x: 5223.0
   y: 3254.0
@@ -1516,6 +1705,7 @@ markers:
   images:
   - markers_images/-BT0YgiGrBlBrVtbPdfmDw
   name: ''
+  region: WesternGribadeHighland
   subtype: monolithMaterial
   x: 5297.0
   y: 3197.0
@@ -1524,6 +1714,7 @@ markers:
   images:
   - markers_images/YCy52xXxwnpsTjhwGFoLVA
   name: ''
+  region: WesternGribadeHighland
   subtype: monolithMaterial
   x: 5379.0
   y: 3219.0
@@ -1532,6 +1723,7 @@ markers:
   images:
   - markers_images/EsFWfktMGcIiZARBmVl-Dg
   name: ''
+  region: WesternGribadeHighland
   subtype: monolithMaterial
   x: 5120.0
   y: 3202.0
@@ -1540,6 +1732,7 @@ markers:
   images:
   - markers_images/gYCbtbklzMjLPEQj41SS9g
   name: ''
+  region: WesternGribadeHighland
   subtype: monolithMaterial
   x: 5372.0
   y: 3160.0
@@ -1548,6 +1741,7 @@ markers:
   images:
   - markers_images/xKpzErgMPqIuMBlsmnTMGw
   name: ''
+  region: WesternGribadeHighland
   subtype: monolithMaterial
   x: 5364.0
   y: 3117.0
@@ -1556,6 +1750,7 @@ markers:
   images:
   - markers_images/xf-rxHFom-8jkFE_Rx69dg
   name: ''
+  region: WesternGribadeHighland
   subtype: monolithMaterial
   x: 5449.0
   y: 3105.0
@@ -1564,6 +1759,7 @@ markers:
   images:
   - markers_images/y8tG3FqXX3rEAZUi5zTrjg
   name: ''
+  region: WesternGribadeHighland
   subtype: monolithMaterial
   x: 5154.0
   y: 3084.0
@@ -1572,6 +1768,7 @@ markers:
   images:
   - markers_images/zbCQ28px0Iqc5ilJMcR5rg
   name: ''
+  region: BlackClawVillage
   subtype: monolithMaterial
   x: 5325.0
   y: 2742.0
@@ -1580,6 +1777,7 @@ markers:
   images:
   - markers_images/HDGpjNOygktkvjT1XSuX-g
   name: ''
+  region: BlackClawVillage
   subtype: monolithMaterial
   x: 5092.0
   y: 2755.0
@@ -1588,6 +1786,7 @@ markers:
   images:
   - markers_images/l2ug5KbPX7YEyrKwi2r3VQ
   name: ''
+  region: BlackClawVillage
   subtype: monolithMaterial
   x: 5074.0
   y: 2709.0
@@ -1596,6 +1795,7 @@ markers:
   images:
   - markers_images/kZZ_5prUwSm9Cc6NdTfkGA
   name: ''
+  region: SouthernGribadeHighland
   subtype: monolithMaterial
   x: 5709.0
   y: 2993.0
@@ -1604,6 +1804,7 @@ markers:
   images:
   - markers_images/RH7xc6fXotKf-jVVUnDzMQ
   name: ''
+  region: SouthernGribadeHighland
   subtype: monolithMaterial
   x: 5355.0
   y: 2893.0
@@ -1612,6 +1813,7 @@ markers:
   images:
   - markers_images/oEISzCkZ7ZRg42OZRyRF0w
   name: ''
+  region: SouthernGribadeHighland
   subtype: monolithMaterial
   x: 5509.0
   y: 2757.0
@@ -1620,6 +1822,7 @@ markers:
   images:
   - markers_images/aKsbj4C6ojdP28pkSMUieA
   name: ''
+  region: SouthernGribadeHighland
   subtype: monolithMaterial
   x: 5649.0
   y: 2910.0
@@ -1628,12 +1831,14 @@ markers:
   images:
   - markers_images/FV1kHAj1Eqfukz28lDq0UQ
   name: ''
+  region: BlackClawVillage
   subtype: monolithMaterial
   x: 4995.0
   y: 2600.0
 - category: collection
   id: 2d214fca-9e8b-4917-ac7a-34aa1c2cf815
   name: ''
+  region: BlackClawVillage
   subtype: monolithMaterial
   x: 5182.0
   y: 2649.0
@@ -1642,6 +1847,7 @@ markers:
   images:
   - markers_images/NoT3MBc-CjZgxGRfm-0Fww
   name: ''
+  region: BlackClawVillage
   subtype: monolithMaterial
   x: 5312.0
   y: 2649.0
@@ -1650,6 +1856,7 @@ markers:
   images:
   - markers_images/_ciMPRJf-ze_s15Cud8X3w
   name: ''
+  region: BlackClawVillage
   subtype: monolithMaterial
   x: 5227.0
   y: 2392.0
@@ -1658,6 +1865,7 @@ markers:
   images:
   - markers_images/5rXWGV_4zROOxeIVf3sO9Q
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5276.0
   y: 2371.0
@@ -1666,6 +1874,7 @@ markers:
   images:
   - markers_images/DSA_SEedZ_eYakFKlFkBSQ
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5346.0
   y: 2496.0
@@ -1674,6 +1883,7 @@ markers:
   images:
   - markers_images/XJB4PbIX4pbHENu__o1Nmg
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5450.0
   y: 2512.0
@@ -1682,6 +1892,7 @@ markers:
   images:
   - markers_images/EbkFRf2tG-ctj0kTBgQylQ
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5495.0
   y: 2490.0
@@ -1690,6 +1901,7 @@ markers:
   images:
   - markers_images/79NHCDxBUTd_6OeQgyt3ow
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5509.0
   y: 2479.0
@@ -1698,6 +1910,7 @@ markers:
   images:
   - markers_images/Jv8PVKLPHZhLZ2Q5GwJ8Mg
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5530.0
   y: 2509.0
@@ -1706,6 +1919,7 @@ markers:
   images:
   - markers_images/8ghXouQmmm5t7VkmkXRwzA
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5615.0
   y: 2586.0
@@ -1714,6 +1928,7 @@ markers:
   images:
   - markers_images/ZfAm8EuAeApd_BwxWuVeVA
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5676.0
   y: 2575.0
@@ -1722,6 +1937,7 @@ markers:
   images:
   - markers_images/bXSLTAtmXvXpRgcurzC0yQ
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5766.0
   y: 2573.0
@@ -1730,6 +1946,7 @@ markers:
   images:
   - markers_images/LzfJBpNrQpkezXrxLRSkCQ
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5785.0
   y: 2511.0
@@ -1738,6 +1955,7 @@ markers:
   images:
   - markers_images/4SkOtw0MePLQplEeNSj5RQ
   name: ''
+  region: EasternGribadeHighland
   subtype: monolithMaterial
   x: 5914.0
   y: 2714.0
@@ -1746,6 +1964,7 @@ markers:
   images:
   - markers_images/1sCz2qiW64QvO-XhDOh1iA
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5801.0
   y: 2437.0
@@ -1754,6 +1973,7 @@ markers:
   images:
   - markers_images/Gi0lhRZbPKe0jXoNoRS7KA
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5849.0
   y: 2389.0
@@ -1762,6 +1982,7 @@ markers:
   images:
   - markers_images/NmBUAFfQy0WdbgRoUL9_FA
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5826.0
   y: 2323.0
@@ -1770,6 +1991,7 @@ markers:
   images:
   - markers_images/nBJXEVd6fjs46NCsRCxBfA
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5777.0
   y: 2431.0
@@ -1778,6 +2000,7 @@ markers:
   images:
   - markers_images/ozYquTsN6lTYCIIokAfBhw
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5741.0
   y: 2416.0
@@ -1786,6 +2009,7 @@ markers:
   images:
   - markers_images/SK1r7T97AJmCrObPUYzvZA
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5691.0
   y: 2411.0
@@ -1794,6 +2018,7 @@ markers:
   images:
   - markers_images/uQ7M82rzT5skaZMlPKA7GA
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5645.0
   y: 2397.0
@@ -1802,6 +2027,7 @@ markers:
   images:
   - markers_images/w98zmQo34nDSrpY_GcN0nw
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5629.0
   y: 2386.0
@@ -1810,6 +2036,7 @@ markers:
   images:
   - markers_images/7FbPahtb1VHi_BHKr_IXGw
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5584.0
   y: 2373.0
@@ -1818,6 +2045,7 @@ markers:
   images:
   - markers_images/qKRZAPsK5Wmk30PKF3IeAw
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5552.0
   y: 2378.0
@@ -1826,6 +2054,7 @@ markers:
   images:
   - markers_images/9xFI6awAxIu7gvzwlzQl3A
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5522.0
   y: 2386.0
@@ -1834,6 +2063,7 @@ markers:
   images:
   - markers_images/Rm3CGp0NUr50RsCQI_MAuA
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5391.0
   y: 2387.0
@@ -1842,6 +2072,7 @@ markers:
   images:
   - markers_images/avX17EKXGhzTrYE8tiKRqw
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5445.0
   y: 2359.0
@@ -1850,6 +2081,7 @@ markers:
   images:
   - markers_images/Tbye8gmjqXg_nz4FgEuHiw
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5403.0
   y: 2311.0
@@ -1858,6 +2090,7 @@ markers:
   images:
   - markers_images/FbHYecV9F6wvCjkldMezbg
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5510.0
   y: 2327.0
@@ -1866,6 +2099,7 @@ markers:
   images:
   - markers_images/CcmbU0R4a1OFVegAxHPI_A
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5496.0
   y: 2288.0
@@ -1874,6 +2108,7 @@ markers:
   images:
   - markers_images/EK6giZU-dWML3v6mw1H9Iw
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5969.0
   y: 2456.0
@@ -1882,6 +2117,7 @@ markers:
   images:
   - markers_images/n-By1skU4kKsXmFrf6aaHA
   name: ''
+  region: EasternGribadeHighland
   subtype: monolithMaterial
   x: 6074.0
   y: 2513.0
@@ -1890,6 +2126,7 @@ markers:
   images:
   - markers_images/A4nXRIRirLEPfl75ZFCqPg
   name: ''
+  region: EasternGribadeHighland
   subtype: monolithMaterial
   x: 6220.0
   y: 2577.0
@@ -1898,6 +2135,7 @@ markers:
   images:
   - markers_images/xg7W0rq8HPTQ57DXsrrsuw
   name: ''
+  region: EasternGribadeHighland
   subtype: monolithMaterial
   x: 6291.0
   y: 2767.0
@@ -1906,12 +2144,14 @@ markers:
   images:
   - markers_images/Uv8xItoOvZHjEM1ERDLjBQ
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 6207.0
   y: 2364.0
 - category: collection
   id: f745904a-c2ec-4461-8fe8-5105f6e6b829
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5941.0
   y: 2283.0
@@ -1920,6 +2160,7 @@ markers:
   images:
   - markers_images/BlYLtE91_-gXPMrwbwXb1g
   name: ''
+  region: EasternGribadeHighland
   subtype: monolithMaterial
   x: 6010.0
   y: 2947.0
@@ -1928,6 +2169,7 @@ markers:
   images:
   - markers_images/AOUjAGpMGpTfWT8z_SgPUQ
   name: ''
+  region: EasternGribadeHighland
   subtype: monolithMaterial
   x: 5927.0
   y: 3064.0
@@ -1936,6 +2178,7 @@ markers:
   images:
   - markers_images/Nk5x8FYocWCgAyGa0MNsiA
   name: ''
+  region: EasternGribadeHighland
   subtype: monolithMaterial
   x: 5911.0
   y: 3298.0
@@ -1944,6 +2187,7 @@ markers:
   images:
   - markers_images/BoeOy0E-xixaHefQfHnGSw
   name: ''
+  region: EasternGribadeHighland
   subtype: monolithMaterial
   x: 6075.0
   y: 3239.0
@@ -1952,6 +2196,7 @@ markers:
   images:
   - markers_images/Z7U6n-7BKWtjtrOx-aLKKw
   name: ''
+  region: EasternGribadeHighland
   subtype: monolithMaterial
   x: 5962.0
   y: 3096.0
@@ -1960,6 +2205,7 @@ markers:
   images:
   - markers_images/VMRf48ilV9K7LEdQby_NeA
   name: ''
+  region: EasternGribadeHighland
   subtype: monolithMaterial
   x: 5933.0
   y: 3528.0
@@ -1968,6 +2214,7 @@ markers:
   images:
   - markers_images/QpIAJMX8Zgsi8Kzk0WZMuA
   name: ''
+  region: EasternGribadeHighland
   subtype: monolithMaterial
   x: 6089.0
   y: 3470.0
@@ -1976,6 +2223,7 @@ markers:
   images:
   - markers_images/MDrFsOv6O7xSpX0pzib1mg
   name: ''
+  region: FafniteDeposit
   subtype: monolithMaterial
   x: 5298.0
   y: 3572.0
@@ -1984,6 +2232,7 @@ markers:
   images:
   - markers_images/TNo9DLiSSSEeaWrjf-xqUg
   name: ''
+  region: FafniteDeposit
   subtype: monolithMaterial
   x: 4967.0
   y: 3669.0
@@ -1992,6 +2241,7 @@ markers:
   images:
   - markers_images/3KQc8YgPBoIyVbNVWYYrOQ
   name: ''
+  region: FafniteDeposit
   subtype: monolithMaterial
   x: 5084.0
   y: 3644.0
@@ -2000,6 +2250,7 @@ markers:
   images:
   - markers_images/91gVss4NC6L80VFg5Yyk-w
   name: ''
+  region: FafniteDeposit
   subtype: monolithMaterial
   x: 5223.0
   y: 3807.0
@@ -2008,6 +2259,7 @@ markers:
   images:
   - markers_images/ENUWcEB_bRlFdzL6jkE0Kw
   name: ''
+  region: FafniteDeposit
   subtype: monolithMaterial
   x: 5381.0
   y: 3853.0
@@ -2016,6 +2268,7 @@ markers:
   images:
   - markers_images/pObRLeEAEK8IqNlHBpg4mA
   name: ''
+  region: MahindelCliff
   subtype: monolithMaterial
   x: 5542.0
   y: 4075.0
@@ -2024,6 +2277,7 @@ markers:
   images:
   - markers_images/pDm7g_lmOqndBbsrrdlqeQ
   name: ''
+  region: MahindelCliff
   subtype: monolithMaterial
   x: 5444.0
   y: 4245.0
@@ -2032,6 +2286,7 @@ markers:
   images:
   - markers_images/O9rffvdgu4k9PNtUGjXfvA
   name: ''
+  region: NornirAssembly
   subtype: monolithMaterial
   x: 4935.0
   y: 4220.0
@@ -2040,6 +2295,7 @@ markers:
   images:
   - markers_images/2geCwZ6V8ijc6OFq7UROKQ
   name: ''
+  region: NornirAssembly
   subtype: monolithMaterial
   x: 4976.0
   y: 4288.0
@@ -2048,6 +2304,7 @@ markers:
   images:
   - markers_images/8C7Ei_bizaG-BGmXx8CElw
   name: ''
+  region: NornirAssembly
   subtype: monolithMaterial
   x: 5083.0
   y: 4301.0
@@ -2056,6 +2313,7 @@ markers:
   images:
   - markers_images/2KWUK8lLZ4Yj1jD3pTyuhg
   name: ''
+  region: MahindelCliff
   subtype: monolithMaterial
   x: 6055.0
   y: 4061.0
@@ -2064,6 +2322,7 @@ markers:
   images:
   - markers_images/S7Z40DQiGV-7syIjHmStCA
   name: ''
+  region: BasfeltRuins
   subtype: monolithMaterial
   x: 5480.0
   y: 5096.0
@@ -2072,6 +2331,7 @@ markers:
   images:
   - markers_images/HUCkzHbSDQVVXjcGhJcf_g
   name: ''
+  region: BasfeltRuins
   subtype: monolithMaterial
   x: 5630.0
   y: 5067.0
@@ -2080,6 +2340,7 @@ markers:
   images:
   - markers_images/PM27cwtmB01jwRyfNoLdGQ
   name: ''
+  region: BasfeltRuins
   subtype: monolithMaterial
   x: 5437.0
   y: 4968.0
@@ -2088,6 +2349,7 @@ markers:
   images:
   - markers_images/kK7-XRLHSMU71QiSleWnkg
   name: ''
+  region: BasfeltRuins
   subtype: monolithMaterial
   x: 5420.0
   y: 4907.0
@@ -2096,6 +2358,7 @@ markers:
   images:
   - markers_images/AhiMHC3ZzhKMgseKXM9P4w
   name: ''
+  region: BasfeltRuins
   subtype: monolithMaterial
   x: 5762.0
   y: 4966.0
@@ -2104,6 +2367,7 @@ markers:
   images:
   - markers_images/zET40phG0SnPdPhW8mLCUw
   name: ''
+  region: BasfeltRuins
   subtype: monolithMaterial
   x: 5817.0
   y: 5184.0
@@ -2112,6 +2376,7 @@ markers:
   images:
   - markers_images/HX58bSfduY-80uhGJ-pkDg
   name: ''
+  region: BasfeltRuins
   subtype: monolithMaterial
   x: 5938.0
   y: 5060.0
@@ -2120,6 +2385,7 @@ markers:
   images:
   - markers_images/DnEFfVCbnvTQS-GhHSnqdg
   name: ''
+  region: BasfeltRuins
   subtype: monolithMaterial
   x: 5992.0
   y: 4984.0
@@ -2128,6 +2394,7 @@ markers:
   images:
   - markers_images/FfB_Fo6UTyzdy2FNtt7qNQ
   name: ''
+  region: BasfeltRuins
   subtype: monolithMaterial
   x: 5980.0
   y: 4876.0
@@ -2136,6 +2403,7 @@ markers:
   images:
   - markers_images/vsMtW4XRzLTfmdg9QFhj6g
   name: ''
+  region: BasfeltRuins
   subtype: monolithMaterial
   x: 5898.0
   y: 4851.0
@@ -2144,6 +2412,7 @@ markers:
   images:
   - markers_images/g52aEhDvjWehF77PI7fpAA
   name: ''
+  region: BasfeltRuins
   subtype: monolithMaterial
   x: 5886.0
   y: 4951.0
@@ -2152,6 +2421,7 @@ markers:
   images:
   - markers_images/2sj0Oq5W2fW6LsPwjGxYSA
   name: ''
+  region: BasfeltRuins
   subtype: monolithMaterial
   x: 5667.0
   y: 4777.0
@@ -2160,6 +2430,7 @@ markers:
   images:
   - markers_images/Ouv4Q3r_xsqmqDdh5XnyYQ
   name: ''
+  region: BasfeltRuins
   subtype: monolithMaterial
   x: 5607.0
   y: 4598.0
@@ -2168,12 +2439,17 @@ markers:
   images:
   - markers_images/DPWCmmyWF74bCjPvJDVb9w
   name: ''
+  region: BasfeltRuins
   subtype: monolithMaterial
   x: 5530.0
   y: 4595.0
 - category: collection
   id: 77dd18a5-e4b9-4755-87dd-d925b2f07232
+  images:
+  - markers_images/3hyR8lyhGhqrPIsLMf5M4w
+  - markers_images/4IDZGLNVlNW75RD0LvgHTw
   name: ''
+  region: Uruthumheim
   subtype: monolithMaterial
   x: 4591.0
   y: 4336.0
@@ -2182,6 +2458,7 @@ markers:
   images:
   - markers_images/VrF1DZvE3DTFDDt5B9bOiQ
   name: ''
+  region: BasfeltRuins
   subtype: monolithMaterial
   x: 5443.0
   y: 4762.0
@@ -2190,6 +2467,7 @@ markers:
   images:
   - markers_images/YJjfQVfX7hFJResHX0BZYQ
   name: ''
+  region: Uruthumheim
   subtype: monolithMaterial
   x: 4614.0
   y: 4200.0
@@ -2198,6 +2476,7 @@ markers:
   images:
   - markers_images/tbFXmCJyen5fBxYiiQhazg
   name: ''
+  region: BasfeltRuins
   subtype: monolithMaterial
   x: 5443.0
   y: 4712.0
@@ -2206,6 +2485,7 @@ markers:
   images:
   - markers_images/EO-RKT0mYo9Mmg3KJiKWrw
   name: ''
+  region: BasfeltRuins
   subtype: monolithMaterial
   x: 5361.0
   y: 4736.0
@@ -2214,12 +2494,14 @@ markers:
   images:
   - markers_images/tO35Zz23wWttpv7rnScoyw
   name: ''
+  region: NornirAssembly
   subtype: monolithMaterial
   x: 4912.0
   y: 4358.0
 - category: collection
   id: 0e02039c-7883-4548-8ba4-ba6bf5b19bea
   name: ''
+  region: NornirAssembly
   subtype: monolithMaterial
   x: 4892.0
   y: 4467.0
@@ -2228,6 +2510,7 @@ markers:
   images:
   - markers_images/cNifn2WtoEwNdVy97-nw_w
   name: ''
+  region: BasfeltRuins
   subtype: monolithMaterial
   x: 6118.0
   y: 5495.0
@@ -2236,6 +2519,7 @@ markers:
   images:
   - markers_images/rdkn_1O9LFmqT0y2DcUYhg
   name: ''
+  region: BasfeltRuins
   subtype: monolithMaterial
   x: 6160.0
   y: 5464.0
@@ -2244,6 +2528,7 @@ markers:
   images:
   - markers_images/Mql7eG7ewYrdH3FdQMedkQ
   name: ''
+  region: BasfeltRuins
   subtype: monolithMaterial
   x: 6001.0
   y: 5278.0
@@ -2252,6 +2537,7 @@ markers:
   images:
   - markers_images/Sr1f-qDMrSepEQVzaI1t-Q
   name: ''
+  region: NornirAssembly
   subtype: monolithMaterial
   x: 4959.0
   y: 4353.0
@@ -2260,6 +2546,7 @@ markers:
   images:
   - markers_images/ZE1HBU6crTELkehehRQDIg
   name: ''
+  region: BasfeltRuins
   subtype: monolithMaterial
   x: 6100.0
   y: 5181.0
@@ -2268,6 +2555,7 @@ markers:
   images:
   - markers_images/MCCZ4N5ORqtkN0_g29k-3Q
   name: ''
+  region: BasfeltRuins
   subtype: monolithMaterial
   x: 6193.0
   y: 5148.0
@@ -2276,6 +2564,7 @@ markers:
   images:
   - markers_images/Hlo0bjE2cvoMgros9wDUbw
   name: ''
+  region: BasfeltRuins
   subtype: monolithMaterial
   x: 5775.0
   y: 5234.0
@@ -2284,6 +2573,7 @@ markers:
   images:
   - markers_images/VCIXQmFxVrhCC006O0xt0A
   name: ''
+  region: BasfeltRuins
   subtype: monolithMaterial
   x: 5808.0
   y: 5367.0
@@ -2292,6 +2582,7 @@ markers:
   images:
   - markers_images/VYl_wvXkOxPiDT9NEU-BdA
   name: ''
+  region: BasfeltRuins
   subtype: monolithMaterial
   x: 5719.0
   y: 5302.0
@@ -2300,6 +2591,7 @@ markers:
   images:
   - markers_images/JAUPA9JTxhYTeiqG2WudWw
   name: ''
+  region: BasfeltWaterfall
   subtype: monolithMaterial
   x: 5415.0
   y: 5359.0
@@ -2308,6 +2600,7 @@ markers:
   images:
   - markers_images/YPIm8rNNGzR3pmrhvGuaWQ
   name: ''
+  region: BattlescarMound
   subtype: monolithMaterial
   x: 5268.0
   y: 5377.0
@@ -2316,6 +2609,7 @@ markers:
   images:
   - markers_images/NaiFU3frZ850-T-XDyD-DQ
   name: ''
+  region: BasfeltWaterfall
   subtype: monolithMaterial
   x: 5313.0
   y: 5237.0
@@ -2324,6 +2618,7 @@ markers:
   images:
   - markers_images/PejYHzzNWsHgRMEso236rQ
   name: ''
+  region: BasfeltWaterfall
   subtype: monolithMaterial
   x: 5392.0
   y: 5276.0
@@ -2332,6 +2627,7 @@ markers:
   images:
   - markers_images/oBw0G8O__h-pN-QUTbkcAg
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5827.0
   y: 1886.0
@@ -2340,6 +2636,7 @@ markers:
   images:
   - markers_images/jtIq3lMVuQhXt7u74J_KcQ
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5675.0
   y: 1881.0
@@ -2348,6 +2645,7 @@ markers:
   images:
   - markers_images/A2FWPc8oq8CMkDanvidiWQ
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5873.0
   y: 2005.0
@@ -2356,6 +2654,7 @@ markers:
   images:
   - markers_images/XebOA7XA7569P6jp0ijmzQ
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5898.0
   y: 2071.0
@@ -2364,12 +2663,14 @@ markers:
   images:
   - markers_images/dPUsiiYWA5CNUIMuz0mIrg
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5759.0
   y: 2117.0
 - category: collection
   id: c58a463e-9e57-4549-8675-36d6311153ca
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5747.0
   y: 2216.0
@@ -2378,6 +2679,7 @@ markers:
   images:
   - markers_images/fPAJggLYdalzZWsXiPCmmA
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5926.0
   y: 2258.0
@@ -2386,6 +2688,7 @@ markers:
   images:
   - markers_images/zCm1vAiZScwVt91s9ELGwg
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5510.0
   y: 2257.0
@@ -2394,6 +2697,7 @@ markers:
   images:
   - markers_images/itBS_ck-td-DepJlRvzM-A
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5549.0
   y: 2266.0
@@ -2402,6 +2706,7 @@ markers:
   images:
   - markers_images/91hwhwieyMjWw10LA1n_OQ
   name: ''
+  region: NamelessCemetery
   subtype: monolithMaterial
   x: 2587.0
   y: 5080.0
@@ -2410,6 +2715,7 @@ markers:
   images:
   - markers_images/eqzTGO_7oDZNjMcp98d8Aw
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5364.0
   y: 2289.0
@@ -2418,6 +2724,7 @@ markers:
   images:
   - markers_images/GO4AdtEe_Rh1aSgjqASx9A
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5308.0
   y: 2290.0
@@ -2426,6 +2733,7 @@ markers:
   images:
   - markers_images/lsdxWA71rx_lfc2XFDzTAw
   name: ''
+  region: NamelessCemetery
   subtype: monolithMaterial
   x: 2565.0
   y: 4999.0
@@ -2434,6 +2742,7 @@ markers:
   images:
   - markers_images/SWYQTXJv_tOv4CDnKt9Ukg
   name: ''
+  region: BlackClawVillage
   subtype: monolithMaterial
   x: 5249.0
   y: 2241.0
@@ -2442,6 +2751,7 @@ markers:
   images:
   - markers_images/g2wn3wMDXr8KEl9fSqeaGg
   name: ''
+  region: NamelessCemetery
   subtype: monolithMaterial
   x: 2431.0
   y: 4968.0
@@ -2450,6 +2760,7 @@ markers:
   images:
   - markers_images/YCGjZ875iP60PMums4PaGw
   name: ''
+  region: NamelessCemetery
   subtype: monolithMaterial
   x: 2732.0
   y: 4789.0
@@ -2458,6 +2769,7 @@ markers:
   images:
   - markers_images/3Thtlsb_pNJJbrepuJcjuw
   name: ''
+  region: BlackClawVillage
   subtype: monolithMaterial
   x: 4988.0
   y: 2626.0
@@ -2466,6 +2778,7 @@ markers:
   images:
   - markers_images/DFOs70D4zk5jQnIM08Cl8g
   name: ''
+  region: BlackClawVillage
   subtype: monolithMaterial
   x: 4915.0
   y: 2495.0
@@ -2474,6 +2787,7 @@ markers:
   images:
   - markers_images/zcC25jc1_8Uq-LclbzczKw
   name: ''
+  region: BlackClawVillage
   subtype: monolithMaterial
   x: 5019.0
   y: 2253.0
@@ -2482,6 +2796,7 @@ markers:
   images:
   - markers_images/0km3NiZpRxkPeWFuIsjVhw
   name: ''
+  region: BlackClawVillage
   subtype: monolithMaterial
   x: 5130.0
   y: 2128.0
@@ -2490,6 +2805,7 @@ markers:
   images:
   - markers_images/dMcr3UDanHBNfrvqkCiDoQ
   name: ''
+  region: BlackClawVillage
   subtype: monolithMaterial
   x: 5202.0
   y: 2067.0
@@ -2498,6 +2814,7 @@ markers:
   images:
   - markers_images/vKjyiaRCv2iUw01CUzZgXg
   name: ''
+  region: BlackClawVillage
   subtype: monolithMaterial
   x: 5216.0
   y: 1980.0
@@ -2506,6 +2823,7 @@ markers:
   images:
   - markers_images/Y_mqW9nzO5KI_RuffKTB_Q
   name: ''
+  region: Uruthumheim
   subtype: monolithMaterial
   x: 4230.0
   y: 4553.0
@@ -2514,6 +2832,7 @@ markers:
   images:
   - markers_images/PYiSd1ln-20LJYzLmrY9Ag
   name: ''
+  region: Uruthumheim
   subtype: monolithMaterial
   x: 4380.0
   y: 4485.0
@@ -2522,6 +2841,7 @@ markers:
   images:
   - markers_images/5F61-Q7aSld0hUTo27ijgw
   name: ''
+  region: Uruthumheim
   subtype: monolithMaterial
   x: 4669.0
   y: 4297.0
@@ -2530,6 +2850,7 @@ markers:
   images:
   - markers_images/SrpEzNQvYJH4O5lW9YS_qQ
   name: ''
+  region: Uruthumheim
   subtype: monolithMaterial
   x: 4518.0
   y: 4089.0
@@ -2538,6 +2859,7 @@ markers:
   images:
   - markers_images/Bmud7uMwwCBQqNS74jNPIA
   name: ''
+  region: Uruthumheim
   subtype: monolithMaterial
   x: 4423.0
   y: 4080.0
@@ -2546,6 +2868,7 @@ markers:
   images:
   - markers_images/AdJ-VkPQhghmbbQFA_7f2g
   name: ''
+  region: Uruthumheim
   subtype: monolithMaterial
   x: 4359.0
   y: 4091.0
@@ -2554,6 +2877,7 @@ markers:
   images:
   - markers_images/qnKaluE4oy34ORW8PlkG9Q
   name: ''
+  region: Uruthumheim
   subtype: monolithMaterial
   x: 4425.0
   y: 4182.0
@@ -2562,6 +2886,7 @@ markers:
   images:
   - markers_images/hFQOvaJ0EjSPusXo-sdvsA
   name: ''
+  region: Uruthumheim
   subtype: monolithMaterial
   x: 4113.0
   y: 4295.0
@@ -2570,6 +2895,7 @@ markers:
   images:
   - markers_images/EIruz9JxT085I63tiz91cQ
   name: ''
+  region: Uruthumheim
   subtype: monolithMaterial
   x: 4352.0
   y: 4309.0
@@ -2578,6 +2904,7 @@ markers:
   images:
   - markers_images/aIKjbLFZ3BiNjKwH90gukw
   name: ''
+  region: Uruthumheim
   subtype: monolithMaterial
   x: 4334.0
   y: 4327.0
@@ -2586,6 +2913,7 @@ markers:
   images:
   - markers_images/6fXtC3NnDi2yD53LWBTsBw
   name: ''
+  region: MoslanForest
   subtype: monolithMaterial
   x: 3918.0
   y: 3932.0
@@ -2594,6 +2922,7 @@ markers:
   images:
   - markers_images/vzkl_UnChueXnkHZIiolHw
   name: ''
+  region: SilentHill
   subtype: monolithMaterial
   x: 2174.0
   y: 4621.0
@@ -2602,6 +2931,7 @@ markers:
   images:
   - markers_images/1x2YzPASbHP9sQQV-MAxAg
   name: ''
+  region: SanctumOutpost
   subtype: monolithMaterial
   x: 2198.0
   y: 4348.0
@@ -2610,6 +2940,7 @@ markers:
   images:
   - markers_images/yR46kxsDiZqXI80I1vLYhg
   name: ''
+  region: SanctumOutpost
   subtype: monolithMaterial
   x: 2349.0
   y: 4387.0
@@ -2618,6 +2949,7 @@ markers:
   images:
   - markers_images/wrJbopwITTCYgpYCQIeblw
   name: ''
+  region: SanctumOutpost
   subtype: monolithMaterial
   x: 2452.0
   y: 4357.0
@@ -2626,6 +2958,7 @@ markers:
   images:
   - markers_images/Umfji4mTDYxAGAknxbe-jA
   name: ''
+  region: SanctumOutpost
   subtype: monolithMaterial
   x: 2708.0
   y: 4445.0
@@ -2634,6 +2967,7 @@ markers:
   images:
   - markers_images/Q6OYvgi8ZI0maWB5vIuZYA
   name: ''
+  region: SanctumOutpost
   subtype: monolithMaterial
   x: 2753.0
   y: 4474.0
@@ -2642,6 +2976,7 @@ markers:
   images:
   - markers_images/08EuMWyu6zNYp_IQmy6HOQ
   name: ''
+  region: SanctumOutpost
   subtype: monolithMaterial
   x: 2716.0
   y: 4388.0
@@ -2668,6 +3003,7 @@ markers:
   images:
   - markers_images/cWIO04vkwkekHzUct-O5yw
   name: ''
+  region: NamelessCemetery
   subtype: monolithMaterial
   x: 2619.0
   y: 5384.0
@@ -2676,6 +3012,7 @@ markers:
   images:
   - markers_images/H3kiP659YaPrTvgkR4UHUg
   name: ''
+  region: NamelessCemetery
   subtype: monolithMaterial
   x: 2478.0
   y: 5398.0
@@ -2684,6 +3021,7 @@ markers:
   images:
   - markers_images/oBmyjx_N_FsJPvrqbpnaYA
   name: ''
+  region: NamelessCemetery
   subtype: monolithMaterial
   x: 2665.0
   y: 5284.0
@@ -2698,6 +3036,7 @@ markers:
   images:
   - markers_images/Dd8WrQKiHceqSds7pLHrqg
   name: ''
+  region: NamelessCemetery
   subtype: monolithMaterial
   x: 2790.0
   y: 5142.0
@@ -2706,6 +3045,7 @@ markers:
   images:
   - markers_images/yVuG4yNrBM-QEl_wrvR29w
   name: ''
+  region: NamelessCemetery
   subtype: monolithMaterial
   x: 2688.0
   y: 5206.0
@@ -2720,6 +3060,7 @@ markers:
   images:
   - markers_images/3I6UXtxR9rxaDKMkeYlFcQ
   name: ''
+  region: NamelessCemetery
   subtype: monolithMaterial
   x: 2644.0
   y: 5127.0
@@ -2728,6 +3069,7 @@ markers:
   images:
   - markers_images/XrjnY5UrkPMl6vAmxz1DXg
   name: ''
+  region: NamelessCemetery
   subtype: monolithMaterial
   x: 2561.0
   y: 5228.0
@@ -2736,6 +3078,7 @@ markers:
   images:
   - markers_images/FXjG6FY9ZVBslDTbFbzkow
   name: ''
+  region: NamelessCemetery
   subtype: monolithMaterial
   x: 2496.0
   y: 5165.0
@@ -2744,6 +3087,7 @@ markers:
   images:
   - markers_images/Wp4iJTTH_BxKlLBCtMD_-g
   name: ''
+  region: NamelessCemetery
   subtype: monolithMaterial
   x: 2369.0
   y: 5171.0
@@ -2752,6 +3096,7 @@ markers:
   images:
   - markers_images/qEJdZnfEsixL-j0_97W4qw
   name: ''
+  region: NamelessCemetery
   subtype: monolithMaterial
   x: 2465.0
   y: 5075.0
@@ -2760,6 +3105,7 @@ markers:
   images:
   - markers_images/78QuaPp_EjRCvpwnMgWN4w
   name: ''
+  region: NamelessCemetery
   subtype: monolithMaterial
   x: 2336.0
   y: 4997.0
@@ -2768,6 +3114,7 @@ markers:
   images:
   - markers_images/BIVi9loir4C0rPJQptgapw
   name: ''
+  region: NamelessCemetery
   subtype: monolithMaterial
   x: 2295.0
   y: 5013.0
@@ -2776,6 +3123,7 @@ markers:
   images:
   - markers_images/FO6psjbti-QQ7VkyFlj0xg
   name: ''
+  region: NamelessCemetery
   subtype: monolithMaterial
   x: 2778.0
   y: 4911.0
@@ -2868,6 +3216,7 @@ markers:
   images:
   - markers_images/nGpqzAp0CG-2CV63sfSJAw
   name: ''
+  region: SpiritIsle
   subtype: monolithMaterial
   x: 6337.0
   y: 6568.0
@@ -2876,6 +3225,7 @@ markers:
   images:
   - markers_images/eLv3cK_JLxFGtzImHKvwZg
   name: ''
+  region: SpiritIsle
   subtype: monolithMaterial
   x: 6383.0
   y: 6548.0
@@ -2890,6 +3240,7 @@ markers:
   images:
   - markers_images/tzfpjXNsbjaoDHIshZ6FkA
   name: ''
+  region: SpiritIsle
   subtype: monolithMaterial
   x: 6415.0
   y: 6520.0
@@ -2898,6 +3249,7 @@ markers:
   images:
   - markers_images/QqXL5g9yYMH9126ALdeXAQ
   name: ''
+  region: SpiritIsle
   subtype: monolithMaterial
   x: 6370.0
   y: 6484.0
@@ -2912,6 +3264,7 @@ markers:
   images:
   - markers_images/2lX_7BQSWKV3v79v2M4GyQ
   name: ''
+  region: SpiritIsle
   subtype: monolithMaterial
   x: 6373.0
   y: 6416.0
@@ -2920,6 +3273,7 @@ markers:
   images:
   - markers_images/LYSVOjMTKnykgE6ebnKbHw
   name: ''
+  region: SpiritIsle
   subtype: monolithMaterial
   x: 6340.0
   y: 6367.0
@@ -2934,6 +3288,7 @@ markers:
   images:
   - markers_images/tvBGVC5Q6LH7jCONMl8-mA
   name: ''
+  region: SpiritIsle
   subtype: monolithMaterial
   x: 6256.0
   y: 6372.0
@@ -2946,6 +3301,7 @@ markers:
 - category: collection
   id: 46131658-7ff5-470a-8adc-521e7f0527e2
   name: ''
+  region: SpiritIsle
   subtype: monolithMaterial
   x: 6602.0
   y: 6449.0
@@ -2954,6 +3310,7 @@ markers:
   images:
   - markers_images/AfQZBh4xxsrUrDNVwt12tQ
   name: ''
+  region: SpiritIsle
   subtype: monolithMaterial
   x: 6566.0
   y: 6403.0
@@ -2962,6 +3319,7 @@ markers:
   images:
   - markers_images/JmJH0Vc4wVIxFCPC14yxRw
   name: ''
+  region: SpiritIsle
   subtype: monolithMaterial
   x: 6558.0
   y: 6355.0
@@ -2970,6 +3328,7 @@ markers:
   images:
   - markers_images/3RyhHAbuo7aC9v0XJqVRdw
   name: ''
+  region: SpiritIsle
   subtype: monolithMaterial
   x: 6561.0
   y: 6261.0
@@ -2978,6 +3337,7 @@ markers:
   images:
   - markers_images/-wvdLJW4MRHRTa4Wgo4Bag
   name: ''
+  region: SpiritIsle
   subtype: monolithMaterial
   x: 6506.0
   y: 6369.0
@@ -2992,6 +3352,7 @@ markers:
   images:
   - markers_images/E7rjKVsCv7MCFtCkkYPKUg
   name: ''
+  region: SpiritIsle
   subtype: monolithMaterial
   x: 6515.0
   y: 6407.0
@@ -3000,12 +3361,14 @@ markers:
   images:
   - markers_images/yzSC-R-72-z_4mUC7sBSnw
   name: ''
+  region: SpiritIsle
   subtype: monolithMaterial
   x: 6470.0
   y: 6125.0
 - category: collection
   id: 0575146c-b178-4518-97ad-b3cb0f91e3b8
   name: ''
+  region: SpiritIsle
   subtype: monolithMaterial
   x: 6364.0
   y: 6186.0
@@ -3014,6 +3377,7 @@ markers:
   images:
   - markers_images/qLyiZwQarcIzyixcAsUFKw
   name: ''
+  region: SpiritIsle
   subtype: monolithMaterial
   x: 6369.0
   y: 6242.0
@@ -3028,6 +3392,7 @@ markers:
   images:
   - markers_images/rJyEO4y1VeUhvIp5MHcLNg
   name: ''
+  region: SpiritIsle
   subtype: monolithMaterial
   x: 6315.0
   y: 6177.0
@@ -3036,6 +3401,7 @@ markers:
   images:
   - markers_images/kSZUjT6Bvkln5mibEPHJ-A
   name: ''
+  region: SpiritIsle
   subtype: monolithMaterial
   x: 6259.0
   y: 6199.0
@@ -3044,6 +3410,7 @@ markers:
   images:
   - markers_images/9KWfNa5mt3KJkyc07BT7dw
   name: ''
+  region: SpiritIsle
   subtype: monolithMaterial
   x: 6278.0
   y: 6249.0
@@ -3052,6 +3419,7 @@ markers:
   images:
   - markers_images/g8KOAjxDtRhJ4uE1AWi70A
   name: ''
+  region: SpiritIsle
   subtype: monolithMaterial
   x: 6130.0
   y: 6231.0
@@ -3072,6 +3440,7 @@ markers:
   images:
   - markers_images/BdC335GRZIVjhK81xIoKIg
   name: ''
+  region: BasfeltWaterfall
   subtype: monolithMaterial
   x: 5451.0
   y: 6341.0
@@ -3080,6 +3449,7 @@ markers:
   images:
   - markers_images/n9kF-MDmJ_WrnWXyrzszIA
   name: ''
+  region: Dranactus
   subtype: monolithMaterial
   x: 5198.0
   y: 6010.0
@@ -3088,6 +3458,7 @@ markers:
   images:
   - markers_images/P_1oNThWYNPySxuLm2KWpw
   name: ''
+  region: Dranactus
   subtype: monolithMaterial
   x: 4692.0
   y: 5767.0
@@ -3102,6 +3473,7 @@ markers:
   images:
   - markers_images/kDEW03dLne3MedMWtQsYFA
   name: ''
+  region: Dranactus
   subtype: monolithMaterial
   x: 4890.0
   y: 5876.0
@@ -3110,6 +3482,7 @@ markers:
   images:
   - markers_images/ZNG1krHQUH5bT4D_yXfsJw
   name: ''
+  region: Dranactus
   subtype: monolithMaterial
   x: 4838.0
   y: 5935.0
@@ -3124,6 +3497,7 @@ markers:
   images:
   - markers_images/oKqmozAFGnLmktrOG-t5Zg
   name: ''
+  region: Dranactus
   subtype: monolithMaterial
   x: 4715.0
   y: 5841.0
@@ -3132,6 +3506,7 @@ markers:
   images:
   - markers_images/mfYU0TAkGb6Ej9dQAqaDKQ
   name: ''
+  region: Dranactus
   subtype: monolithMaterial
   x: 4869.0
   y: 6011.0
@@ -3146,6 +3521,7 @@ markers:
   images:
   - markers_images/kILLmHfca3VdhiVfrtYxgg
   name: ''
+  region: Dranactus
   subtype: monolithMaterial
   x: 4724.0
   y: 6069.0
@@ -3154,6 +3530,7 @@ markers:
   images:
   - markers_images/0e40miRGbcMUBfCjudGs0g
   name: ''
+  region: Dranactus
   subtype: monolithMaterial
   x: 4640.0
   y: 6050.0
@@ -3162,6 +3539,7 @@ markers:
   images:
   - markers_images/ut_6X2oOaateHITDIMecxg
   name: ''
+  region: Dranactus
   subtype: monolithMaterial
   x: 4642.0
   y: 6028.0
@@ -3176,6 +3554,7 @@ markers:
   images:
   - markers_images/kH0FisnQyANJ9AxkUPyhLw
   name: ''
+  region: Dranactus
   subtype: monolithMaterial
   x: 4648.0
   y: 5950.0
@@ -3184,6 +3563,7 @@ markers:
   images:
   - markers_images/Y4n8rN8PnCHrhXxTj-Cr4g
   name: ''
+  region: Dranactus
   subtype: monolithMaterial
   x: 4474.0
   y: 5923.0
@@ -3192,6 +3572,7 @@ markers:
   images:
   - markers_images/JlU-A1otLmrMb8jqayt7kQ
   name: ''
+  region: Dranactus
   subtype: monolithMaterial
   x: 4522.0
   y: 5799.0
@@ -3218,6 +3599,7 @@ markers:
   images:
   - markers_images/hwqDLB-MJL3-dXhMVZiisA
   name: ''
+  region: Dranactus
   subtype: monolithMaterial
   x: 4589.0
   y: 5421.0
@@ -3226,6 +3608,7 @@ markers:
   images:
   - markers_images/nv_cPV3a4NvYUsjqu0Wx3A
   name: ''
+  region: Dranactus
   subtype: monolithMaterial
   x: 4702.0
   y: 5483.0
@@ -3234,6 +3617,7 @@ markers:
   images:
   - markers_images/p-njVSemk3yXod5p5uD71A
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 4555.0
   y: 5290.0
@@ -3242,6 +3626,7 @@ markers:
   images:
   - markers_images/EgbmFN0XuJTYsRPivrQgmQ
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 4363.0
   y: 5117.0
@@ -3268,6 +3653,7 @@ markers:
   images:
   - markers_images/okDtofiS9KVt9bmjo0SnTw
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5740.0
   y: 1768.0
@@ -3276,6 +3662,7 @@ markers:
   images:
   - markers_images/CL_h48Mx3buQdYrf6VWcUw
   name: ''
+  region: Dranactus
   subtype: monolithMaterial
   x: 4370.0
   y: 5585.0
@@ -3284,6 +3671,7 @@ markers:
   images:
   - markers_images/EvaYJ-GZayum6Nu6uz0U7g
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 4436.0
   y: 5357.0
@@ -3298,6 +3686,7 @@ markers:
   images:
   - markers_images/YJc1BJJAzsHsgEfihpJR3A
   name: ''
+  region: Dranactus
   subtype: monolithMaterial
   x: 4522.0
   y: 5594.0
@@ -3306,6 +3695,7 @@ markers:
   images:
   - markers_images/y3vMza-6JessXjRlQjL06w
   name: ''
+  region: Dranactus
   subtype: monolithMaterial
   x: 4683.0
   y: 5515.0
@@ -3326,6 +3716,7 @@ markers:
   images:
   - markers_images/3GenjhgBtwNj3-cZxqTJMQ
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 6001.0
   y: 1970.0
@@ -3352,6 +3743,7 @@ markers:
   images:
   - markers_images/jTkzE5QzZGrSXjy6jW0TeA
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 6008.0
   y: 1853.0
@@ -3360,6 +3752,7 @@ markers:
   images:
   - markers_images/Umdv8cjdjhFic5WXT5zkGA
   name: ''
+  region: TraneinHighland
   subtype: monolithMaterial
   x: 2856.0
   y: 4309.0
@@ -3368,6 +3761,7 @@ markers:
   images:
   - markers_images/V0t0crIfFgznOy7TjvJ2Eg
   name: ''
+  region: TraneinHighland
   subtype: monolithMaterial
   x: 2989.0
   y: 4201.0
@@ -3376,6 +3770,7 @@ markers:
   images:
   - markers_images/rhjuWQgCzR_U4tpQ4F2zdw
   name: ''
+  region: SanctumOutpost
   subtype: monolithMaterial
   x: 2716.0
   y: 4293.0
@@ -3384,6 +3779,7 @@ markers:
   images:
   - markers_images/YZwQINip6YT1nSj6jw0Blg
   name: ''
+  region: SanctumOutpost
   subtype: monolithMaterial
   x: 2415.0
   y: 4113.0
@@ -3392,6 +3788,7 @@ markers:
   images:
   - markers_images/F6ZfQEYmLdAlcOaFbO4RCg
   name: ''
+  region: SanctumOutpost
   subtype: monolithMaterial
   x: 2402.0
   y: 4014.0
@@ -3400,6 +3797,7 @@ markers:
   images:
   - markers_images/H8XjIEw9hCNFOx37FcFllg
   name: ''
+  region: SanctumOutpost
   subtype: monolithMaterial
   x: 2298.0
   y: 3971.0
@@ -3408,6 +3806,7 @@ markers:
   images:
   - markers_images/b7h_c4un6ORvc4LLB_3LFw
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 1988.0
   y: 1987.0
@@ -3416,6 +3815,7 @@ markers:
   images:
   - markers_images/swap_wNDSiqwzkEtGCA0ow
   name: ''
+  region: BasfeltWaterfall
   subtype: monolithMaterial
   x: 5749.0
   y: 5710.0
@@ -3424,6 +3824,7 @@ markers:
   images:
   - markers_images/d3KboR28_p3RTUeaNn88Ww
   name: ''
+  region: BattlescarMound
   subtype: monolithMaterial
   x: 5139.0
   y: 5320.0
@@ -3432,6 +3833,7 @@ markers:
   images:
   - markers_images/ciSLSnxSvTWjAQ_BzVHwOg
   name: ''
+  region: BattlescarMound
   subtype: monolithMaterial
   x: 5138.0
   y: 5212.0
@@ -3458,6 +3860,7 @@ markers:
   images:
   - markers_images/EHw9KzGj0pqNkKUK7FiBWQ
   name: ''
+  region: BattlescarMound
   subtype: monolithMaterial
   x: 5081.0
   y: 5439.0
@@ -3466,6 +3869,7 @@ markers:
   images:
   - markers_images/5OnJQEreaH82bWqTy5WRqA
   name: ''
+  region: BattlescarMound
   subtype: monolithMaterial
   x: 5038.0
   y: 5586.0
@@ -3492,6 +3896,7 @@ markers:
   images:
   - markers_images/chH0lhbu2VNzJDzc_A6eSg
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 5068.0
   y: 4934.0
@@ -3500,6 +3905,7 @@ markers:
   images:
   - markers_images/ilkziJvNHeskjM2aNfyNcg
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 5109.0
   y: 4925.0
@@ -3514,6 +3920,7 @@ markers:
   images:
   - markers_images/NIyo54zYVy9ISw_ISGdoiw
   name: ''
+  region: BattlescarMound
   subtype: monolithMaterial
   x: 4880.0
   y: 5029.0
@@ -3522,6 +3929,7 @@ markers:
   images:
   - markers_images/VOuXlwvxnBYLSIlm3D7gEA
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 4271.0
   y: 4984.0
@@ -3536,6 +3944,7 @@ markers:
   images:
   - markers_images/bludfXbWJbPxezEKLtE3Aw
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 4181.0
   y: 4701.0
@@ -3544,6 +3953,7 @@ markers:
   images:
   - markers_images/bMGx-JjkUuYvm3EQugAqug
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 4391.0
   y: 4652.0
@@ -3558,6 +3968,7 @@ markers:
   images:
   - markers_images/KmFagbw8WiODG1JzFNjTBQ
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 4495.0
   y: 4708.0
@@ -3566,6 +3977,7 @@ markers:
   images:
   - markers_images/xOhnF_lvUfJo4O17KOwGJQ
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 4500.0
   y: 4786.0
@@ -3580,6 +3992,7 @@ markers:
   images:
   - markers_images/TZy0BF1_wjUhLksleF6fvQ
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 2174.0
   y: 1976.0
@@ -3588,12 +4001,14 @@ markers:
   images:
   - markers_images/GQfKsL-RlVUDLjv8dAWiLQ
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 4806.0
   y: 4527.0
 - category: collection
   id: becaa6e0-8c71-404e-8702-65d6eb9c6ef5
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 4796.0
   y: 4758.0
@@ -3602,6 +4017,7 @@ markers:
   images:
   - markers_images/J6oxhmtUd8aJ4K6ccDPSZg
   name: ''
+  region: ImmortalIsle
   subtype: monolithMaterial
   x: 1840.0
   y: 1394.0
@@ -3610,6 +4026,7 @@ markers:
   images:
   - markers_images/Y2tVF--qCxg3sIZu8dY2Ig
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 4725.0
   y: 4968.0
@@ -3624,6 +4041,7 @@ markers:
   images:
   - markers_images/nghfaA8JzeeB_z6WRjPz3Q
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 4938.0
   y: 4972.0
@@ -3662,6 +4080,7 @@ markers:
   images:
   - markers_images/H56jxF4GPQy1a0Bb9F1EWQ
   name: ''
+  region: Dranactus
   subtype: monolithMaterial
   x: 4760.0
   y: 5607.0
@@ -3670,6 +4089,7 @@ markers:
   images:
   - markers_images/lgG6wHdz6G6jKFI2r5BWRQ
   name: ''
+  region: Dranactus
   subtype: monolithMaterial
   x: 4842.0
   y: 5560.0
@@ -3678,6 +4098,7 @@ markers:
   images:
   - markers_images/7OQDBzPTMrl4BDO8O6QULQ
   name: ''
+  region: BattlescarMound
   subtype: monolithMaterial
   x: 4708.0
   y: 5387.0
@@ -3686,6 +4107,7 @@ markers:
   images:
   - markers_images/18rsUYSAEiXUL7fmOItjiw
   name: ''
+  region: BattlescarMound
   subtype: monolithMaterial
   x: 4847.0
   y: 5356.0
@@ -3694,6 +4116,7 @@ markers:
   images:
   - markers_images/ksgSbtlpPtfzX5HgEIMEpA
   name: ''
+  region: BattlescarMound
   subtype: monolithMaterial
   x: 4925.0
   y: 5359.0
@@ -3702,6 +4125,7 @@ markers:
   images:
   - markers_images/9ER-H6XNOlxR8Umvb0oRsQ
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5661.0
   y: 2267.0
@@ -3710,6 +4134,7 @@ markers:
   images:
   - markers_images/gkaC0G_uC2urEIYjaW7gZQ
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5665.0
   y: 2234.0
@@ -3718,6 +4143,7 @@ markers:
   images:
   - markers_images/QoHeP3ZMuBPPo9cM9Xy0Mg
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5688.0
   y: 2276.0
@@ -3726,6 +4152,7 @@ markers:
   images:
   - markers_images/DhX54ejj_eFOiA9yfszT3A
   name: ''
+  region: BlackClawVillage
   subtype: monolithMaterial
   x: 4778.0
   y: 2240.0
@@ -3734,6 +4161,7 @@ markers:
   images:
   - markers_images/YP_kYUHJSL9jHP0Me5M1_w
   name: ''
+  region: LagtaFortress
   subtype: monolithMaterial
   x: 4076.0
   y: 2465.0
@@ -3742,6 +4170,7 @@ markers:
   images:
   - markers_images/GINHMMcF8hLKxFVMjiJ_8g
   name: ''
+  region: LagtaFortress
   subtype: monolithMaterial
   x: 3932.0
   y: 2848.0
@@ -3750,6 +4179,7 @@ markers:
   images:
   - markers_images/SVwRl_DXZqc9qFV5yvNNhw
   name: ''
+  region: TraneinHighland
   subtype: monolithMaterial
   x: 3272.0
   y: 4459.0
@@ -3758,6 +4188,7 @@ markers:
   images:
   - markers_images/JXfe54_l_gWY43aP-gURAA
   name: ''
+  region: TraneinHighland
   subtype: monolithMaterial
   x: 3008.0
   y: 4316.0
@@ -3766,6 +4197,7 @@ markers:
   images:
   - markers_images/WbqcY_BNNc65aK-aV6KaBA
   name: ''
+  region: SanctumOutpost
   subtype: monolithMaterial
   x: 2162.0
   y: 4390.0
@@ -3774,6 +4206,7 @@ markers:
   images:
   - markers_images/OYeZ0iSdXe_3irgZmn0uCA
   name: ''
+  region: LagtaFortress
   subtype: monolithMaterial
   x: 4001.0
   y: 2472.0
@@ -3782,6 +4215,7 @@ markers:
   images:
   - markers_images/L3Ht-jKNFZ3U1CQKNp2COw
   name: ''
+  region: LagtaFortress
   subtype: monolithMaterial
   x: 4139.0
   y: 2431.0
@@ -3790,6 +4224,7 @@ markers:
   images:
   - markers_images/cWhgODpHr-7ZNxRP-OXN6w
   name: ''
+  region: LagtaFortress
   subtype: monolithMaterial
   x: 4041.0
   y: 2344.0
@@ -3798,6 +4233,7 @@ markers:
   images:
   - markers_images/82Q8EQIX6LkJCRGLG5xx4A
   name: ''
+  region: LagtaFortress
   subtype: monolithMaterial
   x: 4042.0
   y: 2253.0
@@ -3806,6 +4242,7 @@ markers:
   images:
   - markers_images/qGwr1-xxFzEV7fv5mBvnkA
   name: ''
+  region: LagtaFortress
   subtype: monolithMaterial
   x: 4173.0
   y: 2323.0
@@ -3814,6 +4251,7 @@ markers:
   images:
   - markers_images/Qc5h4QiA8Ir59cOLYThZjQ
   name: ''
+  region: LagtaFortress
   subtype: monolithMaterial
   x: 3892.0
   y: 2308.0
@@ -3822,6 +4260,7 @@ markers:
   images:
   - markers_images/lsiH6rKE_xnzWEKf5oAJBA
   name: ''
+  region: TraneinHighland
   subtype: monolithMaterial
   x: 3284.0
   y: 4468.0
@@ -3830,6 +4269,7 @@ markers:
   images:
   - markers_images/4IeblZvsXlo5ow6dQ4xmqQ
   name: ''
+  region: LagtaFortress
   subtype: monolithMaterial
   x: 4332.0
   y: 2478.0
@@ -3838,6 +4278,7 @@ markers:
   images:
   - markers_images/pGr5nB9TnK_IDHmz3ICFYg
   name: ''
+  region: LagtaFortress
   subtype: monolithMaterial
   x: 4033.0
   y: 2593.0
@@ -3846,6 +4287,7 @@ markers:
   images:
   - markers_images/TBtRWtE1n7dQZ3d8dPLniw
   name: ''
+  region: LagtaFortress
   subtype: monolithMaterial
   x: 4171.0
   y: 2608.0
@@ -3854,6 +4296,7 @@ markers:
   images:
   - markers_images/vxjUo626mWqCiZrdZ7A64A
   name: ''
+  region: LagtaFortress
   subtype: monolithMaterial
   x: 4321.0
   y: 2669.0
@@ -3862,6 +4305,7 @@ markers:
   images:
   - markers_images/urFtwWH1vvqptDO15vifIw
   name: ''
+  region: LagtaFortress
   subtype: monolithMaterial
   x: 4048.0
   y: 2436.0
@@ -3870,6 +4314,7 @@ markers:
   images:
   - markers_images/_augPTbgyB4hlRIc4UUy1w
   name: ''
+  region: LagtaFortress
   subtype: monolithMaterial
   x: 4208.0
   y: 2501.0
@@ -3878,6 +4323,7 @@ markers:
   images:
   - markers_images/tZMGJKUncFRP3og2__MaxA
   name: ''
+  region: BasfeltRuins
   subtype: monolithMaterial
   x: 5476.0
   y: 4961.0
@@ -3886,6 +4332,7 @@ markers:
   images:
   - markers_images/1A311ySejAFYyEvUSfjqjg
   name: ''
+  region: SanctumOutpost
   subtype: monolithMaterial
   x: 2754.0
   y: 3781.0
@@ -3894,6 +4341,7 @@ markers:
   images:
   - markers_images/PHLy6w6fdn1isOA1nqPxqw
   name: ''
+  region: SanctumOutpost
   subtype: monolithMaterial
   x: 2431.0
   y: 3954.0
@@ -3902,6 +4350,7 @@ markers:
   images:
   - markers_images/RvyUMOqG7-t7g45NEg2OMg
   name: ''
+  region: NamelessCemetery
   subtype: monolithMaterial
   x: 2410.0
   y: 5293.0
@@ -3910,6 +4359,7 @@ markers:
   images:
   - markers_images/_hg0LOf3A5pS4DIq9f-5ZQ
   name: ''
+  region: MoslanForest
   subtype: monolithMaterial
   x: 3726.0
   y: 3742.0
@@ -3918,6 +4368,7 @@ markers:
   images:
   - markers_images/6eFO9QJ_aSv0LZhyP7veng
   name: ''
+  region: MoslanForest
   subtype: monolithMaterial
   x: 3596.0
   y: 3671.0
@@ -3926,6 +4377,7 @@ markers:
   images:
   - markers_images/b5GrZoWhiVE_VWvCIg-Rkw
   name: ''
+  region: MoslanForest
   subtype: monolithMaterial
   x: 3685.0
   y: 3531.0
@@ -3934,6 +4386,7 @@ markers:
   images:
   - markers_images/pslrKQWntkXGpS31M8uxIA
   name: ''
+  region: MoslanForest
   subtype: monolithMaterial
   x: 3807.0
   y: 3618.0
@@ -3942,6 +4395,7 @@ markers:
   images:
   - markers_images/CcVVjyqdBUzq2kqAO1X4yw
   name: ''
+  region: MoslanForest
   subtype: monolithMaterial
   x: 3818.0
   y: 3788.0
@@ -3950,6 +4404,7 @@ markers:
   images:
   - markers_images/su0yv5Crult9YKwat3r06g
   name: ''
+  region: MoslanForest
   subtype: monolithMaterial
   x: 3266.0
   y: 3546.0
@@ -3958,6 +4413,7 @@ markers:
   images:
   - markers_images/9uxuR7fR80pGgEvN7gun4w
   name: ''
+  region: MoslanForest
   subtype: monolithMaterial
   x: 4009.0
   y: 3779.0
@@ -3966,6 +4422,7 @@ markers:
   images:
   - markers_images/74nWclJ0NkWskU_Y08qE8A
   name: ''
+  region: MoslanForest
   subtype: monolithMaterial
   x: 4095.0
   y: 3762.0
@@ -3974,6 +4431,7 @@ markers:
   images:
   - markers_images/1hmDX2SI7YFx7sPJb6MZtg
   name: ''
+  region: MoslanForest
   subtype: monolithMaterial
   x: 4089.0
   y: 3623.0
@@ -3982,6 +4440,7 @@ markers:
   images:
   - markers_images/ARyZdXcbGliIplMJ8dVHfQ
   name: ''
+  region: NornirAssembly
   subtype: monolithMaterial
   x: 4808.0
   y: 4225.0
@@ -3990,6 +4449,7 @@ markers:
   images:
   - markers_images/_q9Q-k6mTsxqht2--PwR3g
   name: ''
+  region: NornirAssembly
   subtype: monolithMaterial
   x: 4860.0
   y: 4370.0
@@ -3998,6 +4458,7 @@ markers:
   images:
   - markers_images/tXlPhFh9jpYSpLn2YyiFYQ
   name: ''
+  region: NornirAssembly
   subtype: monolithMaterial
   x: 4844.0
   y: 4487.0
@@ -4006,6 +4467,7 @@ markers:
   images:
   - markers_images/Vio9nUkKDhoFsISg-vzyzg
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 4919.0
   y: 4570.0
@@ -4014,6 +4476,7 @@ markers:
   images:
   - markers_images/o3HDDEvoR8ThaoGPDWNgww
   name: ''
+  region: NornirAssembly
   subtype: monolithMaterial
   x: 4953.0
   y: 4392.0
@@ -4022,6 +4485,7 @@ markers:
   images:
   - markers_images/6ZRXEiu2kf4JGjsNH5uLzg
   name: ''
+  region: Dranactus
   subtype: monolithMaterial
   x: 4255.0
   y: 5485.0
@@ -4030,6 +4494,7 @@ markers:
   images:
   - markers_images/SqnliRT6oXEmvyKg14KRtQ
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 4830.0
   y: 4650.0
@@ -4038,6 +4503,7 @@ markers:
   images:
   - markers_images/wrPuXKya7Tf33gO-ah0xwQ
   name: ''
+  region: Dranactus
   subtype: monolithMaterial
   x: 4516.0
   y: 5463.0
@@ -4046,6 +4512,7 @@ markers:
   images:
   - markers_images/hAyD6Jxyp9bsqmRkJ38PIg
   name: ''
+  region: BattlescarMound
   subtype: monolithMaterial
   x: 5211.0
   y: 5200.0
@@ -4054,6 +4521,7 @@ markers:
   images:
   - markers_images/zgxZLNw3hJ-LsA4iGjPkZQ
   name: ''
+  region: BasfeltRuins
   subtype: monolithMaterial
   x: 5855.0
   y: 5166.0
@@ -4062,6 +4530,7 @@ markers:
   images:
   - markers_images/IG6dofumHzi1sswS82HQuw
   name: ''
+  region: SanctumOutpost
   subtype: monolithMaterial
   x: 2027.0
   y: 3397.0
@@ -4070,6 +4539,7 @@ markers:
   images:
   - markers_images/bmKEvkfi9d4Anl_6SlXGwA
   name: ''
+  region: SanctumOutpost
   subtype: monolithMaterial
   x: 2336.0
   y: 3751.0
@@ -4078,6 +4548,7 @@ markers:
   images:
   - markers_images/r6HVQVUwE7YG5zJA_0sQgg
   name: ''
+  region: SanctumOutpost
   subtype: monolithMaterial
   x: 2119.0
   y: 4077.0
@@ -4086,6 +4557,7 @@ markers:
   images:
   - markers_images/7hc9ITliFMtwmK2B3cblkw
   name: ''
+  region: MoslanForest
   subtype: monolithMaterial
   x: 3347.0
   y: 4191.0
@@ -4094,6 +4566,7 @@ markers:
   images:
   - markers_images/Jr2ZfFiHJ1xXyC1PaRiYYw
   name: ''
+  region: MoslanForest
   subtype: monolithMaterial
   x: 3593.0
   y: 3753.0
@@ -4102,6 +4575,7 @@ markers:
   images:
   - markers_images/e2U4cB33xY0F6GB66xkVYg
   name: ''
+  region: MoslanForest
   subtype: monolithMaterial
   x: 3362.0
   y: 3646.0
@@ -4110,6 +4584,7 @@ markers:
   images:
   - markers_images/RgaWc-hwzV8vwSWI90Rczg
   name: ''
+  region: NornirAssembly
   subtype: monolithMaterial
   x: 4895.0
   y: 4263.0
@@ -4118,6 +4593,7 @@ markers:
   images:
   - markers_images/kWryXD0LJssHlMpusafS-g
   name: ''
+  region: BasfeltRuins
   subtype: monolithMaterial
   x: 6011.0
   y: 5041.0
@@ -4126,6 +4602,7 @@ markers:
   images:
   - markers_images/hfngTVnxUssrkAjN81rFxQ
   name: ''
+  region: BattlescarMound
   subtype: monolithMaterial
   x: 4964.0
   y: 5486.0
@@ -4134,6 +4611,7 @@ markers:
   images:
   - markers_images/i2vQCjTs9UhZkcbbds7OpQ
   name: ''
+  region: Dranactus
   subtype: monolithMaterial
   x: 4669.0
   y: 5808.0
@@ -4142,6 +4620,7 @@ markers:
   images:
   - markers_images/BvR9tDwYNM9i_7vj16kldQ
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 4955.0
   y: 4943.0
@@ -4150,12 +4629,14 @@ markers:
   images:
   - markers_images/RSmw6FHFVV52jqJ7hF-CkA
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 4446.0
   y: 5253.0
 - category: collection
   id: 43428bac-0646-420a-8942-054563a3f6ab
   name: ''
+  region: SanctumOutpost
   subtype: monolithMaterial
   x: 2327.0
   y: 4183.0
@@ -4164,6 +4645,7 @@ markers:
   images:
   - markers_images/Mqhgq3-LOGtWLeBKbRU2Ig
   name: ''
+  region: SanctumOutpost
   subtype: monolithMaterial
   x: 2233.0
   y: 4125.0
@@ -4172,6 +4654,7 @@ markers:
   images:
   - markers_images/zUjJW361FmIR5e3xFIjySw
   name: ''
+  region: SanctumOutpost
   subtype: monolithMaterial
   x: 2062.0
   y: 4130.0
@@ -4180,6 +4663,7 @@ markers:
   images:
   - markers_images/sjMRXmNA6hRd-ibCs7FZjw
   name: ''
+  region: NornirAssembly
   subtype: monolithMaterial
   x: 5052.0
   y: 4331.0
@@ -4188,6 +4672,7 @@ markers:
   images:
   - markers_images/bdKh68lpf3e8yxNdwMN6lA
   name: ''
+  region: BlackClawVillage
   subtype: monolithMaterial
   x: 4481.0
   y: 2560.0
@@ -4196,6 +4681,7 @@ markers:
   images:
   - markers_images/xTcV6ZtHoYkD6h85fzJm1A
   name: ''
+  region: BlackClawVillage
   subtype: monolithMaterial
   x: 4603.0
   y: 2482.0
@@ -4204,6 +4690,7 @@ markers:
   images:
   - markers_images/xnyqnGmrJIhVQO30Relx9Q
   name: ''
+  region: BlackClawVillage
   subtype: monolithMaterial
   x: 4717.0
   y: 2604.0
@@ -4212,6 +4699,7 @@ markers:
   images:
   - markers_images/zSSUooHVYbrh5apsxAJM_w
   name: ''
+  region: BlackClawVillage
   subtype: monolithMaterial
   x: 4793.0
   y: 2637.0
@@ -4220,6 +4708,7 @@ markers:
   images:
   - markers_images/5LB_OCgGVoHod3d9ZQad0A
   name: ''
+  region: BlackClawVillage
   subtype: monolithMaterial
   x: 4840.0
   y: 2633.0
@@ -4228,6 +4717,7 @@ markers:
   images:
   - markers_images/pLStSfbSF474TZEG4UUV-A
   name: ''
+  region: BlackClawVillage
   subtype: monolithMaterial
   x: 5022.0
   y: 2537.0
@@ -4236,6 +4726,7 @@ markers:
   images:
   - markers_images/R_f3MBnqL9wW8En46h3UIw
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 5114.0
   y: 4808.0
@@ -4244,6 +4735,7 @@ markers:
   images:
   - markers_images/BotTZe2XjQAnBp2OsZ48HA
   name: ''
+  region: BlackClawVillage
   subtype: monolithMaterial
   x: 4886.0
   y: 2503.0
@@ -4252,6 +4744,7 @@ markers:
   images:
   - markers_images/nzhGsW-QQQ1WLy0RQdX57g
   name: ''
+  region: BlackClawVillage
   subtype: monolithMaterial
   x: 4751.0
   y: 2457.0
@@ -4260,6 +4753,7 @@ markers:
   images:
   - markers_images/9IWZd8syrgFNOpUWPREO7Q
   name: ''
+  region: BlackClawVillage
   subtype: monolithMaterial
   x: 5032.0
   y: 2434.0
@@ -4268,6 +4762,7 @@ markers:
   images:
   - markers_images/xiFUHuM8vRY7kJjzKG32DA
   name: ''
+  region: BlackClawVillage
   subtype: monolithMaterial
   x: 5107.0
   y: 2385.0
@@ -4276,18 +4771,21 @@ markers:
   images:
   - markers_images/B4RZUcYvi6UvL1lHSZWTxw
   name: ''
+  region: BlackClawVillage
   subtype: monolithMaterial
   x: 5024.0
   y: 2703.0
 - category: collection
   id: 0548dd29-bc54-4b43-83bf-dcd213dcd42c
   name: ''
+  region: BlackClawVillage
   subtype: monolithMaterial
   x: 5202.0
   y: 2604.0
 - category: collection
   id: 33955f19-2b57-47e7-b10d-3c5b2bc1f383
   name: ''
+  region: BlackClawVillage
   subtype: monolithMaterial
   x: 5209.0
   y: 2477.0
@@ -4296,6 +4794,7 @@ markers:
   images:
   - markers_images/c2u3cPFypDkhf45925SJ-w
   name: ''
+  region: BasfeltRuins
   subtype: monolithMaterial
   x: 5387.0
   y: 4927.0
@@ -4304,6 +4803,7 @@ markers:
   images:
   - markers_images/-2QEwYdB1OX0L8LQuvHX0w
   name: ''
+  region: BlackClawVillage
   subtype: monolithMaterial
   x: 5079.0
   y: 2208.0
@@ -4312,6 +4812,7 @@ markers:
   images:
   - markers_images/9vwqpN91b3L6AfTQ9qZQmg
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5519.0
   y: 2444.0
@@ -4320,6 +4821,7 @@ markers:
   images:
   - markers_images/nmWEXgyWezVdc9GtNoK69A
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 4688.0
   y: 4709.0
@@ -4328,6 +4830,7 @@ markers:
   images:
   - markers_images/Xf8r5wTdRwF1XcG5KJ5Z0A
   name: ''
+  region: TraneinHighland
   subtype: monolithMaterial
   x: 2867.0
   y: 4509.0
@@ -4336,6 +4839,7 @@ markers:
   images:
   - markers_images/jAx7QMyelG7Ryc_79wEVnA
   name: ''
+  region: SanctumOutpost
   subtype: monolithMaterial
   x: 2270.0
   y: 4490.0
@@ -4344,6 +4848,7 @@ markers:
   images:
   - markers_images/797yoIA9GK_qR_j6H5j_lw
   name: ''
+  region: LagtaFortress
   subtype: monolithMaterial
   x: 4042.0
   y: 2699.0
@@ -4352,6 +4857,7 @@ markers:
   images:
   - markers_images/QYISC3kcHWjb9pqUs6MSFQ
   name: ''
+  region: LagtaFortress
   subtype: monolithMaterial
   x: 3767.0
   y: 2470.0
@@ -4360,6 +4866,7 @@ markers:
   images:
   - markers_images/8ELdH9S4lqt9pSmy81M4Yg
   name: ''
+  region: LagtaFortress
   subtype: monolithMaterial
   x: 3764.0
   y: 2560.0
@@ -4368,6 +4875,7 @@ markers:
   images:
   - markers_images/VLsh6I1bu_-0-dM_InWajA
   name: ''
+  region: LagtaFortress
   subtype: monolithMaterial
   x: 4420.0
   y: 2453.0
@@ -4376,6 +4884,7 @@ markers:
   images:
   - markers_images/pUKCkIfQBHVKcV0iJ95AEg
   name: ''
+  region: LagtaFortress
   subtype: monolithMaterial
   x: 4398.0
   y: 2528.0
@@ -4384,6 +4893,7 @@ markers:
   images:
   - markers_images/k5VQYyuB7dFzfpZGtPYfNg
   name: ''
+  region: LagtaFortress
   subtype: monolithMaterial
   x: 4366.0
   y: 2513.0
@@ -4392,6 +4902,7 @@ markers:
   images:
   - markers_images/KYw74WxZ3nPwZqjso63xMg
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5383.0
   y: 2051.0
@@ -4400,6 +4911,7 @@ markers:
   images:
   - markers_images/uFXO6U9X1jON9Y87cyvW3g
   name: ''
+  region: BlackClawVillage
   subtype: monolithMaterial
   x: 4973.0
   y: 1987.0
@@ -4408,6 +4920,7 @@ markers:
   images:
   - markers_images/4pR_Z_YmkeFAN_8rrMYI0Q
   name: ''
+  region: BlackClawVillage
   subtype: monolithMaterial
   x: 4723.0
   y: 2394.0
@@ -4416,6 +4929,7 @@ markers:
   images:
   - markers_images/Qw0lzI6Y8EQFO2NJMDnO2A
   name: ''
+  region: MoslanForest
   subtype: monolithMaterial
   x: 3308.0
   y: 4044.0
@@ -4424,6 +4938,7 @@ markers:
   images:
   - markers_images/cpSysl8OVPxmQvxx-jU9MA
   name: ''
+  region: MoslanForest
   subtype: monolithMaterial
   x: 3822.0
   y: 3830.0
@@ -4432,6 +4947,7 @@ markers:
   images:
   - markers_images/Va221q0VZ3RnDKPegQOJVQ
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 4663.0
   y: 4647.0
@@ -4440,6 +4956,7 @@ markers:
   images:
   - markers_images/NCDCns43xZqyvv8DaflGbg
   name: ''
+  region: Dranactus
   subtype: monolithMaterial
   x: 4743.0
   y: 5596.0
@@ -4448,6 +4965,7 @@ markers:
   images:
   - markers_images/kR2cdYd2VpsuHykM4cAipA
   name: ''
+  region: FafniteDeposit
   subtype: monolithMaterial
   x: 5431.0
   y: 3597.0
@@ -4456,6 +4974,7 @@ markers:
   images:
   - markers_images/27X_bDt-wV347_yN72dRdg
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 6052.0
   y: 2398.0
@@ -4464,6 +4983,7 @@ markers:
   images:
   - markers_images/j3m3gYzzctL3OyRpmexilQ
   name: ''
+  region: Dranactus
   subtype: monolithMaterial
   x: 4898.0
   y: 5980.0
@@ -4472,6 +4992,7 @@ markers:
   images:
   - markers_images/G59ZsUXjQYHXBSLH64TR_Q
   name: ''
+  region: Dranactus
   subtype: monolithMaterial
   x: 4441.0
   y: 5912.0
@@ -4480,6 +5001,7 @@ markers:
   images:
   - markers_images/x4yL9B1EiecrWKFd2_yygA
   name: ''
+  region: Dranactus
   subtype: monolithMaterial
   x: 4295.0
   y: 5952.0
@@ -4488,6 +5010,7 @@ markers:
   images:
   - markers_images/fYKVrYc1BZeGTsYdQj_s5g
   name: ''
+  region: Dranactus
   subtype: monolithMaterial
   x: 4511.0
   y: 5462.0
@@ -4496,6 +5019,7 @@ markers:
   images:
   - markers_images/Qzu0aDyjYtRT3CGux-HqEA
   name: ''
+  region: BasfeltRuins
   subtype: monolithMaterial
   x: 5840.0
   y: 5363.0
@@ -4504,6 +5028,7 @@ markers:
   images:
   - markers_images/VaaiKMumZzzlXlNcC6Jnqw
   name: ''
+  region: BasfeltRuins
   subtype: monolithMaterial
   x: 6177.0
   y: 5125.0
@@ -4512,6 +5037,7 @@ markers:
   images:
   - markers_images/zPpGjE8jJCjL-NPGJUiO2g
   name: ''
+  region: BasfeltRuins
   subtype: monolithMaterial
   x: 5897.0
   y: 5124.0
@@ -4520,6 +5046,7 @@ markers:
   images:
   - markers_images/-lndqKHJ9Pc6mnxjki_rEw
   name: ''
+  region: MahindelCliff
   subtype: monolithMaterial
   x: 5524.0
   y: 4363.0
@@ -4528,6 +5055,7 @@ markers:
   images:
   - markers_images/BH1gJw72NN_Bu8VG1JJQWA
   name: ''
+  region: EasternGribadeHighland
   subtype: monolithMaterial
   x: 5818.0
   y: 3146.0
@@ -4536,6 +5064,7 @@ markers:
   images:
   - markers_images/0mkfVNnTohYJcHApDqfMpQ
   name: ''
+  region: BlackClawVillage
   subtype: monolithMaterial
   x: 5296.0
   y: 2863.0
@@ -4544,12 +5073,14 @@ markers:
   images:
   - markers_images/D5C26Ot-FZ2SnKc5wHVrlQ
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5620.0
   y: 1951.0
 - category: collection
   id: 030cfef8-8bc2-4f5d-aa8e-dc9f4774ec56
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5760.0
   y: 2235.0
@@ -4558,12 +5089,14 @@ markers:
   images:
   - markers_images/dLFupXlLH5x0vQsTUeJjng
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5571.0
   y: 2196.0
 - category: collection
   id: 9343a064-1a42-4c20-b71f-e6d723cc8639
   name: ''
+  region: WesternGribadeHighland
   subtype: monolithMaterial
   x: 4545.0
   y: 2986.0
@@ -4572,6 +5105,7 @@ markers:
   images:
   - markers_images/ZQPJ18yfExgdtjM-VCAwVQ
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5844.0
   y: 2267.0
@@ -4580,6 +5114,7 @@ markers:
   images:
   - markers_images/212JCPumom5RTkE_0PKbMg
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 4562.0
   y: 4863.0
@@ -4588,6 +5123,7 @@ markers:
   images:
   - markers_images/TliMAT9XWnCjgCIiX-ldcQ
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 4587.0
   y: 5142.0
@@ -4596,6 +5132,7 @@ markers:
   images:
   - markers_images/2n2RfA3XWR41KgN2npOwow
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 4519.0
   y: 5273.0
@@ -4604,6 +5141,7 @@ markers:
   images:
   - markers_images/cRrlezTe0Fk6kCLnqH114g
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 4688.0
   y: 4703.0
@@ -4612,6 +5150,7 @@ markers:
   images:
   - markers_images/n2c3JyaDzFgHXCNeCqfd5Q
   name: ''
+  region: BattlescarMound
   subtype: monolithMaterial
   x: 5240.0
   y: 5222.0
@@ -4620,6 +5159,7 @@ markers:
   images:
   - markers_images/LmejPYnYIzivZBRtvzjVLA
   name: ''
+  region: Uruthumheim
   subtype: monolithMaterial
   x: 4491.0
   y: 3899.0
@@ -4628,6 +5168,7 @@ markers:
   images:
   - markers_images/3whU4jS-uE4pA_neRWuhSQ
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 4668.0
   y: 4826.0
@@ -4636,6 +5177,7 @@ markers:
   images:
   - markers_images/SfiRpqifJQt-02sYW1vQKA
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 4484.0
   y: 5022.0
@@ -4644,6 +5186,7 @@ markers:
   images:
   - markers_images/mUOzbX1pj2MkRjl4F9-3fw
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 4469.0
   y: 4979.0
@@ -4652,6 +5195,7 @@ markers:
   images:
   - markers_images/-YpbIlv9Obvytw3WjrG3Xg
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 4221.0
   y: 4986.0
@@ -4660,12 +5204,14 @@ markers:
   images:
   - markers_images/Mthu5njpb6yr5NwI85B7XA
   name: ''
+  region: PurifyingForest
   subtype: monolithMaterial
   x: 5188.0
   y: 5007.0
 - category: collection
   id: 5f667f88-124f-47fa-a0fa-817044df829b
   name: ''
+  region: LagtaFortress
   subtype: monolithMaterial
   x: 4027.0
   y: 2350.0
@@ -4674,12 +5220,14 @@ markers:
   images:
   - markers_images/HOXw6RC9L3cI52KelBS-CA
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5593.0
   y: 2604.0
 - category: collection
   id: 1aa237b2-d7f9-4fea-9031-39e9e6c8abc3
   name: ''
+  region: BasfeltWaterfall
   subtype: monolithMaterial
   x: 5686.0
   y: 5844.0
@@ -4688,6 +5236,7 @@ markers:
   images:
   - markers_images/QaxbExrWDE-8GNgnDbahzQ
   name: ''
+  region: BlackClawVillage
   subtype: monolithMaterial
   x: 4914.0
   y: 2252.0
@@ -4696,6 +5245,7 @@ markers:
   images:
   - markers_images/sSDUZOodE-Nk6BZxN6BTdQ
   name: ''
+  region: EasternGribadeHighland
   subtype: monolithMaterial
   x: 6512.0
   y: 2959.0
@@ -4704,6 +5254,7 @@ markers:
   images:
   - markers_images/pkl6DBvn5JR23_tXC9pSZg
   name: ''
+  region: LagtaFortress
   subtype: monolithMaterial
   x: 4548.0
   y: 2209.0
@@ -4712,6 +5263,7 @@ markers:
   images:
   - markers_images/AwGPOaDqH-qHbZ4Ef5hOnw
   name: ''
+  region: BasfeltRuins
   subtype: monolithMaterial
   x: 6202.0
   y: 5312.0
@@ -4720,12 +5272,14 @@ markers:
   images:
   - markers_images/AYlPa5NZ_3h-n7JgFl6mLQ
   name: ''
+  region: FafniteDeposit
   subtype: monolithMaterial
   x: 5275.0
   y: 3518.0
 - category: collection
   id: 5c58ef94-8852-4581-828b-ee557ebfc17e
   name: ''
+  region: IdunsLake
   subtype: monolithMaterial
   x: 5571.0
   y: 3280.0
@@ -4734,6 +5288,7 @@ markers:
   images:
   - markers_images/Am-j8OUIEoCsbOmUwdnE-Q
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5667.0
   y: 1612.0
@@ -4742,6 +5297,7 @@ markers:
   images:
   - markers_images/mAe21l49-dP5vj5tSt0spg
   name: ''
+  region: SanctumOutpost
   subtype: monolithMaterial
   x: 2477.0
   y: 4294.0
@@ -4810,6 +5366,7 @@ markers:
   images:
   - markers_images/EKfC4bvzT3IpM8hSgMReqQ
   name: ''
+  region: BattlescarMound
   subtype: monolithMaterial
   x: 5033.0
   y: 5208.0
@@ -4818,6 +5375,7 @@ markers:
   images:
   - markers_images/m5Yb2yjqKgZN3E68t4NPqw
   name: ''
+  region: ImpetusiumSquare
   subtype: monolithMaterial
   x: 5772.0
   y: 2609.0
@@ -4826,6 +5384,7 @@ markers:
   images:
   - markers_images/6_2ThG4XLuaVFeW6H3JmHQ
   name: ''
+  region: NamelessCemetery
   subtype: monolithMaterial
   x: 2543.0
   y: 5084.0
@@ -4834,6 +5393,7 @@ markers:
   images:
   - markers_images/s8gDvBWW4UWMyrpoi02ybw
   name: ''
+  region: MoslanForest
   subtype: monolithMaterial
   x: 3367.0
   y: 3754.0
@@ -5138,6 +5698,7 @@ markers:
   images:
   - markers_images/owedC3xJQXj9WwoeYHpM4A
   name: ''
+  region: LagtaFortress
   subtype: monolithMaterial
   x: 4037.0
   y: 2436.0
@@ -5200,6 +5761,7 @@ markers:
   images:
   - markers_images/4fkHjoRwppKHu4iaDrMblg
   name: ''
+  region: NornirAssembly
   subtype: monolithMaterial
   x: 5066.0
   y: 4373.0
@@ -5354,10 +5916,35 @@ markers:
   x: 2140.0
   y: 1729.0
 - category: collection
+  id: 34fa9bb6-47c3-4da7-89aa-fd96182de64d
+  name: ''
+  subtype: hiddenCube
+  x: 5181.0
+  y: 3397.0
+- category: collection
+  id: 25a6bff9-ae0e-49a2-b3bd-5f5e2883586a
+  name: ''
+  subtype: hiddenCube
+  x: 2178.0
+  y: 1654.0
+- category: collection
+  id: 5c5d7931-aa1c-46ae-b852-a9daff8114cd
+  name: ''
+  subtype: hiddenCube
+  x: 5082.0
+  y: 3323.0
+- category: collection
   id: 81f447f2-b7f5-4a37-94e4-3dafe9c60ec7
   images:
   - markers_images/HaLdPrYWlKBv-wxUsUUmoA
   name: ''
+  region: TraneinHighland
   subtype: monolithMaterial
-  x: 3295.0
-  y: 4365.0
+  x: 3283.0
+  y: 4379.0
+- category: location
+  id: 53bb9b36-06e6-44db-9d93-e1bb893c90a0
+  name: ''
+  subtype: battlefield
+  x: 2894.0
+  y: 4351.0
