@@ -46,6 +46,7 @@ const MarkerTypes: React.FC = () => {
             color={showLabels ? "primary" : "default"}
             variant={showLabels ? "solid" : "flat"}
             onPress={() => setShowLabels(!showLabels)}
+            className={commonButtonProps.className + ` ${showBorders ? "text-background" : "text-default-700"}`}
           >
             {t("menu.showNamesOnPins", "Show Names")}
           </Button>
@@ -60,6 +61,7 @@ const MarkerTypes: React.FC = () => {
             color={showBorders ? "primary" : "default"}
             variant={showBorders ? "solid" : "flat"}
             onPress={handleToggleBorders}
+            className={commonButtonProps.className + ` ${showBorders ? "text-background" : "text-default-700"}`}
           >
             {t("menu.showBorders", "Show Borders")}
           </Button>
