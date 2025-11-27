@@ -11,7 +11,7 @@ import ConfirmClearCompletedModal from "@/components/SideBar/ConfirmClearComplet
 
 const MarkerTypes: React.FC = () => {
   const {types, selectedMap} = useGameMap();
-  const {handleShowAllSubtypes, handleHideAllSubtypes, visibleSubtypes, handleToggleSubtype} = useGameData();
+  const {handleShowAllSubtypes, handleHideAllSubtypes, visibleSubtypes, handleToggleSubtype, showBorders, handleToggleBorders} = useGameData();
   const {clearMarkerCompleted, showLabels, setShowLabels, subtypeCounts, completedCounts} = useMarkers();
   const {t} = useTranslation("common");
   const [isModalOpen, setModalOpen] = useState(false);
@@ -54,6 +54,14 @@ const MarkerTypes: React.FC = () => {
             onPress={() => setModalOpen(true)}
           >
             {t("menu.clearMarkerCompleted", "Clear Completed")}
+          </Button>
+          <Button
+            {...commonButtonProps}
+            color={showBorders ? "primary" : "default"}
+            variant={showBorders ? "solid" : "flat"}
+            onPress={handleToggleBorders}
+          >
+            {t("menu.showBorders", "Show Borders")}
           </Button>
         </div>
 

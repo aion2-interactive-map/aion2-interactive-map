@@ -82,19 +82,6 @@ const App: React.FC = () => {
       )}
 
       { import.meta.env.VITE_REGION === "CHINA" && <>
-        {/*<DismissibleBanner*/}
-        {/*  imageUrl={getStaticUrl("images/QiyouMiddle.webp")}*/}
-        {/*  width={800}*/}
-        {/*  height={120}*/}
-        {/*  position="bottom-center"*/}
-        {/*  nextBannerImageUrl={getStaticUrl("images/QiyouRight.webp")}*/}
-        {/*  nextBannerPosition="bottom-right"*/}
-        {/*  nextBannerDelay={0}*/}
-        {/*  nextBannerHeight={80}*/}
-        {/*  nextBannerWidth={180}*/}
-        {/*  href="https://www.qiyou.cn"*/}
-        {/*/>*/}
-
         <DismissibleBanner
           imageUrl={getStaticUrl("images/PangXieMiddle.webp")}
           width={400}

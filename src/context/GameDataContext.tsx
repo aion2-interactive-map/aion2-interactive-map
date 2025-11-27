@@ -13,6 +13,8 @@ type GameDataContextValue = {
   setAllSubtypes: (allSubtypes: Map<string, MarkerTypeSubtype>) => void;
   handleToggleSubtype: (subTypeId: string) => void;
   handleToggleRegion: (region: string) => void;
+  showBorders: boolean;
+  handleToggleBorders: () => void;
   handleShowAllSubtypes: () => void;
   handleHideAllSubtypes: () => void;
 };
@@ -67,6 +69,7 @@ export const GameDataProvider: React.FC<GameDataProviderProps> = ({
   const [visibleSubtypes, setVisibleSubtypes] = useState<Set<string> | undefined>(undefined);
   const [visibleRegions, setVisibleRegions] = useState<Set<string> | undefined>(undefined);
   const [allSubtypes, setAllSubtypes] = useState<Map<string, MarkerTypeSubtype>>(new Map());
+  const [showBorders, setShowBorders] = useState<boolean>(true);
 
   // const { regions } = useMarkers(selectedMap?.name);
 
@@ -143,6 +146,10 @@ export const GameDataProvider: React.FC<GameDataProviderProps> = ({
     setVisibleSubtypes(new Set<string>());
   };
 
+  const handleToggleBorders = () => {
+    setShowBorders(!showBorders);
+  }
+
 
   return (
     <GameDataContext.Provider value={{
@@ -156,6 +163,8 @@ export const GameDataProvider: React.FC<GameDataProviderProps> = ({
       handleToggleRegion,
       handleShowAllSubtypes,
       handleHideAllSubtypes,
+      showBorders,
+      handleToggleBorders,
     }}>
       {children}
     </GameDataContext.Provider>

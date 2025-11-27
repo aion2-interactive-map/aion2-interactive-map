@@ -3,6 +3,7 @@ import React, {useMemo} from "react";
 import {LayerGroup, Polyline, Polygon} from "react-leaflet";
 import {useMarkers} from "@/context/MarkersContext.tsx";
 import type {RegionInstance} from "@/types/game.ts";
+import {useGameData} from "@/context/GameDataContext.tsx";
 
 type Props = {
   hoveredRegion?: RegionInstance;
@@ -26,6 +27,7 @@ const xyToLatLng = ([x, y]: number[]): [number, number] => [y, x];
 
 const GameMapBorders: React.FC<Props> = ({ hoveredRegion, setHoveredRegion }) => {
   const {regions} = useMarkers();
+  const {showBorders} = useGameData();
   // const [hoveredRegion, setHoveredRegion] = useState<RegionInstance | undefined>(undefined);
 
 
@@ -94,7 +96,7 @@ const GameMapBorders: React.FC<Props> = ({ hoveredRegion, setHoveredRegion }) =>
         ))
       )}
 
-      {segments.map((seg) => (
+      {showBorders ? segments.map((seg) => (
         <Polyline
           key={seg.key}
           positions={seg.positions}
@@ -105,7 +107,7 @@ const GameMapBorders: React.FC<Props> = ({ hoveredRegion, setHoveredRegion }) =>
           }
           interactive={false}
         />
-      ))}
+      )) : null}
     </LayerGroup>
   );
 };
