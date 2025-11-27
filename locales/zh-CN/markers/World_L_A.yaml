@@ -82,6 +82,9 @@
 0bfd0d02-c085-4912-8624-d433dab3a21c:
   description: ''
   name: 幻影祈祷室入口
+0c47521b-9e30-4c7f-8de2-b804bf02d858:
+  description: ''
+  name: ''
 0d3750b4-fd3b-485c-9e0e-c0a787747503:
   description: ''
   name: ''
@@ -128,7 +131,7 @@
   description: ''
   name: ''
 13533794-0472-4a2c-a29a-0f979ac18e3f:
-  description: 在天上
+  description: ''
   name: ''
 138065a2-2e34-4a18-8799-2cbb4699bfb2:
   description: ''
@@ -162,6 +165,9 @@
   name: ''
 1682df7d-6d82-468d-a614-7197d13538f2:
   description: ''
+  name: ''
+16890ced-2995-4398-be1e-04c99d26d51c:
+  description: 在建筑里，空中 inside the building, in the sky
   name: ''
 172739e2-7315-4b02-b9aa-6eb270cf8df3:
   description: 水里
@@ -385,6 +391,9 @@
 30815887-bcc4-4118-a173-c6fa59266db1:
   description: ''
   name: ''
+308672ac-df05-4b6c-a922-3f85fa0422f0:
+  description: 在地上 on the ground
+  name: ''
 3086c227-d526-40f8-aed4-492a09ddef8c:
   description: 在天上
   name: ''
@@ -410,6 +419,9 @@
   description: ''
   name: ''
 33801007-9643-4e44-ad23-930be13106b5:
+  description: ''
+  name: ''
+339089a3-7b33-4cf6-8608-b13cdd0e1152:
   description: ''
   name: ''
 34107de2-781e-47a5-ad68-3abcef2661ae:
@@ -490,6 +502,9 @@
 3c43c31f-f5da-4ba0-a064-9402eecd643c:
   description: ''
   name: ''
+3c7d2258-746b-4de0-a32f-1461a3cbc789:
+  description: ''
+  name: ''
 3c9aa67b-b828-4102-81ec-bdddd8a38455:
   description: ''
   name: 斐尔特朗要塞山谷
@@ -556,6 +571,9 @@
   description: ''
   name: ''
 4131c56d-9d5b-4b8e-a387-d126210ee53b:
+  description: ''
+  name: ''
+413d70de-c54e-4fad-872f-ef15fe01e25f:
   description: ''
   name: ''
 41acc033-a3c0-4da7-886b-9b2e538761e0:
@@ -648,8 +666,11 @@
 4d21634a-6a00-4366-97fd-cf087215f7b6:
   description: ''
   name: ''
-4f4e81ac-a12e-471c-9b79-6a363b6db257:
+4d932178-4c74-47d3-bbc8-a3fd49342352:
   description: ''
+  name: ''
+4f4e81ac-a12e-471c-9b79-6a363b6db257:
+  description: 蘑菇上
   name: ''
 500370a3-f569-4a1c-af1c-29e70ee3ece4:
   description: ''
@@ -720,6 +741,9 @@
 56df78e7-ca86-4129-8d25-55ab3899dbcc:
   description: ''
   name: ''
+56ff2cde-3653-423f-9c8c-5a807c558efe:
+  description: ''
+  name: ''
 5748e254-1ab6-4ffc-89b4-a16dc85434f4:
   description: ''
   name: ''
@@ -755,6 +779,9 @@
   name: ''
 596e5201-eb45-4904-8ad8-079846f6d2c1:
   description: 蘑菇树顶
+  name: ''
+59c0b48d-38e9-48f6-81aa-5adcbbd74cd3:
+  description: '感谢玩家左明明分享 '
   name: ''
 59f60fb1-6a16-4fae-b16b-99d617494037:
   description: ''
@@ -936,6 +963,9 @@
 6d8c2333-fac4-40d9-9214-9479444fe8f6:
   description: ''
   name: ''
+6d96d288-d2e5-45ea-a6b3-992a8597c1dd:
+  description: ''
+  name: ''
 6e03338d-2787-4d54-86db-ce79fbf8ac53:
   description: ''
   name: ''
@@ -1085,7 +1115,7 @@
   name: ''
 7d2bb186-5cc3-4138-a6b2-7e0111fb9623:
   description: ''
-  name: 在天上
+  name: ''
 7d96dbfe-0392-46ba-9ec1-9e5fa31d257f:
   description: ''
   name: ''
@@ -1218,6 +1248,9 @@
 8ef4fd93-877d-44a8-b808-b67e3db32d12:
   description: 在天上
   name: ''
+8f063f92-9391-4037-a43b-1b872f5545c5:
+  description: ''
+  name: ''
 8f8b1c97-c911-48d0-b48c-b195108868fb:
   description: ''
   name: ''
@@ -1260,6 +1293,9 @@
 952537e7-0a8a-4742-a024-550554680ac3:
   description: ''
   name: 溪谷监视哨所
+955879c5-4cb0-48f1-908f-6d311f8880bf:
+  description: ''
+  name: ''
 9559a1d6-6dbf-41c6-a62a-22b73cd6c5b4:
   description: ''
   name: ''
@@ -1281,7 +1317,13 @@
 96f03a98-a0ba-4fa3-af02-9853d314d431:
   description: ''
   name: ''
+9771a261-428c-49f7-bbb1-4539bca8dc7c:
+  description: ''
+  name: ''
 97b65c03-4995-4338-a755-4deed87188aa:
+  description: ''
+  name: ''
+97ccfc10-acc8-4bed-9d6d-53be400cf44d:
   description: ''
   name: ''
 97e740b4-5bce-4854-8495-85a7b9b49728:
@@ -1315,6 +1357,9 @@
   description: 在天上
   name: ''
 99c1ef6e-76b0-4e8d-af2a-ef310b5ee330:
+  description: ''
+  name: ''
+99c92b65-7571-4c65-99db-347b58a63dda:
   description: ''
   name: ''
 99e81aa0-1a28-46be-88c6-70e37994a786:
@@ -1359,6 +1404,9 @@
 9ead0d3c-e699-4182-98d9-e052e1ac7e47:
   description: ''
   name: ''
+9f1651dd-6561-4f5c-b51f-fc6f0c33def8:
+  description: ''
+  name: ''
 9faba42f-c730-4374-8a19-156cd9e50feb:
   description: ''
   name: ''
@@ -1366,6 +1414,9 @@
   description: ''
   name: ''
 9fbf8b76-102d-4710-be97-992a0321a011:
+  description: ''
+  name: ''
+9fe14c5e-fb1d-43db-b3a1-6165d683346d:
   description: ''
   name: ''
 a1347739-8677-4bd3-a679-70afd16c2105:
@@ -1626,6 +1677,9 @@ b9ce3ea0-2852-41ca-89fe-d5d8e8ef8b3c:
 b9eeb3ec-3dbf-4925-8e30-8e84bf68b002:
   description: ''
   name: ''
+bb07d1cd-7105-484b-a4ee-3ac4b9f07df2:
+  description: ''
+  name: ''
 bb1e1651-77d4-43cb-8410-301fb6120b5e:
   description: ''
   name: ''
@@ -1677,6 +1731,9 @@ befcd08c-0fa4-4401-bd85-3e758c81bf5a:
 bf482f3f-f668-41be-822f-910ca6ce686e:
   description: ''
   name: ''
+bf4be0aa-3047-4f93-b78e-6cfea75544e4:
+  description: ''
+  name: ''
 bf9e38fa-93a6-46cb-a7fc-d9e20395df3b:
   description: ''
   name: ''
@@ -1695,6 +1752,9 @@ c0b61c90-1e2d-461c-97c0-9550da4c6505:
 c0c807ac-7155-47f7-90e7-47e5e55339e7:
   description: ''
   name: ''
+c0c93ecd-d4d6-46e2-845b-ca22c12efa73:
+  description: '感谢玩家雷因分享 '
+  name: ''
 c0cc7283-338e-4755-b5a1-d2d8fe443bd4:
   description: ''
   name: ''
@@ -1708,7 +1768,7 @@ c2302da3-783e-4b6b-a21d-3a485b1c7734:
   description: ''
   name: ''
 c2b9a495-9d6e-418f-81d8-13d270561230:
-  description: 在天上
+  description: ''
   name: ''
 c2f387b3-cb30-4cb1-92eb-cacd99bcbc64:
   description: ''
@@ -1981,13 +2041,13 @@ e7fec432-c704-4337-a8ed-c4428a989bb4:
   description: ''
   name: 岩石山丘监视哨所
 e89f51d0-133e-4be0-9ff5-3af799106f50:
-  description: 在天上
+  description: 悬崖上
   name: ''
 e8a00345-8710-4d14-b833-8f53a31a6df2:
   description: ''
   name: ''
 e8f5a3ed-f3f4-4d0f-83e1-b3e62755091c:
-  description: 在天上
+  description: 副本门口
   name: ''
 e98b2644-5c81-4445-9ccc-1a740a2db83a:
   description: ''
@@ -2044,6 +2104,9 @@ f030c709-ec7a-423a-9477-f69fd9620d0c:
   description: ''
   name: 阿尔拉乌部落边境
 f14b8cc8-57b9-436b-bede-7991a3e82689:
+  description: ''
+  name: ''
+f1aaf69a-d42d-41cc-8a11-23dfd0e6a995:
   description: ''
   name: ''
 f1b77694-58eb-4179-ba36-dee063a11e51:
