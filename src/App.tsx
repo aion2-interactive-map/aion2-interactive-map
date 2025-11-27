@@ -82,12 +82,18 @@ const App: React.FC = () => {
       )}
 
       { import.meta.env.VITE_REGION === "CHINA" && <>
-        <DismissibleBanner
-          imageUrl={getStaticUrl("images/qiyou.webp")}
-          width={800}
-          height={120}
-          position="bottom-center"
-        />
+        {/*<DismissibleBanner*/}
+        {/*  imageUrl={getStaticUrl("images/QiyouMiddle.webp")}*/}
+        {/*  width={800}*/}
+        {/*  height={120}*/}
+        {/*  position="bottom-center"*/}
+        {/*  nextBannerImageUrl={getStaticUrl("images/QiyouRight.webp")}*/}
+        {/*  nextBannerPosition="bottom-right"*/}
+        {/*  nextBannerDelay={0}*/}
+        {/*  nextBannerHeight={80}*/}
+        {/*  nextBannerWidth={180}*/}
+        {/*  href="https://www.qiyou.cn"*/}
+        {/*/>*/}
 
         <DismissibleBanner
           imageUrl={getStaticUrl("images/PangXieMiddle.webp")}
@@ -102,28 +108,6 @@ const App: React.FC = () => {
         <LeftSidebar />
 
         <RightSidebar />
-
-        {/*<MapSidebar
-          maps={maps}
-          regions={regions}
-          types={types}
-          selectedMapId={selectedMapId}
-          onMapChange={handleMapChange}
-          loadingMarkers={loadingMarkers}
-          subtypeCounts={subtypeCounts}
-          completedCounts={completedCounts}
-          visibleSubtypes={visibleSubtypes || new Set()}
-          onToggleSubtype={handleToggleSubtype}
-          visibleRegions={visibleRegions || new Set()}
-          onToggleRegion={handleToggleRegion}
-          showLabels={showLabels}
-          onToggleShowLabels={setShowLabels}
-          onShowAllSubtypes={handleShowAllSubtypes}
-          onHideAllSubtypes={handleHideAllSubtypes}
-          collapsed={sidebarCollapsed}
-          onToggleCollapsed={() => setSidebarCollapsed((prev) => !prev)}
-          onClearMarkerCompleted={clearMarkerCompleted}
-        />*/}
 
         <GameMapView
           selectedMap={selectedMap}

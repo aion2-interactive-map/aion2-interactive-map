@@ -1,6 +1,6 @@
 // src/components/GameMapView.tsx
 import React, {useCallback, useState} from "react";
-import { MapContainer, useMapEvents } from "react-leaflet";
+import {MapContainer, useMapEvents} from "react-leaflet";
 import L from "leaflet";
 
 import GameMarker from "./GameMarker";
@@ -14,6 +14,8 @@ import type {
 import GameMapTiles from "./GameMapTiles.tsx";
 import GameMapBorders from "@/components/GameMapBorders.tsx";
 import {useTranslation} from "react-i18next";
+import {getStaticUrl} from "@/utils/url.ts";
+import DismissibleBanner from "@/components/DismissibleBanner.tsx";
 
 
 type CursorTrackerProps = {
@@ -27,10 +29,10 @@ type ContextMenuState = {
   mapY: number;
 };
 
-const CursorTracker: React.FC<CursorTrackerProps> = ({ onUpdate }) => {
+const CursorTracker: React.FC<CursorTrackerProps> = ({onUpdate}) => {
   useMapEvents({
     mousemove(e) {
-      const { lat, lng } = e.latlng;
+      const {lat, lng} = e.latlng;
       // CRS.Simple: lat = y, lng = x
       onUpdate(lng, lat);
     },
@@ -54,7 +56,7 @@ type Props = {
 const MapContextMenuHandler: React.FC<{
   onOpenMenu: (state: ContextMenuState) => void;
   onCloseMenu: () => void;
-}> = ({ onOpenMenu, onCloseMenu }) => {
+}> = ({onOpenMenu, onCloseMenu}) => {
   const map = useMapEvents({
     contextmenu(e) {
       // Right-click on map
@@ -104,7 +106,7 @@ const GameMapView: React.FC<Props> = ({
   const [contextMenu, setContextMenu] = useState<ContextMenuState | null>(null);
   const [hoveredRegion, setHoveredRegion] = useState<RegionInstance | undefined>(undefined);
   const regionNs = `regions/${selectedMap?.name}`;
-  const { t } = useTranslation([regionNs]);
+  const {t} = useTranslation([regionNs]);
   const regionLabel = hoveredRegion ? t(`${regionNs}:${hoveredRegion.name}.name`) : "";
 
   const handleCopyPosition = useCallback((x: number, y: number) => {
@@ -165,7 +167,7 @@ const GameMapView: React.FC<Props> = ({
       >
         <CursorTracker
           onUpdate={(x, y) => {
-            setCursorPos({ x, y });
+            setCursorPos({x, y});
           }}
         />
 
@@ -176,7 +178,7 @@ const GameMapView: React.FC<Props> = ({
         />
 
         <GameMapTiles selectedMap={selectedMap}/>
-        <GameMapBorders hoveredRegion={hoveredRegion} setHoveredRegion={setHoveredRegion} />
+        <GameMapBorders hoveredRegion={hoveredRegion} setHoveredRegion={setHoveredRegion}/>
 
         {markers
           .filter((m) =>
@@ -197,7 +199,8 @@ const GameMapView: React.FC<Props> = ({
       </MapContainer>
 
       {cursorPos && (
-        <div className="absolute bottom-3 left-3 z-[1000] rounded bg-black/80 text-white text-sm px-3 py-1.5 pointer-events-none shadow-lg backdrop-blur-sm">
+        <div
+          className="absolute bottom-3 left-3 z-[1000] rounded bg-black/80 text-white text-sm px-3 py-1.5 pointer-events-none shadow-lg backdrop-blur-sm">
           x: {cursorPos.x.toFixed(0)}, y: {cursorPos.y.toFixed(0)} {regionLabel}
         </div>
       )}
@@ -228,6 +231,20 @@ const GameMapView: React.FC<Props> = ({
           </div>
         </div>
       )}
+      {import.meta.env.VITE_REGION === "CHINA" &&
+        <DismissibleBanner
+          imageUrl={getStaticUrl("images/QiyouMiddle.webp")}
+          width={800}
+          height={120}
+          position="bottom-center"
+          nextBannerImageUrl={getStaticUrl("images/QiyouRight.webp")}
+          nextBannerPosition="bottom-right"
+          nextBannerDelay={0}
+          nextBannerHeight={80}
+          nextBannerWidth={180}
+          href="https://www.qiyou.cn"
+        />
+      }
     </div>
   );
 };

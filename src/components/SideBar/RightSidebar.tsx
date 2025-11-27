@@ -64,9 +64,10 @@ const RightSidebar: React.FC = () => {
       </Accordion>
       {import.meta.env.VITE_REGION === "CHINA" && (
         <BottomSidebarBanner
-          href="https://www.pxb7.com/buy/175178554941486/1?channelId=184939419369543&activityCode=yhzt2sl"
+          href="https://qm.qq.com/q/YGRfrMFvqw"
           imageUrl={getStaticUrl("images/PangXieRight.webp")}
           height={274}
+          closeButtonPosition="top-right"
         />
       )}
     </SidebarWrapper>
