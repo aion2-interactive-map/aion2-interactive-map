@@ -1,3 +1,6 @@
+003ac2c3-0a0d-4126-8c63-4ed47db8f51c:
+  description: 空荡洞穴
+  name: 空荡洞穴
 006d09e6-81a0-46fc-a3f8-732c7e833eb5:
   description: ''
   name: ''
@@ -7,9 +10,6 @@
 00d43445-f6b0-4c3c-af39-ebd65b821bb7:
   description: ''
   name: ''
-0127c0d8-beb5-4363-be95-b2d5fd9e51a4:
-  description: 悲叹藏身处
-  name: 悲叹藏身处
 0131bf6e-8c7b-4ead-87cf-81fbdbd16a22:
   description: ''
   name: ''
@@ -55,6 +55,12 @@
 03ad5f65-fec0-41d8-848c-51a0b3dd3eb7:
   description: ''
   name: ''
+040023d2-dce5-4975-81bb-f66d05fa718f:
+  description: 目的盗墓者老巢
+  name: 目的盗墓者老巢
+0523579b-bed0-4987-9e2b-25508a54f20e:
+  description: 宝物猎人居所
+  name: 宝物猎人居所
 0548dd29-bc54-4b43-83bf-dcd213dcd42c:
   description: ''
   name: ''
@@ -94,6 +100,9 @@
 08986edf-9779-48be-9e46-647c606bf1fc:
   description: ''
   name: ''
+08ec5d72-f1a2-4035-b28d-a05b8919de8c:
+  description: 不稳定洞穴
+  name: 不稳定洞穴
 093a15d0-adfd-44e2-9314-75ba572b5e6c:
   description: ''
   name: ''
@@ -118,12 +127,18 @@
 0b02e942-3623-4065-a0ca-7d90b3dec761:
   description: ''
   name: ''
+0b337911-8fc6-4d78-85c6-69a3756910a1:
+  description: 最后安息处
+  name: 最后安息处
 0b386ec5-e829-4603-842c-33f425e31858:
   description: ''
   name: ''
 0b57aec4-7311-4418-8165-fa28becfa889:
   description: ''
   name: ''
+0bace87e-f17c-4d1d-9046-93dc3b615a6f:
+  description: 蜘蛛洞穴
+  name: 蜘蛛洞穴
 0c0d2a5e-69ae-472a-bdf1-d832e88fd393:
   description: ''
   name: 加罗利克检查站
@@ -142,9 +157,6 @@
 0d3361fa-1fe8-470d-a32c-b3a751b76345:
   description: ''
   name: 引导人处所
-0d4f0ae1-114c-4c92-b9c3-7d6fdb1c5227:
-  description: 隐藏废墟祭坛
-  name: 隐藏废墟祭坛
 0d6f5cf4-b9e7-41b6-8aa9-6740ed0e1c95:
   description: ''
   name: ''
@@ -154,18 +166,18 @@
 0e02039c-7883-4548-8ba4-ba6bf5b19bea:
   description: ''
   name: ''
+0e083a3f-8876-43f5-8b76-553c1e8a0fa4:
+  description: 德拉多纳集结处
+  name: 德拉多纳集结处
 0e2ee7f6-fbca-4b7a-aa10-c02eb3a169e2:
   description: ''
   name: ''
-0e86944c-f1f5-49c6-89ee-2784ef3d8633:
-  description: 卡拉特巢穴
-  name: 卡拉特巢穴
+0f05fbef-e58f-41c9-b214-18ece980d0ca:
+  description: 德拉那保管所
+  name: 德拉那保管所
 0f753c71-1274-4674-b7f2-25083882dfd8:
   description: ''
   name: ''
-10094014-2a13-49df-af64-17560b58d15a:
-  description: 抄写员之房
-  name: 抄写员之房
 104ded12-a4f3-4e5a-aa0a-2aac10bd2d55:
   description: 不灭之岛
   name: 不灭之岛
@@ -175,6 +187,9 @@
 10f2fe9a-150d-4f33-8562-774e0cf0ed89:
   description: ''
   name: ''
+1186749d-1646-41d9-abb2-12bfbd25905a:
+  description: 德拉多纳洞穴
+  name: 德拉多纳洞穴
 12198102-d61d-4c8f-a9b7-44d9d7cb23d7:
   description: ''
   name: ''
@@ -208,9 +223,12 @@
 16635b3d-892c-412b-8a7a-657b1aa68f70:
   description: ''
   name: ''
-17bdf14a-789a-49b6-b577-b769635fb3f6:
-  description: 要塞坟墓
-  name: 要塞坟墓
+173e0fdf-4429-45b4-9b2a-bf0f4d0436df:
+  description: 牺牲者洞穴
+  name: 牺牲者洞穴
+179e623f-ec45-4f2c-bc4b-51988c814084:
+  description: 捕食者居所
+  name: 捕食者居所
 17f9fec4-2a90-4b09-8245-14e951ede182:
   description: ''
   name: ''
@@ -313,12 +331,12 @@
 1fc9e60f-20bd-446f-b337-4b104ec2f5e2:
   description: ''
   name: ''
-1ffb7fc5-51d7-40e3-8b0e-553e8ebe2fdb:
-  description: 裂缝洞穴
-  name: 裂缝洞穴
 20c28a62-1033-4546-ae18-5717c2b0b85b:
   description: ''
   name: ''
+20f646aa-3ae9-4eaf-ba7d-5f151c294ced:
+  description: 斯拉克洞
+  name: 斯拉克洞
 21876c7a-e366-472f-9d76-4ed58abba47d:
   description: ''
   name: ''
@@ -337,9 +355,6 @@
 231e5085-4160-40ce-8f3f-73a8ed38e8ff:
   description: ''
   name: ''
-232b724d-1553-437e-85bd-c0e83e92807a:
-  description: 德希农藏身处
-  name: 德希农藏身处
 2340b591-37f0-4d4b-9519-43f180cd0568:
   description: ''
   name: ''
@@ -352,15 +367,9 @@
 23ff554c-ffdd-4b71-892d-a69cca72417f:
   description: ''
   name: ''
-2450b7e5-b2c2-4f17-b623-0881c611b3dd:
-  description: 克拉尔兵营
-  name: 克拉尔兵营
 2469f61e-0f54-4f06-9639-517cf1af72c5:
   description: ''
   name: ''
-24f0adf1-15dc-4ccf-b053-64874909c890:
-  description: 希望祭坛
-  name: 希望祭坛
 253b978b-733d-4cd2-9d41-cb3cc5711092:
   description: ''
   name: ''
@@ -421,6 +430,9 @@
 29e24b59-b0f3-4b24-b992-c505e67cbd71:
   description: ''
   name: ''
+2a7c9ac4-2a8c-40be-8c04-8dfe146f2bbf:
+  description: 消失遗迹
+  name: 消失遗迹
 2c543fc8-7df0-45e2-8f78-0441c3c94a0e:
   description: ''
   name: ''
@@ -445,36 +457,45 @@
 2e9d75b4-36c1-41e2-8ec7-5942bae24339:
   description: ''
   name: ''
+2ecc2987-6731-46f3-9021-e2eb554480d7:
+  description: 鳞之祭坛
+  name: 鳞之祭坛
 2fd27b36-b523-426b-bac9-6a1598a44542:
   description: ''
   name: ''
 2fd5968a-f902-4608-875e-28aaee8b1e40:
   description: ''
   name: ''
-30507a7c-f0d3-4f69-84b5-144964c1b3bd:
-  description: 龙族监视哨所
-  name: 龙族监视哨所
 30a87eb1-4338-47f8-bf91-7b83455df1dc:
   description: ''
   name: ''
+30f17db1-2f53-43a7-a267-032191dcdd1e:
+  description: 军团基地废墟
+  name: 军团基地废墟
 3140ad22-c8e6-46db-b1cd-e28afca1c8e7:
   description: ''
   name: ''
 31bdbb4f-38a5-457d-9218-2be63e0be69e:
   description: ''
   name: ''
-31cea25c-b6d6-4ceb-9b41-2f3d085f6562:
-  description: 罗姆隆藏身处
-  name: 罗姆隆藏身处
 31d6ef02-d9b1-46d1-b4ab-ec520531ec78:
   description: ''
   name: ''
+31d7ac06-8e90-4e57-8b79-a25de2527d7c:
+  description: 战士休息处
+  name: 战士休息处
+3267c6fe-96b8-47b3-8fce-2f7dd7261602:
+  description: 裂缝之隙
+  name: 裂缝之隙
 32878cfe-2699-497f-8541-02acb83f1cf4:
   description: ''
   name: ''
 32eaa99d-baf5-4955-8638-e02799cb2018:
   description: ''
   name: ''
+331c004b-aebb-4abf-8101-36580153c62c:
+  description: 智慧书库
+  name: 智慧书库
 3326a25b-ef9c-4bdf-82ec-a197ac6d9873:
   description: ''
   name: 倒塌的名誉殿堂
@@ -487,12 +508,21 @@
 33e5679d-d245-4f55-9cfc-bea8e7d50180:
   description: ''
   name: ''
+341920c1-722c-46fc-a252-f32313b6b9e2:
+  description: 姆克尔奴工老巢
+  name: 姆克尔奴工老巢
 34203a52-ea72-4f6c-a02d-269c08b3345b:
   description: ''
   name: ''
+343d2b81-5a80-48d0-a054-d91f6d77877d:
+  description: 狂信徒老巢
+  name: 狂信徒老巢
 34460c88-b287-493b-902f-4a715c3eff16:
   description: ''
   name: ''
+34dd73dd-c8ec-4e0b-baa4-bfbe047f3563:
+  description: 破坏执政官武器库
+  name: 破坏执政官武器库
 34e816d2-83d0-450d-8e5e-797a802e6417:
   description: ''
   name: ''
@@ -508,9 +538,15 @@
 365d9f9a-51dd-41a0-b08c-6ca116d6292b:
   description: ''
   name: 孤岛
+368bcc3a-1aa5-4071-a031-3e757cf9516e:
+  description: 法夫奈特储藏室
+  name: 法夫奈特储藏室
 3757f8f0-bdfc-4815-a059-6f779dc4dc07:
   description: ''
   name: ''
+375f8289-8b80-457f-b0a5-9481c953f64a:
+  description: 诈欺者老巢
+  name: 诈欺者老巢
 37ee2bb5-44df-441a-98d5-5e640dd82c61:
   description: ''
   name: 圣所监视哨所空中岛
@@ -520,9 +556,6 @@
 395da3d3-708d-4f42-ba79-4acbb15cf047:
   description: ''
   name: ''
-39b84903-7b65-4aba-9e7e-5349017055cd:
-  description: 愤怒亡者之坟
-  name: 愤怒亡者之坟
 3a32bc15-39be-4f9a-b7e7-d3713a716104:
   description: ''
   name: ''
@@ -544,6 +577,9 @@
 3bb8fc37-b389-4f65-8aa6-19373aef4926:
   description: ''
   name: ''
+3bf373d0-0c89-4b99-94fe-474d8998f918:
+  description: 万能疗伤洞穴
+  name: 万能疗伤洞穴
 3c3b3ed4-f64e-476d-9722-12ba2be84a4c:
   description: 在天上
   name: ''
@@ -568,15 +604,9 @@
 3f2432d4-69cc-47f6-a5de-fc76620f3752:
   description: ''
   name: ''
-3f605a5b-6f20-4124-8423-1fe264215e27:
-  description: 峡谷窃贼老巢
-  name: 峡谷窃贼老巢
 400bdd68-5512-41b5-bea8-a234b0930ec3:
   description: 在外面天上
   name: ''
-4017cd37-61a1-4bdc-b118-71934dc12a06:
-  description: 绝望者洞穴
-  name: 绝望者洞穴
 40a55d3e-2bc4-4f7f-ab09-467290b34993:
   description: ''
   name: ''
@@ -586,6 +616,9 @@
 40c84d25-b16c-49eb-9a33-d7b5e5a21439:
   description: ''
   name: ''
+41648081-a48f-4541-bbb6-0f42e1161f97:
+  description: 波奇栖息地
+  name: 波奇栖息地
 41927a53-665a-4313-83a1-f2033f7ae795:
   description: ''
   name: ''
@@ -601,15 +634,15 @@
 4242a157-e0e5-4601-932f-08dde362e30b:
   description: ''
   name: ''
-426a8252-9840-48cb-b80f-97e532e47f8d:
-  description: 沼泽书库
-  name: 沼泽书库
 42ce358d-f33a-488d-818c-a7cceecef4ab:
   description: ''
   name: ''
 43428bac-0646-420a-8942-054563a3f6ab:
   description: ''
   name: ''
+43fef0f1-efbc-497a-ba0a-64549dda5491:
+  description: 遭遗弃者之坟
+  name: 遭遗弃者之坟
 44226ea9-c2ab-480e-a003-096c9b733edd:
   description: ''
   name: ''
@@ -634,6 +667,9 @@
 476ab9dc-9be3-4c29-b279-2c336b74cf00:
   description: ''
   name: ''
+47786588-95ce-4991-a3e4-4338fbeea90a:
+  description: 夫拉克军团
+  name: 夫拉克军团
 479b1091-6235-432c-98d3-c7aecc7fd604:
   description: ''
   name: ''
@@ -643,12 +679,12 @@
 48031138-3d78-4695-b182-0c98228a9460:
   description: ''
   name: ''
-48184aeb-3db8-4d0a-be4d-775c482638e2:
-  description: 曼塔希巡查队据点
-  name: 曼塔希巡查队据点
 482756f6-381c-4c36-bc34-61628a4e52f9:
   description: ''
   name: 倒塌的缝隙
+48752c20-489a-4ee0-866a-71bf34649086:
+  description: 库巴胡洞穴
+  name: 库巴胡洞穴
 489799f5-9781-4ddb-98ff-2e29733a1ee8:
   description: ''
   name: ''
@@ -664,12 +700,6 @@
 49e051b1-2484-4082-9ffe-1bfe925489dc:
   description: ''
   name: ''
-4a1017a5-58a0-4f6a-9301-b7b69b53de48:
-  description: 败兵洞穴
-  name: 败兵洞穴
-4ad8463f-120e-4755-8a18-5f941546c506:
-  description: 盗猎者老巢
-  name: 盗猎者老巢
 4b003f2b-b55a-4d7f-8150-1dc7793b1c98:
   description: ''
   name: ''
@@ -712,9 +742,15 @@
 512c397f-8fe7-477e-b208-4c3be4aa1dc6:
   description: ''
   name: 临时避难所
+513377ea-8431-4388-9744-ceec2fa4da8a:
+  description: 圣所外围监视队
+  name: 圣所外围监视队
 51b9d694-63f9-49fe-813c-2ba4c10263cf:
   description: ''
   name: ''
+5200c4cd-763a-4c91-9ff1-484c1d19ce18:
+  description: 黄昏坑洞
+  name: 黄昏坑洞
 520ce937-c1cb-4125-bd84-bbf2039f0a68:
   description: ''
   name: ''
@@ -733,15 +769,24 @@
 5463e84d-df43-400b-8fad-4afa5f07336d:
   description: ''
   name: ''
+54e8b48d-848e-4b6c-b05a-1f72d4c0b22f:
+  description: 琉克虎饲育场
+  name: 琉克虎饲育场
 551cc62a-1c27-4322-818e-130e0cd34f6b:
   description: ''
   name: ''
+55b55b7c-47d2-4acc-a2f4-b88f07a4402d:
+  description: 虫地洞
+  name: 虫地洞
 5630ae32-a733-4374-ab67-6a6af1368cc5:
   description: ''
   name: ''
 56472aa0-b98b-490c-9b29-d851449f0be2:
   description: ''
   name: ''
+566677b4-ac87-4e01-88e4-662d2f2f815a:
+  description: 古老公墓
+  name: 古老公墓
 573240ac-6206-4baa-b382-245a7a7e2ba1:
   description: ''
   name: ''
@@ -772,24 +817,18 @@
 595a62a0-8416-4aef-8351-d98dfcea052d:
   description: ''
   name: ''
-5a4e79c8-a189-4032-a37f-8b0a3963fad7:
-  description: 洞穴仓库
-  name: 洞穴仓库
 5aaf424e-9344-4190-9c15-69cb9e6cd387:
   description: ''
   name: ''
-5aaffec2-94e4-47d9-8f66-254bfd2965ea:
-  description: 读书人墓地
-  name: 读书人墓地
+5abef03a-b935-4828-b1f7-71d73f93eb6a:
+  description: 封闭藏身处
+  name: 封闭藏身处
 5af6bce1-230e-4347-81bf-3219a0919ae4:
   description: ''
   name: ''
 5b6df1c4-c944-49d9-8f45-4d82363ca83a:
   description: ''
   name: ''
-5bd72732-8edc-4a95-b6d4-6d3c71a88328:
-  description: 库拉卡祭坛
-  name: 库拉卡祭坛
 5bef35e7-5068-49d8-a0de-c6552b019589:
   description: ''
   name: ''
@@ -805,9 +844,6 @@
 5c5d7931-aa1c-46ae-b852-a9daff8114cd:
   description: ''
   name: ''
-5cb10d52-3845-4b8c-acbb-a01e3fc74306:
-  description: 逃兵宿营地
-  name: 逃兵宿营地
 5d120932-37e9-424d-ae8b-7b4900f4c514:
   description: ''
   name: ''
@@ -829,12 +865,12 @@
 5e48b2e0-1b2e-4869-b51c-959fdc017a47:
   description: ''
   name: ''
-5eec347f-2093-4749-bbc4-f0407519d873:
-  description: 纽特老巢
-  name: 纽特老巢
 5f23f851-ab68-4d12-b75d-75fbc17a32dc:
   description: ''
   name: ''
+5f39e9b8-7ad9-4866-ac48-72c495f7ce4c:
+  description: 拉特里马监视哨所
+  name: 拉特里马监视哨所
 5f5d0118-9170-4e9d-aa34-a9b202ba5d24:
   description: 葛利巴德丘陵地西部
   name: 葛利巴德丘陵地西部
@@ -865,6 +901,9 @@
 607fbba0-3b1e-4838-a7e6-3dd2b9fd9be2:
   description: ''
   name: ''
+609bf69f-76a0-4006-9f72-41ccfe76c4fc:
+  description: 扭曲坑洞
+  name: 扭曲坑洞
 60bb6800-5c8d-4b03-9c47-e1d0a48efe96:
   description: ''
   name: ''
@@ -910,9 +949,6 @@
 66992eaa-57a2-4918-b457-bbff1a2e72c6:
   description: ''
   name: ''
-6702c610-eb8a-474a-94c2-f9581a4fb366:
-  description: 科赫塔监视哨所
-  name: 科赫塔监视哨所
 67083816-4dfe-4d87-a2d3-35eb877e326f:
   description: ''
   name: ''
@@ -922,9 +958,6 @@
 671edd19-738c-4c0c-a000-234d44df1e49:
   description: ''
   name: ''
-672bcf8f-cbd9-4dd1-ac74-3b21b9f01f8e:
-  description: 峡谷书库
-  name: 峡谷书库
 676d8bdd-cfee-455a-be7f-bb938217b6a4:
   description: ''
   name: ''
@@ -970,30 +1003,18 @@
 6a7fb19a-0dd1-4456-a4ed-e4731f1f0845:
   description: ''
   name: ''
-6aa59109-4b66-465e-9537-641af691d26f:
-  description: 可努提洞穴
-  name: 可努提洞穴
 6ac608e1-5237-4e82-9f99-4c07dceec39d:
   description: ''
   name: ''
-6b0a2603-06a8-42d9-8628-cb73d37fafc6:
-  description: 米罗斯哨所
-  name: 米罗斯哨所
 6b0aad24-d60e-43f1-9cfc-bbc8699160f6:
   description: ''
   name: 泥泞营地
-6b56d497-bacc-4a98-8540-384c1b1044ef:
-  description: 精灵之花洞穴
-  name: 精灵之花洞穴
 6b6a5c83-df2b-425a-9ad7-a554b957e266:
   description: ''
   name: ''
 6b6d8b1e-4418-44ac-b1d6-95fd37c63716:
   description: ''
   name: ''
-6bd0c832-6532-4e16-af85-01c1b49c07c1:
-  description: 幽暗坑洞
-  name: 幽暗坑洞
 6be521c2-f501-4fdb-b5e9-999a44ba0cdf:
   description: ''
   name: ''
@@ -1018,24 +1039,18 @@
 6cf7e713-3afa-4747-ba8b-d3250ddbe24f:
   description: ''
   name: ''
-6d18f163-31b3-44cd-b696-208983efcb7c:
-  description: 孤寂石坟
-  name: 孤寂石坟
 6d3aced4-23f1-48f5-963a-901f7d1568d9:
   description: ''
   name: ''
-6da90bca-4f53-4143-bd0f-a1b12174fa90:
-  description: 阿尔拉乌祈祷室
-  name: 阿尔拉乌祈祷室
+6d4b3d17-5458-4cab-819a-3a32c56969b4:
+  description: 废弃追悼室
+  name: 废弃追悼室
 6dad0829-d5fa-4e9a-8cd4-831339a5b066:
   description: ''
   name: ''
 6dedd5cc-581a-4cb3-b2f3-1f62305e2352:
   description: ''
   name: ''
-6e3e0412-cf78-4326-bd1f-928e9a96d62d:
-  description: 药草洞穴
-  name: 药草洞穴
 6e508a85-6e7f-4f11-aa56-4513f02e0018:
   description: ''
   name: ''
@@ -1057,15 +1072,15 @@
 6f8f09f2-09af-4479-bb4d-c341e7f38138:
   description: ''
   name: ''
-6ff91111-765f-48cd-847a-7046489edef9:
-  description: 路比利尼栖息地
-  name: 路比利尼栖息地
 7045c002-2fb1-48b2-8f53-0b3d9af2d06d:
   description: ''
   name: ''
 70849981-81eb-443b-b4d3-3a890e27a010:
   description: ''
   name: ''
+70a6a737-5ae5-4572-a57a-b3d87138f47c:
+  description: 贵族墓园
+  name: 贵族墓园
 70f4670d-7834-4ed0-bd2a-01434728b976:
   description: ''
   name: ''
@@ -1075,15 +1090,21 @@
 7138ff9b-2c72-47ae-815a-8db71e65dd8f:
   description: ''
   name: ''
-7147544b-f73e-4e65-8772-e220350f90ae:
-  description: 盗猎者据点
-  name: 盗猎者据点
 716cda1f-7a0e-4853-90e5-a5ebdcfc06de:
   description: ''
   name: ''
+723d75b1-cb9e-4e94-b82d-57244f9650ef:
+  description: 被破坏的记录室
+  name: 被破坏的记录室
+72b48ee2-df4f-4137-a62c-f7c38b6cd1e9:
+  description: 嚎叫老巢
+  name: 嚎叫老巢
 72befd1a-f520-4c0c-ad97-13954f6a3e2e:
   description: ''
   name: ''
+72e047ef-af6f-46d9-bd2d-fd9ecfaa7856:
+  description: 忍耐书库
+  name: 忍耐书库
 72e9f317-865f-4f36-bde6-cbcdf35d42b3:
   description: ''
   name: ''
@@ -1123,6 +1144,9 @@
 763b23af-bb01-441d-af93-3273eff29538:
   description: ''
   name: ''
+765a8405-353f-48d1-95c2-fe8fb90c7d20:
+  description: 拉姆纳赫据点
+  name: 拉姆纳赫据点
 768fb5b2-5bd2-4eb3-af2f-02d37fc9df9d:
   description: 水里，这个水里有两个
   name: ''
@@ -1132,9 +1156,6 @@
 76f22d12-36d9-4ed8-a56d-f7c7c852c0f2:
   description: ''
   name: ''
-77be6cff-2ca5-4afa-80e3-b842a1f1c39f:
-  description: 阴凉藏身处
-  name: 阴凉藏身处
 77dd18a5-e4b9-4755-87dd-d925b2f07232:
   description: ''
   name: ''
@@ -1183,21 +1204,12 @@
 7cb9d403-4001-4ed9-9a52-839d7cf7c12a:
   description: ''
   name: ''
-7d065568-bd58-4b0b-9a41-d8b40dba2a1b:
-  description: 奴工训练所
-  name: 奴工训练所
 7d164944-4e79-445d-895f-31d86d463c85:
   description: 拉格塔要塞
   name: 拉格塔要塞
 7d7e8375-f470-46aa-adb1-11c265fb6e8f:
   description: ''
   name: 废弃遗址
-7d943bd1-0659-4c97-95ee-73a2f1709533:
-  description: 卡尔戈斯盗贼团营地
-  name: 卡尔戈斯盗贼团营地
-7eb05af8-728a-4105-ad57-a972558d1792:
-  description: 剧毒老巢
-  name: 剧毒老巢
 7eda7d39-ed71-4979-a359-5f2398960ad2:
   description: ''
   name: ''
@@ -1210,6 +1222,9 @@
 7faf60f7-23ef-4a75-b11b-9b00204b12b3:
   description: ''
   name: ''
+8009339a-11d3-4ac5-ad68-4421af926a08:
+  description: 大神官遗址
+  name: 大神官遗址
 805cc700-71ba-42f9-97af-f47540fc264a:
   description: ''
   name: ''
@@ -1270,12 +1285,12 @@
 847200a2-1a57-4531-b87f-e92b740b60bb:
   description: ''
   name: ''
-84976bae-73ff-4084-8716-2fe5e4972b71:
-  description: 被掠夺的储藏库
-  name: 被掠夺的储藏库
-858d423c-6c21-4e87-b7b8-f63f1df68115:
-  description: 龙族侦察队营地
-  name: 龙族侦察队营地
+8477e9f3-e5af-48ea-9a88-27d79efe09cf:
+  description: 堕落守林者废墟
+  name: 堕落守林者废墟
+852607d4-f6b1-4385-bf8c-b4b7d93086fd:
+  description: 占卜师之坟
+  name: 占卜师之坟
 85efff25-11dc-476f-9569-fdea0bdb1166:
   description: ''
   name: ''
@@ -1318,12 +1333,6 @@
 89919dcb-bbf2-49d3-895d-d2d90967de9c:
   description: ''
   name: ''
-89a9142d-9fea-4e02-8aa4-ce2064bd2d34:
-  description: 被掠夺的朝圣者休息处
-  name: 被掠夺的朝圣者休息处
-8a00f351-c409-44be-9931-72b029224a59:
-  description: 歪曲洞穴
-  name: 歪曲洞穴
 8a75aa67-f773-489d-a41c-de772e4ecaa1:
   description: ''
   name: ''
@@ -1345,6 +1354,9 @@
 8d6b77bb-d441-4bb4-bb02-0990e7083721:
   description: ''
   name: ''
+8e309163-a01a-4682-8479-5e8f19ae7231:
+  description: 古代城市罗伊废墟
+  name: 古代城市罗伊废墟
 8e8572fb-2ccf-4d78-8a25-63964160797f:
   description: ''
   name: ''
@@ -1375,6 +1387,9 @@
 90c25ebc-07b9-4305-bbcd-e8d6abe66820:
   description: ''
   name: ''
+910497bf-b46d-48d7-87e5-60a2f68cb046:
+  description: 浸血忏悔室
+  name: 浸血忏悔室
 910a7887-6561-4bfc-91b2-b2ab53194eb4:
   description: ''
   name: ''
@@ -1402,6 +1417,9 @@
 9490fa57-89c3-4922-a6c0-471361b6ab08:
   description: ''
   name: ''
+94a17c2c-37b1-426f-953f-3ec4b0427be8:
+  description: 流放者老巢
+  name: 流放者老巢
 94aa237f-7145-4124-ab1d-96050116f2af:
   description: ''
   name: ''
@@ -1426,15 +1444,18 @@
 96f9f989-d008-4f22-9daa-a4f82f521b60:
   description: ''
   name: ''
+9741e91b-805f-4ffc-a81e-fb5c8cd7e646:
+  description: 崇拜者地下洞穴
+  name: 崇拜者地下洞穴
 978251b7-1792-48d9-acc1-703e623d4c97:
   description: ''
   name: 葛利巴德丘陵地东部尾岛
-987e35c2-0b64-4151-baa8-299cdad4acda:
-  description: 实验体收容所
-  name: 实验体收容所
 98ac7270-7ce8-4414-8918-44df00111ef8:
   description: ''
   name: ''
+98bac74f-0b14-4fb8-81f5-73ff5121867e:
+  description: 巴尔卡巢穴
+  name: 巴尔卡巢穴
 98cd9084-9c40-4ab5-a026-ba01f2c488f9:
   description: ''
   name: 森林藏身处
@@ -1468,9 +1489,6 @@
 9ca4ef64-e94b-4707-99ed-27c221b98cd8:
   description: ''
   name: ''
-9cb7d9c5-219e-41e7-a9a1-0ea08d766383:
-  description: 污物坑洞
-  name: 污物坑洞
 9d191a55-978e-41ef-ada3-cb208c43528c:
   description: 石头上
   name: ''
@@ -1546,9 +1564,6 @@ a55eb5d3-91e4-4c08-874a-694cf00a49f1:
 a5820e83-7c89-4ca2-8b20-531ce714bc4e:
   description: ''
   name: ''
-a59e0110-958f-41f5-b484-20e5edf9fb0e:
-  description: 萨布加龙族营地
-  name: 萨布加龙族营地
 a5bb9c5c-03d7-48b6-b72f-d7f948e179ee:
   description: ''
   name: ''
@@ -1567,18 +1582,15 @@ a7c17fee-2b09-447d-94fa-7e90b7c96ed8:
 a8116279-9215-4d18-8949-1cae727248e5:
   description: ''
   name: ''
-a81b8a87-39de-4013-8ce8-22b635a48cda:
-  description: 德拉多纳哨所
-  name: 德拉多纳哨所
 a85fd9e0-f79c-482d-8465-9fb8e599c7a2:
   description: ''
   name: ''
+a88c5073-0d0f-4775-83cf-18634677129f:
+  description: 蓝龙圈套
+  name: 蓝龙圈套
 aa1e00b4-4c29-44fe-8dd5-b74c83644caf:
   description: ''
   name: ''
-aa608f7b-7eb8-49f0-80ca-9a1021a59614:
-  description: 守卫者武器库
-  name: 守卫者武器库
 ab0a28d0-bbc6-4f3a-9063-6a7916c1cedd:
   description: ''
   name: ''
@@ -1600,9 +1612,6 @@ abd3074c-deb4-44f1-94f2-befe86d359ee:
 abd39397-188f-4936-8e5b-2684ea2d3056:
   description: ''
   name: 伊顿湖
-ac10f9d7-6d20-4a45-b7b8-58b86a0e9fd6:
-  description: 缝隙洞穴
-  name: 缝隙洞穴
 ac358896-ebee-4fc9-857f-ee72401ab33b:
   description: ''
   name: ''
@@ -1618,15 +1627,9 @@ adecfc95-d1ef-47b8-92a1-0a815ba73c7e:
 ae0afdd6-fe8d-4c8e-b465-28446dd964f1:
   description: ''
   name: ''
-ae1706dc-61e8-4b87-b8bf-e620664b9321:
-  description: 堕落精灵星居所
-  name: 堕落精灵星居所
 ae5c76d8-5d6d-4b64-b84e-28ec50a4e85a:
   description: ''
   name: ''
-ae703334-6fc4-48ab-9cf6-bf5ece4e7d5b:
-  description: 破碎知识殿堂
-  name: 破碎知识殿堂
 ae9fa318-41c1-4bbf-8bbd-3316f84c5176:
   description: ''
   name: ''
@@ -1663,9 +1666,6 @@ b3434650-8a59-456b-9dbf-96a269d622cc:
 b356803a-e2cf-47de-a01a-38d395d08881:
   description: ''
   name: ''
-b3784b1d-1122-454e-810f-56b7a15382cb:
-  description: 红龙祭坛
-  name: 红龙祭坛
 b434614a-2dee-4f4d-b7d5-b2cab87757f6:
   description: ''
   name: 德拉那克图斯海岸
@@ -1693,21 +1693,24 @@ b7914b20-0f9c-4d75-a610-025371f9bcb3:
 b7a70bb3-5215-4d7d-98cb-f209dc57271c:
   description: ''
   name: 净化之森海岸峭壁
-b7b81b94-3e1f-48e9-8775-46dd0bc0f5cb:
-  description: 流放者监狱
-  name: 流放者监狱
 b7db553e-1614-4952-9f11-c103ebd0b490:
   description: ''
   name: ''
 b7dda29d-3e62-47f8-9db3-b4cc87efc503:
   description: ''
   name: ''
+b94b9ba0-3d35-40ce-9e49-6df864e7da47:
+  description: 刀刃团临时哨所
+  name: 刀刃团临时哨所
 b978a957-afec-47d2-9abd-c8e852340f9c:
   description: ''
   name: ''
 b9d2a7cd-d926-4514-a876-e2ddac60ca27:
   description: ''
   name: ''
+ba026444-bdf3-4c90-ab2f-1caea7f9d5c4:
+  description: 岩石洞穴
+  name: 岩石洞穴
 ba551a00-3ad6-4cf8-8992-6570d5b20a9d:
   description: ''
   name: ''
@@ -1756,6 +1759,9 @@ bea7b5a3-645a-4a76-8139-276fdc60bd75:
 becaa6e0-8c71-404e-8702-65d6eb9c6ef5:
   description: ''
   name: ''
+bf184680-43c0-4a6b-8e9d-79bfa909c697:
+  description: ''
+  name: ''
 bf275ca1-1b25-40d3-8aa9-e9d4a98715dd:
   description: ''
   name: ''
@@ -1765,6 +1771,9 @@ bfc15b18-461d-4155-9010-4a51153278fe:
 bfc15d98-4539-4010-b96b-16a7b48c4c50:
   description: ''
   name: ''
+bfc3d2db-954a-4380-aec7-b3dfebfd3bbe:
+  description: 瓦拉塔铲除部队哨所
+  name: 瓦拉塔铲除部队哨所
 bfd47d25-6d1e-4ade-8b90-65439846a62f:
   description: ''
   name: ''
@@ -1786,9 +1795,9 @@ c0bf9bfa-8ba1-4f2f-a679-a9ecfb95f31b:
 c0c39717-87c7-459a-a25e-6891d8d9bdcd:
   description: ''
   name: ''
-c15c2582-5917-4db5-bd67-8a75862b9f71:
-  description: 废弃奥德石洞
-  name: 废弃奥德石洞
+c1af9bf8-1edf-4683-b485-0179b51580f2:
+  description: 安德沙前哨基地
+  name: 安德沙前哨基地
 c1d44a7f-53ad-4eec-a6a4-ad8fe63e04ff:
   description: ''
   name: ''
@@ -1816,12 +1825,6 @@ c49a12d5-2ac5-4b95-b24c-6cdd5b4be2b7:
 c4c7154c-2f83-4356-90e3-13e336fecc27:
   description: ''
   name: ''
-c526aefd-33fb-4811-9a80-02a62f763af2:
-  description: 深邃地下洞穴
-  name: 深邃地下洞穴
-c55ca515-a5aa-472b-b1c9-1dfe9fdedcb1:
-  description: 绑架与监禁之房
-  name: 绑架与监禁之房
 c58a463e-9e57-4549-8675-36d6311153ca:
   description: ''
   name: ''
@@ -1891,6 +1894,9 @@ cb5b0a63-bc94-4c86-8c58-0ea82bc22c69:
 cbcc0101-733f-4e9a-a293-e19f5d7074ef:
   description: ''
   name: 临时调查基地
+cc7b11bf-208d-4668-ac50-7d756e5eb8e7:
+  description: 拉格塔法夫奈特仓库
+  name: 拉格塔法夫奈特仓库
 cc80ef23-ef29-4728-98d4-65a6699e62f9:
   description: ''
   name: ''
@@ -1903,6 +1909,9 @@ ccb2fe5b-6611-4573-ae8d-5098785439f1:
 cd459399-5cde-4e7f-9d57-912c524f139c:
   description: 巴斯斐尔特瀑布
   name: 巴斯斐尔特瀑布
+cd48586a-32d4-4964-94df-72950f1e6341:
+  description: 安息之地
+  name: 安息之地
 cd886a55-6868-42da-92d4-a75662c6ca21:
   description: ''
   name: ''
@@ -1918,6 +1927,12 @@ cdd0f336-900e-457d-bcf6-246c8e7a1189:
 cdec6034-8998-477e-8de3-c7cbfd3204e6:
   description: ''
   name: ''
+ce0f06a6-5342-4b36-b6e8-54fc6b65d4f4:
+  description: 废弃执政官监狱
+  name: 废弃执政官监狱
+ce13755f-2a90-4546-b5d3-de77fed48745:
+  description: 格拉纳赫藏身处
+  name: 格拉纳赫藏身处
 ce26f8b1-d42b-406e-a768-122a52786c03:
   description: ''
   name: ''
@@ -1933,6 +1948,9 @@ ce9b9a31-6237-41c0-9a19-7a5d1b9f81dd:
 ced7c8b3-a267-46d8-a301-b2f3b49ab841:
   description: ''
   name: ''
+cf3f58de-77c4-4bdc-a172-51d8796ba3c0:
+  description: 隐藏矿脉洞穴
+  name: 隐藏矿脉洞穴
 cfcba25f-aab8-4d6a-ba3f-831baae69602:
   description: ''
   name: ''
@@ -1948,18 +1966,18 @@ d175ca14-8a99-44ce-880e-02c9787f9776:
 d19cd710-9106-4a06-8aa3-38a176acb256:
   description: ''
   name: ''
-d376657b-5cea-40d2-a740-493c51bae4d2:
-  description: 高原山丘基地
-  name: 高原山丘基地
 d3910f4c-d243-4855-947b-773af748e544:
   description: 寂静山丘
   name: 寂静山丘
 d4ae6035-380b-484f-b3b9-51289c2bc315:
   description: ''
   name: ''
-d631b9e4-2384-4d4e-936e-4dbfe4c156ef:
-  description: 森林书库
-  name: 森林书库
+d4f409a1-99bc-4f8e-96fa-091569958def:
+  description: 监视者临时哨所
+  name: 监视者临时哨所
+d5781101-b19d-4698-83ba-c1ca7816da13:
+  description: 苦行者洞穴
+  name: 苦行者洞穴
 d68db4a8-f3f5-4a08-8c95-4309606c19d5:
   description: ''
   name: ''
@@ -1972,33 +1990,27 @@ d7f428dc-8917-4089-ae0e-8bc41bdcd61a:
 d8303afd-016b-4dd4-9eed-80ce1bf37a97:
   description: 逃亡者村庄
   name: 逃亡者村庄
-d8a42476-f348-4891-9e6a-dedb7797a454:
-  description: 幻影废墟
-  name: 幻影废墟
-d8f65180-670c-441a-b9d0-21bf2fba798a:
-  description: 神秘蘑菇洞穴
-  name: 神秘蘑菇洞穴
+d85d465c-5a0f-4e16-8870-900ea0cf8b9b:
+  description: 预知书库
+  name: 预知书库
 d8f8c2ea-d0b3-4ec8-8205-8a69c3cccdb5:
   description: ''
   name: ''
 d9a40a77-8891-4253-a1b6-b95b39b668b9:
   description: ''
   name: ''
+d9ec9c1a-f0e2-47bf-88ee-fcc36ac7122c:
+  description: 亚姆拉塔监视基地
+  name: 亚姆拉塔监视基地
 da1a9e5e-c2d7-4c62-8298-d4c50317ff63:
   description: ''
   name: ''
-da6dfb18-6047-4783-8243-38b74127a76d:
-  description: 马克塔莎监视哨所
-  name: 马克塔莎监视哨所
 dac73018-fe1e-4711-88d3-34fda3a0f2dd:
   description: ''
   name: ''
 daf6bf33-2ef8-485d-8550-8916265c00df:
   description: ''
   name: ''
-db3e187a-cc51-48d2-8654-14600fc29e10:
-  description: 被诅咒的藏身处
-  name: 被诅咒的藏身处
 db468eb4-7920-45b8-a71a-5de8a7d82074:
   description: ''
   name: ''
@@ -2023,9 +2035,6 @@ dd726dc1-a848-45e4-9a81-35dd778f5e55:
 ddd7f22b-b419-4785-b975-74f2c6221889:
   description: ''
   name: ''
-de62646d-3b6a-4922-a29c-67a552dac64b:
-  description: 隐藏山谷
-  name: 隐藏山谷
 de686d65-88e7-4b24-bcc8-1ab8e428666e:
   description: ''
   name: ''
@@ -2035,21 +2044,21 @@ dfc5f61f-6699-40ff-9df2-ad5b7902b591:
 dff63ed0-be7f-4c29-8579-78c1e62a594d:
   description: ''
   name: ''
+e014a82d-359f-4a28-83bf-bb47abe1a18e:
+  description: 德特雷夫盗贼团营地
+  name: 德特雷夫盗贼团营地
 e09b367e-57fe-4d7c-a1ad-7a3d73946969:
   description: ''
   name: 巴斯斐尔特瀑布拱形地带
-e13c5f3b-d60c-4cea-b88e-6ebd92a8b159:
-  description: 基乌斯居所
-  name: 基乌斯居所
 e1664ea3-c29b-4f4d-95a4-00c41ff90433:
   description: ''
   name: ''
 e16a325e-fa4f-4b48-8c71-f55ba6158daa:
   description: ''
   name: ''
-e190ad9e-036f-4413-b26c-b0086036c254:
-  description: 叛徒藏身处
-  name: 叛徒藏身处
+e246663b-9a36-4b9d-bb0d-e616c91ffd9c:
+  description: 海盗宝物仓库
+  name: 海盗宝物仓库
 e2675320-e384-4deb-8e34-e4fd7884c237:
   description: ''
   name: ''
@@ -2077,9 +2086,6 @@ e3e40fb0-32a6-4684-950e-e5a7bfd27a08:
 e3f8a5ed-0e86-4029-82b3-715813a4c52b:
   description: ''
   name: 玛辛戴尔峭壁
-e3f9cca9-3ac6-4042-8d29-356485ea7191:
-  description: 叛徒据点
-  name: 叛徒据点
 e40f5d09-792a-48eb-8934-3892c34cbdb7:
   description: ''
   name: ''
@@ -2116,15 +2122,12 @@ e611ff2d-822b-4015-bfd7-31d55f6e093a:
 e612abec-3e21-4c9a-82ff-0b411b3c7d35:
   description: ''
   name: ''
-e69580c2-8528-4f7c-88ae-69bf1d1db9ef:
-  description: 野生维若塔栖息地
-  name: 野生维若塔栖息地
+e6696ef8-88ef-4a00-aaee-92301f0d41c6:
+  description: 暗根洞
+  name: 暗根洞
 e6b5212c-6661-49b1-ac46-21abc51f6c4e:
   description: ''
   name: ''
-e6feb19b-06c2-4559-bdd7-8a5980d409d9:
-  description: 倒塌的要塞地下室
-  name: 倒塌的要塞地下室
 e71262f2-f1bd-4fba-a1b9-0ccf27326935:
   description: ''
   name: ''
@@ -2161,9 +2164,6 @@ e933a944-5d07-48b3-993c-ef1d76d87dda:
 e99196c6-ce75-4d69-bd11-804612b57af6:
   description: ''
   name: 守墓人营帐
-ea22d45e-165d-4e75-b045-7f3f1e6bc195:
-  description: 阿基洛盗贼团老巢
-  name: 阿基洛盗贼团老巢
 ea9e2229-f837-4a61-8f1d-aa987888ef86:
   description: 峭壁下方处
   name: ''
@@ -2173,6 +2173,9 @@ ead85cb3-f90b-436f-8c71-e87466615263:
 ec26d90d-5842-478e-ac16-c01261d1998d:
   description: ''
   name: 秘密会面点
+ec7f4d72-2bba-49a8-8e2b-2b8cf443ed51:
+  description: 奥德石掠夺者老巢
+  name: 奥德石掠夺者老巢
 ed323f65-51b4-47a2-a670-e1075b3b09a6:
   description: 黑爪部落
   name: 黑爪部落
@@ -2182,6 +2185,9 @@ ee30a1f7-4dbd-4140-92a7-ba03cf78a98f:
 ee5444f6-4bce-49bb-98d8-20c9e7fc2dab:
   description: ''
   name: ''
+ee779b81-9346-4a71-8fd8-c79a19a9c573:
+  description: 伐木工休息处废墟
+  name: 伐木工休息处废墟
 ee90c6a4-594f-4a5d-a627-248a4c7d5e5c:
   description: ''
   name: ''
@@ -2191,18 +2197,24 @@ eeb3bca6-d4a1-43df-a8a1-c0c7d6b26c62:
 efab6a62-116f-4094-9504-1b01265c690c:
   description: ''
   name: 克雷恩营地
+efbc0cd8-23c2-4129-8ba4-548056e41d38:
+  description: 鲁贝克盗贼团占据地
+  name: 鲁贝克盗贼团占据地
 efc7fe44-9ddb-4a26-a86d-9b4c06e0e901:
   description: ''
   name: ''
+efe4f6ef-c301-4bb3-a8ce-8ac4183c25f6:
+  description: 孤寂岩缝
+  name: 孤寂岩缝
 f0449945-1ad1-4367-9368-114afa4dd316:
   description: ''
   name: ''
+f0552f16-f87b-41d6-88c9-e6c1cc97e4ec:
+  description: 森林抢夺者营地
+  name: 森林抢夺者营地
 f05e7a0c-35db-4107-92e5-11937f9f295f:
   description: ''
   name: ''
-f071662c-b2d1-4466-8882-3c383e141774:
-  description: 要塞监狱
-  name: 要塞监狱
 f0883c34-b114-4c5f-bbd2-23f221fbce4b:
   description: ''
   name: ''
@@ -2215,30 +2227,27 @@ f0cd2d1d-c511-46d0-ac8f-d87e1b403a31:
 f1483f7e-ed6a-4c38-815c-936e1d17b127:
   description: ''
   name: ''
-f1b9c5d5-4364-4f08-bfc9-fe3d42970d7d:
-  description: 野生库鲁栖息地
-  name: 野生库鲁栖息地
 f1c016ed-4d75-4045-a40d-d4c2c7aa7fd1:
   description: ''
   name: ''
+f1c160a7-fc8b-4585-ba89-3dd538290598:
+  description: 忘却监狱
+  name: 忘却监狱
 f1e6768d-9e83-4a18-807a-1dfc23b1c1ec:
   description: ''
   name: ''
 f1f58354-0c75-469f-af0f-c6a6711f0683:
   description: ''
   name: ''
+f211da05-323b-483b-b7c9-395d63c9bfb0:
+  description: 毒草栖息地
+  name: 毒草栖息地
 f29d24f1-9832-4cae-87b5-c36040471299:
   description: ''
   name: ''
 f2f2f5bc-6952-4ed1-8d41-dbd44698ca4a:
   description: ''
   name: ''
-f3043a51-5cb0-40be-b962-72d62e5c019e:
-  description: 塞赫纳监视哨所
-  name: 塞赫纳监视哨所
-f31f060b-ba04-4da3-a125-a9a81b22af57:
-  description: 林荫刑场
-  name: 林荫刑场
 f343a737-d4d2-4fca-9186-288bb9956e25:
   description: ''
   name: ''
@@ -2254,9 +2263,6 @@ f46b4d5a-3ecb-4bc5-8a8d-6a7d4fee7b4e:
 f478cac1-786a-44a9-a587-78024396f2ab:
   description: ''
   name: ''
-f4be61df-662b-4785-b3ac-37bb2f5ae4e8:
-  description: 乌加罗斯盗贼团营地
-  name: 乌加罗斯盗贼团营地
 f56c7eb6-4832-4322-9c0c-b16c43cc3cdc:
   description: ''
   name: ''
@@ -2269,6 +2275,9 @@ f72dd674-7aff-4211-b0c4-51a6bd2889ba:
 f745904a-c2ec-4461-8fe8-5105f6e6b829:
   description: ''
   name: ''
+f776d164-35b3-4901-b2db-e9a058274b46:
+  description: 荷米什收容所
+  name: 荷米什收容所
 f7773bc1-f529-4822-bf5d-04aeaf563242:
   description: ''
   name: ''
@@ -2299,6 +2308,9 @@ fa166732-e0fd-4e89-93ef-f07213f5019c:
 fa7b0c49-e259-4007-bcd3-963a1658fd66:
   description: ''
   name: ''
+fa7c3130-ad0f-4258-a3e8-bf72aadbf2cc:
+  description: 走私犯洞穴
+  name: 走私犯洞穴
 fad21d7e-2e31-47ae-b153-46f798e0769a:
   description: ''
   name: ''
@@ -2332,12 +2344,6 @@ fc2d1369-0df9-4c44-9654-8628c2ce077b:
 fc38da21-30db-4fd4-8164-ac5154e9d213:
   description: ''
   name: ''
-fc3c4d99-a08e-4bd2-a545-a54491bccba2:
-  description: 古代城市罗伊废墟
-  name: 古代城市罗伊废墟
-fc632bea-2eda-4173-a089-d8cdc576b74b:
-  description: 栽培地仓库
-  name: 栽培地仓库
 fcf4ba29-3f66-4a56-a8e3-332016c1383a:
   description: ''
   name: ''
@@ -2359,9 +2365,6 @@ fe0d9096-7f1a-432b-b7d0-8b10b1b16717:
 fe1e262c-34d1-41fb-a1f5-d1a63f841093:
   description: ''
   name: ''
-fe5cf52b-3174-4ca4-9b1b-5fdbb823a4d2:
-  description: 塔尔戈斯洞
-  name: 塔尔戈斯洞
 fec3e7d3-effa-48ac-ba56-25fc17249ccd:
   description: ''
   name: ''
