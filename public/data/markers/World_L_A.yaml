@@ -635,7 +635,7 @@ markers:
   id: 1bdaa360-7795-4d9d-990f-c5bc23319b9a
   images:
   - markers_images/K04_bs0nsmt9hR_iw2gGkw
-  name: '19'
+  name: '18'
   region: WesternCantasValley
   subtype: monolithMaterial
   x: 3253.0
@@ -644,7 +644,7 @@ markers:
   id: 535d1a47-cc74-4f97-a93b-df0deca0d53f
   images:
   - markers_images/U5m6EosSD5Yf5VtFHIJTcw
-  name: '20'
+  name: '19'
   region: WesternCantasValley
   subtype: monolithMaterial
   x: 3265.0
@@ -761,7 +761,7 @@ markers:
   id: 7b863288-b9a9-417c-8fc1-114f50e8465b
   images:
   - markers_images/ZhCovWDdk6kd2BCcCkGeag
-  name: '21'
+  name: '20'
   region: WesternCantasValley
   subtype: monolithMaterial
   x: 3222.0
@@ -779,7 +779,7 @@ markers:
   id: 34107de2-781e-47a5-ad68-3abcef2661ae
   images:
   - markers_images/X268lOGYg8WPFFOJ_scs0w
-  name: '18'
+  name: '17'
   region: WesternCantasValley
   subtype: monolithMaterial
   x: 3299.0
@@ -788,7 +788,7 @@ markers:
   id: 9c88be83-d731-4446-8dc1-b7ba310d7b3e
   images:
   - markers_images/ssw6_a9OoQx2Hrjtjg8lhA
-  name: '17'
+  name: '16'
   region: WesternCantasValley
   subtype: monolithMaterial
   x: 3321.0
@@ -806,7 +806,7 @@ markers:
   id: b9ce3ea0-2852-41ca-89fe-d5d8e8ef8b3c
   images:
   - markers_images/1dMPXQyy5v8WXXtbCLiR2A
-  name: '15'
+  name: '14'
   region: WesternCantasValley
   subtype: monolithMaterial
   x: 3363.0
@@ -815,7 +815,7 @@ markers:
   id: 34c01b60-23fe-4313-a4c0-23d2119a5a99
   images:
   - markers_images/MqkHboDkegheM3iMhVxmvg
-  name: '14'
+  name: '13'
   region: WesternCantasValley
   subtype: monolithMaterial
   x: 3349.0
@@ -1410,7 +1410,7 @@ markers:
   y: 2865.0
 - category: collection
   id: 87dee76b-b473-4e8c-8aa0-99389480f94f
-  name: ''
+  name: '25'
   region: AullaeuVillage
   subtype: monolithMaterial
   x: 3722.0
@@ -1444,7 +1444,7 @@ markers:
   y: 2909.0
 - category: collection
   id: 315bf8d0-b69a-4000-aa2f-49d55321e300
-  name: ''
+  name: '5'
   region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4302.0
@@ -1453,7 +1453,7 @@ markers:
   id: 09690daf-b4b2-45d5-a120-54809d02e1da
   images:
   - markers_images/9DFkXG9bjx7oWS_JxuAlfg
-  name: ''
+  name: '8'
   region: AullaeuVillage
   subtype: monolithMaterial
   x: 3850.0
@@ -1489,21 +1489,21 @@ markers:
   id: e7545bff-4e53-44ed-af7a-48dc10eabc33
   images:
   - markers_images/F2VnH_9EH8p_BM3MfKshPA
-  name: ''
+  name: '6'
   region: AullaeuVillage
   subtype: monolithMaterial
   x: 3862.0
   y: 2597.0
 - category: collection
   id: dcecc488-a6cb-44a5-b2d8-3facfd56bfd0
-  name: ''
+  name: '5'
   region: AullaeuVillage
   subtype: monolithMaterial
   x: 3782.0
   y: 2481.0
 - category: collection
   id: 7089f260-1b45-40e3-ac27-c65de67bdd92
-  name: ''
+  name: '6'
   region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4339.0
@@ -1512,7 +1512,7 @@ markers:
   id: eae2ebc3-572d-40f3-8971-8254815e78ad
   images:
   - markers_images/EbPaPl3TeqBtTzlsRGtFcA
-  name: ''
+  name: '24'
   region: AullaeuVillage
   subtype: monolithMaterial
   x: 3833.0
@@ -1521,7 +1521,7 @@ markers:
   id: 5c25079c-4271-40c8-8901-69c2ae0ca776
   images:
   - markers_images/WmzLxLDSJSaFMELm382iRg
-  name: ''
+  name: '5'
   region: EasternAltamiaHighland
   subtype: monolithMaterial
   x: 5326.0
@@ -1530,7 +1530,7 @@ markers:
   id: 65769a59-8997-401c-b5ae-127e2dd8de1f
   images:
   - markers_images/-w5QN74FxC7vBFqu7VuSVg
-  name: ''
+  name: '8'
   region: EasternAltamiaHighland
   subtype: monolithMaterial
   x: 5548.0
@@ -1539,7 +1539,7 @@ markers:
   id: b4917d5d-4367-4d54-8eb5-4b342c14a3bf
   images:
   - markers_images/9vFRgcBOn_19Dm3SE6JbaQ
-  name: ''
+  name: '10'
   region: EasternAltamiaHighland
   subtype: monolithMaterial
   x: 5816.0
@@ -1548,7 +1548,7 @@ markers:
   id: 3f5dcef0-ce7a-4a8d-9279-61ed21956b43
   images:
   - markers_images/lxeMgVW8HeVDvrMwSSBPIg
-  name: ''
+  name: '9'
   region: EasternAltamiaHighland
   subtype: monolithMaterial
   x: 5772.0
@@ -1598,7 +1598,7 @@ markers:
   id: d88bc076-0282-42bc-b9be-56a508348f46
   images:
   - markers_images/PvmdEyaJ2556W2cOFbrevA
-  name: ''
+  name: '7'
   region: ZumionVillage
   subtype: monolithMaterial
   x: 4610.0
@@ -1607,7 +1607,7 @@ markers:
   id: d4eb9b60-3071-451a-9cdb-9aa4551e1fee
   images:
   - markers_images/Tzr6sWMO42LKi1ee9rmcBA
-  name: ''
+  name: '3'
   region: ZumionVillage
   subtype: monolithMaterial
   x: 4697.0
@@ -1616,7 +1616,7 @@ markers:
   id: a2aa2730-d137-45ee-850b-9e2f7a5e6409
   images:
   - markers_images/m0EZyWFDEYuDa1M_PpYXDA
-  name: ''
+  name: '1'
   region: EasternAltamiaHighland
   subtype: monolithMaterial
   x: 4846.0
@@ -1625,7 +1625,7 @@ markers:
   id: f6d29144-a5ed-4b8d-b2a6-ef791650632a
   images:
   - markers_images/KRb5H1_fX2aMAceJnINtdg
-  name: ''
+  name: '18'
   region: ZumionVillage
   subtype: monolithMaterial
   x: 4747.0
@@ -1634,7 +1634,7 @@ markers:
   id: 981750a9-cfe4-44be-af0d-40fb4763f372
   images:
   - markers_images/mLQWJOAs9pGPRB6wLq-GPQ
-  name: ''
+  name: '23'
   region: ZumionVillage
   subtype: monolithMaterial
   x: 4797.0
@@ -1679,7 +1679,7 @@ markers:
   id: 4011e717-f7c4-4684-a97f-56a538af8b19
   images:
   - markers_images/4S6B45ZDsJx_5I21_dje5g
-  name: ''
+  name: '19'
   region: ZumionVillage
   subtype: monolithMaterial
   x: 4698.0
@@ -1697,7 +1697,7 @@ markers:
   id: 917b3f51-18b9-4edf-ad64-8c916010ad80
   images:
   - markers_images/BX4mkF-fyWX7kPBYg5vQZw
-  name: ''
+  name: '2'
   region: ZumionVillage
   subtype: monolithMaterial
   x: 4610.0
@@ -1706,7 +1706,7 @@ markers:
   id: a7ed85e5-3bde-4db0-9346-20532a4d783e
   images:
   - markers_images/je-d0y-JXAAiVFmSURxblQ
-  name: ''
+  name: '1'
   region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4485.0
@@ -1715,7 +1715,7 @@ markers:
   id: aa8bb125-bb7e-4221-8b5a-8f32d7de8872
   images:
   - markers_images/LSHAmTqptv1qsOmb-jr3rw
-  name: ''
+  name: '10'
   region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4503.0
@@ -1733,7 +1733,7 @@ markers:
   id: f9ee4be1-6731-4124-b07a-fe6e8f0f8940
   images:
   - markers_images/Zse4zBwoQw9D8YO9GV1NIw
-  name: ''
+  name: '11'
   region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4415.0
@@ -1742,7 +1742,7 @@ markers:
   id: 705066f4-e5c4-4aad-ab77-44d6c67931e8
   images:
   - markers_images/QNNT9imCRTfDO6Tc8ah7zQ
-  name: ''
+  name: '12'
   region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4286.0
@@ -1776,7 +1776,7 @@ markers:
   id: a1cbc667-344c-4654-86cc-1c9748d02c47
   images:
   - markers_images/1dp5-lhuz-n50a0ZcW6INA
-  name: ''
+  name: '8'
   region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4537.0
@@ -1812,20 +1812,11 @@ markers:
   id: 913417b1-2b3f-4122-82aa-616bda627c80
   images:
   - markers_images/GJ3gerFkfqcO_P555B70sQ
-  name: ''
+  name: '9'
   region: ZumionVillage
   subtype: monolithMaterial
   x: 4580.0
   y: 4048.0
-- category: collection
-  id: 87b3edd5-b077-4a4c-bf18-fafdff250da9
-  images:
-  - markers_images/in939Mc__74B63idIq4JNg
-  name: ''
-  region: EasternAltamiaHighland
-  subtype: monolithMaterial
-  x: 5274.0
-  y: 3716.0
 - category: collection
   id: 53889be9-194d-4b5f-a536-22e50b06fc21
   images:
@@ -1972,7 +1963,7 @@ markers:
   id: 575859ea-9e6f-474d-9b55-4f92325db068
   images:
   - markers_images/NrVZn9Ga0rZAkTHNquxnOQ
-  name: ''
+  name: '3'
   region: SouthernAltamiaHighland
   subtype: monolithMaterial
   x: 4732.0
@@ -1981,7 +1972,7 @@ markers:
   id: 07262c81-c495-4e58-9a8f-00385c253f79
   images:
   - markers_images/4iF1HS0SFqb3XEfySvssIg
-  name: ''
+  name: '2'
   region: SouthernAltamiaHighland
   subtype: monolithMaterial
   x: 4660.0
@@ -1990,7 +1981,7 @@ markers:
   id: e0bfa469-050f-4b28-99ee-d210557e7d85
   images:
   - markers_images/AYAO0NXgPa4iRCsRdq2uFQ
-  name: ''
+  name: '5'
   region: SouthernAltamiaHighland
   subtype: monolithMaterial
   x: 4548.0
@@ -2013,6 +2004,15 @@ markers:
   subtype: monolithMaterial
   x: 4878.0
   y: 3178.0
+- category: collection
+  id: 87b3edd5-b077-4a4c-bf18-fafdff250da9
+  images:
+  - markers_images/in939Mc__74B63idIq4JNg
+  name: '4'
+  region: EasternAltamiaHighland
+  subtype: monolithMaterial
+  x: 5274.0
+  y: 3716.0
 - category: collection
   id: 9c434ed2-2a4e-43e1-86ed-5fe117d93d1f
   images:
@@ -2397,14 +2397,14 @@ markers:
   id: 65795245-7af0-4eec-90c7-bdc89b71bb05
   images:
   - markers_images/fTGKvN5UZ6Ye2TymeUAqAQ
-  name: ''
+  name: '12'
   region: EasternAltamiaHighland
   subtype: monolithMaterial
   x: 5532.0
   y: 3614.0
 - category: collection
   id: d8d4c268-9c52-4a9a-a766-98598f65f218
-  name: ''
+  name: '3'
   region: EasternAltamiaHighland
   subtype: monolithMaterial
   x: 5164.0
@@ -2483,7 +2483,7 @@ markers:
   id: 4f4e81ac-a12e-471c-9b79-6a363b6db257
   images:
   - markers_images/bGHGI4AwYrqa9TEo_XtFBw
-  name: '22'
+  name: '21'
   region: WesternCantasValley
   subtype: monolithMaterial
   x: 3284.0
@@ -2821,7 +2821,7 @@ markers:
   id: ce5d0908-c14b-44a7-9a6b-aee71708f6a1
   images:
   - markers_images/0AAh60pODJLUnLL8X50y9A
-  name: ''
+  name: '21'
   region: AullaeuVillage
   subtype: monolithMaterial
   x: 3862.0
@@ -2830,7 +2830,7 @@ markers:
   id: 564810d0-1df7-40a9-a37f-6077392eb72a
   images:
   - markers_images/XoAMEBP7uQHg3GB6Qe_xHg
-  name: ''
+  name: '22'
   region: AullaeuVillage
   subtype: monolithMaterial
   x: 3832.0
@@ -2864,7 +2864,7 @@ markers:
   id: 9a9eecfd-5d20-45a6-8ad7-e65894dc7b55
   images:
   - markers_images/g0BBS2-580gTrPu3573GAA
-  name: ''
+  name: '1'
   region: AullaeuFuneralIsland
   subtype: monolithMaterial
   x: 2852.0
@@ -2898,7 +2898,7 @@ markers:
   id: a278de5e-a78c-4ac5-ba86-9879f7d3ac1f
   images:
   - markers_images/E2TLhQPl-Q7lTZkScgSsdw
-  name: ''
+  name: '16'
   region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4797.0
@@ -2907,7 +2907,7 @@ markers:
   id: 7825fe89-3107-41cd-a2a4-f72592afb0b1
   images:
   - markers_images/MZ6ocy-ejhTfwZeS6ucU-g
-  name: ''
+  name: '17'
   region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4821.0
@@ -2916,7 +2916,7 @@ markers:
   id: ddf8b719-1de4-4fa2-867e-126156a55d57
   images:
   - markers_images/L1T7g7XV2sKtZ0LxZU4oRQ
-  name: ''
+  name: '18'
   region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4836.0
@@ -2925,7 +2925,7 @@ markers:
   id: 9cfd5bfd-39a5-4b22-b4d1-d345af0dd0e3
   images:
   - markers_images/HT9dpvx4ttupX5FG6aJquA
-  name: ''
+  name: '19'
   region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4804.0
@@ -3024,7 +3024,7 @@ markers:
   id: fadcec1e-e247-4f41-9e64-dc76227d0574
   images:
   - markers_images/p11uhrr1ABWnKoKflbgEWw
-  name: ''
+  name: '22'
   region: WesternCantasValley
   subtype: monolithMaterial
   x: 2525.0
@@ -3042,7 +3042,7 @@ markers:
   id: 691c8e6a-d99c-4cc9-b837-ccd02ff7ba4b
   images:
   - markers_images/oGdxL0796bvM51a3Q4x89A
-  name: ''
+  name: '2'
   region: AullaeuFuneralIsland
   subtype: monolithMaterial
   x: 2767.0
@@ -3141,7 +3141,7 @@ markers:
   id: c7404d95-2c58-4e2b-8d20-e314c41fa2b8
   images:
   - markers_images/ngIiUJYX4I1EQ3puQz0Ipw
-  name: ''
+  name: '26'
   region: AullaeuVillage
   subtype: monolithMaterial
   x: 3573.0
@@ -3254,7 +3254,7 @@ markers:
   id: 721f7d0f-a90d-4b28-aac1-290f2d4bdae4
   images:
   - markers_images/hQz78bTdufeKieqFanNULg
-  name: ''
+  name: '9'
   region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4593.0
@@ -3335,7 +3335,7 @@ markers:
   id: 8cb612f8-e04b-4b6d-b0fd-0b7745b87005
   images:
   - markers_images/zMSaXdgucsj_JfWRCJq1kA
-  name: ''
+  name: '13'
   region: ZumionVillage
   subtype: monolithMaterial
   x: 4694.0
@@ -3344,7 +3344,7 @@ markers:
   id: 8856e9a3-fde5-4b11-b0a5-629ce3aee9db
   images:
   - markers_images/Xwrhv7XCnjejh3ajh2N42Q
-  name: ''
+  name: '12'
   region: ZumionVillage
   subtype: monolithMaterial
   x: 4675.0
@@ -3353,7 +3353,7 @@ markers:
   id: f6e349e8-4a80-47d0-bc66-5d2318573bd7
   images:
   - markers_images/e4vmhjOf7db4zk1ocqPqDw
-  name: ''
+  name: '14'
   region: ZumionVillage
   subtype: monolithMaterial
   x: 4743.0
@@ -3362,7 +3362,7 @@ markers:
   id: a2a2e1fe-09b7-453c-b18f-c6e356967de5
   images:
   - markers_images/XAsNznkmpkMARlAfStlL7w
-  name: ''
+  name: '15'
   region: ZumionVillage
   subtype: monolithMaterial
   x: 4762.0
@@ -3371,7 +3371,7 @@ markers:
   id: fcbcd16a-3c35-4f4b-9d43-490875c7b233
   images:
   - markers_images/xrhmK3vq6o5_So_in-EMjw
-  name: ''
+  name: '17'
   region: ZumionVillage
   subtype: monolithMaterial
   x: 4817.0
@@ -3380,7 +3380,7 @@ markers:
   id: 3287d965-4c9a-4f48-a2de-7f6966495a57
   images:
   - markers_images/xQF_LWX7u69jf2pQFOo40A
-  name: ''
+  name: '16'
   region: ZumionVillage
   subtype: monolithMaterial
   x: 4836.0
@@ -3389,7 +3389,7 @@ markers:
   id: a2aff922-4d0d-46ce-864b-597af1d6831b
   images:
   - markers_images/p7xe6jAL_rCcbqq9mEeZDA
-  name: ''
+  name: '28'
   region: ZumionVillage
   subtype: monolithMaterial
   x: 4859.0
@@ -3398,7 +3398,7 @@ markers:
   id: 15d999c4-373a-41b1-84fe-cc72926a5b6c
   images:
   - markers_images/h2pHzE5o0Q1QyU5UTZt7Dg
-  name: ''
+  name: '27'
   region: ZumionVillage
   subtype: monolithMaterial
   x: 4922.0
@@ -3407,7 +3407,7 @@ markers:
   id: 5131b427-4a36-49c2-9740-f96da107dd3f
   images:
   - markers_images/8lSio6gzRRP2WHNjsSYAMw
-  name: ''
+  name: '26'
   region: ZumionVillage
   subtype: monolithMaterial
   x: 4948.0
@@ -3416,7 +3416,7 @@ markers:
   id: 494cdf47-c18d-4eda-97e5-2128ca56064c
   images:
   - markers_images/cfWM7fwaQ6ynr3glaDvhZg
-  name: ''
+  name: '24'
   region: ZumionVillage
   subtype: monolithMaterial
   x: 4813.0
@@ -3425,7 +3425,7 @@ markers:
   id: ae6154d8-4a0c-4383-8236-e22fd4ff3404
   images:
   - markers_images/485iMMFKcXtqzlUBkZTlTQ
-  name: ''
+  name: '21'
   region: ZumionVillage
   subtype: monolithMaterial
   x: 4755.0
@@ -3441,7 +3441,7 @@ markers:
   id: bd43b01f-2f2b-4db5-88e4-340f0c761c39
   images:
   - markers_images/D74KBey7CFg2pjlCkgTQDQ
-  name: ''
+  name: '4'
   region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4351.0
@@ -3486,7 +3486,7 @@ markers:
   id: 5c198e19-2179-4198-bc25-7701e39e223b
   images:
   - markers_images/d5uQj6bLYl1TPJJYog88SA
-  name: ''
+  name: '16'
   region: AullaeuVillage
   subtype: monolithMaterial
   x: 4012.0
@@ -3513,7 +3513,7 @@ markers:
   id: 0e474361-c843-4698-87f5-1a3bb3561a68
   images:
   - markers_images/RM2JVQpn1Cd8tzIj7BjvLA
-  name: ''
+  name: '1'
   region: AullaeuVillage
   subtype: monolithMaterial
   x: 3239.0
@@ -3522,7 +3522,7 @@ markers:
   id: e0d8c6fc-d1fb-46f9-a2e0-b692d92e70cc
   images:
   - markers_images/BI4QkNVvgmbx1Zr1mem5rw
-  name: ''
+  name: '2'
   region: AullaeuVillage
   subtype: monolithMaterial
   x: 3294.0
@@ -3608,7 +3608,7 @@ markers:
   id: 138065a2-2e34-4a18-8799-2cbb4699bfb2
   images:
   - markers_images/Ef50OrlE5dXSXCMtktADDw
-  name: ''
+  name: '11'
   region: EasternAltamiaHighland
   subtype: monolithMaterial
   x: 5727.0
@@ -3617,7 +3617,7 @@ markers:
   id: 13af0c7e-9512-4b67-87d0-5680ffb088f5
   images:
   - markers_images/b5wr_7KAP5CFITILOs79SA
-  name: ''
+  name: '13'
   region: EasternAltamiaHighland
   subtype: monolithMaterial
   x: 5406.0
@@ -3626,7 +3626,7 @@ markers:
   id: 3d23fa81-558b-4772-98e7-ddd7384cef9e
   images:
   - markers_images/G6BOroh4sqfp4E1I5xhvjQ
-  name: ''
+  name: '6'
   region: EasternAltamiaHighland
   subtype: monolithMaterial
   x: 5272.0
@@ -3635,7 +3635,7 @@ markers:
   id: 27b3cb6b-8389-44dd-9d64-1843ae3ce83f
   images:
   - markers_images/P80l9mzG1rETKIHru_2pLA
-  name: ''
+  name: '18'
   region: AullaeuVillage
   subtype: monolithMaterial
   x: 3916.0
@@ -3644,7 +3644,7 @@ markers:
   id: 69d5b97d-6ba8-4007-ab99-f5e81a0d096a
   images:
   - markers_images/D46Z9w_KWedkhayQ8rV0fA
-  name: ''
+  name: '20'
   region: AullaeuVillage
   subtype: monolithMaterial
   x: 3911.0
@@ -3653,7 +3653,7 @@ markers:
   id: ded47dad-7ad9-4265-9065-9581bee36286
   images:
   - markers_images/K_cFxLAU06J0ZTj8YHsWgA
-  name: ''
+  name: '19'
   region: AullaeuVillage
   subtype: monolithMaterial
   x: 3927.0
@@ -3662,7 +3662,7 @@ markers:
   id: 32ed203d-d51a-4614-9a1d-7169064760ce
   images:
   - markers_images/ESf0U5MzXe6pTA1tfiNWDg
-  name: ''
+  name: '20'
   region: ZumionVillage
   subtype: monolithMaterial
   x: 4725.0
@@ -3671,7 +3671,7 @@ markers:
   id: b6ccdcfe-9126-4e9f-841a-b6e5171d6804
   images:
   - markers_images/iOl33OKnwXgLDxNbc-5zTw
-  name: ''
+  name: '30'
   region: ZumionVillage
   subtype: monolithMaterial
   x: 4597.0
@@ -3822,7 +3822,7 @@ markers:
   id: b907af46-ca8a-4b2f-bb9a-71e071b8a09c
   images:
   - markers_images/b8JL_3T_5ns8QGyNWKwWXA
-  name: ''
+  name: '15'
   region: AullaeuVillage
   subtype: monolithMaterial
   x: 3960.0
@@ -3849,7 +3849,7 @@ markers:
   id: 7c934229-0e56-4370-a91f-290dc5502204
   images:
   - markers_images/zoNWHbgwoLRY9z6TJwSt1Q
-  name: ''
+  name: '9'
   region: AullaeuVillage
   subtype: monolithMaterial
   x: 3754.0
@@ -3858,7 +3858,7 @@ markers:
   id: 1ca4805b-3a7f-4eb8-823a-d4fac959849a
   images:
   - markers_images/NKTMqg5JfcxWrk8pAyrl8g
-  name: ''
+  name: '10'
   region: AullaeuVillage
   subtype: monolithMaterial
   x: 3731.0
@@ -3894,7 +3894,7 @@ markers:
   id: 9946efbb-db65-4719-afac-ad8145f1962e
   images:
   - markers_images/LMi7_tSLp5_3NAIU4vpGUQ
-  name: ''
+  name: '11'
   region: AullaeuVillage
   subtype: monolithMaterial
   x: 3854.0
@@ -3903,7 +3903,7 @@ markers:
   id: ecb1390f-71ad-45a2-876c-caec3bc893f9
   images:
   - markers_images/DNMY0YFhdXQKam9vfaazeQ
-  name: ''
+  name: '12'
   region: AullaeuVillage
   subtype: monolithMaterial
   x: 3890.0
@@ -3926,7 +3926,7 @@ markers:
   y: 3429.0
 - category: collection
   id: fb088204-6d9e-480a-bb1c-f2d795883493
-  name: ''
+  name: '2'
   region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4306.0
@@ -3935,7 +3935,7 @@ markers:
   id: 3b3e6fe3-c5b8-472b-8f48-8924cc08afc6
   images:
   - markers_images/BRdz-pkDBnMvjgXfQens1w
-  name: ''
+  name: '3'
   region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4217.0
@@ -3953,7 +3953,7 @@ markers:
   id: bddbb2cf-6d4f-4081-8d44-699823c1f3b9
   images:
   - markers_images/TJ0p21DCja98vNMJn2VSOA
-  name: ''
+  name: '4'
   region: AullaeuVillage
   subtype: monolithMaterial
   x: 3695.0
@@ -3985,7 +3985,7 @@ markers:
   id: 96f03a98-a0ba-4fa3-af02-9853d314d431
   images:
   - markers_images/OjVKrKwkxY02WrxTIGKctA
-  name: ''
+  name: '23'
   region: AullaeuVillage
   subtype: monolithMaterial
   x: 3817.0
@@ -4001,7 +4001,7 @@ markers:
   id: 8f8b1c97-c911-48d0-b48c-b195108868fb
   images:
   - markers_images/Tz3rOAr5JODQtYy6khqm3g
-  name: ''
+  name: '7'
   region: SouthernAltamiaHighland
   subtype: monolithMaterial
   x: 4452.0
@@ -4010,7 +4010,7 @@ markers:
   id: 045cdc69-4255-4cb3-b170-446abc55de10
   images:
   - markers_images/AM0XmbZv7cLBWMCSesu-4A
-  name: ''
+  name: '4'
   region: SouthernAltamiaHighland
   subtype: monolithMaterial
   x: 4672.0
@@ -4019,7 +4019,7 @@ markers:
   id: c80e2c4f-61ca-4ae6-8896-f76aa4d35f8d
   images:
   - markers_images/3thOn5SunynNCxqoTHkHTg
-  name: ''
+  name: '8'
   region: SouthernAltamiaHighland
   subtype: monolithMaterial
   x: 4247.0
@@ -4114,7 +4114,7 @@ markers:
   id: 4a187e79-5645-497c-b451-a817d74722b7
   images:
   - markers_images/pwPLVxhjuumte4CcEKLyGg
-  name: ''
+  name: '15'
   region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4564.0
@@ -4123,7 +4123,7 @@ markers:
   id: 1a602824-2f39-4eba-952f-41a804ffd520
   images:
   - markers_images/Q9nd91eaAimM8v6zz3wL0Q
-  name: ''
+  name: '14'
   region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4444.0
@@ -4132,7 +4132,7 @@ markers:
   id: b491f78b-cd61-4589-88e8-2f263165bf76
   images:
   - markers_images/3XTp3tATKFInH7ESHGVaYQ
-  name: ''
+  name: '13'
   region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4411.0
@@ -4155,7 +4155,7 @@ markers:
   id: 1cd61199-2006-460c-a36f-12da4fab0f4b
   images:
   - markers_images/tMZspXLxXrN1O9yhFZRgiQ
-  name: ''
+  name: '6'
   region: ZumionVillage
   subtype: monolithMaterial
   x: 4589.0
@@ -4164,7 +4164,7 @@ markers:
   id: 2c14e78a-ff28-42c8-923b-f4ad45bd3a4f
   images:
   - markers_images/pqKEBpnF7CW7oPaehfWa-g
-  name: ''
+  name: '5'
   region: ZumionVillage
   subtype: monolithMaterial
   x: 4650.0
@@ -4173,7 +4173,7 @@ markers:
   id: d31f1cc7-d311-4837-aaa5-7ca2912b907f
   images:
   - markers_images/AYFcUX7rEry5OKRj5IJgPg
-  name: ''
+  name: '4'
   region: ZumionVillage
   subtype: monolithMaterial
   x: 4753.0
@@ -4182,7 +4182,7 @@ markers:
   id: d160efcf-d7e5-4199-b750-1a3488e0d568
   images:
   - markers_images/FuX53XIqStqsc8th7Pl9oA
-  name: ''
+  name: '11'
   region: ZumionVillage
   subtype: monolithMaterial
   x: 4649.0
@@ -4191,7 +4191,7 @@ markers:
   id: 6e5ffc76-87d2-445b-be59-1f8b4fcd4d76
   images:
   - markers_images/q0BqSoh_8EH1FsatLelYZg
-  name: ''
+  name: '10'
   region: ZumionVillage
   subtype: monolithMaterial
   x: 4566.0
@@ -4214,7 +4214,7 @@ markers:
   id: c2b9a495-9d6e-418f-81d8-13d270561230
   images:
   - markers_images/vVKvqqeb-Vcry0YCcfk5lA
-  name: ''
+  name: '31'
   region: ZumionVillage
   subtype: monolithMaterial
   x: 4529.0
@@ -4235,15 +4235,6 @@ markers:
   subtype: monolithMaterial
   x: 5008.0
   y: 4126.0
-- category: collection
-  id: d44a92c7-c278-410c-9ccf-c6db3e3b856c
-  images:
-  - markers_images/9zBML66MPTyiqTY3V6WuTw
-  name: ''
-  region: EasternAltamiaHighland
-  subtype: monolithMaterial
-  x: 5045.0
-  y: 3870.0
 - category: collection
   id: 71ff9e3d-11f4-46ce-b3fe-f9b341291d03
   name: ''
@@ -4282,7 +4273,7 @@ markers:
   id: 22e27881-790c-4703-b0fa-ab0701bd0fc5
   images:
   - markers_images/yk_1DrFK7Fc_-AGZyJzL1w
-  name: ''
+  name: '1'
   region: SouthernAltamiaHighland
   subtype: monolithMaterial
   x: 4549.0
@@ -4350,7 +4341,7 @@ markers:
   id: 85809dca-e735-4066-b4b2-91ce699d9e23
   images:
   - markers_images/30J6pwjdAopIF9vEMEk-GA
-  name: ''
+  name: '1'
   region: ZumionVillage
   subtype: monolithMaterial
   x: 4557.0
@@ -4404,7 +4395,7 @@ markers:
   id: 83e7bf18-e1cb-4f1d-a630-f52b878cdbc5
   images:
   - markers_images/4yE76HOcZpWsOMMLwNkEkQ
-  name: ''
+  name: '14'
   region: EasternAltamiaHighland
   subtype: monolithMaterial
   x: 5404.0
@@ -4492,7 +4483,7 @@ markers:
   id: be1f5c8d-7844-4a8a-8426-513ed1da9516
   images:
   - markers_images/a_b2HagWTYKZxKj8QPQfmw
-  name: ''
+  name: '29'
   region: ZumionVillage
   subtype: monolithMaterial
   x: 4703.0
@@ -4528,7 +4519,7 @@ markers:
   id: de93e0c9-e310-4e58-9a79-48d697ce5b16
   images:
   - markers_images/WVrptiJnufL1MRTY6Gn_rA
-  name: ''
+  name: '8'
   region: ZumionVillage
   subtype: monolithMaterial
   x: 4543.0
@@ -4537,7 +4528,7 @@ markers:
   id: 98d6f2bc-c8ca-40c0-874f-b2fed77beb32
   images:
   - markers_images/EbOOlvOkgcskMFBtxGl5Qw
-  name: ''
+  name: '22'
   region: ZumionVillage
   subtype: monolithMaterial
   x: 4763.0
@@ -4573,7 +4564,7 @@ markers:
   id: bf482f3f-f668-41be-822f-910ca6ce686e
   images:
   - markers_images/FYicVwyOor8iPFOXIeQIWQ
-  name: ''
+  name: '15'
   region: EasternAltamiaHighland
   subtype: monolithMaterial
   x: 5541.0
@@ -4600,7 +4591,7 @@ markers:
   id: bd4f11d5-5c95-4499-8719-f4bb1d97098c
   images:
   - markers_images/NGJ999qvotvvpffd7OIT4g
-  name: ''
+  name: '3'
   region: AullaeuVillage
   subtype: monolithMaterial
   x: 3611.0
@@ -4812,7 +4803,7 @@ markers:
   y: 4597.0
 - category: collection
   id: 123232f2-d5a7-4fb0-81eb-a0d9daac5d94
-  name: ''
+  name: '13'
   region: AullaeuVillage
   subtype: monolithMaterial
   x: 3990.0
@@ -4855,7 +4846,7 @@ markers:
   id: fc2f4422-6cf2-4136-a42c-916fd4db66af
   images:
   - markers_images/n-HtIaiXJyka0iiiuzz1EQ
-  name: ''
+  name: '25'
   region: ZumionVillage
   subtype: monolithMaterial
   x: 4960.0
@@ -4878,6 +4869,15 @@ markers:
   subtype: monolithMaterial
   x: 5491.0
   y: 4556.0
+- category: collection
+  id: d44a92c7-c278-410c-9ccf-c6db3e3b856c
+  images:
+  - markers_images/9zBML66MPTyiqTY3V6WuTw
+  name: '2'
+  region: EasternAltamiaHighland
+  subtype: monolithMaterial
+  x: 5045.0
+  y: 3870.0
 - category: collection
   id: 59487202-f21a-496e-95bd-583ece149b59
   images:
@@ -4967,15 +4967,6 @@ markers:
   x: 5688.0
   y: 5349.0
 - category: collection
-  id: 2465b420-ac0b-487b-a74f-2f85ae759456
-  images:
-  - markers_images/MroWEhqYYSRsqAZ3rs-c4A
-  name: ''
-  region: EasternAltamiaHighland
-  subtype: monolithMaterial
-  x: 5757.0
-  y: 3240.0
-- category: collection
   id: 38b77bc9-e849-4996-bcde-7c82525dc154
   images:
   - markers_images/8E3p9Lq6Fxl__dgknGtVWA
@@ -5001,7 +4992,7 @@ markers:
   id: bb1e1651-77d4-43cb-8410-301fb6120b5e
   images:
   - markers_images/7e2dafeW71wKNA9BvShSBA
-  name: ''
+  name: '7'
   region: AullaeuVillage
   subtype: monolithMaterial
   x: 3875.0
@@ -5059,7 +5050,7 @@ markers:
   id: 6e03338d-2787-4d54-86db-ce79fbf8ac53
   images:
   - markers_images/hXKz2T7KaO-4MYMU57OFbA
-  name: ''
+  name: '7'
   region: EasternAltamiaHighland
   subtype: monolithMaterial
   x: 5381.0
@@ -5107,7 +5098,7 @@ markers:
   id: 889f0a5e-8bea-4b58-9c6b-01d6158d0f42
   images:
   - markers_images/H5D7sw7ydMEvvfjpylhZNg
-  name: ''
+  name: '14'
   region: AullaeuVillage
   subtype: monolithMaterial
   x: 3976.0
@@ -5219,7 +5210,7 @@ markers:
   id: 5294fb20-ee4b-4706-a7a1-a18297b0bc09
   images:
   - markers_images/I2rhuW8_xpaQwHfO-Yfp2w
-  name: ''
+  name: '7'
   region: WesternAltamiaHighland
   subtype: monolithMaterial
   x: 4479.0
@@ -5228,7 +5219,7 @@ markers:
   id: d90dba87-b75b-4132-9259-4c6191eeb192
   images:
   - markers_images/kHaeEs8ft6U9y9RRVyNq9w
-  name: ''
+  name: '17'
   region: AullaeuVillage
   subtype: monolithMaterial
   x: 3964.0
@@ -5288,7 +5279,7 @@ markers:
   id: 685a66ec-e5f5-44ba-af79-1efe7b8d4a82
   images:
   - markers_images/hT_CIBK-G56xUwbIm8Wkvg
-  name: ''
+  name: '6'
   region: SouthernAltamiaHighland
   subtype: monolithMaterial
   x: 4549.0
@@ -5384,6 +5375,15 @@ markers:
   subtype: village
   x: 2943.0
   y: 4617.0
+- category: collection
+  id: 2465b420-ac0b-487b-a74f-2f85ae759456
+  images:
+  - markers_images/MroWEhqYYSRsqAZ3rs-c4A
+  name: '16'
+  region: EasternAltamiaHighland
+  subtype: monolithMaterial
+  x: 5757.0
+  y: 3240.0
 - category: location
   id: 86e5f9d3-a33c-4483-a68c-6901a9bc1b7a
   name: WesternCantasValley
@@ -5997,6 +5997,498 @@ markers:
   subtype: hiddenCube
   x: 4543.0
   y: 4901.0
+- category: collection
+  id: 3ae4f440-73e7-4db3-a2f1-8c56e4734fcc
+  name: ''
+  subtype: hiddenCube
+  x: 3807.0
+  y: 4629.0
+- category: collection
+  id: 8fe7d32f-310e-4572-9b3e-5ef2b8352c67
+  name: ''
+  subtype: hiddenCube
+  x: 4142.0
+  y: 3483.0
+- category: collection
+  id: 06b0d5e5-6bc8-472e-9648-7da6d82ae1fe
+  name: ''
+  subtype: hiddenCube
+  x: 4814.0
+  y: 4263.0
+- category: collection
+  id: ea3c2b93-2ec8-44cd-b1df-335e18cab78c
+  name: ''
+  subtype: hiddenCube
+  x: 3980.0
+  y: 3116.0
+- category: collection
+  id: 696373e3-8ab2-4fb7-b2e7-0119d2b290ce
+  name: ''
+  subtype: hiddenCube
+  x: 3014.0
+  y: 4388.0
+- category: collection
+  id: b72030ff-6a3b-4401-a407-c3951519a695
+  name: ''
+  subtype: hiddenCube
+  x: 3769.0
+  y: 3968.0
+- category: location
+  id: 19cca3e3-66bc-4a1a-83a2-d20a2c46e3ec
+  name: RuinsoftheAncientCityofRoah
+  subtype: seal
+  x: 5213.0
+  y: 6025.0
+- category: location
+  id: 6d75ac6b-94fb-48cc-89c3-6e942f50f26f
+  name: OdyliumMarauder
+  subtype: seal
+  x: 5829.0
+  y: 3229.0
+- category: location
+  id: 63c2f299-8494-4ea0-9dd4-ce00ef4758c4
+  name: LiraryofPatience
+  subtype: seal
+  x: 5941.0
+  y: 4899.0
+- category: location
+  id: ac40b9be-449e-45b0-acbb-501a4dba5395
+  name: TaygaBreedingGround
+  subtype: seal
+  x: 4950.0
+  y: 2622.0
+- category: location
+  id: 9dc655c4-5ef4-4b14-8c87-1f8817e7d5c1
+  name: WarriorsRest
+  subtype: seal
+  x: 6074.0
+  y: 2454.0
+- category: location
+  id: d92e2e64-7267-495c-bfc1-786ef4aad326
+  name: LagtaFafniteStorage
+  subtype: seal
+  x: 4047.0
+  y: 2701.0
+- category: location
+  id: 83df8e84-edbb-4d3b-bde9-1b57abb3167e
+  name: AsceticsCave
+  subtype: seal
+  x: 5422.0
+  y: 2175.0
+- category: location
+  id: 0f48875a-473e-4c5f-9c0e-66cd51f5d9e1
+  name: DestructionArchonsArmory
+  subtype: seal
+  x: 5991.0
+  y: 2869.0
+- category: location
+  id: 32471c81-320e-445c-ac73-73cd1e35fc04
+  name: ShulakCave
+  subtype: seal
+  x: 4856.0
+  y: 3390.0
+- category: location
+  id: 0b6e60db-0f46-426d-954c-afee8edec87f
+  name: PiratesTreasureStorage
+  subtype: seal
+  x: 5614.0
+  y: 3150.0
+- category: location
+  id: 37662021-ae0d-4088-b0d8-3190770780f8
+  name: DenofExiles
+  subtype: seal
+  x: 5308.0
+  y: 2629.0
+- category: location
+  id: 0eaf3c15-abc8-42db-9e3b-61986bf5b952
+  name: RockCave
+  subtype: seal
+  x: 6156.0
+  y: 3280.0
+- category: location
+  id: 6d3cc320-fdb8-4776-b493-8ddba392c6b1
+  name: LonelyRockChasm
+  subtype: seal
+  x: 5398.0
+  y: 3214.0
+- category: location
+  id: 5aa39f84-6c75-4528-933b-42b3f5e1071d
+  name: EmptyCave
+  subtype: seal
+  x: 5104.0
+  y: 2985.0
+- category: location
+  id: a1ed6da5-5fa8-414e-887f-0ee675e3468f
+  name: SpiderCave
+  subtype: seal
+  x: 5676.0
+  y: 3631.0
+- category: location
+  id: f0cbdb84-55ad-467f-aeb2-79629fafb37c
+  name: FanaticsDen
+  subtype: seal
+  x: 2306.0
+  y: 3936.0
+- category: location
+  id: 1c98afc9-8135-4948-8059-f87080e33c47
+  name: PlaceofRest
+  subtype: seal
+  x: 5323.0
+  y: 2829.0
+- category: location
+  id: 20c3238c-049e-4f91-b8f2-08454bfe88a5
+  name: DratonaAssemblyArea
+  subtype: seal
+  x: 5401.0
+  y: 5021.0
+- category: location
+  id: 81f48f29-f4ae-457a-bbfc-3be7879733fc
+  name: SkurvLaborerDen
+  subtype: seal
+  x: 4947.0
+  y: 5939.0
+- category: location
+  id: 01655065-e5c2-4f4c-9075-50133d767715
+  name: RiftFissure
+  subtype: seal
+  x: 5326.0
+  y: 5224.0
+- category: location
+  id: bb15a1e5-fd89-4f80-b239-a7184cbc444a
+  name: TwistedPit
+  subtype: seal
+  x: 4730.0
+  y: 5847.0
+- category: location
+  id: bef62788-2a79-40b3-b682-013ca02049b6
+  name: LamnahBase
+  subtype: seal
+  x: 4166.0
+  y: 4688.0
+- category: location
+  id: 90cf4154-f607-4a8d-8fd9-a243d3d6a14a
+  name: DestroyedScriptorium
+  subtype: seal
+  x: 4914.0
+  y: 4991.0
+- category: location
+  id: 45af13af-66c2-4955-96b6-df0c5c5c5c98
+  name: LibraryofWisdom
+  subtype: seal
+  x: 5553.0
+  y: 4594.0
+- category: location
+  id: e39415f6-4495-4c3c-b185-c4279f74dfeb
+  name: FungieHabitat
+  subtype: seal
+  x: 5884.0
+  y: 3818.0
+- category: location
+  id: 8509f700-07ae-4714-bbfa-892fbb311cf7
+  name: HighPriestsRuins
+  subtype: seal
+  x: 4396.0
+  y: 5535.0
+- category: location
+  id: 6f42c20c-2206-46c9-9b64-d56300542aee
+  name: DranaDepository
+  subtype: seal
+  x: 4760.0
+  y: 5469.0
+- category: location
+  id: 16eca692-a9d2-4a80-bf7b-de279d0185f4
+  name: VictimsCave
+  subtype: seal
+  x: 3584.0
+  y: 3781.0
+- category: location
+  id: fac36d5d-bac6-4cc7-8668-5ac07baeeae5
+  name: SmugglersCave
+  subtype: seal
+  x: 3125.0
+  y: 4628.0
+- category: location
+  id: 67babb1c-ce8a-4e1d-bdd6-0889ca550358
+  name: OssuaryoftheNoble
+  subtype: seal
+  x: 2397.0
+  y: 5227.0
+- category: location
+  id: e5f156d7-8d44-4ca4-89fe-41582f5de08e
+  name: HowlingDen
+  subtype: seal
+  x: 3903.0
+  y: 3587.0
+- category: location
+  id: 0f8d88ff-b118-4709-a01a-d53b3e8cbbe7
+  name: BlueDragonsTrap
+  subtype: seal
+  x: 2586.0
+  y: 4153.0
+- category: location
+  id: f76c5a4f-dc11-4e4e-8714-ba6f28627def
+  name: WatchersTemporaryOutpost
+  subtype: seal
+  x: 2918.0
+  y: 4604.0
+- category: location
+  id: 57f94672-ffb8-4521-94b2-ce4cc33c123e
+  name: PrisonofOblivion
+  subtype: seal
+  x: 3315.0
+  y: 3662.0
+- category: location
+  id: 264a5f45-7b94-4611-9f6b-c4ef45f70f93
+  name: FafniteStorageRoom
+  subtype: seal
+  x: 2528.0
+  y: 4461.0
+- category: location
+  id: 766d8794-ac91-4fad-ac96-1cf4ac39c9c4
+  name: AbandonedArchonJail
+  subtype: seal
+  x: 3310.0
+  y: 3956.0
+- category: location
+  id: 1ef37752-ac14-42e7-b5b6-dca8edc5db73
+  name: TreasureHunterResidence
+  subtype: seal
+  x: 3409.0
+  y: 5066.0
+- category: location
+  id: 41649051-40ee-4aed-982d-0cc5b3ce1710
+  name: PosisonousPlantHabitat
+  subtype: seal
+  x: 2698.0
+  y: 5150.0
+- category: location
+  id: 767e29a0-ba84-4a9c-9f79-214aa4d66f4e
+  name: LostRuins
+  subtype: seal
+  x: 2510.0
+  y: 5428.0
+- category: location
+  id: ae9b0765-946f-41cf-848d-a812edee1b13
+  name: DuskPit
+  subtype: seal
+  x: 2817.0
+  y: 4877.0
+- category: location
+  id: cf97e265-54db-4c69-9477-d0a3be74a014
+  name: AbandonedOnesGrave
+  subtype: seal
+  x: 2374.0
+  y: 4871.0
+- category: location
+  id: e1e6e022-f3db-46da-94b3-ae51baff0459
+  name: TrickstersDen
+  subtype: seal
+  x: 3436.0
+  y: 4784.0
+- category: location
+  id: f5e49159-0681-42cc-89f9-a6595a636520
+  name: AbandonedMemorialRoom
+  subtype: seal
+  x: 3993.0
+  y: 4393.0
+- category: location
+  id: 8052195c-64eb-49d4-83c2-3691f76711a5
+  name: LegionBaseRuins
+  subtype: occupation
+  x: 6052.0
+  y: 5234.0
+- category: location
+  id: 796350c5-2c11-4366-9b11-9e8576f9b530
+  name: GranachsHideout
+  subtype: occupation
+  x: 6052.0
+  y: 3757.0
+- category: location
+  id: 379c31dd-e826-4fc2-8657-d6b1d2e31ba7
+  name: DetlefThievesCamp
+  subtype: occupation
+  x: 5158.0
+  y: 3042.0
+- category: location
+  id: f6f6c249-2220-42d3-a0a6-340c3d415376
+  name: BladesTemporaryOutpost
+  subtype: occupation
+  x: 3178.0
+  y: 3804.0
+- category: location
+  id: 63b411bf-2c8c-4b15-83e3-b3d34d800f6f
+  name: CorruptedForesterRuins
+  subtype: occupation
+  x: 4091.0
+  y: 3886.0
+- category: location
+  id: d100b54c-0f3e-4fe0-bea7-295825698022
+  name: RubekThievesOccupiedTerritory
+  subtype: occupation
+  x: 3850.0
+  y: 5146.0
+- category: location
+  id: 53dfa30d-dbc4-454a-8bed-cfb497721d4c
+  name: AndshaForwardBase
+  subtype: occupation
+  x: 5829.0
+  y: 2538.0
+- category: location
+  id: 16a9eb28-fa4e-43b6-939f-c4bf4288d449
+  name: AmurahtaSurveillanceBase
+  subtype: occupation
+  x: 5127.0
+  y: 2349.0
+- category: location
+  id: 2f0fb552-3052-4fe3-ab46-141d52d8e03a
+  name: BarahtaExterminationUnitOutpost
+  subtype: occupation
+  x: 5968.0
+  y: 3097.0
+- category: location
+  id: 6e77c9e8-78ba-4f4b-b2e7-17cc200551ee
+  name: FinalHaven
+  subtype: seal
+  x: 5496.0
+  y: 5465.0
+- category: location
+  id: e0bb040f-c34d-4787-9f03-92b503603080
+  name: ScaleAltar
+  subtype: seal
+  x: 4974.0
+  y: 3219.0
+- category: location
+  id: d56c1955-009e-42cf-8fb5-6c60f9c04d4c
+  name: DarkRootCave
+  subtype: seal
+  x: 4486.0
+  y: 6080.0
+- category: location
+  id: b95c1811-3a35-425f-bdc5-cf5a6fe4508d
+  name: ClosedHideout
+  subtype: seal
+  x: 4138.0
+  y: 4599.0
+- category: location
+  id: 00173707-2d29-4a7b-8bcd-d6370910ae9b
+  name: HomishsCamp
+  subtype: seal
+  x: 2462.0
+  y: 4447.0
+- category: location
+  id: 1de86fc8-5962-4f1d-9165-eac9a436b090
+  name: HiddenVeinCave
+  subtype: seal
+  x: 2735.0
+  y: 5391.0
+- category: location
+  id: c1ef7729-1eb0-4d99-8f09-a3e8eede5265
+  name: BugTunnel
+  subtype: seal
+  x: 5941.0
+  y: 5439.0
+- category: location
+  id: cdf769c1-6aa6-4789-b13c-03ddae36283a
+  name: ValkasNest
+  subtype: seal
+  x: 3842.0
+  y: 4900.0
+- category: location
+  id: 4e7ff20a-e673-4275-9121-da54a11b630c
+  name: DratonaCave
+  subtype: seal
+  x: 3697.0
+  y: 5037.0
+- category: location
+  id: bf98ce25-9739-4244-83af-6ef915925f80
+  name: FlaukeLegionOutpost
+  subtype: occupation
+  x: 5293.0
+  y: 4678.0
+- category: location
+  id: 5767ea56-ea03-46ba-ae4f-3c4983867536
+  name: LoggersRestRuins
+  subtype: occupation
+  x: 3421.0
+  y: 3539.0
+- category: location
+  id: f59093c5-ecca-4683-8053-d13ca8930234
+  name: GraverobberDen
+  subtype: occupation
+  x: 2772.0
+  y: 5175.0
+- category: location
+  id: 21a8cd1e-3078-4535-84c5-c5ca7645bcfd
+  name: WorshipersUndergroundCave
+  subtype: seal
+  x: 4377.0
+  y: 4527.0
+- category: location
+  id: 9fa76ba8-8d37-49a5-a8ba-10568b68228f
+  name: LibraryofForesight
+  subtype: seal
+  x: 3651.0
+  y: 3691.0
+- category: location
+  id: a157c9bf-92ef-41c7-8088-edbf5e5b59eb
+  name: UnstableCave
+  subtype: seal
+  x: 4346.0
+  y: 5110.0
+- category: location
+  id: c8782581-06ff-4ebb-aa1f-f3e0f29e4e99
+  name: AllCuringCave
+  subtype: seal
+  x: 5193.0
+  y: 5469.0
+- category: location
+  id: ac2aee2f-ae1f-4c10-a369-c737ba764422
+  name: KumbahumsCave
+  subtype: seal
+  x: 4809.0
+  y: 2276.0
+- category: location
+  id: 9af2ba1d-fe6d-47d8-b263-a2572d097d9e
+  name: FortunetellersGrave
+  subtype: seal
+  x: 3755.0
+  y: 3825.0
+- category: location
+  id: c633165d-d9ca-4561-84c0-0f1286e1cf9f
+  name: BloodsoakedConfessional
+  subtype: seal
+  x: 4007.0
+  y: 3808.0
+- category: location
+  id: 782ad241-9137-40b0-983c-6d8deb48490b
+  name: OldGraveyard
+  subtype: seal
+  x: 2424.0
+  y: 4906.0
+- category: location
+  id: fbb83a23-bb27-4c1a-9732-17de8097c79f
+  name: PredatorsLair
+  subtype: seal
+  x: 4662.0
+  y: 4651.0
+- category: location
+  id: 05cee236-fe51-44cd-b6c0-220c92e72a59
+  name: LatrimaOutpost
+  subtype: occupation
+  x: 4907.0
+  y: 5681.0
+- category: location
+  id: 4894316b-ee31-44b5-86f2-eecf30923c1d
+  name: ForestMarauderCampsite
+  subtype: occupation
+  x: 4926.0
+  y: 5119.0
+- category: location
+  id: 40bccf80-24ce-4c16-bd9a-b192bb53b486
+  name: SanctumOutskirtsWatch
+  subtype: occupation
+  x: 2413.0
+  y: 4688.0
 - category: collection
   id: ada05e4d-cc3a-42d8-a59b-3fd724680a9e
   name: ''

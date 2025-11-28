@@ -1,24 +1,111 @@
+00173707-2d29-4a7b-8bcd-d6370910ae9b:
+  description: Homish's Camp
+  name: Homish's Camp
+01655065-e5c2-4f4c-9075-50133d767715:
+  description: Rift Fissure
+  name: Rift Fissure
+05cee236-fe51-44cd-b6c0-220c92e72a59:
+  description: Latrima Outpost
+  name: Latrima Outpost
+0b6e60db-0f46-426d-954c-afee8edec87f:
+  description: Pirate's Treasure Storage
+  name: Pirate's Treasure Storage
+0eaf3c15-abc8-42db-9e3b-61986bf5b952:
+  description: Rock Cave
+  name: Rock Cave
+0f48875a-473e-4c5f-9c0e-66cd51f5d9e1:
+  description: Destruction Archons Armory
+  name: Destruction Archons Armory
+0f8d88ff-b118-4709-a01a-d53b3e8cbbe7:
+  description: Blue Dragon's Trap
+  name: Blue Dragon's Trap
 14aa1733-6db0-4a42-9c8c-69592127c4fc:
   description: Forest of Exiles
   name: Forest of Exiles
+16a9eb28-fa4e-43b6-939f-c4bf4288d449:
+  description: Amurahta Surveillance Base
+  name: Amurahta Surveillance Base
+16eca692-a9d2-4a80-bf7b-de279d0185f4:
+  description: Victims' Cave
+  name: Victims' Cave
+19cca3e3-66bc-4a1a-83a2-d20a2c46e3ec:
+  description: Ruins of the Ancient City of Roah
+  name: Ruins of the Ancient City of Roah
+1c98afc9-8135-4948-8059-f87080e33c47:
+  description: Place of Rest
+  name: Place of Rest
+1de86fc8-5962-4f1d-9165-eac9a436b090:
+  description: Hidden Vein Cave
+  name: Hidden Vein Cave
+1ef37752-ac14-42e7-b5b6-dca8edc5db73:
+  description: Treasure Hunter Residence
+  name: Treasure Hunter Residence
+20c3238c-049e-4f91-b8f2-08454bfe88a5:
+  description: Dratona Assembly Area
+  name: Dratona Assembly Area
+21a8cd1e-3078-4535-84c5-c5ca7645bcfd:
+  description: Worshiper's Underground Cave
+  name: Worshiper's Underground Cave
 231f5f1f-0c04-4c32-a551-4a1e11928818:
   description: Aullaeu Funeral Island
   name: Aullaeu Funeral Island
+264a5f45-7b94-4611-9f6b-c4ef45f70f93:
+  description: Fafnite Storage Room
+  name: Fafnite Storage Room
 2d7a1670-fbe7-4831-97e5-791f22ca2136:
   description: Eastern Cantas Valley
   name: Eastern Cantas Valley
+2f0fb552-3052-4fe3-ab46-141d52d8e03a:
+  description: Barahta Extermination Unit Outpost
+  name: Barahta Extermination Unit Outpost
+32471c81-320e-445c-ac73-73cd1e35fc04:
+  description: Shulak Cave
+  name: Shulak Cave
 36c9c2e3-5ee9-4978-abb9-c395526550e1:
   description: Kraka Footpath
   name: Kraka Footpath
+37662021-ae0d-4088-b0d8-3190770780f8:
+  description: Den of Exiles
+  name: Den of Exiles
+379c31dd-e826-4fc2-8657-d6b1d2e31ba7:
+  description: Detlef Thieves Camp
+  name: Detlef Thieves Camp
 3d1d1d49-55f4-4a92-a582-6cd9889d6d31:
   description: Zumion Village
   name: Zumion Village
+40bccf80-24ce-4c16-bd9a-b192bb53b486:
+  description: Sanctum Outskirts Watch
+  name: Sanctum Outskirts Watch
+41649051-40ee-4aed-982d-0cc5b3ce1710:
+  description: Posisonous Plant Habitat
+  name: Posisonous Plant Habitat
+45af13af-66c2-4955-96b6-df0c5c5c5c98:
+  description: Library of Wisdom
+  name: Library of Wisdom
+4894316b-ee31-44b5-86f2-eecf30923c1d:
+  description: Forest Marauder Campsite
+  name: Forest Marauder Campsite
 4aa05d94-2151-40f9-acf6-a085a78a74a8:
   description: Aullaeu Village
   name: Aullaeu Village
+4e7ff20a-e673-4275-9121-da54a11b630c:
+  description: Dratona Cave
+  name: Dratona Cave
+53dfa30d-dbc4-454a-8bed-cfb497721d4c:
+  description: Andsha Forward Base
+  name: Andsha Forward Base
 54360ce8-b784-4554-9b45-deb68744a43f:
   description: Dawn Legion Base
   name: Dawn Legion Base
+5767ea56-ea03-46ba-ae4f-3c4983867536:
+  description: Logger's Rest Ruins
+  name: Logger's Rest Ruins
+57f94672-ffb8-4521-94b2-ce4cc33c123e:
+  description: Prison of Oblivion
+  name: Prison of Oblivion
+5aa39f84-6c75-4528-933b-42b3f5e1071d:
+  description: Empty Cave
+  name: Empty Cave
 5dec21b6-b987-46c7-a575-a047fcaa4b73:
   description: Pilgrim's Ridge
   name: Pilgrim's Ridge
@@ -28,51 +115,192 @@
 60a58a49-9a2e-40a8-bdbd-df9929172cac:
   description: Southern Altamia Highland
   name: Southern Altamia Highland
+63b411bf-2c8c-4b15-83e3-b3d34d800f6f:
+  description: Corrupted Forester Ruins
+  name: Corrupted Forester Ruins
+63c2f299-8494-4ea0-9dd4-ce00ef4758c4:
+  description: Lirary of Patience
+  name: Lirary of Patience
+67babb1c-ce8a-4e1d-bdd6-0889ca550358:
+  description: Ossuary of the Noble
+  name: Ossuary of the Noble
 6b835219-9b2c-4b9e-ab60-c2951674946c:
   description: Scarlet Forest
   name: Scarlet Forest
+6d3cc320-fdb8-4776-b493-8ddba392c6b1:
+  description: Lonely Rock Chasm
+  name: Lonely Rock Chasm
+6d75ac6b-94fb-48cc-89c3-6e942f50f26f:
+  description: Odylium Marauder
+  name: Odylium Marauder
+6e77c9e8-78ba-4f4b-b2e7-17cc200551ee:
+  description: Final Haven
+  name: Final Haven
+6f42c20c-2206-46c9-9b64-d56300542aee:
+  description: Drana Depository
+  name: Drana Depository
+766d8794-ac91-4fad-ac96-1cf4ac39c9c4:
+  description: Abandoned Archon Jail
+  name: Abandoned Archon Jail
+767e29a0-ba84-4a9c-9f79-214aa4d66f4e:
+  description: Lost Ruins
+  name: Lost Ruins
+782ad241-9137-40b0-983c-6d8deb48490b:
+  description: Old Graveyard
+  name: Old Graveyard
 795136a0-4b96-4396-a446-ac6da886bcef:
   description: Eastern Tolbas Forest
   name: Eastern Tolbas Forest
+796350c5-2c11-4366-9b11-9e8576f9b530:
+  description: Granach's Hideout
+  name: Granach's Hideout
 7d1a8486-04e6-410e-935b-bddb8183199f:
   description: Eastern Altamia Highland
   name: Eastern Altamia Highland
+8052195c-64eb-49d4-83c2-3691f76711a5:
+  description: Legion Base Ruins
+  name: Legion Base Ruins
+81f48f29-f4ae-457a-bbfc-3be7879733fc:
+  description: Skurv Laborer Den
+  name: Skurv Laborer Den
+83df8e84-edbb-4d3b-bde9-1b57abb3167e:
+  description: Ascetic's Cave
+  name: Ascetic's Cave
+8509f700-07ae-4714-bbfa-892fbb311cf7:
+  description: High Priest's Ruins
+  name: High Priest's Ruins
 86e5f9d3-a33c-4483-a68c-6901a9bc1b7a:
   description: Western Cantas Valley
   name: Western Cantas Valley
 8bc27f1f-b90b-45b7-a16b-b5a711510f46:
   description: Verteron Fortress Ruins
   name: Verteron Fortress Ruins
+90cf4154-f607-4a8d-8fd9-a243d3d6a14a:
+  description: Destroyed Scriptorium
+  name: Destroyed Scriptorium
 99761429-fe39-46a1-9452-92bdc34433f6:
   description: Ellun River Midstream
   name: Ellun River Midstream
 99e81aa0-1a28-46be-88c6-70e37994a786:
   description: Ellun River Meadow
   name: Ellun River Meadow
+9af2ba1d-fe6d-47d8-b263-a2572d097d9e:
+  description: Fortuneteller's Grave
+  name: Fortuneteller's Grave
+9dc655c4-5ef4-4b14-8c87-1f8817e7d5c1:
+  description: Warrior's Rest
+  name: Warrior's Rest
 9e5b6757-9894-403a-be54-f0fb45f9f600:
   description: Crimson Isle
   name: Crimson Isle
+9fa76ba8-8d37-49a5-a8ba-10568b68228f:
+  description: Library of Foresight
+  name: Library of Foresight
+a157c9bf-92ef-41c7-8088-edbf5e5b59eb:
+  description: Unstable Cave
+  name: Unstable Cave
+a1ed6da5-5fa8-414e-887f-0ee675e3468f:
+  description: Spider Cave
+  name: Spider Cave
 a20f2cda-a83b-489f-a616-1b27846cef4d:
   description: Nahid Brigade Fortress
   name: Nahid Brigade Fortress
 a63da667-749a-425b-a1ee-f6c393b3aa3d:
   description: Western Altamia Highland
   name: Western Altamia Highland
+ac2aee2f-ae1f-4c10-a369-c737ba764422:
+  description: Kumbahum's Cave
+  name: Kumbahum's Cave
+ac40b9be-449e-45b0-acbb-501a4dba5395:
+  description: Tayga Breeding Ground
+  name: Tayga Breeding Ground
 ac40ebf8-c475-43ed-82ce-0a23b024b244:
   description: Southern Tolbas Forest
   name: Southern Tolbas Forest
+ae9b0765-946f-41cf-848d-a812edee1b13:
+  description: Dusk Pit
+  name: Dusk Pit
 b8c9396e-1ea5-42ce-9f20-8e6fd0b4f386:
   description: Northern Tolbas Forest
   name: Northern Tolbas Forest
+b95c1811-3a35-425f-bdc5-cf5a6fe4508d:
+  description: Closed Hideout
+  name: Closed Hideout
+bb15a1e5-fd89-4f80-b239-a7184cbc444a:
+  description: Twisted Pit
+  name: Twisted Pit
+bef62788-2a79-40b3-b682-013ca02049b6:
+  description: Lamnah Base
+  name: Lamnah Base
+bf98ce25-9739-4244-83af-6ef915925f80:
+  description: Flauke Legion Outpost
+  name: Flauke Legion Outpost
+c1ef7729-1eb0-4d99-8f09-a3e8eede5265:
+  description: Bug Tunnel
+  name: Bug Tunnel
+c633165d-d9ca-4561-84c0-0f1286e1cf9f:
+  description: Bloodsoaked Confessional
+  name: Bloodsoaked Confessional
 c785dbdb-3b51-41e0-938f-8f7903d78bea:
   description: Garden of the Illusion God
   name: Garden of the Illusion God
+c8782581-06ff-4ebb-aa1f-f3e0f29e4e99:
+  description: All-Curing Cave
+  name: All-Curing Cave
+cdf769c1-6aa6-4789-b13c-03ddae36283a:
+  description: Valka's Nest
+  name: Valka's Nest
+cf97e265-54db-4c69-9477-d0a3be74a014:
+  description: Abandoned One's Grave
+  name: Abandoned One's Grave
+d100b54c-0f3e-4fe0-bea7-295825698022:
+  description: Rubek Thieves' Occupied Territory
+  name: Rubek Thieves' Occupied Territory
+d56c1955-009e-42cf-8fb5-6c60f9c04d4c:
+  description: Dark Root Cave
+  name: Dark Root Cave
+d92e2e64-7267-495c-bfc1-786ef4aad326:
+  description: Lagta Fafnite Storage
+  name: Lagta Fafnite Storage
+e0bb040f-c34d-4787-9f03-92b503603080:
+  description: Scale Altar
+  name: Scale Altar
+e1e6e022-f3db-46da-94b3-ae51baff0459:
+  description: Trickster's Den
+  name: Trickster's Den
+e39415f6-4495-4c3c-b185-c4279f74dfeb:
+  description: Fungie Habitat
+  name: Fungie Habitat
 e3e8faea-76a4-4ed3-8aa6-a62b4c21c61a:
   description: Altamia Canyon
   name: Altamia Canyon
+e5f156d7-8d44-4ca4-89fe-41582f5de08e:
+  description: Howling Den
+  name: Howling Den
+f0cbdb84-55ad-467f-aeb2-79629fafb37c:
+  description: Fanatics' Den
+  name: Fanatics' Den
 f3cf020e-9330-47b7-a23c-c6fcd9e1b31f:
   description: Ellun River Marsh
   name: Ellun River Marsh
+f59093c5-ecca-4683-8053-d13ca8930234:
+  description: Graverobber Den
+  name: Graverobber Den
+f5e49159-0681-42cc-89f9-a6595a636520:
+  description: Abandoned Memorial Room
+  name: Abandoned Memorial Room
 f6a0a7c3-d6ba-472b-a8da-be3ab2644376:
   description: Drana Plantation
   name: Drana Plantation
+f6f6c249-2220-42d3-a0a6-340c3d415376:
+  description: Blades Temporary Outpost
+  name: Blades Temporary Outpost
+f76c5a4f-dc11-4e4e-8714-ba6f28627def:
+  description: Watcher's Temporary Outpost
+  name: Watcher's Temporary Outpost
+fac36d5d-bac6-4cc7-8668-5ac07baeeae5:
+  description: Smuggler's Cave
+  name: Smuggler's Cave
+fbb83a23-bb27-4c1a-9732-17de8097c79f:
+  description: Predator's Lair
+  name: Predator's Lair

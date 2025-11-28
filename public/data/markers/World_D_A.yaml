@@ -823,6 +823,8 @@ markers:
   y: 5549.0
 - category: collection
   id: 22896723-375c-4878-8b7e-7c918e77061a
+  images:
+  - markers_images/nWEn0JbNm8NW9e87FE1tFA
   name: ''
   region: DredgionCrashSite
   subtype: monolithMaterial
@@ -929,6 +931,8 @@ markers:
   y: 5000.0
 - category: collection
   id: 520ce937-c1cb-4125-bd84-bbf2039f0a68
+  images:
+  - markers_images/lLGDaaHBchH6C0YA4TjEzQ
   name: ''
   region: DredgionCrashSite
   subtype: monolithMaterial
@@ -1521,6 +1525,8 @@ markers:
   y: 1476.0
 - category: collection
   id: 02a33a51-6096-4937-9891-edbf8320cf97
+  images:
+  - markers_images/P1zVvKeP0hXa2iA3qEjt6Q
   name: ''
   region: ImmortalIsle
   subtype: monolithMaterial
@@ -1546,6 +1552,8 @@ markers:
   y: 1549.0
 - category: collection
   id: 60bb6800-5c8d-4b03-9c47-e1d0a48efe96
+  images:
+  - markers_images/UweWk-eUIegKzvkbS-S6KA
   name: ''
   region: ImmortalIsle
   subtype: monolithMaterial
@@ -1652,6 +1660,8 @@ markers:
   y: 3413.0
 - category: collection
   id: d68db4a8-f3f5-4a08-8c95-4309606c19d5
+  images:
+  - markers_images/eqGhIah7o2rfQLogjTGh9w
   name: ''
   region: IdunsLake
   subtype: monolithMaterial
@@ -1659,6 +1669,8 @@ markers:
   y: 3303.0
 - category: collection
   id: 8c31d621-4dfc-4ea4-afef-4e7789aa5583
+  images:
+  - markers_images/jVPgoJFRWDGuDloHJRBMgg
   name: ''
   region: IdunsLake
   subtype: monolithMaterial
@@ -1837,6 +1849,8 @@ markers:
   y: 2600.0
 - category: collection
   id: 2d214fca-9e8b-4917-ac7a-34aa1c2cf815
+  images:
+  - markers_images/Kl76SqFnJrQyubnQDg6LNA
   name: ''
   region: BlackClawVillage
   subtype: monolithMaterial
@@ -2150,6 +2164,8 @@ markers:
   y: 2364.0
 - category: collection
   id: f745904a-c2ec-4461-8fe8-5105f6e6b829
+  images:
+  - markers_images/-4fdg0Xjohc7hRoog_IVDw
   name: ''
   region: ImpetusiumSquare
   subtype: monolithMaterial
@@ -2669,6 +2685,8 @@ markers:
   y: 2117.0
 - category: collection
   id: c58a463e-9e57-4549-8675-36d6311153ca
+  images:
+  - markers_images/ldev2FiPldrgj8vKY9chWg
   name: ''
   region: ImpetusiumSquare
   subtype: monolithMaterial
@@ -3300,6 +3318,8 @@ markers:
   y: 6079.0
 - category: collection
   id: 46131658-7ff5-470a-8adc-521e7f0527e2
+  images:
+  - markers_images/GVkw5b1-y9ZViqCB9IuPQQ
   name: ''
   region: SpiritIsle
   subtype: monolithMaterial
@@ -3367,6 +3387,8 @@ markers:
   y: 6125.0
 - category: collection
   id: 0575146c-b178-4518-97ad-b3cb0f91e3b8
+  images:
+  - markers_images/usWfIRvz8AtJx6IVK5bJVg
   name: ''
   region: SpiritIsle
   subtype: monolithMaterial
@@ -4635,6 +4657,8 @@ markers:
   y: 5253.0
 - category: collection
   id: 43428bac-0646-420a-8942-054563a3f6ab
+  images:
+  - markers_images/yFu0RR9xWA1uJbsk440a5g
   name: ''
   region: SanctumOutpost
   subtype: monolithMaterial
@@ -4777,6 +4801,8 @@ markers:
   y: 2703.0
 - category: collection
   id: 0548dd29-bc54-4b43-83bf-dcd213dcd42c
+  images:
+  - markers_images/eUPtoi3uKfGZEMQiwo-4Jw
   name: ''
   region: BlackClawVillage
   subtype: monolithMaterial
@@ -4784,6 +4810,8 @@ markers:
   y: 2604.0
 - category: collection
   id: 33955f19-2b57-47e7-b10d-3c5b2bc1f383
+  images:
+  - markers_images/Il7VuPrE5FrPO1gDBihf2g
   name: ''
   region: BlackClawVillage
   subtype: monolithMaterial
@@ -5079,6 +5107,8 @@ markers:
   y: 1951.0
 - category: collection
   id: 030cfef8-8bc2-4f5d-aa8e-dc9f4774ec56
+  images:
+  - markers_images/bJ4dTneFHmrWpQ2Ye0zEjA
   name: ''
   region: ImpetusiumSquare
   subtype: monolithMaterial
@@ -5095,6 +5125,8 @@ markers:
   y: 2196.0
 - category: collection
   id: 9343a064-1a42-4c20-b71f-e6d723cc8639
+  images:
+  - markers_images/PVswjut0QDoIw3QJjKDA2Q
   name: ''
   region: WesternGribadeHighland
   subtype: monolithMaterial
@@ -5210,6 +5242,8 @@ markers:
   y: 5007.0
 - category: collection
   id: 5f667f88-124f-47fa-a0fa-817044df829b
+  images:
+  - markers_images/xluZWid5CFAXvqv0VEcHFw
   name: ''
   region: LagtaFortress
   subtype: monolithMaterial
@@ -5226,6 +5260,8 @@ markers:
   y: 2604.0
 - category: collection
   id: 1aa237b2-d7f9-4fea-9031-39e9e6c8abc3
+  images:
+  - markers_images/BxjEHUixw9CuPcA-iURqoA
   name: ''
   region: BasfeltWaterfall
   subtype: monolithMaterial
@@ -5278,6 +5314,8 @@ markers:
   y: 3518.0
 - category: collection
   id: 5c58ef94-8852-4581-828b-ee557ebfc17e
+  images:
+  - markers_images/9cq4bN5A9BqpgrWX0I9xzg
   name: ''
   region: IdunsLake
   subtype: monolithMaterial
@@ -5373,7 +5411,8 @@ markers:
 - category: collection
   id: e40f5d09-792a-48eb-8934-3892c34cbdb7
   images:
-  - markers_images/m5Yb2yjqKgZN3E68t4NPqw
+  - markers_images/9yZs2PI3F8J6C3ksQaTnBA
+  - markers_images/9yZs2PI3F8J6C3ksQaTnBA
   name: ''
   region: ImpetusiumSquare
   subtype: monolithMaterial
@@ -5948,3 +5987,471 @@ markers:
   subtype: battlefield
   x: 2894.0
   y: 4351.0
+- category: collection
+  id: 1e3e5e7e-0432-438a-9437-0ee019a53fd8
+  name: ''
+  subtype: hiddenCube
+  x: 3058.0
+  y: 4159.0
+- category: collection
+  id: 2fd5968a-f902-4608-875e-28aaee8b1e40
+  name: ''
+  subtype: hiddenCube
+  x: 3058.0
+  y: 4159.0
+- category: location
+  id: 77be6cff-2ca5-4afa-80e3-b842a1f1c39f
+  name: ChillyHideout
+  subtype: seal
+  x: 3003.0
+  y: 4516.0
+- category: location
+  id: d8f65180-670c-441a-b9d0-21bf2fba798a
+  name: MysteriousMushroomCave
+  subtype: seal
+  x: 3414.0
+  y: 4991.0
+- category: location
+  id: 4017cd37-61a1-4bdc-b118-71934dc12a06
+  name: CaveoftheDesperate
+  subtype: seal
+  x: 3494.0
+  y: 5092.0
+- category: location
+  id: ae1706dc-61e8-4b87-b8bf-e620664b9321
+  name: CorruptedElementalistsResidence
+  subtype: seal
+  x: 3712.0
+  y: 4891.0
+- category: location
+  id: fc3c4d99-a08e-4bd2-a545-a54491bccba2
+  name: RuinsoftheAncientCityofRoah
+  subtype: seal
+  x: 2787.0
+  y: 3413.0
+- category: location
+  id: e6feb19b-06c2-4559-bdd7-8a5980d409d9
+  name: CollapsedFortressBasement
+  subtype: seal
+  x: 4047.0
+  y: 4103.0
+- category: location
+  id: d631b9e4-2384-4d4e-936e-4dbfe4c156ef
+  name: ForestLibrary
+  subtype: seal
+  x: 3744.0
+  y: 3617.0
+- category: location
+  id: 5aaffec2-94e4-47d9-8f66-254bfd2965ea
+  name: BibliophilesGrave
+  subtype: seal
+  x: 3754.0
+  y: 4318.0
+- category: location
+  id: fc632bea-2eda-4173-a089-d8cdc576b74b
+  name: PlantationStorage
+  subtype: seal
+  x: 5711.0
+  y: 4908.0
+- category: location
+  id: 6aa59109-4b66-465e-9537-641af691d26f
+  name: KonutinsCave
+  subtype: seal
+  x: 3287.0
+  y: 3083.0
+- category: location
+  id: 7d065568-bd58-4b0b-9a41-d8b40dba2a1b
+  name: LaborersTrainingSchool
+  subtype: seal
+  x: 5143.0
+  y: 5033.0
+- category: location
+  id: 0d4f0ae1-114c-4c92-b9c3-7d6fdb1c5227
+  name: HiddenRuinsAltar
+  subtype: seal
+  x: 3908.0
+  y: 3878.0
+- category: location
+  id: 30507a7c-f0d3-4f69-84b5-144964c1b3bd
+  name: BalaurOutpost
+  subtype: seal
+  x: 4785.0
+  y: 3284.0
+- category: location
+  id: 858d423c-6c21-4e87-b7b8-f63f1df68115
+  name: BalaurScoutsCampsite
+  subtype: seal
+  x: 5611.0
+  y: 4793.0
+- category: location
+  id: a81b8a87-39de-4013-8ce8-22b635a48cda
+  name: DratonaOutpost
+  subtype: seal
+  x: 5308.0
+  y: 5136.0
+- category: location
+  id: 5bd72732-8edc-4a95-b6d4-6d3c71a88328
+  name: KrakasAltar
+  subtype: seal
+  x: 4918.0
+  y: 4223.0
+- category: location
+  id: 0127c0d8-beb5-4363-be95-b2d5fd9e51a4
+  name: AnguishHideout
+  subtype: seal
+  x: 3204.0
+  y: 4132.0
+- category: location
+  id: 17bdf14a-789a-49b6-b577-b769635fb3f6
+  name: FortressGrave
+  subtype: seal
+  x: 4217.0
+  y: 4197.0
+- category: location
+  id: f1b9c5d5-4364-4f08-bfc9-fe3d42970d7d
+  name: WildKuruHabitat
+  subtype: seal
+  x: 3770.0
+  y: 3162.0
+- category: location
+  id: 5eec347f-2093-4749-bbc4-f0407519d873
+  name: KlawDen
+  subtype: seal
+  x: 4174.0
+  y: 2603.0
+- category: location
+  id: e3f9cca9-3ac6-4042-8d29-356485ea7191
+  name: RenegadeBase
+  subtype: seal
+  x: 5527.0
+  y: 3128.0
+- category: location
+  id: ac10f9d7-6d20-4a45-b7b8-58b86a0e9fd6
+  name: FissureCave
+  subtype: seal
+  x: 3902.0
+  y: 3525.0
+- category: location
+  id: 10094014-2a13-49df-af64-17560b58d15a
+  name: ScribesRoom
+  subtype: seal
+  x: 5124.0
+  y: 3638.0
+- category: location
+  id: f071662c-b2d1-4466-8882-3c383e141774
+  name: FortressJail
+  subtype: seal
+  x: 4106.0
+  y: 3953.0
+- category: location
+  id: c526aefd-33fb-4811-9a80-02a62f763af2
+  name: DeepUndergroundCave
+  subtype: seal
+  x: 3695.0
+  y: 4025.0
+- category: location
+  id: 89a9142d-9fea-4e02-8aa4-ce2064bd2d34
+  name: LootedPilgrimsRest
+  subtype: seal
+  x: 4621.0
+  y: 2450.0
+- category: location
+  id: 6e3e0412-cf78-4326-bd1f-928e9a96d62d
+  name: HerbCave
+  subtype: seal
+  x: 3113.0
+  y: 3592.0
+- category: location
+  id: 7eb05af8-728a-4105-ad57-a972558d1792
+  name: DeadlyPoisonDen
+  subtype: seal
+  x: 3727.0
+  y: 3338.0
+- category: location
+  id: 5a4e79c8-a189-4032-a37f-8b0a3963fad7
+  name: CaveStorage
+  subtype: seal
+  x: 3897.0
+  y: 2840.0
+- category: location
+  id: 672bcf8f-cbd9-4dd1-ac74-3b21b9f01f8e
+  name: CanyonLibrary
+  subtype: seal
+  x: 5065.0
+  y: 3418.0
+- category: location
+  id: 2450b7e5-b2c2-4f17-b623-0881c611b3dd
+  name: KrallBarracks
+  subtype: seal
+  x: 4958.0
+  y: 5234.0
+- category: location
+  id: 6d18f163-31b3-44cd-b696-208983efcb7c
+  name: SolitaryRockTomb
+  subtype: seal
+  x: 4037.0
+  y: 3579.0
+- category: location
+  id: c15c2582-5917-4db5-bd67-8a75862b9f71
+  name: AbandonedOdyliumCave
+  subtype: seal
+  x: 3059.0
+  y: 3517.0
+- category: location
+  id: 84976bae-73ff-4084-8716-2fe5e4972b71
+  name: LootedRepository
+  subtype: seal
+  x: 3938.0
+  y: 4361.0
+- category: location
+  id: 0e86944c-f1f5-49c6-89ee-2784ef3d8633
+  name: KaratsNest
+  subtype: seal
+  x: 4233.0
+  y: 4065.0
+- category: location
+  id: 8a00f351-c409-44be-9931-72b029224a59
+  name: DistortedCave
+  subtype: seal
+  x: 4335.0
+  y: 4249.0
+- category: location
+  id: de62646d-3b6a-4922-a29c-67a552dac64b
+  name: HiddenValley
+  subtype: seal
+  x: 3188.0
+  y: 3264.0
+- category: location
+  id: d8a42476-f348-4891-9e6a-dedb7797a454
+  name: IllusionaryRuins
+  subtype: seal
+  x: 5017.0
+  y: 2341.0
+- category: location
+  id: 9cb7d9c5-219e-41e7-a9a1-0ea08d766383
+  name: FilthPit
+  subtype: seal
+  x: 4316.0
+  y: 4963.0
+- category: location
+  id: 4a1017a5-58a0-4f6a-9301-b7b69b53de48
+  name: CaveoftheDefeated
+  subtype: seal
+  x: 5462.0
+  y: 5002.0
+- category: location
+  id: 4ad8463f-120e-4755-8a18-5f941546c506
+  name: PoachersDen
+  subtype: seal
+  x: 3633.0
+  y: 4570.0
+- category: location
+  id: da6dfb18-6047-4783-8243-38b74127a76d
+  name: MaktashanOutpost
+  subtype: occupation
+  x: 4714.0
+  y: 5130.0
+- category: location
+  id: a59e0110-958f-41f5-b484-20e5edf9fb0e
+  name: SabgaBalaurCampsite
+  subtype: occupation
+  x: 5558.0
+  y: 4610.0
+- category: location
+  id: 6702c610-eb8a-474a-94c2-f9581a4fb366
+  name: CohtaOutpost
+  subtype: occupation
+  x: 4035.0
+  y: 4415.0
+- category: location
+  id: d376657b-5cea-40d2-a740-493c51bae4d2
+  name: PlateauHillBase
+  subtype: occupation
+  x: 5289.0
+  y: 3318.0
+- category: location
+  id: e190ad9e-036f-4413-b26c-b0086036c254
+  name: RenegadeHideout
+  subtype: occupation
+  x: 4516.0
+  y: 2770.0
+- category: location
+  id: 5cb10d52-3845-4b8c-acbb-a01e3fc74306
+  name: DeserterCantonments
+  subtype: occupation
+  x: 4124.0
+  y: 3749.0
+- category: location
+  id: 3f605a5b-6f20-4124-8423-1fe264215e27
+  name: CanyonThievesDen
+  subtype: occupation
+  x: 4961.0
+  y: 3541.0
+- category: location
+  id: 7d943bd1-0659-4c97-95ee-73a2f1709533
+  name: GargosThievesCampsite
+  subtype: occupation
+  x: 4184.0
+  y: 3416.0
+- category: location
+  id: f4be61df-662b-4785-b3ac-37bb2f5ae4e8
+  name: UgarosThievesCampsite
+  subtype: occupation
+  x: 3569.0
+  y: 4838.0
+- category: location
+  id: 24f0adf1-15dc-4ccf-b053-64874909c890
+  name: AltarofHope
+  subtype: seal
+  x: 5508.0
+  y: 3789.0
+- category: location
+  id: 6da90bca-4f53-4143-bd0f-a1b12174fa90
+  name: AullaeuOratory
+  subtype: seal
+  x: 3949.0
+  y: 3077.0
+- category: location
+  id: 1ffb7fc5-51d7-40e3-8b0e-553e8ebe2fdb
+  name: RiftCave
+  subtype: seal
+  x: 4954.0
+  y: 2995.0
+- category: location
+  id: b3784b1d-1122-454e-810f-56b7a15382cb
+  name: RedDragonAltar
+  subtype: seal
+  x: 3599.0
+  y: 2599.0
+- category: location
+  id: fe5cf52b-3174-4ca4-9b1b-5fdbb823a4d2
+  name: TargothsCave
+  subtype: seal
+  x: 5409.0
+  y: 3983.0
+- category: location
+  id: 39b84903-7b65-4aba-9e7e-5349017055cd
+  name: GraveoftheWrathfulDead
+  subtype: seal
+  x: 4708.0
+  y: 5056.0
+- category: location
+  id: c55ca515-a5aa-472b-b1c9-1dfe9fdedcb1
+  name: KidnappersHold
+  subtype: seal
+  x: 5837.0
+  y: 4399.0
+- category: location
+  id: e13c5f3b-d60c-4cea-b88e-6ebd92a8b159
+  name: KiusResidence
+  subtype: seal
+  x: 4351.0
+  y: 3348.0
+- category: location
+  id: 232b724d-1553-437e-85bd-c0e83e92807a
+  name: DehinonsHideout
+  subtype: seal
+  x: 4755.0
+  y: 4817.0
+- category: location
+  id: 6b56d497-bacc-4a98-8540-384c1b1044ef
+  name: SpiritFlowerCave
+  subtype: seal
+  x: 3642.0
+  y: 4485.0
+- category: location
+  id: 48184aeb-3db8-4d0a-be4d-775c482638e2
+  name: MantaschPatrolBase
+  subtype: occupation
+  x: 4825.0
+  y: 4414.0
+- category: location
+  id: 31cea25c-b6d6-4ceb-9b41-2f3d085f6562
+  name: RomlonsHideout
+  subtype: occupation
+  x: 4618.0
+  y: 4621.0
+- category: location
+  id: 6b0a2603-06a8-42d9-8628-cb73d37fafc6
+  name: MirosPost
+  subtype: occupation
+  x: 3384.0
+  y: 4115.0
+- category: location
+  id: 987e35c2-0b64-4151-baa8-299cdad4acda
+  name: ExperimentalCamp
+  subtype: seal
+  x: 4517.0
+  y: 4341.0
+- category: location
+  id: b7b81b94-3e1f-48e9-8775-46dd0bc0f5cb
+  name: PrisonofExiles
+  subtype: seal
+  x: 3412.0
+  y: 2802.0
+- category: location
+  id: 6bd0c832-6532-4e16-af85-01c1b49c07c1
+  name: DeepandDarkPit
+  subtype: seal
+  x: 4802.0
+  y: 3138.0
+- category: location
+  id: e69580c2-8528-4f7c-88ae-69bf1d1db9ef
+  name: WildBirutaHabitat
+  subtype: seal
+  x: 3516.0
+  y: 3218.0
+- category: location
+  id: ae703334-6fc4-48ab-9cf6-bf5ece4e7d5b
+  name: BrokenDanuarMysticarium
+  subtype: seal
+  x: 4392.0
+  y: 3863.0
+- category: location
+  id: ea22d45e-165d-4e75-b045-7f3f1e6bc195
+  name: AkiloThievesDen
+  subtype: seal
+  x: 3454.0
+  y: 3860.0
+- category: location
+  id: 426a8252-9840-48cb-b80f-97e532e47f8d
+  name: MarshLibrary
+  subtype: seal
+  x: 4280.0
+  y: 5200.0
+- category: location
+  id: 6ff91111-765f-48cd-847a-7046489edef9
+  name: LupylliniHabitat
+  subtype: seal
+  x: 3364.0
+  y: 4414.0
+- category: location
+  id: aa608f7b-7eb8-49f0-80ca-9a1021a59614
+  name: GuardiansArmory
+  subtype: seal
+  x: 4759.0
+  y: 3463.0
+- category: location
+  id: db3e187a-cc51-48d2-8654-14600fc29e10
+  name: CursedHideout
+  subtype: seal
+  x: 4290.0
+  y: 4852.0
+- category: location
+  id: f3043a51-5cb0-40be-b962-72d62e5c019e
+  name: SehnaOutpost
+  subtype: occupation
+  x: 5068.0
+  y: 5271.0
+- category: location
+  id: f31f060b-ba04-4da3-a125-a9a81b22af57
+  name: ForestShadeExecutionSite
+  subtype: occupation
+  x: 4221.0
+  y: 2375.0
+- category: location
+  id: 7147544b-f73e-4e65-8772-e220350f90ae
+  name: PoachersBase
+  subtype: occupation
+  x: 3107.0
+  y: 3357.0
