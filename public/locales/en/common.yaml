@@ -15,6 +15,12 @@ ui:
   loading: "Loading..."
   search: "Search"
 
+theme:
+  auto: "Auto (Change with Map)"
+  light: "Day Mode (Elyos)"
+  dark: "Night Mode (Asmodian)"
+  abyss: "Dawn Mode (Abyss)"
+
 menu:
   home: "Home"
   settings: "Settings"

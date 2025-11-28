@@ -128,7 +128,6 @@ const GameMarkerInner: React.FC<Props> = ({
     `types:subtypes.${sub?.name}.name`,
   );
   const regionLabel = marker.region ? t(`${regionKeyPrefix}.name`) : "";
-  console.log(marker.region)
   const iconScale = sub?.iconScale || 1.0;
   const canComplete = !!sub?.canComplete;
   const hideTooltip = !!sub?.hideTooltip;

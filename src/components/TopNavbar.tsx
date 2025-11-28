@@ -7,18 +7,19 @@ import {
   NavbarContent,
 } from "@heroui/react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faMoon, faSun, faCloud, faDatabase} from "@fortawesome/free-solid-svg-icons";
+import {faCloud, faDatabase} from "@fortawesome/free-solid-svg-icons";
 import {useTranslation} from "react-i18next";
 
 import {useTheme} from "@/context/ThemeContext";
 import LanguageSwitcher from "./LanguageSwitcher";
 import {useDataMode} from "../hooks/useDataMode.tsx";
 import {getStaticUrl} from "../utils/url.ts";
+import ThemeDropdown from "@/components/ThemeDropdown.tsx";
 
 
 const TopNavbar: React.FC = () => {
   const {t} = useTranslation(); // we use fully-qualified keys like common:siteTitle
-  const {theme, toggleTheme} = useTheme();
+  const {theme} = useTheme();
   const isDark = theme === "dark";
   const {dataMode, toggleDataMode} = useDataMode();
   const isStatic = dataMode === "static";
@@ -26,7 +27,7 @@ const TopNavbar: React.FC = () => {
   return (
     <Navbar
       maxWidth="full"
-      className="border-b border-default-200 h-[60px] bg-topnavbar"
+      className="border-0 h-[60px] bg-topnavbar"
       classNames={{
         wrapper: "px-5"
       }}
@@ -50,7 +51,8 @@ const TopNavbar: React.FC = () => {
       >
         {import.meta.env.VITE_REGION === "CHINA" && (
 
-          <a href="https://m.flashkrypton.com/?ch=10004&gameConfigId=286&autoShow=0#/community" target="_blank" datatype="advertisement">
+          <a href="https://m.flashkrypton.com/?ch=10004&gameConfigId=286&autoShow=0#/community" target="_blank"
+             datatype="advertisement">
             <img
               src={getStaticUrl("images/shanke.webp")}
               alt="Banner"
@@ -62,13 +64,7 @@ const TopNavbar: React.FC = () => {
         {/* Language switcher (owns its own button & dropdown) */}
         <LanguageSwitcher/>
 
-        {/* Theme toggle */}
-        <Button isIconOnly variant="light" onPress={toggleTheme}>
-          <FontAwesomeIcon
-            icon={isDark ? faSun : faMoon}
-            className="text-lg"
-          />
-        </Button>
+        <ThemeDropdown />
 
         {/* Data mode toggle */}
         <Button isIconOnly variant="light" onPress={toggleDataMode}>

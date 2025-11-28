@@ -42,19 +42,20 @@ const RightSidebar: React.FC = () => {
           content: "py-0",
         }}
         className="bg-transparent shadow-none"
+        showDivider={false}
       >
         <AccordionItem key="members" title={makeAccordionTitle(t("rightSidebar.members.title"))}>
-          <div className="text-sm prose prose-sm dark:prose-invert max-w-none">
+          <div className="text-sm prose prose-sm dark:prose-invert abyss:prose-invert max-w-none">
             <ReactMarkdown remarkPlugins={[remarkGfm]}>{t("rightSidebar.members.content")}</ReactMarkdown>
           </div>
         </AccordionItem>
         <AccordionItem key="contact" title={makeAccordionTitle(t("rightSidebar.contact.title"))}>
-          <div className="text-sm prose prose-sm dark:prose-invert max-w-none">
+          <div className="text-sm prose prose-sm dark:prose-invert abyss:prose-invert max-w-none">
             <ReactMarkdown remarkPlugins={[remarkGfm]}>{t("rightSidebar.contact.content")}</ReactMarkdown>
           </div>
         </AccordionItem>
         <AccordionItem key="donation" title={makeAccordionTitle(t("rightSidebar.donation.title"))}>
-          <div className="text-sm prose prose-sm dark:prose-invert max-w-none">
+          <div className="text-sm prose prose-sm dark:prose-invert abyss:prose-invert max-w-none">
             <ReactMarkdown remarkPlugins={[remarkGfm]}>{t("rightSidebar.donation.content")}</ReactMarkdown>
             <Button isIconOnly variant="light" onPress={() => setShowImageOverlay(true)}>
               <FontAwesomeIcon icon={faAlipay} className="text-xl"/>

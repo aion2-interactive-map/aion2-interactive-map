@@ -9,6 +9,7 @@
 
 /* Dark mode variant so `.dark` on <html> or <body> works */
 @custom-variant dark (&:is(.dark *));
+@custom-variant abyss (&:is(.abyss *));
 
 @theme {
     --color-topnavbar: #E3EDF2;
@@ -18,7 +19,13 @@
 
 .dark {
     --color-topnavbar: #393047;
-    --background-image-sidebar: #2C293A;
+    --background-image-sidebar: linear-gradient( 180deg, #2C293A 0%, #2C293A 100%);
+    --color-sidebar-collapse: #4C4A52;
+}
+
+.abyss {
+    --color-topnavbar: #A33535;
+    --background-image-sidebar: linear-gradient( 180deg, #564B4B 0%, #190202 100%);
     --color-sidebar-collapse: #4C4A52;
 }
 

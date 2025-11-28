@@ -1,7 +1,7 @@
 // src/hero.ts
-import { heroui } from '@heroui/react';
+import {heroui, type HeroUIPluginConfig} from '@heroui/react';
 
-const herouiConfig = {
+const herouiConfig: HeroUIPluginConfig = {
   "themes": {
     "light": {
       "colors": {
@@ -218,13 +218,122 @@ const herouiConfig = {
         "focus": "#2E97FF",
         "overlay": "#ffffff"
       }
+    },
+    "abyss": {
+      "colors": {
+        "default": {
+          "50": "#0d0d0e",
+          "100": "#19191c",
+          "200": "#26262a",
+          "300": "#323238",
+          "400": "#3f3f46",
+          "500": "#65656b",
+          "600": "#8c8c90",
+          "700": "#b2b2b5",
+          "800": "#d9d9da",
+          "900": "#ffffff",
+          "foreground": "#fff",
+          "DEFAULT": "#3f3f46"
+        },
+        "primary": {
+          "50": "#0e2d4d",
+          "100": "#164879",
+          "200": "#1e62a6",
+          "300": "#267dd2",
+          "400": "#2e97ff",
+          "500": "#53a9ff",
+          "600": "#77bbff",
+          "700": "#9cceff",
+          "800": "#c0e0ff",
+          "900": "#e5f2ff",
+          "foreground": "#000",
+          "DEFAULT": "#2e97ff"
+        },
+        "secondary": {
+          "50": "#240c3c",
+          "100": "#39135f",
+          "200": "#4e1a82",
+          "300": "#6321a5",
+          "400": "#7828c8",
+          "500": "#904ed2",
+          "600": "#a773db",
+          "700": "#bf99e5",
+          "800": "#d7bfef",
+          "900": "#eee4f8",
+          "foreground": "#fff",
+          "DEFAULT": "#7828c8"
+        },
+        "success": {
+          "50": "#073c1e",
+          "100": "#0b5f30",
+          "200": "#0f8341",
+          "300": "#13a653",
+          "400": "#17c964",
+          "500": "#40d27f",
+          "600": "#68dc9a",
+          "700": "#91e5b5",
+          "800": "#b9efd1",
+          "900": "#e2f8ec",
+          "foreground": "#000",
+          "DEFAULT": "#17c964"
+        },
+        "warning": {
+          "50": "#494339",
+          "100": "#746a5b",
+          "200": "#9f917c",
+          "300": "#c9b89e",
+          "400": "#f4dfbf",
+          "500": "#f6e5ca",
+          "600": "#f8ead5",
+          "700": "#faf0e1",
+          "800": "#fcf5ec",
+          "900": "#fefbf7",
+          "foreground": "#000",
+          "DEFAULT": "#f4dfbf"
+        },
+        "danger": {
+          "50": "#49051d",
+          "100": "#73092e",
+          "200": "#9e0c3e",
+          "300": "#c80f4f",
+          "400": "#f31260",
+          "500": "#f53b7c",
+          "600": "#f76598",
+          "700": "#f98eb3",
+          "800": "#fbb8cf",
+          "900": "#fee1eb",
+          "foreground": "#000",
+          "DEFAULT": "#f31260"
+        },
+        "background": "#000000",
+        "foreground": "#ffffff",
+        "content1": {
+          "DEFAULT": "#18181b",
+          "foreground": "#fff"
+        },
+        "content2": {
+          "DEFAULT": "#27272a",
+          "foreground": "#fff"
+        },
+        "content3": {
+          "DEFAULT": "#3f3f46",
+          "foreground": "#fff"
+        },
+        "content4": {
+          "DEFAULT": "#52525b",
+          "foreground": "#fff"
+        },
+        "focus": "#2E97FF",
+        "overlay": "#ffffff"
+      }
     }
   },
   "layout": {
     "disabledOpacity": "0.5"
-  }
+  },
+  // defaultTheme: "dark"
 }
 
-const config = heroui({...herouiConfig});
+const config = heroui(herouiConfig);
 
 export default config;

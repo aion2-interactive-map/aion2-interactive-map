@@ -18,18 +18,18 @@ applyTheme();
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     {/* You can pass locale/theme props later if you like */}
-    <ThemeProvider>
-    <HeroUIProvider>
-        <DataModeProvider>
-          <GameMapProvider>
+    <DataModeProvider>
+      <GameMapProvider>
+        <ThemeProvider>
+          <HeroUIProvider>
             <MarkersProvider>
               <GameDataProvider>
                 <App/>
               </GameDataProvider>
             </MarkersProvider>
-          </GameMapProvider>
-        </DataModeProvider>
-    </HeroUIProvider>
-    </ThemeProvider>
+          </HeroUIProvider>
+        </ThemeProvider>
+      </GameMapProvider>
+    </DataModeProvider>
   </React.StrictMode>,
 );

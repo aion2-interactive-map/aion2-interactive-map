@@ -4,7 +4,7 @@ import { initReactI18next } from "react-i18next";
 import HttpBackend from "i18next-http-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
 import { parse } from "yaml";
-import {getBackendLoadPath} from "./hooks/useDataMode.tsx";
+import { getBackendLoadPath } from "@/utils/dataMode"; // <-- changed
 
 // ---- Language config --------------------------------------
 
@@ -31,21 +31,18 @@ i18n
     defaultNS: "common",
 
     detection: {
-      // order of detection
       order: ["querystring", "localStorage", "navigator", "htmlTag"],
-      // caches to store detected language
       caches: ["localStorage"],
     },
 
     backend: {
-      loadPath: getBackendLoadPath(),
+      loadPath: getBackendLoadPath(),  // now from config/dataMode
       parse: (data: string) => parse(data),
     },
 
     interpolation: {
       escapeValue: false,
     },
-
   });
 
 export default i18n;
