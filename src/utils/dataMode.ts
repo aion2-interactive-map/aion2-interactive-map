@@ -15,28 +15,31 @@ export function getStaticBaseUrl() {
   return (import.meta.env.BASE_URL ?? "/").replace(/\/+$/, "");
 }
 
-export function computeBaseUrl(mode: DataMode): string {
-  if (mode === "static") {
-    return getStaticBaseUrl();
-  }
-
+export function computeBaseUrl(): string {
   // Dynamic mode
   if (import.meta.env.DEV) {
     // Running on Vite dev server
-    return "http://localhost:9000/api/v1/export";
+    return "http://localhost:9000/api/v1";
   }
 
   // Production build OR GitHub Pages
   if (import.meta.env.PROD) {
-    return "/api/v1/export";
+    return "/api/v1";
   }
 
   // Fallback (should never happen)
-  return "/api/v1/export";
+  return "/api/v1";
+}
+
+export function computeExportBaseUrl(mode: DataMode): string {
+  if (mode === "static") {
+    return getStaticBaseUrl();
+  }
+  return computeBaseUrl() + "/export";
 }
 
 export function getBackendLoadPath(mode: DataMode = DEFAULT_DATA_MODE) {
-  const base = computeBaseUrl(mode);
+  const base = computeExportBaseUrl(mode);
   const staticBase = getStaticBaseUrl();
 
   return (lngs: string[], nss: string[]) => {

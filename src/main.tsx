@@ -12,24 +12,27 @@ import {ThemeProvider} from "@/context/ThemeContext";
 import {GameDataProvider} from "@/context/GameDataContext.tsx";
 import {GameMapProvider} from "@/context/GameMapContext.tsx";
 import {MarkersProvider} from "@/context/MarkersContext.tsx";
+import {UserProvider} from "@/context/UserContext";
 
 applyTheme();
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     {/* You can pass locale/theme props later if you like */}
-    <DataModeProvider>
-      <GameMapProvider>
-        <ThemeProvider>
-          <HeroUIProvider>
-            <MarkersProvider>
-              <GameDataProvider>
-                <App/>
-              </GameDataProvider>
-            </MarkersProvider>
-          </HeroUIProvider>
-        </ThemeProvider>
-      </GameMapProvider>
-    </DataModeProvider>
+    <UserProvider>
+      <DataModeProvider>
+        <GameMapProvider>
+          <ThemeProvider>
+            <HeroUIProvider>
+              <MarkersProvider>
+                <GameDataProvider>
+                  <App/>
+                </GameDataProvider>
+              </MarkersProvider>
+            </HeroUIProvider>
+          </ThemeProvider>
+        </GameMapProvider>
+      </DataModeProvider>
+    </UserProvider>
   </React.StrictMode>,
 );

@@ -12,7 +12,7 @@ import i18n from "../i18n";
 import {
   type DataMode,
   DEFAULT_DATA_MODE,
-  computeBaseUrl,
+  computeExportBaseUrl,
   getBackendLoadPath,
 } from "@/utils/dataMode"; // <-- new import
 
@@ -66,7 +66,7 @@ export function DataModeProvider({ children }: ProviderProps) {
   }, []);
 
   const getBaseUrl = useCallback(() => {
-    return computeBaseUrl(dataMode);
+    return computeExportBaseUrl(dataMode);
   }, [dataMode]);
 
   const reloadI18n = useCallback(() => {

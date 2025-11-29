@@ -1,8 +1,8 @@
 // src/components/GameMarker.tsx
-import React, {memo} from "react";
-import { Marker, Tooltip, Popup } from "react-leaflet";
+import React, {memo, useRef} from "react";
+import {Marker, Tooltip, Popup } from "react-leaflet";
 import { useTranslation } from "react-i18next";
-import L from "leaflet";
+import L, {Popup as LeafletPopup} from "leaflet";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {  faCheckCircle } from "@fortawesome/free-solid-svg-icons";
@@ -109,6 +109,8 @@ const GameMarkerInner: React.FC<Props> = ({
 
   // Namespace for this map's markers (ensures markers/world.yaml loads)
   // console.log(marker)
+  const popupRef = useRef<LeafletPopup>(null);
+
   const markerNs = `markers/${map.name}`;
   const regionNs = `regions/${map.name}`;
   const { t } = useTranslation([markerNs, regionNs]);
@@ -170,7 +172,7 @@ const GameMarkerInner: React.FC<Props> = ({
         </Tooltip>
       )}
 
-      <Popup maxWidth={360} minWidth={360} autoPan={true} closeButton={false}>
+      <Popup maxWidth={360} minWidth={360} autoPan={true} closeButton={false} ref={popupRef}>
         <MarkerPopupContent
           name={localizedName}
           categoryLabel={categoryLabel}
@@ -182,7 +184,10 @@ const GameMarkerInner: React.FC<Props> = ({
           description={description}
           canComplete={canComplete}
           completed={isCompleted}
-          onToggleCompleted={() => toggleMarkerCompleted(marker)}
+          onToggleCompleted={() => {
+            if (!isCompleted) popupRef?.current?.close();
+            toggleMarkerCompleted(marker);
+          }}
         />
       </Popup>
     </Marker>

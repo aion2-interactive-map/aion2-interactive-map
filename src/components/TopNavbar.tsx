@@ -1,7 +1,7 @@
 // src/components/TopNavbar.tsx
-import React from "react";
+import React, {useState} from "react";
 import {
-  Button,
+  Button, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger,
   Navbar,
   NavbarBrand,
   NavbarContent,
@@ -11,18 +11,25 @@ import {faCloud, faDatabase} from "@fortawesome/free-solid-svg-icons";
 import {useTranslation} from "react-i18next";
 
 import {useTheme} from "@/context/ThemeContext";
+import {useUser} from "@/context/UserContext";
+
 import LanguageSwitcher from "./LanguageSwitcher";
 import {useDataMode} from "../hooks/useDataMode.tsx";
 import {getStaticUrl} from "../utils/url.ts";
 import ThemeDropdown from "@/components/ThemeDropdown.tsx";
+import AuthModal from "@/components/AuthModal.tsx";
 
 
 const TopNavbar: React.FC = () => {
   const {t} = useTranslation(); // we use fully-qualified keys like common:siteTitle
   const {theme} = useTheme();
+  const { user, logout } = useUser();
+
   const isDark = theme === "dark";
   const {dataMode, toggleDataMode} = useDataMode();
   const isStatic = dataMode === "static";
+  const [authOpen, setAuthOpen] = useState(false);
+
 
   return (
     <Navbar
@@ -73,6 +80,46 @@ const TopNavbar: React.FC = () => {
             className="text-lg"
           />
         </Button>
+
+        {/* Login / User dropdown */}
+        {!user ? (
+          <>
+            <button
+              type="button"
+              onClick={() => setAuthOpen(true)}
+              className="text-sm hover:underline underline-offset-2"
+            >
+              {t("common:auth.login", "Login")} / {t("common:auth.register", "Register")}
+            </button>
+            <AuthModal isOpen={authOpen} onClose={() => setAuthOpen(false)} />
+          </>
+        ) : (
+          <>
+            <Dropdown placement="bottom-end">
+              <DropdownTrigger>
+                <Button
+                  variant="light"
+                  className="px-2 text-sm font-normal"
+                >
+                  {user.name ?? user.email}
+                </Button>
+              </DropdownTrigger>
+
+              <DropdownMenu aria-label="User menu">
+                <DropdownItem
+                  key="logout"
+                  color="danger"
+                  onPress={logout}
+                >
+                  {t("common:auth.logout", "Logout")}
+                </DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
+
+            {/* Keep modal mounted so you can open it from other places if needed */}
+            {/*<AuthModal isOpen={authOpen} onClose={() => setAuthOpen(false)} />*/}
+          </>
+        )}
 
         {/*<Button isIconOnly variant="light" onPress={onOpenIntroModal}>
           <FontAwesomeIcon icon={faCircleInfo} className="text-lg" />

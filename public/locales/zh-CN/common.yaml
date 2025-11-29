@@ -15,6 +15,24 @@ ui:
   loading: "加载中..."
   search: "搜索"
 
+auth:
+  login: "登录"
+  loginTitle: "您还未登录，请登录后参与互动"
+  loginSwitch: "还没有账号？立即注册"
+  loginError: "登录失败，请检查邮箱和密码是否正确"
+  register: "注册"
+  registerTitle: "新用户注册"
+  registerSwitch: "已有账号？立即登录"
+  username: "用户名"
+  email: "邮箱"
+  password: "密码"
+  passwordVerify: "确认密码"
+  logout: "登出"
+  passwordMismatch: "两次输入密码不一致！"
+  registerError: "注册失败，邮箱或用户名已注册"
+  registerMissing: "请正确填写用户名、邮箱、密码！"
+  altcha: "请先进行人机验证！"
+
 theme:
   auto: "自动（随地图切换）"
   light: "白天模式（天族）"

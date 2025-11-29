@@ -14,7 +14,8 @@
 @theme {
     --color-topnavbar: #E3EDF2;
     --background-image-sidebar: linear-gradient(180deg, #CCEDFF 0%, #FFFFFF 65%);
-    --color-sidebar-collapse: #D3E2EA
+    --color-sidebar-collapse: #D3E2EA;
+    --color-input: rgba(185,185,185,0.2);
 }
 
 .dark {
@@ -91,4 +92,8 @@ body {
 .leaflet-tooltip.game-marker-tooltip .leaflet-tooltip-tip {
     background: hsl(var(--heroui-content1));
     border: 1px solid hsl(var(--heroui-default-200));
+}
+
+.altcha {
+    border: 0;
 }
