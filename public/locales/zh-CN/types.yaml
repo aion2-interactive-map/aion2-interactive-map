@@ -1,6 +1,8 @@
 categories:
   collection:
     name: 收集品
+  creature:
+    name: 宠物
   gathering:
     name: 采集点
   location:
@@ -11,6 +13,60 @@ subtypes:
   battlefield:
     description: 地区（战场）
     name: 地区（战场）
+  creatureFeral:
+    description: Feral
+    name: 野性
+  creatureIntellect:
+    description: Intellect
+    name: 知性
+  creatureNature:
+    description: Nature
+    name: 自然
+  creatureSpecial:
+    description: Special
+    name: 特殊
+  creatureTrans:
+    description: Trans
+    name: 变形
+  gatheringAria:
+    description: 当归
+    name: 当归
+  gatheringCoriolus:
+    description: 云芝
+    name: 云芝
+  gatheringCypri:
+    description: 齐尔利
+    name: 齐尔利
+  gatheringDiamondGemstone:
+    description: 钻石原石
+    name: 钻石原石
+  gatheringInina:
+    description: 雪莉
+    name: 雪莉
+  gatheringKukuru:
+    description: 库库罗
+    name: 库库罗
+  gatheringMela:
+    description: 梅拉
+    name: 梅拉
+  gatheringOdyle:
+    description: 奥德
+    name: 奥德
+  gatheringOrichalcumOre:
+    description: 奥里哈康矿石
+    name: 奥里哈康矿石
+  gatheringRubyGemstone:
+    description: 红宝石原石
+    name: 红宝石原石
+  gatheringSapphireGemstone:
+    description: 蓝宝石原石
+    name: 蓝宝石原石
+  gatheringTargena:
+    description: 龙蒿
+    name: 龙蒿
+  gatheringYggdrasilLog:
+    description: 世界树木头
+    name: 世界树木头
   hiddenCube:
     description: 隐藏背包
     name: 隐藏背包
