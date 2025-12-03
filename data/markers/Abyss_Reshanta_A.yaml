@@ -1,5 +1,11 @@
 markers:
 - category: collection
+  id: 891f7cd6-5c0b-4426-aad6-f42b6fd199c2
+  name: '207'
+  subtype: monolithMaterial
+  x: 2091.0
+  y: 2008.0
+- category: collection
   id: 0914973a-4a67-44b0-891f-cab05dc18afe
   name: '214'
   subtype: monolithMaterial
@@ -7,6 +13,8 @@ markers:
   y: 2205.0
 - category: collection
   id: 06fe2725-e782-40bc-b9fc-a6ab5da21714
+  images:
+  - markers_images/aXoE41Qw0sQYby0JSdfCtw
   name: '200'
   subtype: monolithMaterial
   x: 2486.0
@@ -36,13 +44,9 @@ markers:
   x: 2112.0
   y: 1941.0
 - category: collection
-  id: 891f7cd6-5c0b-4426-aad6-f42b6fd199c2
-  name: '207'
-  subtype: monolithMaterial
-  x: 2091.0
-  y: 2008.0
-- category: collection
   id: d4050382-88c4-47eb-a257-ab9c2abcb09d
+  images:
+  - markers_images/q2L50z9eWMrOYzs9XSr2ww
   name: '208'
   subtype: monolithMaterial
   x: 2230.0
@@ -55,6 +59,8 @@ markers:
   y: 2209.0
 - category: collection
   id: ebe9dcd1-be20-4230-a041-67c1b32917f5
+  images:
+  - markers_images/tAZTyRkyxJq8qVuxuvu4Cw
   name: '212'
   subtype: monolithMaterial
   x: 1759.0
@@ -67,6 +73,8 @@ markers:
   y: 2336.0
 - category: collection
   id: f2180d1a-ad9f-4172-b010-9c1ae2a4eb9c
+  images:
+  - markers_images/7SkzStXDZNlJTuekg0qgxA
   name: '211'
   subtype: monolithMaterial
   x: 1686.0
@@ -121,6 +129,8 @@ markers:
   y: 2125.0
 - category: collection
   id: 821a4c00-ca60-4f85-a9b2-255f4a10561c
+  images:
+  - markers_images/N_S0JNTfeDgxwkQjyB5Gng
   name: '59'
   subtype: monolithMaterial
   x: 1766.0
@@ -139,6 +149,8 @@ markers:
   y: 2227.0
 - category: collection
   id: c28f7256-6c41-43b5-b385-0e78fbd5d43e
+  images:
+  - markers_images/nPAnTknMCEllMA5eUnUwnA
   name: '23'
   subtype: monolithMaterial
   x: 2167.0
@@ -151,6 +163,8 @@ markers:
   y: 2267.0
 - category: collection
   id: ce0b3640-726e-48b4-8996-619ed1e8069e
+  images:
+  - markers_images/4DlnixY4jeOgoDKKe_l87w
   name: '174'
   subtype: monolithMaterial
   x: 2877.0
@@ -163,24 +177,32 @@ markers:
   y: 2430.0
 - category: collection
   id: 1d279eb4-ab0a-4773-a199-2c41ecdc25bf
+  images:
+  - markers_images/ljFDlAkGrPeXItGletjzOA
   name: '40'
   subtype: monolithMaterial
   x: 2839.0
   y: 1631.0
 - category: collection
   id: 41473e6c-0baf-4d79-838b-1fbd3ed57f58
+  images:
+  - markers_images/6UjHxnpPSXDSaXohspqp2A
   name: '115'
   subtype: monolithMaterial
   x: 2138.0
   y: 1576.0
 - category: collection
   id: 2c3cb4ae-a03f-4fcc-b505-293f81705462
+  images:
+  - markers_images/FfDa6ZNpHCqsBJ1wkKFBqw
   name: '14'
   subtype: monolithMaterial
   x: 2735.0
   y: 1963.0
 - category: collection
   id: fa05de59-ac4d-43c1-b69d-133f5c37ebff
+  images:
+  - markers_images/erVoC83ohb9fqh_hjOWNcQ
   name: '129'
   subtype: monolithMaterial
   x: 1615.0
@@ -199,6 +221,8 @@ markers:
   y: 2154.0
 - category: collection
   id: 39058156-291e-4fa0-ac34-7ad379b410ca
+  images:
+  - markers_images/XU8qqyhoID7MgR_1123NJg
   name: '100'
   subtype: monolithMaterial
   x: 1746.0
@@ -210,19 +234,21 @@ markers:
   x: 2163.0
   y: 2344.0
 - category: collection
-  id: 073afd31-4eb6-41ee-b715-147e1dc5cbbd
-  name: '182'
-  subtype: monolithMaterial
-  x: 2529.0
-  y: 2198.0
-- category: collection
   id: 65044ded-6ca3-4ccd-925f-c9e4c04707db
   name: '92'
   subtype: monolithMaterial
   x: 1959.0
   y: 1650.0
 - category: collection
+  id: 073afd31-4eb6-41ee-b715-147e1dc5cbbd
+  name: '182'
+  subtype: monolithMaterial
+  x: 2529.0
+  y: 2198.0
+- category: collection
   id: 617c10e8-0830-4db7-ae3e-0730d6314535
+  images:
+  - markers_images/V157SVAlLxoIo0nTcGTNMQ
   name: '162'
   subtype: monolithMaterial
   x: 2085.0
@@ -234,31 +260,39 @@ markers:
   x: 1781.0
   y: 2257.0
 - category: collection
-  id: 3d59513d-1456-4da4-8b58-e4b85c677730
-  name: '7'
-  subtype: monolithMaterial
-  x: 2167.0
-  y: 1811.0
-- category: collection
-  id: 5c6697ed-29f1-4c5c-84be-5307894a8d1b
-  name: '140'
-  subtype: monolithMaterial
-  x: 2235.0
-  y: 1759.0
-- category: collection
   id: 83247786-55fe-4e67-9402-e0bf5c081a59
   name: '110'
   subtype: monolithMaterial
   x: 2224.0
   y: 2337.0
 - category: collection
+  id: 5c6697ed-29f1-4c5c-84be-5307894a8d1b
+  images:
+  - markers_images/rlZpZFO4T4ZjLKZRtqnoDA
+  name: '140'
+  subtype: monolithMaterial
+  x: 2235.0
+  y: 1759.0
+- category: collection
+  id: 3d59513d-1456-4da4-8b58-e4b85c677730
+  images:
+  - markers_images/FsnN7OV5fIP1Kb_rTy8Mdw
+  name: '7'
+  subtype: monolithMaterial
+  x: 2167.0
+  y: 1811.0
+- category: collection
   id: f56be8ea-6d6d-4d3d-9005-61c7dd6d5665
+  images:
+  - markers_images/t4CYkCgCBsI_gSOsT0CCig
   name: '72'
   subtype: monolithMaterial
   x: 1667.0
   y: 1812.0
 - category: collection
   id: e1eeb3e2-6545-487c-b503-4e3518be57fa
+  images:
+  - markers_images/kGGab9LFobPBsSAjMvZX5g
   name: '121'
   subtype: monolithMaterial
   x: 2357.0
@@ -295,24 +329,32 @@ markers:
   y: 1943.0
 - category: collection
   id: 9d4b3df4-9a04-4403-bbdf-8163e5735af9
+  images:
+  - markers_images/GYyABYsbqYnO608O1qO0cg
   name: '66'
   subtype: monolithMaterial
   x: 2346.0
   y: 1942.0
 - category: collection
   id: 3d759290-1e50-44c7-b302-0771860dde17
+  images:
+  - markers_images/PH0-LUwpyat1e9wrcYNUQw
   name: '25'
   subtype: monolithMaterial
   x: 2193.0
   y: 1553.0
 - category: collection
   id: 6d88dae8-d24c-4a5f-845f-67a499f81790
+  images:
+  - markers_images/k-NygOm9l0_5Z_3fnelIwA
   name: '54'
   subtype: monolithMaterial
   x: 2559.0
   y: 1761.0
 - category: collection
   id: 707a9d47-2049-49e9-bdb4-b03ff0ea31ec
+  images:
+  - markers_images/oyiHgtBqx93tZ2aAfpNSdw
   name: '69'
   subtype: monolithMaterial
   x: 2468.0
@@ -336,19 +378,23 @@ markers:
   x: 2388.0
   y: 2138.0
 - category: collection
-  id: 1e97c54c-c410-489b-a668-594d6b2a44fb
-  name: '161'
-  subtype: monolithMaterial
-  x: 1771.0
-  y: 1655.0
-- category: collection
   id: ef83275e-b39f-40cc-9469-109550d35288
   name: '70'
   subtype: monolithMaterial
   x: 2474.0
   y: 2206.0
 - category: collection
+  id: 1e97c54c-c410-489b-a668-594d6b2a44fb
+  images:
+  - markers_images/fiMRhirNTvSv8n2XKSwxsQ
+  name: '161'
+  subtype: monolithMaterial
+  x: 1771.0
+  y: 1655.0
+- category: collection
   id: f53fc922-7fd0-427d-a639-12f68785f12f
+  images:
+  - markers_images/KKRZhGQ1F2iZbYx0OE2q2w
   name: '68'
   subtype: monolithMaterial
   x: 2400.0
@@ -361,12 +407,16 @@ markers:
   y: 2342.0
 - category: collection
   id: 1d5b5fcb-0748-494d-a73f-530a5b9e861c
+  images:
+  - markers_images/qbZQRq8THJOnYamQSg3iUw
   name: '47'
   subtype: monolithMaterial
   x: 2575.0
   y: 1607.0
 - category: collection
   id: 0e916bfd-3dea-424c-9401-554268ba487f
+  images:
+  - markers_images/mdjL6s5_bNG4MK8xOxRwGA
   name: '16'
   subtype: monolithMaterial
   x: 2389.0
@@ -385,6 +435,8 @@ markers:
   y: 1963.0
 - category: collection
   id: 578b2dde-deb4-4299-b2b6-9f27827e83cf
+  images:
+  - markers_images/F1CALi7kNkoqasdv3_ZXiQ
   name: '84'
   subtype: monolithMaterial
   x: 1752.0
@@ -402,17 +454,17 @@ markers:
   x: 2178.0
   y: 2095.0
 - category: collection
-  id: 8979c89e-5380-441c-96c1-f429af68ffa6
-  name: '122'
-  subtype: monolithMaterial
-  x: 1947.0
-  y: 2280.0
-- category: collection
   id: 9d18c737-2d1d-490f-bc7b-598bb188874b
   name: '57'
   subtype: monolithMaterial
   x: 2468.0
   y: 2138.0
+- category: collection
+  id: 8979c89e-5380-441c-96c1-f429af68ffa6
+  name: '122'
+  subtype: monolithMaterial
+  x: 1947.0
+  y: 2280.0
 - category: collection
   id: 642cb9de-a3ae-4d93-aaf0-176a252f663e
   name: '127'
@@ -427,6 +479,8 @@ markers:
   y: 2149.0
 - category: collection
   id: 285ae4e1-aad3-4b47-ad52-32fd295d5ca5
+  images:
+  - markers_images/HZKszctTrgG08Ph7iIbTVQ
   name: '125'
   subtype: monolithMaterial
   x: 1762.0
@@ -439,6 +493,8 @@ markers:
   y: 2168.0
 - category: collection
   id: 357e307f-1945-4a37-9bfc-cff889eb3e51
+  images:
+  - markers_images/T81b6BxteNZnqJX3WX3kYw
   name: '65'
   subtype: monolithMaterial
   x: 2625.0
@@ -469,6 +525,8 @@ markers:
   y: 2307.0
 - category: collection
   id: ef7f1027-8817-4ea7-9818-44d1a59ae91e
+  images:
+  - markers_images/nwDdNCbQ2cx3M-S-XPZRag
   name: '11'
   subtype: monolithMaterial
   x: 2345.0
@@ -487,6 +545,8 @@ markers:
   y: 2370.0
 - category: collection
   id: 1d009a9d-863f-488e-94eb-b3b26db6125e
+  images:
+  - markers_images/bIrAuN_klz1eN7xWdAS5mQ
   name: '15'
   subtype: monolithMaterial
   x: 2764.0
@@ -505,12 +565,16 @@ markers:
   y: 2519.0
 - category: collection
   id: 314f392f-df9e-4066-a926-6c6e111d5499
+  images:
+  - markers_images/rALNgLtyL3WjIO1rddyI6g
   name: '30'
   subtype: monolithMaterial
   x: 2199.0
   y: 1703.0
 - category: collection
   id: fc6292c9-d79b-4bb4-925b-2e5388265133
+  images:
+  - markers_images/SgnVpWolNEavnXghzD31xg
   name: '79'
   subtype: monolithMaterial
   x: 2408.0
@@ -583,6 +647,8 @@ markers:
   y: 1834.0
 - category: collection
   id: 5a98420b-b382-439d-aeb9-eff528a278ac
+  images:
+  - markers_images/aK7J_SNleAbHNZOYHuenLw
   name: '179'
   subtype: monolithMaterial
   x: 2840.0
@@ -595,6 +661,8 @@ markers:
   y: 1625.0
 - category: collection
   id: 306e0b58-8267-4006-b5b2-76d8165a7563
+  images:
+  - markers_images/SsYF5Cbi2yiOVq9N_mszaQ
   name: '163'
   subtype: monolithMaterial
   x: 2339.0
@@ -613,6 +681,8 @@ markers:
   y: 2275.0
 - category: collection
   id: c619bef8-5ffe-48c6-9ab1-a20c309486a4
+  images:
+  - markers_images/Z3c3cUgMIxIPsg30crrdpg
   name: '67'
   subtype: monolithMaterial
   x: 2530.0
@@ -624,17 +694,17 @@ markers:
   x: 2399.0
   y: 2223.0
 - category: collection
-  id: 45372f2f-12ea-4b11-9a0d-1b0a0529e73a
-  name: '0'
-  subtype: monolithMaterial
-  x: 2192.0
-  y: 2327.0
-- category: collection
   id: 585e95fd-bcdc-42f2-a1b9-ddda5af2c600
   name: '97'
   subtype: monolithMaterial
   x: 2413.0
   y: 2304.0
+- category: collection
+  id: 45372f2f-12ea-4b11-9a0d-1b0a0529e73a
+  name: '0'
+  subtype: monolithMaterial
+  x: 2192.0
+  y: 2327.0
 - category: collection
   id: 3e4009f0-08ca-4fd1-956c-6445b64b1d20
   name: '95'
@@ -655,6 +725,8 @@ markers:
   y: 2223.0
 - category: collection
   id: 17df5c04-a3c9-40b2-ae22-d3b2894b602f
+  images:
+  - markers_images/RXKrV3S220U-JGznQHaDOg
   name: '85'
   subtype: monolithMaterial
   x: 2493.0
@@ -667,6 +739,8 @@ markers:
   y: 2252.0
 - category: collection
   id: dabd2c1a-7ce5-43ab-9049-ceb7da28027e
+  images:
+  - markers_images/X9wh-RnJxofcIrOlwZ3fWQ
   name: '63'
   subtype: monolithMaterial
   x: 1604.0
@@ -685,6 +759,8 @@ markers:
   y: 1985.0
 - category: collection
   id: 887bbacc-e2bc-4d05-8546-2deceb84eb26
+  images:
+  - markers_images/6VX85jGdYxhsbSfpFiFYNA
   name: '130'
   subtype: monolithMaterial
   x: 2602.0
@@ -697,12 +773,16 @@ markers:
   y: 2170.0
 - category: collection
   id: acc93021-5e7e-4548-a0fc-d84a368c8f40
+  images:
+  - markers_images/xHEICnHCkcyNLbmdR3GqVw
   name: '153'
   subtype: monolithMaterial
   x: 1701.0
   y: 1909.0
 - category: collection
   id: d0d3d191-0783-4811-b121-e7dcedb550f3
+  images:
+  - markers_images/6rUnDR6dVYWCG79trMcDUw
   name: '21'
   subtype: monolithMaterial
   x: 2505.0
@@ -715,6 +795,8 @@ markers:
   y: 2459.0
 - category: collection
   id: 50f3d075-79c5-430b-894c-48ee519987b2
+  images:
+  - markers_images/fTUY5PkOFL0N2OxwSDV_lg
   name: '12'
   subtype: monolithMaterial
   x: 1755.0
@@ -727,12 +809,16 @@ markers:
   y: 2144.0
 - category: collection
   id: 787bfe0c-5673-474c-b00c-04a1816a9193
+  images:
+  - markers_images/uKKuYXiPx1MntHXdPikB2Q
   name: '61'
   subtype: monolithMaterial
   x: 2798.0
   y: 1859.0
 - category: collection
   id: 4d6a0861-e257-44e4-8ac8-bf80915cd272
+  images:
+  - markers_images/ji23AYttJrW5uOqKSwZ_4A
   name: '183'
   subtype: monolithMaterial
   x: 1653.0
@@ -745,24 +831,32 @@ markers:
   y: 2534.0
 - category: collection
   id: ac267650-7a19-41fd-890a-5e10d8d209d9
+  images:
+  - markers_images/sHazIN2JxjExuKpAGzNe3Q
   name: '141'
   subtype: monolithMaterial
   x: 2314.0
   y: 1927.0
 - category: collection
   id: 6ccc62cc-a1eb-4721-9177-a6d6a3eed89f
+  images:
+  - markers_images/0DbdTAVQl9ogWfM5_pPANw
   name: '137'
   subtype: monolithMaterial
   x: 2634.0
   y: 1722.0
 - category: collection
   id: e446bc77-69a1-403e-bd8e-b8b56523177c
+  images:
+  - markers_images/aMKP9eeeE8kBot5kuQLPSQ
   name: '43'
   subtype: monolithMaterial
   x: 2807.0
   y: 1620.0
 - category: collection
   id: e284f7c0-d67f-457d-b4d5-31b4f3995688
+  images:
+  - markers_images/8cc04pr2bUHoGyQJpvbiEw
   name: '187'
   subtype: monolithMaterial
   x: 2476.0
@@ -781,6 +875,8 @@ markers:
   y: 1780.0
 - category: collection
   id: ccda4ce3-c2da-4a83-9c60-98b7a454f8e4
+  images:
+  - markers_images/mdjL6s5_bNG4MK8xOxRwGA
   name: '50'
   subtype: monolithMaterial
   x: 2383.0
@@ -799,6 +895,8 @@ markers:
   y: 2069.0
 - category: collection
   id: fd89034c-6eb6-4b74-a227-cf6ce14fdcf5
+  images:
+  - markers_images/MRuQ2K5c3EUxQzVNTDE5EA
   name: '64'
   subtype: monolithMaterial
   x: 2315.0
@@ -841,6 +939,8 @@ markers:
   y: 2500.0
 - category: collection
   id: 86762e15-a0f0-4373-a5d4-3002195c79fb
+  images:
+  - markers_images/IUERhZqWLM5Sm3j68irDdg
   name: '136'
   subtype: monolithMaterial
   x: 2485.0
@@ -852,17 +952,17 @@ markers:
   x: 1823.0
   y: 1839.0
 - category: collection
-  id: ccf047e9-bd0c-4902-8dff-6df90674fa35
-  name: '133'
-  subtype: monolithMaterial
-  x: 1813.0
-  y: 2039.0
-- category: collection
   id: d3314377-3830-490a-8506-09aaa56cd6bc
   name: '151'
   subtype: monolithMaterial
   x: 1703.0
   y: 2200.0
+- category: collection
+  id: ccf047e9-bd0c-4902-8dff-6df90674fa35
+  name: '133'
+  subtype: monolithMaterial
+  x: 1813.0
+  y: 2039.0
 - category: collection
   id: 74e0a1d5-0e4e-4f3d-98c5-86edd2513960
   name: '116'
@@ -877,22 +977,20 @@ markers:
   y: 1724.0
 - category: collection
   id: 2344adde-bd40-4de9-8ca3-1888001a8d0f
+  images:
+  - markers_images/56CXnV3pw6jhPEqCVlrH5A
   name: '33'
   subtype: monolithMaterial
   x: 2731.0
   y: 1575.0
 - category: collection
   id: d38c79cb-53b0-45fc-bf6b-64120eb28937
+  images:
+  - markers_images/ggEXz5Otnw4ty2SBP_Boog
   name: '75'
   subtype: monolithMaterial
   x: 2377.0
   y: 1823.0
-- category: collection
-  id: 00a7a379-3a8b-499a-aaba-9695082db51b
-  name: '126'
-  subtype: monolithMaterial
-  x: 2688.0
-  y: 1580.0
 - category: collection
   id: 2ec1ab77-a2b5-4500-85fc-5e0fcd696c83
   name: '88'
@@ -900,13 +998,25 @@ markers:
   x: 1946.0
   y: 1731.0
 - category: collection
+  id: 00a7a379-3a8b-499a-aaba-9695082db51b
+  images:
+  - markers_images/HgSDfYe-fT6f7a0lPgBZAQ
+  name: '126'
+  subtype: monolithMaterial
+  x: 2688.0
+  y: 1580.0
+- category: collection
   id: 63fd09a2-c2b0-4701-8cd2-31549b742478
+  images:
+  - markers_images/i8LCut82BnUB6I9MLXQJ-g
   name: '138'
   subtype: monolithMaterial
   x: 1756.0
   y: 1906.0
 - category: collection
   id: 4f199676-4104-40e0-b98e-a2a5a5c0758b
+  images:
+  - markers_images/JC0G6vYv57FlZnspZt3CRA
   name: '106'
   subtype: monolithMaterial
   x: 2682.0
@@ -931,12 +1041,16 @@ markers:
   y: 1536.0
 - category: collection
   id: e58fae51-7002-4817-bf7f-c61ee15e3d6d
+  images:
+  - markers_images/WaV533bJ9C--kGbYHEhsBQ
   name: '73'
   subtype: monolithMaterial
   x: 2227.0
   y: 1726.0
 - category: collection
   id: 6117c28e-519e-4ea0-b1c9-75d026c5fed7
+  images:
+  - markers_images/hN4tmQAn_kpSpn8bNYAOJA
   name: '35'
   subtype: monolithMaterial
   x: 2282.0
@@ -948,17 +1062,17 @@ markers:
   x: 2016.0
   y: 2008.0
 - category: collection
-  id: 89b50689-f71f-4982-a289-cc50b9f65bbe
-  name: '17'
-  subtype: monolithMaterial
-  x: 1347.0
-  y: 2224.0
-- category: collection
   id: 2c830d0e-610d-448a-a532-4efe21c287f4
   name: '77'
   subtype: monolithMaterial
   x: 1655.0
   y: 2528.0
+- category: collection
+  id: 89b50689-f71f-4982-a289-cc50b9f65bbe
+  name: '17'
+  subtype: monolithMaterial
+  x: 1347.0
+  y: 2224.0
 - category: collection
   id: 2591ee74-cb49-4df3-b56e-22834cbcfc9f
   name: '144'
@@ -973,6 +1087,8 @@ markers:
   y: 2507.0
 - category: collection
   id: 5330dde2-ca32-44d8-ba6b-ceefca54f747
+  images:
+  - markers_images/zDFHktWvllV9U9wQdrFLHQ
   name: '51'
   subtype: monolithMaterial
   x: 1729.0
@@ -997,6 +1113,8 @@ markers:
   y: 1931.0
 - category: collection
   id: 3aa669a5-3493-4098-9437-1b087d8cb35c
+  images:
+  - markers_images/rMavj0Jt-V2ECogpDlBDTw
   name: '48'
   subtype: monolithMaterial
   x: 2817.0
@@ -1015,6 +1133,8 @@ markers:
   y: 1929.0
 - category: collection
   id: 3c659fc4-80da-4385-8fcf-3487423f03f6
+  images:
+  - markers_images/xO50d4lZGwACaCNOE2kyxw
   name: '32'
   subtype: monolithMaterial
   x: 1629.0
@@ -1045,6 +1165,8 @@ markers:
   y: 2403.0
 - category: collection
   id: 72b30a31-982e-430a-994b-e33434608661
+  images:
+  - markers_images/EQw5JV1UBfzgv4HYAjLLWA
   name: '139'
   subtype: monolithMaterial
   x: 2220.0
@@ -1057,12 +1179,16 @@ markers:
   y: 1932.0
 - category: collection
   id: 4f8c344f-bd49-4d69-9ced-01e00d70d95d
+  images:
+  - markers_images/WIf3k-mmkdRsN32sLF_r6g
   name: '148'
   subtype: monolithMaterial
   x: 1716.0
   y: 2025.0
 - category: collection
   id: 4a054af8-9d2c-4306-9971-a010e3b3c5c7
+  images:
+  - markers_images/t1XKzehZ44oOUNvYJlQVeg
   name: '109'
   subtype: monolithMaterial
   x: 1644.0
@@ -1093,6 +1219,8 @@ markers:
   y: 2450.0
 - category: collection
   id: 1445687e-96fd-4162-aad9-783324108eb7
+  images:
+  - markers_images/t1-7CdVmJKIaChMwQ558Ng
   name: '2'
   subtype: monolithMaterial
   x: 2727.0
@@ -1123,6 +1251,8 @@ markers:
   y: 1821.0
 - category: collection
   id: a273d2d6-276f-4e33-959e-ec7650772460
+  images:
+  - markers_images/oXvNN2zMrN4yr7v1AZ1_yQ
   name: '8'
   subtype: monolithMaterial
   x: 2317.0
@@ -1141,6 +1271,8 @@ markers:
   y: 1699.0
 - category: collection
   id: c51cfc60-63c5-4a48-8d58-6db2c8822adf
+  images:
+  - markers_images/SG-oJ6Zj7dh2fhWUSEOf9A
   name: '165'
   subtype: monolithMaterial
   x: 2566.0
@@ -1171,6 +1303,8 @@ markers:
   y: 2213.0
 - category: collection
   id: ea891358-df1f-4b69-af3b-bd44cf63c6c7
+  images:
+  - markers_images/5HdpFuGt50QBixKnNv1sEw
   name: '132'
   subtype: monolithMaterial
   x: 1618.0
@@ -1182,19 +1316,17 @@ markers:
   x: 2454.0
   y: 2294.0
 - category: collection
-  id: 91d09911-4e88-480e-8074-a3aa1b5325ab
-  name: '102'
-  subtype: monolithMaterial
-  x: 2012.0
-  y: 2164.0
-- category: collection
   id: f94a5709-5e3d-454d-b568-1634e9aa6495
+  images:
+  - markers_images/5DhG2-9CbS_MVQLcxxyYhQ
   name: '34'
   subtype: monolithMaterial
   x: 1772.0
   y: 1878.0
 - category: collection
   id: c532f7ae-e8ec-4cac-a860-696d1c3f5457
+  images:
+  - markers_images/1811TgxIO8qtR0LGnrIWlg
   name: '44'
   subtype: monolithMaterial
   x: 2754.0

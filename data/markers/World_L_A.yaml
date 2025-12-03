@@ -57,7 +57,7 @@ markers:
   id: ea798af0-2fcd-40e1-8be0-2235390125b1
   images:
   - markers_images/RRA8T4sHeqUr985bzVg-OA
-  name: '14'
+  name: '15'
   region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 4185.0
@@ -967,6 +967,8 @@ markers:
   y: 3310.0
 - category: collection
   id: 41f01c24-91dd-4255-85ab-5aee2b252f30
+  images:
+  - markers_images/kz3NO980jUAgkWNizGjViw
   name: '3'
   region: EasternTolbasForest
   subtype: monolithMaterial
@@ -1100,7 +1102,7 @@ markers:
   id: 43c7cc61-1b22-429d-a76b-1daf56ca7de4
   images:
   - markers_images/46I_S6drXrQRqPcVDOT_Nw
-  name: '15'
+  name: '16'
   region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 4331.0
@@ -1213,6 +1215,8 @@ markers:
   y: 4375.0
 - category: collection
   id: c2f387b3-cb30-4cb1-92eb-cacd99bcbc64
+  images:
+  - markers_images/0ECR8vJKqz6ayB34dHjDnw
   name: '5'
   region: NorthernTolbasForest
   subtype: monolithMaterial
@@ -1496,6 +1500,8 @@ markers:
   y: 2597.0
 - category: collection
   id: dcecc488-a6cb-44a5-b2d8-3facfd56bfd0
+  images:
+  - markers_images/rbCZYmAUELjQJLX5Kw2F6g
   name: '5'
   region: AullaeuVillage
   subtype: monolithMaterial
@@ -1589,6 +1595,8 @@ markers:
   y: 3290.0
 - category: collection
   id: a43eadc1-b92e-4c16-abea-aa791d0ee5e3
+  images:
+  - markers_images/sdBvqPQmkY2j8YU3SQgObA
   name: '10'
   region: PilgrimsRidge
   subtype: monolithMaterial
@@ -1821,7 +1829,7 @@ markers:
   id: 53889be9-194d-4b5f-a536-22e50b06fc21
   images:
   - markers_images/k8tOwbV9txh75V7U1r06qw
-  name: '19'
+  name: '20'
   region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 4380.0
@@ -1830,7 +1838,7 @@ markers:
   id: 611aa8e1-74da-49d5-b4b2-889d30a05148
   images:
   - markers_images/5nY85T_M7TT4gZOnZBkjFg
-  name: '18'
+  name: '19'
   region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 4480.0
@@ -1848,7 +1856,7 @@ markers:
   id: 3ab367d7-9224-45cf-a42d-f3c66bae2978
   images:
   - markers_images/2Bj8uz-SpWtgEEzvyOYKjw
-  name: '13'
+  name: '14'
   region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 4065.0
@@ -1862,6 +1870,8 @@ markers:
   y: 2258.0
 - category: collection
   id: bb29408c-29a8-4925-8b7b-15aadd8536cd
+  images:
+  - markers_images/ycTFYR2HyGJp8A_TUg3LRg
   name: ''
   region: GardenoftheIllusionGod
   subtype: monolithMaterial
@@ -1869,6 +1879,8 @@ markers:
   y: 2259.0
 - category: collection
   id: b336c14f-08a0-4810-aad6-471b386c95eb
+  images:
+  - markers_images/UF7c0hGLkjkvUjDpBEn6kQ
   name: ''
   region: GardenoftheIllusionGod
   subtype: monolithMaterial
@@ -1912,6 +1924,8 @@ markers:
   y: 2353.0
 - category: collection
   id: 463347f8-7a86-4176-9301-73180900f97f
+  images:
+  - markers_images/hIu57U6Y9bV3COMJqtPBFg
   name: ''
   region: GardenoftheIllusionGod
   subtype: monolithMaterial
@@ -1919,6 +1933,8 @@ markers:
   y: 2437.0
 - category: collection
   id: 5aec49d6-b4ef-4cd8-bd26-c0f007b2c2ea
+  images:
+  - markers_images/Pif79Rqhs1qShgYblQ2fkw
   name: ''
   region: GardenoftheIllusionGod
   subtype: monolithMaterial
@@ -1926,6 +1942,8 @@ markers:
   y: 2495.0
 - category: collection
   id: 21fdc96f-8d4d-4277-9cb3-cc41b016a2eb
+  images:
+  - markers_images/VBVaUdXGbNOcTzH8Ybd9sw
   name: ''
   region: GardenoftheIllusionGod
   subtype: monolithMaterial
@@ -1933,6 +1951,8 @@ markers:
   y: 2596.0
 - category: collection
   id: 6a26337e-9961-4e8f-9afd-068bc9df464e
+  images:
+  - markers_images/pjWYCm-OIEOGFE6ox9AsQA
   name: ''
   region: GardenoftheIllusionGod
   subtype: monolithMaterial
@@ -1940,6 +1960,8 @@ markers:
   y: 2560.0
 - category: collection
   id: 50734941-5313-45e9-b4c0-db6d581b24e9
+  images:
+  - markers_images/4hm9qptdZtRcKTwjpj66Dg
   name: ''
   region: GardenoftheIllusionGod
   subtype: monolithMaterial
@@ -1947,6 +1969,8 @@ markers:
   y: 2581.0
 - category: collection
   id: b69d2159-1589-4e98-8801-e97cd30a5c9e
+  images:
+  - markers_images/rwUQVwImNYRJFzvI8igdUw
   name: ''
   region: GardenoftheIllusionGod
   subtype: monolithMaterial
@@ -1954,6 +1978,8 @@ markers:
   y: 2607.0
 - category: collection
   id: 61caa748-5b50-4aec-8cdb-0e65be6877a9
+  images:
+  - markers_images/WJ87GHyabdp7QIzl0-2iIw
   name: ''
   region: GardenoftheIllusionGod
   subtype: monolithMaterial
@@ -2364,6 +2390,8 @@ markers:
   y: 3357.0
 - category: collection
   id: 3a846f98-07c4-4637-ac36-17fc79b89e72
+  images:
+  - markers_images/c-EAlMn5dhSgQpTI0i2mxA
   name: ''
   region: DranaPlantation
   subtype: monolithMaterial
@@ -2686,6 +2714,8 @@ markers:
   y: 5051.0
 - category: collection
   id: fe04cac5-dd0e-44cc-bb72-d56dd1e32f1c
+  images:
+  - markers_images/KPY3_K1m_SzvO65NCUYueA
   name: ''
   region: NahidBrigadeFortress
   subtype: monolithMaterial
@@ -2792,6 +2822,8 @@ markers:
   y: 6218.0
 - category: collection
   id: f6bc2683-f6a6-4354-ba66-039eaa1fa5c5
+  images:
+  - markers_images/65NKPNMmnenPhnSdekiNug
   name: '8'
   region: EasternTolbasForest
   subtype: monolithMaterial
@@ -2835,6 +2867,8 @@ markers:
   y: 6297.0
 - category: collection
   id: 437f3cd0-2fcf-4ccf-8dd3-dcd51e09fdaa
+  images:
+  - markers_images/_MGjUXbRRdBoCJ8Fw_JL0A
   name: '9'
   region: NorthernTolbasForest
   subtype: monolithMaterial
@@ -2945,6 +2979,14 @@ markers:
   x: 3284.0
   y: 4834.0
 - category: collection
+  id: d7ddaf1e-8d53-473f-84c7-a87898c50f61
+  images:
+  - markers_images/rMakMAQuzkMvdWczh3Zrlg
+  name: ''
+  subtype: hiddenCube
+  x: 5265.0
+  y: 4063.0
+- category: collection
   id: bbcc1dd4-d08d-42f6-b7ef-ce43e5fa9165
   images:
   - markers_images/SCc6B6icfpX56KBw97ZLXg
@@ -2953,15 +2995,6 @@ markers:
   subtype: monolithMaterial
   x: 1634.0
   y: 1942.0
-- category: collection
-  id: a667cf71-19d5-4f0d-98c3-018979006f76
-  images:
-  - markers_images/MZPCUNDxkYCmN4_AMDYRAg
-  name: ''
-  region: EternalIsle
-  subtype: monolithMaterial
-  x: 1673.0
-  y: 1902.0
 - category: collection
   id: 92c2d88e-7437-4950-b07c-f45107afefcf
   images:
@@ -3044,6 +3077,28 @@ markers:
   x: 1887.0
   y: 1722.0
 - category: collection
+  id: f28fcf8b-d22b-423d-ba77-6b7d82378332
+  name: ''
+  subtype: hiddenCube
+  x: 5153.0
+  y: 4169.0
+- category: collection
+  id: 5359e51f-32a0-457e-b3b9-6b9e20d94727
+  images:
+  - markers_images/mUYLfc05Z3fjyvuqLjXByA
+  name: ''
+  subtype: hiddenCube
+  x: 4363.0
+  y: 4003.0
+- category: collection
+  id: 7543c1d4-3285-48e1-8a3b-610d4ebd8d90
+  images:
+  - markers_images/ER6tVIA9C8HDCw3SMKrZqg
+  name: ''
+  subtype: hiddenCube
+  x: 2757.0
+  y: 3384.0
+- category: collection
   id: 934bfd0f-27d7-4631-bd02-27b6044f4efe
   images:
   - markers_images/nlEV66IhVtpXYfOCm0sqaQ
@@ -3080,6 +3135,31 @@ markers:
   x: 1948.0
   y: 1717.0
 - category: collection
+  id: a2a6ce4b-e437-4549-baf3-7855860763cb
+  images:
+  - markers_images/56zkL84WYqZQATh8vdWImA
+  name: ''
+  subtype: hiddenCube
+  x: 5002.0
+  y: 4637.0
+- category: collection
+  id: 5faa13b3-107f-4ded-ad8c-443b00702425
+  images:
+  - markers_images/lc2z1ZrG358G4a0ZpgPh-g
+  name: ''
+  subtype: hiddenCube
+  x: 4663.0
+  y: 5077.0
+- category: collection
+  id: 4455dc8a-a971-48cd-96ab-d4a34f960a23
+  images:
+  - markers_images/4svHPkMRGnbjGy_ImFUTbA
+  name: ''
+  region: EternalIsle
+  subtype: monolithMaterial
+  x: 1679.0
+  y: 1913.0
+- category: collection
   id: 7c67754d-9457-4019-8b5c-abb8687af513
   images:
   - markers_images/RvnO8TSAz75cXu0NuP4PVQ
@@ -3097,6 +3177,28 @@ markers:
   subtype: monolithMaterial
   x: 1754.0
   y: 1670.0
+- category: collection
+  id: 2155163f-61c6-4003-8da5-1f33759e3cb3
+  images:
+  - markers_images/Z8neQKzUDUiUlL9XqeL-6A
+  name: ''
+  subtype: hiddenCube
+  x: 4823.0
+  y: 4713.0
+- category: collection
+  id: 33b81fa1-3e32-4808-a641-a0bb0449a01c
+  name: ''
+  subtype: hiddenCube
+  x: 4953.0
+  y: 4985.0
+- category: collection
+  id: a3aed295-20ea-4d07-9922-659f888d516a
+  images:
+  - markers_images/oRbESF6EKRgDi629Glhw4g
+  name: ''
+  subtype: hiddenCube
+  x: 5574.0
+  y: 4810.0
 - category: collection
   id: 13ef732a-37e9-436e-8170-a6b6de5a7325
   images:
@@ -3240,6 +3342,12 @@ markers:
   x: 5148.0
   y: 6126.0
 - category: collection
+  id: 6af1dad4-791c-4187-94ff-5929d7a9b9cb
+  name: ''
+  subtype: hiddenCube
+  x: 4925.0
+  y: 5035.0
+- category: collection
   id: b34db197-a353-4df4-ab60-a76eacd6e04a
   images:
   - markers_images/CzMrHvKoD4L7HLD3S1TVCA
@@ -3268,6 +3376,8 @@ markers:
   y: 2983.0
 - category: collection
   id: f1f30f98-0e90-4284-9ab2-c0c5ebbeaa3f
+  images:
+  - markers_images/JdPsUKntBJY4KtsJYA4vjg
   name: ''
   region: ForestofExiles
   subtype: monolithMaterial
@@ -3327,6 +3437,8 @@ markers:
   y: 3383.0
 - category: collection
   id: 86131da1-dd0b-486a-b691-83907b7de357
+  images:
+  - markers_images/rqdFQ9QtttDcpdDtZZnVDg
   name: '4'
   region: NorthernTolbasForest
   subtype: monolithMaterial
@@ -3432,6 +3544,12 @@ markers:
   x: 5352.0
   y: 4822.0
 - category: collection
+  id: 06d1ec69-c4a2-47df-9227-fb37be7a55bf
+  name: ''
+  subtype: hiddenCube
+  x: 5116.0
+  y: 5293.0
+- category: collection
   id: 2db51bf0-f1f6-4215-ade9-afeb03b6bce2
   images:
   - markers_images/cNovwpgQuzGu-SjgZ_Eydw
@@ -3440,6 +3558,14 @@ markers:
   subtype: monolithMaterial
   x: 5085.0
   y: 4370.0
+- category: collection
+  id: a12ca286-eceb-4f1d-b549-9b8c18919101
+  images:
+  - markers_images/xANq3dIzmfFQhLr-zXTH3w
+  name: ''
+  subtype: hiddenCube
+  x: 5091.0
+  y: 5067.0
 - category: collection
   id: 9379e4ef-c2a6-41c0-a5f2-92af91f4868a
   images:
@@ -3459,6 +3585,22 @@ markers:
   x: 4818.0
   y: 4996.0
 - category: collection
+  id: 841e22c2-07a2-41eb-a4e8-4210c777fe4f
+  images:
+  - markers_images/y0IOlQg_bYpIWgjWArP6gg
+  name: ''
+  subtype: hiddenCube
+  x: 4557.0
+  y: 4853.0
+- category: collection
+  id: 9bebca85-654a-41f6-9a22-c03276eb7323
+  images:
+  - markers_images/CKpnGUycJuJtkkFgi2wr9w
+  name: ''
+  subtype: hiddenCube
+  x: 5469.0
+  y: 4991.0
+- category: collection
   id: 6d6c1787-73ae-4dae-9f29-ad9581733740
   images:
   - markers_images/CRxwnQ8x5D_OBS_NxUiZIQ
@@ -3476,6 +3618,14 @@ markers:
   subtype: monolithMaterial
   x: 4922.0
   y: 6128.0
+- category: collection
+  id: 6a8763b2-bf30-4281-bbbd-e44d49e62649
+  images:
+  - markers_images/AqjBBg7D6LZcHtwe-tdEFg
+  name: ''
+  subtype: hiddenCube
+  x: 5081.0
+  y: 6186.0
 - category: collection
   id: fadcec1e-e247-4f41-9e64-dc76227d0574
   images:
@@ -3674,6 +3824,8 @@ markers:
   y: 3467.0
 - category: collection
   id: 1a4112c4-090d-478b-a1ad-11a7500cb7cb
+  images:
+  - markers_images/H1XuvwmatUcd59DKAjdy4w
   name: ''
   region: ScarletForest
   subtype: monolithMaterial
@@ -3985,6 +4137,8 @@ markers:
   y: 2463.0
 - category: collection
   id: 57c66cc6-d637-42d4-9fc5-97bbf8b6f8c0
+  images:
+  - markers_images/DXANjEUmFeby81uEJI1Zqg
   name: ''
   region: GardenoftheIllusionGod
   subtype: monolithMaterial
@@ -4188,11 +4342,19 @@ markers:
   y: 5380.0
 - category: collection
   id: 8207fa35-dbf1-4df5-80d6-e126026378b7
+  images:
+  - markers_images/RRRIQMm6XKbC8T6kO6XaCw
   name: ''
   region: DranaPlantation
   subtype: monolithMaterial
   x: 5357.0
   y: 4686.0
+- category: collection
+  id: df9d0ec0-07b0-4848-91c1-7c9a328a9beb
+  name: ''
+  subtype: hiddenCube
+  x: 5472.0
+  y: 4254.0
 - category: collection
   id: 45a1691b-7351-4605-92d8-87b77fbd514f
   images:
@@ -4375,6 +4537,8 @@ markers:
   y: 2766.0
 - category: collection
   id: c6af758e-e97d-44d1-baf8-b14aaff98cee
+  images:
+  - markers_images/rc_oX6Q1pkaaroj_I6uc6Q
   name: '12'
   region: PilgrimsRidge
   subtype: monolithMaterial
@@ -4382,6 +4546,8 @@ markers:
   y: 3429.0
 - category: collection
   id: fb088204-6d9e-480a-bb1c-f2d795883493
+  images:
+  - markers_images/ZmVRHl_QpYiTFLrtGzUH0A
   name: '2'
   region: WesternAltamiaHighland
   subtype: monolithMaterial
@@ -4416,6 +4582,8 @@ markers:
   y: 2584.0
 - category: collection
   id: 45139481-145a-4170-abb3-f81b4e4afbb8
+  images:
+  - markers_images/zD8WrDowZ-570FUVXcSOyw
   name: ''
   region: ForestofExiles
   subtype: monolithMaterial
@@ -4432,6 +4600,8 @@ markers:
   y: 4943.0
 - category: collection
   id: 3b678ded-0a57-4366-ad43-09e195ed6c08
+  images:
+  - markers_images/EteqmnN1575jELL1aPvfcg
   name: ''
   region: DranaPlantation
   subtype: monolithMaterial
@@ -4448,6 +4618,8 @@ markers:
   y: 3088.0
 - category: collection
   id: b856d614-f4ff-4788-b569-18aaefd1150e
+  images:
+  - markers_images/cOqZZJBojklsQtyNsFr4Jw
   name: ''
   region: GardenoftheIllusionGod
   subtype: monolithMaterial
@@ -4482,6 +4654,8 @@ markers:
   y: 2428.0
 - category: collection
   id: 00dc717b-9b0b-4f6c-8db1-f6f7e4978408
+  images:
+  - markers_images/GXsLJZE7pdGKGU0Fjh2lzw
   name: ''
   region: GardenoftheIllusionGod
   subtype: monolithMaterial
@@ -4489,6 +4663,8 @@ markers:
   y: 2473.0
 - category: collection
   id: 7446aad2-f21a-479e-be11-a345fea655e5
+  images:
+  - markers_images/_reHYudq9YYj6BkiAk_wmQ
   name: ''
   region: GardenoftheIllusionGod
   subtype: monolithMaterial
@@ -4595,6 +4771,8 @@ markers:
   y: 3151.0
 - category: collection
   id: a5b61f58-6aac-40b9-b0ac-aef836968c76
+  images:
+  - markers_images/uUTXYTOElxEezA9m_90CAg
   name: ''
   region: GardenoftheIllusionGod
   subtype: monolithMaterial
@@ -4602,6 +4780,8 @@ markers:
   y: 2690.0
 - category: collection
   id: 786ac17e-cdff-45c6-9867-c6fb26d4830d
+  images:
+  - markers_images/AsUmL7EtSoD4HVxhSEq7pg
   name: ''
   region: GardenoftheIllusionGod
   subtype: monolithMaterial
@@ -4654,6 +4834,8 @@ markers:
   y: 4115.0
 - category: collection
   id: 3a9e78bc-8b66-460c-8ddc-00aa484496d0
+  images:
+  - markers_images/PXstEg6yxAL4UZyOC5TsSg
   name: ''
   region: GardenoftheIllusionGod
   subtype: monolithMaterial
@@ -4661,6 +4843,8 @@ markers:
   y: 2664.0
 - category: collection
   id: 855031be-f504-4b41-83f6-714700770ac4
+  images:
+  - markers_images/ewLWAiL44HhV_OzV3wGCCQ
   name: ''
   region: GardenoftheIllusionGod
   subtype: monolithMaterial
@@ -4677,11 +4861,22 @@ markers:
   y: 4327.0
 - category: collection
   id: 1bbd2d82-b807-4797-ab67-34fa0cbfe9bf
+  images:
+  - markers_images/ITF2IFyWm23ZgSaD4rFecw
   name: ''
   region: GardenoftheIllusionGod
   subtype: monolithMaterial
   x: 5425.0
   y: 2657.0
+- category: collection
+  id: d4d72102-3468-435c-8a14-e222139c7a72
+  images:
+  - markers_images/6rcBK-qrqi0V3XdTv6CoFg
+  name: ''
+  region: DranaPlantation
+  subtype: monolithMaterial
+  x: 5478.0
+  y: 4729.0
 - category: collection
   id: 19c8ed53-6685-42d4-9878-7e034260a3e1
   images:
@@ -4693,6 +4888,8 @@ markers:
   y: 4126.0
 - category: collection
   id: 71ff9e3d-11f4-46ce-b3fe-f9b341291d03
+  images:
+  - markers_images/J3SGG2LHHwMkn699rWyrcw
   name: ''
   region: KrakaFootpath
   subtype: monolithMaterial
@@ -4772,6 +4969,8 @@ markers:
   y: 5275.0
 - category: collection
   id: 968e43e9-77ee-4120-b4ab-8bbff02b8ab6
+  images:
+  - markers_images/N5wJ2IKOm0fQz_d-4iMyfQ
   name: ''
   region: NahidBrigadeFortress
   subtype: monolithMaterial
@@ -4779,6 +4978,8 @@ markers:
   y: 5379.0
 - category: collection
   id: ca88f580-9b22-46bc-9988-289e0aaa5154
+  images:
+  - markers_images/Lm82LHdcm9gvLjlMGkgwXw
   name: ''
   region: NahidBrigadeFortress
   subtype: monolithMaterial
@@ -4811,6 +5012,13 @@ markers:
   subtype: monolithMaterial
   x: 5693.0
   y: 5088.0
+- category: collection
+  id: 6aaefef5-a318-4975-b250-24641c4c0b09
+  name: ''
+  region: ScarletForest
+  subtype: monolithMaterial
+  x: 5192.0
+  y: 4928.0
 - category: collection
   id: ef526f9b-c831-40ed-a4e3-69d79693b91a
   images:
@@ -4865,13 +5073,6 @@ markers:
   subtype: monolithMaterial
   x: 5926.0
   y: 4815.0
-- category: collection
-  id: 6aaefef5-a318-4975-b250-24641c4c0b09
-  name: ''
-  region: ScarletForest
-  subtype: monolithMaterial
-  x: 5192.0
-  y: 4928.0
 - category: collection
   id: 88286ff5-6b3d-4d94-8f68-17e805a1f3ae
   images:
@@ -5098,15 +5299,6 @@ markers:
   x: 5858.0
   y: 4445.0
 - category: collection
-  id: d4d72102-3468-435c-8a14-e222139c7a72
-  images:
-  - markers_images/6rcBK-qrqi0V3XdTv6CoFg
-  name: ''
-  region: DranaPlantation
-  subtype: monolithMaterial
-  x: 5478.0
-  y: 4729.0
-- category: collection
   id: 828e1475-3405-4292-883e-873e0c0c1465
   images:
   - markers_images/T05fI6TR_wEtn5y57Ep7bA
@@ -5153,6 +5345,8 @@ markers:
   y: 5486.0
 - category: collection
   id: 29d42759-633a-4ef6-956a-0f1efd5fd983
+  images:
+  - markers_images/WDv9hbaTAl7AP6HnJwa_zw
   name: ''
   region: NahidBrigadeFortress
   subtype: monolithMaterial
@@ -5162,7 +5356,7 @@ markers:
   id: 61ec9091-5057-48f6-9203-04ad254d1e2d
   images:
   - markers_images/DW1JobNBbVqMLBwqZ6SyAg
-  name: '17'
+  name: '18'
   region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 4610.0
@@ -5259,6 +5453,8 @@ markers:
   y: 4597.0
 - category: collection
   id: 123232f2-d5a7-4fb0-81eb-a0d9daac5d94
+  images:
+  - markers_images/ztca1kqBPCu29IO0vAe6HA
   name: '13'
   region: AullaeuVillage
   subtype: monolithMaterial
@@ -5356,7 +5552,7 @@ markers:
   id: 27ad3952-061f-4669-9f51-58f9b84c07cd
   images:
   - markers_images/wnnzjh7aJSoaay4CVoo7Vw
-  name: '16'
+  name: '17'
   region: EllunRiverMarsh
   subtype: monolithMaterial
   x: 4551.0
@@ -5433,6 +5629,8 @@ markers:
   y: 2580.0
 - category: collection
   id: 5b84b483-6786-4000-8b62-39b9321df8b3
+  images:
+  - markers_images/4RxnV4ljTC2GX6pDURDRnw
   name: ''
   region: GardenoftheIllusionGod
   subtype: monolithMaterial
@@ -5528,6 +5726,8 @@ markers:
   y: 4236.0
 - category: collection
   id: 079be6cb-db17-4a6c-8698-6f832fddc818
+  images:
+  - markers_images/ypDjQpLPypkv5zx_Xz7-rg
   name: ''
   subtype: hiddenCube
   x: 3729.0
@@ -5798,6 +5998,8 @@ markers:
   y: 3061.0
 - category: collection
   id: ce6a9646-d48f-4705-b284-1dc12b1318d4
+  images:
+  - markers_images/Y6Y47hjsXi8Pl4Wt7UGJjw
   name: ''
   region: ForestofExiles
   subtype: monolithMaterial
@@ -5805,6 +6007,8 @@ markers:
   y: 2863.0
 - category: collection
   id: 0383ad29-583a-4d94-85b0-9521eec8d084
+  images:
+  - markers_images/rSUMq1ZqDgWT-jP_FP7lsw
   name: ''
   region: ForestofExiles
   subtype: monolithMaterial
@@ -6298,6 +6502,8 @@ markers:
   y: 1837.0
 - category: collection
   id: 7f2d18e4-6825-4dd4-80eb-f4ea6ba7012c
+  images:
+  - markers_images/yo6_DnGBoYfKyDyZe6Bpag
   name: ''
   region: NahidBrigadeFortress
   subtype: monolithMaterial
@@ -6401,6 +6607,8 @@ markers:
   y: 4907.0
 - category: collection
   id: 413d70de-c54e-4fad-872f-ef15fe01e25f
+  images:
+  - markers_images/tOqh9rv8HsrQGl6CDCCykw
   name: ''
   subtype: hiddenCube
   x: 3275.0

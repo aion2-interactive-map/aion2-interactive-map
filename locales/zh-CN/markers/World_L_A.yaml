@@ -49,6 +49,9 @@
 06b0d5e5-6bc8-472e-9648-7da6d82ae1fe:
   description: ''
   name: ''
+06d1ec69-c4a2-47df-9227-fb37be7a55bf:
+  description: ''
+  name: ''
 07262c81-c495-4e58-9a8f-00385c253f79:
   description: ''
   name: ''
@@ -292,6 +295,9 @@
 20b77475-4521-410e-a56c-59ba4e5bb4be:
   description: ''
   name: ''
+2155163f-61c6-4003-8da5-1f33759e3cb3:
+  description: ''
+  name: ''
 215ad48b-9cfd-4930-9332-23044d051a1c:
   description: ''
   name: 昔日祖米昂神殿遗址
@@ -479,6 +485,9 @@
   description: ''
   name: ''
 339089a3-7b33-4cf6-8608-b13cdd0e1152:
+  description: ''
+  name: ''
+33b81fa1-3e32-4808-a641-a0bb0449a01c:
   description: ''
   name: ''
 34107de2-781e-47a5-ad68-3abcef2661ae:
@@ -681,6 +690,9 @@
 43c7cc61-1b22-429d-a76b-1daf56ca7de4:
   description: ''
   name: ''
+4455dc8a-a971-48cd-96ab-d4a34f960a23:
+  description: ''
+  name: ''
 44652355-cc86-4bfd-9812-33831a7d4867:
   description: ''
   name: ''
@@ -802,6 +814,9 @@
   description: ''
   name: ''
 531fbcc0-b558-446c-a3ee-b2c7978da31f:
+  description: ''
+  name: ''
+5359e51f-32a0-457e-b3b9-6b9e20d94727:
   description: ''
   name: ''
 535d1a47-cc74-4f97-a93b-df0deca0d53f:
@@ -942,6 +957,9 @@
 5f677b37-c42a-4b1f-b39f-c73a45dec359:
   description: 水里
   name: ''
+5faa13b3-107f-4ded-ad8c-443b00702425:
+  description: ''
+  name: ''
 6006ef3f-b4c4-47c9-b464-81fed1dc7287:
   description: ''
   name: ''
@@ -1059,12 +1077,20 @@
 6a622571-4eae-4ddd-8b00-88ae292d072c:
   description: ''
   name: ''
-6aaefef5-a318-4975-b250-24641c4c0b09:
+6a8763b2-bf30-4281-bbbd-e44d49e62649:
   description: ''
+  name: ''
+6aaefef5-a318-4975-b250-24641c4c0b09:
+  description: '位于空中，大剑的前后
+
+    In the sky; one in front of the sword, one in back'
   name: ''
 6af029e9-b5c7-4cab-9040-68894994e5f1:
   description: 栽培地仓库
   name: 栽培地仓库
+6af1dad4-791c-4187-94ff-5929d7a9b9cb:
+  description: ''
+  name: ''
 6b835219-9b2c-4b9e-ab60-c2951674946c:
   description: 红色森林
   name: 红色森林
@@ -1144,6 +1170,9 @@
   description: ''
   name: ''
 74ad98c9-c327-4c23-ac47-7b8cc341a743:
+  description: ''
+  name: ''
+7543c1d4-3285-48e1-8a3b-610d4ebd8d90:
   description: ''
   name: ''
 754e1697-29eb-401d-9f5a-ddf85101e036:
@@ -1306,6 +1335,9 @@
   description: ''
   name: ''
 83e7bf18-e1cb-4f1d-a630-f52b878cdbc5:
+  description: ''
+  name: ''
+841e22c2-07a2-41eb-a4e8-4210c777fe4f:
   description: ''
   name: ''
 855031be-f504-4b41-83f6-714700770ac4:
@@ -1539,6 +1571,9 @@
 9b6f9d93-cc5d-4c62-bf7d-e0cfa5793f3d:
   description: ''
   name: ''
+9bebca85-654a-41f6-9a22-c03276eb7323:
+  description: ''
+  name: ''
 9c434ed2-2a4e-43e1-86ed-5fe117d93d1f:
   description: ''
   name: ''
@@ -1581,6 +1616,9 @@
 9fe14c5e-fb1d-43db-b3a1-6165d683346d:
   description: ''
   name: ''
+a12ca286-eceb-4f1d-b549-9b8c18919101:
+  description: ''
+  name: ''
 a1347739-8677-4bd3-a679-70afd16c2105:
   description: ''
   name: ''
@@ -1614,6 +1652,9 @@ a278de5e-a78c-4ac5-ba86-9879f7d3ac1f:
 a2a2e1fe-09b7-453c-b18f-c6e356967de5:
   description: ''
   name: ''
+a2a6ce4b-e437-4549-baf3-7855860763cb:
+  description: ''
+  name: ''
 a2aa2730-d137-45ee-850b-9e2f7a5e6409:
   description: ''
   name: ''
@@ -1622,6 +1663,9 @@ a2aff922-4d0d-46ce-864b-597af1d6831b:
   name: ''
 a390d8fa-7a67-4bbe-835d-0976dfa6cfe2:
   description: 水下
+  name: ''
+a3aed295-20ea-4d07-9922-659f888d516a:
+  description: ''
   name: ''
 a43eadc1-b92e-4c16-abea-aa791d0ee5e3:
   description: ''
@@ -1647,9 +1691,6 @@ a60c7bf4-547b-48ac-94c7-abff580e0456:
 a63da667-749a-425b-a1ee-f6c393b3aa3d:
   description: 阿尔塔米亚高原西部
   name: 阿尔塔米亚高原西部
-a667cf71-19d5-4f0d-98c3-018979006f76:
-  description: ''
-  name: ''
 a71288fa-a17e-4800-8178-07611b3904fd:
   description: ''
   name: ''
@@ -2095,7 +2136,7 @@ d487f96a-19cd-45cd-814f-d671537de6f8:
   description: 在天上，大眼柱子左右各有一个
   name: ''
 d4d72102-3468-435c-8a14-e222139c7a72:
-  description: 在天上
+  description: 在河里
   name: ''
 d4eb9b60-3071-451a-9cdb-9aa4551e1fee:
   description: ''
@@ -2125,6 +2166,9 @@ d742675b-2635-4af9-a8da-e330c01ce1cb:
   description: ''
   name: ''
 d7dad401-a901-4e54-a73a-c9bda690dc93:
+  description: ''
+  name: ''
+d7ddaf1e-8d53-473f-84c7-a87898c50f61:
   description: ''
   name: ''
 d7ebc45c-da02-4fa9-aa22-e8ba8e3740db:
@@ -2211,6 +2255,9 @@ ded47dad-7ad9-4265-9065-9581bee36286:
 deed3135-4679-4647-8dfc-254d409cefcb:
   description: 药草洞穴
   name: 药草洞穴
+df9d0ec0-07b0-4848-91c1-7c9a328a9beb:
+  description: ''
+  name: ''
 dfbb8e48-2241-4060-81da-04c970ea73ae:
   description: ''
   name: ''
@@ -2356,6 +2403,9 @@ f1f30f98-0e90-4284-9ab2-c0c5ebbeaa3f:
   description: ''
   name: ''
 f2648ef0-5ae4-465b-ae12-e86c38334ff1:
+  description: ''
+  name: ''
+f28fcf8b-d22b-423d-ba77-6b7d82378332:
   description: ''
   name: ''
 f2f34cc2-5377-4742-af72-ceae9e3bb019:

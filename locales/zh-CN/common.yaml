@@ -20,6 +20,8 @@ auth:
   loginTitle: "您还未登录，请登录后参与互动"
   loginSwitch: "还没有账号？立即注册"
   loginError: "登录失败，请检查邮箱和密码是否正确"
+  loginPrompt: "登录后可提交错误哦！"
+  loginGo: "去登录"
   register: "注册"
   registerTitle: "新用户注册"
   registerSwitch: "已有账号？立即登录"
@@ -68,6 +70,7 @@ errors:
 markerActions:
   markCompleted: "标记为已完成"
   markNotCompleted: "已完成"
+  feedback: "反馈此点"
 
 introModal:
   alert: "我们承诺本网站将 **永久免费开放**、我们不会在任何平台进行交易售卖，请大家**提高警惕，谨防受骗**！"

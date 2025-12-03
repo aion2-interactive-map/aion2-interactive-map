@@ -1964,7 +1964,7 @@ markers:
 - category: collection
   id: 21876c7a-e366-472f-9d76-4ed58abba47d
   images:
-  - markers_images/LYgfsY7UhJuj87khrrjw3A
+  - markers_images/Lx-XPuq_hgM3rFaIC3XODg
   name: ''
   region: ImmortalIsle
   subtype: monolithMaterial
@@ -2006,6 +2006,36 @@ markers:
   subtype: monolithMaterial
   x: 1758.0
   y: 1549.0
+- category: collection
+  id: 5d7d1ef5-dbf0-4779-a90e-e9e8b508da2b
+  name: ''
+  subtype: hiddenCube
+  x: 4496.0
+  y: 5345.0
+- category: collection
+  id: e9b38f46-65df-49cd-b8ad-b77452ee70af
+  name: ''
+  subtype: hiddenCube
+  x: 4791.0
+  y: 2196.0
+- category: collection
+  id: 2d3897de-c8f9-41ec-ab04-122979b99db4
+  name: ''
+  subtype: hiddenCube
+  x: 3451.0
+  y: 5004.0
+- category: collection
+  id: 85a3f492-7d2b-404f-82ec-4eadcb95ace5
+  name: ''
+  subtype: hiddenCube
+  x: 3101.0
+  y: 4707.0
+- category: collection
+  id: b3da5bd0-465f-4010-8500-d29b6f1e0166
+  name: ''
+  subtype: hiddenCube
+  x: 6084.0
+  y: 4106.0
 - category: collection
   id: 60bb6800-5c8d-4b03-9c47-e1d0a48efe96
   images:
@@ -2231,6 +2261,12 @@ markers:
   subtype: monolithMaterial
   x: 5154.0
   y: 3084.0
+- category: collection
+  id: bc8c1451-ab4b-49f1-9672-2054fc15434e
+  name: ''
+  subtype: hiddenCube
+  x: 2720.0
+  y: 5122.0
 - category: collection
   id: b2316662-4f9b-41c5-9603-f62f9392f3c4
   images:
@@ -2844,6 +2880,18 @@ markers:
   x: 5817.0
   y: 5184.0
 - category: collection
+  id: b0a84ea3-c3d7-44d3-9a67-2e0028ff8cc5
+  name: ''
+  subtype: hiddenCube
+  x: 4560.0
+  y: 2512.0
+- category: collection
+  id: f340cb1e-346a-47ae-9b9b-7c1459dbf38b
+  name: ''
+  subtype: hiddenCube
+  x: 2736.0
+  y: 5261.0
+- category: collection
   id: 1b329d8c-9e38-4a0e-a4c1-d810d347c16b
   images:
   - markers_images/HX58bSfduY-80uhGJ-pkDg
@@ -2852,6 +2900,30 @@ markers:
   subtype: monolithMaterial
   x: 5938.0
   y: 5060.0
+- category: collection
+  id: d2916316-a448-4c3d-9bf7-a783856040f3
+  name: ''
+  subtype: hiddenCube
+  x: 2729.0
+  y: 5261.0
+- category: collection
+  id: a4e46055-094e-4662-bbbb-f61902783b9d
+  name: ''
+  subtype: hiddenCube
+  x: 4773.0
+  y: 4513.0
+- category: collection
+  id: 41d17b5f-eb11-4249-b4bd-487db0ab3b27
+  name: ''
+  subtype: hiddenCube
+  x: 5296.0
+  y: 3268.0
+- category: collection
+  id: 92da9595-1f56-4c68-bdcb-19c00f976a66
+  name: ''
+  subtype: hiddenCube
+  x: 5011.0
+  y: 2615.0
 - category: collection
   id: 0aef47f1-e218-44da-b6cb-6627bd9df591
   images:
@@ -3032,6 +3104,12 @@ markers:
   x: 6193.0
   y: 5148.0
 - category: collection
+  id: 6a24728d-a4ab-44d4-964a-bc2f4aa41dfa
+  name: ''
+  subtype: hiddenCube
+  x: 2572.0
+  y: 5010.0
+- category: collection
   id: 41cc3a28-6d98-49c2-9278-503fc339114e
   images:
   - markers_images/Hlo0bjE2cvoMgros9wDUbw
@@ -3058,6 +3136,12 @@ markers:
   subtype: monolithMaterial
   x: 5719.0
   y: 5302.0
+- category: collection
+  id: 847149fd-9ffa-4310-9cd6-5c757c1fe800
+  name: ''
+  subtype: hiddenCube
+  x: 5194.0
+  y: 2434.0
 - category: collection
   id: bea7b5a3-645a-4a76-8139-276fdc60bd75
   images:
@@ -3094,33 +3178,6 @@ markers:
   subtype: monolithMaterial
   x: 5392.0
   y: 5276.0
-- category: collection
-  id: 8eb2850e-9d54-424f-a8e1-d165d9efbd0c
-  images:
-  - markers_images/oBw0G8O__h-pN-QUTbkcAg
-  name: ''
-  region: ImpetusiumSquare
-  subtype: monolithMaterial
-  x: 5827.0
-  y: 1886.0
-- category: collection
-  id: c78a748e-dc6f-4c81-b877-b557104873bc
-  images:
-  - markers_images/jtIq3lMVuQhXt7u74J_KcQ
-  name: ''
-  region: ImpetusiumSquare
-  subtype: monolithMaterial
-  x: 5675.0
-  y: 1881.0
-- category: collection
-  id: 231e5085-4160-40ce-8f3f-73a8ed38e8ff
-  images:
-  - markers_images/A2FWPc8oq8CMkDanvidiWQ
-  name: ''
-  region: ImpetusiumSquare
-  subtype: monolithMaterial
-  x: 5873.0
-  y: 2005.0
 - category: collection
   id: 6ed7c067-b6b5-4043-84cf-59d6cc302f9c
   images:
@@ -3460,6 +3517,15 @@ markers:
   subtype: teleport
   x: 3137.0
   y: 5106.0
+- category: collection
+  id: c78a748e-dc6f-4c81-b877-b557104873bc
+  images:
+  - markers_images/r6H9E1hBFZOC_guMg9R-Ag
+  name: ''
+  region: ImpetusiumSquare
+  subtype: monolithMaterial
+  x: 5668.0
+  y: 2085.0
 - category: location
   id: cbcc0101-733f-4e9a-a293-e19f5d7074ef
   name: 临时调查基地
@@ -3539,6 +3605,15 @@ markers:
   x: 2644.0
   y: 5127.0
 - category: collection
+  id: 8eb2850e-9d54-424f-a8e1-d165d9efbd0c
+  images:
+  - markers_images/q-VRIFeguQwGA_bwjiBPUQ
+  name: ''
+  region: ImpetusiumSquare
+  subtype: monolithMaterial
+  x: 5854.0
+  y: 2128.0
+- category: collection
   id: a5cdc28a-e850-4725-9bf6-344bba25f2a0
   images:
   - markers_images/XrjnY5UrkPMl6vAmxz1DXg
@@ -3601,18 +3676,69 @@ markers:
   subtype: monolithMaterial
   x: 2778.0
   y: 4911.0
+- category: collection
+  id: 231e5085-4160-40ce-8f3f-73a8ed38e8ff
+  images:
+  - markers_images/gc7pm8D3QTinat2mwJESxQ
+  name: ''
+  region: ImpetusiumSquare
+  subtype: monolithMaterial
+  x: 5928.0
+  y: 2093.0
 - category: location
   id: 6b0aad24-d60e-43f1-9cfc-bbc8699160f6
   name: 泥泞营地
   subtype: teleport
   x: 3317.0
   y: 4508.0
+- category: collection
+  id: 40e04528-8a24-4584-81ce-f50f4ad329f7
+  name: ''
+  subtype: hiddenCube
+  x: 3552.0
+  y: 3823.0
+- category: collection
+  id: 237d8590-e6c7-4b1a-933b-c6d383d79d89
+  name: ''
+  subtype: hiddenCube
+  x: 3763.0
+  y: 5049.0
+- category: collection
+  id: f4d48291-ad53-4784-9f5c-2d69691c11df
+  name: ''
+  subtype: hiddenCube
+  x: 3733.0
+  y: 4850.0
 - category: location
   id: 512c397f-8fe7-477e-b208-4c3be4aa1dc6
   name: 临时避难所
   subtype: teleport
   x: 2560.0
   y: 4230.0
+- category: collection
+  id: ecd8efdb-7b38-43ee-acce-1f317784a479
+  name: ''
+  subtype: hiddenCube
+  x: 4200.0
+  y: 4940.0
+- category: collection
+  id: e78a209a-3476-4ba2-838d-e8be89ab046d
+  name: ''
+  subtype: hiddenCube
+  x: 5374.0
+  y: 2969.0
+- category: collection
+  id: 525d0934-15b4-4f63-bde9-34965655733b
+  name: ''
+  subtype: hiddenCube
+  x: 3459.0
+  y: 4791.0
+- category: collection
+  id: 2508f30a-92d0-4910-8532-24e53627ab09
+  name: ''
+  subtype: hiddenCube
+  x: 4581.0
+  y: 5235.0
 - category: location
   id: f0cd2d1d-c511-46d0-ac8f-d87e1b403a31
   name: 闲置火葬场
@@ -3625,6 +3751,12 @@ markers:
   subtype: teleport
   x: 3045.0
   y: 4461.0
+- category: collection
+  id: e8b6eecf-d323-4bf7-8566-f90bb5811a55
+  name: ''
+  subtype: hiddenCube
+  x: 2144.0
+  y: 4013.0
 - category: location
   id: 4b3b9d9e-1a67-4f83-97bd-8c7c9df2f6a3
   name: 獠牙藏身处
@@ -3853,7 +3985,7 @@ markers:
 - category: collection
   id: ce9b9a31-6237-41c0-9a19-7a5d1b9f81dd
   images:
-  - markers_images/qLyiZwQarcIzyixcAsUFKw
+  - markers_images/PFAlIGYFuai-Z_Fze2RCGw
   name: ''
   region: SpiritIsle
   subtype: monolithMaterial
@@ -4084,7 +4216,7 @@ markers:
 - category: collection
   id: 49676761-10d8-4484-861c-cfd87ae3067d
   images:
-  - markers_images/nv_cPV3a4NvYUsjqu0Wx3A
+  - markers_images/QLZj2eDH94Ofpns4-TKuZw
   name: ''
   region: Dranactus
   subtype: monolithMaterial
@@ -4129,12 +4261,12 @@ markers:
 - category: collection
   id: 8339e22f-5e5a-4a45-893d-61dea0b8776d
   images:
-  - markers_images/okDtofiS9KVt9bmjo0SnTw
+  - markers_images/TvoKXB5_OfjPdOaq4zufpg
   name: ''
   region: ImpetusiumSquare
   subtype: monolithMaterial
-  x: 5740.0
-  y: 1768.0
+  x: 5473.0
+  y: 1872.0
 - category: collection
   id: 44226ea9-c2ab-480e-a003-096c9b733edd
   images:
@@ -4153,6 +4285,18 @@ markers:
   subtype: monolithMaterial
   x: 4436.0
   y: 5357.0
+- category: collection
+  id: 04915165-3819-4305-bd96-6dfc441742d6
+  name: ''
+  subtype: hiddenCube
+  x: 4098.0
+  y: 4782.0
+- category: collection
+  id: 58d85f40-8384-4c21-8a13-4d6cd13a533f
+  name: ''
+  subtype: hiddenCube
+  x: 4441.0
+  y: 4972.0
 - category: location
   id: 866b477b-f740-4cbf-9936-67d03ab39ba1
   name: 尽头摊位
@@ -4198,6 +4342,36 @@ markers:
   subtype: monolithMaterial
   x: 6001.0
   y: 1970.0
+- category: collection
+  id: d7acfed1-9585-4343-98a5-60fe19ad74d9
+  name: ''
+  subtype: hiddenCube
+  x: 3382.0
+  y: 4802.0
+- category: collection
+  id: 6499c453-110f-4ba4-b888-9d869feb06a6
+  name: ''
+  subtype: hiddenCube
+  x: 3689.0
+  y: 4816.0
+- category: collection
+  id: 26841374-7328-4082-809f-1062ec53dff6
+  name: ''
+  subtype: hiddenCube
+  x: 4162.0
+  y: 3971.0
+- category: collection
+  id: 14e386e4-dae9-446b-98d3-9b310301ed90
+  name: ''
+  subtype: hiddenCube
+  x: 4327.0
+  y: 4682.0
+- category: collection
+  id: 4086cfe1-2bbb-49ab-85e6-12a2876bf8ef
+  name: ''
+  subtype: hiddenCube
+  x: 4710.0
+  y: 4959.0
 - category: location
   id: 6c875bc5-5546-42cb-a29f-936e8420169d
   name: 简卡卡之坟
@@ -4797,6 +4971,12 @@ markers:
   x: 4208.0
   y: 2501.0
 - category: collection
+  id: 5efee31a-59bb-45a7-b6f4-d61cd11ca858
+  name: ''
+  subtype: hiddenCube
+  x: 4137.0
+  y: 4880.0
+- category: collection
   id: e310248d-9a46-4baa-ad24-1f40baf4a17b
   images:
   - markers_images/tZMGJKUncFRP3og2__MaxA
@@ -5058,6 +5238,12 @@ markers:
   x: 3362.0
   y: 3646.0
 - category: collection
+  id: c3aa5d09-59c7-47b0-97fb-1acee24aed23
+  name: ''
+  subtype: hiddenCube
+  x: 3675.0
+  y: 5009.0
+- category: collection
   id: 595a62a0-8416-4aef-8351-d98dfcea052d
   images:
   - markers_images/RgaWc-hwzV8vwSWI90Rczg
@@ -5156,6 +5342,12 @@ markers:
   subtype: monolithMaterial
   x: 4481.0
   y: 2560.0
+- category: collection
+  id: 4c09f7c9-1c44-4fd1-9320-5f0912da64c7
+  name: ''
+  subtype: hiddenCube
+  x: 3096.0
+  y: 4995.0
 - category: collection
   id: fa7b0c49-e259-4007-bcd3-963a1658fd66
   images:
@@ -5444,6 +5636,48 @@ markers:
   subtype: monolithMaterial
   x: 4743.0
   y: 5596.0
+- category: collection
+  id: 51791ab3-145b-4d36-bd93-e7f2aa6a216c
+  name: ''
+  subtype: hiddenCube
+  x: 3549.0
+  y: 4890.0
+- category: collection
+  id: 979d67a5-6c6f-4b39-b17e-f824c66cdda2
+  name: ''
+  subtype: hiddenCube
+  x: 3634.0
+  y: 4750.0
+- category: collection
+  id: e204e3b6-dc9d-4fce-b432-f55d11afe029
+  name: ''
+  subtype: hiddenCube
+  x: 1844.0
+  y: 4386.0
+- category: collection
+  id: 777e0715-5732-4bc8-92d0-c43f1056aa0c
+  name: ''
+  subtype: hiddenCube
+  x: 3924.0
+  y: 5481.0
+- category: collection
+  id: 97150fe9-36fc-4c8d-847a-20a610fa923b
+  name: ''
+  subtype: hiddenCube
+  x: 4380.0
+  y: 4579.0
+- category: collection
+  id: f92dba02-3322-48c6-bafe-9207b9392937
+  name: ''
+  subtype: hiddenCube
+  x: 3957.0
+  y: 5088.0
+- category: collection
+  id: 8ca3cb8f-d77b-4078-8831-a377fa168db8
+  name: ''
+  subtype: hiddenCube
+  x: 3079.0
+  y: 4886.0
 - category: collection
   id: dc207a63-692f-45f2-89ca-0baeff8a9dae
   images:
@@ -5867,7 +6101,6 @@ markers:
 - category: collection
   id: e40f5d09-792a-48eb-8934-3892c34cbdb7
   images:
-  - markers_images/9yZs2PI3F8J6C3ksQaTnBA
   - markers_images/9yZs2PI3F8J6C3ksQaTnBA
   name: ''
   region: ImpetusiumSquare

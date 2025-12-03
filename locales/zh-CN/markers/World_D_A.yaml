@@ -58,6 +58,9 @@
 040023d2-dce5-4975-81bb-f66d05fa718f:
   description: 目的盗墓者老巢
   name: 目的盗墓者老巢
+04915165-3819-4305-bd96-6dfc441742d6:
+  description: ''
+  name: ''
 0523579b-bed0-4987-9e2b-25508a54f20e:
   description: 宝物猎人居所
   name: 宝物猎人居所
@@ -208,6 +211,9 @@
 14d047c9-4eda-4e3e-9e86-da3d36097607:
   description: ''
   name: ''
+14e386e4-dae9-446b-98d3-9b310301ed90:
+  description: ''
+  name: ''
 1551f689-4950-4bdd-ba8f-a87878244dee:
   description: ''
   name: ''
@@ -353,12 +359,15 @@
   description: ''
   name: ''
 231e5085-4160-40ce-8f3f-73a8ed38e8ff:
-  description: ''
+  description: 在空中
   name: ''
 2340b591-37f0-4d4b-9519-43f180cd0568:
   description: ''
   name: ''
 2367a1b2-d85c-4b01-b559-eaf864c66f80:
+  description: ''
+  name: ''
+237d8590-e6c7-4b1a-933b-c6d383d79d89:
   description: ''
   name: ''
 23fe65c4-5961-4f0b-b309-cbf08d68fd8b:
@@ -368,6 +377,9 @@
   description: ''
   name: ''
 2469f61e-0f54-4f06-9639-517cf1af72c5:
+  description: ''
+  name: ''
+2508f30a-92d0-4910-8532-24e53627ab09:
   description: ''
   name: ''
 253b978b-733d-4cd2-9d41-cb3cc5711092:
@@ -397,6 +409,9 @@
 263e7391-dd44-41c8-add0-1c0b3beb0476:
   description: 净化之森
   name: 净化之森
+26841374-7328-4082-809f-1062ec53dff6:
+  description: ''
+  name: ''
 2736a146-9686-4cd7-a449-ff198c4e3137:
   description: ''
   name: ''
@@ -449,6 +464,9 @@
   description: ''
   name: 监视者帐篷
 2d214fca-9e8b-4917-ac7a-34aa1c2cf815:
+  description: ''
+  name: ''
+2d3897de-c8f9-41ec-ab04-122979b99db4:
   description: ''
   name: ''
 2dbe657c-6ff6-43c9-9b66-496e0ebeaaee:
@@ -607,6 +625,9 @@
 400bdd68-5512-41b5-bea8-a234b0930ec3:
   description: 在外面天上
   name: ''
+4086cfe1-2bbb-49ab-85e6-12a2876bf8ef:
+  description: ''
+  name: ''
 40a55d3e-2bc4-4f7f-ab09-467290b34993:
   description: ''
   name: ''
@@ -616,6 +637,9 @@
 40c84d25-b16c-49eb-9a33-d7b5e5a21439:
   description: ''
   name: ''
+40e04528-8a24-4584-81ce-f50f4ad329f7:
+  description: ''
+  name: ''
 41648081-a48f-4541-bbb6-0f42e1161f97:
   description: 波奇栖息地
   name: 波奇栖息地
@@ -623,6 +647,9 @@
   description: ''
   name: ''
 41cc3a28-6d98-49c2-9278-503fc339114e:
+  description: ''
+  name: ''
+41d17b5f-eb11-4249-b4bd-487db0ab3b27:
   description: ''
   name: ''
 4238ef06-f608-4c6d-929c-d2906e96b466:
@@ -715,6 +742,9 @@
 4be944a1-6345-41d9-9870-d32f65fbeb8d:
   description: ''
   name: ''
+4c09f7c9-1c44-4fd1-9320-5f0912da64c7:
+  description: ''
+  name: ''
 4c26caf4-bed2-4753-9dad-047d8045d8f8:
   description: ''
   name: ''
@@ -745,6 +775,9 @@
 513377ea-8431-4388-9744-ceec2fa4da8a:
   description: 圣所外围监视队
   name: 圣所外围监视队
+51791ab3-145b-4d36-bd93-e7f2aa6a216c:
+  description: ''
+  name: ''
 51b9d694-63f9-49fe-813c-2ba4c10263cf:
   description: ''
   name: ''
@@ -755,6 +788,9 @@
   description: ''
   name: ''
 523e6fe5-be11-45bc-be95-ddba43bb687a:
+  description: ''
+  name: ''
+525d0934-15b4-4f63-bde9-34965655733b:
   description: ''
   name: ''
 5303d292-51be-4ea4-86fc-7ad770f30d99:
@@ -811,6 +847,9 @@
 58bb6b7a-34f8-4bf7-94da-0fd9e416d059:
   description: ''
   name: ''
+58d85f40-8384-4c21-8a13-4d6cd13a533f:
+  description: ''
+  name: ''
 593ad967-2073-4817-935d-e675f8e3faae:
   description: ''
   name: ''
@@ -850,6 +889,9 @@
 5d49f34f-d3b7-45b5-a00e-bdc73bb3acc1:
   description: ''
   name: ''
+5d7d1ef5-dbf0-4779-a90e-e9e8b508da2b:
+  description: ''
+  name: ''
 5da3e6f7-98ba-403a-b9ed-88489aff58c0:
   description: 初始默认第一个
   name: ''
@@ -863,6 +905,9 @@
   description: ''
   name: ''
 5e48b2e0-1b2e-4869-b51c-959fdc017a47:
+  description: ''
+  name: ''
+5efee31a-59bb-45a7-b6f4-d61cd11ca858:
   description: ''
   name: ''
 5f23f851-ab68-4d12-b75d-75fbc17a32dc:
@@ -943,6 +988,9 @@
 647fb76a-e60a-4289-aa92-5279ce022413:
   description: ''
   name: ''
+6499c453-110f-4ba4-b888-9d869feb06a6:
+  description: ''
+  name: ''
 664f2172-a6f0-4552-a1fb-30b2396c0d17:
   description: 感谢玩家星崖分享
   name: ''
@@ -992,6 +1040,9 @@
   description: ''
   name: ''
 6a030f1f-759e-4870-9287-3bd97dc57cac:
+  description: ''
+  name: ''
+6a24728d-a4ab-44d4-964a-bc2f4aa41dfa:
   description: ''
   name: ''
 6a26a428-9b4e-461c-8bf4-4e6effdbcaf5:
@@ -1156,6 +1207,9 @@
 76f22d12-36d9-4ed8-a56d-f7c7c852c0f2:
   description: ''
   name: ''
+777e0715-5732-4bc8-92d0-c43f1056aa0c:
+  description: ''
+  name: ''
 77dd18a5-e4b9-4755-87dd-d925b2f07232:
   description: ''
   name: ''
@@ -1282,6 +1336,9 @@
 8403f607-2f11-44f9-bb9e-fe64958e5012:
   description: ''
   name: ''
+847149fd-9ffa-4310-9cd6-5c757c1fe800:
+  description: ''
+  name: ''
 847200a2-1a57-4531-b87f-e92b740b60bb:
   description: ''
   name: ''
@@ -1291,6 +1348,9 @@
 852607d4-f6b1-4385-bf8c-b4b7d93086fd:
   description: 占卜师之坟
   name: 占卜师之坟
+85a3f492-7d2b-404f-82ec-4eadcb95ace5:
+  description: ''
+  name: ''
 85efff25-11dc-476f-9569-fdea0bdb1166:
   description: ''
   name: ''
@@ -1345,6 +1405,9 @@
 8c7495e8-706c-4f29-b0f5-70787f5adc97:
   description: ''
   name: ''
+8ca3cb8f-d77b-4078-8831-a377fa168db8:
+  description: ''
+  name: ''
 8cdb6566-7f34-4879-b278-244349999cda:
   description: ''
   name: 因派图西姆下面的路
@@ -1361,7 +1424,7 @@
   description: ''
   name: ''
 8eb2850e-9d54-424f-a8e1-d165d9efbd0c:
-  description: ''
+  description: 12.3更新后处于最底下
   name: ''
 8ef0f731-11ca-4a83-84fb-282e10045382:
   description: ''
@@ -1408,6 +1471,9 @@
 92d9e45f-f384-400f-8975-b5568d5b9f5d:
   description: ''
   name: ''
+92da9595-1f56-4c68-bdcb-19c00f976a66:
+  description: ''
+  name: ''
 9343a064-1a42-4c20-b71f-e6d723cc8639:
   description: ''
   name: ''
@@ -1444,12 +1510,18 @@
 96f9f989-d008-4f22-9daa-a4f82f521b60:
   description: ''
   name: ''
+97150fe9-36fc-4c8d-847a-20a610fa923b:
+  description: ''
+  name: ''
 9741e91b-805f-4ffc-a81e-fb5c8cd7e646:
   description: 崇拜者地下洞穴
   name: 崇拜者地下洞穴
 978251b7-1792-48d9-acc1-703e623d4c97:
   description: ''
   name: 葛利巴德丘陵地东部尾岛
+979d67a5-6c6f-4b39-b17e-f824c66cdda2:
+  description: ''
+  name: ''
 98ac7270-7ce8-4414-8918-44df00111ef8:
   description: ''
   name: ''
@@ -1558,6 +1630,9 @@ a4742f73-c258-4219-8604-872a96de307c:
 a48315ba-ac01-452f-8c5b-ea8e7e9c8c2b:
   description: ''
   name: ''
+a4e46055-094e-4662-bbbb-f61902783b9d:
+  description: ''
+  name: ''
 a55eb5d3-91e4-4c08-874a-694cf00a49f1:
   description: ''
   name: ''
@@ -1639,6 +1714,9 @@ aed1cd8a-ec45-450d-b5b4-a9e760d56cfe:
 b054860e-ae15-43e6-a438-21898acf6e2d:
   description: ''
   name: ''
+b0a84ea3-c3d7-44d3-9a67-2e0028ff8cc5:
+  description: ''
+  name: ''
 b1cf4fac-9673-4020-a022-fd67e36322c9:
   description: ''
   name: ''
@@ -1664,6 +1742,9 @@ b3434650-8a59-456b-9dbf-96a269d622cc:
   description: ''
   name: ''
 b356803a-e2cf-47de-a01a-38d395d08881:
+  description: ''
+  name: ''
+b3da5bd0-465f-4010-8500-d29b6f1e0166:
   description: ''
   name: ''
 b434614a-2dee-4f4d-b7d5-b2cab87757f6:
@@ -1721,6 +1802,9 @@ bbc58f52-ce98-4321-b016-ff079f843039:
   description: ''
   name: ''
 bbd9b2d3-2757-4222-b121-9877f1507e81:
+  description: ''
+  name: ''
+bc8c1451-ab4b-49f1-9672-2054fc15434e:
   description: ''
   name: ''
 bcba9d8a-078e-4beb-bd45-35644eea22c4:
@@ -1813,6 +1897,9 @@ c2e3af59-df32-4d6b-b1e8-97666303faab:
 c2f75460-20ac-4307-ae65-07041f00acb0:
   description: ''
   name: ''
+c3aa5d09-59c7-47b0-97fb-1acee24aed23:
+  description: ''
+  name: ''
 c423d98e-376d-4784-8c78-aeca4a623049:
   description: ''
   name: ''
@@ -1847,7 +1934,7 @@ c6f86fc6-2e73-425b-ad10-1b0e21041c70:
   description: ''
   name: ''
 c78a748e-dc6f-4c81-b877-b557104873bc:
-  description: ''
+  description: 12.3更新后处于最底下
   name: ''
 c8240864-e395-4ce9-a8ba-28d06bfe02d7:
   description: 水里，这个水里有两个
@@ -1966,6 +2053,9 @@ d175ca14-8a99-44ce-880e-02c9787f9776:
 d19cd710-9106-4a06-8aa3-38a176acb256:
   description: ''
   name: ''
+d2916316-a448-4c3d-9bf7-a783856040f3:
+  description: ''
+  name: ''
 d3910f4c-d243-4855-947b-773af748e544:
   description: 寂静山丘
   name: 寂静山丘
@@ -1982,6 +2072,9 @@ d68db4a8-f3f5-4a08-8c95-4309606c19d5:
   description: ''
   name: ''
 d6aae110-7c3e-4dc2-a912-6068b1e02e2d:
+  description: ''
+  name: ''
+d7acfed1-9585-4343-98a5-60fe19ad74d9:
   description: ''
   name: ''
 d7f428dc-8917-4089-ae0e-8bc41bdcd61a:
@@ -2055,6 +2148,9 @@ e1664ea3-c29b-4f4d-95a4-00c41ff90433:
   name: ''
 e16a325e-fa4f-4b48-8c71-f55ba6158daa:
   description: ''
+  name: ''
+e204e3b6-dc9d-4fce-b432-f55d11afe029:
+  description: Thanks to 'Felipe Peterlini'
   name: ''
 e246663b-9a36-4b9d-bb0d-e616c91ffd9c:
   description: 海盗宝物仓库
@@ -2146,6 +2242,9 @@ e77a8d0d-32c7-46c3-90ac-2f82550ddf77:
 e77abaac-0c11-4cb7-b4c3-c510f95cd3b4:
   description: ''
   name: 巴斯斐尔特瀑布
+e78a209a-3476-4ba2-838d-e8be89ab046d:
+  description: ''
+  name: ''
 e79d8ec2-089c-4c82-a0f4-57016b7a5a06:
   description: ''
   name: ''
@@ -2158,12 +2257,18 @@ e85734e4-2094-4e96-b34a-f4308830e316:
 e8a23906-6902-414e-86cc-c20c4f870cfe:
   description: 乌尔通海姆
   name: 乌尔通海姆
+e8b6eecf-d323-4bf7-8566-f90bb5811a55:
+  description: ''
+  name: ''
 e933a944-5d07-48b3-993c-ef1d76d87dda:
   description: ''
   name: ''
 e99196c6-ce75-4d69-bd11-804612b57af6:
   description: ''
   name: 守墓人营帐
+e9b38f46-65df-49cd-b8ad-b77452ee70af:
+  description: ''
+  name: ''
 ea9e2229-f837-4a61-8f1d-aa987888ef86:
   description: 峭壁下方处
   name: ''
@@ -2176,6 +2281,9 @@ ec26d90d-5842-478e-ac16-c01261d1998d:
 ec7f4d72-2bba-49a8-8e2b-2b8cf443ed51:
   description: 奥德石掠夺者老巢
   name: 奥德石掠夺者老巢
+ecd8efdb-7b38-43ee-acce-1f317784a479:
+  description: ''
+  name: ''
 ed323f65-51b4-47a2-a670-e1075b3b09a6:
   description: 黑爪部落
   name: 黑爪部落
@@ -2248,6 +2356,9 @@ f29d24f1-9832-4cae-87b5-c36040471299:
 f2f2f5bc-6952-4ed1-8d41-dbd44698ca4a:
   description: ''
   name: ''
+f340cb1e-346a-47ae-9b9b-7c1459dbf38b:
+  description: ''
+  name: ''
 f343a737-d4d2-4fca-9186-288bb9956e25:
   description: ''
   name: ''
@@ -2261,6 +2372,9 @@ f46b4d5a-3ecb-4bc5-8a8d-6a7d4fee7b4e:
   description: ''
   name: ''
 f478cac1-786a-44a9-a587-78024396f2ab:
+  description: ''
+  name: ''
+f4d48291-ad53-4784-9f5c-2d69691c11df:
   description: ''
   name: ''
 f56c7eb6-4832-4322-9c0c-b16c43cc3cdc:
@@ -2288,6 +2402,9 @@ f89424c1-c6e4-4e0d-83d8-fcffc69fcb0f:
   description: ''
   name: ''
 f919d95b-aa24-4054-b5e7-bb2003d3322e:
+  description: ''
+  name: ''
+f92dba02-3322-48c6-bafe-9207b9392937:
   description: ''
   name: ''
 f92f3534-c5ae-4cd7-b9f9-402b2dc05b80:
