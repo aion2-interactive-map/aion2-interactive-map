@@ -9,6 +9,7 @@ type SidebarWrapperProps = {
   side: "left" | "right";       // determines positioning & button direction
   width?: number;               // expanded width (default 370)
   collapsedWidth?: number;      // collapsed width (default 0)
+  collapsed?: boolean;
   children: React.ReactNode;
 };
 
@@ -16,17 +17,18 @@ const SidebarWrapper: React.FC<SidebarWrapperProps> = ({
                                                          side = "left",
                                                          width = 370,
                                                          collapsedWidth = 0,
+                                                         collapsed = false,
                                                          children,
                                                        }) => {
   const { t } = useTranslation("common");
-  const [collapsed, setCollapsed] = useState(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(collapsed);
   const {theme} = useTheme();
   const isDark = theme === "dark";
   const bgUrl = getStaticUrl(isDark ? "images/Sidebar_Dark.webp" : "images/Sidebar_Light.webp");
   const isLeft = side === "left";
 
   // Collapse button click
-  const toggle = () => setCollapsed((v) => !v);
+  const toggle = () => setSidebarCollapsed((v) => !v);
 
   return (
     <aside
@@ -35,7 +37,7 @@ const SidebarWrapper: React.FC<SidebarWrapperProps> = ({
         // ${isLeft ? "order-0" : "order-2"}
       `}
       style={{
-        width: collapsed ? collapsedWidth : width,
+        width: sidebarCollapsed ? collapsedWidth : width,
         maxWidth: width, // ensures only right part of image is cut if narrow
       }}
     >
@@ -61,12 +63,12 @@ const SidebarWrapper: React.FC<SidebarWrapperProps> = ({
         `}
       >
         <FontAwesomeIcon
-          icon={isLeft ? (collapsed ? faChevronRight : faChevronLeft) : (collapsed ? faChevronLeft : faChevronRight)}
+          icon={isLeft ? (sidebarCollapsed ? faChevronRight : faChevronLeft) : (sidebarCollapsed ? faChevronLeft : faChevronRight)}
           className="text-sm"
         />
         {/* Multilingual safe label (wrap allowed) */}
         <span className="text-[10px] leading-tight mt-0.5 whitespace-normal text-center px-0.5">
-          {collapsed ? t("menu.expand", "Expand") : t("menu.collapse", "Collapse")}
+          {sidebarCollapsed ? t("menu.expand", "Expand") : t("menu.collapse", "Collapse")}
         </span>
       </button>
     </aside>

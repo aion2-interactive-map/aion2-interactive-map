@@ -92,7 +92,14 @@ export const GameDataProvider: React.FC<GameDataProviderProps> = ({
     if (visible) {
       setVisibleSubtypes(visible);
     } else {
-      setVisibleSubtypes(validKeys);
+      // DEFAULT: only "location" subtypes
+      const defaultKeys = new Set<string>();
+      all.forEach((sub, name) => {
+        if (sub.category === "location") {
+          defaultKeys.add(name);
+        }
+      });
+      setVisibleSubtypes(defaultKeys);
     }
   }, [selectedMap, types]);
 

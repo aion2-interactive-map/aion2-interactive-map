@@ -16,7 +16,7 @@ const RightSidebar: React.FC = () => {
   const alipayUrl = getStaticUrl("images/alipay.webp");
 
   return (
-    <SidebarWrapper side="right" width={344}>
+    <SidebarWrapper side="right" width={344} collapsed={true}>
       {/* Fullscreen image overlay ABOVE the modal */}
       {showImageOverlay && (
         <div
