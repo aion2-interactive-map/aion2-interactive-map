@@ -29,7 +29,7 @@ const ThemeDropdown: React.FC = () => {
 
       <DropdownMenu aria-label="Theme selection" variant="flat" className="min-w-[150px]">
         {Object.entries(THEME_ICON_MAP).map(([key, icon]) => (
-          <DropdownItem key={key} onPress={() => setTheme(key as Theme)}>
+          <DropdownItem key={key} onPress={() => setTheme(key as Theme)} textValue={t(`common:theme.${key}`)}>
             <div className="flex items-center gap-2">
               <FontAwesomeIcon icon={icon}/>
               {t(`common:theme.${key}`)} {/* translatable */}

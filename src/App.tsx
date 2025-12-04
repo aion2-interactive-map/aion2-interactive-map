@@ -10,9 +10,6 @@ import RightSidebar from "@/components/SideBar/RightSidebar";
 
 import {Spinner} from "@heroui/react";
 
-import { useGameData } from "@/context/GameDataContext.tsx";
-import { useMarkers } from "@/context/MarkersContext.tsx";
-
 import type {MapRef} from "./types/game";
 import DismissableAlert from "./components/DismissableAlert.tsx";
 import {useTranslation} from "react-i18next";
@@ -25,9 +22,7 @@ import {getStaticUrl} from "@/utils/url.ts";
 const App: React.FC = () => {
 
   const { t } = useTranslation();
-  const { loading, selectedMap, types } = useGameMap();
-  const { visibleSubtypes, allSubtypes } = useGameData();
-  const { markers, completedSet, toggleMarkerCompleted, showLabels } = useMarkers();
+  const { loading, selectedMap } = useGameMap();
 
   const mapRef = useRef<MapRef>(null);
 
@@ -97,15 +92,7 @@ const App: React.FC = () => {
         <RightSidebar />
 
         <GameMapView
-          selectedMap={selectedMap}
-          markers={markers}
           mapRef={mapRef}
-          visibleSubtypes={visibleSubtypes || new Set()}
-          types={types}
-          subtypes={allSubtypes}
-          showLabels={showLabels}
-          completedSet={completedSet}
-          toggleMarkerCompleted={toggleMarkerCompleted}
         />
 
       </div>

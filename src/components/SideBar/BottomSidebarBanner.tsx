@@ -10,12 +10,14 @@ type BottomSidebarBannerProps = {
   href: string;
   autoCloseDelay?: number;  // Delay before showing the close button (in ms)
   closeButtonPosition?: CloseButtonPosition;  // Position of the close button
+  onClose?: () => void;
 };
 
 const BottomSidebarBanner: React.FC<BottomSidebarBannerProps> = ({
                                                                    imageUrl,
                                                                    height,
                                                                    href,
+                                                                   onClose,
                                                                    autoCloseDelay = 10000,  // Default 5 seconds before showing the close button
                                                                    closeButtonPosition = "top-right",  // Default position of the close button
                                                                  }) => {
@@ -65,7 +67,10 @@ const BottomSidebarBanner: React.FC<BottomSidebarBannerProps> = ({
       {/* Close button (only shows after the delay) */}
       {showCloseButton && (
         <button
-          onClick={() => setVisible(false)}
+          onClick={() => {
+            if (onClose) onClose();
+            setVisible(false);
+          }}
           className={`absolute ${closeButtonClasses} w-8 h-8 rounded-md bg-black/40 hover:bg-black/60 flex items-center justify-center text-white`}
         >
           <FontAwesomeIcon icon={faTimes} className="text-lg" />

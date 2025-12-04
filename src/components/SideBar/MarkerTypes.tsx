@@ -26,7 +26,7 @@ const MarkerTypes: React.FC = () => {
 
   return (
     <>
-      <div className="w-full flex flex-col gap-3 px-2 my-0">
+      <div className="w-full flex flex-col gap-3 px-2 my-0 pb-4">
         {/* --- Two-per-row button grid --- */}
         <div className="grid grid-cols-2 gap-2">
           <Button
@@ -75,8 +75,8 @@ const MarkerTypes: React.FC = () => {
             <div className="grid grid-cols-2 gap-2">
               {category.subtypes.map((subtype) => {
                 const key = subtype.name;
-                const total = subtypeCounts.get(key) ?? 0;
-                const completed = completedCounts.get(key) ?? 0;
+                const total = subtypeCounts[key] ?? 0;
+                const completed = completedCounts[key] ?? 0;
                 const active = visibleSubtypes?.has(key) || false;
                 const canComplete = subtype.canComplete === true;
                 const iconName = subtype.icon || category.icon || "";

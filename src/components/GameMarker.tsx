@@ -10,17 +10,14 @@ import { renderToString } from "react-dom/server";
 
 import MarkerPopupContent from "./MarkerPopupContent";
 
-import type {GameMapMeta, MarkerInstance, MarkerTypeCategory, MarkerTypeSubtype} from "../types/game";
+import type {GameMapMeta, MarkerInstance, MarkerTypeSubtype} from "../types/game";
 import {parseIconUrl} from "../utils/url.ts";
+import {useMarkers} from "@/context/MarkersContext.tsx";
+import {useGameMap} from "@/context/GameMapContext.tsx";
+import {useGameData} from "@/context/GameDataContext.tsx";
 
 type Props = {
-  map: GameMapMeta;
   marker: MarkerInstance;
-  types: MarkerTypeCategory[];
-  subtypes: Map<string, MarkerTypeSubtype>;
-  showLabel: boolean;
-  completedSet: Set<string>;
-  toggleMarkerCompleted: (marker: MarkerInstance) => void;
 };
 
 /** Lookup icon definition from YAML (by category/subtype). */
@@ -98,28 +95,34 @@ function createPinIcon(
 
 
 const GameMarkerInner: React.FC<Props> = ({
-                                       map,
+                                       // map,
                                        marker,
-                                       types,
-                                       subtypes,
-                                       showLabel,
-                                       completedSet,
-                                       toggleMarkerCompleted,
+                                       // types,
+                                       // subtypes,
+                                       // showLabel,
+                                       // completedSet,
+                                       // toggleMarkerCompleted,
                                      }) => {
 
   // Namespace for this map's markers (ensures markers/world.yaml loads)
   // console.log(marker)
   const popupRef = useRef<LeafletPopup>(null);
+  const {selectedMap, types} = useGameMap();
+  const {allSubtypes} = useGameData();
+  const {showLabels, toggleMarkerCompleted, completedBySubtype} = useMarkers();
 
-  const markerNs = `markers/${map.name}`;
-  const regionNs = `regions/${map.name}`;
+  const markerNs = `markers/${selectedMap?.name}`;
+  const regionNs = `regions/${selectedMap?.name}`;
   const { t } = useTranslation([markerNs, regionNs]);
+
+  if (!selectedMap) return null;
+
 
   const markerKeyPrefix = `${markerNs}:${marker.id}`;
   const regionKeyPrefix = `${regionNs}:${marker.region}`;
 
   // Find subtype and category definition
-  const sub = subtypes.get(marker.subtype);
+  const sub = allSubtypes.get(marker.subtype);
   const cat = types.find((c) => c.name === sub?.category);
 
   // Category & subtype labels from types namespace (fully-qualified keys)
@@ -135,11 +138,15 @@ const GameMarkerInner: React.FC<Props> = ({
   const hideTooltip = !!sub?.hideTooltip;
 
   // Completion key is stored per map in useMarkers; here we just build the same key
-  const completedKey = marker.id;
-  const isCompleted = completedSet.has(completedKey);
+  let isCompleted= false;
+  if (sub?.name && completedBySubtype[sub.name]) {
+    const completedSet = completedBySubtype[sub.name];
+    isCompleted = completedSet.has(marker.indexInSubtype);
+  }
+
 
   // find icon and color
-  const innerIcon = getSubtypeIconDef(sub, map);
+  const innerIcon = getSubtypeIconDef(sub, selectedMap);
   // const pinColor = getSubtypeColor(sub, cat);
 
   const icon = createPinIcon(innerIcon, iconScale, isCompleted);
@@ -161,7 +168,7 @@ const GameMarkerInner: React.FC<Props> = ({
       position={new L.LatLng(marker.y, marker.x)}
       icon={icon}
     >
-      {(showLabel && !hideTooltip) && (
+      {(showLabels && !hideTooltip) && (
         <Tooltip
           permanent
           direction="top"

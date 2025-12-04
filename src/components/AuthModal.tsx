@@ -20,8 +20,11 @@ type AuthModalProps = {
 };
 
 export default function AuthModal({isOpen, onClose}: AuthModalProps) {
-  const [mode, setMode] = useState<"login" | "register">("login");
-  const {login, register} = useUser();
+  // const [mode, setMode] = useState<"login" | "register">("login");
+  const {
+    login, register,
+    userModalMode: mode, setUserModalMode: setMode,
+  } = useUser();
 
   const [username, setUsername] = useState<string>("");
   const [email, setEmail] = useState("");

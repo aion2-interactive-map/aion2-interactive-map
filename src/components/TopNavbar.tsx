@@ -1,5 +1,5 @@
 // src/components/TopNavbar.tsx
-import React, {useState} from "react";
+import React from "react";
 import {
   Button, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger,
   Navbar,
@@ -23,12 +23,11 @@ import AuthModal from "@/components/AuthModal.tsx";
 const TopNavbar: React.FC = () => {
   const {t} = useTranslation(); // we use fully-qualified keys like common:siteTitle
   const {theme} = useTheme();
-  const { user, logout } = useUser();
+  const { user, logout, userModalOpen: authOpen, setUserModalOpen: setAuthOpen } = useUser();
 
   const isDark = theme === "dark";
   const {dataMode, toggleDataMode} = useDataMode();
   const isStatic = dataMode === "static";
-  const [authOpen, setAuthOpen] = useState(false);
 
 
   return (

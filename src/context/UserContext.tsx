@@ -26,6 +26,10 @@ export type UserContextValue = {
   logout: () => void;
   fetchWithAuth: (url: string, options?: RequestInit) => Promise<Response>;
   refreshUser: () => Promise<void>;
+  userModalMode: "login" | "register";
+  setUserModalMode: (mode: "login" | "register") => void;
+  userModalOpen: boolean;
+  setUserModalOpen: (open: boolean) => void;
 };
 
 // ---- Context ----
@@ -37,6 +41,8 @@ const UserContext = createContext<UserContextValue | undefined>(undefined);
 export function UserProvider({children}: { children: ReactNode }) {
   const [token, setToken] = useState<string | null>(() => localStorage.getItem(TOKEN_KEY));
   const [user, setUser] = useState<User | null>(null);
+  const [userModalMode, setUserModalMode] = useState<"login" | "register">("login");
+  const [userModalOpen, setUserModalOpen] = useState(false);
 
   // Load user automatically once token exists
   useEffect(() => {
@@ -150,7 +156,12 @@ export function UserProvider({children}: { children: ReactNode }) {
 
 
   return (
-    <UserContext.Provider value={{user, token, login, logout, register, fetchWithAuth, refreshUser}}>
+    <UserContext.Provider value={{
+      user, token, login, logout, register,
+      fetchWithAuth, refreshUser,
+      userModalMode, setUserModalMode,
+      userModalOpen, setUserModalOpen,
+    }}>
       {children}
     </UserContext.Provider>
   );

@@ -5,17 +5,15 @@ import L from "leaflet";
 
 import GameMarker from "./GameMarker";
 
-import type {
-  GameMapMeta,
-  MapRef,
-  MarkerInstance,
-  MarkerTypeCategory, MarkerTypeSubtype, RegionInstance,
-} from "../types/game";
+import type {MapRef, RegionInstance} from "../types/game";
 import GameMapTiles from "./GameMapTiles.tsx";
 import GameMapBorders from "@/components/GameMapBorders.tsx";
 import {useTranslation} from "react-i18next";
 import {getStaticUrl} from "@/utils/url.ts";
 import DismissibleBanner from "@/components/DismissibleBanner.tsx";
+import {useGameMap} from "@/context/GameMapContext.tsx";
+import {useMarkers} from "@/context/MarkersContext.tsx";
+import {useGameData} from "@/context/GameDataContext.tsx";
 
 
 type CursorTrackerProps = {
@@ -42,15 +40,7 @@ const CursorTracker: React.FC<CursorTrackerProps> = ({onUpdate}) => {
 };
 
 type Props = {
-  selectedMap?: GameMapMeta;
-  markers: MarkerInstance[];
   mapRef: React.RefObject<MapRef>;
-  visibleSubtypes: Set<string>;
-  types: MarkerTypeCategory[];
-  subtypes: Map<string, MarkerTypeSubtype>;
-  showLabels: boolean;
-  completedSet: Set<string>;
-  toggleMarkerCompleted: (marker: MarkerInstance) => void;
 };
 
 const MapContextMenuHandler: React.FC<{
@@ -90,24 +80,30 @@ const MapContextMenuHandler: React.FC<{
 };
 
 const GameMapView: React.FC<Props> = ({
-                                        selectedMap,
-                                        markers,
+                                        // selectedMap,
+                                        // markers,
                                         mapRef,
-                                        visibleSubtypes,
-                                        types,
-                                        subtypes,
-                                        showLabels,
-                                        completedSet,
-                                        toggleMarkerCompleted,
+                                        // visibleSubtypes,
+                                        // types,
+                                        // subtypes,
+                                        // showLabels,
+                                        // completedSet,
+                                        // toggleMarkerCompleted,
                                       }) => {
   const [cursorPos, setCursorPos] = useState<{ x: number; y: number } | null>(
     null,
   );
   const [contextMenu, setContextMenu] = useState<ContextMenuState | null>(null);
   const [hoveredRegion, setHoveredRegion] = useState<RegionInstance | undefined>(undefined);
+
+  const {selectedMap} = useGameMap();
+  const {visibleSubtypes} = useGameData();
+  const {markers} = useMarkers();
+
   const regionNs = `regions/${selectedMap?.name}`;
   const {t} = useTranslation([regionNs]);
   const regionLabel = hoveredRegion ? t(`${regionNs}:${hoveredRegion.name}.name`) : "";
+
 
   const handleCopyPosition = useCallback((x: number, y: number) => {
     const text = `${Math.round(x)}, ${Math.round(y)}`;
@@ -182,19 +178,10 @@ const GameMapView: React.FC<Props> = ({
 
         {markers
           .filter((m) =>
-            visibleSubtypes.has(m.subtype),
+            visibleSubtypes?.has(m.subtype),
           )
           .map((m) => (
-            <GameMarker
-              key={m.id}
-              map={selectedMap}
-              marker={m}
-              types={types}
-              subtypes={subtypes}
-              showLabel={showLabels}
-              completedSet={completedSet}
-              toggleMarkerCompleted={toggleMarkerCompleted}
-            />
+            <GameMarker key={m.id} marker={m} />
           ))}
       </MapContainer>
 
