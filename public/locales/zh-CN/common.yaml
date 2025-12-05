@@ -70,7 +70,8 @@ errors:
 markerActions:
   markCompleted: "标记为已完成"
   markNotCompleted: "已完成"
-  feedback: "反馈此点"
+  comments: "留言评论"
+  enterComment: "请输入评论..."
 
 introModal:
   alert: "我们承诺本网站将 **永久免费开放**、我们不会在任何平台进行交易售卖，请大家**提高警惕，谨防受骗**！"

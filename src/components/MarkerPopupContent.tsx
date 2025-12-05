@@ -6,55 +6,89 @@ import EmblaCarouselThumbs from "./EmblaCarousel/EmblaCarouselThumbs.tsx";
 import EmblaCarouselGallery from "./EmblaCarousel/EmblaCarouselGallery.tsx";
 import {getStaticUrl} from "../utils/url.ts";
 import {useUser} from "@/context/UserContext.tsx";
-// import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-// import {faCommentDots} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faCommentDots} from "@fortawesome/free-solid-svg-icons";
+import {useGameMap} from "@/context/GameMapContext.tsx";
+import type {CommentInstance, MarkerInstance} from "@/types/game.ts";
+import DOMPurify from "dompurify";
 
 type Props = {
+  marker: MarkerInstance;
   name: string;
   categoryLabel: string;
   subtypeLabel: string;
   regionLabel: string;
-  x: number;
-  y: number;
-  images: string[];
+  // x: number;
+  // y: number;
+  // images: string[];
   description: string;
   canComplete: boolean;
   completed: boolean;
   onToggleCompleted: () => void;
 };
 
+function safeHTML(input: string) {
+  return { __html: DOMPurify.sanitize(input) };
+}
+
 const MarkerPopupContent: React.FC<Props> = ({
+                                               marker,
                                                name,
                                                categoryLabel,
                                                subtypeLabel,
                                                regionLabel,
-                                               x,
-                                               y,
-                                               images,
                                                description,
                                                canComplete,
                                                completed,
                                                onToggleCompleted,
                                              }) => {
   const {t} = useTranslation();
-  const {user, setUserModalOpen} = useUser();
+  const {selectedMap} = useGameMap();
+  const {user, setUserModalOpen, fetchWithAuth} = useUser();
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [showCommentInput, setShowCommentInput] = useState(false);
   const [commentText, setCommentText] = useState("");
+  const [comments, setComments] = useState<CommentInstance[]>([]);
+
+  const hasImages = marker.images && marker.images.length > 0;
+  const resolvedSmallImages = marker.images?.map(image => getStaticUrl(image + ".small.webp"));
+  const resolvedNormalImages = marker.images?.map(image => getStaticUrl(image + ".normal.webp"));
 
 
-  const hasImages = images && images.length > 0;
-  const resolvedSmallImages = images?.map(image => getStaticUrl(image + ".small.webp"));
-  const resolvedNormalImages = images?.map(image => getStaticUrl(image + ".normal.webp"));
+  const handleListComment = async () => {
+    const res = await fetchWithAuth(`/maps/${selectedMap?.name}/markers/${marker.id}/comments`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    if (!res.ok) return;
+    const data = await res.json();
+    if (!data.data || data?.errorCode != "Success") return;
+    console.log(data.data);
+    setComments(data.data.results);
+  }
 
   const handleSubmitComment = async () => {
     console.log("Comment submit:", commentText);
-
-
+    if (!commentText) return;
+    const res = await fetchWithAuth(`/maps/${selectedMap?.name}/markers/${marker.id}/comments`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        content: commentText,
+      })
+    });
+    if (!res.ok) return;
+    // const data = await res.json();
+    await handleListComment();
     setCommentText("");
-    setShowCommentInput(false);
+    // setShowCommentInput(false);
   }
+
 
   return (
     <Card
@@ -74,7 +108,7 @@ const MarkerPopupContent: React.FC<Props> = ({
       <div className="text-[14px] leading-[14px]">
         {categoryLabel} / {subtypeLabel}{" "}
         <span className="opacity-80">
-          ({x.toFixed(0)}, {y.toFixed(0)})
+          ({marker.x.toFixed(0)}, {marker.y.toFixed(0)})
         </span>
         {regionLabel ? ` / ${regionLabel}` : null}
       </div>
@@ -120,24 +154,27 @@ const MarkerPopupContent: React.FC<Props> = ({
       <Divider/>
 
 
-
-
-      <div className="flex justify-between items-center">
-        {/* LEFT BUTTON — only when user != null */}
-        {/*{user ? (*/}
-        {/*  <Button*/}
-        {/*    size="sm"*/}
-        {/*    variant="light"*/}
-        {/*    color="default"*/}
-        {/*    onPress={() => setShowCommentInput(!showCommentInput)}*/}
-        {/*    startContent={<FontAwesomeIcon icon={faCommentDots} className="text-sm" />}*/}
-        {/*  >*/}
-        {/*    {t("common:markerActions:feedback", "Feedback")}*/}
-        {/*  </Button>*/}
-        {/*) : (*/}
-        {/*  // Placeholder to keep right button aligned right*/}
-        {/*  <div />*/}
-        {/*)}*/}
+      <div className="flex justify-between items-center mb-0">
+        {/*LEFT BUTTON — only when user != null */}
+        {user ? (
+          <Button
+            size="sm"
+            variant="light"
+            color="default"
+            onPress={async () => {
+              if (!showCommentInput) {
+                await handleListComment();
+              }
+              setShowCommentInput(!showCommentInput);
+            }}
+            startContent={<FontAwesomeIcon icon={faCommentDots} className="text-sm"/>}
+          >
+            {t("common:markerActions:comments", "Comments")}
+          </Button>
+        ) : (
+          // Placeholder to keep right button aligned right
+          <div/>
+        )}
 
         {/* RIGHT BUTTON — only when canComplete */}
         {canComplete && (
@@ -157,6 +194,29 @@ const MarkerPopupContent: React.FC<Props> = ({
       {/* === Comment Input Section (flows normally) === */}
       {showCommentInput && (
         <div className="flex flex-col gap-2">
+          {comments.length > 0 && (
+            <div className="flex flex-col gap-3 mt-3">
+              {comments.map((c) => (
+                <div
+                  key={c.id}
+                  className="p-3 rounded-md text-sm leading-snug"
+                >
+                  {/* Content (HTML-sanitized) */}
+                  <div
+                    className="text-foreground"
+                    dangerouslySetInnerHTML={safeHTML(c.content)}
+                  />
+
+                  {/* Created time */}
+                  <div className="text-xs text-default-700 mt-1">
+                    {new Date(c.createdAt).toLocaleString()}
+                  </div>
+
+                </div>
+              ))}
+            </div>
+          )}
+
           <Input
             placeholder={t("common:markerActions:enterComment", "Write a comment…")}
             value={commentText}
@@ -172,6 +232,7 @@ const MarkerPopupContent: React.FC<Props> = ({
               color="primary"
               radius="sm"
               onPress={handleSubmitComment}
+              className="text-background"
             >
               {t("common:ui.submit", "Submit")}
             </Button>

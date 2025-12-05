@@ -66,6 +66,14 @@ export interface MarkerInstance {
   indexInSubtype: number;
 }
 
+export interface CommentInstance {
+  id: string;
+  content: string;
+  replyToId?: string;
+  rootIs?: string;
+  createdAt: string;
+}
+
 
 export interface RegionInstance {
   id: string;

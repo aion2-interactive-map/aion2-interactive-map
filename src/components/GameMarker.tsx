@@ -181,13 +181,14 @@ const GameMarkerInner: React.FC<Props> = ({
 
       <Popup maxWidth={360} minWidth={360} autoPan={true} closeButton={false} ref={popupRef}>
         <MarkerPopupContent
+          marker={marker}
           name={localizedName}
           categoryLabel={categoryLabel}
           subtypeLabel={subtypeLabel}
           regionLabel={regionLabel}
-          x={marker.x}
-          y={marker.y}
-          images={marker.images}
+          // x={marker.x}
+          // y={marker.y}
+          // images={marker.images}
           description={description}
           canComplete={canComplete}
           completed={isCompleted}
