@@ -1,1 +1,0 @@
-import"./vendor-react-DPCMXswl.js";import{t as e}from"./vendor-ui-Bmzq2n1K.js";export{e as default};
