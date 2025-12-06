@@ -154,7 +154,7 @@ const MarkerPopupContent: React.FC<Props> = ({
       <Divider/>
 
 
-      <div className="flex justify-between items-center mb-0">
+      <div className="flex justify-between items-center">
         {/*LEFT BUTTON — only when user != null */}
         {user ? (
           <Button
@@ -195,7 +195,7 @@ const MarkerPopupContent: React.FC<Props> = ({
       {showCommentInput && (
         <div className="flex flex-col gap-2">
           {comments.length > 0 && (
-            <div className="flex flex-col gap-3 mt-3">
+            <div className="flex flex-col gap-3">
               {comments.map((c) => (
                 <div
                   key={c.id}

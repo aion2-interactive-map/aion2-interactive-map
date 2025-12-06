@@ -6,8 +6,10 @@ type CloseButtonPosition = "top-left" | "top-right" | "bottom-left" | "bottom-ri
 
 type BottomSidebarBannerProps = {
   imageUrl: string;
+  imageUrl2?: string;
   height: number;  // Banner height
   href: string;
+  href2?: string;
   autoCloseDelay?: number;  // Delay before showing the close button (in ms)
   closeButtonPosition?: CloseButtonPosition;  // Position of the close button
   onClose?: () => void;
@@ -15,8 +17,10 @@ type BottomSidebarBannerProps = {
 
 const BottomSidebarBanner: React.FC<BottomSidebarBannerProps> = ({
                                                                    imageUrl,
+                                                                   imageUrl2,
                                                                    height,
                                                                    href,
+                                                                   href2,
                                                                    onClose,
                                                                    autoCloseDelay = 10000,  // Default 5 seconds before showing the close button
                                                                    closeButtonPosition = "top-right",  // Default position of the close button
@@ -52,10 +56,11 @@ const BottomSidebarBanner: React.FC<BottomSidebarBannerProps> = ({
 
   return (
     <div
-      className="absolute bottom-4 mx-auto w-full flex items-center justify-center text-center"
+      className="absolute bottom-4 mx-auto w-full flex items-center justify-center text-center flex-col"
       style={{ height }}
       datatype="advertisement"
     >
+      <div>
       <a href={href} target="_blank">
         <img
           src={imageUrl}
@@ -63,6 +68,18 @@ const BottomSidebarBanner: React.FC<BottomSidebarBannerProps> = ({
           className="w-full h-full mx-auto object-contain"
         />
       </a>
+      </div>
+      {imageUrl2 && (
+        <div>
+        <a href={href2} target="_blank" className="mt-2">
+          <img
+            src={imageUrl2}
+            alt=""
+            className="w-full h-full mx-auto object-contain"
+          />
+        </a>
+        </div>
+      )}
 
       {/* Close button (only shows after the delay) */}
       {showCloseButton && (

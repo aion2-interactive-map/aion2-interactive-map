@@ -1,3 +1,4 @@
+// src/components/Sidebar/LeftSidebar.tsx
 import React, {useState} from "react";
 import {useGameMap} from "@/context/GameMapContext.tsx";
 import SidebarWrapper from "./SidebarWrapper";
@@ -5,19 +6,59 @@ import Logo from "./Logo.tsx";
 import SelectMap from "@/components/SideBar/SelectMap.tsx";
 import MarkerTypes from "@/components/SideBar/MarkerTypes.tsx";
 
-import {Accordion, AccordionItem} from "@heroui/react";
+import {Accordion, AccordionItem, Tooltip} from "@heroui/react";
 import {useTranslation} from "react-i18next";
 import {makeAccordionTitle} from "@/components/SideBar/makeAccordionTitle.tsx";
 import BottomSidebarBanner from "@/components/SideBar/BottomSidebarBanner.tsx";
 import {getStaticUrl} from "@/utils/url.ts";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { faLocationDot, faPlus} from "@fortawesome/free-solid-svg-icons";
+import {useUserMarkers} from "@/context/UserMarkersContext.tsx";
 
 const LeftSidebar: React.FC = () => {
   const {t} = useTranslation();
   const {selectedMap} = useGameMap();
   const [bannerVisible, setBannerVisible] = useState(true);
+  const {setPickMode} = useUserMarkers();
 
   return (
-    <SidebarWrapper side="left" width={370}>
+    <SidebarWrapper
+      side="left"
+      width={370}
+      extraControls={
+        <Tooltip
+          content={t("common:markerActions.createUserMarker", "Create a user marker")}
+          placement="right"
+          delay={300}
+          radius="none"
+        >
+          <button
+            type="button"
+            onClick={() => setPickMode(true)}
+            className="
+      w-8 h-12 bg-sidebar-collapse text-default-700
+      flex items-center justify-center
+    "
+          >
+    <span className="relative">
+      <FontAwesomeIcon icon={faLocationDot} className="text-lg" />
+      <FontAwesomeIcon
+        icon={faPlus}
+        className="
+          absolute
+          -bottom-1
+          -right-1
+          text-[9px]
+          bg-sidebar-collapse
+          rounded-full
+          p-[1px]
+        "
+      />
+    </span>
+          </button>
+        </Tooltip>
+      }
+    >
       <div className="flex flex-col h-full relative">
         <div
           className={
@@ -40,7 +81,12 @@ const LeftSidebar: React.FC = () => {
             className="bg-transparent shadow-none"
           >
             {selectedMap ? (
-              <AccordionItem key="types" title={makeAccordionTitle(t("common:menu.markerTypes", "Marker Types"))}>
+              <AccordionItem
+                key="types"
+                title={makeAccordionTitle(
+                  t("common:menu.markerTypes", "Marker Types"),
+                )}
+              >
                 <MarkerTypes/>
               </AccordionItem>
             ) : null}

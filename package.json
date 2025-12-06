@@ -37,6 +37,7 @@
     "tailwind-merge": "^3.4.0",
     "tailwind-variants": "^3.1.1",
     "tailwindcss": "^4.1.17",
+    "uuid": "^13.0.0",
     "yaml": "^2.8.1"
   },
   "devDependencies": {

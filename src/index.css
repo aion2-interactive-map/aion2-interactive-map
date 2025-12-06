@@ -16,6 +16,7 @@
     --background-image-sidebar: linear-gradient(180deg, #CCEDFF 0%, #FFFFFF 65%);
     --color-sidebar-collapse: #D3E2EA;
     --color-input: rgba(185,185,185,0.2);
+    --color-input-2: #F6F6F6;
 }
 
 .dark {
@@ -50,6 +51,11 @@ body {
 .leaflet-container {
     width: 100%;
     height: 100%;
+    /*cursor: inherit !important;*/
+}
+
+.leaflet-container .leaflet-interactive {
+    cursor: inherit !important;
 }
 
 .dark .leaflet-container {

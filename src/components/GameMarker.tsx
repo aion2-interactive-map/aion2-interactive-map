@@ -3,95 +3,19 @@ import React, {memo, useRef} from "react";
 import {Marker, Tooltip, Popup } from "react-leaflet";
 import { useTranslation } from "react-i18next";
 import L, {Popup as LeafletPopup} from "leaflet";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {  faCheckCircle } from "@fortawesome/free-solid-svg-icons";
-import { renderToString } from "react-dom/server";
-
 import MarkerPopupContent from "./MarkerPopupContent";
 
-import type {GameMapMeta, MarkerInstance, MarkerTypeSubtype} from "../types/game";
-import {parseIconUrl} from "../utils/url.ts";
+import type {MarkerInstance} from "../types/game";
 import {useMarkers} from "@/context/MarkersContext.tsx";
 import {useGameMap} from "@/context/GameMapContext.tsx";
 import {useGameData} from "@/context/GameDataContext.tsx";
+import {createPinIcon, getSubtypeIconDef} from "@/utils/marker.tsx";
 
 type Props = {
   marker: MarkerInstance;
 };
 
-/** Lookup icon definition from YAML (by category/subtype). */
-function getSubtypeIconDef(sub: MarkerTypeSubtype | undefined, map: GameMapMeta): string {
-  return parseIconUrl(sub?.icon || "", map);
-}
 
-/** Lookup color from YAML (subtype > category > default). */
-/*function getSubtypeColor(
-  sub?: MarkerTypeSubtype, cat?: MarkerTypeCategory,
-): string {
-  return "#FFFFFF";
-  return (
-    sub?.color ||
-    cat?.color ||
-    "#E53935"
-  );
-}*/
-
-function createPinIcon(
-  innerIcon: string,
-  iconScale: number,
-  completed: boolean,
-): L.DivIcon {
-  const iconBaseSize = 40;
-  const iconSize = iconBaseSize * iconScale;
-  const html = renderToString(
-    <div
-      style={{
-        position: "relative",
-        width: `${iconBaseSize}px`,
-        height: `${iconBaseSize}px`,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        opacity: completed ? 0.4 : 1,
-      }}
-    >
-      {/* Inner icon directly */}
-      <img
-        src={innerIcon}
-        alt=""
-        style={{
-          width: `${iconSize}px`,
-          height: `${iconSize}px`,
-          objectFit: "contain",
-          pointerEvents: "none",
-          zIndex: 1000,
-        }}
-      />
-
-      {completed && (
-        <FontAwesomeIcon
-          icon={faCheckCircle}
-          style={{
-            position: "absolute",
-            fontSize: "12px",
-            right: "-2px",
-            bottom: "-2px",
-            color: "#22c55e",
-          }}
-        />
-      )}
-    </div>,
-  );
-
-  return L.divIcon({
-    html,
-    className: "",
-    iconSize: [iconBaseSize, iconBaseSize],
-    iconAnchor: [iconBaseSize / 2, iconBaseSize / 2], // center of the icon
-    popupAnchor: [0, -10], // popup above icon
-  });
-}
 
 
 const GameMarkerInner: React.FC<Props> = ({
@@ -133,7 +57,7 @@ const GameMarkerInner: React.FC<Props> = ({
     `types:subtypes.${sub?.name}.name`,
   );
   const regionLabel = marker.region ? t(`${regionKeyPrefix}.name`) : "";
-  const iconScale = sub?.iconScale || 1.0;
+  const iconScale = sub?.iconScale || 1.25;
   const canComplete = !!sub?.canComplete;
   const hideTooltip = !!sub?.hideTooltip;
 

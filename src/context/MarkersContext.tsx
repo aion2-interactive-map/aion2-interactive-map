@@ -55,8 +55,7 @@ function loadV2Subtype(map: string, subtype: string): Set<number> {
   try {
     const raw = localStorage.getItem(key);
     if (!raw) return new Set();
-    const arr = JSON.parse(raw);
-    console.log("Load", key, arr);
+    const arr = JSON.parse(raw).filter((v: unknown) => typeof v === "number");
     return new Set(arr);
   } catch {
     return new Set();

@@ -89,11 +89,11 @@ const App: React.FC = () => {
       <div className="flex flex-1 overflow-hidden">
         <LeftSidebar />
 
-        <RightSidebar />
-
         <GameMapView
           mapRef={mapRef}
         />
+
+        <RightSidebar />
 
       </div>
     </div>

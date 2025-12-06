@@ -1,6 +1,6 @@
 // src/components/GameMapView.tsx
-import React, {useCallback, useState} from "react";
-import {MapContainer, useMapEvents} from "react-leaflet";
+import React, {useCallback, useEffect, useState} from "react";
+import {MapContainer, useMap, useMapEvents} from "react-leaflet";
 import L from "leaflet";
 
 import GameMarker from "./GameMarker";
@@ -14,6 +14,9 @@ import DismissibleBanner from "@/components/DismissibleBanner.tsx";
 import {useGameMap} from "@/context/GameMapContext.tsx";
 import {useMarkers} from "@/context/MarkersContext.tsx";
 import {useGameData} from "@/context/GameDataContext.tsx";
+import {useUserMarkers} from "@/context/UserMarkersContext.tsx";
+import UserMarker from "@/components/UserMarker.tsx";
+import MarkerPopupEdit from "@/components/MarkerPopupEdit.tsx";
 
 
 type CursorTrackerProps = {
@@ -47,10 +50,13 @@ const MapContextMenuHandler: React.FC<{
   onOpenMenu: (state: ContextMenuState) => void;
   onCloseMenu: () => void;
 }> = ({onOpenMenu, onCloseMenu}) => {
+  const { setPickMode } = useUserMarkers();
+
   const map = useMapEvents({
     contextmenu(e) {
       // Right-click on map
       e.originalEvent.preventDefault();
+      setPickMode(false);
 
       // Leaflet CRS.Simple: lat = y, lng = x
       const mapX = e.latlng.lng;
@@ -79,6 +85,39 @@ const MapContextMenuHandler: React.FC<{
   return null;
 };
 
+const MapCursorController: React.FC = () => {
+  const map = useMap();
+  const { pickMode } = useUserMarkers();
+
+  useEffect(() => {
+    const container = map.getContainer();
+    container.style.cursor = pickMode ? `url(${getStaticUrl("images/CursorAdd.png")}) 16 16, crosshair` : "grab";
+    console.log(pickMode, container);
+  }, [map, pickMode]);
+
+  return null;
+};
+
+// 🆕 Left-click picker for pickMode
+const MapClickPicker: React.FC<{
+  createMarker: (mapX: number, mapY: number) => void;
+}> = ({createMarker}) => {
+  const {pickMode} = useUserMarkers();
+
+  useMapEvents({
+    click(e) {
+      if (!pickMode) return;
+
+      const mapX = e.latlng.lng;
+      const mapY = e.latlng.lat;
+
+      createMarker(mapX, mapY);
+    },
+  });
+
+  return null;
+};
+
 const GameMapView: React.FC<Props> = ({
                                         // selectedMap,
                                         // markers,
@@ -99,6 +138,8 @@ const GameMapView: React.FC<Props> = ({
   const {selectedMap} = useGameMap();
   const {visibleSubtypes} = useGameData();
   const {markers} = useMarkers();
+  const { pickMode, createMarker, userMarkers } = useUserMarkers();
+
 
   const regionNs = `regions/${selectedMap?.name}`;
   const {t} = useTranslation([regionNs]);
@@ -144,7 +185,13 @@ const GameMapView: React.FC<Props> = ({
   // console.log(bounds, center)
 
   return (
-    <div className="flex-1 relative" onClick={() => setContextMenu(null)}>
+    <div
+      className="flex-1 relative"
+      onClick={() => setContextMenu(null)}
+      style={{
+        cursor: pickMode ? "crosshair" : "default",
+      }}
+    >
       <MapContainer
         key={selectedMap.id}
         center={center}
@@ -166,6 +213,8 @@ const GameMapView: React.FC<Props> = ({
             setCursorPos({x, y});
           }}
         />
+        <MapCursorController/>
+        <MapClickPicker createMarker={createMarker} />
 
         {/* Handle right-click events */}
         <MapContextMenuHandler
@@ -183,6 +232,12 @@ const GameMapView: React.FC<Props> = ({
           .map((m) => (
             <GameMarker key={m.id} marker={m} />
           ))}
+
+        {userMarkers.map((m) => (
+          <UserMarker key={m.id} marker={m} />
+        ))}
+
+
       </MapContainer>
 
       {cursorPos && (
@@ -218,6 +273,10 @@ const GameMapView: React.FC<Props> = ({
           </div>
         </div>
       )}
+
+      <MarkerPopupEdit />
+
+
       {import.meta.env.VITE_REGION === "CHINA" &&
         <DismissibleBanner
           imageUrl={getStaticUrl("images/QiyouMiddle.webp")}

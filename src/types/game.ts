@@ -66,6 +66,18 @@ export interface MarkerInstance {
   indexInSubtype: number;
 }
 
+export interface UserMarkerInstance {
+  id: string;
+  subtype: string;
+  mapId: string;
+  x: number;
+  y: number;
+  name: string;
+  description: string;
+  type: "local" | "feedback";
+}
+
+
 export interface CommentInstance {
   id: string;
   content: string;
