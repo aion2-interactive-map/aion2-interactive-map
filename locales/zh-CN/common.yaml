@@ -14,6 +14,8 @@ ui:
   close: "关闭"
   loading: "加载中..."
   search: "搜索"
+  delete: "删除"
+  save: "保存"
 
 auth:
   login: "登录"
@@ -72,6 +74,13 @@ markerActions:
   markNotCompleted: "已完成"
   comments: "留言评论"
   enterComment: "请输入评论..."
+  userMarker: "自定义标记"
+  editUserMarker: "编辑自定义标记"
+  createUserMarker: "创建自定义标记"
+  name: "名称"
+  description: "详情"
+  local: "本地标点"
+  feedback: "贡献标点"
 
 introModal:
   alert: "我们承诺本网站将 **永久免费开放**、我们不会在任何平台进行交易售卖，请大家**提高警惕，谨防受骗**！"
@@ -113,10 +122,9 @@ rightSidebar:
     title: "交流与联系方式"
     content: |
       1. 永恒之塔 2 交流群： ①群 246681864（已满）、②群 197791140（已满）、③群 791286881
-      2. **现寻求主要业务是基纳、材料的工作室合作：微信 liuyh615**
-      3. 广告位招商：微信 liuyh615
-      4. 点位分享及 bug 反馈： 微信 a18543910451
-      5. 永恒之塔2高效代肝代打强化（**韩服不接**）：微信/QQ 1506162781
+      2. 广告位招商：微信 liuyh615
+      3. 点位分享及 bug 反馈： 微信 a18543910451
+      4. 永恒之塔2高效代肝代打强化（**韩服不接**）：微信/QQ 1506162781
   donation:
     title: "赞助"
     content: "游戏攻略网站维护需要大量时间和精力，如果想要支持我们，可以通过下面的支付宝二维码，你的小小心意是支持我们的动力"
