@@ -9,7 +9,7 @@ import {
   Input,
   Button,
   Select,
-  SelectItem, Divider,
+  SelectItem, Divider, Tooltip,
 } from "@heroui/react";
 import { useUserMarkers } from "@/context/UserMarkersContext";
 import { useTranslation } from "react-i18next";
@@ -28,7 +28,7 @@ const MarkerPopupEdit: React.FC = () => {
   } = useUserMarkers();
 
   const { types, selectedMap } = useGameMap();
-  const {fetchWithAuth} = useUser();
+  const {fetchWithAuth, user, setUserModalOpen} = useUser();
   const { t } = useTranslation();
 
   // const [tab, setTab] = useState<"local" | "feedback">("local");
@@ -67,11 +67,11 @@ const MarkerPopupEdit: React.FC = () => {
     types.find((cat) => cat.id === selectedCategory)?.subtypes ?? [];
 
   const inputClassNames = {
-    inputWrapper: ` bg-input-2 hover:!bg-input-2 focus:!bg-input-2 transition-none
-                    group-data-[hover=true]:!bg-input-2
-                    group-data-[focus=true]:!bg-input-2
-                    group-data-[focus-visible=true]:!bg-input-2
-                    group-data-[invalid=true]:!bg-input-2
+    inputWrapper: ` bg-input hover:!bg-input focus:!bg-input transition-none
+                    group-data-[hover=true]:!bg-input
+                    group-data-[focus=true]:!bg-input
+                    group-data-[focus-visible=true]:!bg-input
+                    group-data-[invalid=true]:!bg-input
                   `,
     innerWrapper: `h-10 py-0`
   }
@@ -262,24 +262,72 @@ const MarkerPopupEdit: React.FC = () => {
 
             </ModalBody>
             <ModalFooter className="flex gap-6">
-              <Button
-                color="default"
-                variant="flat"
-                onPress={() => setEditingMarker(null)}
-                radius="sm"
-                className="flex-1"
-              >
-                {t("common:ui.cancel", "Cancel")}
-              </Button>
-              <Button
-                color="primary"
-                onPress={handleUpload}
-                className="flex-1 text-background"
-                radius="sm"
-              >
-                {t("common:ui.upload", "Upload")}
-              </Button>
+              {/* Delete (with tooltip) */}
+              <div className="flex-1">
+                <Tooltip
+                  content={t(
+                    "common:markerActions.cannotDeleteUploaded",
+                    "Uploaded markers cannot be deleted"
+                  )}
+                  isDisabled={editingMarker?.type !== "uploaded"}
+                  placement="top"
+                  delay={300}
+                >
+                  {/* Tooltip requires a wrapper when child is disabled */}
+                  <span className="block w-full">
+        <Button
+          color="danger"
+          onPress={() => deleteMarker(editingMarker.id)}
+          radius="sm"
+          className="w-full text-background"
+          isDisabled={editingMarker?.type === "uploaded"}
+        >
+          {t("common:ui.delete", "Delete")}
+        </Button>
+      </span>
+                </Tooltip>
+              </div>
+
+              {/* Cancel */}
+              <div className="flex-1">
+                <Button
+                  color="default"
+                  variant="flat"
+                  onPress={() => setEditingMarker(null)}
+                  radius="sm"
+                  className="w-full"
+                >
+                  {t("common:ui.cancel", "Cancel")}
+                </Button>
+              </div>
+
+              {/* Upload */}
+              <div className="flex-1">
+                <Tooltip
+                  content={t(
+                    "common:markerActions.loginRequired",
+                    "You can only upload after login"
+                  )}
+                  isDisabled={!!user}
+                  placement="top"
+                  delay={300}
+                >
+                  {/* Tooltip needs a wrapper when child is disabled */}
+                  <span className="block w-full">
+                    <Button
+                      color="primary"
+                      onPress={user ? handleUpload : () => setUserModalOpen(true)}
+                      className="w-full text-background"
+                      radius="sm"
+                      // isDisabled={!user}
+                    >
+                      {t("common:ui.upload", "Upload")}
+                    </Button>
+                  </span>
+                </Tooltip>
+              </div>
             </ModalFooter>
+
           </>
         )}
       </ModalContent>
