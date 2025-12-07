@@ -14,19 +14,24 @@ import {
 import { useUserMarkers } from "@/context/UserMarkersContext";
 import { useTranslation } from "react-i18next";
 import {useGameMap} from "@/context/GameMapContext.tsx";
+import {useUser} from "@/context/UserContext.tsx";
+import type {UserMarkerInstance} from "@/types/game.ts";
+
 
 const MarkerPopupEdit: React.FC = () => {
   const {
     editingMarker,
     setEditingMarker,
+    createMarkerRemote,
     updateMarker,
     deleteMarker,
   } = useUserMarkers();
 
-  const { types } = useGameMap();
+  const { types, selectedMap } = useGameMap();
+  const {fetchWithAuth} = useUser();
   const { t } = useTranslation();
 
-  const [tab, setTab] = useState<"local" | "feedback">("local");
+  // const [tab, setTab] = useState<"local" | "feedback">("local");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
 
@@ -40,14 +45,14 @@ const MarkerPopupEdit: React.FC = () => {
 
     setName(editingMarker.name ?? "");
     setDescription(editingMarker.description ?? "");
-    setTab(editingMarker.type ?? "local");
+    // setTab(editingMarker.type ?? "local");
 
     // find category that contains marker's subtype
     const currentSubtype = editingMarker.subtype ?? "";
     let foundCategory = "";
     for (const cat of types) {
-      if (cat.subtypes.some((s) => s.name === currentSubtype)) {
-        foundCategory = cat.name;
+      if (cat.subtypes.some((s) => s.id === currentSubtype)) {
+        foundCategory = cat.id;
         break;
       }
     }
@@ -59,7 +64,7 @@ const MarkerPopupEdit: React.FC = () => {
   if (!editingMarker) return null;
 
   const subtypesInCategory =
-    types.find((cat) => cat.name === selectedCategory)?.subtypes ?? [];
+    types.find((cat) => cat.id === selectedCategory)?.subtypes ?? [];
 
   const inputClassNames = {
     inputWrapper: ` bg-input-2 hover:!bg-input-2 focus:!bg-input-2 transition-none
@@ -69,6 +74,77 @@ const MarkerPopupEdit: React.FC = () => {
                     group-data-[invalid=true]:!bg-input-2
                   `,
     innerWrapper: `h-10 py-0`
+  }
+
+  const handleUpload = async () => {
+    const finalSubtype = selectedSubtype || editingMarker.subtype || "";
+    console.log(finalSubtype)
+
+    if (editingMarker.type === "uploaded") {
+      const res = await fetchWithAuth(`/maps/${selectedMap?.name}/marker_feedbacks/${editingMarker.id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          // x: Math.round(editingMarker.x),
+          // y: Math.round(editingMarker.y),
+          subtype: finalSubtype,
+          name: name,
+          description: description,
+        })
+      });
+      if (!res.ok) return;
+      const data = await res.json();
+      if (data.errorCode !== "Success") return;
+
+      const markerData = data.data;
+      updateMarker({
+        ...editingMarker,
+        name: markerData.name,
+        description: markerData.description,
+        subtype: markerData.subtypeId,
+        type: "uploaded",
+      });
+      setEditingMarker(null);
+
+    } else {
+      // create marker feedback
+      const res = await fetchWithAuth(`/maps/${selectedMap?.name}/marker_feedbacks`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          x: Math.round(editingMarker.x),
+          y: Math.round(editingMarker.y),
+          subtype: finalSubtype,
+          name: name,
+          description: description,
+        })
+      });
+      if (!res.ok) return;
+      const data = await res.json();
+      if (data.errorCode !== "Success") return;
+
+      // remove local marker and add the remote one
+      deleteMarker(editingMarker.id);
+      const markerData = data.data;
+
+      const marker: UserMarkerInstance = {
+        id: markerData.id,
+        subtype: markerData.subtypeId,
+        mapId: markerData.mapId,
+        x: markerData.x,
+        y: markerData.y,
+        name: markerData.name,
+        description: markerData.description,
+        type: "uploaded",
+      };
+      createMarkerRemote(marker);
+      // setEditingMarker(null);
+    }
+    // setEditingMarker(null);
   }
 
   return (
@@ -122,7 +198,7 @@ const MarkerPopupEdit: React.FC = () => {
                 >
                   {types.map((cat) => (
                     <SelectItem
-                      key={cat.name}
+                      key={cat.id}
                       textValue={t(`types:categories.${cat.name}.name`, cat.name)}
                     >
                       {t(`types:categories.${cat.name}.name`, cat.name)}
@@ -147,7 +223,7 @@ const MarkerPopupEdit: React.FC = () => {
                 >
                   {subtypesInCategory.map((sub) => (
                     <SelectItem
-                      key={sub.name}
+                      key={sub.id}
                       textValue={t(`types:subtypes.${sub.name}.name`, sub.name)}
                     >
                       {t(`types:subtypes.${sub.name}.name`, sub.name)}
@@ -157,9 +233,11 @@ const MarkerPopupEdit: React.FC = () => {
 
                 {/* Coordinates */}
                 <span className="opacity-80 whitespace-nowrap">
-    ({Math.round(editingMarker.x)}, {Math.round(editingMarker.y)})
-  </span>
+                  ({Math.round(editingMarker.x)}, {Math.round(editingMarker.y)})
+                </span>
               </div>
+
+              <Divider className="mt-2"/>
 
               {/* Title */}
               <Input
@@ -183,33 +261,23 @@ const MarkerPopupEdit: React.FC = () => {
               <Divider className="mt-4"/>
 
             </ModalBody>
-            <ModalFooter className="flex justify-between">
+            <ModalFooter className="flex gap-6">
               <Button
-                color="danger"
-                variant="light"
-                onPress={() => deleteMarker(editingMarker.id)}
+                color="default"
+                variant="flat"
+                onPress={() => setEditingMarker(null)}
+                radius="sm"
+                className="flex-1"
               >
-                {t("common:ui.delete", "Delete")}
+                {t("common:ui.cancel", "Cancel")}
               </Button>
-
               <Button
                 color="primary"
-                onPress={() => {
-                  const finalSubtype =
-                    selectedSubtype || editingMarker.subtype || "";
-
-                  updateMarker({
-                    ...editingMarker,
-                    name,
-                    description,
-                    subtype: finalSubtype,
-                    type: tab,
-                  });
-                  setEditingMarker(null);
-                }}
-                className="text-background"
+                onPress={handleUpload}
+                className="flex-1 text-background"
+                radius="sm"
               >
-                {t("common:ui.save", "Save")}
+                {t("common:ui.upload", "Upload")}
               </Button>
             </ModalFooter>
           </>

@@ -11,8 +11,6 @@ import {useTranslation} from "react-i18next";
 import {makeAccordionTitle} from "@/components/SideBar/makeAccordionTitle.tsx";
 import BottomSidebarBanner from "@/components/SideBar/BottomSidebarBanner.tsx";
 import {getStaticUrl} from "@/utils/url.ts";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import { faLocationDot, faPlus} from "@fortawesome/free-solid-svg-icons";
 import {useUserMarkers} from "@/context/UserMarkersContext.tsx";
 
 const LeftSidebar: React.FC = () => {
@@ -36,25 +34,15 @@ const LeftSidebar: React.FC = () => {
             type="button"
             onClick={() => setPickMode(true)}
             className="
-      w-8 h-12 bg-sidebar-collapse text-default-700
-      flex items-center justify-center
-    "
+              w-8 h-12 bg-sidebar-collapse text-default-700
+              flex items-center justify-center
+            "
           >
-    <span className="relative">
-      <FontAwesomeIcon icon={faLocationDot} className="text-lg" />
-      <FontAwesomeIcon
-        icon={faPlus}
-        className="
-          absolute
-          -bottom-1
-          -right-1
-          text-[9px]
-          bg-sidebar-collapse
-          rounded-full
-          p-[1px]
-        "
-      />
-    </span>
+            <img
+              src={getStaticUrl("images/LocationAdd.webp")}
+              alt={t("common:markerActions.createUserMarker")}
+              className="w-5 h-5 object-contain"
+            />
           </button>
         </Tooltip>
       }

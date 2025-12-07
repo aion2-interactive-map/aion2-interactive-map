@@ -92,7 +92,7 @@ const MapCursorController: React.FC = () => {
   useEffect(() => {
     const container = map.getContainer();
     container.style.cursor = pickMode ? `url(${getStaticUrl("images/CursorAdd.png")}) 16 16, crosshair` : "grab";
-    console.log(pickMode, container);
+    // console.log(pickMode, container);
   }, [map, pickMode]);
 
   return null;

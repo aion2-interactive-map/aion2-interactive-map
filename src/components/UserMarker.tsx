@@ -17,7 +17,7 @@ const UserMarkerInner: React.FC<{ marker: UserMarkerInstance }> = ({marker}) => 
 
   if (!selectedMap) return null;
 
-  const sub = allSubtypes.get(marker.subtype);
+  const sub = [...allSubtypes.values()].find(v => v.id === marker.subtype);
   let innerIcon = "";
   if (sub) {
     innerIcon = getSubtypeIconDef(sub, selectedMap);

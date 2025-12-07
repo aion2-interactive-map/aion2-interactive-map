@@ -9,6 +9,7 @@ import React, {
 import { v4 as uuidv4 } from "uuid";
 import type { UserMarkerInstance } from "@/types/game";
 import { useGameMap } from "@/context/GameMapContext.tsx";
+import {useUser} from "@/context/UserContext.tsx";
 
 type ContextValue = {
   pickMode: boolean;
@@ -17,6 +18,7 @@ type ContextValue = {
   userMarkers: UserMarkerInstance[];
 
   createMarker: (x: number, y: number) => void;
+  createMarkerRemote: (marker: UserMarkerInstance) => void;
   updateMarker: (marker: UserMarkerInstance) => void;
   deleteMarker: (id: string) => void;
 
@@ -37,6 +39,7 @@ export const UserMarkersProvider: React.FC<{ children: React.ReactNode }> = ({
   const [userMarkers, setUserMarkers] = useState<UserMarkerInstance[]>([]);
   const [editingMarker, setEditingMarker] =
     useState<UserMarkerInstance | null>(null);
+  const { fetchWithAuth } = useUser();
 
   /** Helper: storage key per map */
   const getStorageKey = useCallback(
@@ -46,22 +49,60 @@ export const UserMarkersProvider: React.FC<{ children: React.ReactNode }> = ({
 
   /** 🔁 Load markers when switching map */
   useEffect(() => {
-    if (!selectedMap) {
-      setUserMarkers([]);
-      setEditingMarker(null);
-      return;
-    }
-
-    try {
-      const raw = localStorage.getItem(getStorageKey(selectedMap.name));
-      if (raw) {
-        setUserMarkers(JSON.parse(raw));
-      } else {
+    const load = async () => {
+      if (!selectedMap) {
         setUserMarkers([]);
+        setEditingMarker(null);
+        return;
       }
-    } catch {
-      setUserMarkers([]);
+      
+      const markers = new Map<string, UserMarkerInstance>();
+      try {
+        const raw = localStorage.getItem(getStorageKey(selectedMap.name));
+        if (raw) {
+          const results = JSON.parse(raw);
+          results.forEach((marker: UserMarkerInstance) => markers.set(marker.id, marker));
+        }
+      } catch (e) {
+        console.error(e);
+      }
+
+      try {
+        const res = await fetchWithAuth(`/maps/${selectedMap?.name}/marker_feedbacks`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+
+        if (res.ok) {
+          const data = await res.json();
+          if (data.errorCode === "Success") {
+            console.log(data.data.results);
+            data.data.results.forEach((result: any) => {
+              const marker: UserMarkerInstance = {
+                id: result.id,
+                subtype: result.subtypeId,
+                mapId: result.mapId,
+                x: result.x,
+                y: result.y,
+                name: result.name,
+                description: result.description,
+                type: "uploaded",
+              }
+              markers.set(marker.id, marker);
+            })
+          }
+        }
+      } catch (e) {
+        console.error(e);
+      }
+
+      setUserMarkers([...markers.values()]);
+
     }
+    load();
+
   }, [selectedMap, getStorageKey]);
 
   /** 💾 Persist markers for current map only */
@@ -95,6 +136,13 @@ export const UserMarkersProvider: React.FC<{ children: React.ReactNode }> = ({
     [selectedMap],
   );
 
+  const createMarkerRemote = useCallback(
+    (marker: UserMarkerInstance)=> {
+      setUserMarkers((prev) => [...prev, marker]);
+    },
+    [],
+  );
+
   const updateMarker = useCallback((marker: UserMarkerInstance) => {
     setUserMarkers((prev) =>
       prev.map((m) => (m.id === marker.id ? marker : m)),
@@ -113,6 +161,7 @@ export const UserMarkersProvider: React.FC<{ children: React.ReactNode }> = ({
         setPickMode,
         userMarkers,
         createMarker,
+        createMarkerRemote,
         updateMarker,
         deleteMarker,
         editingMarker,
