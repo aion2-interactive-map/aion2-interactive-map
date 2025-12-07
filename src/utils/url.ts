@@ -36,6 +36,10 @@ export function getCdnUrl(relPath: string): string {
   return CDN_BASE_URL + relPath.replace(/^\//, "");
 }
 
+export function getApiUrl(relPath: string) : string {
+  return API_BASE_URL + relPath.replace(/^\//, "");
+}
+
 export function getStaticUrl(relPath: string): string {
   return STATIC_BASE_URL + relPath.replace(/^\//, "");
 }

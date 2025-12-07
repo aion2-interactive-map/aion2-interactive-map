@@ -1,4 +1,6 @@
 // src/utils/dataMode.ts
+import {getApiUrl} from "@/utils/url.ts";
+
 export type DataMode = "static" | "dynamic";
 
 function normalize(mode: string | undefined): DataMode {
@@ -24,7 +26,7 @@ export function computeBaseUrl(): string {
 
   // Production build OR GitHub Pages
   if (import.meta.env.PROD) {
-    return "/api/v1";
+    return getApiUrl("/api/v1");
   }
 
   // Fallback (should never happen)
