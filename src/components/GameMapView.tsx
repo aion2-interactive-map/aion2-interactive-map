@@ -50,7 +50,7 @@ const MapContextMenuHandler: React.FC<{
   onOpenMenu: (state: ContextMenuState) => void;
   onCloseMenu: () => void;
 }> = ({onOpenMenu, onCloseMenu}) => {
-  const { setPickMode } = useUserMarkers();
+  const {setPickMode} = useUserMarkers();
 
   const map = useMapEvents({
     contextmenu(e) {
@@ -87,7 +87,7 @@ const MapContextMenuHandler: React.FC<{
 
 const MapCursorController: React.FC = () => {
   const map = useMap();
-  const { pickMode } = useUserMarkers();
+  const {pickMode} = useUserMarkers();
 
   useEffect(() => {
     const container = map.getContainer();
@@ -138,7 +138,7 @@ const GameMapView: React.FC<Props> = ({
   const {selectedMap} = useGameMap();
   const {visibleSubtypes} = useGameData();
   const {markers} = useMarkers();
-  const { pickMode, createMarker, userMarkers } = useUserMarkers();
+  const {pickMode, createMarker, userMarkers} = useUserMarkers();
 
 
   const regionNs = `regions/${selectedMap?.name}`;
@@ -214,7 +214,7 @@ const GameMapView: React.FC<Props> = ({
           }}
         />
         <MapCursorController/>
-        <MapClickPicker createMarker={createMarker} />
+        <MapClickPicker createMarker={createMarker}/>
 
         {/* Handle right-click events */}
         <MapContextMenuHandler
@@ -230,15 +230,32 @@ const GameMapView: React.FC<Props> = ({
             visibleSubtypes?.has(m.subtype),
           )
           .map((m) => (
-            <GameMarker key={m.id} marker={m} />
+            <GameMarker key={m.id} marker={m}/>
           ))}
 
         {userMarkers.map((m) => (
-          <UserMarker key={m.id} marker={m} />
+          <UserMarker key={m.id} marker={m}/>
         ))}
 
 
       </MapContainer>
+
+      {/* ICP record (always visible, above cursor info) */}
+      <div
+        className="
+          absolute bottom-15 left-3 z-[1000]
+          font-medium
+          text-[15px]
+          leading-[15px]
+          text-white/80
+          text-left
+          not-italic
+          normal-case
+          drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]
+        "
+      >
+        沪ICP备2025152827号-1
+      </div>
 
       {cursorPos && (
         <div
@@ -274,7 +291,7 @@ const GameMapView: React.FC<Props> = ({
         </div>
       )}
 
-      <MarkerPopupEdit />
+      <MarkerPopupEdit/>
 
 
       {import.meta.env.VITE_REGION === "CHINA" &&
