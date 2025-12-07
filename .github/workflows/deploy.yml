@@ -11,6 +11,12 @@ permissions:
   pages: read
   id-token: write
 
+env:
+  VITE_CDN_BASE_URL: "https://cdn.tc-imba.com/"
+  VITE_API_BASE_URL: "https://aion2.tc-imba.com/"
+  VITE_DEFAULT_DATA_MODE: "dynamic"
+
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
