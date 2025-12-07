@@ -4,7 +4,7 @@ import {useTranslation} from "react-i18next";
 import {Button, Card, Modal, ModalContent, ModalBody, Divider, Input} from "@heroui/react";
 import EmblaCarouselThumbs from "./EmblaCarousel/EmblaCarouselThumbs.tsx";
 import EmblaCarouselGallery from "./EmblaCarousel/EmblaCarouselGallery.tsx";
-import {getStaticUrl} from "../utils/url.ts";
+import {getCdnUrl} from "../utils/url.ts";
 import {useUser} from "@/context/UserContext.tsx";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCommentDots} from "@fortawesome/free-solid-svg-icons";
@@ -52,8 +52,8 @@ const MarkerPopupContent: React.FC<Props> = ({
   const [comments, setComments] = useState<CommentInstance[]>([]);
 
   const hasImages = marker.images && marker.images.length > 0;
-  const resolvedSmallImages = marker.images?.map(image => getStaticUrl(image + ".small.webp"));
-  const resolvedNormalImages = marker.images?.map(image => getStaticUrl(image + ".normal.webp"));
+  const resolvedSmallImages = marker.images?.map(image => getCdnUrl(image + ".small.webp"));
+  const resolvedNormalImages = marker.images?.map(image => getCdnUrl(image + ".normal.webp"));
 
 
   const handleListComment = async () => {

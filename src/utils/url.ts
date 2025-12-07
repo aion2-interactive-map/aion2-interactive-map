@@ -23,17 +23,21 @@ export function setQueryParam(key: string, value: string | null) {
 }
 
 // marker_images are stored in s3 (cdn)
-const CDN_BASE_URL = import.meta.env.VITE_CDN_BASE_URL || import.meta.env.BASE_URL;
+export const CDN_BASE_URL = import.meta.env.VITE_CDN_BASE_URL || import.meta.env.BASE_URL;
 
 // api endpoint (usually https://tc-imba.com/
-// const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "/";
+export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "/";
 
 //
-// const
+export const STATIC_BASE_URL = import.meta.env.VITE_STATIC_BASE_URL || import.meta.env.BASE_URL;
 
+
+export function getCdnUrl(relPath: string): string {
+  return CDN_BASE_URL + relPath.replace(/^\//, "");
+}
 
 export function getStaticUrl(relPath: string): string {
-  return CDN_BASE_URL + relPath.replace(/^\//, "");
+  return STATIC_BASE_URL + relPath.replace(/^\//, "");
 }
 
 export function parseIconUrl(icon: string, map: GameMapMeta) {
