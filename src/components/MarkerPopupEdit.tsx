@@ -1,5 +1,5 @@
 // src/components/MarkerPopupEdit.tsx
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 import {
   Modal,
   ModalContent,
@@ -11,11 +11,13 @@ import {
   Select,
   SelectItem, Divider, Tooltip,
 } from "@heroui/react";
-import { useUserMarkers } from "@/context/UserMarkersContext";
-import { useTranslation } from "react-i18next";
+import {useUserMarkers} from "@/context/UserMarkersContext";
+import {useTranslation} from "react-i18next";
 import {useGameMap} from "@/context/GameMapContext.tsx";
 import {useUser} from "@/context/UserContext.tsx";
 import type {UserMarkerInstance} from "@/types/game.ts";
+import {SingleImageUploader} from "@/components/SingleImageUploader.tsx";
+import {getCdnUrl} from "@/utils/url.ts";
 
 
 const MarkerPopupEdit: React.FC = () => {
@@ -27,9 +29,9 @@ const MarkerPopupEdit: React.FC = () => {
     deleteMarker,
   } = useUserMarkers();
 
-  const { types, selectedMap } = useGameMap();
+  const {types, selectedMap} = useGameMap();
   const {fetchWithAuth, user, setUserModalOpen} = useUser();
-  const { t } = useTranslation();
+  const {t} = useTranslation();
 
   // const [tab, setTab] = useState<"local" | "feedback">("local");
   const [name, setName] = useState("");
@@ -38,6 +40,11 @@ const MarkerPopupEdit: React.FC = () => {
   // two-level select state
   const [selectedCategory, setSelectedCategory] = useState<string>("");
   const [selectedSubtype, setSelectedSubtype] = useState<string>("");
+  const [imageFile, setImageFile] = useState<File | null>(null);
+  const imageUrl = editingMarker?.image ? getCdnUrl(editingMarker.image + ".webp") : "";
+
+  const [isUploading, setIsUploading] = useState(false);
+  const [uploadError, setUploadError] = useState<string | null>(null);
 
   // when marker or types change, sync local state
   useEffect(() => {
@@ -56,9 +63,9 @@ const MarkerPopupEdit: React.FC = () => {
         break;
       }
     }
-
     setSelectedCategory(foundCategory);
     setSelectedSubtype(currentSubtype);
+    setUploadError(null);
   }, [editingMarker, types]);
 
   if (!editingMarker) return null;
@@ -76,75 +83,110 @@ const MarkerPopupEdit: React.FC = () => {
     innerWrapper: `h-10 py-0`
   }
 
+  const errorMessage = t("common:errors.uploadFailed", "Upload failed. Please try again.")
+
   const handleUpload = async () => {
     const finalSubtype = selectedSubtype || editingMarker.subtype || "";
     console.log(finalSubtype)
+    setIsUploading(true);
+    setUploadError(null);
 
-    if (editingMarker.type === "uploaded") {
-      const res = await fetchWithAuth(`/maps/${selectedMap?.name}/marker_feedbacks/${editingMarker.id}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          // x: Math.round(editingMarker.x),
-          // y: Math.round(editingMarker.y),
-          subtype: finalSubtype,
-          name: name,
-          description: description,
-        })
-      });
-      if (!res.ok) return;
-      const data = await res.json();
-      if (data.errorCode !== "Success") return;
+    try {
+      const form = new FormData();
+      if (imageFile) {
+        form.append("file", imageFile);
+      }
 
-      const markerData = data.data;
-      updateMarker({
-        ...editingMarker,
-        name: markerData.name,
-        description: markerData.description,
-        subtype: markerData.subtypeId,
-        type: "uploaded",
-      });
-      setEditingMarker(null);
+      if (editingMarker.type === "uploaded") {
+        form.append("subtype", finalSubtype)
+        form.append("name", name)
+        form.append("description", description)
+        const res = await fetchWithAuth(`/maps/${selectedMap?.name}/marker_feedbacks/${editingMarker.id}`, {
+          method: "PATCH",
+          body: form
+        });
+        if (!res.ok) {
+          setUploadError(errorMessage);
+          return;
+        }
+        const data = await res.json();
+        if (data.errorCode !== "Success") {
+          setUploadError(`${errorMessage} ${data.errorCode}: ${data.errorMessage}`);
+        }
 
-    } else {
-      // create marker feedback
-      const res = await fetchWithAuth(`/maps/${selectedMap?.name}/marker_feedbacks`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          x: Math.round(editingMarker.x),
-          y: Math.round(editingMarker.y),
-          subtype: finalSubtype,
-          name: name,
-          description: description,
-        })
-      });
-      if (!res.ok) return;
-      const data = await res.json();
-      if (data.errorCode !== "Success") return;
+        const markerData = data.data;
+        updateMarker({
+          ...editingMarker,
+          name: markerData.name,
+          description: markerData.description,
+          subtype: markerData.subtypeId,
+          image: markerData.image?.s3Key || "",
+          type: "uploaded",
+        });
+        setEditingMarker(null);
 
-      // remove local marker and add the remote one
-      deleteMarker(editingMarker.id);
-      const markerData = data.data;
+      } else {
+        // create marker feedback
+        form.append("x", String(Math.round(editingMarker.x)))
+        form.append("y", String(Math.round(editingMarker.y)))
+        form.append("subtype", finalSubtype)
+        form.append("name", name)
+        form.append("description", description)
 
-      const marker: UserMarkerInstance = {
-        id: markerData.id,
-        subtype: markerData.subtypeId,
-        mapId: markerData.mapId,
-        x: markerData.x,
-        y: markerData.y,
-        name: markerData.name,
-        description: markerData.description,
-        type: "uploaded",
-      };
-      createMarkerRemote(marker);
-      // setEditingMarker(null);
+        const res = await fetchWithAuth(`/maps/${selectedMap?.name}/marker_feedbacks`, {
+          method: "POST",
+          body: form,
+        });
+        if (!res.ok) {
+          setUploadError(errorMessage);
+          return;
+        }
+        const data = await res.json();
+        if (data.errorCode !== "Success") {
+          setUploadError(`${errorMessage} ${data.errorCode}: ${data.errorMessage}`);
+        }
+
+        // remove local marker and add the remote one
+        deleteMarker(editingMarker.id);
+        const markerData = data.data;
+
+        const marker: UserMarkerInstance = {
+          id: markerData.id,
+          subtype: markerData.subtypeId,
+          mapId: markerData.mapId,
+          x: markerData.x,
+          y: markerData.y,
+          name: markerData.name,
+          description: markerData.description,
+          image: markerData.image?.s3Key || "",
+          type: "uploaded",
+        };
+        createMarkerRemote(marker);
+      }
+    } catch (err) {
+      console.error(err);
+      setUploadError(
+        t(
+          "common:errors.network",
+          "Network error. Please check your connection and try again.",
+        ),
+      );
+    } finally {
+      setIsUploading(false);
     }
-    // setEditingMarker(null);
+  }
+
+  const handleSave = async () => {
+    const finalSubtype = selectedSubtype || editingMarker.subtype || "";
+    updateMarker({
+      ...editingMarker,
+      x: Math.round(editingMarker.x),
+      y: Math.round(editingMarker.y),
+      subtype: finalSubtype,
+      name: name,
+      description: description,
+    });
+    setEditingMarker(null);
   }
 
   return (
@@ -153,34 +195,28 @@ const MarkerPopupEdit: React.FC = () => {
       onOpenChange={() => setEditingMarker(null)}
       placement="center"
       size="md"
-      classNames={{ wrapper: "z-[30000]" }}
+      classNames={{wrapper: "z-[30000]"}}
+      hideCloseButton
+      backdrop="transparent"
     >
       <ModalContent className="bg-sidebar">
         {() => (
           <>
-            <ModalHeader>
-              {t("common:markerActions.editUserMarker", "Edit User Marker")}
+            <ModalHeader className="flex items-center justify-between gap-3">
+              <span className="text-base font-semibold">
+                {t("common:markerActions.editUserMarker", "Edit User Marker")}
+              </span>
+              <span className="text-sm text-default-700">
+                {editingMarker?.type === "uploaded" ? t("common:markerActions.uploaded", "Uploaded marker") : t("common:markerActions.local", "Local marker")}
+              </span>
             </ModalHeader>
 
             <ModalBody className="flex flex-col gap-3">
-              {/* Tabs */}
-              {/*<Tabs*/}
-              {/*  selectedKey={tab}*/}
-              {/*  onSelectionChange={(k) => setTab(k as "local" | "feedback")}*/}
-              {/*  size="sm"*/}
-              {/*  radius="sm"*/}
-              {/*  fullWidth*/}
-              {/*  variant="light"*/}
-              {/*  classNames={{*/}
-              {/*    tab: `*/}
-              {/*      text-default-700 data-[selected=true]:text-foreground*/}
-              {/*    `,*/}
-              {/*  }}*/}
-              {/*>*/}
-              {/*  <Tab key="local" title={t("common:markerActions.local", "Local")} />*/}
-              {/*  <Tab key="feedback" title={t("common:markerActions.feedback", "Feedback")} />*/}
-              {/*</Tabs>*/}
-
+              {uploadError && (
+                <div className="mt-1 rounded-md border border-danger-500/60 bg-danger-500/10 px-3 py-2 text-[13px] text-danger-500">
+                  {uploadError}
+                </div>
+              )}
               {/* Type / Subtype + Coordinates */}
               <div className="flex items-center gap-2 flex-wrap text-sm">
                 {/* Category */}
@@ -258,47 +294,43 @@ const MarkerPopupEdit: React.FC = () => {
                 classNames={inputClassNames}
                 radius="none"
               />
+
+              <SingleImageUploader
+                label={t("common:markerActions.image", "Image")}
+                initialImageUrl={imageUrl}
+                onFileSelected={setImageFile}
+              />
+
               <Divider className="mt-4"/>
 
             </ModalBody>
             <ModalFooter className="flex gap-6">
               {/* Delete (with tooltip) */}
               <div className="flex-1">
-                <Tooltip
-                  content={t(
-                    "common:markerActions.cannotDeleteUploaded",
-                    "Uploaded markers cannot be deleted"
-                  )}
-                  isDisabled={editingMarker?.type !== "uploaded"}
-                  placement="top"
-                  delay={300}
-                >
-                  {/* Tooltip requires a wrapper when child is disabled */}
-                  <span className="block w-full">
-        <Button
-          color="danger"
-          onPress={() => deleteMarker(editingMarker.id)}
-          radius="sm"
-          className="w-full text-background"
-          isDisabled={editingMarker?.type === "uploaded"}
-        >
-          {t("common:ui.delete", "Delete")}
-        </Button>
-      </span>
-                </Tooltip>
+                {editingMarker?.type === "local" && (
+                  <Button
+                    color="danger"
+                    onPress={() => deleteMarker(editingMarker.id)}
+                    radius="sm"
+                    className="w-full text-background"
+                  >
+                    {t("common:ui.delete", "Delete")}
+                  </Button>
+                )}
               </div>
 
-              {/* Cancel */}
               <div className="flex-1">
-                <Button
-                  color="default"
-                  variant="flat"
-                  onPress={() => setEditingMarker(null)}
-                  radius="sm"
-                  className="w-full"
-                >
-                  {t("common:ui.cancel", "Cancel")}
-                </Button>
+                {editingMarker?.type === "local" && (
+                  <Button
+                    color="default"
+                    // variant="flat"
+                    onPress={handleSave}
+                    radius="sm"
+                    className="w-full"
+                  >
+                    {t("common:ui.save", "Save")}
+                  </Button>
+                )}
               </div>
 
               {/* Upload */}
@@ -319,9 +351,10 @@ const MarkerPopupEdit: React.FC = () => {
                       onPress={user ? handleUpload : () => setUserModalOpen(true)}
                       className="w-full text-background"
                       radius="sm"
-                      // isDisabled={!user}
+                      isLoading={isUploading}
+                      isDisabled={isUploading}
                     >
-                      {t("common:ui.upload", "Upload")}
+                      {editingMarker?.type === "local" ? t("common:ui.upload", "Upload") : t("common:ui.update", "Update")}
                     </Button>
                   </span>
                 </Tooltip>

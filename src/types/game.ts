@@ -74,6 +74,7 @@ export interface UserMarkerInstance {
   y: number;
   name: string;
   description: string;
+  image: string;
   type: "local" | "feedback" | "uploaded";
 }
 

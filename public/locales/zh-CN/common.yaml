@@ -18,6 +18,7 @@ ui:
   save: "保存"
   upload: "上传"
   submit: "提交"
+  update: "更新"
 
 auth:
   login: "登录"
@@ -68,8 +69,10 @@ buttons:
 
 errors:
   unknown: "发生未知错误。"
-  network: "网络连接错误。"
+  network: "网络错误，请检查网络连接并重试。"
   notFound: "资源未找到。"
+  uploadFailed: "上传失败，请重试。"
+
 
 markerActions:
   markCompleted: "标记为已完成"
@@ -83,8 +86,11 @@ markerActions:
   description: "详情"
   local: "本地标点"
   feedback: "贡献标点"
+  uploaded: "已上传标点"
   cannotDeleteUploaded: "已上传的标点不能删除"
   loginRequired: "登录后可以上传标点"
+  image: "图片"
+
 
 introModal:
   alert: "我们承诺本网站将 **永久免费开放**、我们不会在任何平台进行交易售卖，请大家**提高警惕，谨防受骗**！"

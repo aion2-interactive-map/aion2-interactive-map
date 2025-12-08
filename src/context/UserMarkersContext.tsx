@@ -88,6 +88,7 @@ export const UserMarkersProvider: React.FC<{ children: React.ReactNode }> = ({
                 y: result.y,
                 name: result.name,
                 description: result.description,
+                image: result.image?.s3Key || "",
                 type: "uploaded",
               }
               markers.set(marker.id, marker);
@@ -103,7 +104,7 @@ export const UserMarkersProvider: React.FC<{ children: React.ReactNode }> = ({
     }
     load();
 
-  }, [selectedMap, getStorageKey]);
+  }, [selectedMap, getStorageKey, fetchWithAuth]);
 
   /** 💾 Persist markers for current map only */
   useEffect(() => {
@@ -126,6 +127,7 @@ export const UserMarkersProvider: React.FC<{ children: React.ReactNode }> = ({
         y,
         name: "",
         description: "",
+        image: "",
         type: "local",
       };
 
