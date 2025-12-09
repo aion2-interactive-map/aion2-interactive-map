@@ -15,9 +15,6 @@ type Props = {
   marker: MarkerInstance;
 };
 
-
-
-
 const GameMarkerInner: React.FC<Props> = ({
                                        // map,
                                        marker,
@@ -70,13 +67,20 @@ const GameMarkerInner: React.FC<Props> = ({
 
 
   // find icon and color
-  const innerIcon = getSubtypeIconDef(sub, selectedMap);
+  const innerIcon = marker.icon || getSubtypeIconDef(sub, selectedMap);
   // const pinColor = getSubtypeColor(sub, cat);
-
-  const icon = createPinIcon(innerIcon, iconScale, isCompleted);
+  let icon = null;
+  if (cat?.name === "creature") {
+    icon = createPinIcon(innerIcon, 0.9, isCompleted, true);
+  } else {
+    icon = createPinIcon(innerIcon, iconScale, isCompleted);
+  }
 
   // Localized marker name with fallback to id
   let localizedName = t(`${markerKeyPrefix}.name`, "");
+  if (!localizedName) {
+    localizedName = marker.name || "";
+  }
   if (!localizedName) {
     localizedName = subtypeLabel;
   }

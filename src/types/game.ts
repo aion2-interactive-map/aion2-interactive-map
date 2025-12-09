@@ -63,6 +63,8 @@ export interface MarkerInstance {
   x: number;
   y: number;
   images: string[];
+  icon?: string;
+  name?: string;
   indexInSubtype: number;
 }
 
