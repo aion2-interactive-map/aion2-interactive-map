@@ -78,7 +78,7 @@ const GameMarkerInner: React.FC<Props> = ({
 
 
   // find icon and color
-  const innerIcon = parseIconUrl(marker.icon || sub?.name || "", selectedMap);
+  const innerIcon = parseIconUrl(marker.icon || sub?.icon || "", selectedMap);
   // const pinColor = getSubtypeColor(sub, cat);
   let icon;
   if (cat?.name === "creature") {
