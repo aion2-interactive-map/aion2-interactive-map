@@ -4,7 +4,7 @@ import {Input} from "@heroui/react";
 import MiniSearch, {type SearchResult} from "minisearch";
 import {useMarkers} from "@/context/MarkersContext.tsx";
 import {useTranslation} from "react-i18next";
-import type {MarkerInstance} from "@/types/game.ts";
+import type {MarkerWithTranslations} from "@/types/game.ts";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faSearch, faClose} from "@fortawesome/free-solid-svg-icons";
 
@@ -49,15 +49,15 @@ const MarkerSearch: React.FC<MarkerSearchProps> = ({onSelectMarker}) => {
   const [query, setQuery] = useState("");
 
   const miniSearch = useMemo(() => {
-    const ms = new MiniSearch<MarkerInstance>({
-      fields: ["name"],
-      storeFields: ["name", "x", "y", "description"],
+    const ms = new MiniSearch<MarkerWithTranslations>({
+      fields: ["localizedName", "localizedDescription"],
+      storeFields: ["x", "y", "localizedName", "localizedDescription"],
       searchOptions: {
         prefix: true,
         fuzzy: 0.2,
       },
     });
-    const filteredMarkers: MarkerInstance[] = markers.filter((marker) =>
+    const filteredMarkers: MarkerWithTranslations[] = markers.filter((marker) =>
       marker.subtype.startsWith("creature")
     );
     ms.addAll(filteredMarkers);
@@ -135,7 +135,7 @@ const MarkerSearch: React.FC<MarkerSearchProps> = ({onSelectMarker}) => {
           </div>
 
           {results.slice(0, 50).map((res) => {
-            const doc = res as SearchResult & MarkerInstance;
+            const doc = res as SearchResult & MarkerWithTranslations;
             return (
               <div key={doc.id} className="">
                 <button
@@ -155,15 +155,15 @@ const MarkerSearch: React.FC<MarkerSearchProps> = ({onSelectMarker}) => {
                 >
                   {/* Title */}
                   <div className="font-semibold text-[16px]">
-                    {doc.name
-                      ? highlightText(doc.name, terms)
+                    {doc.localizedName
+                      ? highlightText(doc.localizedName, terms)
                       : t("markerSearch.unnamed", "Unnamed marker")}
                   </div>
 
                   {/* Optional description */}
-                  {doc.description && (
+                  {doc.localizedDescription && (
                     <div className="text-[14px] text-default-700 line-clamp-2">
-                      {highlightText(doc.description, terms)}
+                      {t("markerActions.description", "Description")}: {highlightText(doc.localizedDescription, terms)}
                     </div>
                   )}
 

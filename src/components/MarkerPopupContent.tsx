@@ -9,22 +9,13 @@ import {useUser} from "@/context/UserContext.tsx";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCommentDots} from "@fortawesome/free-solid-svg-icons";
 import {useGameMap} from "@/context/GameMapContext.tsx";
-import type {CommentInstance, MarkerInstance} from "@/types/game.ts";
+import type {CommentInstance, MarkerWithTranslations} from "@/types/game.ts";
 import DOMPurify from "dompurify";
+import {useGameData} from "@/context/GameDataContext.tsx";
+import {useMarkers} from "@/context/MarkersContext.tsx";
 
 type Props = {
-  marker: MarkerInstance;
-  name: string;
-  categoryLabel: string;
-  subtypeLabel: string;
-  regionLabel: string;
-  // x: number;
-  // y: number;
-  // images: string[];
-  description: string;
-  canComplete: boolean;
-  completed: boolean;
-  onToggleCompleted: () => void;
+  marker: MarkerWithTranslations;
 };
 
 function safeHTML(input: string) {
@@ -33,18 +24,14 @@ function safeHTML(input: string) {
 
 const MarkerPopupContent: React.FC<Props> = ({
                                                marker,
-                                               name,
-                                               categoryLabel,
-                                               subtypeLabel,
-                                               regionLabel,
-                                               description,
-                                               canComplete,
-                                               completed,
-                                               onToggleCompleted,
                                              }) => {
-  const {t} = useTranslation();
-  const {selectedMap} = useGameMap();
+  const {selectedMap, types} = useGameMap();
+  const {allSubtypes} = useGameData();
+  const regionNs = `regions/${selectedMap?.name}`;
+  const {t} = useTranslation([regionNs]);
   const {user, setUserModalOpen, fetchWithAuth} = useUser();
+  const {completedBySubtype, toggleMarkerCompleted} = useMarkers();
+
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [showCommentInput, setShowCommentInput] = useState(false);
@@ -55,6 +42,29 @@ const MarkerPopupContent: React.FC<Props> = ({
   const resolvedSmallImages = marker.images?.map(image => getCdnUrl(image + ".small.webp"));
   const resolvedNormalImages = marker.images?.map(image => getCdnUrl(image + ".normal.webp"));
 
+  const sub = allSubtypes.get(marker.subtype);
+  const cat = types.find((c) => c.name === sub?.category);
+
+  // Category & subtype labels from types namespace (fully-qualified keys)
+  const categoryLabel = t(
+    `types:categories.${cat?.name}.name`,
+  );
+  const subtypeLabel = t(
+    `types:subtypes.${sub?.name}.name`,
+  );
+  const regionKeyPrefix = `${regionNs}:${marker.region}`;
+  const regionLabel = marker.region ? t(`${regionKeyPrefix}.name`) : "";
+  const canComplete = !!sub?.canComplete;
+
+  const name = marker.localizedName || marker.name;
+  const description = marker.localizedDescription || "";
+
+
+  let isCompleted = false;
+  if (sub?.name && completedBySubtype[sub.name]) {
+    const completedSet = completedBySubtype[sub.name];
+    isCompleted = completedSet.has(marker.indexInSubtype);
+  }
 
   const handleListComment = async () => {
     const res = await fetchWithAuth(`/maps/${selectedMap?.name}/markers/${marker.id}/comments`, {
@@ -181,10 +191,13 @@ const MarkerPopupContent: React.FC<Props> = ({
           <Button
             size="sm"
             variant="flat"
-            color={completed ? "success" : "primary"}
-            onPress={onToggleCompleted}
+            color={isCompleted ? "success" : "primary"}
+            onPress={() => {
+              // if (!isCompleted) popupRef?.current?.close();
+              toggleMarkerCompleted(marker);
+            }}
           >
-            {completed
+            {isCompleted
               ? t("common:markerActions:markNotCompleted", "Completed")
               : t("common:markerActions:markCompleted", "Mark as completed")}
           </Button>

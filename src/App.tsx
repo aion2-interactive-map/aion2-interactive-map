@@ -18,6 +18,7 @@ import remarkGfm from "remark-gfm";
 import {useGameMap} from "@/context/GameMapContext.tsx";
 import DismissibleBanner from "@/components/DismissibleBanner.tsx";
 import {getStaticUrl} from "@/utils/url.ts";
+import {useMarkers} from "@/context/MarkersContext.tsx";
 
 const App: React.FC = () => {
 
@@ -25,6 +26,7 @@ const App: React.FC = () => {
   const { loading, selectedMap } = useGameMap();
 
   const mapRef = useRef<MapRef>(null);
+  const {markersById} = useMarkers();
 
   // const handleMapChange = (mapId: string) => {
   //   setSelectedMapId(mapId);
@@ -45,10 +47,16 @@ const App: React.FC = () => {
   const [selectedMarkerId, setSelectedMarkerId] = useState<string | null>(null);
 
   const handleSelectMarker = useCallback(
-    (markerId: string) => {
+    (markerId: string | null) => {
+      if (!markerId) {
+        setSelectedMarkerId(null);
+        return;
+      }
+      const m = markersById[markerId];
+      if (!m) return;
       setSelectedMarkerId(markerId);
     },
-    [],
+    [markersById],
   );
 
   if (loading && !selectedMap) {
@@ -99,6 +107,7 @@ const App: React.FC = () => {
 
         <GameMapView
           mapRef={mapRef}
+          onSelectMarker={handleSelectMarker}
           selectedMarkerId={selectedMarkerId}
         />
 

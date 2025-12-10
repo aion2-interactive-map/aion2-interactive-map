@@ -1,10 +1,12 @@
 import React, {createContext, useCallback, useContext, useEffect, useMemo, useState} from "react";
-import type {MarkerInstance, RawMarkersFile, RawRegionsFile, RegionInstance} from "@/types/game.ts";
+import type {MarkerInstance, MarkerWithTranslations, RawMarkersFile, RawRegionsFile, RegionInstance} from "@/types/game.ts";
 import {useYamlLoader} from "@/hooks/useYamlLoader.ts";
 import {useGameMap} from "@/context/GameMapContext.tsx";
+import {useTranslation} from "react-i18next";
 
 type MarkersContextValue = {
-  markers: MarkerInstance[];
+  markers: MarkerWithTranslations[];
+  markersById: Record<string, MarkerWithTranslations>;
   regions: RegionInstance[];
   loading: boolean;
 
@@ -64,13 +66,15 @@ function loadV2Subtype(map: string, subtype: string): Set<number> {
 
 
 export const MarkersProvider = ({children}: MarkersProviderProps) => {
-  const [markers, setMarkers] = useState<MarkerInstance[]>([]);
+  const [baseMarkers, setBaseMarkers] = useState<MarkerInstance[]>([]);
   const [regions, setRegions] = useState<RegionInstance[]>([]);
   const [loading, setLoading] = useState(false);
   const [showLabels, setShowLabels] = useState<boolean>(false);
   const loadYaml = useYamlLoader();
-  const { selectedMap } = useGameMap();
 
+  const { selectedMap } = useGameMap();
+  const markerNs = `markers/${selectedMap?.name}`;
+  const {t, i18n} = useTranslation([markerNs]);
 
   // Set of completed marker keys for the *current map*.
   // Keys are "categoryId::subtypeId::markerId".
@@ -89,10 +93,33 @@ export const MarkersProvider = ({children}: MarkersProviderProps) => {
   //   [],
   // );
 
+  const markers: MarkerWithTranslations[] = useMemo(() => {
+    if (!selectedMap) return [];
+
+    return baseMarkers.map((m) => {
+      const localizedName = t(`${markerNs}:${m.id}.name`, m.name ?? "");
+      const localizedDescription = t(`${markerNs}:${m.id}.description`, "");
+      return {
+        ...m,
+        localizedName,
+        localizedDescription,
+      };
+    });
+  }, [baseMarkers, selectedMap, t, i18n.language]);
+
+  const markersById: Record<string, MarkerWithTranslations> = useMemo(() => {
+    const dict: Record<string, MarkerWithTranslations> = {};
+    for (const m of markers) {
+      dict[m.id] = m;
+    }
+    return dict;
+  }, [markers]);
+
+
   // --- Load markers for the selected map ---
   useEffect(() => {
     if (!selectedMap) {
-      setMarkers([]);
+      setBaseMarkers([]);
       setRegions([]);
       return;
     }
@@ -109,12 +136,12 @@ export const MarkersProvider = ({children}: MarkersProviderProps) => {
         const rawRegion = await loadYaml<RawRegionsFile>(
           `data/regions/${selectedMap?.name}.yaml`,
         )
-        setMarkers(raw.markers);
+        setBaseMarkers(raw.markers);
         setRegions(rawRegion.regions);
       } catch (e) {
         console.error(e);
         if (!cancelled) {
-          setMarkers([]);
+          setBaseMarkers([]);
           setRegions([]);
         }
       } finally {
@@ -132,7 +159,7 @@ export const MarkersProvider = ({children}: MarkersProviderProps) => {
   const subtypeCounts = useMemo<Record<string, number>>(() => {
     const indexSets: Record<string, Set<number>> = {};
 
-    for (const m of markers) {
+    for (const m of baseMarkers) {
       if (!indexSets[m.subtype]) indexSets[m.subtype] = new Set();
       indexSets[m.subtype].add(m.indexInSubtype);
     }
@@ -143,7 +170,7 @@ export const MarkersProvider = ({children}: MarkersProviderProps) => {
     }
 
     return counts;
-  }, [markers]);
+  }, [baseMarkers]);
 
   // --- Completed counts per subtype (X in X/N) ---
   const completedCounts = useMemo<Record<string, number>>(() => {
@@ -168,7 +195,7 @@ export const MarkersProvider = ({children}: MarkersProviderProps) => {
     const mapName = selectedMap.name;
 
     // 1. Collect all subtypes in this map
-    const subtypes = new Set(markers.map((m) => m.subtype));
+    const subtypes = new Set(baseMarkers.map((m) => m.subtype));
 
     const loaded: Record<string, Set<number>> = {};
 
@@ -197,7 +224,7 @@ export const MarkersProvider = ({children}: MarkersProviderProps) => {
 
     // Build subtype→Set(index) from v1 uuid keys
     const migrated: Record<string, Set<number>> = {};
-    for (const m of markers) {
+    for (const m of baseMarkers) {
       const uuid = m.id;
       if (!v1.has(uuid)) continue;
 
@@ -212,7 +239,7 @@ export const MarkersProvider = ({children}: MarkersProviderProps) => {
 
     // Merge into empty-loaded
     setCompletedBySubtype(() => ({ ...loaded, ...migrated }));
-  }, [selectedMap, markers]);
+  }, [selectedMap, baseMarkers]);
 
   // --- Save completion state per map to localStorage ---
 
@@ -265,6 +292,7 @@ export const MarkersProvider = ({children}: MarkersProviderProps) => {
   return (
     <MarkersContext.Provider value={{
       markers,
+      markersById,
       regions,
       loading,
       showLabels,

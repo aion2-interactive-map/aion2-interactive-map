@@ -1,6 +1,6 @@
 // src/components/GameMapView.tsx
-import React, {useCallback, useEffect, useState} from "react";
-import {MapContainer, useMap, useMapEvents} from "react-leaflet";
+import React, {useCallback, useEffect, useMemo, useState} from "react";
+import {MapContainer, Popup, useMap, useMapEvents} from "react-leaflet";
 import L from "leaflet";
 
 import GameMarker from "./GameMarker";
@@ -17,6 +17,7 @@ import {useGameData} from "@/context/GameDataContext.tsx";
 import {useUserMarkers} from "@/context/UserMarkersContext.tsx";
 import UserMarker from "@/components/UserMarker.tsx";
 import MarkerPopupEdit from "@/components/MarkerPopupEdit.tsx";
+import MarkerPopupContent from "@/components/MarkerPopupContent.tsx";
 
 
 type CursorTrackerProps = {
@@ -44,7 +45,8 @@ const CursorTracker: React.FC<CursorTrackerProps> = ({onUpdate}) => {
 
 type Props = {
   mapRef: React.RefObject<MapRef>;
-  selectedMarkerId?: string | null;
+  onSelectMarker: (markerId: string | null) => void;
+  selectedMarkerId: string | null;
 };
 
 const MapContextMenuHandler: React.FC<{
@@ -119,8 +121,55 @@ const MapClickPicker: React.FC<{
   return null;
 };
 
+function MarkerFocusController({ selectedMarkerId }: { selectedMarkerId: string | null | undefined }) {
+  const map = useMap();
+  const { markersById } = useMarkers();
+
+  useEffect(() => {
+    if (!map) return;
+    if (!selectedMarkerId) return;
+
+    const marker = markersById[selectedMarkerId];
+    if (!marker) return;
+
+    // Leaflet uses [lat, lng]; assuming y=lat, x=lng:
+    const latLng: [number, number] = [marker.y, marker.x];
+
+    map.flyTo(latLng, map.getZoom(), { duration: 0.5 });
+  }, [map, selectedMarkerId, markersById]);
+
+  return null;
+}
+
+function SelectedMarkerPopup({ onSelectMarker, selectedMarkerId }: { onSelectMarker: (markerId: string | null) => void, selectedMarkerId: string | null | undefined }) {
+  const { markersById } = useMarkers();
+  useMapEvents({
+    click() {
+      onSelectMarker(null);
+    },
+  });
+
+  if (!selectedMarkerId) return null;
+
+  const marker = markersById[selectedMarkerId];
+  if (!marker) return null;
+
+  return (
+    <Popup
+      position={[marker.y + 10, marker.x]}
+      maxWidth={360} minWidth={360}
+      autoPan={true} closeButton={false}
+    >
+      <MarkerPopupContent
+        marker={marker}
+      />
+    </Popup>
+  );
+}
+
 const GameMapView: React.FC<Props> = ({
                                         mapRef,
+                                        onSelectMarker,
                                         selectedMarkerId,
                                       }) => {
   const [cursorPos, setCursorPos] = useState<{ x: number; y: number } | null>(
@@ -152,6 +201,13 @@ const GameMapView: React.FC<Props> = ({
     }
   }, []);
 
+  const renderedPopup = useMemo(() => {
+    if (selectedMarkerId) {
+      return <SelectedMarkerPopup selectedMarkerId={selectedMarkerId} onSelectMarker={onSelectMarker} />;
+    }
+    return null;
+  }, [selectedMarkerId, markers]);
+
 
   if (!selectedMap) {
     return (
@@ -177,6 +233,10 @@ const GameMapView: React.FC<Props> = ({
   ];
 
   // console.log(bounds, center)
+
+
+
+
 
   return (
     <div
@@ -221,16 +281,18 @@ const GameMapView: React.FC<Props> = ({
 
         {markers
           .filter((m) =>
-            visibleSubtypes?.has(m.subtype),
+             selectedMarkerId === m.id || visibleSubtypes?.has(m.subtype),
           )
           .map((m) => (
-            <GameMarker key={m.id} marker={m} selected={selectedMarkerId == m.id}/>
+            <GameMarker key={m.id} marker={m} onSelectMarker={onSelectMarker}/>
           ))}
 
         {userMarkers.map((m) => (
           <UserMarker key={m.id} marker={m}/>
         ))}
 
+        <MarkerFocusController selectedMarkerId={selectedMarkerId} />
+        {renderedPopup}
 
       </MapContainer>
 

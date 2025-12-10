@@ -68,6 +68,11 @@ export interface MarkerInstance {
   indexInSubtype: number;
 }
 
+export type MarkerWithTranslations = MarkerInstance & {
+  localizedName: string;
+  localizedDescription?: string;
+};
+
 export interface UserMarkerInstance {
   id: string;
   subtype: string;
