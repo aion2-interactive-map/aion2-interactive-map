@@ -1,5 +1,5 @@
 // src/App.tsx
-import React, { useRef, useState } from "react";
+import React, {useCallback, useRef, useState} from "react";
 
 import TopNavbar from "./components/TopNavbar";
 import GameMapView from "./components/GameMapView";
@@ -42,6 +42,14 @@ const App: React.FC = () => {
 
   // const [isIntroOpen, setIsIntroOpen] = useState<boolean>(true);
   const [isAlertOpen, setIsAlertOpen] = useState(true);
+  const [selectedMarkerId, setSelectedMarkerId] = useState<string | null>(null);
+
+  const handleSelectMarker = useCallback(
+    (markerId: string) => {
+      setSelectedMarkerId(markerId);
+    },
+    [],
+  );
 
   if (loading && !selectedMap) {
     return (
@@ -87,10 +95,11 @@ const App: React.FC = () => {
       </>}
 
       <div className="flex flex-1 overflow-hidden">
-        <LeftSidebar />
+        <LeftSidebar onSelectMarker={handleSelectMarker} />
 
         <GameMapView
           mapRef={mapRef}
+          selectedMarkerId={selectedMarkerId}
         />
 
         <RightSidebar />

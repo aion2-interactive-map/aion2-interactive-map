@@ -1,6 +1,6 @@
 // src/components/GameMarker.tsx
-import React, {memo, useRef} from "react";
-import {Marker, Tooltip, Popup } from "react-leaflet";
+import React, {memo, useEffect, useRef} from "react";
+import {Marker, Tooltip, Popup, useMap} from "react-leaflet";
 import { useTranslation } from "react-i18next";
 import L, {Popup as LeafletPopup} from "leaflet";
 import MarkerPopupContent from "./MarkerPopupContent";
@@ -9,25 +9,25 @@ import type {MarkerInstance} from "../types/game";
 import {useMarkers} from "@/context/MarkersContext.tsx";
 import {useGameMap} from "@/context/GameMapContext.tsx";
 import {useGameData} from "@/context/GameDataContext.tsx";
-import {createPinIcon, getSubtypeIconDef} from "@/utils/marker.tsx";
+import {createPinIcon} from "@/utils/marker.tsx";
+import {parseIconUrl} from "@/utils/url.ts";
 
 type Props = {
   marker: MarkerInstance;
+  selected?: boolean;
 };
 
 const GameMarkerInner: React.FC<Props> = ({
-                                       // map,
                                        marker,
-                                       // types,
-                                       // subtypes,
-                                       // showLabel,
-                                       // completedSet,
-                                       // toggleMarkerCompleted,
+                                       selected,
                                      }) => {
 
   // Namespace for this map's markers (ensures markers/world.yaml loads)
   // console.log(marker)
   const popupRef = useRef<LeafletPopup>(null);
+  const markerRef = useRef<L.Marker | null>(null);
+  const map = useMap();
+
   const {selectedMap, types} = useGameMap();
   const {allSubtypes} = useGameData();
   const {showLabels, toggleMarkerCompleted, completedBySubtype} = useMarkers();
@@ -36,8 +36,19 @@ const GameMarkerInner: React.FC<Props> = ({
   const regionNs = `regions/${selectedMap?.name}`;
   const { t } = useTranslation([markerNs, regionNs]);
 
-  if (!selectedMap) return null;
+  useEffect(() => {
+    if (selected) {
+      const lat = marker.y;
+      const lng = marker.x;
+      const target = L.latLng(lat, lng);
+      map.once("moveend", () => {
+        markerRef?.current?.openPopup();
+      })
+      map.setView(target, map.getZoom(), { animate: true });
+    }
+  }, [selected, marker, map]);
 
+  if (!selectedMap) return null;
 
   const markerKeyPrefix = `${markerNs}:${marker.id}`;
   const regionKeyPrefix = `${regionNs}:${marker.region}`;
@@ -67,9 +78,9 @@ const GameMarkerInner: React.FC<Props> = ({
 
 
   // find icon and color
-  const innerIcon = marker.icon || getSubtypeIconDef(sub, selectedMap);
+  const innerIcon = parseIconUrl(marker.icon || sub?.name || "", selectedMap);
   // const pinColor = getSubtypeColor(sub, cat);
-  let icon = null;
+  let icon;
   if (cat?.name === "creature") {
     icon = createPinIcon(innerIcon, 0.9, isCompleted, true);
   } else {
@@ -95,6 +106,7 @@ const GameMarkerInner: React.FC<Props> = ({
     <Marker
       position={new L.LatLng(marker.y, marker.x)}
       icon={icon}
+      ref={markerRef}
     >
       {(showLabels && !hideTooltip) && (
         <Tooltip

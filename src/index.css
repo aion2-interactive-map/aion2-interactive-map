@@ -17,6 +17,8 @@
     --color-sidebar-collapse: #D3E2EA;
     --color-input: rgba(185,185,185,0.2);
     --color-input-2: #F6F6F6;
+    --color-search: rgba(255, 255, 255, 0.10);
+    --color-search-item: rgba(82, 82, 82, 0.04);
 }
 
 .dark {

@@ -12,8 +12,14 @@ import {makeAccordionTitle} from "@/components/SideBar/makeAccordionTitle.tsx";
 import BottomSidebarBanner from "@/components/SideBar/BottomSidebarBanner.tsx";
 import {getStaticUrl} from "@/utils/url.ts";
 import {useUserMarkers} from "@/context/UserMarkersContext.tsx";
+import MarkerSearch from "@/components/SideBar/MarkerSearch.tsx";
 
-const LeftSidebar: React.FC = () => {
+type LeftSidebarProps = {
+  onSelectMarker?: (markerId: string) => void;
+};
+
+
+const LeftSidebar: React.FC<LeftSidebarProps> = ({onSelectMarker}) => {
   const {t} = useTranslation();
   const {selectedMap} = useGameMap();
   const [bannerVisible, setBannerVisible] = useState(true);
@@ -56,6 +62,7 @@ const LeftSidebar: React.FC = () => {
         >
           <Logo/>
           <SelectMap/>
+          <MarkerSearch onSelectMarker={onSelectMarker} />
           <Accordion
             variant="shadow"
             selectionMode="multiple"

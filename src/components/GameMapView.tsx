@@ -44,6 +44,7 @@ const CursorTracker: React.FC<CursorTrackerProps> = ({onUpdate}) => {
 
 type Props = {
   mapRef: React.RefObject<MapRef>;
+  selectedMarkerId?: string | null;
 };
 
 const MapContextMenuHandler: React.FC<{
@@ -119,15 +120,8 @@ const MapClickPicker: React.FC<{
 };
 
 const GameMapView: React.FC<Props> = ({
-                                        // selectedMap,
-                                        // markers,
                                         mapRef,
-                                        // visibleSubtypes,
-                                        // types,
-                                        // subtypes,
-                                        // showLabels,
-                                        // completedSet,
-                                        // toggleMarkerCompleted,
+                                        selectedMarkerId,
                                       }) => {
   const [cursorPos, setCursorPos] = useState<{ x: number; y: number } | null>(
     null,
@@ -230,7 +224,7 @@ const GameMapView: React.FC<Props> = ({
             visibleSubtypes?.has(m.subtype),
           )
           .map((m) => (
-            <GameMarker key={m.id} marker={m}/>
+            <GameMarker key={m.id} marker={m} selected={selectedMarkerId == m.id}/>
           ))}
 
         {userMarkers.map((m) => (

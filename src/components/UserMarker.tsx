@@ -4,7 +4,7 @@ import {Marker, Tooltip} from "react-leaflet";
 import type {UserMarkerInstance} from "@/types/game";
 import {useUserMarkers} from "@/context/UserMarkersContext.tsx";
 import {useGameData} from "@/context/GameDataContext.tsx";
-import {createPinIcon, getSubtypeIconDef} from "@/utils/marker.tsx";
+import {createPinIcon} from "@/utils/marker.tsx";
 import {useGameMap} from "@/context/GameMapContext.tsx";
 import {parseIconUrl} from "@/utils/url.ts";
 import {useTranslation} from "react-i18next";
@@ -18,9 +18,9 @@ const UserMarkerInner: React.FC<{ marker: UserMarkerInstance }> = ({marker}) => 
   if (!selectedMap) return null;
 
   const sub = [...allSubtypes.values()].find(v => v.id === marker.subtype);
-  let innerIcon = "";
-  if (sub) {
-    innerIcon = getSubtypeIconDef(sub, selectedMap);
+  let innerIcon;
+  if (sub?.icon) {
+    innerIcon = parseIconUrl(sub.icon, selectedMap);
   } else {
     innerIcon = parseIconUrl("", selectedMap);
   }

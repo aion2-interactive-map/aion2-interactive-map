@@ -4,14 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {  faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import { renderToString } from "react-dom/server";
 
-import type {GameMapMeta, MarkerTypeSubtype} from "../types/game";
-import {parseIconUrl} from "../utils/url.ts";
-
-
-/** Lookup icon definition from YAML (by category/subtype). */
-export function getSubtypeIconDef(sub: MarkerTypeSubtype | undefined, map: GameMapMeta): string {
-  return parseIconUrl(sub?.icon || "", map);
-}
 
 /** Lookup color from YAML (subtype > category > default). */
 /*function getSubtypeColor(
