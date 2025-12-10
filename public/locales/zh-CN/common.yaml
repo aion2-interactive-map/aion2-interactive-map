@@ -19,6 +19,7 @@ ui:
   upload: "上传"
   submit: "提交"
   update: "更新"
+  confirmDelete: "你确定要删除吗？"
 
 auth:
   login: "登录"

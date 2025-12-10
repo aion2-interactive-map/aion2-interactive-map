@@ -9,7 +9,7 @@ import {
   Input,
   Button,
   Select,
-  SelectItem, Divider, Tooltip,
+  SelectItem, Divider, Tooltip, Popover, PopoverTrigger, PopoverContent,
 } from "@heroui/react";
 import {useUserMarkers} from "@/context/UserMarkersContext";
 import {useTranslation} from "react-i18next";
@@ -44,6 +44,8 @@ const MarkerPopupEdit: React.FC = () => {
   const imageUrl = editingMarker?.image ? getCdnUrl(editingMarker.image + ".webp") : "";
 
   const [isUploading, setIsUploading] = useState(false);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [isConfirmOpen, setIsConfirmOpen] = useState(false);
   const [uploadError, setUploadError] = useState<string | null>(null);
 
   // when marker or types change, sync local state
@@ -83,9 +85,10 @@ const MarkerPopupEdit: React.FC = () => {
     innerWrapper: `h-10 py-0`
   }
 
-  const errorMessage = t("common:errors.uploadFailed", "Upload failed. Please try again.")
 
   const handleUpload = async () => {
+    if (isUploading) return;
+    const errorMessage = t("common:errors.uploadFailed", "Upload failed. Please try again.")
     const finalSubtype = selectedSubtype || editingMarker.subtype || "";
     console.log(finalSubtype)
     setIsUploading(true);
@@ -189,6 +192,35 @@ const MarkerPopupEdit: React.FC = () => {
     setEditingMarker(null);
   }
 
+  const handleDelete = async () => {
+    if (isDeleting) return;
+    const errorMessage = t("common:errors.deleteFailed", "Delete failed. Please try again.")
+    setIsDeleting(true);
+    try {
+      if (editingMarker.type === "uploaded") {
+        const res = await fetchWithAuth(`/maps/${selectedMap?.name}/marker_feedbacks/${editingMarker.id}`, {
+          method: "DELETE",
+        });
+        if (!res.ok) {
+          setUploadError(errorMessage);
+          return;
+        }
+      }
+      deleteMarker(editingMarker.id);
+    } catch (err) {
+      console.error(err);
+      setUploadError(
+        t(
+          "common:errors.network",
+          "Network error. Please check your connection and try again.",
+        ),
+      );
+    } finally {
+      setIsDeleting(false);
+    }
+
+  }
+
   return (
     <Modal
       isOpen
@@ -213,7 +245,8 @@ const MarkerPopupEdit: React.FC = () => {
 
             <ModalBody className="flex flex-col gap-3">
               {uploadError && (
-                <div className="mt-1 rounded-md border border-danger-500/60 bg-danger-500/10 px-3 py-2 text-[13px] text-danger-500">
+                <div
+                  className="mt-1 rounded-md border border-danger-500/60 bg-danger-500/10 px-3 py-2 text-[13px] text-danger-500">
                   {uploadError}
                 </div>
               )}
@@ -307,16 +340,53 @@ const MarkerPopupEdit: React.FC = () => {
             <ModalFooter className="flex gap-6">
               {/* Delete (with tooltip) */}
               <div className="flex-1">
-                {editingMarker?.type === "local" && (
-                  <Button
-                    color="danger"
-                    onPress={() => deleteMarker(editingMarker.id)}
-                    radius="sm"
-                    className="w-full text-background"
-                  >
-                    {t("common:ui.delete", "Delete")}
-                  </Button>
-                )}
+                <Popover
+                  isOpen={isConfirmOpen}
+                  onOpenChange={setIsConfirmOpen}
+                  placement="top"
+                  showArrow
+                >
+                  <PopoverTrigger>
+                      {/* wrapper required when button can be disabled */}
+                      <Button
+                        color="danger"
+                        radius="sm"
+                        className="w-full text-background"
+                        isLoading={isDeleting}
+                        isDisabled={isDeleting}
+                      >
+                        {t("common:ui.delete", "Delete")}
+                      </Button>
+                  </PopoverTrigger>
+
+                  <PopoverContent className="p-3 flex flex-col gap-3 w-48">
+                    <div className="text-sm text-default-700">
+                      {t(
+                        "common:ui.confirmDelete",
+                        "Are you sure you want to delete?"
+                      )}
+                    </div>
+
+                    <div className="flex gap-2 justify-end">
+                      <Button
+                        size="sm"
+                        variant="flat"
+                        onPress={() => {setIsConfirmOpen(false)}}
+                      >
+                        {t("common:ui.cancel", "Cancel")}
+                      </Button>
+
+                      <Button
+                        size="sm"
+                        color="danger"
+                        onPress={handleDelete}
+                        isLoading={isDeleting}
+                      >
+                        {t("common:ui.confirm", "Confirm")}
+                      </Button>
+                    </div>
+                  </PopoverContent>
+                </Popover>
               </div>
 
               <div className="flex-1">

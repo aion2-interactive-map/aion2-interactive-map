@@ -111,7 +111,7 @@ export const UserMarkersProvider: React.FC<{ children: React.ReactNode }> = ({
     if (!selectedMap) return;
     localStorage.setItem(
       getStorageKey(selectedMap.name),
-      JSON.stringify(userMarkers),
+      JSON.stringify(userMarkers.filter(marker => marker.type === "local")),
     );
   }, [userMarkers, selectedMap, getStorageKey]);
 

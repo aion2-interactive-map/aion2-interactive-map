@@ -89,14 +89,9 @@ const MarkerSearch: React.FC<MarkerSearchProps> = ({onSelectMarker}) => {
         placeholder={t("markerActions.search", "Search markers…")}
         value={query}
         onValueChange={setQuery}
+        color="default"
         classNames={{
-          inputWrapper: `
-            h-9 bg-search hover:!bg-search focus:!bg-search transition-none
-            group-data-[hover=true]:!bg-search
-            group-data-[focus=true]:!bg-search
-            group-data-[focus-visible=true]:!bg-search
-            group-data-[invalid=true]:!bg-search
-          `,
+          inputWrapper: `h-9`,
           input: "text-[14px]",
         }}
         startContent={
