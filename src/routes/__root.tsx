@@ -1,5 +1,10 @@
-import { createRootRoute, Outlet } from '@tanstack/react-router'
+import {createRootRoute, Outlet, Navigate} from '@tanstack/react-router'
 // import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
+
+// A separate component to handle the redirect logic
+const NotFoundRedirect = () => {
+  return <Navigate to="/" replace />;
+};
 
 const RootLayout = () => (
   <>
@@ -12,9 +17,12 @@ const RootLayout = () => (
     {/*  </Link>*/}
     {/*</div>*/}
     {/*<hr />*/}
-    <Outlet />
+    <Outlet/>
     {/*<TanStackRouterDevtools />*/}
   </>
 )
 
-export const Route = createRootRoute({ component: RootLayout })
+export const Route = createRootRoute({
+  component: RootLayout,
+  notFoundComponent: NotFoundRedirect
+})
