@@ -4,7 +4,7 @@ import {
   Button, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger,
   Navbar,
   NavbarBrand,
-  NavbarContent,
+  NavbarContent, NavbarItem,
 } from "@heroui/react";
 // import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 // import {faCloud, faDatabase} from "@fortawesome/free-solid-svg-icons";
@@ -18,6 +18,7 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import {getStaticUrl} from "../utils/url.ts";
 import ThemeDropdown from "@/components/ThemeDropdown.tsx";
 import AuthModal from "@/components/AuthModal.tsx";
+import {Link, useLocation} from "@tanstack/react-router";
 
 
 const TopNavbar: React.FC = () => {
@@ -28,7 +29,17 @@ const TopNavbar: React.FC = () => {
   const isDark = theme === "dark";
   // const {dataMode, toggleDataMode} = useDataMode();
   // const isStatic = dataMode === "static";
+  const location = useLocation();
+  const currentPath = location.pathname;
+  console.log(location.pathname)
 
+  const routes = [
+    { path: "/", name: "map" },
+    { path: "/class", name: "class" },
+    { path: "/crafting", name: "crafting" },
+    { path: "/enhancement", name: "enhancement" },
+    { path: "/forum", name: "forum" },
+  ]
 
   return (
     <Navbar
@@ -45,9 +56,16 @@ const TopNavbar: React.FC = () => {
           alt="AION2 Logo"
           className="w-[100px] h-[38px] object-contain"
         />
-        <span className="text-[14px] leading-[14px] font-normal tracking-wide">
-          {t("announcement", "Welcome to AION2 Interactive Map!")}
-        </span>
+        {routes.map((route) => (
+          <NavbarItem isActive={currentPath === route.path} key={route.name}>
+            <Link to={route.path}>
+              {t(`common:routes.${route.name}`)}
+            </Link>
+          </NavbarItem>
+        ))}
+        {/*<span className="text-[14px] leading-[14px] font-normal tracking-wide">*/}
+        {/*  {t("announcement", "Welcome to AION2 Interactive Map!")}*/}
+        {/*</span>*/}
       </NavbarBrand>
 
       {/* RIGHT: Language switcher + theme toggle */}

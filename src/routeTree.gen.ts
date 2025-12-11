@@ -9,9 +9,27 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ForumRouteImport } from './routes/forum'
+import { Route as EnhancementRouteImport } from './routes/enhancement'
+import { Route as CraftingRouteImport } from './routes/crafting'
 import { Route as ClassRouteImport } from './routes/class'
 import { Route as IndexRouteImport } from './routes/index'
 
+const ForumRoute = ForumRouteImport.update({
+  id: '/forum',
+  path: '/forum',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnhancementRoute = EnhancementRouteImport.update({
+  id: '/enhancement',
+  path: '/enhancement',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CraftingRoute = CraftingRouteImport.update({
+  id: '/crafting',
+  path: '/crafting',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ClassRoute = ClassRouteImport.update({
   id: '/class',
   path: '/class',
@@ -26,31 +44,64 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/class': typeof ClassRoute
+  '/crafting': typeof CraftingRoute
+  '/enhancement': typeof EnhancementRoute
+  '/forum': typeof ForumRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/class': typeof ClassRoute
+  '/crafting': typeof CraftingRoute
+  '/enhancement': typeof EnhancementRoute
+  '/forum': typeof ForumRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/class': typeof ClassRoute
+  '/crafting': typeof CraftingRoute
+  '/enhancement': typeof EnhancementRoute
+  '/forum': typeof ForumRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/class'
+  fullPaths: '/' | '/class' | '/crafting' | '/enhancement' | '/forum'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/class'
-  id: '__root__' | '/' | '/class'
+  to: '/' | '/class' | '/crafting' | '/enhancement' | '/forum'
+  id: '__root__' | '/' | '/class' | '/crafting' | '/enhancement' | '/forum'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ClassRoute: typeof ClassRoute
+  CraftingRoute: typeof CraftingRoute
+  EnhancementRoute: typeof EnhancementRoute
+  ForumRoute: typeof ForumRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/forum': {
+      id: '/forum'
+      path: '/forum'
+      fullPath: '/forum'
+      preLoaderRoute: typeof ForumRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/enhancement': {
+      id: '/enhancement'
+      path: '/enhancement'
+      fullPath: '/enhancement'
+      preLoaderRoute: typeof EnhancementRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/crafting': {
+      id: '/crafting'
+      path: '/crafting'
+      fullPath: '/crafting'
+      preLoaderRoute: typeof CraftingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/class': {
       id: '/class'
       path: '/class'
@@ -71,6 +122,9 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ClassRoute: ClassRoute,
+  CraftingRoute: CraftingRoute,
+  EnhancementRoute: EnhancementRoute,
+  ForumRoute: ForumRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -33,6 +33,13 @@ menu:
   clearMarkerCompleted: "Clear completed"
   clearMarkerCompletedBody: "Do you want to clear all completed marker in this map?"
 
+routes:
+  map: "Map"
+  class: "Classes"
+  crafting: "Crafting"
+  enhancement: "Enhancement"
+  forum: "Forum"
+
 buttons:
   apply: "Apply"
   ok: "OK"

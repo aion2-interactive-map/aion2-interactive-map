@@ -1,4 +1,5 @@
 import {createRootRoute, Outlet, Navigate} from '@tanstack/react-router'
+import TopNavbar from "@/components/TopNavbar.tsx";
 // import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 
 // A separate component to handle the redirect logic
@@ -8,16 +9,10 @@ const NotFoundRedirect = () => {
 
 const RootLayout = () => (
   <>
-    {/*<div className="p-2 flex gap-2">*/}
-    {/*  <Link to="/" className="[&.active]:font-bold">*/}
-    {/*    Home*/}
-    {/*  </Link>{' '}*/}
-    {/*  <Link to="/map" className="[&.active]:font-bold">*/}
-    {/*    Map*/}
-    {/*  </Link>*/}
-    {/*</div>*/}
-    {/*<hr />*/}
-    <Outlet/>
+    <div className="h-screen w-screen flex flex-col">
+      <TopNavbar/>
+      <Outlet/>
+    </div>
     {/*<TanStackRouterDevtools />*/}
   </>
 )

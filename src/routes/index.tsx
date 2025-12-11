@@ -1,6 +1,5 @@
 import {createFileRoute} from "@tanstack/react-router";
 import React, {useCallback, useRef, useState} from "react";
-import TopNavbar from "@/components/TopNavbar";
 import GameMapView from "@/components/GameMapView";
 import LeftSidebar from "@/components/SideBar/LeftSidebar";
 import RightSidebar from "@/components/SideBar/RightSidebar";
@@ -66,13 +65,7 @@ const HomePage: React.FC = () => {
   }
 
   return (
-
-
-    <div className="h-screen w-screen flex flex-col">
-      <TopNavbar
-        // onOpenIntroModal={() => setIsIntroOpen(true)}
-      />
-
+    <>
       {/*<IntroModal
         isOpen={isIntroOpen}
         onClose={() => setIsIntroOpen(false)}
@@ -114,7 +107,7 @@ const HomePage: React.FC = () => {
         <RightSidebar/>
 
       </div>
-    </div>
+    </>
 
   );
 };
