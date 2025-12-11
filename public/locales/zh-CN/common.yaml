@@ -61,6 +61,7 @@ menu:
   expand: "展开"
   collapse: "收起"
   showBorders: "显示地区边界"
+  showUserMarkers: "显示自定义标点"
   switchLanguage: "切换语言"
   switchTheme: "切换主题"
 

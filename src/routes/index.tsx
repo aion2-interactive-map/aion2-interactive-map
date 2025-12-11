@@ -115,11 +115,11 @@ const HomePage: React.FC = () => {
 const HomePageWrapper: React.FC = () => {
   return (
     <MarkersProvider>
-      <GameDataProvider>
-        <UserMarkersProvider>
+      <UserMarkersProvider>
+        <GameDataProvider>
           <HomePage/>
-        </UserMarkersProvider>
-      </GameDataProvider>
+        </GameDataProvider>
+      </UserMarkersProvider>
     </MarkersProvider>
   )
 }

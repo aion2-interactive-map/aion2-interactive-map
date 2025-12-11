@@ -8,6 +8,7 @@ import {useMarkers} from "@/context/MarkersContext.tsx";
 import {useGameMap} from "@/context/GameMapContext.tsx";
 import {parseIconUrl} from "@/utils/url.ts";
 import ConfirmClearCompletedModal from "@/components/SideBar/ConfirmClearCompletedModal.tsx";
+import {useUserMarkers} from "@/context/UserMarkersContext.tsx";
 
 const MarkerTypes: React.FC = () => {
   const {types, selectedMap} = useGameMap();
@@ -20,6 +21,7 @@ const MarkerTypes: React.FC = () => {
     handleToggleBorders
   } = useGameData();
   const {clearMarkerCompleted, showLabels, setShowLabels, subtypeCounts, completedCounts} = useMarkers();
+  const {showUserMarkers, setShowUserMarkers} = useUserMarkers();
   const {t} = useTranslation("common");
   const [isModalOpen, setModalOpen] = useState(false);
 
@@ -71,6 +73,15 @@ const MarkerTypes: React.FC = () => {
             className={commonButtonProps.className + ` ${showBorders ? "text-background" : "text-default-700"}`}
           >
             {t("menu.showBorders", "Show Borders")}
+          </Button>
+          <Button
+            {...commonButtonProps}
+            color={showUserMarkers ? "primary" : "default"}
+            variant={showUserMarkers ? "solid" : "flat"}
+            onPress={() => setShowUserMarkers(!showUserMarkers)}
+            className={commonButtonProps.className + ` ${showUserMarkers ? "text-background" : "text-default-700"}`}
+          >
+            {t("menu.showUserMarkers", "Show User Markers")}
           </Button>
         </div>
 

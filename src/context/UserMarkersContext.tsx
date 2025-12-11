@@ -24,6 +24,9 @@ type ContextValue = {
 
   editingMarker: UserMarkerInstance | null;
   setEditingMarker: (m: UserMarkerInstance | null) => void;
+
+  showUserMarkers: boolean;
+  setShowUserMarkers: (value: boolean) => void;
 };
 
 const STORAGE_PREFIX = "aion2.userMarkers.v1.";
@@ -40,6 +43,7 @@ export const UserMarkersProvider: React.FC<{ children: React.ReactNode }> = ({
   const [editingMarker, setEditingMarker] =
     useState<UserMarkerInstance | null>(null);
   const { fetchWithAuth } = useUser();
+  const [showUserMarkers, setShowUserMarkers] = useState<boolean>(true);
 
   /** Helper: storage key per map */
   const getStorageKey = useCallback(
@@ -168,6 +172,8 @@ export const UserMarkersProvider: React.FC<{ children: React.ReactNode }> = ({
         deleteMarker,
         editingMarker,
         setEditingMarker,
+        showUserMarkers,
+        setShowUserMarkers,
       }}
     >
       {children}
