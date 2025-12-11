@@ -56,7 +56,15 @@ const MarkerPopupContent: React.FC<Props> = ({
   const regionLabel = marker.region ? t(`${regionKeyPrefix}.name`) : "";
   const canComplete = !!sub?.canComplete;
 
-  const name = marker.localizedName || marker.name;
+  let name = marker.localizedName;
+  if (!name) {
+    if (cat?.name == "collection") {
+      name = subtypeLabel;
+    } else {
+      name = marker.name || "";
+    }
+  }
+
   const description = marker.localizedDescription || "";
 
 
