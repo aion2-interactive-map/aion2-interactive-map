@@ -24,7 +24,7 @@ import {Link, useLocation} from "@tanstack/react-router";
 const TopNavbar: React.FC = () => {
   const {t} = useTranslation(); // we use fully-qualified keys like common:siteTitle
   const {theme} = useTheme();
-  const { user, logout, userModalOpen: authOpen, setUserModalOpen: setAuthOpen } = useUser();
+  const {user, logout, userModalOpen: authOpen, setUserModalOpen: setAuthOpen} = useUser();
 
   const isDark = theme === "dark";
   // const {dataMode, toggleDataMode} = useDataMode();
@@ -34,11 +34,11 @@ const TopNavbar: React.FC = () => {
   console.log(location.pathname)
 
   const routes = [
-    { path: "/", name: "map" },
-    { path: "/class", name: "class" },
-    { path: "/crafting", name: "crafting" },
-    { path: "/enhancement", name: "enhancement" },
-    { path: "/forum", name: "forum" },
+    {path: "/", name: "map"},
+    {path: "/class", name: "class"},
+    {path: "/crafting", name: "crafting"},
+    {path: "/enhancement", name: "enhancement"},
+    {path: "/forum", name: "forum"},
   ]
 
   return (
@@ -50,19 +50,30 @@ const TopNavbar: React.FC = () => {
       }}
     >
       {/* LEFT: Logo + Title */}
-      <NavbarBrand className="flex items-center gap-4 select-none cursor-default">
+      <NavbarBrand className="flex items-center gap-10 select-none cursor-default">
         <img
           src={getStaticUrl(isDark ? "images/GroupLogoDark.webp" : "images/GroupLogoLight.webp")}
           alt="AION2 Logo"
           className="w-[100px] h-[38px] object-contain"
         />
-        {routes.map((route) => (
-          <NavbarItem isActive={currentPath === route.path} key={route.name}>
-            <Link to={route.path}>
-              {t(`common:routes.${route.name}`)}
-            </Link>
-          </NavbarItem>
-        ))}
+        {routes.map((route) => {
+            const isActive = currentPath === route.path
+            return (
+              <NavbarItem
+                isActive={isActive}
+                key={route.name}
+                className={`
+                  ${isActive ? "text-bold text-primary" : "text-default-800"}
+                  text-[18px] leading-[18px]
+                `}
+              >
+                <Link to={route.path}>
+                  {t(`common:routes.${route.name}`)}
+                </Link>
+              </NavbarItem>
+            )
+          }
+        )}
         {/*<span className="text-[14px] leading-[14px] font-normal tracking-wide">*/}
         {/*  {t("announcement", "Welcome to AION2 Interactive Map!")}*/}
         {/*</span>*/}
@@ -88,7 +99,7 @@ const TopNavbar: React.FC = () => {
         {/* Language switcher (owns its own button & dropdown) */}
         <LanguageSwitcher/>
 
-        <ThemeDropdown />
+        <ThemeDropdown/>
 
         {/* Data mode toggle */}
         {/*<Button isIconOnly variant="light" onPress={toggleDataMode}>
@@ -108,7 +119,7 @@ const TopNavbar: React.FC = () => {
             >
               {t("common:auth.login", "Login")} / {t("common:auth.register", "Register")}
             </button>
-            <AuthModal isOpen={authOpen} onClose={() => setAuthOpen(false)} />
+            <AuthModal isOpen={authOpen} onClose={() => setAuthOpen(false)}/>
           </>
         ) : (
           <>
