@@ -1,7 +1,7 @@
 // src/components/MarkerTypes.tsx
 
 import React, {useState} from "react";
-import {Button} from "@heroui/react";
+import {Accordion, AccordionItem, Button} from "@heroui/react";
 import {useTranslation} from "react-i18next";
 import {useGameData} from "@/context/GameDataContext.tsx";
 import {useMarkers} from "@/context/MarkersContext.tsx";
@@ -33,7 +33,7 @@ const MarkerTypes: React.FC = () => {
 
   return (
     <>
-      <div className="w-full flex flex-col gap-3 px-2 my-0 pb-4">
+      <div className="w-full flex flex-col px-2 my-0 pb-4">
         {/* --- Two-per-row button grid --- */}
         <div className="grid grid-cols-2 gap-2">
           <Button
@@ -74,32 +74,45 @@ const MarkerTypes: React.FC = () => {
           </Button>
         </div>
 
-        {types.filter(x => x.subtypes.length > 0).map((category) => {
-          const subtypes = category.subtypes.map((subtype) => {
-            const key = subtype.name;
-            const total = subtypeCounts[key] ?? 0;
-            if (total === 0) return null;
-            const completed = completedCounts[key] ?? 0;
-            const active = visibleSubtypes?.has(key) || false;
-            const canComplete = subtype.canComplete === true;
-            const iconName = subtype.icon || category.icon || "";
-            const iconSize = (subtype.iconScale || 1.0) * 20;
-            return (
-              <Button
-                {...commonButtonProps}
-                className={commonButtonProps.className + " justify-start"}
-                onPress={() => {
-                  handleToggleSubtype(subtype.name)
-                }}
-                color={active ? "primary" : "default"}
-                variant={active ? "solid" : "flat"}
-              >
-                <div className={`
+        <Accordion
+          variant="light"
+          selectionMode="multiple"
+          showDivider={false}
+          defaultExpandedKeys={types.map(category => category.name)}
+          itemClasses={{
+            base: "!bg-transparent !shadow-none !backdrop-filter-none !backdrop-blur-none",
+            trigger: "pt-3 pb-0 min-h-0 px-0",
+            title: "text-[16px] leading-[16px] font-bold",
+            content: "py-0",
+          }}
+          className="bg-transparent shadow-none px-0"
+        >
+          {types.filter(x => x.subtypes.length > 0).map((category) => {
+            const subtypes = category.subtypes.map((subtype) => {
+              const key = subtype.name;
+              const total = subtypeCounts[key] ?? 0;
+              if (total === 0) return null;
+              const completed = completedCounts[key] ?? 0;
+              const active = visibleSubtypes?.has(key) || false;
+              const canComplete = subtype.canComplete === true;
+              const iconName = subtype.icon || category.icon || "";
+              const iconSize = (subtype.iconScale || 1.0) * 20;
+              return (
+                <Button
+                  {...commonButtonProps}
+                  className={commonButtonProps.className + " justify-start"}
+                  onPress={() => {
+                    handleToggleSubtype(subtype.name)
+                  }}
+                  color={active ? "primary" : "default"}
+                  variant={active ? "solid" : "flat"}
+                >
+                  <div className={`
                       flex w-full items-center justify-between
                       ${active ? "text-background" : "text-default-700"}
                     `}>
-                  {/* Left side: icon + name */}
-                  <span className="flex items-center gap-1 min-w-0">
+                    {/* Left side: icon + name */}
+                    <span className="flex items-center gap-1 min-w-0">
                         {iconName && selectedMap && (
                           <div className="relative w-5 h-5 overflow-visible flex items-center justify-center">
                             <img
@@ -111,31 +124,40 @@ const MarkerTypes: React.FC = () => {
                           </div>
                         )}
 
-                    <span className="truncate text-left">
+                      <span className="truncate text-left">
                           {t(`types:subtypes.${subtype.name}.name`, subtype.name)}
                         </span>
                       </span>
 
-                  {/* Right side: count */}
-                  <span className="text-[12px] shrink-0 ml-2">
+                    {/* Right side: count */}
+                    <span className="text-[12px] shrink-0 ml-2">
                         {canComplete ? `${completed}/${total}` : total}
                       </span>
+                  </div>
+                </Button>
+              )
+            }).filter(x => x !== null);
+            if (subtypes.length === 0) return null;
+            return (
+              <AccordionItem
+                key={category.name}
+                title={
+                  <div className="my-2 text-[14px] leading-[14px] font-medium px-1">
+                    {t(`types:categories.${category.name}.name`, category.name)}
+                  </div>
+                }
+                hideIndicator
+              >
+                <div className="grid grid-cols-2 gap-2">
+                  {subtypes}
                 </div>
-              </Button>
+              </AccordionItem>
+
             )
-          }).filter(x => x !== null);
-          if (subtypes.length === 0) return null;
-          return (
-            <div key={category.name}>
-              <div className="my-2 text-[14px] leading-[14px] font-medium px-1">
-                {t(`types:categories.${category.name}.name`, category.name)}
-              </div>
-              <div className="grid grid-cols-2 gap-2">
-                {subtypes}
-              </div>
-            </div>
-          )
-        })}
+          })}
+
+
+        </Accordion>
 
       </div>
 

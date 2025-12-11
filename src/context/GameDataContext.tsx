@@ -95,7 +95,8 @@ export const GameDataProvider: React.FC<GameDataProviderProps> = ({
       // DEFAULT: only "location" subtypes
       const defaultKeys = new Set<string>();
       all.forEach((sub, name) => {
-        if (sub.category === "location") {
+        console.log(sub, selectedMap, name);
+        if (sub.category === "location" || (sub.name === "monolithMaterial" && selectedMap.type === "abyss")) {
           defaultKeys.add(name);
         }
       });

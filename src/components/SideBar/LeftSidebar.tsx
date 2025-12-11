@@ -83,6 +83,7 @@ const LeftSidebar: React.FC<LeftSidebarProps> = ({onSelectMarker}) => {
                 title={makeAccordionTitle(
                   t("common:menu.markerTypes", "Marker Types"),
                 )}
+                hideIndicator
               >
                 <MarkerTypes/>
               </AccordionItem>
