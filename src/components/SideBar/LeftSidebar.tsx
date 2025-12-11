@@ -13,6 +13,7 @@ import BottomSidebarBanner from "@/components/SideBar/BottomSidebarBanner.tsx";
 import {getStaticUrl} from "@/utils/url.ts";
 import {useUserMarkers} from "@/context/UserMarkersContext.tsx";
 import MarkerSearch from "@/components/SideBar/MarkerSearch.tsx";
+import {useTheme} from "@/context/ThemeContext.tsx";
 
 type LeftSidebarProps = {
   onSelectMarker?: (markerId: string) => void;
@@ -21,6 +22,7 @@ type LeftSidebarProps = {
 
 const LeftSidebar: React.FC<LeftSidebarProps> = ({onSelectMarker}) => {
   const {t} = useTranslation();
+  const {realTheme} = useTheme();
   const {selectedMap} = useGameMap();
   const [bannerVisible, setBannerVisible] = useState(true);
   const {setPickMode} = useUserMarkers();
@@ -45,7 +47,7 @@ const LeftSidebar: React.FC<LeftSidebarProps> = ({onSelectMarker}) => {
             "
           >
             <img
-              src={getStaticUrl("images/LocationAdd.webp")}
+              src={getStaticUrl(realTheme == "light" ? "images/LocationAddLight.webp" : "images/LocationAddDark.webp")}
               alt={t("common:markerActions.createUserMarker")}
               className="w-5 h-5 object-contain"
             />
@@ -62,7 +64,7 @@ const LeftSidebar: React.FC<LeftSidebarProps> = ({onSelectMarker}) => {
         >
           <Logo/>
           <SelectMap/>
-          <MarkerSearch onSelectMarker={onSelectMarker} />
+          <MarkerSearch onSelectMarker={onSelectMarker}/>
           <Accordion
             variant="shadow"
             selectionMode="multiple"

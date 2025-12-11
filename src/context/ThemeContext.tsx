@@ -14,6 +14,7 @@ export type Theme = "auto" | "light" | "dark" | "abyss";
 const STORAGE_KEY = "aion2.theme";
 
 type ThemeContextValue = {
+  realTheme: Theme;
   theme: Theme;
   setTheme: (theme: Theme) => void;
 };
@@ -83,7 +84,7 @@ export function ThemeProvider({children}: { children: ReactNode }) {
 
 
   return (
-    <ThemeContext.Provider value={{theme, setTheme}}>
+    <ThemeContext.Provider value={{realTheme, theme, setTheme}}>
       {children}
     </ThemeContext.Provider>
   );
