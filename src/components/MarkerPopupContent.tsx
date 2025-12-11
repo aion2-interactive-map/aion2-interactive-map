@@ -58,10 +58,10 @@ const MarkerPopupContent: React.FC<Props> = ({
 
   let name = marker.localizedName;
   if (!name) {
-    if (cat?.name == "collection") {
+    if (!marker.name || cat?.name == "collection") {
       name = subtypeLabel;
     } else {
-      name = marker.name || "";
+      name = marker.name;
     }
   }
 

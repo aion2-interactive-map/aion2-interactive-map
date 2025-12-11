@@ -36,14 +36,14 @@ const LeftSidebar: React.FC<LeftSidebarProps> = ({onSelectMarker}) => {
           content={t("common:markerActions.createUserMarker", "Create a user marker")}
           placement="right"
           delay={300}
-          radius="none"
+          // radius="none"
         >
           <button
             type="button"
             onClick={() => setPickMode(true)}
             className="
               w-8 h-12 bg-sidebar-collapse text-default-700
-              flex items-center justify-center
+              flex items-center justify-center rounded-r-md
             "
           >
             <img
