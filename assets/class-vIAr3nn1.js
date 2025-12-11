@@ -1,1 +1,0 @@
-import{o as e}from"./rolldown-runtime-GyhWBpbT.js";import{n as t}from"./vendor-react-DPCMXswl.js";var n=e(t());function r(){return(0,n.jsx)(`div`,{children:`Class Page`})}export{r as component};

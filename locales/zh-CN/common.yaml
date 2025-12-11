@@ -64,6 +64,17 @@ menu:
   switchLanguage: "切换语言"
   switchTheme: "切换主题"
 
+routes:
+  map: "地图"
+  class: "职业BD"
+  crafting: "装备制作"
+  enhancement: "装备强化"
+  forum: "论坛"
+
+wip:
+  title: "此页面正在建设中！"
+  content: "我们正在努力为您带来此功能，请稍后再试。"
+
 buttons:
   apply: "应用"
   ok: "确定"
