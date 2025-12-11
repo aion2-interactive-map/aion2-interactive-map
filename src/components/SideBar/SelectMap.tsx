@@ -32,7 +32,11 @@ const SelectMap: React.FC = () => {
           onSelectionChange={(keys) => {
             const key = Array.from(keys)[0];
             const found = maps.find((m) => m.name === key);
-            if (found) setSelectedMap(found);
+            if (found) {
+              setTimeout(() => {
+                setSelectedMap(found);
+              }, 50);
+            }
           }}
           // prevents hover background
           classNames={{
