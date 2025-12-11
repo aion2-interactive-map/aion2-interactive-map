@@ -11,7 +11,14 @@ import ConfirmClearCompletedModal from "@/components/SideBar/ConfirmClearComplet
 
 const MarkerTypes: React.FC = () => {
   const {types, selectedMap} = useGameMap();
-  const {handleShowAllSubtypes, handleHideAllSubtypes, visibleSubtypes, handleToggleSubtype, showBorders, handleToggleBorders} = useGameData();
+  const {
+    handleShowAllSubtypes,
+    handleHideAllSubtypes,
+    visibleSubtypes,
+    handleToggleSubtype,
+    showBorders,
+    handleToggleBorders
+  } = useGameData();
   const {clearMarkerCompleted, showLabels, setShowLabels, subtypeCounts, completedCounts} = useMarkers();
   const {t} = useTranslation("common");
   const [isModalOpen, setModalOpen] = useState(false);
@@ -67,38 +74,32 @@ const MarkerTypes: React.FC = () => {
           </Button>
         </div>
 
-        {types.filter(x => x.subtypes.length > 0).map((category) => (
-          <div key={category.name}>
-            <div className="my-2 text-[14px] leading-[14px] font-medium px-1">
-              {t(`types:categories.${category.name}.name`, category.name)}
-            </div>
-            <div className="grid grid-cols-2 gap-2">
-              {category.subtypes.map((subtype) => {
-                const key = subtype.name;
-                const total = subtypeCounts[key] ?? 0;
-                const completed = completedCounts[key] ?? 0;
-                const active = visibleSubtypes?.has(key) || false;
-                const canComplete = subtype.canComplete === true;
-                const iconName = subtype.icon || category.icon || "";
-                const iconSize = (subtype.iconScale || 1.0) * 20;
-                return (
-
-
-                  <Button
-                    {...commonButtonProps}
-                    className={commonButtonProps.className + " justify-start"}
-                    onPress={() => {
-                      handleToggleSubtype(subtype.name)
-                    }}
-                    color={active ? "primary" : "default"}
-                    variant={active ? "solid" : "flat"}
-                  >
-                    <div className={`
+        {types.filter(x => x.subtypes.length > 0).map((category) => {
+          const subtypes = category.subtypes.map((subtype) => {
+            const key = subtype.name;
+            const total = subtypeCounts[key] ?? 0;
+            if (total === 0) return null;
+            const completed = completedCounts[key] ?? 0;
+            const active = visibleSubtypes?.has(key) || false;
+            const canComplete = subtype.canComplete === true;
+            const iconName = subtype.icon || category.icon || "";
+            const iconSize = (subtype.iconScale || 1.0) * 20;
+            return (
+              <Button
+                {...commonButtonProps}
+                className={commonButtonProps.className + " justify-start"}
+                onPress={() => {
+                  handleToggleSubtype(subtype.name)
+                }}
+                color={active ? "primary" : "default"}
+                variant={active ? "solid" : "flat"}
+              >
+                <div className={`
                       flex w-full items-center justify-between
                       ${active ? "text-background" : "text-default-700"}
                     `}>
-                      {/* Left side: icon + name */}
-                      <span className="flex items-center gap-1 min-w-0">
+                  {/* Left side: icon + name */}
+                  <span className="flex items-center gap-1 min-w-0">
                         {iconName && selectedMap && (
                           <div className="relative w-5 h-5 overflow-visible flex items-center justify-center">
                             <img
@@ -110,23 +111,31 @@ const MarkerTypes: React.FC = () => {
                           </div>
                         )}
 
-                        <span className="truncate text-left">
+                    <span className="truncate text-left">
                           {t(`types:subtypes.${subtype.name}.name`, subtype.name)}
                         </span>
                       </span>
 
-                      {/* Right side: count */}
-                      <span className="text-[12px] shrink-0 ml-2">
+                  {/* Right side: count */}
+                  <span className="text-[12px] shrink-0 ml-2">
                         {canComplete ? `${completed}/${total}` : total}
                       </span>
-                    </div>
-                  </Button>
-                )
-
-              })}
+                </div>
+              </Button>
+            )
+          }).filter(x => x !== null);
+          if (subtypes.length === 0) return null;
+          return (
+            <div key={category.name}>
+              <div className="my-2 text-[14px] leading-[14px] font-medium px-1">
+                {t(`types:categories.${category.name}.name`, category.name)}
+              </div>
+              <div className="grid grid-cols-2 gap-2">
+                {subtypes}
+              </div>
             </div>
-          </div>
-        ))}
+          )
+        })}
 
       </div>
 
