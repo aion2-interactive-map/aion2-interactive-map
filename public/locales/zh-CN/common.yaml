@@ -107,6 +107,7 @@ markerActions:
   search: "输入点位名称或描述"
   searchCount: "{{count}}个搜索结果"
   position: "坐标"
+  providedBy: "该点位由 <emph>{{contributor}}</emph> 提供"
 
 introModal:
   alert: "我们承诺本网站将 **永久免费开放**、我们不会在任何平台进行交易售卖，请大家**提高警惕，谨防受骗**！"

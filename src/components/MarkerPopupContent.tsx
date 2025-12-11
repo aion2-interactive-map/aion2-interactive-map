@@ -1,6 +1,6 @@
 // src/components/MarkerPopupContent.tsx
 import React, {useState} from "react";
-import {useTranslation} from "react-i18next";
+import {Trans, useTranslation} from "react-i18next";
 import {Button, Card, Modal, ModalContent, ModalBody, Divider, Input} from "@heroui/react";
 import EmblaCarouselThumbs from "./EmblaCarousel/EmblaCarouselThumbs.tsx";
 import EmblaCarouselGallery from "./EmblaCarousel/EmblaCarouselGallery.tsx";
@@ -19,7 +19,7 @@ type Props = {
 };
 
 function safeHTML(input: string) {
-  return { __html: DOMPurify.sanitize(input) };
+  return {__html: DOMPurify.sanitize(input)};
 }
 
 const MarkerPopupContent: React.FC<Props> = ({
@@ -112,7 +112,24 @@ const MarkerPopupContent: React.FC<Props> = ({
       radius="sm"
     >
       {/* Title */}
-      <div className="text-[18px] leading-[18px] font-bold">{name}</div>
+      <div>
+        <div className="text-[18px] leading-[18px] font-bold">{name}</div>
+        {marker.contributors.length > 0 && (
+          <div className="text-[14px] leading-[14px] mt-2">
+            <Trans
+              t={t}
+              i18nKey="common:markerActions.providedBy"
+              defaults="This location is provided by <emph>{{contributor}}</emph>"
+              values={{
+                contributor: marker.contributors.join(", ")
+              }}
+              components={{
+                emph: <span className="text-success-600"/>
+              }}
+            />
+          </div>
+        )}
+      </div>
 
       {/* Category / subtype + coordinates */}
       <div className="text-[14px] leading-[14px]">
@@ -122,6 +139,7 @@ const MarkerPopupContent: React.FC<Props> = ({
         </span>
         {regionLabel ? ` / ${regionLabel}` : null}
       </div>
+
 
       <Divider/>
 
