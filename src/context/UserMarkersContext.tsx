@@ -65,7 +65,11 @@ export const UserMarkersProvider: React.FC<{ children: React.ReactNode }> = ({
         const raw = localStorage.getItem(getStorageKey(selectedMap.name));
         if (raw) {
           const results = JSON.parse(raw);
-          results.forEach((marker: UserMarkerInstance) => markers.set(marker.id, marker));
+          results.forEach((marker: UserMarkerInstance) => {
+            if (marker.type === "local") {
+              markers.set(marker.id, marker)
+            }
+          });
         }
       } catch (e) {
         console.error(e);
