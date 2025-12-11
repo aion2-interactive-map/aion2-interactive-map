@@ -61,6 +61,8 @@ menu:
   expand: "展开"
   collapse: "收起"
   showBorders: "显示地区边界"
+  switchLanguage: "切换语言"
+  switchTheme: "切换主题"
 
 buttons:
   apply: "应用"

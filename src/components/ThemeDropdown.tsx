@@ -1,4 +1,4 @@
-import {Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button} from "@heroui/react";
+import {Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button, Tooltip} from "@heroui/react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faMoon, faSun, faCircleHalfStroke, type IconDefinition, faFire} from "@fortawesome/free-solid-svg-icons";
 import {useTranslation} from "react-i18next";
@@ -21,12 +21,19 @@ const ThemeDropdown: React.FC = () => {
 
   return (
     <Dropdown placement="bottom-end">
-      <DropdownTrigger>
-        <Button isIconOnly variant="light">
-          <FontAwesomeIcon icon={activeIcon} className="text-lg"/>
-        </Button>
-      </DropdownTrigger>
-
+      <Tooltip
+        content={t("common:menu.switchTheme", "Switch Theme")}
+        placement="bottom"
+        delay={300}
+      >
+        <div>
+          <DropdownTrigger>
+            <Button isIconOnly variant="light">
+              <FontAwesomeIcon icon={activeIcon} className="text-lg"/>
+            </Button>
+          </DropdownTrigger>
+        </div>
+      </Tooltip>
       <DropdownMenu aria-label="Theme selection" variant="flat" className="min-w-[150px]">
         {Object.entries(THEME_ICON_MAP).map(([key, icon]) => (
           <DropdownItem key={key} onPress={() => setTheme(key as Theme)} textValue={t(`common:theme.${key}`)}>

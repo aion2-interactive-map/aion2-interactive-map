@@ -6,15 +6,15 @@ import {
   NavbarBrand,
   NavbarContent,
 } from "@heroui/react";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faCloud, faDatabase} from "@fortawesome/free-solid-svg-icons";
+// import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+// import {faCloud, faDatabase} from "@fortawesome/free-solid-svg-icons";
 import {useTranslation} from "react-i18next";
 
 import {useTheme} from "@/context/ThemeContext";
 import {useUser} from "@/context/UserContext";
 
 import LanguageSwitcher from "./LanguageSwitcher";
-import {useDataMode} from "../hooks/useDataMode.tsx";
+// import {useDataMode} from "../hooks/useDataMode.tsx";
 import {getStaticUrl} from "../utils/url.ts";
 import ThemeDropdown from "@/components/ThemeDropdown.tsx";
 import AuthModal from "@/components/AuthModal.tsx";
@@ -26,8 +26,8 @@ const TopNavbar: React.FC = () => {
   const { user, logout, userModalOpen: authOpen, setUserModalOpen: setAuthOpen } = useUser();
 
   const isDark = theme === "dark";
-  const {dataMode, toggleDataMode} = useDataMode();
-  const isStatic = dataMode === "static";
+  // const {dataMode, toggleDataMode} = useDataMode();
+  // const isStatic = dataMode === "static";
 
 
   return (
@@ -73,12 +73,12 @@ const TopNavbar: React.FC = () => {
         <ThemeDropdown />
 
         {/* Data mode toggle */}
-        <Button isIconOnly variant="light" onPress={toggleDataMode}>
+        {/*<Button isIconOnly variant="light" onPress={toggleDataMode}>
           <FontAwesomeIcon
             icon={isStatic ? faDatabase : faCloud}
             className="text-lg"
           />
-        </Button>
+        </Button>*/}
 
         {/* Login / User dropdown */}
         {!user ? (
@@ -86,7 +86,7 @@ const TopNavbar: React.FC = () => {
             <button
               type="button"
               onClick={() => setAuthOpen(true)}
-              className="text-sm hover:underline underline-offset-2"
+              className="text-sm hover:underline underline-offset-2 ml-1.5"
             >
               {t("common:auth.login", "Login")} / {t("common:auth.register", "Register")}
             </button>
