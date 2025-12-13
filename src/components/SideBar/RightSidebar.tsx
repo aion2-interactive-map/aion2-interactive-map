@@ -73,7 +73,7 @@ const RightSidebar: React.FC = () => {
       {import.meta.env.VITE_REGION === "CHINA" && (
         <>
           <BottomSidebarBanner
-            href="https://www.yousheng186.com/goods/APW130GFLN"
+            href="https://186.yousheng186.com/?promotionCode=HDDT"
             href2="https://qm.qq.com/q/YGRfrMFvqw"
             imageUrl={getStaticUrl("images/YouSheng.webp")}
             imageUrl2={getStaticUrl("images/PangXieRight.webp")}
