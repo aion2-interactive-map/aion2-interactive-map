@@ -52,9 +52,16 @@ const HomePage: React.FC = () => {
       const m = markersById[markerId];
       if (!m) return;
       setSelectedMarkerId(markerId);
-    },
-    [markersById],
+    }, [markersById],
   );
+
+  const handleSelectPosition = useCallback((x: number, y : number)=> {
+    const latLng: [number, number] = [y, x];
+    if (mapRef?.current) {
+      mapRef.current.flyTo(latLng, mapRef.current.getZoom(), { duration: 0.5 });
+    }
+    }, [mapRef]
+  )
 
   if (loading && !selectedMap) {
     return (
@@ -96,7 +103,7 @@ const HomePage: React.FC = () => {
       </>}
 
       <div className="flex flex-1 overflow-hidden">
-        <LeftSidebar onSelectMarker={handleSelectMarker}/>
+        <LeftSidebar onSelectMarker={handleSelectMarker} onSelectPosition={handleSelectPosition}/>
 
         <GameMapView
           mapRef={mapRef}

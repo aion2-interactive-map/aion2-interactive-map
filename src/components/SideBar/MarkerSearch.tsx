@@ -10,7 +10,29 @@ import {faSearch, faClose} from "@fortawesome/free-solid-svg-icons";
 
 type MarkerSearchProps = {
   onSelectMarker?: (markerId: string) => void;
+  onSelectPosition?: (x: number, y: number) => void;
 };
+
+type PositionHit = {
+  kind: "position";
+  x: number;
+  y: number;
+};
+
+function parseXYQuery(input: string): { x: number; y: number } | null {
+  // supports: "4708,3924" | "4708 3924" | "(4708, 3924)" | "x:4708 y:3924"
+  const s = input.trim();
+
+  // Try common "(x, y)" or "x,y" or "x y"
+  const m1 = s.match(/^\(?\s*(-?\d+(?:\.\d+)?)\s*[, ]\s*(-?\d+(?:\.\d+)?)\s*\)?$/);
+  if (m1) return {x: Number(m1[1]), y: Number(m1[2])};
+
+  // Try "x: 4708 y: 3924"
+  const m2 = s.match(/x\s*[:=]\s*(-?\d+(?:\.\d+)?)\s*y\s*[:=]\s*(-?\d+(?:\.\d+)?)$/i);
+  if (m2) return {x: Number(m2[1]), y: Number(m2[2])};
+
+  return null;
+}
 
 function escapeRegExp(str: string) {
   return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -43,7 +65,7 @@ function highlightText(text: string, terms: string[]): React.ReactNode {
   });
 }
 
-const MarkerSearch: React.FC<MarkerSearchProps> = ({onSelectMarker}) => {
+const MarkerSearch: React.FC<MarkerSearchProps> = ({onSelectMarker, onSelectPosition}) => {
   const {markers} = useMarkers();
   const {t} = useTranslation("common");
   const [query, setQuery] = useState("");
@@ -64,11 +86,24 @@ const MarkerSearch: React.FC<MarkerSearchProps> = ({onSelectMarker}) => {
     return ms;
   }, [markers]);
 
-  const results: SearchResult[] = useMemo(() => {
+  const positionHit = useMemo<PositionHit | null>(() => {
+    const parsed = parseXYQuery(query);
+    if (!parsed) return null;
+    if (!Number.isFinite(parsed.x) || !Number.isFinite(parsed.y)) return null;
+    return {kind: "position", x: parsed.x, y: parsed.y};
+  }, [query]);
+
+  const results: (PositionHit | SearchResult)[] = useMemo(() => {
     const q = query.trim();
     if (!q) return [];
-    return miniSearch.search(q);
-  }, [query, miniSearch]);
+
+    const msResults = miniSearch.search(q);
+    if (positionHit) {
+      return [positionHit, ...msResults];
+    }
+    return msResults;
+  }, [query, miniSearch, positionHit]);
+
 
   const terms = useMemo(
     () =>
@@ -135,6 +170,12 @@ const MarkerSearch: React.FC<MarkerSearchProps> = ({onSelectMarker}) => {
           </div>
 
           {results.slice(0, 50).map((res) => {
+            let resultType;
+            if ((res as PositionHit).kind === "position") {
+              resultType = "position";
+            } else {
+              resultType = "marker";
+            }
             const doc = res as SearchResult & MarkerWithTranslations;
             return (
               <div key={doc.id} className="">
@@ -150,28 +191,41 @@ const MarkerSearch: React.FC<MarkerSearchProps> = ({onSelectMarker}) => {
                     flex flex-col gap-1
                   "
                   onClick={() => {
-                    onSelectMarker?.(doc.id);
+                    if (resultType === "position") {
+                      onSelectPosition?.(res.x, res.y);
+                    } else {
+                      onSelectMarker?.(doc.id);
+                    }
                   }}
                 >
-                  {/* Title */}
-                  <div className="font-semibold text-[16px]">
-                    {doc.localizedName
-                      ? highlightText(doc.localizedName, terms)
-                      : t("markerSearch.unnamed", "Unnamed marker")}
-                  </div>
-
-                  {/* Optional description */}
-                  {doc.localizedDescription && (
-                    <div className="text-[14px] text-default-700 line-clamp-2">
-                      {t("markerActions.description", "Description")}: {highlightText(doc.localizedDescription, terms)}
+                  {resultType === "position" ? (<>
+                    <div className="font-semibold text-[16px]">
+                      {t("markerActions.inputPosition", "Jump to input position")}
                     </div>
-                  )}
+                    <div className="text-[14px] text-default-700">
+                      {t("markerActions.position", "Position")}: ({Math.round(res.x)}, {Math.round(res.y)})
+                    </div>
+                  </>) : (<>
+                    {/* Title */}
+                    <div className="font-semibold text-[16px]">
+                      {doc.localizedName
+                        ? highlightText(doc.localizedName, terms)
+                        : t("markerSearch.unnamed", "Unnamed marker")}
+                    </div>
 
-                  {/* Optional coords */}
+                    {/* Optional description */}
+                    {doc.localizedDescription && (
+                      <div className="text-[14px] text-default-700 line-clamp-2">
+                        {t("markerActions.description", "Description")}: {highlightText(doc.localizedDescription, terms)}
+                      </div>
+                    )}
 
-                  <div className="text-[14px] text-default-700">
-                    {t("markerActions.position", "Position")}: ({Math.round(doc.x)}, {Math.round(doc.y)})
-                  </div>
+                    {/* Optional coords */}
+
+                    <div className="text-[14px] text-default-700">
+                      {t("markerActions.position", "Position")}: ({Math.round(doc.x)}, {Math.round(doc.y)})
+                    </div>
+                  </>)}
                 </button>
               </div>
             );

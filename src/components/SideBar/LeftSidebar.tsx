@@ -17,10 +17,11 @@ import {useTheme} from "@/context/ThemeContext.tsx";
 
 type LeftSidebarProps = {
   onSelectMarker?: (markerId: string) => void;
+  onSelectPosition?: (x: number, y: number) => void;
 };
 
 
-const LeftSidebar: React.FC<LeftSidebarProps> = ({onSelectMarker}) => {
+const LeftSidebar: React.FC<LeftSidebarProps> = ({onSelectMarker, onSelectPosition}) => {
   const {t} = useTranslation();
   const {realTheme} = useTheme();
   const {selectedMap} = useGameMap();
@@ -64,7 +65,7 @@ const LeftSidebar: React.FC<LeftSidebarProps> = ({onSelectMarker}) => {
         >
           <Logo/>
           <SelectMap/>
-          <MarkerSearch onSelectMarker={onSelectMarker}/>
+          <MarkerSearch onSelectMarker={onSelectMarker} onSelectPosition={onSelectPosition}/>
           <Accordion
             variant="shadow"
             selectionMode="multiple"
