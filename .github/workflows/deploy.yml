@@ -15,7 +15,7 @@ env:
   VITE_CDN_BASE_URL: "https://cdn.tc-imba.com/"
   VITE_API_BASE_URL: "https://aion2.tc-imba.com/"
   VITE_DEFAULT_DATA_MODE: "dynamic"
-
+  VITE_PUBLIC_BASE: "/aion2-interactive-map/"
 
 jobs:
   build-and-deploy:
