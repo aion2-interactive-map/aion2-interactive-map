@@ -76,6 +76,7 @@ export type MarkerWithTranslations = MarkerInstance & {
 
 export interface UserMarkerInstance {
   id: string;
+  markerId: string;
   subtype: string;
   mapId: string;
   x: number;
@@ -84,6 +85,8 @@ export interface UserMarkerInstance {
   description: string;
   image: string;
   type: "local" | "feedback" | "uploaded";
+  status?: "pending" | "accepted" | "rejected" | "revision" | "deleted";
+  reply?: string;
 }
 
 

@@ -19,6 +19,7 @@ ui:
   upload: "上传"
   submit: "提交"
   update: "更新"
+  edit: "编辑"
   confirmDelete: "你确定要删除吗？"
 
 auth:
@@ -100,7 +101,7 @@ markerActions:
   name: "名称"
   description: "详情"
   local: "本地标点"
-  feedback: "贡献标点"
+  feedback: "反馈标点"
   uploaded: "已上传标点"
   cannotDeleteUploaded: "已上传的标点不能删除"
   loginRequired: "登录后可以上传标点"
@@ -110,6 +111,13 @@ markerActions:
   position: "坐标"
   providedBy: "该点位由 <emph>{{contributor}}</emph> 提供"
   inputPosition: "跳转至已输入坐标"
+  status: "审核状态"
+  reply: "审核回复"
+  pending: "审核中"
+  accepted: "已接受"
+  rejected: "已拒绝"
+  revision: "请修改"
+  deleted: "已删除"
 
 introModal:
   alert: "我们承诺本网站将 **永久免费开放**、我们不会在任何平台进行交易售卖，请大家**提高警惕，谨防受骗**！"

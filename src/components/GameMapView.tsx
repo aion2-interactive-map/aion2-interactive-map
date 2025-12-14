@@ -1,6 +1,6 @@
 // src/components/GameMapView.tsx
 import React, {useCallback, useEffect, useMemo, useState} from "react";
-import {MapContainer, Popup, useMap, useMapEvents} from "react-leaflet";
+import {MapContainer, Marker, Popup, useMap, useMapEvents} from "react-leaflet";
 import L from "leaflet";
 
 import GameMarker from "./GameMarker";
@@ -18,6 +18,9 @@ import {useUserMarkers} from "@/context/UserMarkersContext.tsx";
 import UserMarker from "@/components/UserMarker.tsx";
 import MarkerPopupEdit from "@/components/MarkerPopupEdit.tsx";
 import MarkerPopupContent from "@/components/MarkerPopupContent.tsx";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faMapPin} from "@fortawesome/free-solid-svg-icons";
+import {renderToString} from "react-dom/server";
 
 
 type CursorTrackerProps = {
@@ -47,6 +50,7 @@ type Props = {
   mapRef: React.RefObject<MapRef>;
   onSelectMarker: (markerId: string | null) => void;
   selectedMarkerId: string | null;
+  selectedPosition: { x: number, y: number } | null;
 };
 
 const MapContextMenuHandler: React.FC<{
@@ -121,9 +125,34 @@ const MapClickPicker: React.FC<{
   return null;
 };
 
-function MarkerFocusController({ selectedMarkerId }: { selectedMarkerId: string | null | undefined }) {
+function createFocusIcon(): L.DivIcon {
+  const html = renderToString(
+    <div
+      style={{
+        color: "#df1414",
+        fontSize: "32px",
+        transform: "translate(-50%, -100%)",
+        filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.6))",
+      }}
+    >
+      <FontAwesomeIcon icon={faMapPin} />
+    </div>
+  );
+
+  return L.divIcon({
+    html,
+    className: "", // IMPORTANT: avoid Leaflet default styles
+    iconSize: [24, 24],
+    iconAnchor: [12, 24], // bottom-center
+  });
+}
+
+function MarkerFocusController({selectedMarkerId, selectedPosition}: {
+  selectedMarkerId: string | null | undefined,
+  selectedPosition: { x: number, y: number } | null | undefined
+}) {
   const map = useMap();
-  const { markersById } = useMarkers();
+  const {markersById} = useMarkers();
 
   useEffect(() => {
     if (!map) return;
@@ -135,14 +164,36 @@ function MarkerFocusController({ selectedMarkerId }: { selectedMarkerId: string 
     // Leaflet uses [lat, lng]; assuming y=lat, x=lng:
     const latLng: [number, number] = [marker.y, marker.x];
 
-    map.flyTo(latLng, map.getZoom(), { duration: 0.5 });
+    map.flyTo(latLng, map.getZoom(), {duration: 0.5});
   }, [map, selectedMarkerId, markersById]);
+
+  useEffect(() => {
+    console.log(selectedPosition);
+    if (!map) return;
+    if (!selectedPosition) return;
+    const latLng: [number, number] = [selectedPosition.y, selectedPosition.x];
+    map.flyTo(latLng, map.getZoom(), {duration: 0.5});
+  }, [map, selectedPosition]);
+
+  if (selectedPosition) {
+    return (
+      <Marker
+        position={new L.LatLng(selectedPosition.y, selectedPosition.x)}
+        icon={createFocusIcon()}
+        interactive={false}
+      >
+      </Marker>
+    )
+  }
 
   return null;
 }
 
-function SelectedMarkerPopup({ onSelectMarker, selectedMarkerId }: { onSelectMarker: (markerId: string | null) => void, selectedMarkerId: string | null | undefined }) {
-  const { markersById } = useMarkers();
+function SelectedMarkerPopup({onSelectMarker, selectedMarkerId}: {
+  onSelectMarker: (markerId: string | null) => void,
+  selectedMarkerId: string | null | undefined
+}) {
+  const {markersById} = useMarkers();
   useMapEvents({
     click() {
       onSelectMarker(null);
@@ -171,6 +222,7 @@ const GameMapView: React.FC<Props> = ({
                                         mapRef,
                                         onSelectMarker,
                                         selectedMarkerId,
+                                        selectedPosition,
                                       }) => {
   const [cursorPos, setCursorPos] = useState<{ x: number; y: number } | null>(
     null,
@@ -203,10 +255,10 @@ const GameMapView: React.FC<Props> = ({
 
   const renderedPopup = useMemo(() => {
     if (selectedMarkerId) {
-      return <SelectedMarkerPopup selectedMarkerId={selectedMarkerId} onSelectMarker={onSelectMarker} />;
+      return <SelectedMarkerPopup selectedMarkerId={selectedMarkerId} onSelectMarker={onSelectMarker}/>;
     }
     return null;
-  }, [selectedMarkerId, markers]);
+  }, [selectedMarkerId, onSelectMarker]);
 
 
   if (!selectedMap) {
@@ -233,9 +285,6 @@ const GameMapView: React.FC<Props> = ({
   ];
 
   // console.log(bounds, center)
-
-
-
 
 
   return (
@@ -281,17 +330,17 @@ const GameMapView: React.FC<Props> = ({
 
         {markers
           .filter((m) =>
-             selectedMarkerId === m.id || visibleSubtypes?.has(m.subtype),
+            selectedMarkerId === m.id || visibleSubtypes?.has(m.subtype),
           )
           .map((m) => (
             <GameMarker key={m.id} marker={m} onSelectMarker={onSelectMarker}/>
           ))}
 
-        {showUserMarkers ? userMarkers.map((m) => (
+        {showUserMarkers ? userMarkers.filter(marker => marker.type !== "feedback").map((m) => (
           <UserMarker key={m.id} marker={m}/>
         )) : null}
 
-        <MarkerFocusController selectedMarkerId={selectedMarkerId} />
+        <MarkerFocusController selectedMarkerId={selectedMarkerId} selectedPosition={selectedPosition}/>
         {renderedPopup}
 
       </MapContainer>

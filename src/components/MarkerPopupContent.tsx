@@ -9,10 +9,12 @@ import {useUser} from "@/context/UserContext.tsx";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCommentDots} from "@fortawesome/free-solid-svg-icons";
 import {useGameMap} from "@/context/GameMapContext.tsx";
-import type {CommentInstance, MarkerWithTranslations} from "@/types/game.ts";
+import type {CommentInstance, MarkerWithTranslations, UserMarkerInstance} from "@/types/game.ts";
 import DOMPurify from "dompurify";
 import {useGameData} from "@/context/GameDataContext.tsx";
 import {useMarkers} from "@/context/MarkersContext.tsx";
+import {useUserMarkers} from "@/context/UserMarkersContext.tsx";
+import {v4 as uuidv4} from "uuid";
 
 type Props = {
   marker: MarkerWithTranslations;
@@ -31,12 +33,15 @@ const MarkerPopupContent: React.FC<Props> = ({
   const {t} = useTranslation([regionNs]);
   const {user, setUserModalOpen, fetchWithAuth} = useUser();
   const {completedBySubtype, toggleMarkerCompleted} = useMarkers();
+  const {setEditingMarker, userMarkersByMarkerId} = useUserMarkers();
 
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [showCommentInput, setShowCommentInput] = useState(false);
   const [commentText, setCommentText] = useState("");
   const [comments, setComments] = useState<CommentInstance[]>([]);
+
+  if (!selectedMap) return null;
 
   const hasImages = marker.images && marker.images.length > 0;
   const resolvedSmallImages = marker.images?.map(image => getCdnUrl(image + ".small.webp"));
@@ -105,6 +110,32 @@ const MarkerPopupContent: React.FC<Props> = ({
     await handleListComment();
     setCommentText("");
     // setShowCommentInput(false);
+  }
+
+  const handleEdit = () => {
+    let userMarker: UserMarkerInstance
+    if (userMarkersByMarkerId[marker.id]) {
+      userMarker = {
+        ...userMarkersByMarkerId[marker.id]
+      };
+      if (!userMarker.image) {
+        userMarker.image = marker.images ? marker.images[0] + ".full" : "";
+      }
+    } else {
+      userMarker = {
+        id: uuidv4(),
+        markerId: marker.id,
+        subtype: sub?.id || "",
+        mapId: selectedMap.id,
+        x: marker.x,
+        y: marker.y,
+        name: marker.localizedName,
+        description: marker.localizedDescription || "",
+        image: marker.images ? marker.images[0] + ".full" : "",
+        type: "feedback",
+      };
+    }
+    setEditingMarker(userMarker);
   }
 
 
@@ -190,44 +221,58 @@ const MarkerPopupContent: React.FC<Props> = ({
       <Divider/>
 
 
-      <div className="flex justify-between items-center">
+      <div className="flex gap-6">
         {/*LEFT BUTTON — only when user != null */}
-        {user ? (
-          <Button
-            size="sm"
-            variant="light"
-            color="default"
-            onPress={async () => {
-              if (!showCommentInput) {
-                await handleListComment();
-              }
-              setShowCommentInput(!showCommentInput);
-            }}
-            startContent={<FontAwesomeIcon icon={faCommentDots} className="text-sm"/>}
-          >
-            {t("common:markerActions:comments", "Comments")}
-          </Button>
-        ) : (
-          // Placeholder to keep right button aligned right
-          <div/>
-        )}
+        <div className="flex-1">
+          {user && (
+            <Button
+              size="sm"
+              variant="light"
+              color="default"
+              onPress={async () => {
+                if (!showCommentInput) {
+                  await handleListComment();
+                }
+                setShowCommentInput(!showCommentInput);
+              }}
+              startContent={<FontAwesomeIcon icon={faCommentDots} className="text-sm"/>}
+            >
+              {t("common:markerActions:comments", "Comments")}
+            </Button>
+          )}
+        </div>
+        <div className="flex-1">
+          {user && (
+            <Button
+              size="sm"
+              color="danger"
+              variant="flat"
+              // className="shrink-0"
+              onPress={handleEdit}
+            >
+              {t("common:markerActions.feedback", "Marker Feedback")}
+            </Button>
+          )}
+        </div>
 
         {/* RIGHT BUTTON — only when canComplete */}
-        {canComplete && (
-          <Button
-            size="sm"
-            variant="flat"
-            color={isCompleted ? "success" : "primary"}
-            onPress={() => {
-              // if (!isCompleted) popupRef?.current?.close();
-              toggleMarkerCompleted(marker);
-            }}
-          >
-            {isCompleted
-              ? t("common:markerActions:markNotCompleted", "Completed")
-              : t("common:markerActions:markCompleted", "Mark as completed")}
-          </Button>
-        )}
+        <div className="flex-1">
+          {canComplete && (
+            <Button
+              size="sm"
+              variant="flat"
+              color={isCompleted ? "success" : "primary"}
+              onPress={() => {
+                // if (!isCompleted) popupRef?.current?.close();
+                toggleMarkerCompleted(marker);
+              }}
+            >
+              {isCompleted
+                ? t("common:markerActions:markNotCompleted", "Completed")
+                : t("common:markerActions:markCompleted", "Mark as completed")}
+            </Button>
+          )}
+        </div>
       </div>
 
       {/* === Comment Input Section (flows normally) === */}

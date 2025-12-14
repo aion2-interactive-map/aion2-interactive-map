@@ -42,6 +42,7 @@ const HomePage: React.FC = () => {
   // const [isIntroOpen, setIsIntroOpen] = useState<boolean>(true);
   const [isAlertOpen, setIsAlertOpen] = useState(true);
   const [selectedMarkerId, setSelectedMarkerId] = useState<string | null>(null);
+  const [selectedPosition, setSelectedPosition] = useState<{x: number, y: number} | null>(null);
 
   const handleSelectMarker = useCallback(
     (markerId: string | null) => {
@@ -52,15 +53,14 @@ const HomePage: React.FC = () => {
       const m = markersById[markerId];
       if (!m) return;
       setSelectedMarkerId(markerId);
+      setSelectedPosition(null);
     }, [markersById],
   );
 
   const handleSelectPosition = useCallback((x: number, y : number)=> {
-    const latLng: [number, number] = [y, x];
-    if (mapRef?.current) {
-      mapRef.current.flyTo(latLng, mapRef.current.getZoom(), { duration: 0.5 });
-    }
-    }, [mapRef]
+    setSelectedPosition({x, y});
+    setSelectedMarkerId(null);
+    }, []
   )
 
   if (loading && !selectedMap) {
@@ -109,6 +109,7 @@ const HomePage: React.FC = () => {
           mapRef={mapRef}
           onSelectMarker={handleSelectMarker}
           selectedMarkerId={selectedMarkerId}
+          selectedPosition={selectedPosition}
         />
 
         <RightSidebar/>

@@ -100,10 +100,10 @@ const MarkerPopupEdit: React.FC = () => {
         form.append("file", imageFile);
       }
 
-      if (editingMarker.type === "uploaded") {
-        form.append("subtype", finalSubtype)
-        form.append("name", name)
-        form.append("description", description)
+      if (editingMarker.status) {
+        form.append("subtype_id", finalSubtype);
+        form.append("name", name);
+        form.append("description", description);
         const res = await fetchWithAuth(`/maps/${selectedMap?.name}/marker_feedbacks/${editingMarker.id}`, {
           method: "PATCH",
           body: form
@@ -124,17 +124,25 @@ const MarkerPopupEdit: React.FC = () => {
           description: markerData.description,
           subtype: markerData.subtypeId,
           image: markerData.image?.s3Key || "",
-          type: "uploaded",
+          type: markerData.type === "create" ? "uploaded" : "feedback",
+          status: markerData.status,
+          reply: markerData.reply,
         });
         setEditingMarker(null);
 
       } else {
         // create marker feedback
-        form.append("x", String(Math.round(editingMarker.x)))
-        form.append("y", String(Math.round(editingMarker.y)))
-        form.append("subtype", finalSubtype)
-        form.append("name", name)
-        form.append("description", description)
+        form.append("x", String(Math.round(editingMarker.x)));
+        form.append("y", String(Math.round(editingMarker.y)));
+        form.append("subtype_id", finalSubtype);
+        form.append("name", name);
+        form.append("description", description);
+        if (editingMarker.type === "feedback") {
+          form.append("type", "update")
+          form.append("marker_id", editingMarker.markerId);
+        } else {
+          form.append("type", "create");
+        }
 
         const res = await fetchWithAuth(`/maps/${selectedMap?.name}/marker_feedbacks`, {
           method: "POST",
@@ -155,6 +163,7 @@ const MarkerPopupEdit: React.FC = () => {
 
         const marker: UserMarkerInstance = {
           id: markerData.id,
+          markerId: markerData.markerId || "",
           subtype: markerData.subtypeId,
           mapId: markerData.mapId,
           x: markerData.x,
@@ -162,7 +171,9 @@ const MarkerPopupEdit: React.FC = () => {
           name: markerData.name,
           description: markerData.description,
           image: markerData.image?.s3Key || "",
-          type: "uploaded",
+          type: markerData.type === "create" ? "uploaded" : "feedback",
+          status: markerData.status,
+          reply: markerData.reply,
         };
         createMarkerRemote(marker);
       }
@@ -236,11 +247,13 @@ const MarkerPopupEdit: React.FC = () => {
           <>
             <ModalHeader className="flex items-center justify-between gap-3">
               <span className="text-base font-semibold">
-                {t("common:markerActions.editUserMarker", "Edit User Marker")}
+                {editingMarker?.type === "feedback" ? t("common:markerActions.feedback", "Marker Feedback") : t("common:markerActions.editUserMarker", "Edit User Marker")}
               </span>
-              <span className="text-sm text-default-700">
-                {editingMarker?.type === "uploaded" ? t("common:markerActions.uploaded", "Uploaded marker") : t("common:markerActions.local", "Local marker")}
-              </span>
+              {editingMarker?.type !== "feedback" && (
+                <span className="text-sm text-default-700">
+                  {editingMarker?.type === "uploaded" ? t("common:markerActions.uploaded", "Uploaded marker") : t("common:markerActions.local", "Local marker")}
+                </span>
+              )}
             </ModalHeader>
 
             <ModalBody className="flex flex-col gap-3">
@@ -336,17 +349,41 @@ const MarkerPopupEdit: React.FC = () => {
 
               <Divider className="mt-4"/>
 
+              {editingMarker.status && (
+                <>
+                  <Input
+                    label={t("common:markerActions.status", "Status")}
+                    labelPlacement="outside-top"
+                    value={t(`common:markerActions.${editingMarker.status}`)}
+                    classNames={inputClassNames}
+                    radius="none"
+                    disabled
+                  />
+                  <Input
+                    label={t("common:markerActions.reply", "Reply")}
+                    labelPlacement="outside-top"
+                    value={editingMarker.reply}
+                    classNames={inputClassNames}
+                    radius="none"
+                    disabled
+                  />
+                  <Divider className="mt-4"/>
+                </>
+              )}
+
+
             </ModalBody>
             <ModalFooter className="flex gap-6">
               {/* Delete (with tooltip) */}
               <div className="flex-1">
-                <Popover
-                  isOpen={isConfirmOpen}
-                  onOpenChange={setIsConfirmOpen}
-                  placement="top"
-                  showArrow
-                >
-                  <PopoverTrigger>
+                {editingMarker?.type !== "feedback" && (
+                  <Popover
+                    isOpen={isConfirmOpen}
+                    onOpenChange={setIsConfirmOpen}
+                    placement="top"
+                    showArrow
+                  >
+                    <PopoverTrigger>
                       {/* wrapper required when button can be disabled */}
                       <Button
                         color="danger"
@@ -357,36 +394,39 @@ const MarkerPopupEdit: React.FC = () => {
                       >
                         {t("common:ui.delete", "Delete")}
                       </Button>
-                  </PopoverTrigger>
+                    </PopoverTrigger>
 
-                  <PopoverContent className="p-3 flex flex-col gap-3 w-48">
-                    <div className="text-sm text-default-700">
-                      {t(
-                        "common:ui.confirmDelete",
-                        "Are you sure you want to delete?"
-                      )}
-                    </div>
+                    <PopoverContent className="p-3 flex flex-col gap-3 w-48">
+                      <div className="text-sm text-default-700">
+                        {t(
+                          "common:ui.confirmDelete",
+                          "Are you sure you want to delete?"
+                        )}
+                      </div>
 
-                    <div className="flex gap-2 justify-end">
-                      <Button
-                        size="sm"
-                        variant="flat"
-                        onPress={() => {setIsConfirmOpen(false)}}
-                      >
-                        {t("common:ui.cancel", "Cancel")}
-                      </Button>
+                      <div className="flex gap-2 justify-end">
+                        <Button
+                          size="sm"
+                          variant="flat"
+                          onPress={() => {
+                            setIsConfirmOpen(false)
+                          }}
+                        >
+                          {t("common:ui.cancel", "Cancel")}
+                        </Button>
 
-                      <Button
-                        size="sm"
-                        color="danger"
-                        onPress={handleDelete}
-                        isLoading={isDeleting}
-                      >
-                        {t("common:ui.confirm", "Confirm")}
-                      </Button>
-                    </div>
-                  </PopoverContent>
-                </Popover>
+                        <Button
+                          size="sm"
+                          color="danger"
+                          onPress={handleDelete}
+                          isLoading={isDeleting}
+                        >
+                          {t("common:ui.confirm", "Confirm")}
+                        </Button>
+                      </div>
+                    </PopoverContent>
+                  </Popover>
+                )}
               </div>
 
               <div className="flex-1">
@@ -424,7 +464,7 @@ const MarkerPopupEdit: React.FC = () => {
                       isLoading={isUploading}
                       isDisabled={isUploading}
                     >
-                      {editingMarker?.type === "local" ? t("common:ui.upload", "Upload") : t("common:ui.update", "Update")}
+                      {!editingMarker?.status ? t("common:ui.upload", "Upload") : t("common:ui.update", "Update")}
                     </Button>
                   </span>
                 </Tooltip>
