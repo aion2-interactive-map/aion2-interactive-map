@@ -46,6 +46,11 @@ function loadV1(map: string): Set<string> {
   }
 }
 
+function clearV1(map: string): void {
+  const key = `${V1_PREFIX}.${map}`;
+  localStorage.removeItem(key);
+}
+
 function saveV2Subtype(map: string, subtype: string, set: Set<number>) {
   const key = `${V2_PREFIX}.${map}.${subtype}`;
   localStorage.setItem(key, JSON.stringify([...set]));
@@ -277,7 +282,7 @@ export const MarkersProvider = ({children}: MarkersProviderProps) => {
   const clearMarkerCompleted = useCallback(() => {
     if (!selectedMap) return;
     const mapName = selectedMap.name;
-
+    clearV1(mapName);
     setCompletedBySubtype((prev) => {
       const next: Record<string, Set<number>> = {};
       for (const subtype of Object.keys(prev)) {
