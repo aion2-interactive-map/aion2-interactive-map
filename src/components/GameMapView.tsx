@@ -57,13 +57,16 @@ const MapContextMenuHandler: React.FC<{
   onOpenMenu: (state: ContextMenuState) => void;
   onCloseMenu: () => void;
 }> = ({onOpenMenu, onCloseMenu}) => {
-  const {setPickMode} = useUserMarkers();
+  const {setPickMode, pickMode} = useUserMarkers();
 
   const map = useMapEvents({
     contextmenu(e) {
       // Right-click on map
       e.originalEvent.preventDefault();
-      setPickMode(false);
+      if (pickMode) {
+        setPickMode(false);
+        return;
+      }
 
       // Leaflet CRS.Simple: lat = y, lng = x
       const mapX = e.latlng.lng;
@@ -98,7 +101,7 @@ const MapCursorController: React.FC = () => {
 
   useEffect(() => {
     const container = map.getContainer();
-    container.style.cursor = pickMode ? `url(${getStaticUrl("images/CursorAdd.png")}) 16 16, crosshair` : "grab";
+    container.style.cursor = pickMode ? `url(${getStaticUrl("images/CursorAdd.png")}) 22 63, crosshair` : "grab";
     // console.log(pickMode, container);
   }, [map, pickMode]);
 
