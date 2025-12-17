@@ -1,6 +1,6 @@
 lang: "zh-CN"
 siteTitle: "AION2\n互动地图"
-announcement: 装备制作功能已完工，请点击左边的导航进入体验！
+announcement: 装备制作功能已完工！
 
 language:
   label: "语言"
@@ -70,7 +70,7 @@ menu:
 routes:
   map: "地图"
   class: "职业BD"
-  crafting: "装备制作"
+  crafting: "装备制作🎉"
   enhancement: "装备强化"
   forum: "论坛"
 
@@ -174,4 +174,4 @@ crafting:
   sumTotal: "总计："
   weaponOrArmor: "武器/防具"
   accessory: "饰品"
-  disableAll: "一键禁用全部"
+  clearAll: "一键清除全部"
