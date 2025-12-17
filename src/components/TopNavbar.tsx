@@ -84,17 +84,16 @@ const TopNavbar: React.FC = () => {
         justify="end"
         className="flex items-center gap-1"
       >
-        {import.meta.env.VITE_REGION === "CHINA" && (
 
-          <a href="https://m.flashkrypton.com/?ch=10004&gameConfigId=286&autoShow=0#/community" target="_blank"
-             datatype="advertisement">
-            <img
-              src={getStaticUrl("images/shanke.webp")}
-              alt="Banner"
-              className="h-10 w-auto object-contain select-none pointer-events-none"
-            />
-          </a>
-        )}
+        {/*<a href="https://m.flashkrypton.com/?ch=10004&gameConfigId=286&autoShow=0#/community" target="_blank"*/}
+        {/*   datatype="advertisement">*/}
+          <img
+            src={getStaticUrl("images/Adv.webp")}
+            alt="Banner"
+            className="h-10 w-auto object-contain select-none pointer-events-none"
+          />
+        {/*</a>*/}
+
 
         {/* Language switcher (owns its own button & dropdown) */}
         <LanguageSwitcher/>
