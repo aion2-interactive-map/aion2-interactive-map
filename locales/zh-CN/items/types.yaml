@@ -1,0 +1,98 @@
+categories:
+  Equip_Accessory:
+    name: 饰品
+  Equip_Armor:
+    name: 防具
+  Equip_Weapon:
+    name: 武器
+  Misc_001:
+    name: 其他
+  Usable_001:
+    name: 消耗品
+  Usable_Skin:
+    name: 外观
+subtypes:
+  Boots:
+    name: 鞋子
+  Bow:
+    name: 弓
+  Bracelet:
+    name: 手镯
+  Cape:
+    name: 披风
+  ConversionResource:
+    name: 物质变换
+  CraftResource:
+    name: 制作材料
+  Dagger:
+    name: 短剑
+  Deco:
+    name: 万神殿
+  Earring:
+    name: 耳环
+  Etc:
+    name: 其他
+  Food:
+    name: 食物/饮料
+  GatherResource:
+    name: 采集
+  Gloves:
+    name: 手套
+  GodStone:
+    name: 神石
+  Greatsword:
+    name: 巨剑
+  Guarder:
+    name: 臂甲
+  Helmet:
+    name: 头盔
+  Mace:
+    name: 钉锤
+  MagicStone:
+    name: 魔石/灵石
+  Magicbook:
+    name: 法书
+  Material:
+    name: 突破
+  Necklace:
+    name: 项链
+  Orb:
+    name: 法珠
+  Other:
+    name: 其他
+  Pants:
+    name: 下衣
+  Polymorph:
+    name: 糖果
+  Potion:
+    name: 药水
+  Ring:
+    name: 戒指
+  Scroll:
+    name: 咒文书
+  Shoulder:
+    name: 肩甲
+  SkinArmor:
+    name: 防具
+  SkinOrnament:
+    name: 饰品
+  Staff:
+    name: 法杖
+  Sword:
+    name: 长剑
+  Ticket:
+    name: 时间补充券
+  Torso:
+    name: 上衣
+  Wing:
+    name: 翅膀
+  Belt:
+    name: 腰带
+  Amulet:
+    name: 护身符
+  Rune:
+    name: 古文石
+  Weapon:
+    name: 武器
+  Equipment:
+    name: 装备

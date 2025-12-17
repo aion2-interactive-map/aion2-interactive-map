@@ -1,0 +1,53 @@
+categories:
+- name: Equip_Weapon
+  subtypes:
+  - name: Sword
+  - name: Greatsword
+  - name: Dagger
+  - name: Bow
+  - name: Magicbook
+  - name: Orb
+  - name: Mace
+  - name: Staff
+  - name: Guarder
+- name: Equip_Armor
+  subtypes:
+  - name: Helmet
+  - name: Shoulder
+  - name: Torso
+  - name: Pants
+  - name: Gloves
+  - name: Boots
+  - name: Cape
+  - name: Belt
+- name: Equip_Accessory
+  subtypes:
+  - name: Necklace
+  - name: Earring
+  - name: Ring
+  - name: Bracelet
+  - name: Amulet
+  - name: Rune
+- name: Usable_001
+  subtypes:
+  - name: Potion
+  - name: Food
+  - name: Scroll
+  - name: Polymorph
+  - name: MagicStone
+  - name: GodStone
+  - name: Wing
+  - name: Deco
+  - name: Ticket
+  - name: Etc
+- name: Usable_Skin
+  subtypes:
+  - name: SkinArmor
+  - name: SkinOrnament
+- name: Misc_001
+  subtypes:
+  - name: GatherResource
+  - name: CraftResource
+  - name: ConversionResource
+  - name: Material
+  - name: Other

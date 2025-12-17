@@ -1,0 +1,1 @@
+import{o as e}from"./rolldown-runtime-GyhWBpbT.js";import{n as t}from"./vendor-react-DPCMXswl.js";import"./vendor-ui-ni4DAml3.js";import{t as n}from"./UnderConstruction-CsJg0aHT.js";var r=e(t());function i(){return(0,r.jsx)(n,{})}export{i as component};

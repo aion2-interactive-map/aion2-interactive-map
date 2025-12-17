@@ -1,0 +1,10 @@
+Common:
+  name: 一般
+Epic:
+  name: 英雄
+Legend:
+  name: 传承
+Rare:
+  name: 稀有
+Unique:
+  name: 独特

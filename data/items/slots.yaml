@@ -1,0 +1,147 @@
+slots:
+  - key: weapon
+    name: Weapon
+    allowed_types:
+      - Sword
+      - Greatsword
+      - Dagger
+      - Bow
+      - Magicbook
+      - Orb
+      - Mace
+      - Staff
+    icon: "images/Equipments/Weapon.webp"
+    craftable: true
+
+  - key: guarder
+    name: Guarder
+    allowed_types:
+      - Guarder
+    icon: "images/Equipments/Guarder.webp"
+    craftable: true
+
+  - key: helmet
+    name: Helmet
+    allowed_types:
+      - Helmet
+    icon: "images/Equipments/Helmet.webp"
+    craftable: true
+
+  - key: shoulder
+    name: Shoulder
+    allowed_types:
+      - Shoulder
+    icon: "images/Equipments/Shoulder.webp"
+    craftable: true
+
+  - key: torso
+    name: Torso
+    allowed_types:
+      - Torso
+    icon: "images/Equipments/Torso.webp"
+    craftable: true
+
+  - key: belt
+    name: Belt
+    allowed_types:
+      - Belt
+    icon: "images/Equipments/Belt.webp"
+    craftable: false
+
+  - key: pants
+    name: Pants
+    allowed_types:
+      - Pants
+    icon: "images/Equipments/Pants.webp"
+    craftable: true
+
+  - key: gloves
+    name: Gloves
+    allowed_types:
+      - Gloves
+    icon: "images/Equipments/Gloves.webp"
+    craftable: true
+
+  - key: boots
+    name: Boots
+    allowed_types:
+      - Boots
+    icon: "images/Equipments/Boots.webp"
+    craftable: true
+
+  - key: cape
+    name: Cape
+    allowed_types:
+      - Cape
+    icon: "images/Equipments/Cape.webp"
+    craftable: true
+
+  - key: earring_1
+    name: Earring
+    allowed_types:
+      - Earring
+    icon: "images/Equipments/Earring.webp"
+    craftable: true
+
+  - key: earring_2
+    name: Earring
+    allowed_types:
+      - Earring
+    icon: "images/Equipments/Earring.webp"
+    craftable: true
+
+  - key: necklace
+    name: Necklace
+    allowed_types:
+      - Necklace
+    icon: "images/Equipments/Necklace.webp"
+    craftable: true
+
+  - key: amulet
+    name: Amulet
+    allowed_types:
+      - Amulet
+    icon: "images/Equipments/Amulet.webp"
+    craftable: false
+
+  - key: ring_1
+    name: Ring
+    allowed_types:
+      - Ring
+    icon: "images/Equipments/Ring.webp"
+    craftable: true
+
+  - key: ring_2
+    name: Ring
+    allowed_types:
+      - Ring
+    icon: "images/Equipments/Ring.webp"
+    craftable: true
+
+  - key: bracelet_1
+    name: Bracelet
+    allowed_types:
+      - Bracelet
+    icon: "images/Equipments/Bracelet.webp"
+    craftable: true
+
+  - key: bracelet_2
+    name: Bracelet
+    allowed_types:
+      - Bracelet
+    icon: "images/Equipments/Bracelet.webp"
+    craftable: true
+
+  - key: rune_1
+    name: Rune
+    allowed_types:
+      - Rune
+    icon: "images/Equipments/Rune.webp"
+    craftable: false
+
+  - key: rune_2
+    name: Rune
+    allowed_types:
+      - Rune
+    icon: "images/Equipments/Rune.webp"
+    craftable: false

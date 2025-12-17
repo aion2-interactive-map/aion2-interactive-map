@@ -1,0 +1,88 @@
+categories:
+  Equip_Accessory:
+    name: Accessories
+  Equip_Armor:
+    name: Armor
+  Equip_Weapon:
+    name: Weapons
+  Misc_001:
+    name: Miscellaneous
+  Usable_001:
+    name: Consumables
+  Usable_Skin:
+    name: Skins
+subtypes:
+  Boots:
+    name: Shoes
+  Bow:
+    name: Bow
+  Bracelet:
+    name: Bracelet
+  Cape:
+    name: Cloak
+  ConversionResource:
+    name: Substance Morph Material
+  CraftResource:
+    name: Crafting Material
+  Dagger:
+    name: Dagger
+  Deco:
+    name: Pantheon
+  Earring:
+    name: Earrings
+  Etc:
+    name: Miscellaneous
+  Food:
+    name: Food/Beverage
+  GatherResource:
+    name: Gathering Material
+  Gloves:
+    name: Gloves
+  GodStone:
+    name: Theostone
+  Greatsword:
+    name: Greatsword
+  Guarder:
+    name: Guard
+  Helmet:
+    name: Helm
+  Mace:
+    name: Mace
+  MagicStone:
+    name: Manastone/Soulstone
+  Magicbook:
+    name: Spellbook
+  Material:
+    name: Amplification Material
+  Necklace:
+    name: Necklace
+  Orb:
+    name: Orb
+  Other:
+    name: Miscellaneous
+  Pants:
+    name: Legs
+  Polymorph:
+    name: Candy
+  Potion:
+    name: Potions
+  Ring:
+    name: Ring
+  Scroll:
+    name: Scroll
+  Shoulder:
+    name: Pauldrons
+  SkinArmor:
+    name: Armor
+  SkinOrnament:
+    name: Decoration
+  Staff:
+    name: Staff
+  Sword:
+    name: Longsword
+  Ticket:
+    name: Duration Ticket
+  Torso:
+    name: Top
+  Wing:
+    name: Wings

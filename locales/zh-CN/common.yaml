@@ -1,6 +1,6 @@
 lang: "zh-CN"
 siteTitle: "AION2\n互动地图"
-announcement: "我们更新了天族地图的地区划分，该功能还在测试，如果有点位被划分入了错误的区域，请联系我们，谢谢！"
+announcement: 装备制作功能已完工，请点击左边的导航进入体验！
 
 language:
   label: "语言"
@@ -21,6 +21,7 @@ ui:
   update: "更新"
   edit: "编辑"
   confirmDelete: "你确定要删除吗？"
+  clear: "清除"
 
 auth:
   login: "登录"
@@ -165,3 +166,12 @@ rightSidebar:
   donation:
     title: "赞助"
     content: "游戏攻略网站维护需要大量时间和精力，如果想要支持我们，可以通过下面的支付宝二维码，你的小小心意是支持我们的动力"
+
+crafting:
+  select: "选择要替换的装备"
+  selectClick: "点击选择装备"
+  sumType: "合计："
+  sumTotal: "总计："
+  weaponOrArmor: "武器/防具"
+  accessory: "饰品"
+  disableAll: "一键禁用全部"
