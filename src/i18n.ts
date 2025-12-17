@@ -27,7 +27,7 @@ i18n
     fallbackLng: "zh-CN",
     supportedLngs: SUPPORTED_LANGUAGES,
 
-    ns: ["common", "maps", "types", "regions"],
+    ns: ["common", "maps", "types", "regions", "classes", "items/types", "items/items", "items/grades", "items/tiers" ],
     defaultNS: "common",
 
     detection: {

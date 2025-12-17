@@ -1,0 +1,16 @@
+Assassin:
+  name: 杀星
+Chanter:
+  name: 护法星
+Cleric:
+  name: 治愈星
+Elementalist:
+  name: 精灵星
+Gladiator:
+  name: 剑星
+Ranger:
+  name: 弓星
+Sorcerer:
+  name: 魔道星
+Templar:
+  name: 守护星

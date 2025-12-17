@@ -1,0 +1,6 @@
+grades:
+- name: Common
+- name: Rare
+- name: Legend
+- name: Unique
+- name: Epic

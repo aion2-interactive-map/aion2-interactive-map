@@ -1,0 +1,9 @@
+classes:
+- name: Gladiator
+- name: Templar
+- name: Assassin
+- name: Ranger
+- name: Sorcerer
+- name: Elementalist
+- name: Cleric
+- name: Chanter

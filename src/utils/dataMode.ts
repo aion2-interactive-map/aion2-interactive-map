@@ -48,7 +48,7 @@ export function getBackendLoadPath(mode: DataMode = DEFAULT_DATA_MODE) {
     const lng = lngs[0];
     const ns = nss[0];
 
-    if (ns === "common") {
+    if (ns === "common" || ns === "classes" || ns.startsWith("items")) {
       return `${staticBase}/locales/${lng}/${ns}.yaml?build=${__BUILD_GIT_COMMIT__}`;
     } else if (ns === "regions") {
       return "";

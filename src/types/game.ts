@@ -162,3 +162,116 @@ export interface RawRegionsFile {
   regions: RegionInstance[];
 }
 
+// ======================================================================
+// Item / Crafting Data (RAW YAML TYPES)
+// ======================================================================
+
+// ------------------------
+// Classes
+// ------------------------
+
+export type ClassMeta = {
+  name: string;
+};
+
+export type RawClassesFile = {
+  classes: ClassMeta[];
+};
+
+// ------------------------
+// Items
+// ------------------------
+
+export type ItemMeta = {
+  id: number;
+  grade: string;
+  icon: string;
+  subtype: string;
+};
+
+export type RawItemsFile = {
+  items: ItemMeta[];
+};
+
+// ------------------------
+// Item Types (Categories / Subtypes)
+// ------------------------
+
+export type ItemTypeSubtype = {
+  name: string;
+};
+
+export type ItemTypeCategory = {
+  name: string;
+  subtypes: ItemTypeSubtype[];
+};
+
+export type RawItemTypesFile = {
+  categories: ItemTypeCategory[];
+};
+
+// ------------------------
+// Grades
+// ------------------------
+
+export type GradeMeta = {
+  name: string;
+};
+
+export type RawGradesFile = {
+  grades: GradeMeta[];
+};
+
+// ------------------------
+// Crafting
+// ------------------------
+
+export type CraftingMaterial = {
+  id: number;
+  count: number;
+};
+
+export type CraftingEntry = {
+  id: number;
+  splendent_id: number | null;
+  materials: CraftingMaterial[];
+};
+
+/**
+ * crafting.yaml is a top-level array
+ */
+export type RawCraftingFile = CraftingEntry[];
+
+// ======================================================================
+// Equipment Slots (RAW YAML TYPES)
+// ======================================================================
+
+export type EquipmentSlot = {
+  key: string;
+  name: string;
+
+  /**
+   * Values must match ItemMeta.subtype exactly, e.g. "Sword", "Ring", etc.
+   */
+  allowed_types: string[];
+
+  icon: string;
+
+  /**
+   * Whether this slot should be treated as craftable in the crafting UI.
+   */
+  craftable: boolean;
+};
+
+export type RawSlotsFile = {
+  slots: EquipmentSlot[];
+};
+
+export type TierMeta = {
+  name: string;
+  items: number[];
+};
+
+export type RawTiersFile = {
+  tiers: TierMeta[];
+};

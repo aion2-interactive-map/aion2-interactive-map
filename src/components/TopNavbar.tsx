@@ -74,9 +74,9 @@ const TopNavbar: React.FC = () => {
             )
           }
         )}
-        {/*<span className="text-[14px] leading-[14px] font-normal tracking-wide">*/}
-        {/*  {t("announcement", "Welcome to AION2 Interactive Map!")}*/}
-        {/*</span>*/}
+        <span className="text-[14px] leading-[14px] font-normal tracking-wide">
+          {t("announcement", "Crafting system is ready now!")}
+        </span>
       </NavbarBrand>
 
       {/* RIGHT: Language switcher + theme toggle */}
