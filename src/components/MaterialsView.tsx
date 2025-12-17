@@ -127,7 +127,7 @@ export function MaterialsView({selectedBySlotKey}: MaterialsViewProps) {
       <div className="flex-1 overflow-hidden">
         {materials.length === 0 ? (
           <div className="text-sm text-default-500">
-            No materials yet. Select craftable equipments on the left.
+
           </div>
         ) : (
           <div className="grid h-full min-h-0 min-w-0 grid-cols-[1fr_auto_1fr_auto_1fr] gap-3">

@@ -108,13 +108,15 @@ export function EquipmentsView({
     });
   }
 
-  function disableAllSlots() {
+  function clearAllSlots() {
     setSelectedBySlotKey((prev) => {
-      const next: Record<string, SelectedEquipmentState> = { ...(prev as any) };
+      const next: Record<string, SelectedEquipmentState> = {};
+
       for (const slot of slots) {
         const cur = ensureState(prev[slot.key]);
-        next[slot.key] = { ...cur, disabled: true };
+        next[slot.key] = { ...cur, itemId: null };
       }
+
       return next;
     });
   }
@@ -301,12 +303,12 @@ export function EquipmentsView({
         <Button
           size="sm"
           variant="flat"
-          onPress={disableAllSlots}
+          onPress={clearAllSlots}
           className="h-[34px] w-full rounded-sm border-1 border-crafting-border bg-crafting-sum"
         >
         <span className="flex w-full items-center justify-center gap-2 text-[14px] text-default-800">
           <FontAwesomeIcon icon={faBan} />
-          {t("common:crafting.disableAll", "Disable all slots")}
+          {t("common:crafting.clearAll", "Clear all slots")}
         </span>
         </Button>
       </div>
