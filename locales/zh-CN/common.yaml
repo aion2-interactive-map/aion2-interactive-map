@@ -175,3 +175,5 @@ crafting:
   weaponOrArmor: "武器/防具"
   accessory: "饰品"
   clearAll: "一键清除全部"
+  light: "天族"
+  dark: "魔族"

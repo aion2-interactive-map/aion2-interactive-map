@@ -1,8 +1,16 @@
 trueDragon:
-  name: 真龙/乾龙
+  name: 真龙
 whiteDragon:
-  name: 白龙/黑龙
+  name: 白龙
 wiseDragon:
-  name: 鸣龙/暗龙
+  name: 鸣龙
 nobleDragon:
-  name: 应龙/夔龙
+  name: 应龙
+starDragon:
+  name: 乾龙
+darkDragon:
+  name: 黑龙
+ebonyDragon:
+  name: 暗龙
+hornedDragon:
+  name: 夔龙

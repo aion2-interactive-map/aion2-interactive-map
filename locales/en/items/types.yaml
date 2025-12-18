@@ -1,88 +1,100 @@
 categories:
-  Equip_Accessory:
-    name: Accessories
-  Equip_Armor:
-    name: Armor
   Equip_Weapon:
     name: Weapons
-  Misc_001:
-    name: Miscellaneous
+  Equip_Armor:
+    name: Armor
+  Equip_Accessory:
+    name: Accessories
   Usable_001:
     name: Consumables
   Usable_Skin:
     name: Skins
-subtypes:
-  Boots:
-    name: Shoes
-  Bow:
-    name: Bow
-  Bracelet:
-    name: Bracelet
-  Cape:
-    name: Cloak
-  ConversionResource:
-    name: Substance Morph Material
-  CraftResource:
-    name: Crafting Material
-  Dagger:
-    name: Dagger
-  Deco:
-    name: Pantheon
-  Earring:
-    name: Earrings
-  Etc:
+  Misc_001:
     name: Miscellaneous
-  Food:
-    name: Food/Beverage
-  GatherResource:
-    name: Gathering Material
-  Gloves:
-    name: Gloves
-  GodStone:
-    name: Theostone
+  Equip:
+    name: Equipment
+subtypes:
+  Sword:
+    name: Longsword
   Greatsword:
     name: Greatsword
-  Guarder:
-    name: Guard
-  Helmet:
-    name: Helm
-  Mace:
-    name: Mace
-  MagicStone:
-    name: Manastone/Soulstone
+  Dagger:
+    name: Dagger
+  Bow:
+    name: Bow
   Magicbook:
     name: Spellbook
-  Material:
-    name: Amplification Material
-  Necklace:
-    name: Necklace
   Orb:
     name: Orb
-  Other:
-    name: Miscellaneous
-  Pants:
-    name: Legs
-  Polymorph:
-    name: Candy
-  Potion:
-    name: Potions
-  Ring:
-    name: Ring
-  Scroll:
-    name: Scroll
+  Mace:
+    name: Mace
+  Staff:
+    name: Staff
+  Guarder:
+    name: Guard
+  Weapon:
+    name: Weapon
+  Helmet:
+    name: Helm
   Shoulder:
     name: Pauldrons
+  Torso:
+    name: Top
+  Pants:
+    name: Legs
+  Gloves:
+    name: Gloves
+  Boots:
+    name: Shoes
+  Cape:
+    name: Cloak
+  Belt:
+    name: Belt
+  Necklace:
+    name: Necklace
+  Earring:
+    name: Earrings
+  Ring:
+    name: Ring
+  Bracelet:
+    name: Bracelet
+  Amulet:
+    name: Amulet
+  Rune:
+    name: Rune
+  Potion:
+    name: Potions
+  Food:
+    name: Food/Beverage
+  Scroll:
+    name: Scroll
+  Polymorph:
+    name: Candy
+  MagicStone:
+    name: Manastone/Soulstone
+  GodStone:
+    name: Theostone
+  Wing:
+    name: Wings
+  Deco:
+    name: Pantheon
+  Ticket:
+    name: Duration Ticket
+  Etc:
+    name: Miscellaneous
   SkinArmor:
     name: Armor
   SkinOrnament:
     name: Decoration
-  Staff:
-    name: Staff
-  Sword:
-    name: Longsword
-  Ticket:
-    name: Duration Ticket
-  Torso:
-    name: Top
-  Wing:
-    name: Wings
+  GatherResource:
+    name: Gathering Material
+  CraftResource:
+    name: Crafting Material
+  ConversionResource:
+    name: Substance Morph Material
+  Material:
+    name: Amplification Material
+  Other:
+    name: Miscellaneous
+  Equipment:
+    name: Equipment

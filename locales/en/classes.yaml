@@ -1,16 +1,16 @@
-Assassin:
-  name: Assassin
-Chanter:
-  name: Chanter
-Cleric:
-  name: Cleric
-Elementalist:
-  name: Elementalist
 Gladiator:
   name: Gladiator
+Templar:
+  name: Templar
+Assassin:
+  name: Assassin
 Ranger:
   name: Ranger
 Sorcerer:
   name: Sorcerer
-Templar:
-  name: Templar
+Elementalist:
+  name: Elementalist
+Cleric:
+  name: Cleric
+Chanter:
+  name: Chanter
