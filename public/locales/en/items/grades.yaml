@@ -1,10 +1,10 @@
 Common:
   name: Common
-Epic:
-  name: Heroic
-Legend:
-  name: Epic
 Rare:
   name: Rare
+Legend:
+  name: Epic
 Unique:
   name: Unique
+Epic:
+  name: Heroic

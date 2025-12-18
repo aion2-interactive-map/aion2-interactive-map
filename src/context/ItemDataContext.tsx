@@ -88,7 +88,7 @@ export const ItemDataProvider: React.FC<ItemDataProviderProps> = ({ children }) 
         setItems(itemsData.items ?? []);
         setTypes(typesData.categories ?? []);
         setGrades(gradesData.grades ?? []);
-        setCrafting(craftingData ?? []);
+        setCrafting(craftingData.crafting ?? []);
         setSlots(slotsData.slots ?? []);
         setTiers(tiersData.tiers ?? []);
       } catch (e) {

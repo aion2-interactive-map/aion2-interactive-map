@@ -13,18 +13,21 @@ import { getStaticUrl } from "@/utils/url.ts";
 import { useTranslation } from "react-i18next";
 import { useItemData } from "@/context/ItemDataContext.tsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBan,
-  faTableCellsLarge,
-} from "@fortawesome/free-solid-svg-icons";
+import { faBan, faTableCellsLarge } from "@fortawesome/free-solid-svg-icons";
 import type { EquipmentSlot } from "@/types/game";
 import type { SelectedBySlotKey, SelectedEquipmentState } from "@/types/crafting";
 
 export type EquipmentsViewProps = {
   selectedBySlotKey: SelectedBySlotKey;
   setSelectedBySlotKey: React.Dispatch<React.SetStateAction<SelectedBySlotKey>>;
-};
 
+  /**
+   * If provided, modal list is filtered by crafting recipe race:
+   * - recipe.race === race => allowed
+   * - recipe.race is null/undefined => allowed in both
+   */
+  race?: "light" | "dark";
+};
 
 type EquipmentsMode = "thumbnail" | "weapon_armor" | "accessory";
 
@@ -39,16 +42,26 @@ function ensureState(v: SelectedEquipmentState | undefined): SelectedEquipmentSt
   return v ?? { itemId: null, disabled: false };
 }
 
+function isAllowedByRace(
+  recipeRace: "light" | "dark" | null | undefined,
+  selectedRace: "light" | "dark" | undefined,
+): boolean {
+  if (!selectedRace) return true; // no filtering
+  if (recipeRace == null) return true; // treat missing as shared
+  return recipeRace === selectedRace;
+}
+
 export function EquipmentsView({
                                  selectedBySlotKey,
                                  setSelectedBySlotKey,
+                                 race,
                                }: EquipmentsViewProps) {
   const [open, setOpen] = useState(false);
   const [activeSlotKey, setActiveSlotKey] = useState<string | null>(null);
   const [activeType, setActiveType] = useState<string>("");
   const [mode, setMode] = useState<EquipmentsMode>("thumbnail");
 
-  const { craftingItemIdsByType, slots, items, gradesByName } = useItemData();
+  const { craftingItemIdsByType, craftingById, slots, items, gradesByName } = useItemData();
   const { t } = useTranslation();
 
   const activeSlot = useMemo(() => {
@@ -71,12 +84,20 @@ export function EquipmentsView({
 
   const craftingIdsForActiveType = useMemo(() => {
     if (!activeType) return [];
-    return craftingItemIdsByType.get(activeType) ?? [];
-  }, [activeType, craftingItemIdsByType]);
+    const ids = craftingItemIdsByType.get(activeType) ?? [];
+
+    // ✅ race filter happens here (based on crafting.yaml)
+    return ids.filter((id) => {
+      const recipe = craftingById.get(id);
+      return isAllowedByRace(recipe?.race ?? null, race);
+    });
+  }, [activeType, craftingItemIdsByType, craftingById, race]);
 
   const filteredItems = useMemo(() => {
     if (!activeSlot || !activeType) return [];
     const craftableSet = new Set<number>(craftingIdsForActiveType);
+
+    // items are already "crafted items"; we further ensure craftable ids are allowed
     return items.filter((it) => it.subtype === activeType && craftableSet.has(it.id));
   }, [activeSlot, activeType, items, craftingIdsForActiveType]);
 
@@ -130,7 +151,8 @@ export function EquipmentsView({
     displaySlots = slots.slice(10, 20);
   }
 
-  const gridClassName = mode === "thumbnail" ? "grid grid-cols-2 gap-2" : "grid grid-cols-1 gap-2";
+  const gridClassName =
+    mode === "thumbnail" ? "grid grid-cols-2 gap-2" : "grid grid-cols-1 gap-2";
 
   return (
     <div className="flex h-full w-full flex-col">
@@ -148,10 +170,15 @@ export function EquipmentsView({
               const selectedId = slotState.itemId;
               const isDisabled = slotState.disabled;
 
-              const selectedItem = selectedId ? items.find((it) => it.id === selectedId) : undefined;
+              const selectedItem = selectedId
+                ? items.find((it) => it.id === selectedId)
+                : undefined;
 
               const imgSrc = getStaticUrl(firstNonEmpty(selectedItem?.icon, slot.icon));
-              const localizedSlotName = t(`items/types:subtypes.${slot.name}.name`, slot.name);
+              const localizedSlotName = t(
+                `items/types:subtypes.${slot.name}.name`,
+                slot.name,
+              );
 
               const grade = gradesByName.get(selectedItem?.grade || "");
               const gradeName = grade?.name || "";
@@ -162,7 +189,6 @@ export function EquipmentsView({
 
               const onSlotClick = () => {
                 if (isDisabled) {
-                  // Clicking anywhere activates (enables) it
                   toggleDisabled(slot.key);
                   return;
                 }
@@ -194,10 +220,13 @@ export function EquipmentsView({
                         selectedId ? "" : "bg-[#0D0E15]"
                       }`}
                     >
-                      <img src={imgSrc} alt={slot.name} className="h-full w-full object-contain" />
+                      <img
+                        src={imgSrc}
+                        alt={slot.name}
+                        className="h-full w-full object-contain"
+                      />
                     </div>
 
-                    {/* Disabled mask + centered icon */}
                     {isDisabled && (
                       <div
                         className="absolute inset-0 z-10 flex items-center justify-center rounded-sm"
@@ -210,14 +239,12 @@ export function EquipmentsView({
                       </div>
                     )}
 
-                    {/* Slot name */}
                     <div className="pointer-events-none absolute inset-x-0 bottom-1 z-20">
                       <div className="mx-auto w-fit rounded text-[14px] font-bold leading-tight text-white">
                         {localizedSlotName}
                       </div>
                     </div>
 
-                    {/* Bottom-right disable toggle (only when NOT disabled) */}
                     {!isDisabled && (
                       <button
                         type="button"
@@ -257,13 +284,16 @@ export function EquipmentsView({
                       selectedId ? "" : "bg-[#0D0E15]"
                     }`}
                   >
-                    <img src={imgSrc} alt={slot.name} className="h-12 w-12 shrink-0 object-contain" />
+                    <img
+                      src={imgSrc}
+                      alt={slot.name}
+                      className="h-12 w-12 shrink-0 object-contain"
+                    />
                     <div className="ml-2 min-w-0 flex-1 truncate text-left text-sm font-bold text-white">
                       {displayName}
                     </div>
                   </div>
 
-                  {/* Disabled mask + centered icon */}
                   {isDisabled && (
                     <div
                       className="absolute inset-0 z-10 flex items-center justify-center rounded-sm"
@@ -276,7 +306,6 @@ export function EquipmentsView({
                     </div>
                   )}
 
-                  {/* Bottom-right disable toggle (only when NOT disabled) */}
                   {!isDisabled && (
                     <button
                       type="button"
@@ -298,7 +327,7 @@ export function EquipmentsView({
         </div>
       </div>
 
-      {/* Disable all button (above bottom tabs) */}
+      {/* Clear all */}
       <div className="mt-2 w-full">
         <Button
           size="sm"
@@ -306,10 +335,10 @@ export function EquipmentsView({
           onPress={clearAllSlots}
           className="h-[34px] w-full rounded-sm border-1 border-crafting-border bg-crafting-sum"
         >
-        <span className="flex w-full items-center justify-center gap-2 text-[14px] text-default-800">
-          <FontAwesomeIcon icon={faBan} />
-          {t("common:crafting.clearAll", "Clear all slots")}
-        </span>
+          <span className="flex w-full items-center justify-center gap-2 text-[14px] text-default-800">
+            <FontAwesomeIcon icon={faBan} />
+            {t("common:crafting.clearAll", "Clear all slots")}
+          </span>
         </Button>
       </div>
 

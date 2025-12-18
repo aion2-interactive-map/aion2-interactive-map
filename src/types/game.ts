@@ -235,12 +235,15 @@ export type CraftingEntry = {
   id: number;
   splendent_id: number | null;
   materials: CraftingMaterial[];
+  race?: "light" | "dark";
 };
 
 /**
  * crafting.yaml is a top-level array
  */
-export type RawCraftingFile = CraftingEntry[];
+export type RawCraftingFile = {
+  crafting: CraftingEntry[];
+};
 
 // ======================================================================
 // Equipment Slots (RAW YAML TYPES)

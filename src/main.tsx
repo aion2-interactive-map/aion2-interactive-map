@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import 'leaflet/dist/leaflet.css'; // Leaflet default styles
 import './i18n';
-import {applyTheme} from "./utils/preTheme";
+// import {applyTheme} from "./utils/preTheme";
 
 import {RouterProvider, createRouter} from '@tanstack/react-router'
 
@@ -25,7 +25,7 @@ declare module '@tanstack/react-router' {
 }
 
 // Apply initial theme
-applyTheme();
+// applyTheme();
 
 // Render the app
 const rootElement = document.getElementById('root')!

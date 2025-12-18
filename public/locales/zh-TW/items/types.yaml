@@ -1,88 +1,100 @@
 categories:
-  Equip_Accessory:
-    name: 飾品
-  Equip_Armor:
-    name: 防具
   Equip_Weapon:
     name: 武器
-  Misc_001:
-    name: 其他
+  Equip_Armor:
+    name: 防具
+  Equip_Accessory:
+    name: 飾品
   Usable_001:
     name: 消耗品
   Usable_Skin:
     name: 外觀
-subtypes:
-  Boots:
-    name: 鞋子
-  Bow:
-    name: 弓
-  Bracelet:
-    name: 手鐲
-  Cape:
-    name: 披風
-  ConversionResource:
-    name: 物質變換
-  CraftResource:
-    name: 製作材料
-  Dagger:
-    name: 短劍
-  Deco:
-    name: 萬神殿
-  Earring:
-    name: 耳環
-  Etc:
+  Misc_001:
     name: 其他
-  Food:
-    name: 食物/飲料
-  GatherResource:
-    name: 採集
-  Gloves:
-    name: 手套
-  GodStone:
-    name: 神石
+  Equip:
+    name: 裝備
+subtypes:
+  Sword:
+    name: 長劍
   Greatsword:
     name: 巨劍
-  Guarder:
-    name: 臂甲
-  Helmet:
-    name: 頭盔
-  Mace:
-    name: 釘錘
-  MagicStone:
-    name: 魔石/靈石
+  Dagger:
+    name: 短劍
+  Bow:
+    name: 弓
   Magicbook:
     name: 法書
-  Material:
-    name: 突破
-  Necklace:
-    name: 項鍊
   Orb:
     name: 法珠
-  Other:
-    name: 其他
-  Pants:
-    name: 下衣
-  Polymorph:
-    name: 糖果
-  Potion:
-    name: 藥水
-  Ring:
-    name: 戒指
-  Scroll:
-    name: 咒文書
+  Mace:
+    name: 釘錘
+  Staff:
+    name: 法杖
+  Guarder:
+    name: 臂甲
+  Weapon:
+    name: 武器
+  Helmet:
+    name: 頭盔
   Shoulder:
     name: 肩甲
+  Torso:
+    name: 上衣
+  Pants:
+    name: 下衣
+  Gloves:
+    name: 手套
+  Boots:
+    name: 鞋子
+  Cape:
+    name: 披風
+  Belt:
+    name: 腰帶
+  Necklace:
+    name: 項鍊
+  Earring:
+    name: 耳環
+  Ring:
+    name: 戒指
+  Bracelet:
+    name: 手鐲
+  Amulet:
+    name: 護身符
+  Rune:
+    name: 古文石
+  Potion:
+    name: 藥水
+  Food:
+    name: 食物/飲料
+  Scroll:
+    name: 咒文書
+  Polymorph:
+    name: 糖果
+  MagicStone:
+    name: 魔石/靈石
+  GodStone:
+    name: 神石
+  Wing:
+    name: 翅膀
+  Deco:
+    name: 萬神殿
+  Ticket:
+    name: 時間補充券
+  Etc:
+    name: 其他
   SkinArmor:
     name: 防具
   SkinOrnament:
     name: 飾品
-  Staff:
-    name: 法杖
-  Sword:
-    name: 長劍
-  Ticket:
-    name: 時間補充券
-  Torso:
-    name: 上衣
-  Wing:
-    name: 翅膀
+  GatherResource:
+    name: 採集
+  CraftResource:
+    name: 製作材料
+  ConversionResource:
+    name: 物質變換
+  Material:
+    name: 突破
+  Other:
+    name: 其他
+  Equipment:
+    name: 裝備

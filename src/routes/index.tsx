@@ -9,12 +9,13 @@ import DismissableAlert from "@/components/DismissableAlert.tsx";
 import {useTranslation} from "react-i18next";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import {useGameMap} from "@/context/GameMapContext.tsx";
+import {GameMapProvider, useGameMap} from "@/context/GameMapContext.tsx";
 import DismissibleBanner from "@/components/DismissibleBanner.tsx";
 import {getStaticUrl} from "@/utils/url.ts";
 import {MarkersProvider, useMarkers} from "@/context/MarkersContext.tsx";
 import {GameDataProvider} from "@/context/GameDataContext.tsx";
 import {UserMarkersProvider} from "@/context/UserMarkersContext.tsx";
+import {ThemeMapBridge} from "@/context/ThemeMapBridge.tsx";
 
 
 const HomePage: React.FC = () => {
@@ -122,15 +123,19 @@ const HomePage: React.FC = () => {
 
 const HomePageWrapper: React.FC = () => {
   return (
-    <MarkersProvider>
-      <UserMarkersProvider>
-        <GameDataProvider>
-          <HomePage/>
-        </GameDataProvider>
-      </UserMarkersProvider>
-    </MarkersProvider>
-  )
-}
+    <GameMapProvider>
+      <ThemeMapBridge />
+      <MarkersProvider>
+        <UserMarkersProvider>
+          <GameDataProvider>
+            <HomePage />
+          </GameDataProvider>
+        </UserMarkersProvider>
+      </MarkersProvider>
+    </GameMapProvider>
+  );
+};
+
 
 
 export const Route = createFileRoute("/")({
