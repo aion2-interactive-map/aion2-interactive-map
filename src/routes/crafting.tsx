@@ -5,44 +5,29 @@ import { Card, CardBody, Tab, Tabs } from "@heroui/react";
 import { EquipmentsView } from "@/components/EquipmentsView.tsx";
 import { MaterialsView } from "@/components/MaterialsView.tsx";
 import { useTranslation } from "react-i18next";
-import type { SelectedEquipmentState, SelectedBySlotKey } from "@/types/crafting";
+import type { SelectedBySlotKey, SelectedEquipmentState } from "@/types/crafting";
+import { useTheme } from "@/context/ThemeContext";
+
+const STORAGE_SELECTED_TIER = "aion2.crafting.selectedTier.v1";
 
 const STORAGE_SELECTED_EQUIPMENTS_LIGHT = "aion2.crafting.selectedEquipments.v1.light";
 const STORAGE_SELECTED_EQUIPMENTS_DARK = "aion2.crafting.selectedEquipments.v1.dark";
-const STORAGE_SELECTED_RACE = "aion2.crafting.selectedRace.v1";
-const STORAGE_SELECTED_TIER_INDEX = "aion2.crafting.selectedTierIndex.v1";
 
-const LIGHT_TIER_KEYS = ["trueDragon", "whiteDragon", "wiseDragon", "nobleDragon"] as const;
-const DARK_TIER_KEYS = ["starDragon", "darkDragon", "ebonyDragon", "hornedDragon"] as const;
+type Race = "light" | "dark";
 
-type LightTierKey = (typeof LIGHT_TIER_KEYS)[number];
-type DarkTierKey = (typeof DARK_TIER_KEYS)[number];
-type TierKey = LightTierKey | DarkTierKey;
+const TIER_KEYS_LIGHT = ["trueDragon", "whiteDragon", "wiseDragon", "nobleDragon"] as const;
+const TIER_KEYS_DARK = ["starDragon", "darkDragon", "ebonyDragon", "hornedDragon"] as const;
 
-type RaceMode = "light" | "dark";
+type TierKeyLight = (typeof TIER_KEYS_LIGHT)[number];
+type TierKeyDark = (typeof TIER_KEYS_DARK)[number];
+type TierKey = TierKeyLight | TierKeyDark;
 
-function getEquipmentsStorageKey(race: RaceMode): string {
+function tiersForRace(race: Race): readonly TierKey[] {
+  return (race === "light" ? TIER_KEYS_LIGHT : TIER_KEYS_DARK) as readonly TierKey[];
+}
+
+function storageKeyForRace(race: Race): string {
   return race === "light" ? STORAGE_SELECTED_EQUIPMENTS_LIGHT : STORAGE_SELECTED_EQUIPMENTS_DARK;
-}
-
-function readStoredRace(): RaceMode {
-  try {
-    const raw = localStorage.getItem(STORAGE_SELECTED_RACE);
-    if (raw === "light" || raw === "dark") return raw;
-    return "light";
-  } catch {
-    return "light";
-  }
-}
-
-function readStoredTierIndex(): number {
-  try {
-    const raw = localStorage.getItem(STORAGE_SELECTED_TIER_INDEX);
-    const n = raw ? Number(raw) : 0;
-    return Number.isFinite(n) && n >= 0 ? Math.floor(n) : 0;
-  } catch {
-    return 0;
-  }
 }
 
 function normalizeSelectedBySlotKey(raw: unknown): SelectedBySlotKey {
@@ -55,7 +40,7 @@ function normalizeSelectedBySlotKey(raw: unknown): SelectedBySlotKey {
   const out: SelectedBySlotKey = {};
 
   for (const [slotKey, v] of Object.entries(obj)) {
-    // old shape (number|null)
+    // old shape
     if (typeof v === "number" || v === null) {
       out[slotKey] = { itemId: v, disabled: false };
       continue;
@@ -67,7 +52,6 @@ function normalizeSelectedBySlotKey(raw: unknown): SelectedBySlotKey {
         "itemId" in v && (typeof v.itemId === "number" || v.itemId === null)
           ? (v.itemId as number | null)
           : null;
-
       const disabled =
         "disabled" in v && typeof v.disabled === "boolean" ? (v.disabled as boolean) : false;
 
@@ -81,9 +65,9 @@ function normalizeSelectedBySlotKey(raw: unknown): SelectedBySlotKey {
   return out;
 }
 
-function readStoredSelectedBySlotKey(race: RaceMode): SelectedBySlotKey {
+function readStoredSelectedBySlotKey(race: Race): SelectedBySlotKey {
   try {
-    const raw = localStorage.getItem(getEquipmentsStorageKey(race));
+    const raw = localStorage.getItem(storageKeyForRace(race));
     return raw ? normalizeSelectedBySlotKey(JSON.parse(raw)) : {};
   } catch {
     return {};
@@ -99,148 +83,171 @@ function ensureState(v: SelectedEquipmentState | undefined): SelectedEquipmentSt
   return v ?? { itemId: null, disabled: false };
 }
 
-function clampIndex(i: number, len: number): number {
-  if (len <= 0) return 0;
-  if (i < 0) return 0;
-  if (i >= len) return len - 1;
-  return i;
+function readStoredTier(race: Race): TierKey {
+  // Single key is fine; we validate against the race list.
+  try {
+    const raw = localStorage.getItem(STORAGE_SELECTED_TIER);
+    const list = tiersForRace(race) as readonly string[];
+    if (raw && list.includes(raw)) return raw as TierKey;
+    return tiersForRace(race)[0] as TierKey;
+  } catch {
+    return tiersForRace(race)[0] as TierKey;
+  }
 }
 
 function Page() {
-  const { loading, tiers, slots, itemsById, craftingById } = useItemData();
+  const { loading, tiers, slots, itemsById } = useItemData();
   const { t } = useTranslation();
+  const { theme, setThemeHint } = useTheme();
 
-  const [raceMode, setRaceMode] = useState<RaceMode>(() => readStoredRace());
+  // Race state (light/dark)
+  const [race, setRace] = useState<Race>("light");
 
-  useEffect(() => {
-    localStorage.setItem(STORAGE_SELECTED_RACE, raceMode);
-  }, [raceMode]);
+  // Keep tier tab *index* on race switch
+  const [activeTierIndex, setActiveTierIndex] = useState<number>(0);
 
-  const tierKeysForRace = useMemo(
-    () => (raceMode === "light" ? LIGHT_TIER_KEYS : DARK_TIER_KEYS),
-    [raceMode],
-  );
+  const tierKeys = useMemo(() => tiersForRace(race), [race]);
 
-  const [tierIndex, setTierIndex] = useState<number>(() => readStoredTierIndex());
+  const [activeTier, setActiveTier] = useState<TierKey>(() => readStoredTier("light"));
 
-  useEffect(() => {
-    localStorage.setItem(STORAGE_SELECTED_TIER_INDEX, String(tierIndex));
-  }, [tierIndex]);
-
-  const activeTier = useMemo<TierKey>(() => {
-    const idx = clampIndex(tierIndex, tierKeysForRace.length);
-    return tierKeysForRace[idx] as TierKey;
-  }, [tierIndex, tierKeysForRace]);
-
+  // Selection state (per-race storage)
   const [selectedBySlotKey, setSelectedBySlotKey] = useState<SelectedBySlotKey>(() =>
-    readStoredSelectedBySlotKey(readStoredRace()),
+    readStoredSelectedBySlotKey("light"),
   );
 
-  // Persist selections into race-specific keys
+  // Persist selection to the CURRENT race key
   useEffect(() => {
-    localStorage.setItem(getEquipmentsStorageKey(raceMode), JSON.stringify(selectedBySlotKey));
-  }, [selectedBySlotKey, raceMode]);
+    localStorage.setItem(storageKeyForRace(race), JSON.stringify(selectedBySlotKey));
+  }, [race, selectedBySlotKey]);
 
-  // Skip autofill ONLY ONCE on initial load if there is already stored selection for the initial race.
-  const skipAutofillOnceRef = useRef<boolean>(hasAnySelection(readStoredSelectedBySlotKey(readStoredRace())));
-
-  // When race changes, clamp tierIndex (keep index), and load selection from race-specific storage (higher priority)
+  // Hint theme in auto mode when race changes (safe even if theme != auto)
   useEffect(() => {
-    // keep tierIndex, but ensure it is valid for the new list
-    setTierIndex((prev) => clampIndex(prev, tierKeysForRace.length));
+    if (theme === "auto") {
+      setThemeHint(race === "light" ? "light" : "dark");
+    } else {
+      // Optional: still keep hint in sync for when user later switches back to auto
+      setThemeHint(race === "light" ? "light" : "dark");
+    }
+  }, [race, theme, setThemeHint]);
 
-    // load saved selection for the new race (higher priority than autofill)
-    const loaded = readStoredSelectedBySlotKey(raceMode);
-    setSelectedBySlotKey(loaded);
+  // When race changes:
+  // 1) load selection from that race storage (higher priority)
+  // 2) keep tier index, then set activeTier to the tier at that index
+  // 3) update activeTier state accordingly
+  useEffect(() => {
+    const stored = readStoredSelectedBySlotKey(race);
+    setSelectedBySlotKey(stored);
 
-    // if there is stored selection, do not autofill; otherwise allow autofill
-    skipAutofillOnceRef.current = hasAnySelection(loaded);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [raceMode, tierKeysForRace.length]);
+    const nextTierKey = tierKeys[Math.min(activeTierIndex, tierKeys.length - 1)] as TierKey;
+    setActiveTier(nextTierKey);
+  }, [race, tierKeys, activeTierIndex]);
 
-  // If tiers.yaml loads and activeTier is not present, fallback to first existing tier within current race list (and update tierIndex).
+  // Persist selected tier key (single key)
+  useEffect(() => {
+    localStorage.setItem(STORAGE_SELECTED_TIER, activeTier);
+  }, [activeTier]);
+
+  // If tiers.yaml loads and current activeTier is not present, fallback to first existing for this race list.
   useEffect(() => {
     if (!tiers || tiers.length === 0) return;
 
-    const tierExists = tiers.some((tt) => tt.name === activeTier);
-    if (tierExists) return;
+    const list = tierKeys as readonly string[];
+    const tierKeyOk = list.includes(activeTier);
 
-    const firstExisting = (tierKeysForRace as readonly TierKey[]).find((k) =>
-      tiers.some((tt) => tt.name === k),
-    );
+    // If not ok, fallback by index
+    if (!tierKeyOk) {
+      const nextTierKey = tierKeys[Math.min(activeTierIndex, tierKeys.length - 1)] as TierKey;
+      setActiveTier(nextTierKey);
+      return;
+    }
 
-    if (!firstExisting) return;
+    // If ok but not present in data, fallback to first existing within this race list
+    const existsInData = tiers.some((tt) => tt.name === activeTier);
+    if (existsInData) return;
 
-    const idx = (tierKeysForRace as readonly TierKey[]).indexOf(firstExisting);
-    setTierIndex(idx >= 0 ? idx : 0);
-  }, [tiers, activeTier, tierKeysForRace]);
+    const firstExisting = tierKeys.find((k) => tiers.some((tt) => tt.name === k));
+    if (firstExisting) {
+      const idx = tierKeys.findIndex((k) => k === firstExisting);
+      setActiveTierIndex(Math.max(0, idx));
+      setActiveTier(firstExisting);
+    }
+  }, [tiers, tierKeys, activeTier, activeTierIndex]);
 
-  // Autofill / retarget when tier changes (and when race changes) — but only if not blocked by stored selection.
+  // Autofill on tier change ONLY if this race has no stored selection (higher priority)
+  const skipAutofillRef = useRef<boolean>(hasAnySelection(readStoredSelectedBySlotKey("light")));
+  useEffect(() => {
+    // Update skip ref whenever race changes (per-race)
+    skipAutofillRef.current = hasAnySelection(readStoredSelectedBySlotKey(race));
+  }, [race]);
+
   useEffect(() => {
     if (loading) return;
     if (!slots.length) return;
 
-    const tier = tiers.find((t) => t.name === activeTier);
+    const tier = tiers.find((tt) => tt.name === activeTier);
     if (!tier || tier.items.length === 0) return;
 
-    if (skipAutofillOnceRef.current) return;
-
-    const isAllowedByRace = (craftedItemId: number): boolean => {
-      const recipe = craftingById.get(craftedItemId);
-      if (!recipe?.race) return false; // enforce: must have race
-      return recipe.race === raceMode;
-    };
+    // If this race already has stored selection, do NOT override automatically.
+    if (skipAutofillRef.current) return;
 
     setSelectedBySlotKey((prev) => {
-      const next: typeof prev = { ...prev };
+      const next: SelectedBySlotKey = { ...prev };
 
       for (const slot of slots) {
         const prevState = prev[slot.key];
         const allowedTypes = slot.allowed_types ?? [];
 
         if (allowedTypes.length === 0) {
-          next[slot.key] = { itemId: null, disabled: prevState?.disabled ?? false };
+          next[slot.key] = {
+            itemId: null,
+            disabled: prevState?.disabled ?? false,
+          };
           continue;
         }
 
         // Determine target subtype:
-        // - if current slot already has an item, keep its subtype
-        // - else use the slot's first allowed type
-        let targetSubtype: string;
+        // - If slot already has an item -> use that item's subtype (if exists), else first allowed type
+        // - If slot has no item -> use first allowed type
+        let targetSubtype = allowedTypes[0];
+
         if (prevState?.itemId) {
           const prevItem = itemsById.get(prevState.itemId);
-          targetSubtype = prevItem?.subtype ?? allowedTypes[0];
-        } else {
-          targetSubtype = allowedTypes[0];
+          if (prevItem?.subtype) targetSubtype = prevItem.subtype;
         }
 
-        // Pick first tier item matching subtype AND crafting race
+        // Pick first tier item matching targetSubtype
         let picked: number | null = null;
         for (const id of tier.items) {
           const it = itemsById.get(id);
-          if (!it) continue;
-          if (it.subtype !== targetSubtype) continue;
-          if (!isAllowedByRace(id)) continue;
-          picked = id;
-          break;
+          if (it?.subtype === targetSubtype) {
+            picked = id;
+            break;
+          }
         }
 
         next[slot.key] = {
           itemId: picked,
-          disabled: prevState?.disabled ?? false, // preserve disabled
+          disabled: prevState?.disabled ?? false,
         };
       }
 
       return next;
     });
-  }, [activeTier, raceMode, tiers, slots, itemsById, craftingById, loading]);
+  }, [activeTier, tiers, slots, itemsById, loading]);
 
-  function onTierTabChange(nextTierKey: TierKey) {
-    // user action => allow autofill after switching tier
-    skipAutofillOnceRef.current = false;
+  // UI handlers
+  function onRaceChange(nextRace: Race) {
+    if (nextRace === race) return;
+    setRace(nextRace);
+  }
 
-    const idx = (tierKeysForRace as readonly TierKey[]).indexOf(nextTierKey);
-    setTierIndex(idx >= 0 ? idx : 0);
+  function onTierChange(nextTier: TierKey) {
+    // user action: allow autofill next time for this race
+    skipAutofillRef.current = false;
+
+    // keep the active index synced
+    const idx = tierKeys.findIndex((k) => k === nextTier);
+    if (idx >= 0) setActiveTierIndex(idx);
 
     // clear only itemIds; keep disabled flags
     setSelectedBySlotKey((prev) => {
@@ -250,25 +257,20 @@ function Page() {
       }
       return next;
     });
-  }
 
-  function onRaceTabChange(nextRace: RaceMode) {
-    if (nextRace === raceMode) return;
-
-    // Switching race: keep tier index; load storage for the other race as higher priority.
-    setRaceMode(nextRace);
+    setActiveTier(nextTier);
   }
 
   return (
     <div className="h-full w-full bg-crafting-page">
       <div className="mx-auto w-full max-w-[1466px] pt-3">
-        {/* Tabs row: left container aligns to left card; right container aligns to right card */}
+        {/* Split header row: left (race tabs) aligned with left card, right (tier tabs) aligned with right card */}
         <div className="mb-4 flex gap-4 pr-1">
-          {/* Left tabs: race mode */}
+          {/* Left container (align with left card width) */}
           <div className="w-[220px] shrink-0">
             <Tabs
-              selectedKey={raceMode}
-              onSelectionChange={(k) => onRaceTabChange(k as RaceMode)}
+              selectedKey={race}
+              onSelectionChange={(k) => onRaceChange(k as Race)}
               variant="underlined"
               color="primary"
               className="w-full border-b-1 border-gray-300 bg-transparent"
@@ -283,11 +285,11 @@ function Page() {
             </Tabs>
           </div>
 
-          {/* Right tabs: tier (depends on race mode) */}
+          {/* Right container (fills remaining width) */}
           <div className="min-w-0 flex-1">
             <Tabs
               selectedKey={activeTier}
-              onSelectionChange={(k) => onTierTabChange(k as TierKey)}
+              onSelectionChange={(k) => onTierChange(k as TierKey)}
               variant="underlined"
               color="primary"
               className="w-full border-b-1 border-gray-300 bg-transparent"
@@ -297,14 +299,15 @@ function Page() {
                 tabContent: "flex items-center justify-center text-default-700",
               }}
             >
-              {(tierKeysForRace as readonly TierKey[]).map((k) => (
-                <Tab key={k} title={t(`items/tiers:${k}.name`, k)} />
+              {tierKeys.map((k) => (
+                <Tab key={k} title={t(`items/tiers:${k}.name`)} />
               ))}
             </Tabs>
           </div>
         </div>
 
         <div className="flex gap-4">
+          {/* Left panel */}
           <Card
             className="h-[726px] w-[220px] shrink-0 rounded-lg border-x-1 border-primary bg-crafting-equipment-view"
             shadow="none"
@@ -316,12 +319,14 @@ function Page() {
                 <EquipmentsView
                   selectedBySlotKey={selectedBySlotKey}
                   setSelectedBySlotKey={setSelectedBySlotKey}
-                  race={raceMode}
+                  // NOTE: you will use this in the next step to filter craftables by recipe.race
+                  race={race}
                 />
               )}
             </CardBody>
           </Card>
 
+          {/* Right panel */}
           <Card className="h-[726px] w-full min-w-0 bg-transparent" shadow="none">
             <CardBody className="h-full min-h-0 px-1 py-0">
               <MaterialsView selectedBySlotKey={selectedBySlotKey} />

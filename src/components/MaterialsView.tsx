@@ -230,9 +230,9 @@ export function MaterialsView({selectedBySlotKey}: MaterialsViewProps) {
                     </div>
 
                     {/* Column sum */}
-                    <div className="relative m-2 h-[38px] rounded-lg border border-primary bg-crafting-sum">
+                    <div className="relative m-2 h-[38px] rounded-lg border border-primary dark:border-crafting-border bg-crafting-sum">
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="flex items-center gap-2 text-[16px] font-bold text-primary">
+                        <div className="flex items-center gap-2 text-[16px] font-bold text-primary dark:text-default-800">
                           <FontAwesomeIcon icon={faDatabase} className="text-sm"/>
                           {t("common:crafting.sumType", "Sum: ")}
                           {sumByType[type].toLocaleString()}
@@ -250,7 +250,7 @@ export function MaterialsView({selectedBySlotKey}: MaterialsViewProps) {
                       <div className="absolute top-[calc(50%+24px)] bottom-0 w-px bg-crafting-border"/>
 
                       {/* Icon */}
-                      <div className="z-10 flex h-6 w-6 items-center justify-center rounded-full bg-primary">
+                      <div className="z-10 flex h-6 w-6 items-center justify-center rounded-full bg-primary dark:bg-secondary">
                         <FontAwesomeIcon icon={faPlus} className="text-[14px] text-white"/>
                       </div>
                     </div>
@@ -265,16 +265,16 @@ export function MaterialsView({selectedBySlotKey}: MaterialsViewProps) {
       {/* Divider */}
       <div className="flex w-full items-center">
         <div className="flex-1 h-px bg-crafting-border"/>
-        <div className="mx-1 flex h-6 w-6 items-center justify-center rounded-full bg-primary">
+        <div className="mx-1 flex h-6 w-6 items-center justify-center rounded-full bg-primary dark:bg-secondary">
           <FontAwesomeIcon icon={faEquals} className="text-[16px] text-white"/>
         </div>
         <div className="flex-1 h-px bg-crafting-border"/>
       </div>
 
       {/* Total */}
-      <div className="relative mt-2 h-[38px] rounded-lg border border-primary bg-crafting-sum">
+      <div className="relative mt-2 h-[38px] rounded-lg border border-primary dark:border-crafting-border bg-crafting-sum">
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="flex items-center gap-2 text-[16px] font-bold text-primary">
+          <div className="flex items-center gap-2 text-[16px] font-bold text-primary dark:text-default-800">
             <FontAwesomeIcon icon={faDatabase} className="text-sm"/>
             {t("common:crafting.sumTotal", "Total: ")}
             {totalPrice.toLocaleString()}

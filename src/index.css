@@ -31,6 +31,11 @@
     --color-topnavbar: #393047;
     --background-image-sidebar: linear-gradient(180deg, #2C293A 0%, #2C293A 100%);
     --color-sidebar-collapse: #4C4A52;
+    --color-crafting-item: rgba(255, 255, 255, 0.1);
+    --color-crafting-sum: rgba(255, 255, 255, 0.2);
+    --background-image-crafting-page: linear-gradient( 180deg, #2C2249 0%, #7561B2 100%, #413661 100%);
+    --background-image-crafting-equipment-view: linear-gradient(180deg, rgba(205, 231, 255, 0) 0%, rgba(21, 110, 194, 0.3) 66%, rgba(201, 229, 255, 0) 100%);
+    --color-crafting-border: rgba(255, 255, 255, 0.30);
 }
 
 .abyss {
