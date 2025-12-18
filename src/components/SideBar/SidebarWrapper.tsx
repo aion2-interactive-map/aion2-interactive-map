@@ -63,7 +63,7 @@ const SidebarWrapper: React.FC<SidebarWrapperProps> = ({
       />
 
       {/* CONTENT */}
-      <div className="flex-1 overflow-y-auto">{children}</div>
+      <div className="flex-1 overflow-y-scroll sidebar-scroll">{children}</div>
 
       {/* COLLAPSE BUTTON */}
       <button

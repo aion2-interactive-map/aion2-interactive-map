@@ -236,7 +236,7 @@ const GameMapView: React.FC<Props> = ({
   const {selectedMap} = useGameMap();
   const {visibleSubtypes} = useGameData();
   const {markers} = useMarkers();
-  const {pickMode, createMarker, userMarkers, showUserMarkers} = useUserMarkers();
+  const {pickMode, createMarker, userMarkers, hideUserMarkers} = useUserMarkers();
 
 
   const regionNs = `regions/${selectedMap?.name}`;
@@ -339,7 +339,7 @@ const GameMapView: React.FC<Props> = ({
             <GameMarker key={m.id} marker={m} onSelectMarker={onSelectMarker}/>
           ))}
 
-        {showUserMarkers ? userMarkers.filter(marker => marker.type !== "feedback").map((m) => (
+        {hideUserMarkers ? userMarkers.filter(marker => marker.type !== "feedback").map((m) => (
           <UserMarker key={m.id} marker={m}/>
         )) : null}
 

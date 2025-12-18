@@ -59,7 +59,7 @@ const LeftSidebar: React.FC<LeftSidebarProps> = ({onSelectMarker, onSelectPositi
       <div className="flex flex-col h-full relative">
         <div
           className={
-            "flex-1 overflow-y-auto px-0 " +
+            "flex-1 px-0 " +
             (bannerVisible ? "pb-[240px]" : "pb-4")
           }
         >
@@ -84,7 +84,9 @@ const LeftSidebar: React.FC<LeftSidebarProps> = ({onSelectMarker, onSelectPositi
                 title={makeAccordionTitle(
                   t("common:menu.markerTypes", "Marker Types"),
                 )}
-                hideIndicator
+                classNames={{
+                  indicator: "text-default-700",
+                }}
               >
                 <MarkerTypes/>
               </AccordionItem>

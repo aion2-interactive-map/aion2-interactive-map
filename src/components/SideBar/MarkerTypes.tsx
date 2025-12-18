@@ -1,8 +1,10 @@
 // src/components/MarkerTypes.tsx
 
 import React, {useState} from "react";
-import {Accordion, AccordionItem, Button} from "@heroui/react";
+import {Accordion, AccordionItem, Button, Tooltip} from "@heroui/react";
 import {useTranslation} from "react-i18next";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import {useGameData} from "@/context/GameDataContext.tsx";
 import {useMarkers} from "@/context/MarkersContext.tsx";
 import {useGameMap} from "@/context/GameMapContext.tsx";
@@ -21,17 +23,28 @@ const MarkerTypes: React.FC = () => {
     handleToggleBorders
   } = useGameData();
   const {clearMarkerCompleted, showLabels, setShowLabels, subtypeCounts, completedCounts} = useMarkers();
-  const {showUserMarkers, setShowUserMarkers} = useUserMarkers();
+  const {hideUserMarkers, setHideUserMarkers} = useUserMarkers();
   const {t} = useTranslation("common");
   const [isModalOpen, setModalOpen] = useState(false);
 
   // 🔵 Shared props for all buttons
-  const commonButtonProps = {
-    radius: "sm" as const,
-    fullWidth: true,
-    className: "text-[14px] leading-[14px] font-normal h-[30px] gap-2 px-2",
-    variant: "flat" as const,
-  };
+  const getCommonButtonProps = (isActive: boolean = false) => {
+    const color: "primary" | "default" = isActive ? "primary" : "default";
+    const variant: "solid" | "flat" = isActive ? "solid": "flat"
+    const props = {
+      radius: "sm" as const,
+      fullWidth: true,
+      className: "text-[14px] leading-[14px] font-normal h-[30px] gap-2 px-2",
+      variant: variant,
+      color: color,
+    }
+    if (!isActive) {
+      props.className += " bg-sidebar-button text-default-700"
+    } else {
+      props.className += " text-background"
+    }
+    return props;
+  }
 
   return (
     <>
@@ -39,49 +52,40 @@ const MarkerTypes: React.FC = () => {
         {/* --- Two-per-row button grid --- */}
         <div className="grid grid-cols-2 gap-2">
           <Button
-            {...commonButtonProps}
+            {...getCommonButtonProps()}
             onPress={handleShowAllSubtypes}
           >
             {t("menu.showAllMarkers", "Show All")}
           </Button>
           <Button
-            {...commonButtonProps}
+            {...getCommonButtonProps()}
             onPress={handleHideAllSubtypes}
           >
             {t("menu.hideAllMarkers", "Hide All")}
           </Button>
           <Button
-            {...commonButtonProps}
-            color={showLabels ? "primary" : "default"}
-            variant={showLabels ? "solid" : "flat"}
+            {...getCommonButtonProps(showLabels)}
             onPress={() => setShowLabels(!showLabels)}
-            className={commonButtonProps.className + ` ${showLabels ? "text-background" : "text-default-700"}`}
           >
             {t("menu.showNamesOnPins", "Show Names")}
           </Button>
           <Button
-            {...commonButtonProps}
+            {...getCommonButtonProps()}
             onPress={() => setModalOpen(true)}
           >
             {t("menu.clearMarkerCompleted", "Clear Completed")}
           </Button>
           <Button
-            {...commonButtonProps}
-            color={showBorders ? "primary" : "default"}
-            variant={showBorders ? "solid" : "flat"}
+            {...getCommonButtonProps(showBorders)}
             onPress={handleToggleBorders}
-            className={commonButtonProps.className + ` ${showBorders ? "text-background" : "text-default-700"}`}
           >
             {t("menu.showBorders", "Show Borders")}
           </Button>
           <Button
-            {...commonButtonProps}
-            color={showUserMarkers ? "primary" : "default"}
-            variant={showUserMarkers ? "solid" : "flat"}
-            onPress={() => setShowUserMarkers(!showUserMarkers)}
-            className={commonButtonProps.className + ` ${showUserMarkers ? "text-background" : "text-default-700"}`}
+            {...getCommonButtonProps(hideUserMarkers)}
+            onPress={() => setHideUserMarkers(!hideUserMarkers)}
           >
-            {t("menu.showUserMarkers", "Show User Markers")}
+            {t("menu.hideUserMarkers", "Hide User Markers")}
           </Button>
         </div>
 
@@ -110,13 +114,10 @@ const MarkerTypes: React.FC = () => {
               const iconSize = (subtype.iconScale || 1.0) * 20;
               return (
                 <Button
-                  {...commonButtonProps}
-                  className={commonButtonProps.className + " justify-start"}
+                  {...getCommonButtonProps(active)}
                   onPress={() => {
                     handleToggleSubtype(subtype.name)
                   }}
-                  color={active ? "primary" : "default"}
-                  variant={active ? "solid" : "flat"}
                 >
                   <div className={`
                       flex w-full items-center justify-between
@@ -153,11 +154,65 @@ const MarkerTypes: React.FC = () => {
               <AccordionItem
                 key={category.name}
                 title={
-                  <div className="my-2 text-[14px] leading-[14px] font-medium px-1">
-                    {t(`types:categories.${category.name}.name`, category.name)}
-                  </div>
+                  (() => {
+                    // only include subtypes that actually render (total > 0)
+                    const subtypeKeys = category.subtypes
+                      .map((s) => s.name)
+                      .filter((k) => (subtypeCounts[k] ?? 0) > 0);
+
+                    const allVisible =
+                      subtypeKeys.length > 0 && subtypeKeys.every((k) => visibleSubtypes?.has(k));
+
+                    const anyVisible =
+                      subtypeKeys.length > 0 && subtypeKeys.some((k) => visibleSubtypes?.has(k));
+
+                    const icon = allVisible ? faEyeSlash : faEye;
+                    const tooltipText = allVisible
+                      ? t("menu.hideCategory", "Hide all in this category")
+                      : t("menu.showCategory", "Show all in this category");
+
+                    const toggleCategory = (e: React.MouseEvent) => {
+                      e.preventDefault();
+                      e.stopPropagation(); // do not toggle accordion open/close
+
+                      const wantShow = !allVisible;
+
+                      // set each subtype to desired state by toggling only when needed
+                      for (const k of subtypeKeys) {
+                        const isVisible = visibleSubtypes?.has(k) ?? false;
+                        if (wantShow && !isVisible) handleToggleSubtype(k);
+                        if (!wantShow && isVisible) handleToggleSubtype(k);
+                      }
+                    };
+
+                    return (
+                      <div className="my-2 px-1 flex items-center justify-between gap-2">
+                        <div className="text-[14px] leading-[14px] font-medium">
+                          {t(`types:categories.${category.name}.name`, category.name)}
+                        </div>
+
+                        {/* Only show the icon if this category actually has renderable subtypes */}
+                        {subtypeKeys.length > 0 && (
+                          <Tooltip content={tooltipText} placement="top" delay={300}>
+                            <button
+                              type="button"
+                              onClick={toggleCategory}
+                              className={`shrink-0 p-1 rounded-sm hover:bg-default-100 ${
+                                anyVisible ? "text-default-700" : "text-default-400"
+                              }`}
+                              aria-label={tooltipText}
+                            >
+                              <FontAwesomeIcon icon={icon} className="text-[13px]" />
+                            </button>
+                          </Tooltip>
+                        )}
+                      </div>
+                    );
+                  })()
                 }
-                hideIndicator
+                classNames={{
+                  indicator: "text-default-700",
+                }}
               >
                 <div className="grid grid-cols-2 gap-2">
                   {subtypes}
