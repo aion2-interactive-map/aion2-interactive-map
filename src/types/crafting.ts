@@ -1,6 +1,6 @@
 export type SelectedEquipmentState = {
   itemId: number | null;
-  disabled: boolean;
+  count: number;
 };
 
 export type SelectedBySlotKey = Record<string, SelectedEquipmentState | undefined>;

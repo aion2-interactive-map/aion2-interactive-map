@@ -5,7 +5,7 @@ import { Card, CardBody, Tab, Tabs } from "@heroui/react";
 import { EquipmentsView } from "@/components/EquipmentsView.tsx";
 import { MaterialsView } from "@/components/MaterialsView.tsx";
 import { useTranslation } from "react-i18next";
-import type { SelectedBySlotKey, SelectedEquipmentState } from "@/types/crafting";
+import type { SelectedBySlotKey } from "@/types/crafting";
 import { useTheme } from "@/context/ThemeContext";
 
 const STORAGE_SELECTED_TIER = "aion2.crafting.selectedTier.v1";
@@ -30,36 +30,56 @@ function storageKeyForRace(race: Race): string {
   return race === "light" ? STORAGE_SELECTED_EQUIPMENTS_LIGHT : STORAGE_SELECTED_EQUIPMENTS_DARK;
 }
 
+function clampCount(n: unknown): number {
+  const v = typeof n === "number" ? n : Number(n);
+  if (!Number.isFinite(v)) return 0;
+  return Math.max(0, Math.floor(v));
+}
+
+
 function normalizeSelectedBySlotKey(raw: unknown): SelectedBySlotKey {
   // Supports:
-  // - new shape: { [slotKey]: { itemId, disabled } }
-  // - old shape: { [slotKey]: number|null }
+  // - new shape: { [slotKey]: { itemId, count } }
+  // - old shape #1: { [slotKey]: number|null }
+  // - old shape #2: { [slotKey]: { itemId, disabled } }  (disabled => count 0/1)
   if (!raw || typeof raw !== "object") return {};
 
   const obj = raw as Record<string, any>;
   const out: SelectedBySlotKey = {};
 
   for (const [slotKey, v] of Object.entries(obj)) {
-    // old shape
+    // old shape: number|null
     if (typeof v === "number" || v === null) {
-      out[slotKey] = { itemId: v, disabled: false };
+      out[slotKey] = { itemId: v, count: v == null ? 0 : 1 };
       continue;
     }
 
-    // new shape
     if (v && typeof v === "object") {
       const itemId =
         "itemId" in v && (typeof v.itemId === "number" || v.itemId === null)
           ? (v.itemId as number | null)
           : null;
-      const disabled =
-        "disabled" in v && typeof v.disabled === "boolean" ? (v.disabled as boolean) : false;
 
-      out[slotKey] = { itemId, disabled };
+      // new shape: count
+      if ("count" in v) {
+        const count = clampCount(v.count);
+        out[slotKey] = { itemId, count: itemId == null ? 0 : count };
+        continue;
+      }
+
+      // old shape: disabled
+      if ("disabled" in v) {
+        const disabled = typeof v.disabled === "boolean" ? (v.disabled as boolean) : false;
+        out[slotKey] = { itemId, count: itemId == null ? 0 : (disabled ? 0 : 1) };
+        continue;
+      }
+
+      // unknown object -> safe default
+      out[slotKey] = { itemId: null, count: 0 };
       continue;
     }
 
-    out[slotKey] = { itemId: null, disabled: false };
+    out[slotKey] = { itemId: null, count: 0 };
   }
 
   return out;
@@ -79,12 +99,8 @@ function hasAnySelection(obj: SelectedBySlotKey | null | undefined): boolean {
   return Object.values(obj).some((v) => v?.itemId != null);
 }
 
-function ensureState(v: SelectedEquipmentState | undefined): SelectedEquipmentState {
-  return v ?? { itemId: null, disabled: false };
-}
-
 function readStoredTier(race: Race): TierKey {
-  // Single key is fine; we validate against the race list.
+  // Single key is fine; we validate against the current race tier list.
   try {
     const raw = localStorage.getItem(STORAGE_SELECTED_TIER);
     const list = tiersForRace(race) as readonly string[];
@@ -103,9 +119,8 @@ function Page() {
   // Race state (light/dark)
   const [race, setRace] = useState<Race>("light");
 
-  // Keep tier tab *index* on race switch
+  // Keep tier tab index on race switch
   const [activeTierIndex, setActiveTierIndex] = useState<number>(0);
-
   const tierKeys = useMemo(() => tiersForRace(race), [race]);
 
   const [activeTier, setActiveTier] = useState<TierKey>(() => readStoredTier("light"));
@@ -120,20 +135,15 @@ function Page() {
     localStorage.setItem(storageKeyForRace(race), JSON.stringify(selectedBySlotKey));
   }, [race, selectedBySlotKey]);
 
-  // Hint theme in auto mode when race changes (safe even if theme != auto)
+  // Hint theme in auto mode when race changes
   useEffect(() => {
-    if (theme === "auto") {
-      setThemeHint(race === "light" ? "light" : "dark");
-    } else {
-      // Optional: still keep hint in sync for when user later switches back to auto
-      setThemeHint(race === "light" ? "light" : "dark");
-    }
+    // Always keep hint synced; it only takes effect when theme === "auto"
+    setThemeHint(race === "light" ? "light" : "dark");
   }, [race, theme, setThemeHint]);
 
   // When race changes:
   // 1) load selection from that race storage (higher priority)
   // 2) keep tier index, then set activeTier to the tier at that index
-  // 3) update activeTier state accordingly
   useEffect(() => {
     const stored = readStoredSelectedBySlotKey(race);
     setSelectedBySlotKey(stored);
@@ -147,21 +157,19 @@ function Page() {
     localStorage.setItem(STORAGE_SELECTED_TIER, activeTier);
   }, [activeTier]);
 
-  // If tiers.yaml loads and current activeTier is not present, fallback to first existing for this race list.
+  // If tiers.yaml loads and current activeTier is not present, fallback safely for this race
   useEffect(() => {
     if (!tiers || tiers.length === 0) return;
 
     const list = tierKeys as readonly string[];
     const tierKeyOk = list.includes(activeTier);
 
-    // If not ok, fallback by index
     if (!tierKeyOk) {
       const nextTierKey = tierKeys[Math.min(activeTierIndex, tierKeys.length - 1)] as TierKey;
       setActiveTier(nextTierKey);
       return;
     }
 
-    // If ok but not present in data, fallback to first existing within this race list
     const existsInData = tiers.some((tt) => tt.name === activeTier);
     if (existsInData) return;
 
@@ -173,10 +181,9 @@ function Page() {
     }
   }, [tiers, tierKeys, activeTier, activeTierIndex]);
 
-  // Autofill on tier change ONLY if this race has no stored selection (higher priority)
+  // Autofill on tier change ONLY if this race has no stored selection
   const skipAutofillRef = useRef<boolean>(hasAnySelection(readStoredSelectedBySlotKey("light")));
   useEffect(() => {
-    // Update skip ref whenever race changes (per-race)
     skipAutofillRef.current = hasAnySelection(readStoredSelectedBySlotKey(race));
   }, [race]);
 
@@ -187,7 +194,6 @@ function Page() {
     const tier = tiers.find((tt) => tt.name === activeTier);
     if (!tier || tier.items.length === 0) return;
 
-    // If this race already has stored selection, do NOT override automatically.
     if (skipAutofillRef.current) return;
 
     setSelectedBySlotKey((prev) => {
@@ -198,16 +204,12 @@ function Page() {
         const allowedTypes = slot.allowed_types ?? [];
 
         if (allowedTypes.length === 0) {
-          next[slot.key] = {
-            itemId: null,
-            disabled: prevState?.disabled ?? false,
-          };
+          // preserve count (still meaningful if later item appears), but no item
+          next[slot.key] = { itemId: null, count: prevState?.count ?? 0 };
           continue;
         }
 
         // Determine target subtype:
-        // - If slot already has an item -> use that item's subtype (if exists), else first allowed type
-        // - If slot has no item -> use first allowed type
         let targetSubtype = allowedTypes[0];
 
         if (prevState?.itemId) {
@@ -225,9 +227,11 @@ function Page() {
           }
         }
 
+        // If we picked an item and count is 0, default to 1.
+        const prevCount = prevState?.count ?? 0;
         next[slot.key] = {
           itemId: picked,
-          disabled: prevState?.disabled ?? false,
+          count: picked == null ? 0 : Math.max(1, prevCount),
         };
       }
 
@@ -249,14 +253,8 @@ function Page() {
     const idx = tierKeys.findIndex((k) => k === nextTier);
     if (idx >= 0) setActiveTierIndex(idx);
 
-    // clear only itemIds; keep disabled flags
-    setSelectedBySlotKey((prev) => {
-      const next: SelectedBySlotKey = { ...prev };
-      for (const key of Object.keys(next)) {
-        next[key] = { ...ensureState(next[key]), itemId: null };
-      }
-      return next;
-    });
+    // Clear ALL slot selections (itemId + count)
+    setSelectedBySlotKey({});
 
     setActiveTier(nextTier);
   }
@@ -271,13 +269,14 @@ function Page() {
             <Tabs
               selectedKey={race}
               onSelectionChange={(k) => onRaceChange(k as Race)}
-              variant="underlined"
-              color="primary"
-              className="w-full border-b-1 border-gray-300 bg-transparent"
+              variant="bordered"
+              className="w-full bg-transparent"
               classNames={{
-                tabList: "flex w-full",
-                tab: "h-[34px] flex-1 justify-center",
-                tabContent: "flex items-center justify-center text-default-700",
+                tabList: "flex w-full rounded-[15px] border-1 border-crafting-border ",
+                tab: "h-[34px] flex-1 justify-center " +
+                  "data-[selected=true]:bg-primary " +
+                  "dark:data-[selected=true]:bg-default-800",
+                tabContent: "flex items-center justify-center text-default-800 group-data-[selected=true]:text-background ",
               }}
             >
               <Tab key="light" title={t("common:crafting.light", "Light")} />
@@ -291,8 +290,8 @@ function Page() {
               selectedKey={activeTier}
               onSelectionChange={(k) => onTierChange(k as TierKey)}
               variant="underlined"
-              color="primary"
-              className="w-full border-b-1 border-gray-300 bg-transparent"
+              color={race == "light" ? "primary" : "default"}
+              className="w-full border-gray-300 bg-transparent"
               classNames={{
                 tabList: "flex w-full",
                 tab: "h-[34px] flex-1 justify-center",
@@ -319,7 +318,6 @@ function Page() {
                 <EquipmentsView
                   selectedBySlotKey={selectedBySlotKey}
                   setSelectedBySlotKey={setSelectedBySlotKey}
-                  // NOTE: you will use this in the next step to filter craftables by recipe.race
                   race={race}
                 />
               )}

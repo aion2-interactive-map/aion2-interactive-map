@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, {useEffect, useMemo, useState} from "react";
 import {
   Button,
   Modal,
@@ -9,22 +9,27 @@ import {
   Tab,
   Tabs,
 } from "@heroui/react";
-import { getStaticUrl } from "@/utils/url.ts";
-import { useTranslation } from "react-i18next";
-import { useItemData } from "@/context/ItemDataContext.tsx";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBan, faTableCellsLarge } from "@fortawesome/free-solid-svg-icons";
-import type { EquipmentSlot } from "@/types/game";
-import type { SelectedBySlotKey, SelectedEquipmentState } from "@/types/crafting";
+import {getStaticUrl} from "@/utils/url.ts";
+import {useTranslation} from "react-i18next";
+import {useItemData} from "@/context/ItemDataContext.tsx";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {
+  faMinus,
+  faPlus,
+  faTableCellsLarge,
+  faTrash,
+} from "@fortawesome/free-solid-svg-icons";
+import type {EquipmentSlot} from "@/types/game";
+import type {SelectedBySlotKey, SelectedEquipmentState} from "@/types/crafting";
 
 export type EquipmentsViewProps = {
   selectedBySlotKey: SelectedBySlotKey;
   setSelectedBySlotKey: React.Dispatch<React.SetStateAction<SelectedBySlotKey>>;
 
   /**
-   * If provided, modal list is filtered by crafting recipe race:
+   * Optional: filters modal craftables by crafting recipe race
    * - recipe.race === race => allowed
-   * - recipe.race is null/undefined => allowed in both
+   * - recipe.race null/undefined => allowed
    */
   race?: "light" | "dark";
 };
@@ -39,15 +44,27 @@ function firstNonEmpty(...values: Array<string | null | undefined>): string {
 }
 
 function ensureState(v: SelectedEquipmentState | undefined): SelectedEquipmentState {
-  return v ?? { itemId: null, disabled: false };
+  const itemId = (v as any)?.itemId;
+  const count = (v as any)?.count;
+  return {
+    itemId: typeof itemId === "number" || itemId === null ? itemId : null,
+    count: typeof count === "number" && Number.isFinite(count) ? count : 0,
+  } as SelectedEquipmentState;
+}
+
+function clampCount(n: number): number {
+  if (!Number.isFinite(n)) return 0;
+  if (n < 0) return 0;
+  if (n > 99) return 99;
+  return Math.floor(n);
 }
 
 function isAllowedByRace(
   recipeRace: "light" | "dark" | null | undefined,
   selectedRace: "light" | "dark" | undefined,
 ): boolean {
-  if (!selectedRace) return true; // no filtering
-  if (recipeRace == null) return true; // treat missing as shared
+  if (!selectedRace) return true;
+  if (recipeRace == null) return true;
   return recipeRace === selectedRace;
 }
 
@@ -61,8 +78,8 @@ export function EquipmentsView({
   const [activeType, setActiveType] = useState<string>("");
   const [mode, setMode] = useState<EquipmentsMode>("thumbnail");
 
-  const { craftingItemIdsByType, craftingById, slots, items, gradesByName } = useItemData();
-  const { t } = useTranslation();
+  const {craftingItemIdsByType, craftingById, slots, items, gradesByName} = useItemData();
+  const {t} = useTranslation();
 
   const activeSlot = useMemo(() => {
     if (!activeSlotKey) return null;
@@ -73,7 +90,6 @@ export function EquipmentsView({
     return activeSlot?.allowed_types ?? [];
   }, [activeSlot]);
 
-  // Keep activeType valid when slot changes / modal opens
   useEffect(() => {
     if (!open) return;
     const first = allowedTypes[0] ?? "";
@@ -85,8 +101,6 @@ export function EquipmentsView({
   const craftingIdsForActiveType = useMemo(() => {
     if (!activeType) return [];
     const ids = craftingItemIdsByType.get(activeType) ?? [];
-
-    // ✅ race filter happens here (based on crafting.yaml)
     return ids.filter((id) => {
       const recipe = craftingById.get(id);
       return isAllowedByRace(recipe?.race ?? null, race);
@@ -96,8 +110,6 @@ export function EquipmentsView({
   const filteredItems = useMemo(() => {
     if (!activeSlot || !activeType) return [];
     const craftableSet = new Set<number>(craftingIdsForActiveType);
-
-    // items are already "crafted items"; we further ensure craftable ids are allowed
     return items.filter((it) => it.subtype === activeType && craftableSet.has(it.id));
   }, [activeSlot, activeType, items, craftingIdsForActiveType]);
 
@@ -109,7 +121,8 @@ export function EquipmentsView({
   function selectItem(slotKey: string, itemId: number) {
     setSelectedBySlotKey((prev) => {
       const cur = ensureState(prev[slotKey]);
-      return { ...prev, [slotKey]: { ...cur, itemId } };
+      const nextCount = cur.count > 0 ? cur.count : 1;
+      return {...prev, [slotKey]: {...cur, itemId, count: nextCount}};
     });
     setOpen(false);
   }
@@ -117,28 +130,28 @@ export function EquipmentsView({
   function clearSlot(slotKey: string) {
     setSelectedBySlotKey((prev) => {
       const cur = ensureState(prev[slotKey]);
-      return { ...prev, [slotKey]: { ...cur, itemId: null } };
+      return {...prev, [slotKey]: {...cur, itemId: null, count: 0}};
     });
     setOpen(false);
-  }
-
-  function toggleDisabled(slotKey: string) {
-    setSelectedBySlotKey((prev) => {
-      const cur = ensureState(prev[slotKey]);
-      return { ...prev, [slotKey]: { ...cur, disabled: !cur.disabled } };
-    });
   }
 
   function clearAllSlots() {
     setSelectedBySlotKey((prev) => {
       const next: Record<string, SelectedEquipmentState> = {};
-
       for (const slot of slots) {
         const cur = ensureState(prev[slot.key]);
-        next[slot.key] = { ...cur, itemId: null };
+        next[slot.key] = {...cur, itemId: null, count: 0};
       }
+      return next as SelectedBySlotKey;
+    });
+  }
 
-      return next;
+  function bumpCount(slotKey: string, delta: number) {
+    setSelectedBySlotKey((prev) => {
+      const cur = ensureState(prev[slotKey]);
+      if (!cur.itemId) return prev; // no item => no count
+      const nextCount = clampCount(cur.count + delta);
+      return {...prev, [slotKey]: {...cur, count: nextCount}};
     });
   }
 
@@ -162,38 +175,73 @@ export function EquipmentsView({
       </div>
 
       {/* Main content */}
-      <div className="flex-1">
-        <div className="flex w-full justify-center">
+      <div className="flex-1 overflow-y-auto no-scrollbar">
+        <div className="flex w-full justify-center ">
           <div className={gridClassName}>
             {displaySlots.map((slot) => {
               const slotState = ensureState(selectedBySlotKey[slot.key]);
               const selectedId = slotState.itemId;
-              const isDisabled = slotState.disabled;
+              const count = slotState.count;
 
-              const selectedItem = selectedId
-                ? items.find((it) => it.id === selectedId)
-                : undefined;
+              const selectedItem = selectedId ? items.find((it) => it.id === selectedId) : undefined;
 
               const imgSrc = getStaticUrl(firstNonEmpty(selectedItem?.icon, slot.icon));
-              const localizedSlotName = t(
-                `items/types:subtypes.${slot.name}.name`,
-                slot.name,
-              );
+
+              const slotName = t(`items/types:subtypes.${slot.name}.name`, slot.name);
+              const itemName = selectedItem
+                ? t(`items/items:${selectedItem.id}.name`, String(selectedItem.id))
+                : slotName;
 
               const grade = gradesByName.get(selectedItem?.grade || "");
               const gradeName = grade?.name || "";
 
-              const displayName = selectedItem
-                ? t(`items/items:${selectedItem.id}.name`, String(selectedItem.id))
-                : localizedSlotName;
-
               const onSlotClick = () => {
-                if (isDisabled) {
-                  toggleDisabled(slot.key);
-                  return;
-                }
                 if (slot.craftable) openSlot(slot.key);
               };
+
+              const CountBar = (
+                <div className="pointer-events-none flex items-center justify-center">
+                  <div className="pointer-events-auto flex items-center gap-2 rounded-sm bg-black/40 px-1">
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        bumpCount(slot.key, -1);
+                      }}
+                      disabled={!selectedId || count <= 0}
+                      className={[
+                        "flex h-[16px] w-[16px] items-center justify-center rounded-sm",
+                        !selectedId || count <= 0 ? "opacity-40" : "hover:bg-black/30",
+                      ].join(" ")}
+                      title={t("common:crafting.minus", "Minus")}
+                    >
+                      <FontAwesomeIcon icon={faMinus} className="text-[10px] text-white"/>
+                    </button>
+
+                    <div className="min-w-[18px] text-center text-[12px] font-bold leading-[12px] text-white">
+                      {selectedId ? String(Math.max(0, count)) : "0"}
+                    </div>
+
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        bumpCount(slot.key, +1);
+                      }}
+                      disabled={!selectedId}
+                      className={[
+                        "flex h-[16px] w-[16px] items-center justify-center rounded-sm",
+                        !selectedId ? "opacity-40" : "hover:bg-black/30",
+                      ].join(" ")}
+                      title={t("common:crafting.plus", "Plus")}
+                    >
+                      <FontAwesomeIcon icon={faPlus} className="text-[10px] text-white"/>
+                    </button>
+                  </div>
+                </div>
+              );
 
               if (mode === "thumbnail") {
                 const gradeBackground = getStaticUrl(
@@ -205,64 +253,40 @@ export function EquipmentsView({
                     key={slot.key}
                     type="button"
                     onClick={onSlotClick}
-                    className={[
-                      "relative h-12 w-[89px] rounded-sm bg-contain bg-center bg-no-repeat",
-                      isDisabled ? "cursor-pointer" : "",
-                    ].join(" ")}
+                    className="relative h-12 w-[89px] rounded-sm bg-contain bg-center bg-no-repeat"
                     style={{
                       backgroundImage: `url(${gradeBackground})`,
                       backgroundSize: "100% 100%",
                     }}
-                    title={displayName}
+                    title={slotName}
                   >
                     <div
                       className={`flex h-full w-full items-center justify-center rounded-sm ${
                         selectedId ? "" : "bg-[#0D0E15]"
                       }`}
                     >
-                      <img
-                        src={imgSrc}
-                        alt={slot.name}
-                        className="h-full w-full object-contain"
-                      />
+                      <img src={imgSrc} alt={slot.name} className="h-full w-full object-contain"/>
                     </div>
 
-                    {isDisabled && (
+                    {/* Top: slot name */}
+                    <div className="pointer-events-none absolute inset-x-1 top-[2px] z-20">
                       <div
-                        className="absolute inset-0 z-10 flex items-center justify-center rounded-sm"
-                        style={{
-                          background: "rgba(0,0,0,0.6)",
-                          boxShadow: "inset 0px 0px 6px 5px rgba(255,255,255,0.7)",
-                        }}
-                      >
-                        <FontAwesomeIcon icon={faBan} className="text-[22px] text-white" />
-                      </div>
-                    )}
-
-                    <div className="pointer-events-none absolute inset-x-0 bottom-1 z-20">
-                      <div className="mx-auto w-fit rounded text-[14px] font-bold leading-tight text-white">
-                        {localizedSlotName}
+                        className="truncate text-center text-[12px] font-bold leading-[12px] text-white [text-shadow:0px_2px_4px_rgba(0,0,0,0.35)]">
+                        {slotName}
                       </div>
                     </div>
 
-                    {!isDisabled && (
-                      <button
-                        type="button"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          e.stopPropagation();
-                          toggleDisabled(slot.key);
-                        }}
-                        className="absolute bottom-1 right-1 z-30 flex h-5 w-5 items-center justify-center rounded-sm bg-black/40 hover:bg-black/60"
-                        title={t("common:crafting.disableSlot", "Disable slot")}
-                      >
-                        <FontAwesomeIcon icon={faBan} className="text-[12px] text-white" />
-                      </button>
+                    {/* Bottom: count + -/+ */}
+                    {selectedItem && (
+                      <div className="pointer-events-none absolute inset-x-0 bottom-[2px] z-20 flex justify-center">
+                        {CountBar}
+                      </div>
                     )}
                   </button>
                 );
               }
 
+              // weapon_armor / accessory (list mode)
               const gradeBackground = getStaticUrl(
                 `UI/Resource/Texture/ETC/UT_ItemTooltipGrade_${gradeName}.webp`,
               );
@@ -272,54 +296,38 @@ export function EquipmentsView({
                   key={slot.key}
                   type="button"
                   onClick={onSlotClick}
-                  className="relative h-12 w-[188px] rounded-sm bg-contain bg-center bg-no-repeat"
+                  className="relative h-[56px] w-[188px] rounded-sm bg-contain bg-center bg-no-repeat"
                   style={{
                     backgroundImage: `url(${gradeBackground})`,
                     backgroundSize: "100% 100%",
                   }}
-                  title={displayName}
+                  title={itemName}
                 >
                   <div
                     className={`flex h-full w-full items-center rounded-sm px-2 ${
                       selectedId ? "" : "bg-[#0D0E15]"
                     }`}
                   >
+                    {/* Left: icon */}
                     <img
                       src={imgSrc}
                       alt={slot.name}
                       className="h-12 w-12 shrink-0 object-contain"
                     />
-                    <div className="ml-2 min-w-0 flex-1 truncate text-left text-sm font-bold text-white">
-                      {displayName}
+
+                    {/* Right: item name (top) + count (bottom) */}
+                    <div className="ml-2 flex h-[48px] min-w-0 flex-1 flex-col justify-center">
+                      <div
+                        className="truncate text-left text-[13px] font-bold leading-[13px] text-white [text-shadow:0px_2px_4px_rgba(0,0,0,0.35)]">
+                        {itemName}
+                      </div>
+                      {selectedItem && (
+                        <div className="mt-1 flex items-center">
+                          {CountBar}
+                        </div>
+                      )}
                     </div>
                   </div>
-
-                  {isDisabled && (
-                    <div
-                      className="absolute inset-0 z-10 flex items-center justify-center rounded-sm"
-                      style={{
-                        background: "rgba(0,0,0,0.6)",
-                        boxShadow: "inset 0px 0px 6px 5px rgba(255,255,255,0.7)",
-                      }}
-                    >
-                      <FontAwesomeIcon icon={faBan} className="text-[22px] text-white" />
-                    </div>
-                  )}
-
-                  {!isDisabled && (
-                    <button
-                      type="button"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        toggleDisabled(slot.key);
-                      }}
-                      className="absolute bottom-1 right-1 z-30 flex h-5 w-5 items-center justify-center rounded-sm bg-black/40 hover:bg-black/60"
-                      title={t("common:crafting.disableSlot", "Disable slot")}
-                    >
-                      <FontAwesomeIcon icon={faBan} className="text-[12px] text-white" />
-                    </button>
-                  )}
                 </button>
               );
             })}
@@ -336,7 +344,7 @@ export function EquipmentsView({
           className="h-[34px] w-full rounded-sm border-1 border-crafting-border bg-crafting-sum"
         >
           <span className="flex w-full items-center justify-center gap-2 text-[14px] text-default-800">
-            <FontAwesomeIcon icon={faBan} />
+            <FontAwesomeIcon icon={faTrash}/>
             {t("common:crafting.clearAll", "Clear all slots")}
           </span>
         </Button>
@@ -348,18 +356,19 @@ export function EquipmentsView({
           selectedKey={mode}
           onSelectionChange={(k) => setMode(k as EquipmentsMode)}
           variant="light"
-          color="primary"
           className="w-full rounded-sm border-1 border-crafting-border bg-crafting-sum"
           classNames={{
             tabList: "w-full flex gap-0",
-            tab: "h-[30px] flex-1 justify-center",
+            tab: "h-[30px] flex-1 justify-center " +
+              "data-[selected=true]:bg-primary " +
+              "dark:data-[selected=true]:bg-default-800",
             tabContent:
               "flex items-center justify-center text-default-800 group-data-[selected=true]:text-background",
           }}
         >
-          <Tab key="thumbnail" title={<FontAwesomeIcon icon={faTableCellsLarge} />} />
-          <Tab key="weapon_armor" title={t("common:crafting.weaponOrArmor", "Weapon / Armor")} />
-          <Tab key="accessory" title={t("common:crafting.accessory", "Accessory")} />
+          <Tab key="thumbnail" title={<FontAwesomeIcon icon={faTableCellsLarge}/>}/>
+          <Tab key="weapon_armor" title={t("common:crafting.weaponOrArmor", "Weapon / Armor")}/>
+          <Tab key="accessory" title={t("common:crafting.accessory", "Accessory")}/>
         </Tabs>
       </div>
 
@@ -383,7 +392,7 @@ export function EquipmentsView({
                     }}
                   >
                     {allowedTypes.map((ty) => (
-                      <Tab key={ty} title={t(`items/types:subtypes.${ty}.name`, ty)} />
+                      <Tab key={ty} title={t(`items/types:subtypes.${ty}.name`, ty)}/>
                     ))}
                   </Tabs>
                 ) : null}
@@ -421,7 +430,8 @@ export function EquipmentsView({
                                 className="h-16 w-16 object-contain"
                               />
 
-                              <div className="flex h-16 w-[160px] items-center px-2 text-left text-[14px] font-bold text-white [text-shadow:0px_2px_4px_rgba(0,0,0,0.3)]">
+                              <div
+                                className="flex h-16 w-[160px] items-center px-2 text-left text-[14px] font-bold text-white [text-shadow:0px_2px_4px_rgba(0,0,0,0.3)]">
                                 {localizedName}
                               </div>
                             </button>
