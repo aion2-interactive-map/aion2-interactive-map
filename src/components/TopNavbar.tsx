@@ -1,10 +1,10 @@
 // src/components/TopNavbar.tsx
-import React from "react";
+import React, {useState} from "react";
 import {
   Button, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger,
   Navbar,
   NavbarBrand,
-  NavbarContent, NavbarItem,
+  NavbarContent, NavbarItem, Tooltip,
 } from "@heroui/react";
 // import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 // import {faCloud, faDatabase} from "@fortawesome/free-solid-svg-icons";
@@ -19,12 +19,18 @@ import {getStaticUrl} from "../utils/url.ts";
 import ThemeDropdown from "@/components/ThemeDropdown.tsx";
 import AuthModal from "@/components/AuthModal.tsx";
 import {Link, useLocation} from "@tanstack/react-router";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faEnvelope, faHandHoldingDollar, faUser} from "@fortawesome/free-solid-svg-icons";
+import IntroModal from "@/components/IntroModal.tsx";
+import DonateModel from "@/components/DonateModel.tsx";
 
 
 const TopNavbar: React.FC = () => {
   const {t} = useTranslation(); // we use fully-qualified keys like common:siteTitle
   const {theme} = useTheme();
   const {user, logout, userModalOpen: authOpen, setUserModalOpen: setAuthOpen} = useUser();
+  const [isIntroOpen, setIsIntroOpen] = useState(false);
+  const [isDonateOpen, setIsDonateOpen] = useState(false);
 
   const isDark = theme === "dark";
   // const {dataMode, toggleDataMode} = useDataMode();
@@ -84,14 +90,6 @@ const TopNavbar: React.FC = () => {
         justify="end"
         className="flex items-center gap-1"
       >
-        <a href="https://m.flashkrypton.com/?ch=10004&gameConfigId=286&autoShow=0#/community" target="_blank"
-           datatype="advertisement">
-          <img
-            src={getStaticUrl("images/shanke.webp")}
-            alt="Banner"
-            className="h-10 w-auto object-contain select-none pointer-events-none"
-          />
-        </a>
         <img
           src={getStaticUrl("images/Adv.webp")}
           alt="Banner"
@@ -113,15 +111,49 @@ const TopNavbar: React.FC = () => {
         </Button>*/}
 
         {/* Login / User dropdown */}
+
+        <Tooltip
+          content={t("common:menu.contact", "Contact us")}
+          placement="bottom"
+          delay={300}
+        >
+          <Button
+            isIconOnly variant="light"
+            onPress={() => setIsIntroOpen(true)}
+          >
+            <FontAwesomeIcon icon={faEnvelope} className="text-lg"/>
+          </Button>
+        </Tooltip>
+        <IntroModal isOpen={isIntroOpen} onClose={() => setIsIntroOpen(false)} />
+
+        <Tooltip
+          content={t("common:menu.donate", "Donate us")}
+          placement="bottom"
+          delay={300}
+        >
+          <Button
+            isIconOnly variant="light"
+            onPress={() => setIsDonateOpen(true)}
+          >
+            <FontAwesomeIcon icon={faHandHoldingDollar} className="text-lg"/>
+          </Button>
+        </Tooltip>
+        <DonateModel isOpen={isDonateOpen} onClose={() => setIsDonateOpen(false)} />
+
         {!user ? (
           <>
-            <button
-              type="button"
-              onClick={() => setAuthOpen(true)}
-              className="text-sm hover:underline underline-offset-2 ml-1.5"
+            <Tooltip
+              content={t("common:auth.login", "Login") + " / " + t("common:auth.register", "Register")}
+              placement="bottom"
+              delay={300}
             >
-              {t("common:auth.login", "Login")} / {t("common:auth.register", "Register")}
-            </button>
+              <Button
+                isIconOnly variant="light"
+                onPress={() => setAuthOpen(true)}
+              >
+                <FontAwesomeIcon icon={faUser} className="text-lg"/>
+              </Button>
+            </Tooltip>
             <AuthModal isOpen={authOpen} onClose={() => setAuthOpen(false)}/>
           </>
         ) : (
