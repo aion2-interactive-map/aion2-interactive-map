@@ -18,6 +18,7 @@ import {v4 as uuidv4} from "uuid";
 
 type Props = {
   marker: MarkerWithTranslations;
+  onSelectMarker: (markerId: string | null) => void;
 };
 
 function safeHTML(input: string) {
@@ -26,6 +27,7 @@ function safeHTML(input: string) {
 
 const MarkerPopupContent: React.FC<Props> = ({
                                                marker,
+                                               onSelectMarker,
                                              }) => {
   const {selectedMap, types} = useGameMap();
   const {allSubtypes} = useGameData();
@@ -263,7 +265,7 @@ const MarkerPopupContent: React.FC<Props> = ({
               variant="flat"
               color={isCompleted ? "success" : "primary"}
               onPress={() => {
-                // if (!isCompleted) popupRef?.current?.close();
+                onSelectMarker(null);
                 toggleMarkerCompleted(marker);
               }}
             >

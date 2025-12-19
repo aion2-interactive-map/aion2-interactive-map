@@ -216,6 +216,7 @@ function SelectedMarkerPopup({onSelectMarker, selectedMarkerId}: {
     >
       <MarkerPopupContent
         marker={marker}
+        onSelectMarker={onSelectMarker}
       />
     </Popup>
   );
