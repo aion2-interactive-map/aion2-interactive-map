@@ -110,13 +110,12 @@ const HomePage: React.FC = () => {
           position="middle-center"
           href="https://www.pxb7.com/buy/175178554941486/1?channelId=184939419369543&activityCode=yhzt2sl"
         />
+        <DismissibleEmblaBanner
+          slides={slides}
+          position="bottom-right"
+          closeButtonPosition="top-right"
+        />
       </>}
-
-      <DismissibleEmblaBanner
-        slides={slides}
-        position="bottom-right"
-        closeButtonPosition="top-right"
-      />
 
       <div className="flex flex-1 overflow-hidden">
         <LeftSidebar onSelectMarker={handleSelectMarker} onSelectPosition={handleSelectPosition}/>
