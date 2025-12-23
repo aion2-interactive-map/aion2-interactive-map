@@ -340,7 +340,7 @@ const GameMapView: React.FC<Props> = ({
             <GameMarker key={m.id} marker={m} onSelectMarker={onSelectMarker}/>
           ))}
 
-        {hideUserMarkers ? userMarkers.filter(marker => marker.type !== "feedback").map((m) => (
+        {!hideUserMarkers ? userMarkers.filter(marker => marker.type !== "feedback").map((m) => (
           <UserMarker key={m.id} marker={m}/>
         )) : null}
 

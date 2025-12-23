@@ -2,7 +2,6 @@ import {createFileRoute} from "@tanstack/react-router";
 import React, {useCallback, useRef, useState} from "react";
 import GameMapView from "@/components/GameMapView";
 import LeftSidebar from "@/components/SideBar/LeftSidebar";
-import RightSidebar from "@/components/SideBar/RightSidebar";
 import {Spinner} from "@heroui/react";
 import type {MapRef} from "@/types/game";
 import DismissableAlert from "@/components/DismissableAlert.tsx";
@@ -16,6 +15,7 @@ import {MarkersProvider, useMarkers} from "@/context/MarkersContext.tsx";
 import {GameDataProvider} from "@/context/GameDataContext.tsx";
 import {UserMarkersProvider} from "@/context/UserMarkersContext.tsx";
 import {ThemeMapBridge} from "@/context/ThemeMapBridge.tsx";
+import DismissibleEmblaBanner from "@/components/DismissibleEmblaBanner.tsx";
 
 
 const HomePage: React.FC = () => {
@@ -72,6 +72,15 @@ const HomePage: React.FC = () => {
     );
   }
 
+  const slides = [{
+    image: getStaticUrl("images/PangXieRight.webp"),
+    url: "https://qm.qq.com/q/YGRfrMFvqw",
+  }, {
+    image: getStaticUrl("images/Yousheng.webp"),
+    url: "https://186.yousheng186.com/?promotionCode=HDDT",
+  }];
+
+
   return (
     <>
       {/*<IntroModal
@@ -103,6 +112,12 @@ const HomePage: React.FC = () => {
         />
       </>}
 
+      <DismissibleEmblaBanner
+        slides={slides}
+        position="bottom-right"
+        closeButtonPosition="top-right"
+      />
+
       <div className="flex flex-1 overflow-hidden">
         <LeftSidebar onSelectMarker={handleSelectMarker} onSelectPosition={handleSelectPosition}/>
 
@@ -112,8 +127,6 @@ const HomePage: React.FC = () => {
           selectedMarkerId={selectedMarkerId}
           selectedPosition={selectedPosition}
         />
-
-        <RightSidebar/>
 
       </div>
     </>

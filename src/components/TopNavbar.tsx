@@ -1,5 +1,5 @@
 // src/components/TopNavbar.tsx
-import React, {useState} from "react";
+import React from "react";
 import {
   Button, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger,
   Navbar,
@@ -20,17 +20,14 @@ import ThemeDropdown from "@/components/ThemeDropdown.tsx";
 import AuthModal from "@/components/AuthModal.tsx";
 import {Link, useLocation} from "@tanstack/react-router";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faEnvelope, faHandHoldingDollar, faUser} from "@fortawesome/free-solid-svg-icons";
-import IntroModal from "@/components/IntroModal.tsx";
-import DonateModel from "@/components/DonateModel.tsx";
+import {faUser} from "@fortawesome/free-solid-svg-icons";
+import ContactUs from "@/components/ContactUs.tsx";
 
 
 const TopNavbar: React.FC = () => {
   const {t} = useTranslation(); // we use fully-qualified keys like common:siteTitle
   const {theme} = useTheme();
   const {user, logout, userModalOpen: authOpen, setUserModalOpen: setAuthOpen} = useUser();
-  const [isIntroOpen, setIsIntroOpen] = useState(false);
-  const [isDonateOpen, setIsDonateOpen] = useState(false);
 
   const isDark = theme === "dark";
   // const {dataMode, toggleDataMode} = useDataMode();
@@ -102,43 +99,7 @@ const TopNavbar: React.FC = () => {
 
         <ThemeDropdown/>
 
-        {/* Data mode toggle */}
-        {/*<Button isIconOnly variant="light" onPress={toggleDataMode}>
-          <FontAwesomeIcon
-            icon={isStatic ? faDatabase : faCloud}
-            className="text-lg"
-          />
-        </Button>*/}
-
-        {/* Login / User dropdown */}
-
-        <Tooltip
-          content={t("common:menu.contact", "Contact us")}
-          placement="bottom"
-          delay={300}
-        >
-          <Button
-            isIconOnly variant="light"
-            onPress={() => setIsIntroOpen(true)}
-          >
-            <FontAwesomeIcon icon={faEnvelope} className="text-lg"/>
-          </Button>
-        </Tooltip>
-        <IntroModal isOpen={isIntroOpen} onClose={() => setIsIntroOpen(false)} />
-
-        <Tooltip
-          content={t("common:menu.donate", "Donate us")}
-          placement="bottom"
-          delay={300}
-        >
-          <Button
-            isIconOnly variant="light"
-            onPress={() => setIsDonateOpen(true)}
-          >
-            <FontAwesomeIcon icon={faHandHoldingDollar} className="text-lg"/>
-          </Button>
-        </Tooltip>
-        <DonateModel isOpen={isDonateOpen} onClose={() => setIsDonateOpen(false)} />
+        <ContactUs />
 
         {!user ? (
           <>

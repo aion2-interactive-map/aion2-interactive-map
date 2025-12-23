@@ -15,9 +15,13 @@ import {useUserMarkers} from "@/context/UserMarkersContext";
 import {useTranslation} from "react-i18next";
 import {useGameMap} from "@/context/GameMapContext.tsx";
 import {useUser} from "@/context/UserContext.tsx";
-import type {UserMarkerInstance} from "@/types/game.ts";
+import type {UserMarkerInstance, UserMarkerLocalType} from "@/types/game.ts";
 import {SingleImageUploader} from "@/components/SingleImageUploader.tsx";
-import {getCdnUrl} from "@/utils/url.ts";
+import {getCdnUrl, getStaticUrl} from "@/utils/url.ts";
+import {
+  USER_MARKER_LOCAL_ICON_ORDER,
+  USER_MARKER_LOCAL_ICON_MAP,
+} from "@/utils/userMarkerLocalIcons.ts";
 
 
 const MarkerPopupEdit: React.FC = () => {
@@ -38,6 +42,7 @@ const MarkerPopupEdit: React.FC = () => {
   const [description, setDescription] = useState("");
 
   // two-level select state
+  const [selectedLocalType, setSelectedLocalType] = useState<UserMarkerLocalType | "">("");
   const [selectedCategory, setSelectedCategory] = useState<string>("");
   const [selectedSubtype, setSelectedSubtype] = useState<string>("");
   const [imageFile, setImageFile] = useState<File | null>(null);
@@ -54,6 +59,7 @@ const MarkerPopupEdit: React.FC = () => {
 
     setName(editingMarker.name ?? "");
     setDescription(editingMarker.description ?? "");
+    setSelectedLocalType(editingMarker.localType ?? "");
     // setTab(editingMarker.type ?? "local");
 
     // find category that contains marker's subtype
@@ -68,6 +74,7 @@ const MarkerPopupEdit: React.FC = () => {
     setSelectedCategory(foundCategory);
     setSelectedSubtype(currentSubtype);
     setUploadError(null);
+    setImageFile(null);
   }, [editingMarker, types]);
 
   if (!editingMarker) return null;
@@ -199,6 +206,7 @@ const MarkerPopupEdit: React.FC = () => {
       subtype: finalSubtype,
       name: name,
       description: description,
+      localType: selectedLocalType || undefined,
     });
     setEditingMarker(null);
   }
@@ -263,6 +271,36 @@ const MarkerPopupEdit: React.FC = () => {
                   {uploadError}
                 </div>
               )}
+              {editingMarker.type === "local" && (
+                <div className="flex items-center gap-2 flex-wrap">
+                  {USER_MARKER_LOCAL_ICON_ORDER.map((k) => {
+                    const selected = selectedLocalType === k;
+                    const iconPath = USER_MARKER_LOCAL_ICON_MAP[k];
+                    return (
+                      <button
+                        key={k}
+                        type="button"
+                        onClick={() => setSelectedLocalType(k)}
+                        className={[
+                          "w-[30px] h-[30px] rounded-full border flex items-center justify-center shrink-0",
+                          selected
+                            ? "bg-[radial-gradient(50%_50%_at_50%_50%,_#2E97FF_75%,_#B2D9FF_76%)] border-white"
+                            : "bg-[radial-gradient(50%_50%_at_50%_50%,_#5D5D5D_75%,_#ADADAD_76%)] border-white",
+                        ].join(" ")}
+                      >
+                        <img
+                          src={getStaticUrl(iconPath)}
+                          alt=""
+                          className="w-[22px] h-[22px] object-contain pointer-events-none select-none"
+                          draggable={false}
+                        />
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
+
+
               {/* Type / Subtype + Coordinates */}
               <div className="flex items-center gap-2 flex-wrap text-sm">
                 {/* Category */}

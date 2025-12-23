@@ -22,6 +22,7 @@
     "altcha": "^2.2.4",
     "dompurify": "^3.3.0",
     "embla-carousel": "^8.6.0",
+    "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
     "framer-motion": "^12.23.24",
     "i18next": "^25.6.2",
