@@ -1,5 +1,5 @@
 // src/components/Sidebar/LeftSidebar.tsx
-import React, {useState} from "react";
+import React from "react";
 import {useGameMap} from "@/context/GameMapContext.tsx";
 import SidebarWrapper from "./SidebarWrapper";
 import Logo from "./Logo.tsx";
@@ -9,7 +9,6 @@ import MarkerTypes from "@/components/SideBar/MarkerTypes.tsx";
 import {Accordion, AccordionItem, Tooltip} from "@heroui/react";
 import {useTranslation} from "react-i18next";
 import {makeAccordionTitle} from "@/components/SideBar/makeAccordionTitle.tsx";
-import BottomSidebarBanner from "@/components/SideBar/BottomSidebarBanner.tsx";
 import {getStaticUrl} from "@/utils/url.ts";
 import {useUserMarkers} from "@/context/UserMarkersContext.tsx";
 import MarkerSearch from "@/components/SideBar/MarkerSearch.tsx";
@@ -25,7 +24,6 @@ const LeftSidebar: React.FC<LeftSidebarProps> = ({onSelectMarker, onSelectPositi
   const {t} = useTranslation();
   const {realTheme} = useTheme();
   const {selectedMap} = useGameMap();
-  const [bannerVisible, setBannerVisible] = useState(true);
   const {setPickMode} = useUserMarkers();
 
   return (
@@ -59,8 +57,7 @@ const LeftSidebar: React.FC<LeftSidebarProps> = ({onSelectMarker, onSelectPositi
       <div className="flex flex-col h-full relative">
         <div
           className={
-            "flex-1 px-0 " +
-            (bannerVisible ? "pb-[240px]" : "pb-4")
+            "flex-1 px-0 pb-4"
           }
         >
           <Logo/>
@@ -95,15 +92,6 @@ const LeftSidebar: React.FC<LeftSidebarProps> = ({onSelectMarker, onSelectPositi
         </div>
       </div>
 
-      {import.meta.env.VITE_REGION === "CHINA" && (
-        <BottomSidebarBanner
-          href="https://www.pxb7.com/buy/175178554941486/1?channelId=184939419369543&activityCode=yhzt2sl"
-          imageUrl={getStaticUrl("images/PangXieLeft.webp")}
-          height={220}
-          closeButtonPosition="top-left"
-          onClose={() => setBannerVisible(false)}
-        />
-      )}
     </SidebarWrapper>
   );
 };

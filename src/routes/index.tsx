@@ -9,7 +9,6 @@ import {useTranslation} from "react-i18next";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import {GameMapProvider, useGameMap} from "@/context/GameMapContext.tsx";
-import DismissibleBanner from "@/components/DismissibleBanner.tsx";
 import {getStaticUrl} from "@/utils/url.ts";
 import {MarkersProvider, useMarkers} from "@/context/MarkersContext.tsx";
 import {GameDataProvider} from "@/context/GameDataContext.tsx";
@@ -75,9 +74,6 @@ const HomePage: React.FC = () => {
   const slides = [{
     image: getStaticUrl("images/PangXieRight.webp"),
     url: "https://qm.qq.com/q/YGRfrMFvqw",
-  }, {
-    image: getStaticUrl("images/Yousheng.webp"),
-    url: "https://186.yousheng186.com/?promotionCode=HDDT",
   }];
 
 
@@ -103,13 +99,6 @@ const HomePage: React.FC = () => {
       )}
 
       {import.meta.env.VITE_REGION === "CHINA" && <>
-        <DismissibleBanner
-          imageUrl={getStaticUrl("images/PangXieMiddle.webp")}
-          width={400}
-          height={420}
-          position="middle-center"
-          href="https://www.pxb7.com/buy/175178554941486/1?channelId=184939419369543&activityCode=yhzt2sl"
-        />
         <DismissibleEmblaBanner
           slides={slides}
           position="bottom-right"

@@ -409,11 +409,6 @@ const GameMapView: React.FC<Props> = ({
           width={800}
           height={120}
           position="bottom-center"
-          nextBannerImageUrl={getStaticUrl("images/QiyouRight.webp")}
-          nextBannerPosition="bottom-right"
-          nextBannerDelay={0}
-          nextBannerHeight={80}
-          nextBannerWidth={180}
           href="https://www.qiyou.cn"
         />
       }
