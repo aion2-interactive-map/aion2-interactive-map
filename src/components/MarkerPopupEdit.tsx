@@ -9,7 +9,7 @@ import {
   Input,
   Button,
   Select,
-  SelectItem, Divider, Tooltip, Popover, PopoverTrigger, PopoverContent,
+  SelectItem, Divider, Tooltip
 } from "@heroui/react";
 import {useUserMarkers} from "@/context/UserMarkersContext";
 import {useTranslation} from "react-i18next";
@@ -50,7 +50,6 @@ const MarkerPopupEdit: React.FC = () => {
 
   const [isUploading, setIsUploading] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [isConfirmOpen, setIsConfirmOpen] = useState(false);
   const [uploadError, setUploadError] = useState<string | null>(null);
 
   // when marker or types change, sync local state
@@ -415,55 +414,16 @@ const MarkerPopupEdit: React.FC = () => {
               {/* Delete (with tooltip) */}
               <div className="flex-1">
                 {editingMarker?.type !== "feedback" && (
-                  <Popover
-                    isOpen={isConfirmOpen}
-                    onOpenChange={setIsConfirmOpen}
-                    placement="top"
-                    showArrow
+                  <Button
+                    color="danger"
+                    radius="sm"
+                    className="w-full text-background"
+                    isLoading={isDeleting}
+                    isDisabled={isDeleting}
+                    onPress={handleDelete}
                   >
-                    <PopoverTrigger>
-                      {/* wrapper required when button can be disabled */}
-                      <Button
-                        color="danger"
-                        radius="sm"
-                        className="w-full text-background"
-                        isLoading={isDeleting}
-                        isDisabled={isDeleting}
-                      >
-                        {t("common:ui.delete", "Delete")}
-                      </Button>
-                    </PopoverTrigger>
-
-                    <PopoverContent className="p-3 flex flex-col gap-3 w-48">
-                      <div className="text-sm text-default-700">
-                        {t(
-                          "common:ui.confirmDelete",
-                          "Are you sure you want to delete?"
-                        )}
-                      </div>
-
-                      <div className="flex gap-2 justify-end">
-                        <Button
-                          size="sm"
-                          variant="flat"
-                          onPress={() => {
-                            setIsConfirmOpen(false)
-                          }}
-                        >
-                          {t("common:ui.cancel", "Cancel")}
-                        </Button>
-
-                        <Button
-                          size="sm"
-                          color="danger"
-                          onPress={handleDelete}
-                          isLoading={isDeleting}
-                        >
-                          {t("common:ui.confirm", "Confirm")}
-                        </Button>
-                      </div>
-                    </PopoverContent>
-                  </Popover>
+                    {t("common:ui.delete", "Delete")}
+                  </Button>
                 )}
               </div>
 

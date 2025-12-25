@@ -22,6 +22,7 @@ import {Link, useLocation} from "@tanstack/react-router";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faUser} from "@fortawesome/free-solid-svg-icons";
 import ContactUs from "@/components/ContactUs.tsx";
+import Donate from "@/components/Donate.tsx";
 
 
 const TopNavbar: React.FC = () => {
@@ -100,6 +101,8 @@ const TopNavbar: React.FC = () => {
         <ThemeDropdown/>
 
         <ContactUs />
+
+        <Donate/>
 
         {!user ? (
           <>

@@ -145,6 +145,7 @@ export const UserMarkersProvider: React.FC<{ children: React.ReactNode }> = ({
         description: "",
         image: "",
         type: "local",
+        localType: "fox",
       };
 
       setUserMarkers((prev) => [...prev, marker]);

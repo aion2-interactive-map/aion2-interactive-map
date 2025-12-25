@@ -13,15 +13,6 @@ import { getUserMarkerLocalIcon } from "@/utils/userMarkerLocalIcons.ts";
 
 import { useTranslation } from "react-i18next";
 
-const LOCAL_ICON_WRAPPER_CLASS = [
-  "w-[30px] h-[30px]",
-  "rounded-full",
-  "border border-white",
-  "flex items-center justify-center",
-  "shrink-0",
-  "bg-[radial-gradient(50%_50%_at_50%_50%,_#2E97FF_75%,_rgba(22,23,23,0.7)_76%)]",
-].join(" ");
-
 const UserMarkerInner: React.FC<{ marker: UserMarkerInstance }> = ({ marker }) => {
   const { setEditingMarker } = useUserMarkers();
   const { selectedMap } = useGameMap();
@@ -48,9 +39,19 @@ const UserMarkerInner: React.FC<{ marker: UserMarkerInstance }> = ({ marker }) =
     ? getStaticUrl(localIconPath)
     : baseInnerIcon;
 
-  const iconScale = localIconPath ? 1.0 : subtype?.iconScale ?? 1.25;
+  const iconScale = localIconPath ? 1 : subtype?.iconScale ?? 1.25;
 
   // Local marker: custom wrapper with gradient
+  const iconSize = 40 * iconScale;
+  const LOCAL_ICON_WRAPPER_CLASS = [
+    `w-full h-full`,
+    "rounded-full",
+    "border border-white",
+    "flex items-center justify-center",
+    "shrink-0",
+    "bg-[radial-gradient(50%_50%_at_50%_50%,_#2E97FF_75%,_rgba(22,23,23,0.7)_76%)]",
+  ].join(" ");
+
   const icon =
     marker.type === "local"
       ? new L.DivIcon({
@@ -59,14 +60,15 @@ const UserMarkerInner: React.FC<{ marker: UserMarkerInstance }> = ({ marker }) =
             <div class="${LOCAL_ICON_WRAPPER_CLASS}">
               <img
                 src="${innerIcon}"
-                class="w-[22px] h-[22px] object-contain pointer-events-none select-none"
+                class="w-[${iconSize * 0.7}px] h-[${iconSize * 0.7}px] object-contain pointer-events-none select-none"
                 draggable="false"
+                alt="${marker.localType}"
               />
             </div>
           `,
-        iconSize: [30, 30],
-        iconAnchor: [15, 15],
-        popupAnchor: [0, -15],
+        iconSize: [iconSize, iconSize],
+        iconAnchor: [iconSize / 2, iconSize / 2],
+        popupAnchor: [0, - iconSize / 2],
       })
       : createPinIcon(innerIcon, iconScale, false);
 
@@ -81,7 +83,7 @@ const UserMarkerInner: React.FC<{ marker: UserMarkerInstance }> = ({ marker }) =
       <Tooltip
         permanent
         direction="top"
-        offset={[0, -15]}
+        offset={[0, -iconSize / 2]}
         className="game-marker-tooltip"
       >
         {t("common:markerActions.userMarker", "User Marker")}
