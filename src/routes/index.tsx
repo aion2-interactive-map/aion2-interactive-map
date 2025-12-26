@@ -74,6 +74,9 @@ const HomePage: React.FC = () => {
   const slides = [{
     image: getStaticUrl("images/PangXieRight.webp"),
     url: "https://qm.qq.com/q/YGRfrMFvqw",
+  }, {
+    image: getStaticUrl("images/YouSheng.webp"),
+    url: "https://186.yousheng186.com/?promotionCode=HDDT",
   }];
 
 
