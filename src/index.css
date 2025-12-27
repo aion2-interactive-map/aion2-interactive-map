@@ -23,9 +23,10 @@
     --color-search-item: rgba(82, 82, 82, 0.04);
     --color-crafting-item: rgba(243, 251, 255, 1);
     --color-crafting-sum: rgba(255, 255, 255, 0.2);
+    --color-map-alert: rgba(255, 255, 255, 0.7);
     --background-image-crafting-page: linear-gradient(180deg, #F0F6FF 0%, #E6F0FF 37%, #BED8FF 64%, #A6CAFD 81%, #8DBCFF 90%, #C1DAFF 100%);
     --background-image-crafting-equipment-view: linear-gradient(180deg, rgba(205, 231, 255, 0) 0%, rgba(21, 110, 194, 0.3) 66%, rgba(201, 229, 255, 0) 100%);
-    --background-image-crafting-tab: linear-gradient( 180deg, rgba(244,244,244,0) 0%, rgba(255,255,255,0.2) 100%);
+    --background-image-crafting-tab: linear-gradient(180deg, rgba(244, 244, 244, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
     --color-crafting-border: rgba(137, 137, 137, 0.30);
 }
 
@@ -36,9 +37,10 @@
     /*--color-sidebar-button: rgba(122, 192, 225, 0.20);*/
     --color-crafting-item: rgba(255, 255, 255, 0.1);
     --color-crafting-sum: rgba(255, 255, 255, 0.2);
+    --color-map-alert: rgba(0, 0, 0, 0.7);
     --background-image-crafting-page: linear-gradient(180deg, #2C2249 0%, #7561B2 100%, #413661 100%);
     --background-image-crafting-equipment-view: linear-gradient(180deg, rgba(205, 231, 255, 0) 0%, rgba(21, 110, 194, 0.3) 66%, rgba(201, 229, 255, 0) 100%);
-    --background-image-crafting-tab: linear-gradient( 180deg, rgba(244,244,244,0) 0%, rgba(255,255,255,0.2) 100%);
+    --background-image-crafting-tab: linear-gradient(180deg, rgba(244, 244, 244, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
     --color-crafting-border: rgba(255, 255, 255, 0.30);
 }
 

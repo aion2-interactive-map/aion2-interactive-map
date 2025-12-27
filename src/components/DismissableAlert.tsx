@@ -33,7 +33,7 @@ const DismissableAlert: React.FC<DismissableAlertProps> = ({
       variant="solid"
       hideIcon
       startContent={<FontAwesomeIcon icon={faTriangleExclamation} className="text-[20px]" />}
-      className="py-1 px-3 text-xs rounded-md shadow-lg bg-warning"
+      className="py-1 px-3 text-xs rounded-md shadow-lg bg-map-alert"
     >
       {/* Flex row: text on left, X button on right */}
       <div className="flex w-full items-center justify-between gap-3">

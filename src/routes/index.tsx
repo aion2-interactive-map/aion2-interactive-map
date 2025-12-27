@@ -89,13 +89,14 @@ const HomePage: React.FC = () => {
 
 
       {isAlertOpen && (
-        <div className="fixed top-[72px] left-1/2 -translate-x-1/2 z-[9999] h-[52px]">
+        <div className="fixed top-[72px] right-4 z-[9999] h-[52px] ">
           <DismissableAlert
-            color="warning"
             onClose={() => setIsAlertOpen(false)}
           >
-            <div className="text-xs prose prose-xs max-w-none">
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>{t("introModal.alert")}</ReactMarkdown>
+            <div className="text-xs prose prose-xs max-w-none dark:prose-invert ">
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                {t("introModal.alert")}
+              </ReactMarkdown>
             </div>
           </DismissableAlert>
         </div>
