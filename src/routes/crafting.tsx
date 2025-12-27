@@ -7,6 +7,7 @@ import { MaterialsView } from "@/components/MaterialsView.tsx";
 import { useTranslation } from "react-i18next";
 import type { SelectedBySlotKey } from "@/types/crafting";
 import { useTheme } from "@/context/ThemeContext";
+import {getStaticUrl} from "@/utils/url.ts";
 
 const STORAGE_SELECTED_TIER = "aion2.crafting.selectedTier.v1";
 
@@ -260,8 +261,16 @@ function Page() {
   }
 
   return (
-    <div className="h-full w-full bg-crafting-page">
-      <div className="mx-auto w-full max-w-[1466px] pt-3">
+    <div className="grid h-full w-full bg-crafting-page" style={{ gridTemplateColumns: "1fr 1068px 1fr" }}>
+      <div className="flex items-center justify-center">
+        <img
+          src={getStaticUrl("images/CraftAdv.webp")}
+          alt="Left decoration"
+          className="w-[220px]"
+        />
+      </div>
+
+      <div className="mx-auto w-full max-w-[1068px] pt-3">
         {/* Split header row: left (race tabs) aligned with left card, right (tier tabs) aligned with right card */}
         <div className="mb-4 flex gap-4 pr-1">
           {/* Left container (align with left card width) */}
@@ -291,7 +300,7 @@ function Page() {
               onSelectionChange={(k) => onTierChange(k as TierKey)}
               variant="underlined"
               color={race == "light" ? "primary" : "default"}
-              className="w-full border-gray-300 bg-transparent"
+              className="w-[832px] border-gray-300 bg-transparent"
               classNames={{
                 tabList: "flex w-full",
                 tab: "h-[34px] flex-1 justify-center",
@@ -325,7 +334,7 @@ function Page() {
           </Card>
 
           {/* Right panel */}
-          <Card className="h-[726px] w-full min-w-0 bg-transparent" shadow="none">
+          <Card className="h-[726px] w-[832px] min-w-0 bg-transparent" shadow="none">
             <CardBody className="h-full min-h-0 px-1 py-0">
               <MaterialsView selectedBySlotKey={selectedBySlotKey} />
             </CardBody>
