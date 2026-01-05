@@ -192,7 +192,7 @@ crafting:
         count: 1
   - id:
     splendent_id:
-    materials: []
+    materials: [ ]
   - id: 110260023
     splendent_id: 110250014
     materials:
@@ -1088,6 +1088,8 @@ crafting:
         count: 19
       - id: 610530010
         count: 50
+      - id: 610610016
+        count: 70
       - id: 610620016
         count: 121
       - id: 610710012
@@ -1108,6 +1110,8 @@ crafting:
         count: 19
       - id: 610530010
         count: 50
+      - id: 610610016
+        count: 70
       - id: 610620016
         count: 121
       - id: 610710012
@@ -1128,6 +1132,8 @@ crafting:
         count: 19
       - id: 610530010
         count: 50
+      - id: 610610016
+        count: 70
       - id: 610620016
         count: 121
       - id: 610710012
@@ -1148,6 +1154,8 @@ crafting:
         count: 19
       - id: 610530010
         count: 50
+      - id: 610610016
+        count: 70
       - id: 610620016
         count: 121
       - id: 610710012
@@ -1168,6 +1176,8 @@ crafting:
         count: 19
       - id: 610530010
         count: 50
+      - id: 610610016
+        count: 70
       - id: 610620016
         count: 121
       - id: 610710012
@@ -1188,6 +1198,8 @@ crafting:
         count: 19
       - id: 610530010
         count: 50
+      - id: 610610016
+        count: 70
       - id: 610620016
         count: 121
       - id: 610710012
@@ -1208,6 +1220,8 @@ crafting:
         count: 19
       - id: 610530010
         count: 50
+      - id: 610610016
+        count: 70
       - id: 610620016
         count: 121
       - id: 610710012
@@ -1228,6 +1242,8 @@ crafting:
         count: 19
       - id: 610530010
         count: 50
+      - id: 610610016
+        count: 70
       - id: 610620016
         count: 121
       - id: 610710012
@@ -1248,6 +1264,8 @@ crafting:
         count: 19
       - id: 610530010
         count: 50
+      - id: 610610016
+        count: 70
       - id: 610620016
         count: 121
       - id: 610710012
@@ -1268,6 +1286,8 @@ crafting:
         count: 19
       - id: 610530010
         count: 50
+      - id: 610610016
+        count: 70
       - id: 610620016
         count: 121
       - id: 610710012
@@ -2548,6 +2568,8 @@ crafting:
         count: 13
       - id: 610530010
         count: 33
+      - id: 610610016
+        count: 47
       - id: 610620016
         count: 81
       - id: 610710013
@@ -2568,6 +2590,8 @@ crafting:
         count: 13
       - id: 610530010
         count: 33
+      - id: 610610016
+        count: 47
       - id: 610620016
         count: 81
       - id: 610710013
@@ -2588,6 +2612,8 @@ crafting:
         count: 10
       - id: 610530010
         count: 25
+      - id: 610610016
+        count: 35
       - id: 610620016
         count: 61
       - id: 610710013
@@ -2608,6 +2634,8 @@ crafting:
         count: 10
       - id: 610530010
         count: 25
+      - id: 610610016
+        count: 35
       - id: 610620016
         count: 61
       - id: 610710013
@@ -2628,6 +2656,8 @@ crafting:
         count: 8
       - id: 610530010
         count: 21
+      - id: 610610016
+        count: 29
       - id: 610620016
         count: 51
       - id: 610710013
@@ -2648,6 +2678,8 @@ crafting:
         count: 8
       - id: 610530010
         count: 21
+      - id: 610610016
+        count: 29
       - id: 610620016
         count: 51
       - id: 610710013
@@ -2668,6 +2700,8 @@ crafting:
         count: 8
       - id: 610530010
         count: 21
+      - id: 610610016
+        count: 29
       - id: 610620016
         count: 51
       - id: 610710013
@@ -2688,6 +2722,8 @@ crafting:
         count: 8
       - id: 610530010
         count: 21
+      - id: 610610016
+        count: 29
       - id: 610620016
         count: 51
       - id: 610710013
@@ -2708,6 +2744,8 @@ crafting:
         count: 6
       - id: 610530010
         count: 17
+      - id: 610610016
+        count: 23
       - id: 610620016
         count: 41
       - id: 610710013
@@ -2728,6 +2766,8 @@ crafting:
         count: 6
       - id: 610530010
         count: 17
+      - id: 610610016
+        count: 23
       - id: 610620016
         count: 41
       - id: 610710013
@@ -2748,6 +2788,8 @@ crafting:
         count: 8
       - id: 610530010
         count: 21
+      - id: 610610016
+        count: 29
       - id: 610620016
         count: 51
       - id: 610710013
@@ -2768,6 +2810,8 @@ crafting:
         count: 8
       - id: 610530010
         count: 21
+      - id: 610610016
+        count: 29
       - id: 610620016
         count: 51
       - id: 610710013
@@ -2788,6 +2832,8 @@ crafting:
         count: 6
       - id: 610530010
         count: 17
+      - id: 610610016
+        count: 23
       - id: 610620016
         count: 41
       - id: 610710013
@@ -2808,6 +2854,8 @@ crafting:
         count: 6
       - id: 610530010
         count: 17
+      - id: 610610016
+        count: 23
       - id: 610620016
         count: 41
       - id: 610710013
@@ -3106,6 +3154,8 @@ crafting:
         count: 19
       - id: 610530010
         count: 50
+      - id: 610610016
+        count: 70
       - id: 610650017
         count: 121
       - id: 610710012
@@ -3126,6 +3176,8 @@ crafting:
         count: 19
       - id: 610530010
         count: 50
+      - id: 610610016
+        count: 70
       - id: 610650018
         count: 121
       - id: 610710012
@@ -3146,6 +3198,8 @@ crafting:
         count: 19
       - id: 610530010
         count: 50
+      - id: 610610016
+        count: 70
       - id: 610650017
         count: 121
       - id: 610710012
@@ -3166,6 +3220,8 @@ crafting:
         count: 19
       - id: 610530010
         count: 50
+      - id: 610610016
+        count: 70
       - id: 610650018
         count: 121
       - id: 610710012
@@ -3628,6 +3684,8 @@ crafting:
         count: 9
       - id: 610530010
         count: 19
+      - id: 610610016
+        count: 26
       - id: 610660034
         count: 46
       - id: 610730025
@@ -3648,6 +3706,8 @@ crafting:
         count: 9
       - id: 610530010
         count: 19
+      - id: 610610016
+        count: 26
       - id: 610660034
         count: 46
       - id: 610730025
@@ -3668,6 +3728,8 @@ crafting:
         count: 10
       - id: 610530010
         count: 25
+      - id: 610610016
+        count: 35
       - id: 610660035
         count: 61
       - id: 610730025
@@ -3688,6 +3750,8 @@ crafting:
         count: 10
       - id: 610530010
         count: 25
+      - id: 610610016
+        count: 35
       - id: 610660035
         count: 61
       - id: 610730025
@@ -3708,6 +3772,8 @@ crafting:
         count: 13
       - id: 610530010
         count: 31
+      - id: 610610016
+        count: 44
       - id: 610660036
         count: 76
       - id: 610730025
@@ -3728,6 +3794,8 @@ crafting:
         count: 13
       - id: 610530010
         count: 31
+      - id: 610610016
+        count: 44
       - id: 610660036
         count: 76
       - id: 610730025
@@ -4026,6 +4094,8 @@ crafting:
         count: 19
       - id: 610530010
         count: 50
+      - id: 610610016
+        count: 70
       - id: 610660036
         count: 121
       - id: 610730025
@@ -4046,6 +4116,8 @@ crafting:
         count: 19
       - id: 610530010
         count: 50
+      - id: 610610016
+        count: 70
       - id: 610660036
         count: 121
       - id: 610730025
@@ -4066,6 +4138,8 @@ crafting:
         count: 19
       - id: 610530010
         count: 50
+      - id: 610610016
+        count: 70
       - id: 610660036
         count: 121
       - id: 610730025
@@ -4086,6 +4160,8 @@ crafting:
         count: 19
       - id: 610530010
         count: 50
+      - id: 610610016
+        count: 70
       - id: 610660036
         count: 121
       - id: 610730025
