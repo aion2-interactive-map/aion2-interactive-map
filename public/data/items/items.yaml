@@ -28427,3 +28427,11 @@ items:
   grade: Common
   icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Exp_A_003.webp
   subtype: Other
+- id: 310900001
+  grade: Special
+  icon: UI/Resource/Texture/Item/ETC/Icon_Acc_Rune_R_002.webp
+  subtype: Rune
+- id: 310900002
+  grade: Special
+  icon: UI/Resource/Texture/Item/ETC/Icon_Acc_Rune_R_004.webp
+  subtype: Rune

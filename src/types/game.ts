@@ -287,3 +287,45 @@ export type TierMeta = {
 export type RawTiersFile = {
   tiers: TierMeta[];
 };
+
+export type ServerMeta = {
+  raceId: number;
+  serverId: number;
+  serverName: string;
+  serverShortName: string;
+};
+
+export type RawServersFile = {
+  servers?: ServerMeta[];
+};
+
+export type StatType = {
+  type: string;
+  icon: string;
+  secondStats: Array<{
+    type: string;
+  }>;
+};
+
+export type StatsData = {
+  mainStats: StatType[];
+  lordStats: StatType[];
+  secondStats: Array<{
+    type: string;
+  }>;
+};
+
+export type SkillCategory = "Active" | "Passive" | "Dp";
+
+export type SkillMeta = {
+  category: SkillCategory;
+  class: string;
+  icon: string;
+  id: number;
+  needLevel: number;
+};
+
+export type RawSkillsFile = {
+  skills?: SkillMeta[];
+};
+

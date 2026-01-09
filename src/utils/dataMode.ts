@@ -48,12 +48,12 @@ export function getBackendLoadPath(mode: DataMode = DEFAULT_DATA_MODE) {
     const lng = lngs[0];
     const ns = nss[0];
 
-    if (ns === "common" || ns === "classes" || ns.startsWith("items")) {
-      return `${staticBase}/locales/${lng}/${ns}.yaml?build=${__BUILD_GIT_COMMIT__}`;
-    } else if (ns === "regions") {
+    if (ns === "regions" || ns === "servers") {
       return "";
     }
-
-    return `${base}/locales/${lng}/${ns}.yaml?build=${__BUILD_GIT_COMMIT__}`;
+    if (ns.startsWith("markers") || ns.startsWith("regions") || ns === "maps" || ns === "types") {
+      return `${base}/locales/${lng}/${ns}.yaml?build=${__BUILD_GIT_COMMIT__}`;
+    }
+    return `${staticBase}/locales/${lng}/${ns}.yaml?build=${__BUILD_GIT_COMMIT__}`;
   };
 }

@@ -1,10 +1,10 @@
 // src/i18n.ts
 import i18n from "i18next";
-import { initReactI18next } from "react-i18next";
+import {initReactI18next} from "react-i18next";
 import HttpBackend from "i18next-http-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
-import { parse } from "yaml";
-import { getBackendLoadPath } from "@/utils/dataMode"; // <-- changed
+import {parse} from "yaml";
+import {getBackendLoadPath} from "@/utils/dataMode"; // <-- changed
 
 // ---- Language config --------------------------------------
 
@@ -27,7 +27,8 @@ i18n
     fallbackLng: "zh-CN",
     supportedLngs: SUPPORTED_LANGUAGES,
 
-    ns: ["common", "maps", "types", "regions", "classes", "items/types", "items/items", "items/grades", "items/tiers" ],
+    ns: ["common", "maps", "types", "regions", "classes", "servers", "stats",
+      "items/types", "items/items", "items/grades", "items/tiers"],
     defaultNS: "common",
 
     detection: {

@@ -19,6 +19,7 @@
     --color-sidebar-button: rgba(122, 192, 225, 0.20);
     --color-input: rgba(185, 185, 185, 0.2);
     --color-input-2: #F6F6F6;
+    --color-character-input: rgba(255, 255, 255, 0.10);
     --color-search: rgba(247, 252, 255, 1);
     --color-search-item: rgba(82, 82, 82, 0.04);
     --color-crafting-item: rgba(243, 251, 255, 1);
@@ -27,7 +28,17 @@
     --background-image-crafting-page: linear-gradient(180deg, #F0F6FF 0%, #E6F0FF 37%, #BED8FF 64%, #A6CAFD 81%, #8DBCFF 90%, #C1DAFF 100%);
     --background-image-crafting-equipment-view: linear-gradient(180deg, rgba(205, 231, 255, 0) 0%, rgba(21, 110, 194, 0.3) 66%, rgba(201, 229, 255, 0) 100%);
     --background-image-crafting-tab: linear-gradient(180deg, rgba(244, 244, 244, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
+    --background-image-chacracter-page: linear-gradient( 180deg, #B7D4FF 0%, #DFECFF 100%);
     --color-crafting-border: rgba(137, 137, 137, 0.30);
+
+    --color-grade-common: rgba(0, 0, 0, .68);
+    --color-grade-rare: #00870b;
+    --color-grade-legend: #006fc6;
+    --color-grade-unique: #ee6c2a;
+    --color-grade-epic: #ee6c2a;
+    --color-grade-mythic: #c60000;
+    --color-grade-special: #09ce9f;
+
 }
 
 .dark {
@@ -42,6 +53,14 @@
     --background-image-crafting-equipment-view: linear-gradient(180deg, rgba(205, 231, 255, 0) 0%, rgba(21, 110, 194, 0.3) 66%, rgba(201, 229, 255, 0) 100%);
     --background-image-crafting-tab: linear-gradient(180deg, rgba(244, 244, 244, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
     --color-crafting-border: rgba(255, 255, 255, 0.30);
+
+    --color-grade-common: rgba(255, 255, 255, .93);
+    --color-grade-rare: #52b35c;
+    --color-grade-legend: #3d94d8;
+    --color-grade-unique: #e9a43a;
+    --color-grade-epic: #ee6c2a;
+    --color-grade-mythic: #d33939;
+    --color-grade-special: #34b798;
 }
 
 .abyss {

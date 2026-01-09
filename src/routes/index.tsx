@@ -4,10 +4,10 @@ import GameMapView from "@/components/GameMapView";
 import LeftSidebar from "@/components/SideBar/LeftSidebar";
 import {Spinner} from "@heroui/react";
 import type {MapRef} from "@/types/game";
-import DismissableAlert from "@/components/DismissableAlert.tsx";
-import {useTranslation} from "react-i18next";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
+// import DismissableAlert from "@/components/DismissableAlert.tsx";
+// import {useTranslation} from "react-i18next";
+// import ReactMarkdown from "react-markdown";
+// import remarkGfm from "remark-gfm";
 import {GameMapProvider, useGameMap} from "@/context/GameMapContext.tsx";
 import {getStaticUrl} from "@/utils/url.ts";
 import {MarkersProvider, useMarkers} from "@/context/MarkersContext.tsx";
@@ -19,7 +19,7 @@ import DismissibleEmblaBanner from "@/components/DismissibleEmblaBanner.tsx";
 
 const HomePage: React.FC = () => {
 
-  const {t} = useTranslation();
+  // const {t} = useTranslation();
   const {loading, selectedMap} = useGameMap();
 
   const mapRef = useRef<MapRef>(null);
@@ -40,7 +40,7 @@ const HomePage: React.FC = () => {
   // };
 
   // const [isIntroOpen, setIsIntroOpen] = useState<boolean>(true);
-  const [isAlertOpen, setIsAlertOpen] = useState(true);
+  // const [isAlertOpen, setIsAlertOpen] = useState(true);
   const [selectedMarkerId, setSelectedMarkerId] = useState<string | null>(null);
   const [selectedPosition, setSelectedPosition] = useState<{x: number, y: number} | null>(null);
 
@@ -73,10 +73,10 @@ const HomePage: React.FC = () => {
 
   const slides = [{
     image: getStaticUrl("images/PangXieRight.webp"),
-    url: "https://qm.qq.com/q/YGRfrMFvqw",
+    url: "https://m1.pxb7.com/pages-active/assemble/index?activityId=189129181380610&channelId=190357529813041&activityCode=t2susu",
   }, {
-    image: getStaticUrl("images/YouSheng.webp"),
-    url: "https://186.yousheng186.com/?promotionCode=HDDT",
+    image: getStaticUrl("images/QiyouRight.webp"),
+    url: "https://www.qiyou.cn",
   }];
 
 
@@ -88,7 +88,7 @@ const HomePage: React.FC = () => {
       />*/}
 
 
-      {isAlertOpen && (
+      {/*{isAlertOpen && (
         <div className="fixed top-[72px] right-4 z-[9999] h-[52px] ">
           <DismissableAlert
             onClose={() => setIsAlertOpen(false)}
@@ -100,7 +100,7 @@ const HomePage: React.FC = () => {
             </div>
           </DismissableAlert>
         </div>
-      )}
+      )}*/}
 
       {import.meta.env.VITE_REGION === "CHINA" && <>
         <DismissibleEmblaBanner

@@ -288,8 +288,8 @@ function Page() {
                 tabContent: "flex items-center justify-center text-default-800 group-data-[selected=true]:text-background ",
               }}
             >
-              <Tab key="light" title={t("common:crafting.light", "Light")} />
-              <Tab key="dark" title={t("common:crafting.dark", "Dark")} />
+              <Tab key="light" title={t("common:server.light", "Light")} />
+              <Tab key="dark" title={t("common:server.dark", "Dark")} />
             </Tabs>
           </div>
 

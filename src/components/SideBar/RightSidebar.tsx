@@ -6,7 +6,7 @@ import {useTranslation} from "react-i18next";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import {getStaticUrl} from "@/utils/url.ts";
-import BottomSidebarBanner from "@/components/SideBar/BottomSidebarBanner.tsx";
+// import BottomSidebarBanner from "@/components/SideBar/BottomSidebarBanner.tsx";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faAlipay} from "@fortawesome/free-brands-svg-icons";
 import {useSiteConfig} from "@/context/SiteConfigContext.tsx";
@@ -70,18 +70,6 @@ const RightSidebar: React.FC = () => {
           </div>
         </AccordionItem>
       </Accordion>
-      {import.meta.env.VITE_REGION === "CHINA" && (
-        <>
-          <BottomSidebarBanner
-            href="https://186.yousheng186.com/?promotionCode=HDDT"
-            href2="https://qm.qq.com/q/YGRfrMFvqw"
-            imageUrl={getStaticUrl("images/YouSheng.webp")}
-            imageUrl2={getStaticUrl("images/PangXieRight.webp")}
-            height={350}
-            closeButtonPosition="top-right"
-          />
-        </>
-      )}
     </SidebarWrapper>
   );
 };

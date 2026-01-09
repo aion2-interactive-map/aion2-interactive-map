@@ -9,10 +9,10 @@ export function useYamlLoader() {
   const loadYaml = useCallback(
     <T,>(path: string) => {
       let base;
-      if (path.startsWith("data/items") || path.startsWith("data/classes")) {
-        base = getStaticBaseUrl();
-      } else {
+      if (path.startsWith("data/markers") || path.startsWith("data/regions") || path.startsWith("data/maps") || path.startsWith("data/types")) {
         base = getBaseUrl().replace(/\/+$/, "");
+      } else {
+        base = getStaticBaseUrl();
       }
 
       const cleaned = path.replace(/^\/+/, "");

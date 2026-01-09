@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+// import 'moment';
+// import 'moment/min/locales.js';
 
 import './index.css';
 import 'leaflet/dist/leaflet.css'; // Leaflet default styles

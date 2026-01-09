@@ -23,6 +23,8 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faUser} from "@fortawesome/free-solid-svg-icons";
 import ContactUs from "@/components/ContactUs.tsx";
 import Donate from "@/components/Donate.tsx";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 
 const TopNavbar: React.FC = () => {
@@ -39,9 +41,10 @@ const TopNavbar: React.FC = () => {
 
   const routes = [
     {path: "/", name: "map"},
-    {path: "/class", name: "class"},
     {path: "/crafting", name: "crafting"},
     {path: "/enhancement", name: "enhancement"},
+    {path: "/character", name: "character"},
+    {path: "/class", name: "class"},
     {path: "/forum", name: "forum"},
   ]
 
@@ -78,8 +81,10 @@ const TopNavbar: React.FC = () => {
             )
           }
         )}
-        <span className="text-[14px] leading-[14px] font-normal tracking-wide">
-          {t("announcement", "Crafting system is ready now!")}
+        <span className="text-[14px] leading-[14px] prose prose-xs max-w-none dark:prose-invert ">
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+            {t("introModal.alert")}
+          </ReactMarkdown>
         </span>
       </NavbarBrand>
 

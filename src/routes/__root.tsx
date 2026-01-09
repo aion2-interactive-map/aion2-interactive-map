@@ -19,9 +19,12 @@ const RootLayout = () => (
         <DataModeProvider>
           <ThemeProvider>
             <HeroUIProvider>
-              <div className="h-screen w-screen flex flex-col">
+              <div className="h-screen w-screen flex flex-col overflow-hidden">
                 <TopNavbar />
-                <Outlet />
+                {/* IMPORTANT: min-h-0 allows children to scroll */}
+                <div className="flex-1 min-h-0">
+                  <Outlet />
+                </div>
               </div>
             </HeroUIProvider>
           </ThemeProvider>

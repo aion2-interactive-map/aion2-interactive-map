@@ -405,11 +405,11 @@ const GameMapView: React.FC<Props> = ({
 
       {import.meta.env.VITE_REGION === "CHINA" &&
         <DismissibleBanner
-          imageUrl={getStaticUrl("images/QiyouMiddle.webp")}
+          imageUrl={getStaticUrl("images/PangxieMiddle.webp")}
           width={800}
-          height={120}
+          height={150}
           position="bottom-center"
-          href="https://www.qiyou.cn"
+          href="https://m1.pxb7.com/pages-active/assemble/index?activityId=189129181380610&channelId=190357529813041&activityCode=t2susu"
         />
       }
     </div>

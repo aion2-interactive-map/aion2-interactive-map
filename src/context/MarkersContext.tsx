@@ -141,8 +141,8 @@ export const MarkersProvider = ({children}: MarkersProviderProps) => {
         const rawRegion = await loadYaml<RawRegionsFile>(
           `data/regions/${selectedMap?.name}.yaml`,
         )
-        setBaseMarkers(raw.markers);
-        setRegions(rawRegion.regions);
+        setBaseMarkers(raw.markers || []);
+        setRegions(rawRegion.regions || []);
       } catch (e) {
         console.error(e);
         if (!cancelled) {

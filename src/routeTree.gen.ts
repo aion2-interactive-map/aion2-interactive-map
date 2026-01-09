@@ -13,6 +13,7 @@ import { Route as ForumRouteImport } from './routes/forum'
 import { Route as EnhancementRouteImport } from './routes/enhancement'
 import { Route as CraftingRouteImport } from './routes/crafting'
 import { Route as ClassRouteImport } from './routes/class'
+import { Route as CharacterRouteImport } from './routes/character'
 import { Route as IndexRouteImport } from './routes/index'
 
 const ForumRoute = ForumRouteImport.update({
@@ -35,6 +36,11 @@ const ClassRoute = ClassRouteImport.update({
   path: '/class',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CharacterRoute = CharacterRouteImport.update({
+  id: '/character',
+  path: '/character',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -43,6 +49,7 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/character': typeof CharacterRoute
   '/class': typeof ClassRoute
   '/crafting': typeof CraftingRoute
   '/enhancement': typeof EnhancementRoute
@@ -50,6 +57,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/character': typeof CharacterRoute
   '/class': typeof ClassRoute
   '/crafting': typeof CraftingRoute
   '/enhancement': typeof EnhancementRoute
@@ -58,6 +66,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/character': typeof CharacterRoute
   '/class': typeof ClassRoute
   '/crafting': typeof CraftingRoute
   '/enhancement': typeof EnhancementRoute
@@ -65,14 +74,28 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/class' | '/crafting' | '/enhancement' | '/forum'
+  fullPaths:
+    | '/'
+    | '/character'
+    | '/class'
+    | '/crafting'
+    | '/enhancement'
+    | '/forum'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/class' | '/crafting' | '/enhancement' | '/forum'
-  id: '__root__' | '/' | '/class' | '/crafting' | '/enhancement' | '/forum'
+  to: '/' | '/character' | '/class' | '/crafting' | '/enhancement' | '/forum'
+  id:
+    | '__root__'
+    | '/'
+    | '/character'
+    | '/class'
+    | '/crafting'
+    | '/enhancement'
+    | '/forum'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CharacterRoute: typeof CharacterRoute
   ClassRoute: typeof ClassRoute
   CraftingRoute: typeof CraftingRoute
   EnhancementRoute: typeof EnhancementRoute
@@ -109,6 +132,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ClassRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/character': {
+      id: '/character'
+      path: '/character'
+      fullPath: '/character'
+      preLoaderRoute: typeof CharacterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -121,6 +151,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CharacterRoute: CharacterRoute,
   ClassRoute: ClassRoute,
   CraftingRoute: CraftingRoute,
   EnhancementRoute: EnhancementRoute,
