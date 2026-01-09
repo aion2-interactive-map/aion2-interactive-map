@@ -9,6 +9,7 @@ import {
 // import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 // import {faCloud, faDatabase} from "@fortawesome/free-solid-svg-icons";
 import {useTranslation} from "react-i18next";
+// import Marquee from "react-fast-marquee";
 
 import {useTheme} from "@/context/ThemeContext";
 import {useUser} from "@/context/UserContext";
@@ -81,11 +82,19 @@ const TopNavbar: React.FC = () => {
             )
           }
         )}
-        <span className="text-[14px] leading-[14px] prose prose-xs max-w-none dark:prose-invert ">
+        <div className="text-[14px] leading-[14px] prose prose-xs max-w-none dark:prose-invert" style={{ width: "200px" }}>
+          {/*<Marquee gradient={false} speed={40}>
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {t("introModal.alert")}
+            </ReactMarkdown>
+          </Marquee>*/}
+          {/*<Marquee gradient={false} speed={40}>*/}
+          {/*  This is a test message.*/}
+          {/*</Marquee>*/}
           <ReactMarkdown remarkPlugins={[remarkGfm]}>
             {t("introModal.alert")}
           </ReactMarkdown>
-        </span>
+        </div>
       </NavbarBrand>
 
       {/* RIGHT: Language switcher + theme toggle */}
@@ -105,7 +114,7 @@ const TopNavbar: React.FC = () => {
 
         <ThemeDropdown/>
 
-        <ContactUs />
+        <ContactUs/>
 
         <Donate/>
 

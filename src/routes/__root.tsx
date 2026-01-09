@@ -21,10 +21,7 @@ const RootLayout = () => (
             <HeroUIProvider>
               <div className="h-screen w-screen flex flex-col overflow-hidden">
                 <TopNavbar />
-                {/* IMPORTANT: min-h-0 allows children to scroll */}
-                <div className="flex-1 min-h-0">
-                  <Outlet />
-                </div>
+                <Outlet/>
               </div>
             </HeroUIProvider>
           </ThemeProvider>
