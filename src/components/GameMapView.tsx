@@ -405,7 +405,7 @@ const GameMapView: React.FC<Props> = ({
 
       {import.meta.env.VITE_REGION === "CHINA" &&
         <DismissibleBanner
-          imageUrl={getStaticUrl("images/PangxieMiddle.webp")}
+          imageUrl={getStaticUrl("images/PangXieMiddle.webp")}
           width={800}
           height={150}
           position="bottom-center"
