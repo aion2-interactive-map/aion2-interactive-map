@@ -38,6 +38,7 @@ routes:
   class: "Classes"
   crafting: "Crafting"
   enhancement: "Enhancement"
+  character: "Character"
   forum: "Forum"
 
 buttons:

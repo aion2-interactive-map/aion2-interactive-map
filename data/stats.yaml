@@ -1,0 +1,106 @@
+mainStats:
+  - type: STR
+    icon: images/Character/stat_str.webp
+    secondStats:
+      - type: attackIncrease
+  - type: DEX
+    icon: images/Character/stat_dex.webp
+    secondStats:
+      - type: evasionIncrease
+      - type: blockIncrease
+      - type: criticalHitResistIncrease
+  - type: AGI
+    icon: images/Character/stat_agi.webp
+    secondStats:
+      - type: accuracyIncrease
+      - type: criticalHitIncrease
+  - type: WIS
+    icon: images/Character/stat_wis.webp
+    secondStats:
+      - type: statusEffectResistIncrease
+  - type: INT
+    icon: images/Character/stat_int.webp
+    secondStats:
+      - type: statusEffectChanceIncrease
+  - type: CON
+    icon: images/Character/stat_con.webp
+    secondStats:
+      - type: hpIncrease
+lordStats:
+  - type: Destruction
+    icon: images/Character/stat_lords_destruction.webp
+    secondStats:
+      - type: attackIncrease
+      - type: perfectResistIncrease
+  - type: Death
+    icon: images/Character/stat_lords_death.webp
+    secondStats:
+      - type: criticalHitIncrease
+      - type: regenerationPenetrationIncrease
+  - type: Wisdom
+    icon: images/Character/stat_lords_wisdom.webp
+    secondStats:
+      - type: mpCostDecrease
+      - type: smiteIncrease
+  - type: Destiny
+    icon: images/Character/stat_lords_destiny.webp
+    secondStats:
+      - type: mpIncrease
+      - type: enduranceIncrease
+  - type: Space
+    icon: images/Character/stat_lords_space.webp
+    secondStats:
+      - type: moveSpeedIncrease
+      - type: blockIncrease
+  - type: Time
+    icon: images/Character/stat_lords_time.webp
+    secondStats:
+      - type: combatSpeedIncrease
+      - type: smiteResistIncrease
+  - type: Life
+    icon: images/Character/stat_lords_life.webp
+    secondStats:
+      - type: hpIncrease
+      - type: regenerationIncrease
+  - type: Illusion
+    icon: images/Character/stat_lords_illusion.webp
+    secondStats:
+      - type: cooldownDecrease
+      - type: endurancePenetrationIncrease
+  - type: Freedom
+    icon: images/Character/stat_lords_freedom.webp
+    secondStats:
+      - type: accuracyIncrease
+      - type: evasionIncrease
+  - type: Justice
+    icon: images/Character/stat_lords_justice.webp
+    secondStats:
+      - type: defenseIncrease
+      - type: perfectIncrease
+secondStats:
+  - type: attackIncrease
+  - type: evasionIncrease
+  - type: blockIncrease
+  - type: criticalHitResistIncrease
+  - type: statusEffectChanceIncrease
+  - type: hpIncrease
+  - type: accuracyIncrease
+  - type: criticalHitIncrease
+  - type: statusEffectResistIncrease
+  - type: defenseIncrease
+  - type: perfectIncrease
+  - type: cooldownDecrease
+  - type: endurancePenetrationIncrease
+  - type: regenerationIncrease
+  - type: combatSpeedIncrease
+  - type: smiteResistIncrease
+  - type: perfectResistIncrease
+  - type: regenerationPenetrationIncrease
+  - type: mpCostDecrease
+  - type: smiteIncrease
+  - type: mpIncrease
+  - type: enduranceIncrease
+  - type: moveSpeedIncrease
+
+
+

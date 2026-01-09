@@ -1,0 +1,44 @@
+mainStats:
+  STR:
+    name: 威力
+  DEX:
+    name: 敏捷
+  AGI:
+    name: 精確
+  WIS:
+    name: 意志
+  INT:
+    name: 知識
+  CON:
+    name: 體力
+lordStats:
+  Destruction:
+    name: 破壞
+    description: 吉凱爾
+  Death:
+    name: 死亡
+    description: 崔妮爾
+  Wisdom:
+    name: 智慧
+    description: 露梅爾
+  Destiny:
+    name: 命運
+    description: 瑪爾庫坦
+  Space:
+    name: 空間
+    description: 伊斯拉佩爾
+  Time:
+    name: 時間
+    description: 希埃爾
+  Life:
+    name: 生命
+    description: 尤斯迪埃
+  Illusion:
+    name: 幻象
+    description: 凱西內爾
+  Freedom:
+    name: 自由
+    description: 白傑爾
+  Justice:
+    name: 正義
+    description: 奈薩肯

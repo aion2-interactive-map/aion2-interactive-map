@@ -1,6 +1,6 @@
 lang: "zh-CN"
 siteTitle: "AION2\n互动地图"
-announcement: 装备制作功能已完工！
+announcement: ""
 
 language:
   label: "语言"
@@ -74,8 +74,9 @@ menu:
 routes:
   map: "地图"
   class: "职业BD"
-  crafting: "装备制作🎉"
+  crafting: "装备制作"
   enhancement: "装备强化"
+  character: "角色数据"
   forum: "论坛"
 
 wip:
@@ -175,5 +176,20 @@ crafting:
   weaponOrArmor: "武器/防具"
   accessory: "饰品"
   clearAll: "一键清除全部"
+
+server:
   light: "天族"
   dark: "魔族"
+  lightAbbr: "天"
+  darkAbbr: "魔"
+  allServers: "全部服务器"
+  race: "种族"
+  server: "服务器"
+  character: "角色名"
+  search: "搜寻角色"
+
+skills:
+  category:
+    active: 主动
+    passive: 被动
+    dp: 烙印
