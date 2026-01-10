@@ -164,7 +164,7 @@ export default function CharacterSearch() {
             const v = keys.currentKey;
             setServerId(v ? String(v) : "all");
           }}
-          className="w-[130px] flex-none"
+          className="w-[160px] flex-none"
           renderValue={(items) => items[0]?.textValue ?? ""}
           radius="none"
           classNames={selectClassNames}
@@ -188,7 +188,7 @@ export default function CharacterSearch() {
           isDisabled={serversLoading}
           isLoading={searchLoading}
           items={searchItems}
-          className="w-[160px] flex-none"
+          className="w-[180px] flex-none"
           radius="none"
           inputProps={{classNames: autocompleteInputClassNames}}
         >

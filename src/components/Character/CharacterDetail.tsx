@@ -181,7 +181,7 @@ export default function CharacterDetail() {
 
     const imgSrc = getStaticUrl(item?.icon || "");
 
-    const itemName = t(`items/items:${eq.id}.name`, String(eq.id))
+    const itemName = t(`items/items:${eq?.id}.name`, String(eq?.id  || ""))
 
     return (
       <div
@@ -191,17 +191,22 @@ export default function CharacterDetail() {
         title={itemName}
       >
         <div className="flex h-full w-full items-center rounded-[4px] px-2">
-          <img
-            src={imgSrc}
-            alt={itemName}
-            className="h-12 w-12 shrink-0 object-contain"
-            draggable={false}
-          />
+          {eq ? (
+            <img
+              src={imgSrc}
+              alt={itemName}
+              className="h-12 w-12 shrink-0 object-contain"
+              draggable={false}
+            />
+          ) : (
+            // transparent placeholder to keep alignment
+            <div className="h-12 w-12 shrink-0" />
+          )}
 
           <div className="ml-2 flex h-[48px] min-w-0 flex-1 flex-col justify-center">
             <div
               className="truncate text-left text-[13px] font-bold leading-[13px] text-white [text-shadow:0px_2px_4px_rgba(0,0,0,0.35)]">
-              {`${itemName} +${eq.enchantLevel}`}
+              {eq && `${itemName} +${eq.enchantLevel}`}
             </div>
             <div className="mt-2 flex items-center justify-start gap-0">
               {eq?.exceedLevel
@@ -360,7 +365,6 @@ export default function CharacterDetail() {
               {renderTitlesGrid()}
             </AccordionItem>
           </Accordion>
-
         </div>
       </div>
 
