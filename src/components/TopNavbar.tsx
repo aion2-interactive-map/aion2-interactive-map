@@ -26,6 +26,7 @@ import ContactUs from "@/components/ContactUs.tsx";
 import Donate from "@/components/Donate.tsx";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+// import Ticker from "react-ticker";
 
 
 const TopNavbar: React.FC = () => {
@@ -50,13 +51,7 @@ const TopNavbar: React.FC = () => {
   ]
 
   return (
-    <Navbar
-      maxWidth="full"
-      className="border-0 h-[60px] bg-topnavbar"
-      classNames={{
-        wrapper: "px-5"
-      }}
-    >
+    <Navbar maxWidth="full" className="border-0 h-[60px] bg-topnavbar" classNames={{ wrapper: "px-5" }}>
       {/* LEFT: Logo + Title */}
       <NavbarBrand className="flex items-center gap-10 select-none cursor-default">
         <img
@@ -65,58 +60,53 @@ const TopNavbar: React.FC = () => {
           className="w-[100px] h-[38px] object-contain"
         />
         {routes.map((route) => {
-            const isActive = currentPath === route.path
-            return (
-              <NavbarItem
-                isActive={isActive}
-                key={route.name}
-                className={`
-                  ${isActive ? "text-bold text-primary" : "text-default-800"}
-                  text-[18px] leading-[18px]
-                `}
-              >
-                <Link to={route.path}>
-                  {t(`common:routes.${route.name}`)}
-                </Link>
-              </NavbarItem>
-            )
-          }
-        )}
-        <div className="text-[14px] leading-[14px] prose prose-xs max-w-none dark:prose-invert" style={{ width: "200px" }}>
-          {/*<Marquee gradient={false} speed={40}>
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>
-              {t("introModal.alert")}
-            </ReactMarkdown>
-          </Marquee>*/}
-          {/*<Marquee gradient={false} speed={40}>*/}
-          {/*  This is a test message.*/}
-          {/*</Marquee>*/}
+          const isActive = currentPath === route.path;
+          return (
+            <NavbarItem
+              isActive={isActive}
+              key={route.name}
+              className={`${
+                isActive ? "text-bold text-primary" : "text-default-800"
+              } text-[18px] leading-[18px]`}
+            >
+              <Link to={route.path}>{t(`common:routes.${route.name}`)}</Link>
+            </NavbarItem>
+          );
+        })}
+        <div className="text-[14px] leading-[14px] prose prose-xs max-w-none dark:prose-invert">
           <ReactMarkdown remarkPlugins={[remarkGfm]}>
             {t("introModal.alert")}
           </ReactMarkdown>
         </div>
+        {/*/!* This container ensures Marquee takes all remaining space *!/*/}
+        {/*<div className="flex-1 flex items-center justify-start overflow-hidden w-full">*/}
+        {/*  <div className="w-full">*/}
+        {/*    <Ticker mode="smooth" speed={3}>*/}
+        {/*      {() => (*/}
+        {/*        <span className="text-[14px] leading-[14px] prose prose-xs max-w-none dark:prose-invert">*/}
+        {/*    <ReactMarkdown remarkPlugins={[remarkGfm]}>*/}
+        {/*      {t("introModal.alert")}*/}
+        {/*    </ReactMarkdown>*/}
+        {/*  </span>*/}
+        {/*      )}*/}
+        {/*    </Ticker>*/}
+        {/*  </div>*/}
+        {/*</div>*/}
       </NavbarBrand>
 
       {/* RIGHT: Language switcher + theme toggle */}
-      <NavbarContent
-        justify="end"
-        className="flex items-center gap-1"
-      >
+      <NavbarContent justify="end" className="flex items-center gap-1">
         <img
           src={getStaticUrl("images/Adv.webp")}
           alt="Banner"
-          className="h-10 w-auto object-contain select-none pointer-events-none"
+          className="w-[300px] object-contain select-none pointer-events-none"
         />
 
-
         {/* Language switcher (owns its own button & dropdown) */}
-        <LanguageSwitcher/>
-
-        <ThemeDropdown/>
-
-        <ContactUs/>
-
-        <Donate/>
+        <LanguageSwitcher />
+        <ThemeDropdown />
+        <ContactUs />
+        <Donate />
 
         {!user ? (
           <>
@@ -125,49 +115,32 @@ const TopNavbar: React.FC = () => {
               placement="bottom"
               delay={300}
             >
-              <Button
-                isIconOnly variant="light"
-                onPress={() => setAuthOpen(true)}
-              >
-                <FontAwesomeIcon icon={faUser} className="text-lg"/>
+              <Button isIconOnly variant="light" onPress={() => setAuthOpen(true)}>
+                <FontAwesomeIcon icon={faUser} className="text-lg" />
               </Button>
             </Tooltip>
-            <AuthModal isOpen={authOpen} onClose={() => setAuthOpen(false)}/>
+            <AuthModal isOpen={authOpen} onClose={() => setAuthOpen(false)} />
           </>
         ) : (
           <>
             <Dropdown placement="bottom-end">
               <DropdownTrigger>
-                <Button
-                  variant="light"
-                  className="px-2 text-sm font-normal"
-                >
+                <Button variant="light" className="px-2 text-sm font-normal">
                   {user.name ?? user.email}
                 </Button>
               </DropdownTrigger>
 
               <DropdownMenu aria-label="User menu">
-                <DropdownItem
-                  key="logout"
-                  color="danger"
-                  onPress={logout}
-                >
+                <DropdownItem key="logout" color="danger" onPress={logout}>
                   {t("common:auth.logout", "Logout")}
                 </DropdownItem>
               </DropdownMenu>
             </Dropdown>
-
-            {/* Keep modal mounted so you can open it from other places if needed */}
-            {/*<AuthModal isOpen={authOpen} onClose={() => setAuthOpen(false)} />*/}
           </>
         )}
-
-        {/*<Button isIconOnly variant="light" onPress={onOpenIntroModal}>
-          <FontAwesomeIcon icon={faCircleInfo} className="text-lg" />
-        </Button>*/}
-
       </NavbarContent>
     </Navbar>
+
   );
 };
 

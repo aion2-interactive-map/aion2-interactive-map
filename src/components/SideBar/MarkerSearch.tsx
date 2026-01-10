@@ -78,6 +78,7 @@ const MarkerSearch: React.FC<MarkerSearchProps> = ({onSelectMarker, onSelectPosi
         prefix: true,
         fuzzy: 0.2,
       },
+      tokenize: (string) => [...string],
     });
     const filteredMarkers: MarkerWithTranslations[] = markers.filter((marker) =>
       marker.subtype.startsWith("creature")
