@@ -353,11 +353,11 @@ export default function CharacterDetail() {
             <AccordionItem key="equipments" title="装备">
               {renderEquipmentsGrid()}
             </AccordionItem>
+            <AccordionItem key="cards" title="阿尔卡那">
+              {renderCardsGrid()}
+            </AccordionItem>
             <AccordionItem key="titles" title="称号">
               {renderTitlesGrid()}
-            </AccordionItem>
-            <AccordionItem key="cards" title="阿尔卡纳">
-              {renderCardsGrid()}
             </AccordionItem>
           </Accordion>
 
