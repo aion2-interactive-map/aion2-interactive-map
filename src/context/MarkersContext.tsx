@@ -3,6 +3,7 @@ import type {MarkerInstance, MarkerWithTranslations, RawMarkersFile, RawRegionsF
 import {useYamlLoader} from "@/hooks/useYamlLoader.ts";
 import {useGameMap} from "@/context/GameMapContext.tsx";
 import {useTranslation} from "react-i18next";
+import { COMPLETED_MARKERS_V1_PREFIX, COMPLETED_MARKERS_V2_PREFIX } from "@/constants";
 
 type MarkersContextValue = {
   markers: MarkerWithTranslations[];
@@ -30,16 +31,12 @@ type MarkersProviderProps = {
   children: React.ReactNode;
 };
 
-const V1_PREFIX = "aion2.completedMarkers.v1";
-const V2_PREFIX = "aion2.completedMarkers.v2";
-
 function loadV1(map: string): Set<string> {
-  const key = `${V1_PREFIX}.${map}`;
+  const key = `${COMPLETED_MARKERS_V1_PREFIX}.${map}`;
   try {
     const raw = localStorage.getItem(key);
     if (!raw) return new Set();
     const arr = JSON.parse(raw);
-    console.log("Load", key, arr);
     return new Set(arr);
   } catch {
     return new Set();
@@ -47,18 +44,17 @@ function loadV1(map: string): Set<string> {
 }
 
 function clearV1(map: string): void {
-  const key = `${V1_PREFIX}.${map}`;
+  const key = `${COMPLETED_MARKERS_V1_PREFIX}.${map}`;
   localStorage.removeItem(key);
 }
 
 function saveV2Subtype(map: string, subtype: string, set: Set<number>) {
-  const key = `${V2_PREFIX}.${map}.${subtype}`;
+  const key = `${COMPLETED_MARKERS_V2_PREFIX}.${map}.${subtype}`;
   localStorage.setItem(key, JSON.stringify([...set]));
-  console.log("Save", key, set);
 }
 
 function loadV2Subtype(map: string, subtype: string): Set<number> {
-  const key = `${V2_PREFIX}.${map}.${subtype}`;
+  const key = `${COMPLETED_MARKERS_V2_PREFIX}.${map}.${subtype}`;
   try {
     const raw = localStorage.getItem(key);
     if (!raw) return new Set();

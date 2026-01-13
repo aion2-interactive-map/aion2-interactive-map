@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import L from "leaflet";
 import { useMap } from "react-leaflet";
-import type {GameMapMeta} from "../types/game.ts";
-import {getStaticUrl} from "../utils/url.ts";
+import type {GameMapMeta} from "../../types/game.ts";
+import {getStaticUrl} from "../../utils/url.ts";
 
 type GameTilesProps = {
   selectedMap: GameMapMeta
@@ -53,11 +53,8 @@ class GameTileLayer extends L.TileLayer {
 
 const GameMapTiles: React.FC<GameTilesProps> = ({ selectedMap }) => {
   const map = useMap();
-  // console.log("[GameMapTiles] render", { selectedMap, map });
 
   useEffect(() => {
-    console.log("[GameMapTiles] useEffect mount", { selectedMap, map });
-
     const layer = new GameTileLayer({
       selectedMap,
       noWrap: true,

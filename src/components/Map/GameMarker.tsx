@@ -4,7 +4,7 @@ import {Marker, Tooltip} from "react-leaflet";
 import {useTranslation} from "react-i18next";
 import L from "leaflet";
 
-import type {MarkerWithTranslations} from "../types/game";
+import type {MarkerWithTranslations} from "../../types/game";
 import {useMarkers} from "@/context/MarkersContext.tsx";
 import {useGameMap} from "@/context/GameMapContext.tsx";
 import {useGameData} from "@/context/GameDataContext.tsx";

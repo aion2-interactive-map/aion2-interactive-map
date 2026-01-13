@@ -5,6 +5,8 @@ import { useServerData } from "@/context/ServerDataContext.tsx";
 import { useTranslation } from "react-i18next";
 import { computeBaseUrl } from "@/utils/dataMode.ts";
 import {useCharacter} from "@/context/CharacterContext.tsx";
+import { useDebounce } from "@/hooks/useDebounce";
+import { SEARCH_DEBOUNCE_MS } from "@/constants";
 
 type CharacterSearchItem = {
   id: string;
@@ -29,6 +31,7 @@ export default function CharacterSearch() {
   const [raceId, setRaceId] = useState<"1" | "2">("1");
   const [serverId, setServerId] = useState<string>("all");
   const [keyword, setKeyword] = useState("");
+  const debouncedKeyword = useDebounce(keyword, SEARCH_DEBOUNCE_MS);
   const [searchLoading, setSearchLoading] = useState(false);
   const [searchItems, setSearchItems] = useState<CharacterSearchItem[]>([]);
   const lastReqIdRef = useRef(0);
@@ -45,7 +48,7 @@ export default function CharacterSearch() {
   }, [serversForRace, serverId]);
 
   useEffect(() => {
-    const k = keyword.trim();
+    const k = debouncedKeyword.trim();
     const rid = Number(raceId);
     const sid = serverId === "all" ? undefined : Number(serverId);
 
@@ -53,7 +56,8 @@ export default function CharacterSearch() {
     if (!k || !rid) return;
 
     const reqId = ++lastReqIdRef.current;
-    const timer = window.setTimeout(async () => {
+    
+    const runSearch = async () => {
       try {
         setSearchLoading(true);
         const items = await fetchCharacters({ keyword: k, raceId: rid, serverId: sid });
@@ -65,10 +69,10 @@ export default function CharacterSearch() {
       } finally {
         if (lastReqIdRef.current === reqId) setSearchLoading(false);
       }
-    }, 300);
+    };
 
-    return () => window.clearTimeout(timer);
-  }, [keyword, raceId, serverId]);
+    void runSearch();
+  }, [debouncedKeyword, raceId, serverId]);
 
   async function fetchCharacters(params: {
     keyword: string;

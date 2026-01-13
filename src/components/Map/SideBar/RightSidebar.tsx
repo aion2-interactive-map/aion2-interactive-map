@@ -1,12 +1,12 @@
 import React, {useState} from "react";
 import SidebarWrapper from "./SidebarWrapper";
 import {Accordion, AccordionItem, Button} from "@heroui/react";
-import {makeAccordionTitle} from "@/components/SideBar/makeAccordionTitle.tsx";
+import {makeAccordionTitle} from "@/components/Map/SideBar/makeAccordionTitle.tsx";
 import {useTranslation} from "react-i18next";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import {getStaticUrl} from "@/utils/url.ts";
-// import BottomSidebarBanner from "@/components/SideBar/BottomSidebarBanner.tsx";
+// import BottomSidebarBanner from "@/components/Map/SideBar/BottomSidebarBanner.tsx";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faAlipay} from "@fortawesome/free-brands-svg-icons";
 import {useSiteConfig} from "@/context/SiteConfigContext.tsx";

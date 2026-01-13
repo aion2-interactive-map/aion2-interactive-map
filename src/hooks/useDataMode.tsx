@@ -31,7 +31,6 @@ const DataModeContext = createContext<DataModeContextValue | undefined>(
 // --- i18n update helper ---
 
 function updateI18nForMode(mode: DataMode) {
-  console.log("updateI18nForMode:", mode);
   const backend = i18n.services.backendConnector?.backend ?? null;
 
   if (backend) {
@@ -59,9 +58,7 @@ export function DataModeProvider({ children }: ProviderProps) {
 
   const toggleDataMode = useCallback(() => {
     setDataModeState((prev) => {
-      const next = prev === "static" ? "dynamic" : "static";
-      console.log("toggleDataMode", prev, "->", next);
-      return next;
+      return prev === "static" ? "dynamic" : "static";
     });
   }, []);
 

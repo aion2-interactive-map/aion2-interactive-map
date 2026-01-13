@@ -9,7 +9,7 @@ import remarkGfm from "remark-gfm";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faDollar} from "@fortawesome/free-solid-svg-icons";
 import {getStaticUrl} from "@/utils/url.ts";
-import {makeAccordionTitle} from "@/components/SideBar/makeAccordionTitle.tsx";
+import {makeAccordionTitle} from "@/components/Map/SideBar/makeAccordionTitle.tsx";
 
 
 const Donate: React.FC = () => {

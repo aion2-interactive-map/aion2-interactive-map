@@ -9,7 +9,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faEnvelope} from "@fortawesome/free-solid-svg-icons";
-import {makeAccordionTitle} from "@/components/SideBar/makeAccordionTitle.tsx";
+import {makeAccordionTitle} from "@/components/Map/SideBar/makeAccordionTitle.tsx";
 
 
 const ContactUs: React.FC = () => {

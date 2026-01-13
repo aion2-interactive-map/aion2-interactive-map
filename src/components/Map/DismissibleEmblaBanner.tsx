@@ -5,7 +5,7 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import type { EmblaOptionsType } from "embla-carousel";
 import EmblaCarouselBanner, {
   type BannerSlide,
-} from "@/components/EmblaCarousel/EmblaCarouselBanner.tsx";
+} from "@/components/Map/EmblaCarousel/EmblaCarouselBanner.tsx";
 
 export type BannerPosition =
   | "bottom-center"

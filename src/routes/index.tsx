@@ -1,10 +1,10 @@
 import {createFileRoute} from "@tanstack/react-router";
 import React, {useCallback, useRef, useState} from "react";
-import GameMapView from "@/components/GameMapView";
-import LeftSidebar from "@/components/SideBar/LeftSidebar";
+import GameMapView from "@/components/Map/GameMapView";
+import LeftSidebar from "@/components/Map/SideBar/LeftSidebar";
 import {Spinner} from "@heroui/react";
 import type {MapRef} from "@/types/game";
-// import DismissableAlert from "@/components/DismissableAlert.tsx";
+// import DismissableAlert from "@/components/Map/DismissableAlert.tsx";
 // import {useTranslation} from "react-i18next";
 // import ReactMarkdown from "react-markdown";
 // import remarkGfm from "remark-gfm";
@@ -14,7 +14,7 @@ import {MarkersProvider, useMarkers} from "@/context/MarkersContext.tsx";
 import {GameDataProvider} from "@/context/GameDataContext.tsx";
 import {UserMarkersProvider} from "@/context/UserMarkersContext.tsx";
 import {ThemeMapBridge} from "@/context/ThemeMapBridge.tsx";
-import DismissibleEmblaBanner from "@/components/DismissibleEmblaBanner.tsx";
+import DismissibleEmblaBanner from "@/components/Map/DismissibleEmblaBanner.tsx";
 
 
 const HomePage: React.FC = () => {

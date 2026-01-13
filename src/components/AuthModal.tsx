@@ -39,7 +39,6 @@ export default function AuthModal({isOpen, onClose}: AuthModalProps) {
 
 
   const submitLogin = async () => {
-    console.log("Login:", {email, password});
     const res = await login(email, password);
     if (res) {
       onClose();
@@ -62,7 +61,6 @@ export default function AuthModal({isOpen, onClose}: AuthModalProps) {
       setError(t("common:auth.registerMissing", "Missing field!"));
       return;
     }
-    console.log("Register:", {email, password});
     const res = await register(email, password, username, altchaValue);
     if (!res) {
       setError(t("common:auth.registerError", "Register error, please check email and password!"));

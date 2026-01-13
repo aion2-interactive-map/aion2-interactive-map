@@ -1,50 +1,28 @@
 // src/components/GameMapView.tsx
-import React, {useCallback, useEffect, useMemo, useState} from "react";
-import {MapContainer, Marker, Popup, useMap, useMapEvents} from "react-leaflet";
+import React, {useCallback, useMemo, useState} from "react";
+import {MapContainer} from "react-leaflet";
 import L from "leaflet";
 
 import GameMarker from "./GameMarker";
 
-import type {MapRef, RegionInstance} from "../types/game";
+import type {MapRef, RegionInstance} from "../../types/game";
 import GameMapTiles from "./GameMapTiles.tsx";
-import GameMapBorders from "@/components/GameMapBorders.tsx";
+import GameMapBorders from "./GameMapBorders.tsx";
 import {useTranslation} from "react-i18next";
 import {getStaticUrl} from "@/utils/url.ts";
-import DismissibleBanner from "@/components/DismissibleBanner.tsx";
+import DismissibleBanner from "./DismissibleBanner.tsx";
 import {useGameMap} from "@/context/GameMapContext.tsx";
 import {useMarkers} from "@/context/MarkersContext.tsx";
 import {useGameData} from "@/context/GameDataContext.tsx";
 import {useUserMarkers} from "@/context/UserMarkersContext.tsx";
-import UserMarker from "@/components/UserMarker.tsx";
-import MarkerPopupEdit from "@/components/MarkerPopupEdit.tsx";
-import MarkerPopupContent from "@/components/MarkerPopupContent.tsx";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faMapPin} from "@fortawesome/free-solid-svg-icons";
-import {renderToString} from "react-dom/server";
-
-
-type CursorTrackerProps = {
-  onUpdate: (x: number, y: number) => void;
-};
-
-type ContextMenuState = {
-  x: number;      // screen coords (relative to map container)
-  y: number;
-  mapX: number;   // map coords (your [x, y] system)
-  mapY: number;
-};
-
-const CursorTracker: React.FC<CursorTrackerProps> = ({onUpdate}) => {
-  useMapEvents({
-    mousemove(e) {
-      const {lat, lng} = e.latlng;
-      // CRS.Simple: lat = y, lng = x
-      onUpdate(lng, lat);
-    },
-  });
-
-  return null;
-};
+import UserMarker from "./UserMarker.tsx";
+import MarkerPopupEdit from "./MarkerPopupEdit.tsx";
+import CursorTracker from "./CursorTracker";
+import MapCursorController from "./MapCursorController";
+import MapClickPicker from "./MapClickPicker";
+import MarkerFocusController from "./MarkerFocusController";
+import SelectedMarkerPopup from "./SelectedMarkerPopup";
+import MapContextMenu, { type ContextMenuState } from "./MapContextMenu";
 
 type Props = {
   mapRef: React.RefObject<MapRef>;
@@ -52,175 +30,6 @@ type Props = {
   selectedMarkerId: string | null;
   selectedPosition: { x: number, y: number } | null;
 };
-
-const MapContextMenuHandler: React.FC<{
-  onOpenMenu: (state: ContextMenuState) => void;
-  onCloseMenu: () => void;
-}> = ({onOpenMenu, onCloseMenu}) => {
-  const {setPickMode, pickMode} = useUserMarkers();
-
-  const map = useMapEvents({
-    contextmenu(e) {
-      // Right-click on map
-      e.originalEvent.preventDefault();
-      if (pickMode) {
-        setPickMode(false);
-        return;
-      }
-
-      // Leaflet CRS.Simple: lat = y, lng = x
-      const mapX = e.latlng.lng;
-      const mapY = e.latlng.lat;
-
-      const containerPoint = map.latLngToContainerPoint(e.latlng);
-
-      onOpenMenu({
-        x: containerPoint.x,
-        y: containerPoint.y,
-        mapX,
-        mapY,
-      });
-    },
-    click() {
-      // Left-click anywhere on map closes menu
-      onCloseMenu();
-    },
-    movestart() {
-      onCloseMenu();
-    },
-    zoomstart() {
-      onCloseMenu();
-    },
-  });
-  return null;
-};
-
-const MapCursorController: React.FC = () => {
-  const map = useMap();
-  const {pickMode} = useUserMarkers();
-
-  useEffect(() => {
-    const container = map.getContainer();
-    container.style.cursor = pickMode ? `url(${getStaticUrl("images/CursorAdd.png")}) 22 63, crosshair` : "grab";
-    // console.log(pickMode, container);
-  }, [map, pickMode]);
-
-  return null;
-};
-
-// 🆕 Left-click picker for pickMode
-const MapClickPicker: React.FC<{
-  createMarker: (mapX: number, mapY: number) => void;
-}> = ({createMarker}) => {
-  const {pickMode} = useUserMarkers();
-
-  useMapEvents({
-    click(e) {
-      if (!pickMode) return;
-
-      const mapX = e.latlng.lng;
-      const mapY = e.latlng.lat;
-
-      createMarker(mapX, mapY);
-    },
-  });
-
-  return null;
-};
-
-function createFocusIcon(): L.DivIcon {
-  const html = renderToString(
-    <div
-      style={{
-        color: "#df1414",
-        fontSize: "32px",
-        transform: "translate(-50%, -100%)",
-        filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.6))",
-      }}
-    >
-      <FontAwesomeIcon icon={faMapPin} />
-    </div>
-  );
-
-  return L.divIcon({
-    html,
-    className: "", // IMPORTANT: avoid Leaflet default styles
-    iconSize: [24, 24],
-    iconAnchor: [12, 24], // bottom-center
-  });
-}
-
-function MarkerFocusController({selectedMarkerId, selectedPosition}: {
-  selectedMarkerId: string | null | undefined,
-  selectedPosition: { x: number, y: number } | null | undefined
-}) {
-  const map = useMap();
-  const {markersById} = useMarkers();
-
-  useEffect(() => {
-    if (!map) return;
-    if (!selectedMarkerId) return;
-
-    const marker = markersById[selectedMarkerId];
-    if (!marker) return;
-
-    // Leaflet uses [lat, lng]; assuming y=lat, x=lng:
-    const latLng: [number, number] = [marker.y, marker.x];
-
-    map.flyTo(latLng, map.getZoom(), {duration: 0.5});
-  }, [map, selectedMarkerId, markersById]);
-
-  useEffect(() => {
-    console.log(selectedPosition);
-    if (!map) return;
-    if (!selectedPosition) return;
-    const latLng: [number, number] = [selectedPosition.y, selectedPosition.x];
-    map.flyTo(latLng, map.getZoom(), {duration: 0.5});
-  }, [map, selectedPosition]);
-
-  if (selectedPosition) {
-    return (
-      <Marker
-        position={new L.LatLng(selectedPosition.y, selectedPosition.x)}
-        icon={createFocusIcon()}
-        interactive={false}
-      >
-      </Marker>
-    )
-  }
-
-  return null;
-}
-
-function SelectedMarkerPopup({onSelectMarker, selectedMarkerId}: {
-  onSelectMarker: (markerId: string | null) => void,
-  selectedMarkerId: string | null | undefined
-}) {
-  const {markersById} = useMarkers();
-  useMapEvents({
-    click() {
-      onSelectMarker(null);
-    },
-  });
-
-  if (!selectedMarkerId) return null;
-
-  const marker = markersById[selectedMarkerId];
-  if (!marker) return null;
-
-  return (
-    <Popup
-      position={[marker.y + 10, marker.x]}
-      maxWidth={360} minWidth={360}
-      autoPan={true} closeButton={false}
-    >
-      <MarkerPopupContent
-        marker={marker}
-        onSelectMarker={onSelectMarker}
-      />
-    </Popup>
-  );
-}
 
 const GameMapView: React.FC<Props> = ({
                                         mapRef,
@@ -324,7 +133,7 @@ const GameMapView: React.FC<Props> = ({
         <MapClickPicker createMarker={createMarker}/>
 
         {/* Handle right-click events */}
-        <MapContextMenuHandler
+        <MapContextMenu
           onOpenMenu={(state) => setContextMenu(state)}
           onCloseMenu={() => setContextMenu(null)}
         />

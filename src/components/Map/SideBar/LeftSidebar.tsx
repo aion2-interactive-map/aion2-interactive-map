@@ -3,15 +3,14 @@ import React from "react";
 import {useGameMap} from "@/context/GameMapContext.tsx";
 import SidebarWrapper from "./SidebarWrapper";
 import Logo from "./Logo.tsx";
-import SelectMap from "@/components/SideBar/SelectMap.tsx";
-import MarkerTypes from "@/components/SideBar/MarkerTypes.tsx";
-
+import SelectMap from "@/components/Map/SideBar/SelectMap.tsx";
+import MarkerTypes from "@/components/Map/SideBar/MarkerTypes.tsx";
 import {Accordion, AccordionItem, Tooltip} from "@heroui/react";
 import {useTranslation} from "react-i18next";
-import {makeAccordionTitle} from "@/components/SideBar/makeAccordionTitle.tsx";
+import {makeAccordionTitle} from "@/components/Map/SideBar/makeAccordionTitle.tsx";
 import {getStaticUrl} from "@/utils/url.ts";
 import {useUserMarkers} from "@/context/UserMarkersContext.tsx";
-import MarkerSearch from "@/components/SideBar/MarkerSearch.tsx";
+import MarkerSearch from "@/components/Map/SideBar/MarkerSearch.tsx";
 import {useTheme} from "@/context/ThemeContext.tsx";
 
 type LeftSidebarProps = {

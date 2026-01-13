@@ -3,6 +3,7 @@ import React, {createContext, useContext, useEffect, useState} from "react";
 import type { GameMapMeta,MarkerTypeSubtype } from "@/types/game";
 import {useGameMap} from "@/context/GameMapContext.tsx";
 import {useMarkers} from "@/context/MarkersContext.tsx";
+import { VISIBLE_SUBTYPES_STORAGE_PREFIX, VISIBLE_REGIONS_STORAGE_PREFIX } from "@/constants";
 
 type GameDataContextValue = {
   visibleSubtypes?: Set<string>;
@@ -25,16 +26,12 @@ type GameDataProviderProps = {
   children: React.ReactNode;
 };
 
-const VISIBLE_SUBTYPES_STORAGE_PREFIX = "aion2.visibleSubtypes.v1.";
-const VISIBLE_REGIONS_STORAGE_PREFIX = "aion2.visibleRegions.v1.";
-
 const saveVisibleData = (prefix: string, selectedMap: GameMapMeta | undefined, data: Set<string> | undefined) => {
   if (!selectedMap || !data) return;
   const storageKey = `${prefix}${selectedMap.name}`;
   try {
     const arr = Array.from(data);
     const stored = JSON.stringify(arr);
-    console.log("Save", storageKey, stored);
     if (typeof window !== "undefined") {
       window.localStorage.setItem(storageKey, stored);
     }
@@ -49,8 +46,7 @@ const loadVisibleData = (prefix: string, selectedMap: GameMapMeta, validKeys: Se
     const stored = typeof window !== "undefined"
       ? window.localStorage.getItem(storageKey)
       : null;
-    if (!stored) throw new Error("Storage is missing");
-    console.log("Load", storageKey, stored);
+    if (!stored) return null;
     const parsed = JSON.parse(stored) as string[];
     const set = new Set<string>();
     parsed.forEach((key) => {
@@ -95,7 +91,6 @@ export const GameDataProvider: React.FC<GameDataProviderProps> = ({
       // DEFAULT: only "location" subtypes
       const defaultKeys = new Set<string>();
       all.forEach((sub, name) => {
-        console.log(sub, selectedMap, name);
         if (sub.category === "location" || (sub.name === "monolithMaterial" && selectedMap.type === "abyss")) {
           defaultKeys.add(name);
         }
@@ -119,12 +114,10 @@ export const GameDataProvider: React.FC<GameDataProviderProps> = ({
 
 
   useEffect(() => {
-    console.log("saveVisibleData", selectedMap, visibleSubtypes)
     saveVisibleData(VISIBLE_SUBTYPES_STORAGE_PREFIX, selectedMap, visibleSubtypes)
   }, [selectedMap, visibleSubtypes]);
 
   useEffect(() => {
-    console.log("saveVisibleData", selectedMap, visibleRegions)
     saveVisibleData(VISIBLE_REGIONS_STORAGE_PREFIX, selectedMap, visibleRegions)
   }, [selectedMap, visibleRegions]);
 

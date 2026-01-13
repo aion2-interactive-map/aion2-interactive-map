@@ -4,7 +4,7 @@ import {Trans, useTranslation} from "react-i18next";
 import {Button, Card, Modal, ModalContent, ModalBody, Divider, Input} from "@heroui/react";
 import EmblaCarouselThumbs from "./EmblaCarousel/EmblaCarouselThumbs.tsx";
 import EmblaCarouselGallery from "./EmblaCarousel/EmblaCarouselGallery.tsx";
-import {getCdnUrl} from "../utils/url.ts";
+import {getCdnUrl} from "@/utils/url.ts";
 import {useUser} from "@/context/UserContext.tsx";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCommentDots} from "@fortawesome/free-solid-svg-icons";

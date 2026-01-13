@@ -9,7 +9,7 @@ import {useGameData} from "@/context/GameDataContext.tsx";
 import {useMarkers} from "@/context/MarkersContext.tsx";
 import {useGameMap} from "@/context/GameMapContext.tsx";
 import {parseIconUrl} from "@/utils/url.ts";
-import ConfirmClearCompletedModal from "@/components/SideBar/ConfirmClearCompletedModal.tsx";
+import ConfirmClearCompletedModal from "@/components/Map/SideBar/ConfirmClearCompletedModal.tsx";
 import {useUserMarkers} from "@/context/UserMarkersContext.tsx";
 
 const MarkerTypes: React.FC = () => {

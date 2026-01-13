@@ -27,7 +27,6 @@ export const GameMapProvider: React.FC<GameMapProviderProps> = ({children}: Game
 
   useEffect(() => {
     let cancelled = false;
-    console.log("GameDataProvider: loading game data");
 
     async function load() {
       try {
