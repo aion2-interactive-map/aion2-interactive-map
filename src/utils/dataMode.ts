@@ -33,6 +33,13 @@ export function computeBaseUrl(): string {
   return "/api/v1";
 }
 
+export function computeWsUrl(): string {
+  const base = computeBaseUrl();
+  if (base.startsWith("https://")) return base.replace("https://", "wss://");
+  if (base.startsWith("http://")) return base.replace("http://", "ws://");
+  return base;
+}
+
 export function computeExportBaseUrl(mode: DataMode): string {
   if (mode === "static") {
     return getStaticBaseUrl();

@@ -1,11 +1,11 @@
 // src/context/CharacterContext.tsx
-import React, { createContext, useContext, useEffect, useMemo, useState } from "react";
+import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { useNavigate, useSearch } from "@tanstack/react-router";
 import { Route as CharacterRoute } from "@/routes/character";
-import { computeBaseUrl } from "@/utils/dataMode.ts";
+import { computeBaseUrl, computeWsUrl } from "@/utils/dataMode.ts";
 import { useYamlLoader } from "@/hooks/useYamlLoader";
 import type {StatsData, RawSkillsFile, SkillMeta } from "@/types/game";
-import type {CharacterInfo} from "@/types/character";
+import type {CharacterInfo, CharacterEquipments, CharacterEquipmentDetails, CharacterEquipmentDetail} from "@/types/character";
 
 export type CharacterSelection = {
   serverId: number;
@@ -17,6 +17,9 @@ export type CharacterContextValue = {
   characterId: string | null;
 
   info: CharacterInfo | null;
+  equipments: CharacterEquipments | null;
+  equipmentDetails: CharacterEquipmentDetails | null;
+  
   stats: StatsData | null;
 
   skills: SkillMeta[];
@@ -35,10 +38,10 @@ type CharacterProviderProps = {
   children: React.ReactNode;
 };
 
-async function fetchCharacterInfoPlaceholder(params: {
+async function fetchCharacterInfo(params: {
   serverId: number;
   characterId: string;
-}): Promise<CharacterInfo> {
+}): Promise<any> {
   const url =
     computeBaseUrl() +
     `/characters/info?server=${params.serverId}&character=${encodeURIComponent(params.characterId)}`;
@@ -47,7 +50,10 @@ async function fetchCharacterInfoPlaceholder(params: {
   if (!resp.ok) throw new Error(`Search failed: ${resp.status}`);
 
   const json = await resp.json();
-  return json?.data as CharacterInfo;
+  if (json?.errorCode && json.errorCode !== "Success") {
+    throw new Error(json.errorMessage || "API Error");
+  }
+  return json?.data;
 }
 
 export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }) => {
@@ -58,6 +64,8 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
   const [characterId, setCharacterId] = useState<string | null>(search.characterId ?? null);
 
   const [info, setInfo] = useState<CharacterInfo | null>(null);
+  const [equipments, setEquipments] = useState<CharacterEquipments | null>(null);
+  const [equipmentDetails, setEquipmentDetails] = useState<CharacterEquipmentDetails | null>(null);
 
   const [stats, setStats] = useState<StatsData | null>(null);
 
@@ -65,6 +73,8 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  const wsRef = React.useRef<WebSocket | null>(null);
 
   const loadYaml = useYamlLoader();
 
@@ -122,7 +132,7 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
     setCharacterId(search.characterId ?? null);
   }, [search.serverId, search.characterId]);
 
-  const selectCharacter = (sel: CharacterSelection) => {
+  const selectCharacter = useCallback((sel: CharacterSelection) => {
     setServerId(sel.serverId);
     setCharacterId(sel.characterId);
 
@@ -134,12 +144,14 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
         characterId: sel.characterId,
       }),
     });
-  };
+  }, [navigate]);
 
-  const clearSelection = () => {
+  const clearSelection = useCallback(() => {
     setServerId(null);
     setCharacterId(null);
     setInfo(null);
+    setEquipments(null);
+    setEquipmentDetails(null);
     setError(null);
     setLoading(false);
 
@@ -151,39 +163,172 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
         characterId: undefined,
       }),
     });
-  };
+  }, [navigate]);
 
   // Fetch character info whenever selection changes
   useEffect(() => {
     let cancelled = false;
 
+    const cleanupWs = () => {
+      if (wsRef.current) {
+        wsRef.current.close();
+        wsRef.current = null;
+      }
+    };
+
     async function run() {
       if (!serverId || !characterId) {
         setInfo(null);
+        setEquipments(null);
+        setEquipmentDetails(null);
         setLoading(false);
         setError(null);
+        cleanupWs();
         return;
       }
 
+      setLoading(true);
+      setError(null);
+
       try {
-        setLoading(true);
-        setError(null);
-        const data = await fetchCharacterInfoPlaceholder({ serverId, characterId });
+        const data = await fetchCharacterInfo({ serverId, characterId });
         if (cancelled) return;
-        setInfo(data);
+
+        processCharacterData(data);
+        
+        const status = data.status;
+        if (status !== "cached" && status !== "failed") {
+          startWs(serverId, characterId);
+        } else {
+          cleanupWs();
+        }
+
+        setLoading(false);
       } catch (e) {
         if (cancelled) return;
-        setInfo(null);
         setError(e instanceof Error ? e.message : String(e));
-      } finally {
-        if (!cancelled) setLoading(false);
+        setLoading(false);
+        cleanupWs();
       }
+    }
+
+    function mapInfo(value: any, updatedAt?: number): CharacterInfo | null {
+      if (!value?.profile) return null;
+      return {
+        profile: value.profile,
+        stats: value.stats || [],
+        titles: value.titles || [],
+        rankings: value.rankings || [],
+        boards: value.boards || [],
+        updatedAt: updatedAt
+          ? new Date(updatedAt * 1000).toISOString()
+          : new Date().toISOString(),
+      };
+    }
+
+    function mapEquipments(value: any): CharacterEquipments {
+      return {
+        skills: (value?.skills || []).map((s: any) => ({
+          id: s.id,
+          skillLevel: s.skillLevel,
+          acquired: s.acquired,
+          equip: s.equip,
+        })),
+        equipments: (value?.equipments || []).map((e: any) => ({
+          id: e.id,
+          enchantLevel: e.enchantLevel,
+          exceedLevel: e.exceedLevel,
+          slotPos: e.slotPos,
+        })),
+      };
+    }
+
+    function processCharacterData(data: any) {
+      const items = data.items || {};
+      const meta = data.meta || {};
+
+      if (items.info) {
+        const processedInfo = mapInfo(items.info, meta.updatedAt);
+        if (processedInfo) setInfo(processedInfo);
+      }
+
+      if (items.equipments) {
+        setEquipments(mapEquipments(items.equipments));
+      }
+
+      const details = Object.entries(items)
+        .filter(([key]) => key.startsWith("equipments:"))
+        .reduce((acc, [key, value]) => {
+          acc[key] = value as CharacterEquipmentDetail;
+          return acc;
+        }, {} as CharacterEquipmentDetails);
+
+      if (Object.keys(details).length > 0) {
+        setEquipmentDetails(details);
+      }
+    }
+
+    async function reFetch(sid: number, cid: string) {
+      try {
+        const data = await fetchCharacterInfo({ serverId: sid, characterId: cid });
+        if (cancelled) return;
+        processCharacterData(data);
+        const status = data.status;
+        if (status !== "cached" && status !== "failed") {
+          startWs(sid, cid);
+        }
+      } catch (e) {
+        console.error("Re-fetch failed", e);
+      }
+    }
+
+    function startWs(sid: number, cid: string) {
+      cleanupWs();
+      const wsUrl = computeWsUrl() + `/characters/ws?server=${sid}&character=${encodeURIComponent(cid)}`;
+      const ws = new WebSocket(wsUrl);
+      wsRef.current = ws;
+
+      ws.onmessage = (event) => {
+        try {
+          const msg = JSON.parse(event.data);
+          if (!msg || !msg.key) return;
+
+          const key = msg.key;
+          const value = msg.value;
+
+          if (key === "info") {
+            const processedInfo = mapInfo(value, msg.updated_at);
+            if (processedInfo) setInfo(processedInfo);
+          } else if (key === "equipments") {
+            setEquipments(mapEquipments(value));
+          } else if (key.startsWith("equipments:")) {
+            setEquipmentDetails((prev) => ({
+              ...(prev || {}),
+              [key]: value as CharacterEquipmentDetail,
+            }));
+          }
+        } catch (e) {
+          console.error("WS parse error", e);
+        }
+      };
+
+      ws.onclose = () => {
+        if (!cancelled) {
+          wsRef.current = null;
+          void reFetch(sid, cid);
+        }
+      };
+
+      ws.onerror = (err) => {
+        console.error("WS Error:", err);
+      };
     }
 
     void run();
 
     return () => {
       cancelled = true;
+      cleanupWs();
     };
   }, [serverId, characterId]);
 
@@ -192,6 +337,8 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
       serverId,
       characterId,
       info,
+      equipments,
+      equipmentDetails,
       stats,
       skills,
       skillsById,
@@ -200,7 +347,7 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
       selectCharacter,
       clearSelection,
     }),
-    [serverId, characterId, info, stats, skills, skillsById, loading, error]
+    [serverId, characterId, info, equipments, equipmentDetails, stats, skillsById, loading, error, selectCharacter, clearSelection]
   );
 
   return <CharacterContext.Provider value={value}>{children}</CharacterContext.Provider>;

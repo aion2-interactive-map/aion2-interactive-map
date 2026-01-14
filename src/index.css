@@ -20,6 +20,8 @@
     --color-input: rgba(185, 185, 185, 0.2);
     --color-input-2: #F6F6F6;
     --color-character-input: rgba(255, 255, 255, 0.10);
+    --color-character-card: #E5F0FF;
+    --color-character-equipment: #F3FBFF;
     --color-search: rgba(247, 252, 255, 1);
     --color-search-item: rgba(82, 82, 82, 0.04);
     --color-crafting-item: rgba(243, 251, 255, 1);

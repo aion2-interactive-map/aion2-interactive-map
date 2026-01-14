@@ -1,44 +1,112 @@
-mainStats:
-  STR:
-    name: 威力
-  DEX:
-    name: 敏捷
-  AGI:
-    name: 精確
-  WIS:
-    name: 意志
-  INT:
-    name: 知識
-  CON:
-    name: 體力
-lordStats:
-  Destruction:
-    name: 破壞
-    description: 吉凱爾
-  Death:
-    name: 死亡
-    description: 崔妮爾
-  Wisdom:
-    name: 智慧
-    description: 露梅爾
-  Destiny:
-    name: 命運
-    description: 瑪爾庫坦
-  Space:
-    name: 空間
-    description: 伊斯拉佩爾
-  Time:
-    name: 時間
-    description: 希埃爾
-  Life:
-    name: 生命
-    description: 尤斯迪埃
-  Illusion:
-    name: 幻象
-    description: 凱西內爾
-  Freedom:
-    name: 自由
-    description: 白傑爾
-  Justice:
-    name: 正義
-    description: 奈薩肯
+STR:
+  name: 威力
+DEX:
+  name: 敏捷
+AGI:
+  name: 精確
+WIS:
+  name: 意志
+INT:
+  name: 知識
+CON:
+  name: 體力
+
+Destruction:
+  name: 破壞
+  description: 吉凱爾
+Death:
+  name: 死亡
+  description: 崔妮爾
+Wisdom:
+  name: 智慧
+  description: 露梅爾
+Destiny:
+  name: 命運
+  description: 瑪爾庫坦
+Space:
+  name: 空間
+  description: 伊斯拉佩爾
+Time:
+  name: 時間
+  description: 希埃爾
+Life:
+  name: 生命
+  description: 尤斯迪埃
+Illusion:
+  name: 幻象
+  description: 凱西內爾
+Freedom:
+  name: 自由
+  description: 白傑爾
+Justice:
+  name: 正義
+  description: 奈薩肯
+
+WeaponFixingDamage:
+  name: 攻擊力
+DamageRatio:
+  name: 攻擊力增加
+DefenseRatio:
+  name: 防禦力增加
+WeaponAccuracy:
+  name: 命中
+Critical:
+  name: 暴擊
+PvEAmplifyDamage:
+  name: PVE傷害增幅
+PvEDecreaseDamage:
+  name: PVE傷害耐性
+Block:
+  name: 格擋
+AmplifyWeaponDamage:
+  name: 武器傷害增幅
+CombatSpeed:
+  name: 戰鬥速度
+AdditionalHitRate:
+  name: 多段打擊擊中
+Accuracy:
+  name: 額外命中
+MPMax:
+  name: 精神力
+HPMax:
+  name: 生命力
+FPMax:
+  name: 飛行力
+BackAttackDamage:
+  name: 後方攻擊力
+ArmorDefense:
+  name: 防禦力
+AmplifyHpHealGet:
+  name: 所受治癒量
+HPRegen:
+  name: 生命力自然恢復
+MPRegen:
+  name: 精神力自然恢復
+AmplifyAllDamage:
+  name: 傷害增幅
+CriticalResist:
+  name: 暴擊抵抗
+HpPotionRate:
+  name: 生命力藥水恢復增加
+Restoration:
+  name: 再生
+DecreaseDamage:
+  name: 傷害耐性
+AbnormalResistance:
+  name: 異常狀態抵抗
+MoveSpeed:
+  name: 移動速度
+Evasion:
+  name: 額外迴避
+BackAttackDefense:
+  name: 後方防禦力
+AmplifyCriticalDamage:
+  name: 暴擊傷害增幅
+DefensePierce:
+  name: 貫穿
+SealStoneAddDamage:
+  name: 封魂石額外傷害
+Perfect:
+  name: 完美
+ArmorEvasion:
+  name: 迴避

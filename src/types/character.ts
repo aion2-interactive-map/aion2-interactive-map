@@ -4,10 +4,15 @@ export type CharacterInfo = {
   titles: CharacterTitle[];
   rankings: CharacterRanking[];
   boards: CharacterBoard[];
-  skills: CharacterSkill[];
-  equipments: CharacterEquipment[];
   updatedAt: string;
 };
+
+export type CharacterEquipments = {
+  skills: CharacterSkill[];
+  equipments: CharacterEquipment[];
+};
+
+export type CharacterEquipmentDetails = Record<string, CharacterEquipmentDetail>;
 
 export type CharacterProfile = {
   characterId: string;
@@ -108,5 +113,47 @@ export type CharacterEquipment = {
   id: number;
   enchantLevel: number;
   exceedLevel: number;
+  slotPos: number;
+};
+
+export type CharacterEquipmentDetail = {
+  id: number;
+  level: number;
+  levelValue: number;
+  enchantLevel: number;
+  maxEnchantLevel: number;
+  maxExceedEnchantLevel: number;
+  soulBindRate: string;
+  mainStats: CharacterEquipmentStat[];
+  subStats: CharacterEquipmentSubStat[];
+  magicStoneStat: MagicStoneStat[];
+  godStoneStat: GodStoneStat[];
+};
+
+export type CharacterEquipmentStat = {
+  id: string;
+  minValue: string;
+  value: string;
+  extra: string;
+  exceed: boolean;
+};
+
+export type CharacterEquipmentSubStat = {
+  id: string;
+  value: string;
+};
+
+export type MagicStoneStat = {
+  id: string;
+  value: string;
+  grade: string;
+  slotPos: number;
+};
+
+export type GodStoneStat = {
+  icon: string;
+  name: string;
+  desc: string;
+  grade: string;
   slotPos: number;
 };
