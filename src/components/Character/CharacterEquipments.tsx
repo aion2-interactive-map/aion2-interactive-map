@@ -1,5 +1,5 @@
 import React from "react";
-import {Tooltip, Spinner} from "@heroui/react";
+import {Tooltip, Spinner, Progress} from "@heroui/react";
 import {useCharacter} from "@/context/CharacterContext.tsx";
 import {getStaticUrl} from "@/utils/url.ts";
 import {useTranslation} from "react-i18next";
@@ -16,6 +16,36 @@ const CharacterEquipments: React.FC = () => {
   const {t} = useTranslation();
 
   const equipmentBySlotPos = keyBy(equipments?.equipments ?? [], "slotPos");
+
+  const renderExceedLevel = (exceedLevel: number) => {
+    if (exceedLevel === 0) return <div className="h-[16px] w-[16px] shrink-0"/>;
+    return (
+      <div className="mt-2 flex items-center justify-start gap-0">
+        {Array.from({length: 5}).map((_, i) => (
+          <div
+            key={i}
+            className="h-[16px] w-[16px] overflow-hidden rounded-sm flex justify-center items-center"
+          >
+            {i < exceedLevel && (
+              <img
+                src={getStaticUrl(
+                  "UI/Resource/Texture/Icon/UT_NP_QuestMonolith_Acquired.webp"
+                )}
+                alt="exceed-level"
+                className="h-full w-full object-contain"
+                style={{
+                  objectFit: "contain",
+                  objectPosition: "0% 50%",
+                  transform: "scale(3)",
+                }}
+                draggable={false}
+              />
+            )}
+          </div>
+        ))}
+      </div>
+    );
+  };
 
   const renderEquipmentCell = (slotPos: SlotPos) => {
     const eq = equipmentBySlotPos[slotPos];
@@ -34,53 +64,88 @@ const CharacterEquipments: React.FC = () => {
     // console.log(detail);
 
     const tooltipContent = detail ? (
-      <div className="space-y-1 w-full text-[14px]">
+      <div className="space-y-2 w-full text-[14px]">
         <div className="font-bold text-[18px] text-center pb-1">装备详情</div>
-        <div className="space-y-2">
-          {detail.mainStats && detail.mainStats.length > 0 && (
-            <div className="bg-character-card p-2 rounded space-y-1">
-              {detail.mainStats.map((s, i) => (
-                <div key={`${s.id}-${i}`} className="flex justify-between">
-                  <span className="text-default-800 font-[400]">{t(`stats:${s.id}.name`, s.id)}</span>
-                  <span className="text-foreground font-[700]">
-                    {s.value !== "0" && s.value !== "" && s.value !== "0%" && (
+        <div
+          className="p-2 rounded flex justify-between items-center bg-contain bg-center bg-no-repeat"
+          style={{backgroundImage: `url(${gradeBackground})`, backgroundSize: "100% 100%"}}
+        >
+          <div className="flex flex-col justify-between h-full">
+            <div className={`mb-1 text-[18px] font-bold text-stroke text-grade-${lowerCase(item?.grade || "Common")}`}>
+              {eq?.enchantLevel ? `+${eq.enchantLevel} ` : ""}{itemName}
+            </div>
+            <div className="text-[14px]">
+              <span className={`font-bold text-stroke text-grade-${lowerCase(item?.grade || "Common")}`}>{t(`items/grades:${item?.grade}.name`)}</span>
+              <span className="font-bold text-background">{t(`items/types:subtypes.${item?.subtype}.name`)}</span>
+            </div>
+            <div className="text-[14px] font-bold text-background">道具等级</div>
+            <div className="text-[14px] font-bold text-background">
+              {detail.level} (+{detail.levelValue})
+            </div>
+          </div>
+          <div className="flex flex-col items-center">
+            <img src={imgSrc} alt={itemName} className="w-16 h-16 object-contain"/>
+            {renderExceedLevel(eq?.exceedLevel || 0)}
+          </div>
+        </div>
+        {detail.mainStats && detail.mainStats.length > 0 && (
+          <div className="bg-character-card p-2 rounded space-y-1">
+            {detail.mainStats.map((s, i) => (
+              <div key={`${s.id}-${i}`} className="flex justify-between">
+                  <span
+                    className={`${s.exceed ? "text-grade-epic" : "text-default-800"} font-[700]`}>{t(`stats:${s.id}.name`, s.id)}</span>
+                <span className="text-foreground font-[700]">
+                    {!s.exceed && (
                       s.minValue && s.minValue !== "" ? `${s.minValue} - ${s.value}` : s.value
                     )}
-                    {s.extra !== "0" && s.extra !== "0%" && (
-                      <span className="text-success ml-1">
-                        {s.value !== "0" && s.value !== "" && s.value !== "0%" ? `+${s.extra}` : s.extra}
-                      </span>
-                    )}
+                  {
+                    s.extra !== "0" && s.extra !== "0%" && (
+                      !s.exceed ? <span className="text-grade-rare ml-1">(+{s.extra})</span> :
+                        <span className="text-grade-epic ml-1">{s.extra}</span>
+                    )
+                  }
                   </span>
-                </div>
-              ))}
-            </div>
-          )}
-          {( (detail.subStats && detail.subStats.length > 0) || (detail.subSkills && detail.subSkills.length > 0) ) && (
-            <div className="bg-character-card p-2 rounded space-y-1">
-              {detail.subStats && detail.subStats.map((s, i) => (
-                <div key={`${s.id}-${i}`} className="flex justify-between">
-                  <span className="text-default-800 font-[400]">{t(`stats:${s.id}.name`, s.id)}</span>
-                  <span className="text-foreground font-[700]">{s.value}</span>
-                </div>
-              ))}
-              {detail.subSkills && detail.subSkills.map((s, i) => (
-                <div key={`${s.id}-${i}`} className="flex justify-between items-center">
-                  <span className="text-default-800 font-[400]">{t(`skills:${s.id}.name`, String(s.id))}</span>
-                  <span className="text-foreground font-[700]">+{s.level}</span>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
+              </div>
+            ))}
+          </div>
+        )}
+        {((detail.subStats && detail.subStats.length > 0) || (detail.subSkills && detail.subSkills.length > 0)) && (
+          <div className="bg-character-card p-2 rounded space-y-1">
+            <Progress
+              aria-label="Loading..."
+              color="primary"
+              value={Number(detail.soulBindRate)}
+              label="灵魂刻印率"
+              valueLabel={`${detail.soulBindRate}%`}
+              showValueLabel={true}
+              classNames={{
+                label: "text-[14px] text-default-800 font-[700]",
+                value: "text-[14px] text-foreground font-[700]",
+                base: "gap-0.5"
+              }}
+              size="sm"
+            />
+            {detail.subStats && detail.subStats.map((s, i) => (
+              <div key={`${s.id}-${i}`} className="flex justify-between">
+                <span className="text-default-800 font-[700]">{t(`stats:${s.id}.name`, s.id)}</span>
+                <span className="text-foreground font-[700]">{s.value}</span>
+              </div>
+            ))}
+            {detail.subSkills && detail.subSkills.map((s, i) => (
+              <div key={`${s.id}-${i}`} className="flex justify-between items-center">
+                <span className="text-default-800 font-[700]">{t(`skills:${s.id}.name`, String(s.id))}</span>
+                <span className="text-foreground font-[700]">Lv.+{s.level}</span>
+              </div>
+            ))}
+          </div>
+        )}
         {detail.magicStoneStat?.length > 0 && (
-          <div className="pt-1 space-y-1">
-            {/*<div className="text-[10px] uppercase text-default-400 mb-1 px-2">Magic Stones</div>*/}
-            <div className="bg-character-card p-2 rounded space-y-1">
+          <div className="pt-1">
+            <div className="bg-character-card p-2 rounded grid grid-cols-2 gap-x-4 gap-y-1">
               {detail.magicStoneStat.map((s, i) => (
-                <div key={i} className="flex justify-between">
-                  <span className="text-default-800 font-[400]">{t(`stats:${s.id}.name`, s.id)}</span>
-                  <span className={`text-foreground font-[700] text-grade-${lowerCase(s.grade)}`}>{s.value}</span>
+                <div key={i} className={`flex justify-between text-grade-${lowerCase(s.grade)}`}>
+                  <span className="font-[700] whitespace-nowrap">{t(`stats:${s.id}.name`, s.id)}</span>
+                  <span className="font-[700]">{s.value}</span>
                 </div>
               ))}
             </div>
@@ -93,7 +158,7 @@ const CharacterEquipments: React.FC = () => {
               {detail.godStoneStat.map((s, i) => (
                 <div key={i} className="flex flex-col">
                   <div className="flex justify-between items-center">
-                    <span className="text-foreground font-[400]">{s.name}</span>
+                    <span className={`text-grade-${lowerCase(s.grade)} font-[700]`}>{s.name}</span>
                     {/*<span className={`text-foreground font-[700] text-grade-${lowerCase(s.grade)}`}>{t(`common:grades.${s.grade}`, s.grade)}</span>*/}
                   </div>
                   <div className="text-default-800 text-[12px] mt-1">{s.desc}</div>
@@ -105,7 +170,7 @@ const CharacterEquipments: React.FC = () => {
       </div>
     ) : (
       <div className="flex justify-center items-center py-2">
-        <Spinner size="sm" />
+        <Spinner size="sm"/>
       </div>
     );
 
@@ -138,34 +203,7 @@ const CharacterEquipments: React.FC = () => {
                 {(eq || detail) &&
                   `${itemName} +${eq?.enchantLevel ?? detail?.enchantLevel ?? 0}`}
               </div>
-              <div className="mt-2 flex items-center justify-start gap-0">
-                {eq?.exceedLevel ? Array.from({
-                    length: eq?.exceedLevel || 0,
-                  }).map((_, i) => (
-                    <div
-                      key={i}
-                      className="h-[16px] w-[16px] overflow-hidden rounded-sm flex justify-center items-center"
-                    >
-                      <img
-                        src={getStaticUrl(
-                          "UI/Resource/Texture/Icon/UT_NP_QuestMonolith_Acquired.webp"
-                        )}
-                        alt="exceed-level"
-                        className="h-full w-full object-contain"
-                        style={{
-                          objectFit: "contain",
-                          objectPosition: "0% 50%",
-                          transform: "scale(3)",
-                        }}
-                        draggable={false}
-                      />
-                    </div>
-                  ))
-                  : null}
-                {!(eq?.exceedLevel || detail?.maxExceedEnchantLevel) && (
-                  <div className="h-[16px] w-[16px] shrink-0"/>
-                )}
-              </div>
+              {renderExceedLevel(eq?.exceedLevel || 0)}
             </div>
           </div>
         </div>

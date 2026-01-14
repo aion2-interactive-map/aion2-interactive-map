@@ -1,12 +1,12 @@
 // src/components/CharacterSearch.tsx
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import {useCallback, useEffect, useMemo, useRef, useState} from "react";
 import {Autocomplete, AutocompleteItem, Select, SelectItem, Input, Card, CardBody, Spinner} from "@heroui/react";
-import { useServerData } from "@/context/ServerDataContext.tsx";
-import { useTranslation } from "react-i18next";
-import { computeBaseUrl } from "@/utils/dataMode.ts";
+import {useTranslation} from "react-i18next";
+import {computeBaseUrl} from "@/utils/dataMode.ts";
+import {useDebounce} from "@/hooks/useDebounce";
+import {SEARCH_DEBOUNCE_MS} from "@/constants";
+import {useServerData} from "@/context/ServerDataContext.tsx";
 import {useCharacter} from "@/context/CharacterContext.tsx";
-import { useDebounce } from "@/hooks/useDebounce";
-import { SEARCH_DEBOUNCE_MS } from "@/constants";
 
 type CharacterSearchItem = {
   id: string;
@@ -24,9 +24,9 @@ type ServerOption = {
 };
 
 export default function CharacterSearch() {
-  const { servers, loading: serversLoading } = useServerData();
+  const {servers, loading: serversLoading} = useServerData();
   const {selectCharacter, characterId: currentCharacterId} = useCharacter();
-  const { t } = useTranslation();
+  const {t} = useTranslation();
 
   const [raceId, setRaceId] = useState<"1" | "2">("1");
   const [serverId, setServerId] = useState<string>("all");
@@ -56,11 +56,11 @@ export default function CharacterSearch() {
     if (!k || !rid) return;
 
     const reqId = ++lastReqIdRef.current;
-    
+
     const runSearch = async () => {
       try {
         setSearchLoading(true);
-        const items = await fetchCharacters({ keyword: k, raceId: rid, serverId: sid });
+        const items = await fetchCharacters({keyword: k, raceId: rid, serverId: sid});
         if (lastReqIdRef.current !== reqId) return;
         setSearchItems(items);
       } catch (e) {
@@ -84,7 +84,7 @@ export default function CharacterSearch() {
       `/characters/search?race=${params.raceId}&keyword=${encodeURIComponent(params.keyword)}`;
     const url = params.serverId ? `${base}&server=${params.serverId}` : base;
 
-    const resp = await fetch(url, { method: "GET" });
+    const resp = await fetch(url, {method: "GET"});
     if (!resp.ok) throw new Error(`Search failed: ${resp.status}`);
 
     const json = (await resp.json()) as {
@@ -107,7 +107,7 @@ export default function CharacterSearch() {
   );
 
   const serverOptions = useMemo<ServerOption[]>(() => {
-    const opts: ServerOption[] = [{ key: "all", label: t("common:server.allServers", "All servers") }];
+    const opts: ServerOption[] = [{key: "all", label: t("common:server.allServers", "All servers")}];
     for (const s of serversForRace) {
       opts.push({
         key: String(s.serverId),
@@ -211,7 +211,7 @@ export default function CharacterSearch() {
             <Card
               key={item.id}
               isPressable
-              onPress={() => selectCharacter({ serverId: item.serverId, characterId: item.id })}
+              onPress={() => selectCharacter({serverId: item.serverId, characterId: item.id})}
               className="bg-character-card border-1 border-crafting-border hover:border-primary transition-colors"
               shadow="sm"
             >
@@ -236,9 +236,9 @@ export default function CharacterSearch() {
             </Card>
           ))}
           {searchLoading && (
-             <div className="col-span-full flex justify-center py-10">
-               <Spinner color="primary" label="Searching characters..." />
-             </div>
+            <div className="col-span-full flex justify-center py-10">
+              <Spinner color="primary" label="Searching characters..."/>
+            </div>
           )}
           {!searchLoading && keyword.trim() !== "" && searchItems.length === 0 && (
             <div className="col-span-full flex justify-center py-10">
@@ -251,86 +251,86 @@ export default function CharacterSearch() {
   }
 
   return (
-      <div className="flex flex-row gap-0 items-end w-full justify-end">
-        {/* 1) Race */}
-        <Select
-          placeholder={t("common:server.race", "Race")}
-          isRequired
-          selectedKeys={new Set([raceId])}
-          onSelectionChange={(keys) => {
-            const v = keys.currentKey;
-            if (v === "1" || v === "2") setRaceId(v);
-          }}
-          className="w-[100px] flex-none"
-          radius="none"
-          classNames={selectClassNames}
-        >
-          <SelectItem key="1">{t("common:server.light", "Light")}</SelectItem>
-          <SelectItem key="2">{t("common:server.dark", "Dark")}</SelectItem>
-        </Select>
+    <div className="flex flex-row gap-0 items-end w-full justify-end">
+      {/* 1) Race */}
+      <Select
+        placeholder={t("common:server.race", "Race")}
+        isRequired
+        selectedKeys={new Set([raceId])}
+        onSelectionChange={(keys) => {
+          const v = keys.currentKey;
+          if (v === "1" || v === "2") setRaceId(v);
+        }}
+        className="w-[100px] flex-none"
+        radius="none"
+        classNames={selectClassNames}
+      >
+        <SelectItem key="1">{t("common:server.light", "Light")}</SelectItem>
+        <SelectItem key="2">{t("common:server.dark", "Dark")}</SelectItem>
+      </Select>
 
-        {/* 2) Server */}
-        <Select
-          placeholder={t("common:server.server", "Server")}
-          isRequired={false}
-          isDisabled={serversLoading || serversForRace.length === 0}
-          items={serverOptions}
-          selectedKeys={new Set([serverId])}
-          onSelectionChange={(keys) => {
-            const v = keys.currentKey;
-            setServerId(v ? String(v) : "all");
-          }}
-          className="w-[160px] flex-none"
-          renderValue={(items) => items[0]?.textValue ?? ""}
-          radius="none"
-          classNames={selectClassNames}
-        >
-          {(item) => (
-            <SelectItem key={item.key} textValue={item.label}>
-              {item.label}
-            </SelectItem>
-          )}
-        </Select>
+      {/* 2) Server */}
+      <Select
+        placeholder={t("common:server.server", "Server")}
+        isRequired={false}
+        isDisabled={serversLoading || serversForRace.length === 0}
+        items={serverOptions}
+        selectedKeys={new Set([serverId])}
+        onSelectionChange={(keys) => {
+          const v = keys.currentKey;
+          setServerId(v ? String(v) : "all");
+        }}
+        className="w-[160px] flex-none"
+        renderValue={(items) => items[0]?.textValue ?? ""}
+        radius="none"
+        classNames={selectClassNames}
+      >
+        {(item) => (
+          <SelectItem key={item.key} textValue={item.label}>
+            {item.label}
+          </SelectItem>
+        )}
+      </Select>
 
-        {/* 3) Character keyword autocomplete */}
-        <Autocomplete
-          placeholder={t("common:server.search", "Type to search...")}
-          inputValue={keyword}
-          onInputChange={setKeyword}
-          onSelectionChange={(key) => {
-            const item = searchItems.find((x) => x.id === key);
-            if (item) selectCharacter({ serverId: item.serverId, characterId: item.id });
-          }}
-          isDisabled={serversLoading}
-          isLoading={searchLoading}
-          items={searchItems}
-          className="w-[180px] flex-none"
-          radius="none"
-          inputProps={{classNames: autocompleteInputClassNames}}
-        >
-          {(item) => (
-            <AutocompleteItem key={item.id} textValue={item.name}>
-              <div className="flex items-center gap-2 w-full">
-                <img
-                  src={`https://profileimg.plaync.com${item.profileImageUrl}`}
-                  alt={item.name}
-                  className="w-[40px] h-[40px] object-cover rounded-md shrink-0"
-                  draggable={false}
-                />
-                <div className="min-w-0 flex-1">
-                  <div className="flex justify-between text-sm font-medium">
-                    <span className="truncate text-default-800">{item.name}</span>
-                    <span className="shrink-0 text-default-600">Lv.{item.level}</span>
-                  </div>
-                  <div className="truncate text-xs text-default-700">
-                    {item.serverName}
-                  </div>
+      {/* 3) Character keyword autocomplete */}
+      <Autocomplete
+        placeholder={t("common:server.search", "Type to search...")}
+        inputValue={keyword}
+        onInputChange={setKeyword}
+        onSelectionChange={(key) => {
+          const item = searchItems.find((x) => x.id === key);
+          if (item) selectCharacter({serverId: item.serverId, characterId: item.id});
+        }}
+        isDisabled={serversLoading}
+        isLoading={searchLoading}
+        items={searchItems}
+        className="w-[180px] flex-none"
+        radius="none"
+        inputProps={{classNames: autocompleteInputClassNames}}
+      >
+        {(item) => (
+          <AutocompleteItem key={item.id} textValue={item.name}>
+            <div className="flex items-center gap-2 w-full">
+              <img
+                src={`https://profileimg.plaync.com${item.profileImageUrl}`}
+                alt={item.name}
+                className="w-[40px] h-[40px] object-cover rounded-md shrink-0"
+                draggable={false}
+              />
+              <div className="min-w-0 flex-1">
+                <div className="flex justify-between text-sm font-medium">
+                  <span className="truncate text-default-800">{item.name}</span>
+                  <span className="shrink-0 text-default-600">Lv.{item.level}</span>
+                </div>
+                <div className="truncate text-xs text-default-700">
+                  {item.serverName}
                 </div>
               </div>
-            </AutocompleteItem>
-          )}
-        </Autocomplete>
-      </div>
+            </div>
+          </AutocompleteItem>
+        )}
+      </Autocomplete>
+    </div>
 
   );
 }

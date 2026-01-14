@@ -3,10 +3,12 @@ import React from "react";
 import {z} from "zod";
 import {createFileRoute} from "@tanstack/react-router";
 import {ServerDataProvider} from "@/context/ServerDataContext.tsx";
-import CharacterSearch from "@/components/Character/CharacterSearch.tsx";
 import {CharacterProvider} from "@/context/CharacterContext.tsx";
-import CharacterDetail from "@/components/Character/CharacterDetail.tsx";
 import {ItemDataProvider} from "@/context/ItemDataContext.tsx";
+
+import CharacterSearch from "@/components/Character/CharacterSearch.tsx";
+import CharacterDetail from "@/components/Character/CharacterDetail.tsx";
+
 
 function Page() {
   return (
