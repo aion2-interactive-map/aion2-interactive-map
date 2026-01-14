@@ -10,6 +10,10 @@ import CharacterTitles from "./CharacterTitles.tsx";
 export default function CharacterDetail() {
   const {info, loading, error, characterId, stats} = useCharacter();
 
+  if (!characterId) {
+    return null;
+  }
+
   if (error) {
     return (
       <div className="grid place-items-center py-20 text-default-500">
@@ -86,11 +90,6 @@ export default function CharacterDetail() {
         </div>
       </div>
 
-      {!characterId && (
-        <div className="grid place-items-center py-10 text-default-400 text-sm w-full">
-          No character selected.
-        </div>
-      )}
     </div>
   );
 }

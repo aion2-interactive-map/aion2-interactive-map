@@ -1,5 +1,5 @@
 import React from "react";
-import {Tooltip} from "@heroui/react";
+import {Tooltip, Spinner} from "@heroui/react";
 import {useCharacter} from "@/context/CharacterContext.tsx";
 import {getStaticUrl} from "@/utils/url.ts";
 import {useTranslation} from "react-i18next";
@@ -98,7 +98,9 @@ const CharacterEquipments: React.FC = () => {
         )}
       </div>
     ) : (
-      itemName
+      <div className="flex justify-center items-center py-2">
+        <Spinner size="sm" />
+      </div>
     );
 
     return (
