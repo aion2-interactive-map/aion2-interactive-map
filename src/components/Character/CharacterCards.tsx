@@ -28,23 +28,25 @@ const CharacterCards: React.FC = () => {
             style={{height: "80px", width: "80px"}}
             title={itemName}
           >
-            {icon ? (
-              <img
-                src={icon}
-                alt={itemName}
-                className="object-contain rounded-lg"
-                style={{width: "80px", height: "80px"}}
-                draggable={false}
-              />
+            {eq ? (
+              <>
+                <img
+                  src={icon}
+                  alt={itemName}
+                  className="object-contain rounded-lg"
+                  style={{width: "80px", height: "80px"}}
+                  draggable={false}
+                />
+                <div
+                  className="absolute left-1/2 -translate-x-1/2 bottom-[4px] text-white bg-black/60 px-2 rounded-lg text-[14px] font-bold pointer-events-none"
+                >
+                  +{eq?.enchantLevel ?? 0}
+                </div>
+              </>
             ) : (
-              <div className="bg-default-200 rounded-lg w-full h-full"/>
+              <div className="bg-default-800 rounded-lg w-full h-full"/>
             )}
 
-            <div
-              className="absolute left-1/2 -translate-x-1/2 bottom-[4px] text-white bg-black/60 px-2 rounded-lg text-[14px] font-bold pointer-events-none"
-            >
-              +{eq?.enchantLevel ?? 0}
-            </div>
           </div>
         );
       })}

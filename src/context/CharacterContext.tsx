@@ -26,6 +26,7 @@ export type CharacterContextValue = {
   skillsById: Map<number, SkillMeta>;
 
   loading: boolean;
+  isUpdating: boolean;
   error: string | null;
 
   selectCharacter: (sel: CharacterSelection) => void;
@@ -72,6 +73,7 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
   const [skills, setSkills] = useState<SkillMeta[]>([]);
 
   const [loading, setLoading] = useState(false);
+  const [isUpdating, setIsUpdating] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const wsRef = React.useRef<WebSocket | null>(null);
@@ -174,6 +176,7 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
         wsRef.current.close();
         wsRef.current = null;
       }
+      setIsUpdating(false);
     };
 
     async function run() {
@@ -284,6 +287,7 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
 
     function startWs(sid: number, cid: string) {
       cleanupWs();
+      setIsUpdating(true);
       const wsUrl = computeWsUrl() + `/characters/ws?server=${sid}&character=${encodeURIComponent(cid)}`;
       const ws = new WebSocket(wsUrl);
       wsRef.current = ws;
@@ -315,6 +319,7 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
       ws.onclose = () => {
         if (!cancelled) {
           wsRef.current = null;
+          setIsUpdating(false);
           void reFetch(sid, cid);
         }
       };
@@ -343,11 +348,12 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
       skills,
       skillsById,
       loading,
+      isUpdating,
       error,
       selectCharacter,
       clearSelection,
     }),
-    [serverId, characterId, info, equipments, equipmentDetails, stats, skillsById, loading, error, selectCharacter, clearSelection]
+    [serverId, characterId, info, equipments, equipmentDetails, stats, skillsById, loading, isUpdating, error, selectCharacter, clearSelection]
   );
 
   return <CharacterContext.Provider value={value}>{children}</CharacterContext.Provider>;

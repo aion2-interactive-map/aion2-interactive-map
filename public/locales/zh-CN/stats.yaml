@@ -110,3 +110,11 @@ Perfect:
   name: 完美
 ArmorEvasion:
   name: 迴避
+CriticalAddDamage:
+  name: 暴擊攻擊力
+ShockPropertyAccuracy:
+  name: 衝擊系擊中
+CriticalDamageDefense:
+  name: 暴擊防禦力
+AmplifyBackAttack:
+  name: 後方傷害增幅

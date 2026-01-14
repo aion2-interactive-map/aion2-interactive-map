@@ -30,8 +30,8 @@ const CharacterEquipments: React.FC = () => {
     const imgSrc = getStaticUrl(item?.icon || "");
     const itemName = t(`items/items:${item?.id || eq?.id}.name`, String(item?.id || eq?.id || ""));
 
-    console.log(itemName);
-    console.log(detail);
+    // console.log(itemName);
+    // console.log(detail);
 
     const tooltipContent = detail ? (
       <div className="space-y-1 w-full text-[14px]">
@@ -39,8 +39,8 @@ const CharacterEquipments: React.FC = () => {
         <div className="space-y-2">
           {detail.mainStats && detail.mainStats.length > 0 && (
             <div className="bg-character-card p-2 rounded space-y-1">
-              {detail.mainStats.map((s) => (
-                <div key={s.id} className="flex justify-between">
+              {detail.mainStats.map((s, i) => (
+                <div key={`${s.id}-${i}`} className="flex justify-between">
                   <span className="text-default-800 font-[400]">{t(`stats:${s.id}.name`, s.id)}</span>
                   <span className="text-foreground font-[700]">
                     {s.value !== "0" && s.value !== "" && s.value !== "0%" && (
@@ -56,12 +56,18 @@ const CharacterEquipments: React.FC = () => {
               ))}
             </div>
           )}
-          {detail.subStats && detail.subStats.length > 0 && (
+          {( (detail.subStats && detail.subStats.length > 0) || (detail.subSkills && detail.subSkills.length > 0) ) && (
             <div className="bg-character-card p-2 rounded space-y-1">
-              {detail.subStats.map((s) => (
-                <div key={s.id} className="flex justify-between">
+              {detail.subStats && detail.subStats.map((s, i) => (
+                <div key={`${s.id}-${i}`} className="flex justify-between">
                   <span className="text-default-800 font-[400]">{t(`stats:${s.id}.name`, s.id)}</span>
                   <span className="text-foreground font-[700]">{s.value}</span>
+                </div>
+              ))}
+              {detail.subSkills && detail.subSkills.map((s, i) => (
+                <div key={`${s.id}-${i}`} className="flex justify-between items-center">
+                  <span className="text-default-800 font-[400]">{t(`skills:${s.id}.name`, String(s.id))}</span>
+                  <span className="text-foreground font-[700]">+{s.level}</span>
                 </div>
               ))}
             </div>

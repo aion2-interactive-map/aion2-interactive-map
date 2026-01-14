@@ -126,8 +126,14 @@ export type CharacterEquipmentDetail = {
   soulBindRate: string;
   mainStats: CharacterEquipmentStat[];
   subStats: CharacterEquipmentSubStat[];
+  subSkills: CharacterEquipmentSubSkill[];
   magicStoneStat: MagicStoneStat[];
   godStoneStat: GodStoneStat[];
+};
+
+export type CharacterEquipmentSubSkill = {
+  id: number;
+  level: number;
 };
 
 export type CharacterEquipmentStat = {

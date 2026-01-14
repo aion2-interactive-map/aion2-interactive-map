@@ -40,7 +40,6 @@
     --color-grade-epic: #ee6c2a;
     --color-grade-mythic: #c60000;
     --color-grade-special: #09ce9f;
-
 }
 
 .dark {
@@ -71,6 +70,13 @@
     --color-sidebar-collapse: #4C4A52;
 }
 
+.text-grade-common { color: var(--color-grade-common); }
+.text-grade-rare { color: var(--color-grade-rare); }
+.text-grade-legend { color: var(--color-grade-legend); }
+.text-grade-unique { color: var(--color-grade-unique); }
+.text-grade-epic { color: var(--color-grade-epic); }
+.text-grade-mythic { color: var(--color-grade-mythic); }
+.text-grade-special { color: var(--color-grade-special); }
 
 html,
 body,

@@ -5,6 +5,9 @@ import HttpBackend from "i18next-http-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
 import {parse} from "yaml";
 import {getBackendLoadPath} from "@/utils/dataMode"; // <-- changed
+import moment from "moment";
+import "moment/dist/locale/zh-cn";
+import "moment/dist/locale/zh-tw";
 
 // ---- Language config --------------------------------------
 
@@ -27,7 +30,7 @@ i18n
     fallbackLng: "zh-CN",
     supportedLngs: SUPPORTED_LANGUAGES,
 
-    ns: ["common", "maps", "types", "regions", "classes", "servers", "stats",
+    ns: ["common", "maps", "types", "regions", "classes", "servers", "stats", "skills",
       "items/types", "items/items", "items/grades", "items/tiers"],
     defaultNS: "common",
 
@@ -45,5 +48,17 @@ i18n
       escapeValue: false,
     },
   });
+
+const updateMomentLocale = (lng: string) => {
+  const momentLng = lng.toLowerCase();
+  moment.locale(momentLng);
+};
+
+// Set initial locale
+updateMomentLocale(i18n.language || "zh-cn");
+
+i18n.on('languageChanged', (lng) => {
+  updateMomentLocale(lng);
+});
 
 export default i18n;
