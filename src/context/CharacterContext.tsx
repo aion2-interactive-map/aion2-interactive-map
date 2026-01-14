@@ -138,6 +138,12 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
     setServerId(sel.serverId);
     setCharacterId(sel.characterId);
 
+    // Clear data immediately when switching
+    setInfo(null);
+    setEquipments(null);
+    setEquipmentDetails(null);
+    setError(null);
+
     navigate({
       replace: true,
       search: (prev) => ({

@@ -118,3 +118,51 @@ CriticalDamageDefense:
   name: 暴擊防禦力
 AmplifyBackAttack:
   name: 後方傷害增幅
+
+AttackIncrease:
+  name: 攻擊力增加
+EvasionIncrease:
+  name: 迴避增加
+BlockIncrease:
+  name: 格擋增加
+CriticalHitResistIncrease:
+  name: 暴擊抵抗增加
+StatusEffectChanceIncrease:
+  name: 異常狀態擊中
+HPIncrease:
+  name: 生命力增加
+AccuracyIncrease:
+  name: 命中增加
+CriticalHitIncrease:
+  name: 暴擊增加
+StatusEffectResistIncrease:
+  name: 異常狀態抵抗
+DefenseIncrease:
+  name: 防禦力增加
+PerfectIncrease:
+  name: 完美
+CooldownDecrease:
+  name: 冷卻時間
+EndurancePenetrationIncrease:
+  name: 鐵壁貫穿
+RegenerationIncrease:
+  name: 再生
+CombatSpeedIncrease:
+  name: 戰鬥速度
+SmiteResistIncrease:
+  name: 強擊抵抗
+PerfectResistIncrease:
+  name: 完美抵抗
+RegenerationPenetrationIncrease:
+  name: 再生貫穿
+MPCostDecrease:
+  name: 精神力消耗量
+SmiteIncrease:
+  name: 強擊
+MPIncrease:
+  name: 精神力增加
+EnduranceIncrease:
+  name: 鐵壁
+MoveSpeedIncrease:
+  name: 移動速度
+
