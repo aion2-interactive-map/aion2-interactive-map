@@ -23,9 +23,17 @@ const CharacterStats: React.FC = () => {
         {currentStats?.map((stat, index) => {
           const mainStatValue = infoStatsDict[stat.type]?.value ?? 0;
           const secondStatValue = (mainStatValue * (statsType === "mainStats" ? 0.1 : 0.2)).toFixed(1);
-          
+          const mainStatName = t(`stats:${stat.type}.name`);
+          const mainStatDescription = t(`stats:${stat.type}.description`, "");
+
           const tooltipContent = (
             <div className="px-1 py-1">
+              <div className="flex justify-between items-center mb-1 gap-4">
+                <span className="font-bold text-default-800">
+                  {mainStatName}{mainStatDescription && `[${mainStatDescription}]`}
+                </span>
+                <span className="font-bold text-foreground">{infoStatsDict[stat.type]?.value ?? "-"}</span>
+              </div>
               {stat.secondStats?.map((ss, i) => (
                 <div key={i} className="flex justify-between gap-4">
                   <span className="text-default-800">{t(`stats:${ss.type}.name`)}</span>

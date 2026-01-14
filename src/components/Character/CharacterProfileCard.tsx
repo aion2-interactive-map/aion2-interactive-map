@@ -30,7 +30,7 @@ const CharacterProfileCard: React.FC = () => {
           <div className="text-[18px]">
             {info.profile.characterName}
             {info.profile.titleName ? <span
-              className={`text-grade-${lowerCase(info.profile.titleGrade)}`}>[{info.profile.titleName}]</span> : null}
+              className={`text-grade-${lowerCase(info.profile.titleGrade)}`}> [{info.profile.titleName}]</span> : null}
           </div>
           <div className="mt-2 text-[14px] flex flex-wrap justify-center items-center gap-x-2 gap-y-1 text-default-800">
             <span>{info.profile.raceName}</span>
