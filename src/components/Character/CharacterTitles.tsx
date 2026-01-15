@@ -47,7 +47,7 @@ const CharacterTitles: React.FC = () => {
                 {title?.name || "尚未装备"}
               </div>
               <div className="space-y-0.5">
-                {title?.equipStats.map((stat, index) => (
+                {title?.equipStats && title?.equipStats.map((stat, index) => (
                   <div key={index} className="text-[13px] text-default-800">
                     {stat}
                   </div>
