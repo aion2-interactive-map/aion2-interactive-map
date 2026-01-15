@@ -194,3 +194,8 @@ skills:
     active: 主动
     passive: 被动
     dp: 烙印
+
+titles:
+  Attack: 攻击系列
+  Defense: 防御系列
+  Etc: 其他系列
