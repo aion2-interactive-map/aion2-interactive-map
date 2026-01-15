@@ -4,17 +4,21 @@ import { useNavigate, useSearch } from "@tanstack/react-router";
 import { Route as CharacterRoute } from "@/routes/character";
 import { computeBaseUrl, computeWsUrl } from "@/utils/dataMode.ts";
 import { useYamlLoader } from "@/hooks/useYamlLoader";
+import { CHARACTER_HISTORY_STORAGE_PREFIX } from "@/constants.ts";
 import type {StatsData, RawSkillsFile, SkillMeta } from "@/types/game";
-import type {CharacterInfo, CharacterEquipments, CharacterEquipmentDetails, CharacterEquipmentDetail} from "@/types/character";
+import type {CharacterInfo, CharacterEquipments, CharacterEquipmentDetails, CharacterEquipmentDetail, CharacterSearchItem} from "@/types/character";
 
 export type CharacterSelection = {
   serverId: number;
   characterId: string;
+  region: string;
+  item?: CharacterSearchItem;
 };
 
 export type CharacterContextValue = {
   serverId: number | null;
   characterId: string | null;
+  region: string | null;
 
   info: CharacterInfo | null;
   equipments: CharacterEquipments | null;
@@ -42,10 +46,11 @@ type CharacterProviderProps = {
 async function fetchCharacterInfo(params: {
   serverId: number;
   characterId: string;
+  region: string;
 }): Promise<any> {
   const url =
     computeBaseUrl() +
-    `/characters/info?server=${params.serverId}&character=${encodeURIComponent(params.characterId)}`;
+    `/characters/info?server=${params.serverId}&character=${encodeURIComponent(params.characterId)}&region=${params.region}`;
 
   const resp = await fetch(url, { method: "GET" });
   if (!resp.ok) throw new Error(`Search failed: ${resp.status}`);
@@ -63,6 +68,7 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
 
   const [serverId, setServerId] = useState<number | null>(search.serverId ?? null);
   const [characterId, setCharacterId] = useState<string | null>(search.characterId ?? null);
+  const [region, setRegion] = useState<string | null>(search.region ?? null);
 
   const [info, setInfo] = useState<CharacterInfo | null>(null);
   const [equipments, setEquipments] = useState<CharacterEquipments | null>(null);
@@ -132,11 +138,13 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
   useEffect(() => {
     setServerId(search.serverId ?? null);
     setCharacterId(search.characterId ?? null);
-  }, [search.serverId, search.characterId]);
+    setRegion(search.region ?? null);
+  }, [search.serverId, search.characterId, search.region]);
 
   const selectCharacter = useCallback((sel: CharacterSelection) => {
     setServerId(sel.serverId);
     setCharacterId(sel.characterId);
+    setRegion(sel.region);
 
     // Clear data immediately when switching
     setInfo(null);
@@ -144,12 +152,45 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
     setEquipmentDetails(null);
     setError(null);
 
+    // Update history in localStorage
+    try {
+      const historyStr = localStorage.getItem(CHARACTER_HISTORY_STORAGE_PREFIX);
+      let history: any[] = historyStr ? JSON.parse(historyStr) : [];
+      
+      // Remove existing entry for the same character if it exists
+      history = history.filter(item => {
+        const sid = item.serverId ?? item.item?.serverId ?? (item.id ? item.serverId : undefined);
+        const cid = item.id ?? item.characterId ?? item.item?.id;
+        return !(sid === sel.serverId && cid === sel.characterId);
+      });
+      
+      // Add to the top
+      // If full item is provided, store it directly or wrap it.
+      // To be consistent with CharacterSearchItem grid, we prefer storing the full item.
+      if (sel.item) {
+        history.unshift(sel.item);
+      } else {
+        // Fallback for when we only have IDs (though we want full items for the grid)
+        history.unshift(sel);
+      }
+      
+      // Limit to 20 items
+      if (history.length > 20) {
+        history = history.slice(0, 20);
+      }
+      
+      localStorage.setItem(CHARACTER_HISTORY_STORAGE_PREFIX, JSON.stringify(history));
+    } catch (e) {
+      console.error("Failed to update character history", e);
+    }
+
     navigate({
-      replace: true,
+      replace: false,
       search: (prev) => ({
         ...prev,
         serverId: sel.serverId,
         characterId: sel.characterId,
+        region: sel.region,
       }),
     });
   }, [navigate]);
@@ -157,6 +198,7 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
   const clearSelection = useCallback(() => {
     setServerId(null);
     setCharacterId(null);
+    setRegion(null);
     setInfo(null);
     setEquipments(null);
     setEquipmentDetails(null);
@@ -164,11 +206,12 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
     setLoading(false);
 
     navigate({
-      replace: true,
+      replace: false,
       search: (prev) => ({
         ...prev,
         serverId: undefined,
         characterId: undefined,
+        region: undefined,
       }),
     });
   }, [navigate]);
@@ -186,7 +229,7 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
     };
 
     async function run() {
-      if (!serverId || !characterId) {
+      if (!serverId || !characterId || !region) {
         setInfo(null);
         setEquipments(null);
         setEquipmentDetails(null);
@@ -200,14 +243,14 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
       setError(null);
 
       try {
-        const data = await fetchCharacterInfo({ serverId, characterId });
+        const data = await fetchCharacterInfo({ serverId, characterId, region });
         if (cancelled) return;
 
         processCharacterData(data);
         
         const status = data.status;
         if (status !== "cached" && status !== "failed") {
-          startWs(serverId, characterId);
+          startWs(serverId, characterId, region);
         } else {
           cleanupWs();
         }
@@ -297,15 +340,15 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
       }
     }
 
-    async function reFetch(sid: number, cid: string) {
+    async function reFetch(sid: number, cid: string, reg: string) {
       setIsUpdating(true);
       try {
-        const data = await fetchCharacterInfo({ serverId: sid, characterId: cid });
+        const data = await fetchCharacterInfo({ serverId: sid, characterId: cid, region: reg });
         if (cancelled) return;
         processCharacterData(data);
         const status = data.status;
         if (status !== "cached" && status !== "failed") {
-          startWs(sid, cid);
+          startWs(sid, cid, reg);
         } else {
           setIsUpdating(false);
         }
@@ -315,10 +358,10 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
       }
     }
 
-    function startWs(sid: number, cid: string) {
+    function startWs(sid: number, cid: string, reg: string) {
       cleanupWs();
       setIsUpdating(true);
-      const wsUrl = computeWsUrl() + `/characters/ws?server=${sid}&character=${encodeURIComponent(cid)}`;
+      const wsUrl = computeWsUrl() + `/characters/ws?server=${sid}&character=${encodeURIComponent(cid)}&region=${reg}`;
       const ws = new WebSocket(wsUrl);
       wsRef.current = ws;
 
@@ -349,7 +392,7 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
       ws.onclose = () => {
         if (!cancelled) {
           wsRef.current = null;
-          void reFetch(sid, cid);
+          void reFetch(sid, cid, reg);
         }
       };
 
@@ -364,12 +407,13 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
       cancelled = true;
       cleanupWs();
     };
-  }, [serverId, characterId]);
+  }, [serverId, characterId, region]);
 
   const value = useMemo<CharacterContextValue>(
     () => ({
       serverId,
       characterId,
+      region,
       info,
       equipments,
       equipmentDetails,
@@ -382,7 +426,7 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
       selectCharacter,
       clearSelection,
     }),
-    [serverId, characterId, info, equipments, equipmentDetails, stats, skillsById, loading, isUpdating, error, selectCharacter, clearSelection]
+    [serverId, characterId, region, info, equipments, equipmentDetails, stats, skillsById, loading, isUpdating, error, selectCharacter, clearSelection]
   );
 
   return <CharacterContext.Provider value={value}>{children}</CharacterContext.Provider>;

@@ -1,22 +1,15 @@
 // src/components/CharacterSearch.tsx
 import {useCallback, useEffect, useMemo, useRef, useState} from "react";
-import {Autocomplete, AutocompleteItem, Select, SelectItem, Input, Card, CardBody, Spinner} from "@heroui/react";
+import {Autocomplete, AutocompleteItem, Select, SelectItem, Input, Card, CardBody, Spinner, Button} from "@heroui/react";
 import {useTranslation} from "react-i18next";
 import {computeBaseUrl} from "@/utils/dataMode.ts";
 import {useDebounce} from "@/hooks/useDebounce";
-import {SEARCH_DEBOUNCE_MS} from "@/constants";
+import {SEARCH_DEBOUNCE_MS, CHARACTER_HISTORY_STORAGE_PREFIX, CHARACTER_STARRED_STORAGE_PREFIX} from "@/constants";
 import {useServerData} from "@/context/ServerDataContext.tsx";
 import {useCharacter} from "@/context/CharacterContext.tsx";
-
-type CharacterSearchItem = {
-  id: string;
-  name: string;
-  race: number;
-  level: number;
-  serverId: number;
-  serverName: string;
-  profileImageUrl: string;
-};
+import type {CharacterSearchItem} from "@/types/character.ts";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faStar} from "@fortawesome/free-solid-svg-icons";
 
 type ServerOption = {
   key: string;
@@ -25,16 +18,61 @@ type ServerOption = {
 
 export default function CharacterSearch() {
   const {servers, loading: serversLoading} = useServerData();
-  const {selectCharacter, characterId: currentCharacterId} = useCharacter();
+  const {selectCharacter, characterId: currentCharacterId, region: currentRegion} = useCharacter();
   const {t} = useTranslation();
 
+  const [region, setRegion] = useState<string>(currentRegion || "tw");
   const [raceId, setRaceId] = useState<"1" | "2">("1");
   const [serverId, setServerId] = useState<string>("all");
   const [keyword, setKeyword] = useState("");
   const debouncedKeyword = useDebounce(keyword, SEARCH_DEBOUNCE_MS);
   const [searchLoading, setSearchLoading] = useState(false);
   const [searchItems, setSearchItems] = useState<CharacterSearchItem[]>([]);
+  const [historyItems, setHistoryItems] = useState<CharacterSearchItem[]>([]);
+  const [starredItems, setStarredItems] = useState<CharacterSearchItem[]>([]);
   const lastReqIdRef = useRef(0);
+
+  useEffect(() => {
+    const historyStr = localStorage.getItem(CHARACTER_HISTORY_STORAGE_PREFIX);
+    if (historyStr) {
+      try {
+        const history = JSON.parse(historyStr);
+        // Only include items that are full CharacterSearchItem (have 'name' property)
+        const validHistory = history.filter((item: any) => item.name).map((item: any) => ({
+          ...item,
+          region: item.region || "tw"
+        }));
+        // Deduplicate in case storage still has duplicates
+        const uniqueHistory = validHistory.filter((item: any, index: number, self: any[]) =>
+          index === self.findIndex((t) => (
+            t.id === item.id && t.serverId === item.serverId
+          ))
+        );
+        setHistoryItems(uniqueHistory);
+      } catch (e) {
+        console.error("Failed to parse character history", e);
+      }
+    }
+
+    const starredStr = localStorage.getItem(CHARACTER_STARRED_STORAGE_PREFIX);
+    if (starredStr) {
+      try {
+        const starred = JSON.parse(starredStr);
+        setStarredItems(starred.map((item: any) => ({
+          ...item,
+          region: item.region || "tw"
+        })));
+      } catch (e) {
+        console.error("Failed to parse starred characters", e);
+      }
+    }
+  }, [currentCharacterId]);
+
+  useEffect(() => {
+    if (currentRegion) {
+      setRegion(currentRegion);
+    }
+  }, [currentRegion]);
 
   const serversForRace = useMemo(() => {
     const rid = Number(raceId);
@@ -60,7 +98,7 @@ export default function CharacterSearch() {
     const runSearch = async () => {
       try {
         setSearchLoading(true);
-        const items = await fetchCharacters({keyword: k, raceId: rid, serverId: sid});
+        const items = await fetchCharacters({keyword: k, raceId: rid, serverId: sid, region});
         if (lastReqIdRef.current !== reqId) return;
         setSearchItems(items);
       } catch (e) {
@@ -72,16 +110,17 @@ export default function CharacterSearch() {
     };
 
     void runSearch();
-  }, [debouncedKeyword, raceId, serverId]);
+  }, [debouncedKeyword, raceId, serverId, region]);
 
   async function fetchCharacters(params: {
     keyword: string;
     serverId?: number;
     raceId: number;
+    region: string;
   }): Promise<CharacterSearchItem[]> {
     const base =
       computeBaseUrl() +
-      `/characters/search?race=${params.raceId}&keyword=${encodeURIComponent(params.keyword)}`;
+      `/characters/search?race=${params.raceId}&keyword=${encodeURIComponent(params.keyword)}&region=${params.region}`;
     const url = params.serverId ? `${base}&server=${params.serverId}` : base;
 
     const resp = await fetch(url, {method: "GET"});
@@ -91,7 +130,7 @@ export default function CharacterSearch() {
       data?: { results?: Array<CharacterSearchItem> };
     };
 
-    return json.data?.results ?? [];
+    return (json.data?.results ?? []).map(item => ({...item, region: params.region}));
   }
 
   const generateServerLabel = useCallback(
@@ -138,12 +177,71 @@ export default function CharacterSearch() {
     innerWrapper: "h-10 py-0",
   };
 
+  const toggleStar = useCallback((e: React.MouseEvent, item: CharacterSearchItem) => {
+    e.stopPropagation();
+    setStarredItems(prev => {
+      const isStarred = prev.some(s => s.id === item.id);
+      let next;
+      if (isStarred) {
+        next = prev.filter(s => s.id !== item.id);
+      } else {
+        next = [item, ...prev];
+      }
+      localStorage.setItem(CHARACTER_STARRED_STORAGE_PREFIX, JSON.stringify(next));
+      return next;
+    });
+  }, []);
+
+  const renderCharacterCard = (item: CharacterSearchItem, keyPrefix: string) => {
+    const isStarred = starredItems.some(s => s.id === item.id);
+    return (
+      <Card
+        key={`${keyPrefix}-${item.id}`}
+        isPressable
+        onPress={() => selectCharacter({serverId: item.serverId, characterId: item.id, region: item.region, item})}
+        className="bg-character-card border-1 border-crafting-border hover:border-primary transition-colors"
+        shadow="sm"
+      >
+        <CardBody className="p-3 overflow-hidden relative">
+          <Button
+            isIconOnly
+            variant="light"
+            size="sm"
+            className="absolute top-1 right-1 z-10 min-w-0 w-8 h-8"
+            onClick={(e) => toggleStar(e, item)}
+          >
+            <FontAwesomeIcon
+              icon={faStar}
+              className={isStarred ? "text-warning" : "text-default-300"}
+            />
+          </Button>
+          <div className="flex items-center gap-3">
+            <img
+              src={`https://profileimg.plaync.com${item.profileImageUrl}`}
+              alt={item.name}
+              className="w-[48px] h-[48px] object-cover rounded-md shrink-0"
+              draggable={false}
+            />
+            <div className="min-w-0 flex-1">
+              <div className="flex justify-between items-baseline gap-1">
+                <span className="truncate text-base font-bold text-foregound">{item.name}</span>
+              </div>
+              <div className="truncate text-sm text-default-800 mt-0.5">
+                {item.serverName} | Lv.{item.level}
+              </div>
+            </div>
+          </div>
+        </CardBody>
+      </Card>
+    );
+  };
+
   if (!currentCharacterId) {
     return (
       <div className="flex flex-col w-full space-y-8 pt-10 min-h-[600px]">
         <div className="flex flex-col">
           <h1 className="text-[22px] font-bold text-foreground">搜寻AION2角色</h1>
-          <p className="text-[14px] text-default-800 mt-2">查詢角色詳細資訊與評分</p>
+          <p className="text-[14px] text-default-800 mt-2">查詢角色詳細資訊</p>
         </div>
 
         <div className="flex flex-col items-center w-full space-y-4 max-w-2xl mx-auto">
@@ -160,6 +258,25 @@ export default function CharacterSearch() {
             isClearable
           />
           <div className="flex w-full gap-4">
+            <Select
+              placeholder={t("common:server.region", "Publisher")}
+              isRequired
+              selectedKeys={new Set([region])}
+              onSelectionChange={(keys) => {
+                const v = keys.currentKey;
+                if (v) setRegion(String(v));
+              }}
+              className="flex-1"
+              radius="sm"
+              classNames={{
+                trigger: inputWrapperClassName.replace("!transition-none", "") + " h-12",
+              }}
+              size="lg"
+            >
+              <SelectItem key="tw">{t("common:server.tw", "台服")}</SelectItem>
+              <SelectItem key="kr">{t("common:server.kr", "韩服")}</SelectItem>
+            </Select>
+
             <Select
               placeholder={t("common:server.race", "Race")}
               isRequired
@@ -207,51 +324,65 @@ export default function CharacterSearch() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 w-full">
-          {searchItems.map((item) => (
-            <Card
-              key={item.id}
-              isPressable
-              onPress={() => selectCharacter({serverId: item.serverId, characterId: item.id})}
-              className="bg-character-card border-1 border-crafting-border hover:border-primary transition-colors"
-              shadow="sm"
-            >
-              <CardBody className="p-3 overflow-hidden">
-                <div className="flex items-center gap-3">
-                  <img
-                    src={`https://profileimg.plaync.com${item.profileImageUrl}`}
-                    alt={item.name}
-                    className="w-[48px] h-[48px] object-cover rounded-md shrink-0"
-                    draggable={false}
-                  />
-                  <div className="min-w-0 flex-1">
-                    <div className="flex justify-between items-baseline gap-1">
-                      <span className="truncate text-base font-bold text-foregound">{item.name}</span>
-                    </div>
-                    <div className="truncate text-sm text-default-800 mt-0.5">
-                      {item.serverName} | Lv.{item.level}
-                    </div>
-                  </div>
-                </div>
-              </CardBody>
-            </Card>
-          ))}
+          {searchItems.map((item) => renderCharacterCard(item, "search"))}
           {searchLoading && (
             <div className="col-span-full flex justify-center py-10">
-              <Spinner color="primary" label="Searching characters..."/>
+              <Spinner color="primary" label={t("common:server.searching", "Searching characters...")}/>
             </div>
           )}
           {!searchLoading && keyword.trim() !== "" && searchItems.length === 0 && (
             <div className="col-span-full flex justify-center py-10">
-              <span className="text-default-500">No characters found for "{keyword}"</span>
+              <span className="text-default-800">
+                {t("common:server.noResults", { keyword })}
+              </span>
             </div>
           )}
         </div>
+
+        {starredItems.length > 0 && (
+          <div className="flex flex-col space-y-4">
+            <h2 className="text-[18px] font-bold text-foreground">
+              {t("common:server.starred", "Favorites")}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 w-full">
+              {starredItems.map((item) => renderCharacterCard(item, "starred"))}
+            </div>
+          </div>
+        )}
+
+        {historyItems.length > 0 && (
+          <div className="flex flex-col space-y-4">
+            <h2 className="text-[18px] font-bold text-foreground">
+              {t("common:server.history", "Search History")}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 w-full">
+              {historyItems.map((item) => renderCharacterCard(item, "history"))}
+            </div>
+          </div>
+        )}
       </div>
     );
   }
 
   return (
     <div className="flex flex-row gap-0 items-end w-full justify-end">
+      {/* 0) Region */}
+      <Select
+        placeholder={t("common:server.region", "运营商")}
+        isRequired
+        selectedKeys={new Set([region])}
+        onSelectionChange={(keys) => {
+          const v = keys.currentKey;
+          if (v) setRegion(String(v));
+        }}
+        className="w-[100px] flex-none"
+        radius="none"
+        classNames={selectClassNames}
+      >
+        <SelectItem key="tw">{t("common:server.tw", "台服")}</SelectItem>
+        <SelectItem key="kr">{t("common:server.kr", "韩服")}</SelectItem>
+      </Select>
+
       {/* 1) Race */}
       <Select
         placeholder={t("common:server.race", "Race")}
@@ -299,7 +430,7 @@ export default function CharacterSearch() {
         onInputChange={setKeyword}
         onSelectionChange={(key) => {
           const item = searchItems.find((x) => x.id === key);
-          if (item) selectCharacter({serverId: item.serverId, characterId: item.id});
+          if (item) selectCharacter({serverId: item.serverId, characterId: item.id, region: item.region, item});
         }}
         isDisabled={serversLoading}
         isLoading={searchLoading}

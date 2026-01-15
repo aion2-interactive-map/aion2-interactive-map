@@ -1,3 +1,14 @@
+export type CharacterSearchItem = {
+  id: string;
+  name: string;
+  race: number;
+  level: number;
+  serverId: number;
+  serverName: string;
+  profileImageUrl: string;
+  region: string;
+};
+
 export type CharacterInfo = {
   profile: CharacterProfile;
   stats: CharacterStat[];

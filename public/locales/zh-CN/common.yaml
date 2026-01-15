@@ -187,7 +187,14 @@ server:
   race: "种族"
   server: "服务器"
   character: "角色名"
+  region: "运营商"
+  tw: "台服"
+  kr: "韩服"
   search: "搜寻角色"
+  history: "查询历史"
+  starred: "收藏角色"
+  searching: "搜索角色中..."
+  noResults: "未查询到和 \"{{keyword}}\" 有关的角色"
 
 skills:
   category:

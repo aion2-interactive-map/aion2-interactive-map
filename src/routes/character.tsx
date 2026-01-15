@@ -36,6 +36,7 @@ const PageWrapper: React.FC = () => {
 const CharacterSearchSchema = z.object({
   serverId: z.coerce.number().optional(),
   characterId: z.string().optional(),
+  region: z.string().optional(),
 });
 
 export const Route = createFileRoute("/character")({

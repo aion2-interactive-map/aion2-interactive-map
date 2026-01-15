@@ -4,6 +4,8 @@ export const COMPLETED_MARKERS_V1_PREFIX = `${STORAGE_PREFIX}.completedMarkers.v
 export const COMPLETED_MARKERS_V2_PREFIX = `${STORAGE_PREFIX}.completedMarkers.v2`;
 export const VISIBLE_SUBTYPES_STORAGE_PREFIX = `${STORAGE_PREFIX}.visibleSubtypes.v1.`;
 export const VISIBLE_REGIONS_STORAGE_PREFIX = `${STORAGE_PREFIX}.visibleRegions.v1.`;
+export const CHARACTER_HISTORY_STORAGE_PREFIX = `${STORAGE_PREFIX}.characterHistory.v1`;
+export const CHARACTER_STARRED_STORAGE_PREFIX = `${STORAGE_PREFIX}.characterStarred.v1`;
 
 // Other Constants
 export const SEARCH_DEBOUNCE_MS = 300;
