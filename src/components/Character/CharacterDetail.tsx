@@ -3,6 +3,7 @@ import {useCharacter} from "@/context/CharacterContext.tsx";
 import CharacterProfileCard from "./CharacterProfileCard.tsx";
 import CharacterStats from "./CharacterStats.tsx";
 import CharacterSkills from "./CharacterSkills.tsx";
+import CharacterRankings from "./CharacterRankings.tsx";
 import CharacterEquipments from "./CharacterEquipments.tsx";
 import CharacterCards from "./CharacterCards.tsx";
 import CharacterTitles from "./CharacterTitles.tsx";
@@ -53,7 +54,7 @@ export default function CharacterDetail() {
           <Accordion
             variant="light"
             selectionMode="multiple"
-            defaultExpandedKeys={["stats", "skills"]}
+            defaultExpandedKeys={["stats", "skills", "rankings"]}
             itemClasses={accordionItemClasses}
             showDivider={false}
             className="w-full"
@@ -61,9 +62,11 @@ export default function CharacterDetail() {
             <AccordionItem key="stats" title="主要能力值" className="w-full">
               <CharacterStats />
             </AccordionItem>
-
             <AccordionItem key="skills" title="技能" className="w-full">
               <CharacterSkills />
+            </AccordionItem>
+            <AccordionItem key="rankings" title="排名" className="w-full">
+              <CharacterRankings />
             </AccordionItem>
           </Accordion>
         </div>

@@ -6,7 +6,9 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import {parse} from "yaml";
 import {getBackendLoadPath} from "@/utils/dataMode"; // <-- changed
 import moment from "moment";
+// @ts-ignore
 import "moment/dist/locale/zh-cn";
+// @ts-ignore
 import "moment/dist/locale/zh-tw";
 
 // ---- Language config --------------------------------------
