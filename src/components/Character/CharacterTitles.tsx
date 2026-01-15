@@ -1,9 +1,13 @@
 import React from "react";
 import {useCharacter} from "@/context/CharacterContext.tsx";
 import {getStaticUrl} from "@/utils/url.ts";
+import {Card, CardBody, CardHeader} from "@heroui/react";
+import {lowerCase} from "lodash";
+import {useTranslation} from "react-i18next";
 
 const CharacterTitles: React.FC = () => {
   const {info} = useCharacter();
+  const {t} = useTranslation();
 
   if (!info) return null;
 
@@ -17,24 +21,40 @@ const CharacterTitles: React.FC = () => {
   return (
     <div className="grid grid-cols-3 gap-4">
       {categories.map((cat, i) => {
-        const first = info.titles?.find((x) => x.equipCategory === cat);
-        const gradeName = first?.grade ?? "Common";
-
-        const bg = getStaticUrl(`UI/Resource/Texture/ETC/UT_SlotGrade_${gradeName}.webp`);
+        const title = info.titles?.find((x) => x.equipCategory === cat);
         const icon = getStaticUrl(`UI/Resource/Texture/ETC/${icons[i]}`);
 
         return (
-          <div key={cat}
-               className="relative overflow-hidden rounded-md border-1 border-crafting-border bg-character-input p-3">
-            <div className="absolute inset-0 bg-center bg-no-repeat bg-contain"
-                 style={{backgroundImage: `url(${bg})`, backgroundSize: "100% 100%"}}/>
-            <div className="relative flex flex-col items-center gap-2">
-              <div className="h-[80px] w-[80px] overflow-hidden rounded-md">
-                <img src={icon} alt={cat} className="h-full w-full object-cover" draggable={false}/>
+          <Card key={cat} className="shadow-none bg-character-card border-1 border-crafting-border rounded-lg overflow-hidden">
+            <CardHeader className="flex gap-3 p-3 bg-character-input border-b-1 border-crafting-border">
+              <div className="h-10 w-10 shrink-0 overflow-hidden rounded-full bg-foreground p-1 flex items-center justify-center">
+                <img
+                  src={icon}
+                  alt={cat}
+                  draggable={false}
+                  className="h-full w-full object-contain scale-125"
+                />
               </div>
-              <div className="text-sm font-semibold text-white">{first?.name ?? ""}</div>
-            </div>
-          </div>
+              <div className="flex flex-col gap-0.5 text-[14px]">
+                <p className="text-default-800">{t(`common:titles.${cat}`, cat)}</p>
+                <p className="text-default-700">
+                  <span className="text-foreground font-bold">{title?.ownedCount ?? 0}</span> / {title?.totalCount ?? 0}
+                </p>
+              </div>
+            </CardHeader>
+            <CardBody className="p-3">
+              <div className={`text-[15px] font-bold mb-1 text-grade-${lowerCase(title?.grade || "Common")}`}>
+                {title?.name || "尚未装备"}
+              </div>
+              <div className="space-y-0.5">
+                {title?.equipStats.map((stat, index) => (
+                  <div key={index} className="text-[13px] text-default-800">
+                    {stat}
+                  </div>
+                ))}
+              </div>
+            </CardBody>
+          </Card>
         );
       })}
     </div>

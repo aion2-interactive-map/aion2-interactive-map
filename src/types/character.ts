@@ -65,6 +65,8 @@ export type CharacterTitle = {
   grade: string;
   totalCount: number;
   ownedCount: number;
+  stats: string[];
+  equipStats: string[];
 };
 
 export type CharacterRanking = {
