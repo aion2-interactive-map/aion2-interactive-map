@@ -248,7 +248,27 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
           enchantLevel: e.enchantLevel,
           exceedLevel: e.exceedLevel,
           slotPos: e.slotPos,
+          slotPosName: e.slotPosName,
         })),
+        skins: (value?.skins || []).map((s: any) => ({
+          id: s.id,
+          name: s.name,
+          slotPos: s.slotPos,
+          slotPosName: s.slotPosName?.includes("Main") ? "MainHand" : s.slotPosName,
+          icon: s.icon,
+        })),
+        pet: value?.pet ? {
+          id: value.pet.id,
+          name: value.pet.name,
+          level: value.pet.level,
+          icon: value.pet.icon,
+        } : null,
+        wing: value?.wing ? {
+          id: value.wing.id,
+          name: value.wing.name,
+          grade: value.wing.grade,
+          icon: value.wing.icon,
+        } : null,
       };
     }
 
@@ -278,6 +298,7 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
     }
 
     async function reFetch(sid: number, cid: string) {
+      setIsUpdating(true);
       try {
         const data = await fetchCharacterInfo({ serverId: sid, characterId: cid });
         if (cancelled) return;
@@ -285,9 +306,12 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
         const status = data.status;
         if (status !== "cached" && status !== "failed") {
           startWs(sid, cid);
+        } else {
+          setIsUpdating(false);
         }
       } catch (e) {
         console.error("Re-fetch failed", e);
+        setIsUpdating(false);
       }
     }
 
@@ -325,7 +349,6 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
       ws.onclose = () => {
         if (!cancelled) {
           wsRef.current = null;
-          setIsUpdating(false);
           void reFetch(sid, cid);
         }
       };

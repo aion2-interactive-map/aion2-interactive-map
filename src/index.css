@@ -78,6 +78,14 @@
 .text-grade-mythic { color: var(--color-grade-mythic); }
 .text-grade-special { color: var(--color-grade-special); }
 
+.border-grade-common { border-color: var(--color-grade-common); }
+.border-grade-rare { border-color: var(--color-grade-rare); }
+.border-grade-legend { border-color: var(--color-grade-legend); }
+.border-grade-unique { border-color: var(--color-grade-unique); }
+.border-grade-epic { border-color: var(--color-grade-epic); }
+.border-grade-mythic { border-color: var(--color-grade-mythic); }
+.border-grade-special { border-color: var(--color-grade-special); }
+
 .text-stroke {
     text-shadow: 0 0 1px #000, 0 0 1px #000, 0 0 1px #000;
 }

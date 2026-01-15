@@ -11,7 +11,6 @@ const CharacterProfileCard: React.FC = () => {
   if (!info) return null;
 
   const infoStatsDict = keyBy(info.stats, "type");
-  console.log(info);
 
   return (
     <Card className="shadow-none bg-character-input border-1 border-crafting-border rounded-lg">

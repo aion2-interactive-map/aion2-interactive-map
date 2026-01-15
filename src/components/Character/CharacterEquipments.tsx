@@ -6,16 +6,17 @@ import {useTranslation} from "react-i18next";
 import {keyBy, lowerCase} from "lodash";
 import {useItemData} from "@/context/ItemDataContext.tsx";
 
-const leftSlots = [1, 2, 3, 4, 5, 17, 6, 7, 8, 19] as const;
-const rightSlots = [11, 12, 10, 22, 13, 14, 15, 16, 23, 24] as const;
-type SlotPos = (typeof leftSlots)[number] | (typeof rightSlots)[number];
+const leftSlots = ["MainHand", "SubHand", "Helmet", "Shoulder", "Torso", "Belt", "Pants", "Gloves", "Boots", "Cape"] as const;
+const rightSlots = ["Earring1", "Earring2", "Necklace", "Amulet", "Ring1", "Ring2", "Bracelet1", "Bracelet2", "Rune1", "Rune2"] as const;
+type SlotName = (typeof leftSlots)[number] | (typeof rightSlots)[number];
 
 const CharacterEquipments: React.FC = () => {
   const {equipments, equipmentDetails} = useCharacter();
   const {itemsById} = useItemData();
   const {t} = useTranslation();
 
-  const equipmentBySlotPos = keyBy(equipments?.equipments ?? [], "slotPos");
+  const equipmentBySlotName = keyBy(equipments?.equipments ?? [], "slotPosName");
+  const skinBySlotName = keyBy(equipments?.skins ?? [], "slotPosName");
 
   const renderExceedLevel = (exceedLevel: number) => {
     if (exceedLevel === 0) return <div className="h-[16px] w-[16px] shrink-0"/>;
@@ -47,9 +48,11 @@ const CharacterEquipments: React.FC = () => {
     );
   };
 
-  const renderEquipmentCell = (slotPos: SlotPos) => {
-    const eq = equipmentBySlotPos[slotPos];
-    const detail = equipmentDetails?.[`equipments:${slotPos}`];
+  const renderEquipmentCell = (slotPosName: SlotName) => {
+    const eq = equipmentBySlotName[slotPosName];
+    const skin = skinBySlotName[slotPosName];
+    const slotPos = eq?.slotPos || skin?.slotPos;
+    const detail = slotPos ? equipmentDetails?.[`equipments:${slotPos}`] : null;
     const item = (eq ? itemsById.get(eq.id) : null) || (detail ? itemsById.get(detail.id) : null);
 
     const gradeName = item?.grade ?? "Common";
@@ -57,11 +60,8 @@ const CharacterEquipments: React.FC = () => {
       `UI/Resource/Texture/ETC/UT_ItemTooltipGrade_${gradeName}.webp`
     );
 
-    const imgSrc = getStaticUrl(item?.icon || "");
+    const itemIcon = getStaticUrl(item?.icon || "");
     const itemName = t(`items/items:${item?.id || eq?.id}.name`, String(item?.id || eq?.id || ""));
-
-    // console.log(itemName);
-    // console.log(detail);
 
     const tooltipContent = detail ? (
       <div className="space-y-2 w-full text-[14px]">
@@ -84,7 +84,9 @@ const CharacterEquipments: React.FC = () => {
             </div>
           </div>
           <div className="flex flex-col items-center">
-            <img src={imgSrc} alt={itemName} className="w-16 h-16 object-contain"/>
+            <div className="relative">
+              <img src={itemIcon} alt={itemName} className="w-16 h-16 object-contain"/>
+            </div>
             {renderExceedLevel(eq?.exceedLevel || 0)}
           </div>
         </div>
@@ -176,7 +178,7 @@ const CharacterEquipments: React.FC = () => {
 
     return (
       <Tooltip
-        content={tooltipContent} placement="left" key={slotPos}
+        content={tooltipContent} placement="left" key={slotPosName}
         classNames={{
           content: "bg-character-equipment rounded-lg shadow-none px-2 py-4 w-[330px]",
         }}
@@ -186,25 +188,41 @@ const CharacterEquipments: React.FC = () => {
           style={{backgroundImage: `url(${gradeBackground})`, backgroundSize: "100% 100%"}}
         >
           <div className="flex h-full w-full items-center rounded-[4px] px-2">
-            {eq || detail ? (
-              <img
-                src={imgSrc}
-                alt={itemName}
-                className="h-12 w-12 shrink-0 object-contain"
-                draggable={false}
-              />
-            ) : (
-              <div className="h-12 w-12 shrink-0"/>
-            )}
+            <div className="relative shrink-0">
+              {eq || detail ? (
+                <img
+                  src={itemIcon}
+                  alt={itemName}
+                  className="h-12 w-12 object-contain"
+                  draggable={false}
+                />
+              ) : (
+                <div className="h-12 w-12"/>
+              )}
+            </div>
 
             <div className="ml-2 flex h-[48px] min-w-0 flex-1 flex-col justify-center">
               <div
                 className="truncate text-left text-[13px] font-bold leading-[13px] text-white [text-shadow:0px_2px_4px_rgba(0,0,0,0.35)]">
-                {(eq || detail) &&
-                  `${itemName} +${eq?.enchantLevel ?? detail?.enchantLevel ?? 0}`}
+                {(eq || detail) ?
+                  `${itemName} +${eq?.enchantLevel ?? detail?.enchantLevel ?? 0}` :
+                  ""}
               </div>
               {renderExceedLevel(eq?.exceedLevel || 0)}
             </div>
+
+            {skin && (
+              <Tooltip content={skin.name} placement="top" radius="sm">
+                <div className="ml-2 shrink-0">
+                  <img
+                    src={skin.icon}
+                    alt={skin.name}
+                    className={`w-12 h-12 object-contain rounded-md border-1.5 bg-character-card border-grade-${lowerCase(skin.grade || "Common")}`}
+                    draggable={false}
+                  />
+                </div>
+              </Tooltip>
+            )}
           </div>
         </div>
       </Tooltip>
@@ -212,13 +230,60 @@ const CharacterEquipments: React.FC = () => {
   };
 
   return (
-    <div className="grid grid-cols-2 gap-3">
-      <div className="flex flex-col gap-3">
-        {leftSlots.map((slotPos) => renderEquipmentCell(slotPos))}
+    <div className="space-y-3">
+      <div className="grid grid-cols-2 gap-3">
+        <div className="flex flex-col gap-3">
+          {leftSlots.map((slotPosName) => renderEquipmentCell(slotPosName))}
+        </div>
+        <div className="flex flex-col gap-3">
+          {rightSlots.map((slotPosName) => renderEquipmentCell(slotPosName))}
+        </div>
       </div>
-      <div className="flex flex-col gap-3">
-        {rightSlots.map((slotPos) => renderEquipmentCell(slotPos))}
-      </div>
+
+      {(equipments?.pet || equipments?.wing) && (
+        <div className="grid grid-cols-2 gap-3">
+          {equipments.pet && (
+            <div
+              className="relative h-[56px] bg-character-card border-1 border-crafting-border rounded-[4px] flex items-center px-2"
+            >
+              <img
+                src={equipments.pet.icon}
+                alt={equipments.pet.name}
+                className="h-12 w-12 shrink-0 object-contain rounded-md"
+                draggable={false}
+              />
+              <div className="ml-2 flex flex-col justify-center min-w-0">
+                <div className="truncate text-[14px] font-bold text-default-800">
+                  {equipments.pet.name}
+                </div>
+                <div className="text-[12px] text-default-600">
+                  Lv.{equipments.pet.level}
+                </div>
+              </div>
+            </div>
+          )}
+          {equipments.wing && (
+            <div
+              className="relative h-[56px] bg-character-card border-1 border-crafting-border rounded-[4px] flex items-center px-2"
+            >
+              <img
+                src={equipments.wing.icon}
+                alt={equipments.wing.name}
+                className="h-12 w-12 shrink-0 object-contain rounded-md"
+                draggable={false}
+              />
+              <div className="ml-2 flex flex-col justify-center min-w-0">
+                <div className={`truncate text-[14px] font-bold text-grade-${lowerCase(equipments.wing.grade)}`}>
+                  {equipments.wing.name}
+                </div>
+                <div className="text-[12px] text-default-600">
+                  {t(`items/grades:${equipments.wing.grade}.name`, equipments.wing.grade)}
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 };

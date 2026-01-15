@@ -10,6 +10,32 @@ export type CharacterInfo = {
 export type CharacterEquipments = {
   skills: CharacterSkill[];
   equipments: CharacterEquipment[];
+  skins: CharacterSkin[];
+  pet: CharacterPet | null;
+  wing: CharacterWing | null;
+};
+
+export type CharacterSkin = {
+  id: number;
+  name: string;
+  grade: string;
+  slotPos: number;
+  slotPosName: string;
+  icon: string;
+};
+
+export type CharacterPet = {
+  id: number;
+  name: string;
+  level: number;
+  icon: string;
+};
+
+export type CharacterWing = {
+  id: number;
+  name: string;
+  grade: string;
+  icon: string;
 };
 
 export type CharacterEquipmentDetails = Record<string, CharacterEquipmentDetail>;
@@ -116,6 +142,7 @@ export type CharacterEquipment = {
   enchantLevel: number;
   exceedLevel: number;
   slotPos: number;
+  slotPosName: string;
 };
 
 export type CharacterEquipmentDetail = {
