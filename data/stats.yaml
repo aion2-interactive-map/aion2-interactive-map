@@ -2,105 +2,105 @@ mainStats:
   - type: STR
     icon: images/Character/stat_str.webp
     secondStats:
-      - type: attackIncrease
+      - type: AttackIncrease
   - type: DEX
     icon: images/Character/stat_dex.webp
     secondStats:
-      - type: evasionIncrease
-      - type: blockIncrease
-      - type: criticalHitResistIncrease
+      - type: EvasionIncrease
+      - type: BlockIncrease
+      - type: CriticalHitResistIncrease
   - type: AGI
     icon: images/Character/stat_agi.webp
     secondStats:
-      - type: accuracyIncrease
-      - type: criticalHitIncrease
+      - type: AccuracyIncrease
+      - type: CriticalHitIncrease
   - type: WIS
     icon: images/Character/stat_wis.webp
     secondStats:
-      - type: statusEffectResistIncrease
+      - type: StatusEffectResistIncrease
   - type: INT
     icon: images/Character/stat_int.webp
     secondStats:
-      - type: statusEffectChanceIncrease
+      - type: StatusEffectChanceIncrease
   - type: CON
     icon: images/Character/stat_con.webp
     secondStats:
-      - type: hpIncrease
+      - type: HPIncrease
 lordStats:
   - type: Destruction
     icon: images/Character/stat_lords_destruction.webp
     secondStats:
-      - type: attackIncrease
-      - type: perfectResistIncrease
+      - type: AttackIncrease
+      - type: PerfectResistIncrease
   - type: Death
     icon: images/Character/stat_lords_death.webp
     secondStats:
-      - type: criticalHitIncrease
-      - type: regenerationPenetrationIncrease
+      - type: CriticalHitIncrease
+      - type: RegenerationPenetrationIncrease
   - type: Wisdom
     icon: images/Character/stat_lords_wisdom.webp
     secondStats:
-      - type: mpCostDecrease
-      - type: smiteIncrease
+      - type: MPCostDecrease
+      - type: SmiteIncrease
   - type: Destiny
     icon: images/Character/stat_lords_destiny.webp
     secondStats:
-      - type: mpIncrease
-      - type: enduranceIncrease
+      - type: MPIncrease
+      - type: EnduranceIncrease
   - type: Space
     icon: images/Character/stat_lords_space.webp
     secondStats:
-      - type: moveSpeedIncrease
-      - type: blockIncrease
+      - type: MoveSpeedIncrease
+      - type: BlockIncrease
   - type: Time
     icon: images/Character/stat_lords_time.webp
     secondStats:
-      - type: combatSpeedIncrease
-      - type: smiteResistIncrease
+      - type: CombatSpeedIncrease
+      - type: SmiteResistIncrease
   - type: Life
     icon: images/Character/stat_lords_life.webp
     secondStats:
-      - type: hpIncrease
-      - type: regenerationIncrease
+      - type: HPIncrease
+      - type: RegenerationIncrease
   - type: Illusion
     icon: images/Character/stat_lords_illusion.webp
     secondStats:
-      - type: cooldownDecrease
-      - type: endurancePenetrationIncrease
+      - type: CooldownDecrease
+      - type: EndurancePenetrationIncrease
   - type: Freedom
     icon: images/Character/stat_lords_freedom.webp
     secondStats:
-      - type: accuracyIncrease
-      - type: evasionIncrease
+      - type: AccuracyIncrease
+      - type: EvasionIncrease
   - type: Justice
     icon: images/Character/stat_lords_justice.webp
     secondStats:
-      - type: defenseIncrease
-      - type: perfectIncrease
+      - type: DefenseIncrease
+      - type: PerfectIncrease
 secondStats:
-  - type: attackIncrease
-  - type: evasionIncrease
-  - type: blockIncrease
-  - type: criticalHitResistIncrease
-  - type: statusEffectChanceIncrease
-  - type: hpIncrease
-  - type: accuracyIncrease
-  - type: criticalHitIncrease
-  - type: statusEffectResistIncrease
-  - type: defenseIncrease
-  - type: perfectIncrease
-  - type: cooldownDecrease
-  - type: endurancePenetrationIncrease
-  - type: regenerationIncrease
-  - type: combatSpeedIncrease
-  - type: smiteResistIncrease
-  - type: perfectResistIncrease
-  - type: regenerationPenetrationIncrease
-  - type: mpCostDecrease
-  - type: smiteIncrease
-  - type: mpIncrease
-  - type: enduranceIncrease
-  - type: moveSpeedIncrease
+  - type: AttackIncrease
+  - type: EvasionIncrease
+  - type: BlockIncrease
+  - type: CriticalHitResistIncrease
+  - type: StatusEffectChanceIncrease
+  - type: HPIncrease
+  - type: AccuracyIncrease
+  - type: CriticalHitIncrease
+  - type: StatusEffectResistIncrease
+  - type: DefenseIncrease
+  - type: PerfectIncrease
+  - type: CooldownDecrease
+  - type: EndurancePenetrationIncrease
+  - type: RegenerationIncrease
+  - type: CombatSpeedIncrease
+  - type: SmiteResistIncrease
+  - type: PerfectResistIncrease
+  - type: RegenerationPenetrationIncrease
+  - type: MPCostDecrease
+  - type: SmiteIncrease
+  - type: MPIncrease
+  - type: EnduranceIncrease
+  - type: MoveSpeedIncrease
 
 
 
