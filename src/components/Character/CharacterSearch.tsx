@@ -157,12 +157,13 @@ export default function CharacterSearch() {
   }, [serversForRace, t, generateServerLabel]);
 
   const inputWrapperClassName = `
-    !bg-character-input hover:!bg-character-input focus:!bg-character-input !transition-none 
-    border-1 border-crafting-border shadow-none
-    group-data-[hover=true]:!bg-character-input
-    group-data-[focus=true]:!bg-character-input
-    group-data-[focus-visible=true]:!bg-character-input
-    group-data-[invalid=true]:!bg-character-input
+    !bg-character-card hover:!bg-character-card focus:!bg-character-card !transition-none 
+    border-crafting-border border-1 sm:border-r-0
+    shadow-none rounded-sm sm:rounded-none
+    group-data-[hover=true]:!bg-character-card
+    group-data-[focus=true]:!bg-character-card
+    group-data-[focus-visible=true]:!bg-character-card
+    group-data-[invalid=true]:!bg-character-card
   `;
 
   const autocompleteInputClassNames = {
@@ -173,7 +174,7 @@ export default function CharacterSearch() {
   };
 
   const selectClassNames = {
-    trigger: inputWrapperClassName + "border-r-0",
+    trigger: inputWrapperClassName,
     innerWrapper: "h-10 py-0",
   };
 
@@ -250,14 +251,14 @@ export default function CharacterSearch() {
             value={keyword}
             onValueChange={setKeyword}
             classNames={{
-              inputWrapper: inputWrapperClassName.replace("!transition-none", "") + " h-12",
+              inputWrapper: inputWrapperClassName + "!border-r-1",
               input: "text-lg"
             }}
             size="lg"
             radius="sm"
             isClearable
           />
-          <div className="flex flex-col sm:flex-row w-full gap-4">
+          <div className="flex flex-row w-full gap-2 sm:gap-4">
             <Select
               placeholder={t("common:server.region", "Publisher")}
               isRequired
@@ -269,7 +270,7 @@ export default function CharacterSearch() {
               className="flex-1"
               radius="sm"
               classNames={{
-                trigger: inputWrapperClassName.replace("!transition-none", "") + " h-12",
+                trigger: inputWrapperClassName + "!border-r-1",
               }}
               size="lg"
             >
@@ -288,7 +289,7 @@ export default function CharacterSearch() {
               className="flex-1"
               radius="sm"
               classNames={{
-                trigger: inputWrapperClassName.replace("!transition-none", "") + " h-12",
+                trigger: inputWrapperClassName + "!border-r-1",
               }}
               size="lg"
             >
@@ -306,11 +307,11 @@ export default function CharacterSearch() {
                 const v = keys.currentKey;
                 setServerId(v ? String(v) : "all");
               }}
-              className="flex-1"
+              className="flex-[2]"
               renderValue={(items) => items[0]?.textValue ?? ""}
               radius="sm"
               classNames={{
-                trigger: inputWrapperClassName.replace("!transition-none", "") + " h-12",
+                trigger: inputWrapperClassName + "!border-r-1",
               }}
               size="lg"
             >
@@ -366,71 +367,73 @@ export default function CharacterSearch() {
 
   return (
     <div className="flex flex-col sm:flex-row gap-2 sm:gap-0 items-stretch sm:items-end w-full justify-end">
-      {/* 0) Region */}
-      <Select
-        placeholder={t("common:server.region", "运营商")}
-        isRequired
-        selectedKeys={new Set([region])}
-        onSelectionChange={(keys) => {
-          const v = keys.currentKey;
-          if (v) setRegion(String(v));
-        }}
-        className="w-full sm:w-[100px] flex-none"
-        radius="none"
-        classNames={{
-          trigger: selectClassNames.trigger + " sm:border-r-0 rounded-sm sm:rounded-none",
-          innerWrapper: selectClassNames.innerWrapper
-        }}
-      >
-        <SelectItem key="tw">{t("common:server.tw", "台服")}</SelectItem>
-        <SelectItem key="kr">{t("common:server.kr", "韩服")}</SelectItem>
-      </Select>
+      <div className="flex flex-row gap-2 sm:gap-0 flex-none sm:flex-none">
+        {/* 0) Region */}
+        <Select
+          placeholder={t("common:server.region", "Region")}
+          isRequired
+          selectedKeys={new Set([region])}
+          onSelectionChange={(keys) => {
+            const v = keys.currentKey;
+            if (v) setRegion(String(v));
+          }}
+          className="flex-1 sm:w-[100px] sm:flex-none"
+          radius="none"
+          classNames={{
+            trigger: selectClassNames.trigger,
+            innerWrapper: selectClassNames.innerWrapper
+          }}
+        >
+          <SelectItem key="tw">{t("common:server.tw", "台服")}</SelectItem>
+          <SelectItem key="kr">{t("common:server.kr", "韩服")}</SelectItem>
+        </Select>
 
-      {/* 1) Race */}
-      <Select
-        placeholder={t("common:server.race", "Race")}
-        isRequired
-        selectedKeys={new Set([raceId])}
-        onSelectionChange={(keys) => {
-          const v = keys.currentKey;
-          if (v === "1" || v === "2") setRaceId(v);
-        }}
-        className="w-full sm:w-[100px] flex-none"
-        radius="none"
-        classNames={{
-          trigger: selectClassNames.trigger + " sm:border-r-0 rounded-sm sm:rounded-none",
-          innerWrapper: selectClassNames.innerWrapper
-        }}
-      >
-        <SelectItem key="1">{t("common:server.light", "Light")}</SelectItem>
-        <SelectItem key="2">{t("common:server.dark", "Dark")}</SelectItem>
-      </Select>
+        {/* 1) Race */}
+        <Select
+          placeholder={t("common:server.race", "Race")}
+          isRequired
+          selectedKeys={new Set([raceId])}
+          onSelectionChange={(keys) => {
+            const v = keys.currentKey;
+            if (v === "1" || v === "2") setRaceId(v);
+          }}
+          className="flex-1 sm:w-[100px] sm:flex-none"
+          radius="none"
+          classNames={{
+            trigger: selectClassNames.trigger,
+            innerWrapper: selectClassNames.innerWrapper
+          }}
+        >
+          <SelectItem key="1">{t("common:server.light", "Light")}</SelectItem>
+          <SelectItem key="2">{t("common:server.dark", "Dark")}</SelectItem>
+        </Select>
 
-      {/* 2) Server */}
-      <Select
-        placeholder={t("common:server.server", "Server")}
-        isRequired={false}
-        isDisabled={serversLoading || serversForRace.length === 0}
-        items={serverOptions}
-        selectedKeys={new Set([serverId])}
-        onSelectionChange={(keys) => {
-          const v = keys.currentKey;
-          setServerId(v ? String(v) : "all");
-        }}
-        className="w-full sm:w-[160px] flex-none"
-        renderValue={(items) => items[0]?.textValue ?? ""}
-        radius="none"
-        classNames={{
-          trigger: selectClassNames.trigger + " sm:border-r-0 rounded-sm sm:rounded-none",
-          innerWrapper: selectClassNames.innerWrapper
-        }}
-      >
-        {(item) => (
-          <SelectItem key={item.key} textValue={item.label}>
-            {item.label}
-          </SelectItem>
-        )}
-      </Select>
+        {/* 2) Server */}
+        <Select
+          placeholder={t("common:server.server", "Server")}
+          isRequired={false}
+          isDisabled={serversLoading || serversForRace.length === 0}
+          items={serverOptions}
+          selectedKeys={new Set([serverId])}
+          onSelectionChange={(keys) => {
+            const v = keys.currentKey;
+            setServerId(v ? String(v) : "all");
+          }}
+          className="flex-[2] sm:w-[160px] sm:flex-none"
+          renderValue={(items) => items[0]?.textValue ?? ""}
+          radius="none"
+          classNames={{
+            trigger: selectClassNames.trigger,
+            innerWrapper: selectClassNames.innerWrapper
+          }}
+        >
+          {(item) => (
+            <SelectItem key={item.key} textValue={item.label}>
+              {item.label}
+            </SelectItem>
+          )}
+        </Select>
+      </div>
 
       {/* 3) Character keyword autocomplete */}
       <Autocomplete
@@ -444,12 +447,12 @@ export default function CharacterSearch() {
         isDisabled={serversLoading}
         isLoading={searchLoading}
         items={searchItems}
-        className="w-full sm:w-[180px] flex-none"
+        className="flex-[2] w-full sm:w-[180px] sm:flex-none"
         radius="none"
         inputProps={{
           classNames: {
             ...autocompleteInputClassNames,
-            inputWrapper: autocompleteInputClassNames.inputWrapper + " rounded-sm sm:rounded-none"
+            inputWrapper: autocompleteInputClassNames.inputWrapper + "!border-r-1",
           }
         }}
       >

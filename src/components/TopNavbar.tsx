@@ -5,6 +5,7 @@ import {
   Navbar,
   NavbarBrand,
   NavbarContent, NavbarItem, Tooltip,
+  NavbarMenu, NavbarMenuItem, NavbarMenuToggle,
 } from "@heroui/react";
 // import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 // import {faCloud, faDatabase} from "@fortawesome/free-solid-svg-icons";
@@ -30,6 +31,7 @@ import remarkGfm from "remark-gfm";
 
 
 const TopNavbar: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const {t} = useTranslation(); // we use fully-qualified keys like common:siteTitle
   const {theme} = useTheme();
   const {user, logout, userModalOpen: authOpen, setUserModalOpen: setAuthOpen} = useUser();
@@ -51,55 +53,53 @@ const TopNavbar: React.FC = () => {
   ]
 
   return (
-    <Navbar maxWidth="full" className="border-0 h-[60px] bg-topnavbar" classNames={{ wrapper: "px-5" }}>
-      {/* LEFT: Logo + Title */}
-      <NavbarBrand className="flex items-center gap-10 select-none cursor-default">
-        <img
-          src={getStaticUrl(isDark ? "images/GroupLogoDark.webp" : "images/GroupLogoLight.webp")}
-          alt="AION2 Logo"
-          className="w-[100px] h-[38px] object-contain"
+    <Navbar
+      onMenuOpenChange={setIsMenuOpen}
+      isMenuOpen={isMenuOpen}
+      maxWidth="full"
+      className="border-0 h-[60px] bg-topnavbar"
+      classNames={{ wrapper: "px-5" }}
+    >
+      {/* LEFT: Toggle + Logo + Title */}
+      <NavbarContent>
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className="sm:hidden"
         />
-        {routes.map((route) => {
-          const isActive = currentPath === route.path;
-          return (
-            <NavbarItem
-              isActive={isActive}
-              key={route.name}
-              className={`${
-                isActive ? "text-bold text-primary" : "text-default-800"
-              } text-[18px] leading-[18px]`}
-            >
-              <Link to={route.path}>{t(`common:routes.${route.name}`)}</Link>
-            </NavbarItem>
-          );
-        })}
-        <div className="text-[14px] leading-[14px] prose prose-xs max-w-none dark:prose-invert">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>
-            {t("introModal.alert")}
-          </ReactMarkdown>
-        </div>
-        {/*/!* This container ensures Marquee takes all remaining space *!/*/}
-        {/*<div className="flex-1 flex items-center justify-start overflow-hidden w-full">*/}
-        {/*  <div className="w-full">*/}
-        {/*    <Ticker mode="smooth" speed={3}>*/}
-        {/*      {() => (*/}
-        {/*        <span className="text-[14px] leading-[14px] prose prose-xs max-w-none dark:prose-invert">*/}
-        {/*    <ReactMarkdown remarkPlugins={[remarkGfm]}>*/}
-        {/*      {t("introModal.alert")}*/}
-        {/*    </ReactMarkdown>*/}
-        {/*  </span>*/}
-        {/*      )}*/}
-        {/*    </Ticker>*/}
-        {/*  </div>*/}
-        {/*</div>*/}
-      </NavbarBrand>
+        <NavbarBrand className="flex items-center gap-10 select-none cursor-default">
+          <img
+            src={getStaticUrl(isDark ? "images/GroupLogoDark.webp" : "images/GroupLogoLight.webp")}
+            alt="AION2 Logo"
+            className="w-[100px] h-[38px] object-contain"
+          />
+          {routes.map((route) => {
+            const isActive = currentPath === route.path;
+            return (
+              <NavbarItem
+                isActive={isActive}
+                key={route.name}
+                className={`hidden sm:flex ${
+                  isActive ? "text-bold text-primary" : "text-default-800"
+                } text-[18px] leading-[18px]`}
+              >
+                <Link to={route.path}>{t(`common:routes.${route.name}`)}</Link>
+              </NavbarItem>
+            );
+          })}
+          <div className="hidden sm:block text-[14px] leading-[14px] prose prose-xs max-w-none dark:prose-invert">
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {t("introModal.alert")}
+            </ReactMarkdown>
+          </div>
+        </NavbarBrand>
+      </NavbarContent>
 
       {/* RIGHT: Language switcher + theme toggle */}
       <NavbarContent justify="end" className="flex items-center gap-1">
         <img
           src={getStaticUrl("images/Adv.webp")}
           alt="Banner"
-          className="w-[300px] object-contain select-none pointer-events-none"
+          className="hidden md:block w-[300px] object-contain select-none pointer-events-none"
         />
 
         {/* Language switcher (owns its own button & dropdown) */}
@@ -139,6 +139,25 @@ const TopNavbar: React.FC = () => {
           </>
         )}
       </NavbarContent>
+
+      <NavbarMenu>
+        {routes.map((route) => {
+          const isActive = currentPath === route.path;
+          return (
+            <NavbarMenuItem key={route.name}>
+              <Link
+                className={`w-full text-[18px] ${
+                  isActive ? "text-bold text-primary" : "text-default-800"
+                }`}
+                to={route.path}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t(`common:routes.${route.name}`)}
+              </Link>
+            </NavbarMenuItem>
+          );
+        })}
+      </NavbarMenu>
     </Navbar>
 
   );

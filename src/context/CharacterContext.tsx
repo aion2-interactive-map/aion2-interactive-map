@@ -392,7 +392,11 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
       ws.onclose = () => {
         if (!cancelled) {
           wsRef.current = null;
-          void reFetch(sid, cid, reg);
+          setTimeout(() => {
+            if (!cancelled) {
+              void reFetch(sid, cid, reg);
+            }
+          }, 1000);
         }
       };
 
