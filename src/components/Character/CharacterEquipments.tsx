@@ -78,7 +78,8 @@ const CharacterEquipments: React.FC = () => {
               {eq?.enchantLevel ? `+${eq.enchantLevel} ` : ""}{itemName}
             </div>
             <div className="text-[14px]">
-              <span className={`font-bold text-stroke text-grade-${lowerCase(item?.grade || "Common")}`}>{t(`items/grades:${item?.grade}.name`)}</span>
+              <span
+                className={`font-bold text-stroke text-grade-${lowerCase(item?.grade || "Common")}`}>{t(`items/grades:${item?.grade}.name`)}</span>
               <span className="font-bold text-background">{t(`items/types:subtypes.${item?.subtype}.name`)}</span>
             </div>
             <div className="text-[14px] font-bold text-background">道具等级</div>
@@ -249,50 +250,50 @@ const CharacterEquipments: React.FC = () => {
         </div>
       </div>
 
-      {(equipments?.pet || equipments?.wing) && (
-        <div className="grid grid-cols-2 gap-3">
-          {equipments.pet && (
-            <div
-              className="relative h-[56px] bg-character-card border-1 border-crafting-border rounded-[4px] flex items-center px-2"
-            >
-              <img
-                src={equipments.pet.icon}
-                alt={equipments.pet.name}
-                className="h-12 w-12 shrink-0 object-contain rounded-md"
-                draggable={false}
-              />
-              <div className="ml-2 flex flex-col justify-center min-w-0">
-                <div className="truncate text-[14px] font-bold text-default-800">
-                  {equipments.pet.name}
-                </div>
-                <div className="text-[12px] text-default-600">
-                  Lv.{equipments.pet.level}
-                </div>
+
+      <div className="grid grid-cols-2 gap-3">
+        {equipments?.pet?.id && (
+          <div
+            className="relative h-[56px] bg-character-card border-1 border-crafting-border rounded-md flex items-center px-2"
+          >
+            <img
+              src={equipments.pet.icon}
+              alt={equipments.pet.name}
+              className="h-12 w-12 shrink-0 object-contain rounded-md"
+              draggable={false}
+            />
+            <div className="ml-2 flex flex-col justify-center min-w-0">
+              <div className="truncate text-[14px] font-bold text-default-800">
+                {equipments.pet.name}
+              </div>
+              <div className="text-[12px] text-default-600">
+                Lv.{equipments.pet.level}
               </div>
             </div>
-          )}
-          {equipments.wing && (
-            <div
-              className="relative h-[56px] bg-character-card border-1 border-crafting-border rounded-[4px] flex items-center px-2"
-            >
-              <img
-                src={equipments.wing.icon}
-                alt={equipments.wing.name}
-                className="h-12 w-12 shrink-0 object-contain rounded-md"
-                draggable={false}
-              />
-              <div className="ml-2 flex flex-col justify-center min-w-0">
-                <div className={`truncate text-[14px] font-bold text-grade-${lowerCase(equipments.wing.grade)}`}>
-                  {equipments.wing.name}
-                </div>
-                <div className="text-[12px] text-default-600">
-                  {t(`items/grades:${equipments.wing.grade}.name`, equipments.wing.grade)}
-                </div>
+          </div>
+        )}
+        {equipments?.wing?.id && (
+          <div
+            className="relative h-[56px] bg-character-card border-1 border-crafting-border rounded-md flex items-center px-2"
+          >
+            <img
+              src={equipments.wing.icon}
+              alt={equipments.wing.name}
+              className="h-12 w-12 shrink-0 object-contain rounded-md"
+              draggable={false}
+            />
+            <div className="ml-2 flex flex-col justify-center min-w-0">
+              <div className={`truncate text-[14px] font-bold text-grade-${lowerCase(equipments.wing.grade)}`}>
+                {equipments.wing.name}
+              </div>
+              <div className="text-[12px] text-default-600">
+                {t(`items/grades:${equipments.wing.grade}.name`, equipments.wing.grade)}
               </div>
             </div>
-          )}
-        </div>
-      )}
+          </div>
+        )}
+      </div>
+
     </div>
   );
 };

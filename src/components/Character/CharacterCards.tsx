@@ -6,13 +6,13 @@ import {keyBy, lowerCase} from "lodash";
 import {useItemData} from "@/context/ItemDataContext.tsx";
 import {AdaptiveTooltip} from "@/components/AdaptiveTooltip.tsx";
 import {Spinner} from "@heroui/react";
-import {useIsMobile} from "@/hooks/useIsMobile.ts";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faLock} from "@fortawesome/free-solid-svg-icons";
 
 const CharacterCards: React.FC = () => {
   const {equipments, equipmentDetails} = useCharacter();
   const {itemsById} = useItemData();
   const {t} = useTranslation();
-  const isMobile = useIsMobile();
 
   const equipmentBySlotPos = keyBy(equipments?.equipments ?? [], "slotPos");
   const cardSlots = [41, 42, 43, 44, 45] as const;
@@ -99,7 +99,7 @@ const CharacterCards: React.FC = () => {
             key={slotPos}
             content={tooltipContent}
             isDisabled={!eq}
-            placement={isMobile ? "bottom" : "left"}
+            placement="top"
             classNames={{
               content: "bg-character-equipment rounded-lg shadow-none px-2 py-4 w-[330px] max-w-[calc(100vw-32px)]",
             }}
@@ -107,7 +107,7 @@ const CharacterCards: React.FC = () => {
             closeDelay={0}
           >
             <div
-              className="relative flex justify-center items-start cursor-help outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg w-full max-w-20 aspect-square"
+              className="relative flex justify-center items-start cursor-help outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg w-full max-w-24 aspect-square"
               tabIndex={0}
             >
               {eq ? (
@@ -125,7 +125,11 @@ const CharacterCards: React.FC = () => {
                   </div>
                 </>
               ) : (
-                <div className="bg-default-800 rounded-lg w-full h-full"/>
+                <div className="bg-default-800 rounded-lg w-full h-full relative">
+                  <div className="absolute inset-0 bg-black/20 flex items-center justify-center text-white/80 rounded-lg">
+                    <FontAwesomeIcon icon={faLock} size="xl" />
+                  </div>
+                </div>
               )}
             </div>
           </AdaptiveTooltip>
