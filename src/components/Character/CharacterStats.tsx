@@ -20,7 +20,7 @@ const CharacterStats: React.FC = () => {
   const renderStatGrid = (statsType: "mainStats" | "lordStats") => {
     const currentStats = stats[statsType];
     return (
-      <div className="grid grid-cols-4 sm:grid-cols-6 gap-3">
+      <div className="grid grid-cols-6 gap-1 sm:gap-3">
         {currentStats?.map((stat, index) => {
           const mainStatValue = infoStatsDict[stat.type]?.value ?? 0;
           const secondStatValue = (mainStatValue * (statsType === "mainStats" ? 0.1 : 0.2)).toFixed(1);

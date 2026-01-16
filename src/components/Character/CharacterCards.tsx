@@ -18,7 +18,7 @@ const CharacterCards: React.FC = () => {
   const cardSlots = [41, 42, 43, 44, 45] as const;
 
   return (
-    <div className="flex flex-wrap w-full justify-center sm:justify-between gap-4">
+    <div className="grid grid-cols-5 w-full gap-2 sm:gap-4 justify-items-center">
       {cardSlots.map((slotPos) => {
         const eq = equipmentBySlotPos[slotPos];
         const detail = equipmentDetails?.[`equipments:${slotPos}`];
@@ -107,8 +107,7 @@ const CharacterCards: React.FC = () => {
             closeDelay={0}
           >
             <div
-              className="relative flex justify-center items-start cursor-help outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg"
-              style={{height: "80px", width: "80px"}}
+              className="relative flex justify-center items-start cursor-help outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg w-full max-w-20 aspect-square"
               tabIndex={0}
             >
               {eq ? (
@@ -116,8 +115,7 @@ const CharacterCards: React.FC = () => {
                   <img
                     src={icon}
                     alt={itemName}
-                    className="object-contain rounded-lg"
-                    style={{width: "80px", height: "80px"}}
+                    className="object-contain rounded-lg w-full h-full"
                     draggable={false}
                   />
                   <div
