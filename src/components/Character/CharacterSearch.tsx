@@ -167,15 +167,21 @@ export default function CharacterSearch() {
   `;
 
   const autocompleteInputClassNames = {
-    // base: "flex-1 min-w-[320px]",
     inputWrapper: inputWrapperClassName,
     innerWrapper: "h-10 py-0",
-    // popoverContent: "rounded-[4px]"
+    popoverContent: "rounded-none p-0"
   };
 
   const selectClassNames = {
     trigger: inputWrapperClassName,
     innerWrapper: "h-10 py-0",
+    popoverContent: "rounded-none p-0"
+  };
+
+  const commonListboxProps = {
+    itemClasses: {
+      base: "rounded-none",
+    },
   };
 
   const toggleStar = useCallback((e: React.MouseEvent, item: CharacterSearchItem) => {
@@ -271,7 +277,12 @@ export default function CharacterSearch() {
               radius="sm"
               classNames={{
                 trigger: inputWrapperClassName + "!border-r-1",
+                popoverContent: "rounded-none p-0"
               }}
+              popoverProps={{
+                radius: "none",
+              }}
+              listboxProps={commonListboxProps}
               size="lg"
             >
               <SelectItem key="tw">{t("common:server.tw", "台服")}</SelectItem>
@@ -290,7 +301,12 @@ export default function CharacterSearch() {
               radius="sm"
               classNames={{
                 trigger: inputWrapperClassName + "!border-r-1",
+                popoverContent: "rounded-none p-0"
               }}
+              popoverProps={{
+                radius: "none",
+              }}
+              listboxProps={commonListboxProps}
               size="lg"
             >
               <SelectItem key="1">{t("common:server.light", "Light")}</SelectItem>
@@ -312,7 +328,12 @@ export default function CharacterSearch() {
               radius="sm"
               classNames={{
                 trigger: inputWrapperClassName + "!border-r-1",
+                popoverContent: "rounded-none p-0"
               }}
+              popoverProps={{
+                radius: "none",
+              }}
+              listboxProps={commonListboxProps}
               size="lg"
             >
               {(item) => (
@@ -379,10 +400,11 @@ export default function CharacterSearch() {
           }}
           className="flex-1 sm:w-[100px] sm:flex-none"
           radius="none"
-          classNames={{
-            trigger: selectClassNames.trigger,
-            innerWrapper: selectClassNames.innerWrapper
+          popoverProps={{
+            radius: "none",
           }}
+          listboxProps={commonListboxProps}
+          classNames={selectClassNames}
         >
           <SelectItem key="tw">{t("common:server.tw", "台服")}</SelectItem>
           <SelectItem key="kr">{t("common:server.kr", "韩服")}</SelectItem>
@@ -399,10 +421,11 @@ export default function CharacterSearch() {
           }}
           className="flex-1 sm:w-[100px] sm:flex-none"
           radius="none"
-          classNames={{
-            trigger: selectClassNames.trigger,
-            innerWrapper: selectClassNames.innerWrapper
+          popoverProps={{
+            radius: "none",
           }}
+          listboxProps={commonListboxProps}
+          classNames={selectClassNames}
         >
           <SelectItem key="1">{t("common:server.light", "Light")}</SelectItem>
           <SelectItem key="2">{t("common:server.dark", "Dark")}</SelectItem>
@@ -422,10 +445,11 @@ export default function CharacterSearch() {
           className="flex-[2] sm:w-[160px] sm:flex-none"
           renderValue={(items) => items[0]?.textValue ?? ""}
           radius="none"
-          classNames={{
-            trigger: selectClassNames.trigger,
-            innerWrapper: selectClassNames.innerWrapper
+          popoverProps={{
+            radius: "none",
           }}
+          listboxProps={commonListboxProps}
+          classNames={selectClassNames}
         >
           {(item) => (
             <SelectItem key={item.key} textValue={item.label}>
@@ -449,6 +473,10 @@ export default function CharacterSearch() {
         items={searchItems}
         className="flex-[2] w-full sm:w-[180px] sm:flex-none"
         radius="none"
+        popoverProps={{
+          radius: "none",
+        }}
+        listboxProps={commonListboxProps}
         inputProps={{
           classNames: {
             ...autocompleteInputClassNames,

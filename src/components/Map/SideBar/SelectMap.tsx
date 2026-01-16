@@ -56,10 +56,13 @@ const SelectMap: React.FC = () => {
               // "!relative !static order-2 ml-1",
               "text-default-900",
             ].join(" "),
-            popoverContent: "bg-content1",
+            popoverContent: "bg-content1 rounded-none",
           }}
           className="text-center max-w-[260px]"
           radius="none"
+          popoverProps={{
+            radius: "none",
+          }}
         >
           {maps.map((m) => (
             <SelectItem key={m.name}>

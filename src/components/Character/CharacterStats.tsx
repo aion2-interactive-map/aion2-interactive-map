@@ -54,10 +54,10 @@ const CharacterStats: React.FC = () => {
               closeDelay={0}
             >
               <div
-                className="text-center bg-character-card rounded-md border-1 border-crafting-border p-2 cursor-help outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                className="text-center bg-character-card rounded-md border-1 border-crafting-border p-1 sm:p-2 cursor-help outline-none focus-visible:ring-2 focus-visible:ring-primary"
                 tabIndex={0}
               >
-                <div className="h-[60px] w-[60px] mx-auto rounded-lg">
+                <div className="w-full max-w-[60px] aspect-square mx-auto rounded-lg overflow-hidden">
                   <img
                     src={getStaticUrl(stat.icon)}
                     alt={stat.type}
@@ -65,10 +65,10 @@ const CharacterStats: React.FC = () => {
                     draggable={false}
                   />
                 </div>
-                <div className="text-[18px] text-default-800">
+                <div className="text-[12px] sm:text-[18px] text-default-800 truncate">
                   {t(`stats:${stat.type}.name`)}
                 </div>
-                <div className="text-[18px] text-default-800">
+                <div className="text-[12px] sm:text-[18px] text-default-800 font-semibold">
                   {infoStatsDict[stat.type]?.value ?? "-"}
                 </div>
               </div>
@@ -80,7 +80,7 @@ const CharacterStats: React.FC = () => {
   };
 
   return (
-    <Card className="shadow-none border-default-200 bg-character-input border-1 border-crafting-border rounded-lg">
+    <Card className="shadow-none bg-character-input border-1 border-crafting-border rounded-lg">
       <CardBody className="space-y-4">
         <div className="mb-0">{renderStatGrid("mainStats")}</div>
         {!isCollapsed && (
