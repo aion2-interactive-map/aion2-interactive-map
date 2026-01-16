@@ -2,6 +2,9 @@ import React from "react";
 import {useCharacter} from "@/context/CharacterContext.tsx";
 import {getStaticUrl} from "@/utils/url.ts";
 import {useTranslation} from "react-i18next";
+import {AdaptiveTooltip} from "@/components/AdaptiveTooltip.tsx";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faLock} from "@fortawesome/free-solid-svg-icons";
 
 const CharacterSkills: React.FC = () => {
   const {equipments, skillsById} = useCharacter();
@@ -33,26 +36,48 @@ const CharacterSkills: React.FC = () => {
               : undefined;
 
             return (
-              <div
+              <AdaptiveTooltip
                 key={String(s.id)}
-                className="relative h-[48px] w-[48px] overflow-hidden rounded-md"
+                content={
+                  <div className="px-1 py-1">
+                    <div className="text-small font-bold">{t(`skills:${s.id}.name`, String(s.id))}</div>
+                    <div className="text-tiny">
+                      {s.skillLevel === 0 ? "未解锁" : `Lv.${s.skillLevel}`}
+                    </div>
+                  </div>
+                }
+                placement="top"
+                radius="sm"
+                delay={0}
+                closeDelay={0}
               >
-                {icon ? (
-                  <img
-                    src={icon}
-                    alt={String(s.id)}
-                    className="h-full w-full object-cover"
-                    draggable={false}
-                  />
-                ) : (
-                  <div className="h-full w-full bg-default-200"/>
-                )}
+                <div
+                  className="relative h-[48px] w-[48px] overflow-hidden rounded-md cursor-help outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                  tabIndex={0}
+                >
+                  {icon ? (
+                    <img
+                      src={icon}
+                      alt={String(s.id)}
+                      className={`h-full w-full object-cover ${s.skillLevel === 0 ? "grayscale brightness-50" : ""}`}
+                      draggable={false}
+                    />
+                  ) : (
+                    <div className="h-full w-full bg-default-200"/>
+                  )}
 
-                {/* Skill level badge */}
-                <div className="absolute bottom-0 right-0 bg-black/60 text-white text-[14px] px-1 rounded-tl-md">
-                  LV{s.skillLevel}
+                  {s.skillLevel === 0 ? (
+                    <div className="absolute inset-0 bg-black/20 flex items-center justify-center text-white/80">
+                      <FontAwesomeIcon icon={faLock} />
+                    </div>
+                  ) : (
+                    /* Skill level badge */
+                    <div className="absolute bottom-0 right-0 bg-black/60 text-white text-[14px] px-1 rounded-tl-md">
+                      LV{s.skillLevel}
+                    </div>
+                  )}
                 </div>
-              </div>
+              </AdaptiveTooltip>
             );
           })}
         </div>

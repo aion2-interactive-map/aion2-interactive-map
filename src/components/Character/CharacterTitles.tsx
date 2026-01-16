@@ -19,7 +19,7 @@ const CharacterTitles: React.FC = () => {
   ];
 
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
       {categories.map((cat, i) => {
         const title = info.titles?.find((x) => x.equipCategory === cat);
         const icon = getStaticUrl(`UI/Resource/Texture/ETC/${icons[i]}`);

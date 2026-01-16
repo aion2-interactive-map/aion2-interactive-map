@@ -16,7 +16,7 @@ const CharacterRankings: React.FC = () => {
   }
 
   return (
-    <div className="grid grid-cols-2 gap-3 w-full">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full">
       {info.rankings.map((ranking, index) => (
         <Card key={index} className="shadow-none bg-character-card border-1 border-crafting-border rounded-lg">
           <CardBody className="p-2 flex flex-row items-center gap-3">

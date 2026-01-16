@@ -1,10 +1,12 @@
 import React from "react";
-import {Tooltip, Spinner, Progress} from "@heroui/react";
+import {Spinner, Progress} from "@heroui/react";
+import {AdaptiveTooltip} from "@/components/AdaptiveTooltip.tsx";
 import {useCharacter} from "@/context/CharacterContext.tsx";
 import {getStaticUrl} from "@/utils/url.ts";
 import {useTranslation} from "react-i18next";
 import {keyBy, lowerCase} from "lodash";
 import {useItemData} from "@/context/ItemDataContext.tsx";
+import {useIsMobile} from "@/hooks/useIsMobile.ts";
 
 const leftSlots = ["MainHand", "SubHand", "Helmet", "Shoulder", "Torso", "Belt", "Pants", "Gloves", "Boots", "Cape"] as const;
 const rightSlots = ["Earring1", "Earring2", "Necklace", "Amulet", "Ring1", "Ring2", "Bracelet1", "Bracelet2", "Rune1", "Rune2"] as const;
@@ -14,6 +16,7 @@ const CharacterEquipments: React.FC = () => {
   const {equipments, equipmentDetails} = useCharacter();
   const {itemsById} = useItemData();
   const {t} = useTranslation();
+  const isMobile = useIsMobile();
 
   const equipmentBySlotName = keyBy(equipments?.equipments ?? [], "slotPosName");
   const skinBySlotName = keyBy(equipments?.skins ?? [], "slotPosName");
@@ -177,15 +180,21 @@ const CharacterEquipments: React.FC = () => {
     );
 
     return (
-      <Tooltip
-        content={tooltipContent} placement="left" key={slotPosName}
+      <AdaptiveTooltip
+        content={tooltipContent} key={slotPosName}
         classNames={{
-          content: "bg-character-equipment rounded-lg shadow-none px-2 py-4 w-[330px]",
+          content: "bg-character-equipment shadow-none px-2 py-4 w-[330px] max-w-[calc(100vw-32px)]",
         }}
+        placement={isMobile ? "bottom" : "left"}
+        radius="lg"
+        isDisabled={!eq}
+        delay={0}
+        closeDelay={0}
       >
         <div
-          className="relative h-[56px] bg-contain bg-center bg-no-repeat rounded-[4px] shadow-none cursor-help"
+          className="relative h-14 bg-contain bg-center bg-no-repeat rounded-sm shadow-none cursor-help outline-none focus-visible:ring-2 focus-visible:ring-primary"
           style={{backgroundImage: `url(${gradeBackground})`, backgroundSize: "100% 100%"}}
+          tabIndex={0}
         >
           <div className="flex h-full w-full items-center rounded-[4px] px-2">
             <div className="relative shrink-0">
@@ -212,20 +221,20 @@ const CharacterEquipments: React.FC = () => {
             </div>
 
             {skin && (
-              <Tooltip content={skin.name} placement="top" radius="sm">
+              <AdaptiveTooltip content={skin.name} placement="top" radius="sm">
                 <div className="ml-2 shrink-0">
                   <img
                     src={skin.icon}
                     alt={skin.name}
-                    className={`w-12 h-12 object-contain rounded-md border-1.5 bg-character-card border-grade-${lowerCase(skin.grade || "Common")}`}
+                    className={`w-10 h-10 object-contain border-1 bg-transparent border-primary`}
                     draggable={false}
                   />
                 </div>
-              </Tooltip>
+              </AdaptiveTooltip>
             )}
           </div>
         </div>
-      </Tooltip>
+      </AdaptiveTooltip>
     );
   };
 

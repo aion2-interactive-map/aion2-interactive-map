@@ -7,9 +7,11 @@ import CharacterRankings from "./CharacterRankings.tsx";
 import CharacterEquipments from "./CharacterEquipments.tsx";
 import CharacterCards from "./CharacterCards.tsx";
 import CharacterTitles from "./CharacterTitles.tsx";
+import {useIsMobile} from "@/hooks/useIsMobile.ts";
 
 export default function CharacterDetail() {
   const {info, loading, error, characterId, stats} = useCharacter();
+  const isMobile = useIsMobile();
 
   if (!characterId) {
     return null;
@@ -45,54 +47,55 @@ export default function CharacterDetail() {
     indicator: "text-default-700",
   };
 
+  const allItems = [
+    { key: "equipments", title: "装备", component: <CharacterEquipments /> },
+    { key: "cards", title: "阿尔卡那", component: <CharacterCards /> },
+    { key: "stats", title: "主要能力值", component: <CharacterStats /> },
+    { key: "skills", title: "技能", component: <CharacterSkills /> },
+    { key: "titles", title: "称号", component: <CharacterTitles /> },
+    { key: "rankings", title: "排名", component: <CharacterRankings /> },
+  ];
+
+  const desktopLeftKeys = ["stats", "skills", "rankings"];
+  const desktopRightKeys = ["equipments", "cards", "titles"];
+
+  const renderAccordion = (items: typeof allItems, className?: string) => (
+    <Accordion
+      variant="light"
+      selectionMode="multiple"
+      defaultExpandedKeys={items.map(i => i.key)}
+      itemClasses={accordionItemClasses}
+      showDivider={false}
+      className={className}
+    >
+      {items.map((item) => (
+        <AccordionItem key={item.key} title={item.title} className="w-full">
+          {item.component}
+        </AccordionItem>
+      ))}
+    </Accordion>
+  );
+
   return (
     <div className="w-full space-y-4">
       <CharacterProfileCard />
 
-      <div className="grid grid-cols-2 gap-4 w-full">
-        <div className="w-full">
-          <Accordion
-            variant="light"
-            selectionMode="multiple"
-            defaultExpandedKeys={["stats", "skills", "rankings"]}
-            itemClasses={accordionItemClasses}
-            showDivider={false}
-            className="w-full"
-          >
-            <AccordionItem key="stats" title="主要能力值" className="w-full">
-              <CharacterStats />
-            </AccordionItem>
-            <AccordionItem key="skills" title="技能" className="w-full">
-              <CharacterSkills />
-            </AccordionItem>
-            <AccordionItem key="rankings" title="排名" className="w-full">
-              <CharacterRankings />
-            </AccordionItem>
-          </Accordion>
+      {isMobile ? (
+        /* Mobile view: single column, interleaved order */
+        <div>
+          {renderAccordion(allItems)}
         </div>
-
-        <div className="w-full">
-          <Accordion
-            variant="light"
-            selectionMode="multiple"
-            defaultExpandedKeys={["equipments", "titles", "cards"]}
-            itemClasses={accordionItemClasses}
-            showDivider={false}
-            className="w-full"
-          >
-            <AccordionItem key="equipments" title="装备" className="w-full">
-              <CharacterEquipments />
-            </AccordionItem>
-            <AccordionItem key="cards" title="阿尔卡那" className="w-full">
-              <CharacterCards />
-            </AccordionItem>
-            <AccordionItem key="titles" title="称号" className="w-full">
-              <CharacterTitles />
-            </AccordionItem>
-          </Accordion>
+      ) : (
+        /* Desktop view: two columns, independent */
+        <div className="grid grid-cols-2 gap-4">
+          <div className="flex flex-col">
+            {renderAccordion(allItems.filter((item) => desktopLeftKeys.includes(item.key)))}
+          </div>
+          <div className="flex flex-col">
+            {renderAccordion(allItems.filter((item) => desktopRightKeys.includes(item.key)))}
+          </div>
         </div>
-      </div>
-
+      )}
     </div>
   );
 }

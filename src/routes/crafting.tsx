@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 import type { SelectedBySlotKey } from "@/types/crafting";
 import { useTheme } from "@/context/ThemeContext";
 import {getStaticUrl} from "@/utils/url.ts";
+import Footer from "@/components/Footer.tsx";
 
 const STORAGE_SELECTED_TIER = "aion2.crafting.selectedTier.v1";
 
@@ -261,86 +262,89 @@ function Page() {
   }
 
   return (
-    <div className="grid h-full w-full bg-crafting-page" style={{ gridTemplateColumns: "1fr 1068px 1fr" }}>
-      <div className="flex items-center justify-center">
-        <img
-          src={getStaticUrl("images/CraftAdv.webp")}
-          alt="Left decoration"
-          className="w-[220px]"
-        />
-      </div>
-
-      <div className="mx-auto w-full max-w-[1068px] pt-3">
-        {/* Split header row: left (race tabs) aligned with left card, right (tier tabs) aligned with right card */}
-        <div className="mb-4 flex gap-4 pr-1">
-          {/* Left container (align with left card width) */}
-          <div className="w-[220px] shrink-0">
-            <Tabs
-              selectedKey={race}
-              onSelectionChange={(k) => onRaceChange(k as Race)}
-              variant="bordered"
-              className="w-full bg-transparent"
-              classNames={{
-                tabList: "flex w-full rounded-[15px] border-1 border-crafting-border ",
-                tab: "h-[34px] flex-1 justify-center " +
-                  "data-[selected=true]:bg-primary " +
-                  "dark:data-[selected=true]:bg-default-800",
-                tabContent: "flex items-center justify-center text-default-800 group-data-[selected=true]:text-background ",
-              }}
-            >
-              <Tab key="light" title={t("common:server.light", "Light")} />
-              <Tab key="dark" title={t("common:server.dark", "Dark")} />
-            </Tabs>
-          </div>
-
-          {/* Right container (fills remaining width) */}
-          <div className="min-w-0 flex-1">
-            <Tabs
-              selectedKey={activeTier}
-              onSelectionChange={(k) => onTierChange(k as TierKey)}
-              variant="underlined"
-              color={race == "light" ? "primary" : "default"}
-              className="w-[832px] border-gray-300 bg-transparent"
-              classNames={{
-                tabList: "flex w-full",
-                tab: "h-[34px] flex-1 justify-center",
-                tabContent: "flex items-center justify-center text-default-700",
-              }}
-            >
-              {tierKeys.map((k) => (
-                <Tab key={k} title={t(`items/tiers:${k}.name`)} />
-              ))}
-            </Tabs>
-          </div>
+    <div className="flex h-full w-full flex-col bg-crafting-page overflow-y-auto">
+      <div className="grid w-full flex-1" style={{ gridTemplateColumns: "1fr 1068px 1fr" }}>
+        <div className="hidden lg:flex items-center justify-center">
+          <img
+            src={getStaticUrl("images/CraftAdv.webp")}
+            alt="Left decoration"
+            className="w-[220px]"
+          />
         </div>
 
-        <div className="flex gap-4">
-          {/* Left panel */}
-          <Card
-            className="h-[726px] w-[220px] shrink-0 rounded-lg border-x-1 border-primary bg-crafting-equipment-view"
-            shadow="none"
-          >
-            <CardBody className="h-full overflow-y-auto">
-              {loading ? (
-                <div className="text-sm text-default-500">Loading...</div>
-              ) : (
-                <EquipmentsView
-                  selectedBySlotKey={selectedBySlotKey}
-                  setSelectedBySlotKey={setSelectedBySlotKey}
-                  race={race}
-                />
-              )}
-            </CardBody>
-          </Card>
+        <div className="mx-auto w-full max-w-[1068px] pt-3 px-4 sm:px-0">
+          {/* Split header row: left (race tabs) aligned with left card, right (tier tabs) aligned with right card */}
+          <div className="mb-4 flex flex-col md:flex-row gap-4 md:pr-1">
+            {/* Left container (align with left card width) */}
+            <div className="w-full md:w-[220px] shrink-0">
+              <Tabs
+                selectedKey={race}
+                onSelectionChange={(k) => onRaceChange(k as Race)}
+                variant="bordered"
+                className="w-full bg-transparent"
+                classNames={{
+                  tabList: "flex w-full rounded-[15px] border-1 border-crafting-border ",
+                  tab: "h-[34px] flex-1 justify-center " +
+                    "data-[selected=true]:bg-primary " +
+                    "dark:data-[selected=true]:bg-default-800",
+                  tabContent: "flex items-center justify-center text-default-800 group-data-[selected=true]:text-background ",
+                }}
+              >
+                <Tab key="light" title={t("common:server.light", "Light")} />
+                <Tab key="dark" title={t("common:server.dark", "Dark")} />
+              </Tabs>
+            </div>
 
-          {/* Right panel */}
-          <Card className="h-[726px] w-[832px] min-w-0 bg-transparent" shadow="none">
-            <CardBody className="h-full min-h-0 px-1 py-0">
-              <MaterialsView selectedBySlotKey={selectedBySlotKey} />
-            </CardBody>
-          </Card>
+            {/* Right container (fills remaining width) */}
+            <div className="min-w-0 flex-1">
+              <Tabs
+                selectedKey={activeTier}
+                onSelectionChange={(k) => onTierChange(k as TierKey)}
+                variant="underlined"
+                color={race == "light" ? "primary" : "default"}
+                className="w-full md:w-[832px] border-gray-300 bg-transparent"
+                classNames={{
+                  tabList: "flex w-full overflow-x-auto no-scrollbar",
+                  tab: "h-[34px] flex-1 min-w-[100px] justify-center",
+                  tabContent: "flex items-center justify-center text-default-700",
+                }}
+              >
+                {tierKeys.map((k) => (
+                  <Tab key={k} title={t(`items/tiers:${k}.name`)} />
+                ))}
+              </Tabs>
+            </div>
+          </div>
+
+          <div className="flex flex-col md:flex-row gap-4 mb-8">
+            {/* Left panel */}
+            <Card
+              className="h-auto md:h-[726px] w-full md:w-[220px] shrink-0 rounded-lg border-x-1 border-primary bg-crafting-equipment-view"
+              shadow="none"
+            >
+              <CardBody className="h-full overflow-y-auto py-4 md:py-2">
+                {loading ? (
+                  <div className="text-sm text-default-500">Loading...</div>
+                ) : (
+                  <EquipmentsView
+                    selectedBySlotKey={selectedBySlotKey}
+                    setSelectedBySlotKey={setSelectedBySlotKey}
+                    race={race}
+                  />
+                )}
+              </CardBody>
+            </Card>
+
+            {/* Right panel */}
+            <Card className="h-auto md:h-[726px] w-full md:w-[832px] min-w-0 bg-transparent" shadow="none">
+              <CardBody className="h-full min-h-0 px-1 py-0">
+                <MaterialsView selectedBySlotKey={selectedBySlotKey} />
+              </CardBody>
+            </Card>
+          </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

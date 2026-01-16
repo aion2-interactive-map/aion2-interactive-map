@@ -257,7 +257,7 @@ export default function CharacterSearch() {
             radius="sm"
             isClearable
           />
-          <div className="flex w-full gap-4">
+          <div className="flex flex-col sm:flex-row w-full gap-4">
             <Select
               placeholder={t("common:server.region", "Publisher")}
               isRequired
@@ -365,7 +365,7 @@ export default function CharacterSearch() {
   }
 
   return (
-    <div className="flex flex-row gap-0 items-end w-full justify-end">
+    <div className="flex flex-col sm:flex-row gap-2 sm:gap-0 items-stretch sm:items-end w-full justify-end">
       {/* 0) Region */}
       <Select
         placeholder={t("common:server.region", "运营商")}
@@ -375,9 +375,12 @@ export default function CharacterSearch() {
           const v = keys.currentKey;
           if (v) setRegion(String(v));
         }}
-        className="w-[100px] flex-none"
+        className="w-full sm:w-[100px] flex-none"
         radius="none"
-        classNames={selectClassNames}
+        classNames={{
+          trigger: selectClassNames.trigger + " sm:border-r-0 rounded-sm sm:rounded-none",
+          innerWrapper: selectClassNames.innerWrapper
+        }}
       >
         <SelectItem key="tw">{t("common:server.tw", "台服")}</SelectItem>
         <SelectItem key="kr">{t("common:server.kr", "韩服")}</SelectItem>
@@ -392,9 +395,12 @@ export default function CharacterSearch() {
           const v = keys.currentKey;
           if (v === "1" || v === "2") setRaceId(v);
         }}
-        className="w-[100px] flex-none"
+        className="w-full sm:w-[100px] flex-none"
         radius="none"
-        classNames={selectClassNames}
+        classNames={{
+          trigger: selectClassNames.trigger + " sm:border-r-0 rounded-sm sm:rounded-none",
+          innerWrapper: selectClassNames.innerWrapper
+        }}
       >
         <SelectItem key="1">{t("common:server.light", "Light")}</SelectItem>
         <SelectItem key="2">{t("common:server.dark", "Dark")}</SelectItem>
@@ -411,10 +417,13 @@ export default function CharacterSearch() {
           const v = keys.currentKey;
           setServerId(v ? String(v) : "all");
         }}
-        className="w-[160px] flex-none"
+        className="w-full sm:w-[160px] flex-none"
         renderValue={(items) => items[0]?.textValue ?? ""}
         radius="none"
-        classNames={selectClassNames}
+        classNames={{
+          trigger: selectClassNames.trigger + " sm:border-r-0 rounded-sm sm:rounded-none",
+          innerWrapper: selectClassNames.innerWrapper
+        }}
       >
         {(item) => (
           <SelectItem key={item.key} textValue={item.label}>
@@ -435,9 +444,14 @@ export default function CharacterSearch() {
         isDisabled={serversLoading}
         isLoading={searchLoading}
         items={searchItems}
-        className="w-[180px] flex-none"
+        className="w-full sm:w-[180px] flex-none"
         radius="none"
-        inputProps={{classNames: autocompleteInputClassNames}}
+        inputProps={{
+          classNames: {
+            ...autocompleteInputClassNames,
+            inputWrapper: autocompleteInputClassNames.inputWrapper + " rounded-sm sm:rounded-none"
+          }
+        }}
       >
         {(item) => (
           <AutocompleteItem key={item.id} textValue={item.name}>

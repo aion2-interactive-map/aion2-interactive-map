@@ -3,7 +3,8 @@ import {useCharacter} from "@/context/CharacterContext.tsx";
 import {getStaticUrl} from "@/utils/url.ts";
 import {useTranslation} from "react-i18next";
 import {keyBy} from "lodash";
-import {Button, Card, CardBody, CardFooter, Divider, Tooltip} from "@heroui/react";
+import {Button, Card, CardBody, CardFooter, Divider} from "@heroui/react";
+import {AdaptiveTooltip} from "@/components/AdaptiveTooltip.tsx";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faChevronDown, faChevronUp} from "@fortawesome/free-solid-svg-icons";
 
@@ -19,7 +20,7 @@ const CharacterStats: React.FC = () => {
   const renderStatGrid = (statsType: "mainStats" | "lordStats") => {
     const currentStats = stats[statsType];
     return (
-      <div className="grid grid-cols-6 gap-3">
+      <div className="grid grid-cols-4 sm:grid-cols-6 gap-3">
         {currentStats?.map((stat, index) => {
           const mainStatValue = infoStatsDict[stat.type]?.value ?? 0;
           const secondStatValue = (mainStatValue * (statsType === "mainStats" ? 0.1 : 0.2)).toFixed(1);
@@ -44,14 +45,17 @@ const CharacterStats: React.FC = () => {
           );
 
           return (
-            <Tooltip
+            <AdaptiveTooltip
               key={index}
               content={tooltipContent}
-              isDisabled={!stat.secondStats || stat.secondStats.length === 0}
+              placement="top"
               radius="sm"
+              delay={0}
+              closeDelay={0}
             >
               <div
-                className="text-center bg-character-card rounded-md border-1 border-crafting-border p-2 cursor-help"
+                className="text-center bg-character-card rounded-md border-1 border-crafting-border p-2 cursor-help outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                tabIndex={0}
               >
                 <div className="h-[60px] w-[60px] mx-auto rounded-lg">
                   <img
@@ -68,7 +72,7 @@ const CharacterStats: React.FC = () => {
                   {infoStatsDict[stat.type]?.value ?? "-"}
                 </div>
               </div>
-            </Tooltip>
+            </AdaptiveTooltip>
           );
         })}
       </div>
