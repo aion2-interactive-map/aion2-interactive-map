@@ -101,6 +101,72 @@ secondStats:
   - type: MPIncrease
   - type: EnduranceIncrease
   - type: MoveSpeedIncrease
-
-
-
+boardStats:
+  - type: MaxHP
+    value: "100"
+  - type: MaxMP
+    value: "50"
+  - type: Attack
+    value: "5"
+  - type: Defense
+    value: "50"
+  - type: CriticalHit
+    value: "10"
+  - type: CriticalHitResist
+    value: "10"
+  - type: CooldownReduction
+    value: "2.5%"
+  - type: CombatSpeed
+    value: "2.5%"
+  - type: DamageBoost
+    value: "5%"
+  - type: DamageTolerance
+    value: "5%"
+  - type: CriticalDamageBoost
+    value: "5%"
+  - type: CriticalDamageTolerance
+    value: "5%"
+  - type: Multi-HitChance
+    value: "3%"
+  - type: Multi-HitResist
+    value: "3%"
+  - type: BossDamageBoost
+    value: "1%"
+  - type: BossDamageTolerance
+    value: "1%"
+  - type: BossAttack
+    value: "5"
+  - type: BossDefense
+    value: "50"
+  - type: PvEAccuracy
+    value: "10"
+  - type: PvEEvasion
+    value: "10"
+  - type: PvEAttack
+    value: "5"
+  - type: PvEDefense
+    value: "50"
+  - type: PvEDamageBoost
+    value: "2.5%"
+  - type: PvEDamageTolerance
+    value: "2.5%"
+  - type: PvPAccuracy
+    value: "10"
+  - type: PvPEvasion
+    value: "10"
+  - type: PvPAttack
+    value: "5"
+  - type: PvPDefense
+    value: "50"
+  - type: PvPDamageBoost
+    value: "2.5%"
+  - type: PvPDamageTolerance
+    value: "2.5%"
+  - type: PvPCriticalHit
+    value: "5"
+  - type: PvPCriticalHitResist
+    value: "5"
+  - type: StatusEffectChance
+    value: "1%"
+  - type: StatusEffectResist
+    value: "1%"

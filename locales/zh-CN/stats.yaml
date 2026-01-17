@@ -166,3 +166,70 @@ EnduranceIncrease:
 MoveSpeedIncrease:
   name: 移動速度
 
+# Board
+MaxHP:
+  name: 生命力
+MaxMP:
+  name: 精神力
+Attack:
+  name: 額外攻擊力
+Defense:
+  name: 額外防禦力
+CriticalHit:
+  name: 暴擊
+CriticalHitResist:
+  name: 暴擊抵抗
+CooldownReduction:
+  name: 冷卻時間減少
+DamageBoost:
+  name: 傷害增幅
+DamageTolerance:
+  name: 傷害耐性
+CriticalDamageBoost:
+  name: 暴擊傷害增幅
+CriticalDamageTolerance:
+  name: 暴擊傷害耐性
+Multi-HitChance:
+  name: 多段打擊擊中
+Multi-HitResist:
+  name: 多段打擊抵抗
+BossDamageBoost:
+  name: 首領傷害增幅
+BossDamageTolerance:
+  name: 首領傷害耐性
+BossAttack:
+  name: 首領攻擊力
+BossDefense:
+  name: 首領防禦力
+PvEAccuracy:
+  name: PVE命中
+PvEEvasion:
+  name: PVE迴避
+PvEAttack:
+  name: PVE攻擊力
+PvEDefense:
+  name: PVE防禦力
+PvEDamageBoost:
+  name: PVE傷害增幅
+PvEDamageTolerance:
+  name: PVE傷害耐性
+PvPAccuracy:
+  name: PVP命中
+PvPEvasion:
+  name: PVP迴避
+PvPAttack:
+  name: PVP攻擊力
+PvPDefense:
+  name: PVP防禦力
+PvPDamageBoost:
+  name: PVP傷害增幅
+PvPDamageTolerance:
+  name: PVP傷害耐性
+PvPCriticalHit:
+  name: PVP暴擊
+PvPCriticalHitResist:
+  name: PVP暴擊抵抗
+StatusEffectChance:
+  name: 異常狀態擊中
+StatusEffectResist:
+  name: 異常狀態抵抗
