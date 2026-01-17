@@ -181,6 +181,7 @@ export interface RawRegionsFile {
 
 export type ClassMeta = {
   name: string;
+  order: number;
 };
 
 export type RawClassesFile = {
@@ -288,6 +289,26 @@ export type RawTiersFile = {
   tiers: TierMeta[];
 };
 
+// ------------------------
+// Boards
+// ------------------------
+
+export type BoardNode = {
+  id: number;
+  skillId?: number;
+  stats?: string[];
+  grade?: string;
+};
+
+export type BoardMeta = {
+  id: number;
+  nodes: BoardNode[];
+};
+
+export type RawBoardsFile = {
+  boards: BoardMeta[];
+};
+
 export type ServerMeta = {
   raceId: number;
   serverId: number;
@@ -307,12 +328,18 @@ export type StatType = {
   }>;
 };
 
+export type BoardStat = {
+  type: string;
+  value: string;
+};
+
 export type StatsData = {
   mainStats: StatType[];
   lordStats: StatType[];
   secondStats: Array<{
     type: string;
   }>;
+  boardStats?: BoardStat[];
 };
 
 export type SkillCategory = "Active" | "Passive" | "Dp";

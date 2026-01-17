@@ -5,10 +5,12 @@ import {createFileRoute} from "@tanstack/react-router";
 import {ServerDataProvider} from "@/context/ServerDataContext.tsx";
 import {CharacterProvider} from "@/context/CharacterContext.tsx";
 import {ItemDataProvider} from "@/context/ItemDataContext.tsx";
+import {BoardDataProvider} from "@/context/BoardDataContext.tsx";
 
 import CharacterSearch from "@/components/Character/CharacterSearch.tsx";
 import CharacterDetail from "@/components/Character/CharacterDetail.tsx";
 import Footer from "@/components/Footer.tsx";
+import {ClassDataProvider} from "@/context/ClassDataContext.tsx";
 
 
 function Page() {
@@ -18,7 +20,7 @@ function Page() {
         <CharacterSearch/>
         <CharacterDetail/>
       </div>
-      <Footer />
+      <Footer/>
     </div>
   );
 }
@@ -26,11 +28,15 @@ function Page() {
 const PageWrapper: React.FC = () => {
   return (
     <ItemDataProvider>
-      <CharacterProvider>
-        <ServerDataProvider>
-          <Page/>
-        </ServerDataProvider>
-      </CharacterProvider>
+      <ClassDataProvider>
+        <BoardDataProvider>
+          <CharacterProvider>
+            <ServerDataProvider>
+              <Page/>
+            </ServerDataProvider>
+          </CharacterProvider>
+        </BoardDataProvider>
+      </ClassDataProvider>
     </ItemDataProvider>
   );
 };

@@ -1,5 +1,8 @@
 import {Accordion, AccordionItem, Spinner} from "@heroui/react";
 import {useCharacter} from "@/context/CharacterContext.tsx";
+import {useBoardData} from "@/context/BoardDataContext.tsx";
+import {useDetectedClass} from "@/hooks/useDetectedClass.ts";
+import {useEffect} from "react";
 import CharacterProfileCard from "./CharacterProfileCard.tsx";
 import CharacterStats from "./CharacterStats.tsx";
 import CharacterSkills from "./CharacterSkills.tsx";
@@ -7,11 +10,20 @@ import CharacterRankings from "./CharacterRankings.tsx";
 import CharacterEquipments from "./CharacterEquipments.tsx";
 import CharacterCards from "./CharacterCards.tsx";
 import CharacterTitles from "./CharacterTitles.tsx";
+import CharacterBoards from "./CharacterBoards.tsx";
 import {useIsMobile} from "@/hooks/useIsMobile.ts";
 
 export default function CharacterDetail() {
   const {info, loading, error, characterId, stats} = useCharacter();
+  const {loadBoardsForClass} = useBoardData();
+  const detectedClassName = useDetectedClass();
   const isMobile = useIsMobile();
+
+  useEffect(() => {
+    if (detectedClassName) {
+      loadBoardsForClass(detectedClassName);
+    }
+  }, [detectedClassName, loadBoardsForClass]);
 
   if (!characterId) {
     return null;
@@ -51,13 +63,14 @@ export default function CharacterDetail() {
     { key: "equipments", title: "装备", component: <CharacterEquipments /> },
     { key: "cards", title: "阿尔卡那", component: <CharacterCards /> },
     { key: "stats", title: "主要能力值", component: <CharacterStats /> },
+    { key: "boards", title: "守护力", component: <CharacterBoards /> },
     { key: "skills", title: "技能", component: <CharacterSkills /> },
     { key: "titles", title: "称号", component: <CharacterTitles /> },
     { key: "rankings", title: "排名", component: <CharacterRankings /> },
   ];
 
   const desktopLeftKeys = ["stats", "skills", "rankings"];
-  const desktopRightKeys = ["equipments", "cards", "titles"];
+  const desktopRightKeys = ["equipments", "cards", "boards", "titles"];
 
   const renderAccordion = (items: typeof allItems, className?: string) => (
     <Accordion

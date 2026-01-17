@@ -6,7 +6,15 @@ import { computeBaseUrl, computeWsUrl } from "@/utils/dataMode.ts";
 import { useYamlLoader } from "@/hooks/useYamlLoader";
 import { CHARACTER_HISTORY_STORAGE_PREFIX } from "@/constants.ts";
 import type {StatsData, RawSkillsFile, SkillMeta } from "@/types/game";
-import type {CharacterInfo, CharacterEquipments, CharacterEquipmentDetails, CharacterEquipmentDetail, CharacterSearchItem} from "@/types/character";
+import type {
+  CharacterInfo,
+  CharacterEquipments,
+  CharacterEquipmentDetails,
+  CharacterEquipmentDetail,
+  CharacterSearchItem,
+  CharacterBoardDetails,
+  CharacterBoardDetail,
+} from "@/types/character";
 
 export type CharacterSelection = {
   serverId: number;
@@ -23,6 +31,7 @@ export type CharacterContextValue = {
   info: CharacterInfo | null;
   equipments: CharacterEquipments | null;
   equipmentDetails: CharacterEquipmentDetails | null;
+  boardDetails: CharacterBoardDetails | null;
   
   stats: StatsData | null;
 
@@ -73,6 +82,7 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
   const [info, setInfo] = useState<CharacterInfo | null>(null);
   const [equipments, setEquipments] = useState<CharacterEquipments | null>(null);
   const [equipmentDetails, setEquipmentDetails] = useState<CharacterEquipmentDetails | null>(null);
+  const [boardDetails, setBoardDetails] = useState<CharacterBoardDetails | null>(null);
 
   const [stats, setStats] = useState<StatsData | null>(null);
 
@@ -150,6 +160,7 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
     setInfo(null);
     setEquipments(null);
     setEquipmentDetails(null);
+    setBoardDetails(null);
     setError(null);
 
     // Update history in localStorage
@@ -202,6 +213,7 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
     setInfo(null);
     setEquipments(null);
     setEquipmentDetails(null);
+    setBoardDetails(null);
     setError(null);
     setLoading(false);
 
@@ -233,6 +245,7 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
         setInfo(null);
         setEquipments(null);
         setEquipmentDetails(null);
+        setBoardDetails(null);
         setLoading(false);
         setError(null);
         cleanupWs();
@@ -338,6 +351,17 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
       if (Object.keys(details).length > 0) {
         setEquipmentDetails(details);
       }
+
+      const bDetails = Object.entries(items)
+        .filter(([key]) => key.startsWith("boards:"))
+        .reduce((acc, [key, value]) => {
+          acc[key] = value as CharacterBoardDetail;
+          return acc;
+        }, {} as CharacterBoardDetails);
+
+      if (Object.keys(bDetails).length > 0) {
+        setBoardDetails(bDetails);
+      }
     }
 
     async function reFetch(sid: number, cid: string, reg: string) {
@@ -383,6 +407,11 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
               ...(prev || {}),
               [key]: value as CharacterEquipmentDetail,
             }));
+          } else if (key.startsWith("boards:")) {
+            setBoardDetails((prev) => ({
+              ...(prev || {}),
+              [key]: value as CharacterBoardDetail,
+            }));
           }
         } catch (e) {
           console.error("WS parse error", e);
@@ -421,6 +450,7 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
       info,
       equipments,
       equipmentDetails,
+      boardDetails,
       stats,
       skills,
       skillsById,
@@ -430,7 +460,7 @@ export const CharacterProvider: React.FC<CharacterProviderProps> = ({ children }
       selectCharacter,
       clearSelection,
     }),
-    [serverId, characterId, region, info, equipments, equipmentDetails, stats, skillsById, loading, isUpdating, error, selectCharacter, clearSelection]
+    [serverId, characterId, region, info, equipments, equipmentDetails, boardDetails, stats, skillsById, loading, isUpdating, error, selectCharacter, clearSelection]
   );
 
   return <CharacterContext.Provider value={value}>{children}</CharacterContext.Provider>;

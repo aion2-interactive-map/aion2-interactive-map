@@ -1,0 +1,2721 @@
+boards:
+- id: 31
+  nodes:
+  - id: 310037
+    grade: Rare
+    skillId: 14720000
+  - id: 310038
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 310039
+    grade: Legend
+    skillId: 14070000
+  - id: 310033
+    grade: Unique
+    stats:
+    - CombatSpeed
+  - id: 310034
+    grade: Common
+    stats:
+    - Attack
+  - id: 310035
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 310041
+    grade: Rare
+    skillId: 14730000
+  - id: 310042
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 310043
+    grade: Unique
+    stats:
+    - CooldownReduction
+  - id: 310052
+    grade: Common
+    stats:
+    - Defense
+  - id: 310054
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 310055
+    grade: Common
+    stats:
+    - Defense
+  - id: 310048
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 310050
+    grade: Legend
+    skillId: 14050000
+  - id: 310051
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 310063
+    grade: Rare
+    skillId: 14710000
+  - id: 310056
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 310058
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 310068
+    grade: Legend
+    skillId: 14130000
+  - id: 310069
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 310071
+    grade: Legend
+    skillId: 14170000
+  - id: 310064
+    grade: Common
+    stats:
+    - Defense
+  - id: 310065
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 310067
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 310079
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 310072
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 310073
+    grade: Rare
+    skillId: 14740000
+  - id: 310084
+    grade: Common
+    stats:
+    - Defense
+  - id: 310086
+    grade: Common
+    stats:
+    - Attack
+  - id: 310082
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 310093
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 310094
+    grade: Common
+    stats:
+    - Attack
+  - id: 310095
+    grade: Legend
+    skillId: 14340000
+  - id: 310088
+    grade: Common
+    stats:
+    - Defense
+  - id: 310100
+    grade: Rare
+    skillId: 14750000
+  - id: 310101
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 310102
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 310103
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 310096
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 310097
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 310098
+    grade: Common
+    stats:
+    - Attack
+  - id: 310099
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 310108
+    grade: Legend
+    skillId: 14260000
+  - id: 310111
+    grade: Common
+    stats:
+    - Defense
+  - id: 310118
+    grade: Legend
+    skillId: 14330000
+  - id: 310113
+    grade: None
+  - id: 310115
+    grade: Common
+    stats:
+    - Attack
+  - id: 310124
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 310125
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 310126
+    grade: Rare
+    skillId: 14740000
+  - id: 310127
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 310123
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 310132
+    grade: Common
+    stats:
+    - Defense
+  - id: 310133
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 310128
+    grade: Common
+    stats:
+    - Defense
+  - id: 310129
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 310130
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 310131
+    grade: Legend
+    skillId: 14020000
+  - id: 310140
+    grade: Common
+    stats:
+    - Defense
+  - id: 310142
+    grade: Common
+    stats:
+    - Attack
+  - id: 310138
+    grade: Common
+    stats:
+    - Attack
+  - id: 310144
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 310147
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 310157
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 310158
+    grade: Legend
+    skillId: 14090000
+  - id: 310159
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 310153
+    grade: Rare
+    skillId: 14750000
+  - id: 310154
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 310155
+    grade: Legend
+    skillId: 14080000
+  - id: 310161
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 310162
+    grade: Common
+    stats:
+    - Attack
+  - id: 310163
+    grade: Rare
+    skillId: 14720000
+  - id: 310172
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 310174
+    grade: Common
+    stats:
+    - Attack
+  - id: 310175
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 310168
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 310170
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 310171
+    grade: Common
+    stats:
+    - Attack
+  - id: 310183
+    grade: Unique
+    stats:
+    - CooldownReduction
+  - id: 310176
+    grade: Legend
+    skillId: 14110000
+  - id: 310178
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 310188
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 310189
+    grade: Rare
+    skillId: 14710000
+  - id: 310191
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 310184
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 310185
+    grade: Rare
+    skillId: 14730000
+  - id: 310187
+    grade: Legend
+    skillId: 14010000
+  - id: 310192
+    grade: Common
+    stats:
+    - Defense
+  - id: 310193
+    grade: Unique
+    stats:
+    - CombatSpeed
+- id: 32
+  nodes:
+  - id: 320036
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 320037
+    grade: Legend
+    skillId: 14330000
+  - id: 320038
+    grade: Common
+    stats:
+    - Defense
+  - id: 320039
+    grade: Rare
+    skillId: 14760000
+  - id: 320033
+    grade: Unique
+    stats:
+    - DamageTolerance
+  - id: 320034
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 320035
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 320040
+    grade: Common
+    stats:
+    - Attack
+  - id: 320041
+    grade: Legend
+    skillId: 14010000
+  - id: 320042
+    grade: Common
+    stats:
+    - Defense
+  - id: 320043
+    grade: Unique
+    stats:
+    - DamageBoost
+  - id: 320052
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 320055
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 320048
+    grade: Common
+    stats:
+    - Attack
+  - id: 320050
+    grade: Rare
+    skillId: 14800000
+  - id: 320063
+    grade: Legend
+    skillId: 14020000
+  - id: 320058
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 320068
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 320069
+    grade: Legend
+    skillId: 14130000
+  - id: 320070
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 320071
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 320064
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 320065
+    grade: Common
+    stats:
+    - Defense
+  - id: 320067
+    grade: Common
+    stats:
+    - Attack
+  - id: 320078
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 320072
+    grade: Rare
+    skillId: 14790000
+  - id: 320073
+    grade: Common
+    stats:
+    - Attack
+  - id: 320084
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 320086
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 320080
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 320081
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 320082
+    grade: Rare
+    skillId: null
+  - id: 320093
+    grade: Common
+    stats:
+    - Defense
+  - id: 320094
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 320095
+    grade: Legend
+    skillId: 14090000
+  - id: 320088
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 320100
+    grade: Rare
+    skillId: null
+  - id: 320101
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 320102
+    grade: Common
+    stats:
+    - Attack
+  - id: 320103
+    grade: Legend
+    skillId: 14340000
+  - id: 320097
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 320099
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 320109
+    grade: Common
+    stats:
+    - Attack
+  - id: 320117
+    grade: Common
+    stats:
+    - Defense
+  - id: 320112
+    grade: Common
+    stats:
+    - Defense
+  - id: 320113
+    grade: None
+  - id: 320114
+    grade: Common
+    stats:
+    - Attack
+  - id: 320124
+    grade: Common
+    stats:
+    - Defense
+  - id: 320125
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 320126
+    grade: Rare
+    skillId: 14790000
+  - id: 320127
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 320123
+    grade: Legend
+    skillId: 14170000
+  - id: 320132
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 320133
+    grade: Common
+    stats:
+    - Attack
+  - id: 320129
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 320131
+    grade: Legend
+    skillId: 14070000
+  - id: 320140
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 320142
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 320138
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 320148
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 320144
+    grade: Rare
+    skillId: 14800000
+  - id: 320145
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 320146
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 320156
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 320157
+    grade: Legend
+    skillId: 14080000
+  - id: 320158
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 320159
+    grade: Common
+    stats:
+    - Defense
+  - id: 320153
+    grade: Common
+    stats:
+    - Defense
+  - id: 320154
+    grade: Rare
+    skillId: null
+  - id: 320155
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 320161
+    grade: Common
+    stats:
+    - Attack
+  - id: 320162
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 320163
+    grade: Legend
+    skillId: 14110000
+  - id: 320174
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 320168
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 320171
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 320183
+    grade: Unique
+    stats:
+    - DamageBoost
+  - id: 320176
+    grade: Rare
+    skillId: null
+  - id: 320178
+    grade: Common
+    stats:
+    - Defense
+  - id: 320188
+    grade: Common
+    stats:
+    - Attack
+  - id: 320189
+    grade: Legend
+    skillId: 14260000
+  - id: 320190
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 320191
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 320184
+    grade: Common
+    stats:
+    - Attack
+  - id: 320185
+    grade: Legend
+    skillId: 14050000
+  - id: 320186
+    grade: Common
+    stats:
+    - Defense
+  - id: 320187
+    grade: Rare
+    skillId: 14760000
+  - id: 320192
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 320193
+    grade: Unique
+    stats:
+    - DamageTolerance
+- id: 33
+  nodes:
+  - id: 330037
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 330039
+    grade: Common
+    stats:
+    - Attack
+  - id: 330038
+    grade: Legend
+    skillId: 14330000
+  - id: 330033
+    grade: Unique
+    stats:
+    - CriticalDamageBoost
+  - id: 330035
+    grade: Rare
+    skillId: 14710000
+  - id: 330034
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 330041
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 330040
+    grade: Rare
+    skillId: 14730000
+  - id: 330043
+    grade: Unique
+    stats:
+    - CriticalDamageTolerance
+  - id: 330042
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 330052
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 330054
+    grade: Common
+    stats:
+    - Defense
+  - id: 330048
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 330051
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 330050
+    grade: Common
+    stats:
+    - Attack
+  - id: 330063
+    grade: Common
+    stats:
+    - Defense
+  - id: 330056
+    grade: Common
+    stats:
+    - Defense
+  - id: 330058
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 330069
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 330068
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 330071
+    grade: Legend
+    skillId: 14170000
+  - id: 330070
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 330065
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 330064
+    grade: Legend
+    skillId: 14130000
+  - id: 330067
+    grade: Legend
+    skillId: 14070000
+  - id: 330079
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 330073
+    grade: Rare
+    skillId: 14750000
+  - id: 330072
+    grade: Common
+    stats:
+    - Attack
+  - id: 330084
+    grade: Rare
+    skillId: null
+  - id: 330087
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 330082
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 330093
+    grade: Common
+    stats:
+    - Attack
+  - id: 330095
+    grade: Common
+    stats:
+    - Defense
+  - id: 330094
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 330101
+    grade: Legend
+    skillId: 14050000
+  - id: 330100
+    grade: Common
+    stats:
+    - Defense
+  - id: 330103
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 330102
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 330097
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 330096
+    grade: Rare
+    skillId: 14790000
+  - id: 330099
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 330098
+    grade: Common
+    stats:
+    - Attack
+  - id: 330108
+    grade: Legend
+    skillId: 14110000
+  - id: 330111
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 330118
+    grade: Legend
+    skillId: 14020000
+  - id: 330113
+    grade: None
+  - id: 330115
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 330125
+    grade: Legend
+    skillId: 14010000
+  - id: 330124
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 330127
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 330126
+    grade: Common
+    stats:
+    - Attack
+  - id: 330123
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 330133
+    grade: Common
+    stats:
+    - Defense
+  - id: 330132
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 330129
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 330128
+    grade: Common
+    stats:
+    - Defense
+  - id: 330131
+    grade: Common
+    stats:
+    - Attack
+  - id: 330130
+    grade: Rare
+    skillId: 14800000
+  - id: 330142
+    grade: Rare
+    skillId: 14760000
+  - id: 330139
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 330144
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 330147
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 330157
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 330156
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 330159
+    grade: Legend
+    skillId: 14090000
+  - id: 330158
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 330153
+    grade: Rare
+    skillId: null
+  - id: 330155
+    grade: Legend
+    skillId: 14340000
+  - id: 330154
+    grade: Common
+    stats:
+    - Defense
+  - id: 330161
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 330163
+    grade: Common
+    stats:
+    - Attack
+  - id: 330162
+    grade: Legend
+    skillId: 14080000
+  - id: 330172
+    grade: Common
+    stats:
+    - Attack
+  - id: 330175
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 330174
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 330168
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 330170
+    grade: Common
+    stats:
+    - Attack
+  - id: 330183
+    grade: Unique
+    stats:
+    - CriticalDamageTolerance
+  - id: 330176
+    grade: Common
+    stats:
+    - Defense
+  - id: 330178
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 330189
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 330188
+    grade: Legend
+    skillId: 14260000
+  - id: 330191
+    grade: Rare
+    skillId: 14720000
+  - id: 330185
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 330184
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 330187
+    grade: Common
+    stats:
+    - Defense
+  - id: 330186
+    grade: Rare
+    skillId: 14740000
+  - id: 330193
+    grade: Unique
+    stats:
+    - CriticalDamageBoost
+  - id: 330192
+    grade: Common
+    stats:
+    - CriticalHit
+- id: 34
+  nodes:
+  - id: 340023
+    grade: Unique
+    stats:
+    - Multi-HitChance
+  - id: 340022
+    grade: Common
+    stats:
+    - Attack
+  - id: 340017
+    grade: Unique
+    stats:
+    - Multi-HitResist
+  - id: 340019
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 340018
+    grade: Common
+    stats:
+    - Attack
+  - id: 340029
+    grade: Unique
+    stats:
+    - Multi-HitResist
+  - id: 340028
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 340024
+    grade: Common
+    stats:
+    - Defense
+  - id: 340027
+    grade: Common
+    stats:
+    - Defense
+  - id: 340037
+    grade: Rare
+    skillId: 14800000
+  - id: 340036
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 340039
+    grade: Rare
+    skillId: 14760000
+  - id: 340032
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 340035
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 340034
+    grade: Legend
+    skillId: 14090000
+  - id: 340044
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 340047
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 340041
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 340040
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 340042
+    grade: Legend
+    skillId: 14340000
+  - id: 340053
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 340052
+    grade: Common
+    stats:
+    - Defense
+  - id: 340054
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 340049
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 340063
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 340062
+    grade: Legend
+    skillId: 14330000
+  - id: 340057
+    grade: Common
+    stats:
+    - Attack
+  - id: 340059
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 340069
+    grade: Common
+    stats:
+    - Defense
+  - id: 340071
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 340070
+    grade: Legend
+    skillId: 14080000
+  - id: 340065
+    grade: Rare
+    skillId: 14720000
+  - id: 340064
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 340067
+    grade: Common
+    stats:
+    - Attack
+  - id: 340066
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 340079
+    grade: Common
+    stats:
+    - Defense
+  - id: 340073
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 340072
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 340074
+    grade: Rare
+    skillId: 14740000
+  - id: 340085
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 340081
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 340093
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 340092
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 340095
+    grade: Common
+    stats:
+    - Attack
+  - id: 340094
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 340088
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 340101
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 340100
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 340103
+    grade: Common
+    stats:
+    - Defense
+  - id: 340102
+    grade: Rare
+    skillId: null
+  - id: 340097
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 340096
+    grade: Legend
+    skillId: 14170000
+  - id: 340099
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 340098
+    grade: Common
+    stats:
+    - Defense
+  - id: 340109
+    grade: Common
+    stats:
+    - Defense
+  - id: 340111
+    grade: Common
+    stats:
+    - Defense
+  - id: 340104
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 340107
+    grade: Legend
+    skillId: 14070000
+  - id: 340117
+    grade: Common
+    stats:
+    - Attack
+  - id: 340119
+    grade: Legend
+    skillId: 14010000
+  - id: 340113
+    grade: None
+  - id: 340115
+    grade: Common
+    stats:
+    - Attack
+  - id: 340125
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 340124
+    grade: Rare
+    skillId: 14750000
+  - id: 340127
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 340126
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 340123
+    grade: Common
+    stats:
+    - Attack
+  - id: 340122
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 340133
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 340132
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 340134
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 340129
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 340128
+    grade: Common
+    stats:
+    - Attack
+  - id: 340131
+    grade: Common
+    stats:
+    - Defense
+  - id: 340130
+    grade: Legend
+    skillId: 14050000
+  - id: 340141
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 340138
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 340145
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 340147
+    grade: Common
+    stats:
+    - Attack
+  - id: 340157
+    grade: Common
+    stats:
+    - Attack
+  - id: 340156
+    grade: Legend
+    skillId: 14110000
+  - id: 340159
+    grade: Common
+    stats:
+    - Defense
+  - id: 340153
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 340152
+    grade: Rare
+    skillId: 14730000
+  - id: 340155
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 340154
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 340164
+    grade: Legend
+    skillId: 14260000
+  - id: 340167
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 340161
+    grade: Rare
+    skillId: 14710000
+  - id: 340160
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 340163
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 340162
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 340173
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 340172
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 340174
+    grade: Common
+    stats:
+    - Attack
+  - id: 340169
+    grade: Common
+    stats:
+    - Defense
+  - id: 340182
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 340177
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 340179
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 340189
+    grade: Rare
+    skillId: 14790000
+  - id: 340191
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 340190
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 340185
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 340184
+    grade: Legend
+    skillId: 14130000
+  - id: 340187
+    grade: Rare
+    skillId: null
+  - id: 340186
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 340197
+    grade: Unique
+    stats:
+    - Multi-HitChance
+  - id: 340199
+    grade: Common
+    stats:
+    - Attack
+  - id: 340198
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 340192
+    grade: Legend
+    skillId: 14020000
+  - id: 340194
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 340204
+    grade: Common
+    stats:
+    - Defense
+  - id: 340207
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 340203
+    grade: Unique
+    stats:
+    - Multi-HitResist
+  - id: 340202
+    grade: Common
+    stats:
+    - Attack
+  - id: 340209
+    grade: Unique
+    stats:
+    - Multi-HitChance
+  - id: 340208
+    grade: Common
+    stats:
+    - Defense
+- id: 35
+  nodes:
+  - id: 350213
+    grade: Common
+    stats:
+    - PvEEvasion
+  - id: 350212
+    grade: Common
+    stats:
+    - PvEAttack
+  - id: 350215
+    grade: Rare
+    stats:
+    - PvEAccuracy
+    - PvEEvasion
+  - id: 350214
+    grade: Common
+    stats:
+    - BossDefense
+  - id: 350208
+    grade: Common
+    stats:
+    - BossDefense
+  - id: 350211
+    grade: Unique
+    stats:
+    - PvEDamageTolerance
+  - id: 350210
+    grade: Common
+    stats:
+    - PvEAccuracy
+  - id: 350223
+    grade: Rare
+    stats:
+    - BossAttack
+    - BossDefense
+  - id: 350217
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 350219
+    grade: Common
+    stats:
+    - PvEAccuracy
+  - id: 350218
+    grade: Unique
+    stats:
+    - PvEDamageBoost
+  - id: 350225
+    grade: Unique
+    stats:
+    - PvEDamageBoost
+  - id: 350224
+    grade: Common
+    stats:
+    - BossAttack
+  - id: 350007
+    grade: Common
+    stats:
+    - PvEAccuracy
+  - id: 350001
+    grade: Unique
+    stats:
+    - PvEDamageBoost
+  - id: 350003
+    grade: Rare
+    stats:
+    - PvEAttack
+    - PvEDefense
+  - id: 350002
+    grade: Common
+    stats:
+    - BossAttack
+  - id: 350013
+    grade: Common
+    stats:
+    - PvEEvasion
+  - id: 350012
+    grade: Common
+    stats:
+    - BossDefense
+  - id: 350015
+    grade: Unique
+    stats:
+    - PvEDamageTolerance
+  - id: 350014
+    grade: Common
+    stats:
+    - PvEAttack
+  - id: 350009
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 350008
+    grade: Unique
+    stats:
+    - PvEDamageBoost
+  - id: 350011
+    grade: Rare
+    stats:
+    - PvEAccuracy
+    - PvEEvasion
+  - id: 350021
+    grade: Legend
+    stats:
+    - BossDamageTolerance
+  - id: 350020
+    grade: Common
+    stats:
+    - PvEDefense
+  - id: 350022
+    grade: Common
+    stats:
+    - PvEAttack
+  - id: 350016
+    grade: Common
+    stats:
+    - PvEAccuracy
+  - id: 350019
+    grade: Common
+    stats:
+    - PvEEvasion
+  - id: 350018
+    grade: Common
+    stats:
+    - BossDefense
+  - id: 350028
+    grade: Legend
+    stats:
+    - BossDamageBoost
+  - id: 350031
+    grade: Common
+    stats:
+    - PvEDefense
+  - id: 350030
+    grade: Common
+    stats:
+    - BossAttack
+  - id: 350024
+    grade: Rare
+    stats:
+    - BossAttack
+    - BossDefense
+  - id: 350026
+    grade: Common
+    stats:
+    - BossAttack
+  - id: 350037
+    grade: Common
+    stats:
+    - BossAttack
+  - id: 350039
+    grade: Common
+    stats:
+    - PvEAccuracy
+  - id: 350038
+    grade: Common
+    stats:
+    - PvEEvasion
+  - id: 350032
+    grade: Legend
+    stats:
+    - BossDamageBoost
+  - id: 350034
+    grade: Rare
+    stats:
+    - BossAttack
+    - BossDefense
+  - id: 350045
+    grade: Rare
+    stats:
+    - PvEAttack
+    - PvEDefense
+  - id: 350044
+    grade: Common
+    stats:
+    - PvEAccuracy
+  - id: 350047
+    grade: Common
+    stats:
+    - PvEAttack
+  - id: 350041
+    grade: Common
+    stats:
+    - PvEAttack
+  - id: 350040
+    grade: Common
+    stats:
+    - BossDefense
+  - id: 350043
+    grade: Common
+    stats:
+    - PvEDefense
+  - id: 350042
+    grade: Common
+    stats:
+    - PvEEvasion
+  - id: 350052
+    grade: Rare
+    stats:
+    - PvEAccuracy
+    - PvEEvasion
+  - id: 350055
+    grade: Legend
+    stats:
+    - BossDamageTolerance
+  - id: 350049
+    grade: Common
+    stats:
+    - PvEAccuracy
+  - id: 350051
+    grade: Common
+    stats:
+    - BossDefense
+  - id: 350050
+    grade: Common
+    stats:
+    - PvEAttack
+  - id: 350061
+    grade: Rare
+    stats:
+    - PvEAccuracy
+    - PvEEvasion
+  - id: 350063
+    grade: Common
+    stats:
+    - BossAttack
+  - id: 350062
+    grade: Common
+    stats:
+    - BossDefense
+  - id: 350057
+    grade: Rare
+    stats:
+    - BossAttack
+    - BossDefense
+  - id: 350059
+    grade: Common
+    stats:
+    - PvEEvasion
+  - id: 350070
+    grade: Common
+    stats:
+    - PvEDefense
+  - id: 350064
+    grade: Legend
+    stats:
+    - BossDamageTolerance
+  - id: 350067
+    grade: Common
+    stats:
+    - PvEDefense
+  - id: 350076
+    grade: Common
+    stats:
+    - PvEDefense
+  - id: 350079
+    grade: Common
+    stats:
+    - PvEEvasion
+  - id: 350073
+    grade: Common
+    stats:
+    - BossDefense
+  - id: 350072
+    grade: Common
+    stats:
+    - PvEAccuracy
+  - id: 350074
+    grade: Legend
+    stats:
+    - BossDamageBoost
+  - id: 350085
+    grade: Common
+    stats:
+    - BossAttack
+  - id: 350084
+    grade: Rare
+    stats:
+    - PvEAttack
+    - PvEDefense
+  - id: 350087
+    grade: Common
+    stats:
+    - PvEAttack
+  - id: 350081
+    grade: Legend
+    stats:
+    - BossDamageBoost
+  - id: 350083
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 350082
+    grade: Common
+    stats:
+    - PvEEvasion
+  - id: 350093
+    grade: Common
+    stats:
+    - PvEAccuracy
+  - id: 350092
+    grade: Rare
+    stats:
+    - BossAttack
+    - BossDefense
+  - id: 350095
+    grade: Common
+    stats:
+    - BossDefense
+  - id: 350094
+    grade: Rare
+    stats:
+    - PvEAttack
+    - PvEDefense
+  - id: 350089
+    grade: Common
+    stats:
+    - BossAttack
+  - id: 350091
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 350101
+    grade: Legend
+    stats:
+    - BossDamageTolerance
+  - id: 350100
+    grade: Common
+    stats:
+    - BossDefense
+  - id: 350103
+    grade: Common
+    stats:
+    - PvEDefense
+  - id: 350102
+    grade: Common
+    stats:
+    - PvEEvasion
+  - id: 350096
+    grade: Common
+    stats:
+    - BossAttack
+  - id: 350098
+    grade: Common
+    stats:
+    - PvEAttack
+  - id: 350108
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 350111
+    grade: Common
+    stats:
+    - PvEAccuracy
+  - id: 350105
+    grade: Common
+    stats:
+    - PvEAttack
+  - id: 350104
+    grade: Rare
+    stats:
+    - PvEAccuracy
+    - PvEEvasion
+  - id: 350106
+    grade: Unique
+    stats:
+    - PvEDamageTolerance
+  - id: 350118
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 350113
+    grade: None
+  - id: 350112
+    grade: Common
+    stats:
+    - PvEDefense
+  - id: 350115
+    grade: Common
+    stats:
+    - PvEAccuracy
+  - id: 350114
+    grade: Common
+    stats:
+    - PvEDefense
+  - id: 350125
+    grade: Legend
+    stats:
+    - BossDamageTolerance
+  - id: 350124
+    grade: Common
+    stats:
+    - PvEEvasion
+  - id: 350126
+    grade: Common
+    stats:
+    - BossDefense
+  - id: 350121
+    grade: Common
+    stats:
+    - PvEAttack
+  - id: 350120
+    grade: Unique
+    stats:
+    - PvEDamageTolerance
+  - id: 350123
+    grade: Common
+    stats:
+    - PvEDefense
+  - id: 350122
+    grade: Rare
+    stats:
+    - PvEAccuracy
+    - PvEEvasion
+  - id: 350133
+    grade: Common
+    stats:
+    - PvEAccuracy
+  - id: 350132
+    grade: Rare
+    stats:
+    - BossAttack
+    - BossDefense
+  - id: 350135
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 350134
+    grade: Rare
+    stats:
+    - PvEAttack
+    - PvEDefense
+  - id: 350128
+    grade: Common
+    stats:
+    - PvEAttack
+  - id: 350131
+    grade: Common
+    stats:
+    - BossDefense
+  - id: 350130
+    grade: Common
+    stats:
+    - BossAttack
+  - id: 350141
+    grade: Common
+    stats:
+    - BossAttack
+  - id: 350143
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 350142
+    grade: Rare
+    stats:
+    - BossAttack
+    - BossDefense
+  - id: 350137
+    grade: Common
+    stats:
+    - BossAttack
+  - id: 350139
+    grade: Common
+    stats:
+    - PvEAttack
+  - id: 350150
+    grade: Common
+    stats:
+    - PvEDefense
+  - id: 350145
+    grade: Legend
+    stats:
+    - BossDamageBoost
+  - id: 350144
+    grade: Common
+    stats:
+    - PvEEvasion
+  - id: 350147
+    grade: Common
+    stats:
+    - PvEEvasion
+  - id: 350156
+    grade: Common
+    stats:
+    - PvEDefense
+  - id: 350159
+    grade: Common
+    stats:
+    - PvEDefense
+  - id: 350153
+    grade: Common
+    stats:
+    - BossDefense
+  - id: 350152
+    grade: Legend
+    stats:
+    - BossDamageBoost
+  - id: 350154
+    grade: Common
+    stats:
+    - PvEAccuracy
+  - id: 350165
+    grade: Rare
+    stats:
+    - PvEAccuracy
+    - PvEEvasion
+  - id: 350164
+    grade: Common
+    stats:
+    - BossDefense
+  - id: 350167
+    grade: Common
+    stats:
+    - PvEEvasion
+  - id: 350163
+    grade: Common
+    stats:
+    - BossAttack
+  - id: 350162
+    grade: Legend
+    stats:
+    - BossDamageTolerance
+  - id: 350175
+    grade: Common
+    stats:
+    - BossDefense
+  - id: 350174
+    grade: Rare
+    stats:
+    - PvEAccuracy
+    - PvEEvasion
+  - id: 350169
+    grade: Rare
+    stats:
+    - PvEAttack
+    - PvEDefense
+  - id: 350171
+    grade: Legend
+    stats:
+    - BossDamageTolerance
+  - id: 350181
+    grade: Rare
+    stats:
+    - BossAttack
+    - BossDefense
+  - id: 350183
+    grade: Common
+    stats:
+    - PvEDefense
+  - id: 350182
+    grade: Common
+    stats:
+    - PvEAccuracy
+  - id: 350177
+    grade: Common
+    stats:
+    - PvEAccuracy
+  - id: 350176
+    grade: Common
+    stats:
+    - PvEAttack
+  - id: 350179
+    grade: Common
+    stats:
+    - PvEAttack
+  - id: 350189
+    grade: Common
+    stats:
+    - BossAttack
+  - id: 350188
+    grade: Common
+    stats:
+    - PvEEvasion
+  - id: 350185
+    grade: Common
+    stats:
+    - PvEAttack
+  - id: 350184
+    grade: Common
+    stats:
+    - PvEEvasion
+  - id: 350187
+    grade: Common
+    stats:
+    - PvEAccuracy
+  - id: 350186
+    grade: Common
+    stats:
+    - BossDefense
+  - id: 350196
+    grade: Common
+    stats:
+    - BossAttack
+  - id: 350198
+    grade: Legend
+    stats:
+    - BossDamageBoost
+  - id: 350192
+    grade: Rare
+    stats:
+    - PvEAttack
+    - PvEDefense
+  - id: 350195
+    grade: Common
+    stats:
+    - PvEDefense
+  - id: 350194
+    grade: Legend
+    stats:
+    - BossDamageBoost
+  - id: 350205
+    grade: Legend
+    stats:
+    - BossDamageTolerance
+  - id: 350204
+    grade: Common
+    stats:
+    - PvEAttack
+  - id: 350207
+    grade: Common
+    stats:
+    - PvEEvasion
+  - id: 350206
+    grade: Common
+    stats:
+    - PvEDefense
+  - id: 350200
+    grade: Common
+    stats:
+    - BossAttack
+  - id: 350202
+    grade: Rare
+    stats:
+    - PvEAttack
+    - PvEDefense
+- id: 36
+  nodes:
+  - id: 360004
+    grade: Legend
+    stats:
+    - StatusEffectChance
+  - id: 360007
+    grade: Common
+    stats:
+    - PvPAccuracy
+  - id: 360006
+    grade: Rare
+    stats:
+    - PvPCriticalHit
+    - PvPCriticalHitResist
+  - id: 360001
+    grade: Unique
+    stats:
+    - PvPDamageTolerance
+  - id: 360003
+    grade: Common
+    stats:
+    - PvPDefense
+  - id: 360002
+    grade: Common
+    stats:
+    - PvPAttack
+  - id: 360013
+    grade: Common
+    stats:
+    - PvPCriticalHitResist
+  - id: 360012
+    grade: Legend
+    stats:
+    - StatusEffectResist
+  - id: 360015
+    grade: Unique
+    stats:
+    - PvPDamageBoost
+  - id: 360014
+    grade: Common
+    stats:
+    - PvPAttack
+  - id: 360008
+    grade: Unique
+    stats:
+    - PvPDamageTolerance
+  - id: 360011
+    grade: Common
+    stats:
+    - PvPEvasion
+  - id: 360010
+    grade: Rare
+    stats:
+    - PvPCriticalHit
+    - PvPCriticalHitResist
+  - id: 360021
+    grade: Common
+    stats:
+    - PvPDefense
+  - id: 360020
+    grade: Common
+    stats:
+    - PvPAttack
+  - id: 360023
+    grade: Common
+    stats:
+    - PvPEvasion
+  - id: 360016
+    grade: Common
+    stats:
+    - PvPCriticalHit
+  - id: 360019
+    grade: Common
+    stats:
+    - PvPEvasion
+  - id: 360028
+    grade: Common
+    stats:
+    - PvPDefense
+  - id: 360031
+    grade: Rare
+    stats:
+    - PvPAccuracy
+    - PvPEvasion
+  - id: 360030
+    grade: Common
+    stats:
+    - PvPAccuracy
+  - id: 360025
+    grade: Common
+    stats:
+    - PvPAccuracy
+  - id: 360037
+    grade: Rare
+    stats:
+    - PvPAccuracy
+    - PvPEvasion
+  - id: 360036
+    grade: Common
+    stats:
+    - PvPCriticalHitResist
+  - id: 360039
+    grade: Common
+    stats:
+    - PvPDefense
+  - id: 360038
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 360033
+    grade: Common
+    stats:
+    - PvPAccuracy
+  - id: 360032
+    grade: Common
+    stats:
+    - PvPCriticalHitResist
+  - id: 360034
+    grade: Rare
+    stats:
+    - PvPAttack
+    - PvPDefense
+  - id: 360045
+    grade: Rare
+    stats:
+    - PvPAttack
+    - PvPDefense
+  - id: 360044
+    grade: Common
+    stats:
+    - PvPCriticalHit
+  - id: 360041
+    grade: Common
+    stats:
+    - PvPCriticalHit
+  - id: 360040
+    grade: Legend
+    stats:
+    - StatusEffectChance
+  - id: 360043
+    grade: Rare
+    stats:
+    - PvPAccuracy
+    - PvPEvasion
+  - id: 360042
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 360052
+    grade: Common
+    stats:
+    - PvPCriticalHit
+  - id: 360054
+    grade: Common
+    stats:
+    - PvPEvasion
+  - id: 360048
+    grade: Common
+    stats:
+    - PvPDefense
+  - id: 360061
+    grade: Legend
+    stats:
+    - StatusEffectChance
+  - id: 360063
+    grade: Common
+    stats:
+    - PvPEvasion
+  - id: 360062
+    grade: Common
+    stats:
+    - PvPAttack
+  - id: 360056
+    grade: Common
+    stats:
+    - PvPAttack
+  - id: 360058
+    grade: Common
+    stats:
+    - PvPCriticalHitResist
+  - id: 360069
+    grade: Common
+    stats:
+    - PvPCriticalHitResist
+  - id: 360068
+    grade: Legend
+    stats:
+    - StatusEffectChance
+  - id: 360071
+    grade: Common
+    stats:
+    - PvPEvasion
+  - id: 360070
+    grade: Rare
+    stats:
+    - PvPAttack
+    - PvPDefense
+  - id: 360065
+    grade: Legend
+    stats:
+    - StatusEffectResist
+  - id: 360067
+    grade: Common
+    stats:
+    - PvPDefense
+  - id: 360066
+    grade: Common
+    stats:
+    - PvPCriticalHitResist
+  - id: 360076
+    grade: Common
+    stats:
+    - PvPCriticalHitResist
+  - id: 360079
+    grade: Common
+    stats:
+    - PvPAccuracy
+  - id: 360078
+    grade: Rare
+    stats:
+    - PvPCriticalHit
+    - PvPCriticalHitResist
+  - id: 360073
+    grade: Legend
+    stats:
+    - StatusEffectResist
+  - id: 360072
+    grade: Common
+    stats:
+    - PvPDefense
+  - id: 360085
+    grade: Common
+    stats:
+    - PvPAccuracy
+  - id: 360080
+    grade: Common
+    stats:
+    - PvPCriticalHit
+  - id: 360082
+    grade: Common
+    stats:
+    - PvPAccuracy
+  - id: 360095
+    grade: Common
+    stats:
+    - PvPAttack
+  - id: 360089
+    grade: Common
+    stats:
+    - PvPAccuracy
+  - id: 360088
+    grade: Common
+    stats:
+    - PvPCriticalHit
+  - id: 360091
+    grade: Common
+    stats:
+    - PvPCriticalHit
+  - id: 360090
+    grade: Rare
+    stats:
+    - PvPCriticalHit
+    - PvPCriticalHitResist
+  - id: 360101
+    grade: Common
+    stats:
+    - PvPDefense
+  - id: 360100
+    grade: Legend
+    stats:
+    - StatusEffectResist
+  - id: 360103
+    grade: Rare
+    stats:
+    - PvPAccuracy
+    - PvPEvasion
+  - id: 360102
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 360097
+    grade: Rare
+    stats:
+    - PvPAttack
+    - PvPDefense
+  - id: 360096
+    grade: Common
+    stats:
+    - PvPEvasion
+  - id: 360099
+    grade: Common
+    stats:
+    - PvPAttack
+  - id: 360098
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 360108
+    grade: Common
+    stats:
+    - PvPCriticalHitResist
+  - id: 360111
+    grade: Common
+    stats:
+    - PvPCriticalHit
+  - id: 360105
+    grade: Common
+    stats:
+    - PvPEvasion
+  - id: 360107
+    grade: Common
+    stats:
+    - PvPAttack
+  - id: 360106
+    grade: Unique
+    stats:
+    - PvPDamageBoost
+  - id: 360119
+    grade: Common
+    stats:
+    - PvPAttack
+  - id: 360118
+    grade: Common
+    stats:
+    - PvPCriticalHitResist
+  - id: 360113
+    grade: None
+  - id: 360115
+    grade: Common
+    stats:
+    - PvPCriticalHit
+  - id: 360125
+    grade: Common
+    stats:
+    - PvPDefense
+  - id: 360124
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 360127
+    grade: Common
+    stats:
+    - PvPAttack
+  - id: 360126
+    grade: Legend
+    stats:
+    - StatusEffectResist
+  - id: 360121
+    grade: Common
+    stats:
+    - PvPEvasion
+  - id: 360120
+    grade: Unique
+    stats:
+    - PvPDamageBoost
+  - id: 360123
+    grade: Rare
+    stats:
+    - PvPAccuracy
+    - PvPEvasion
+  - id: 360135
+    grade: Common
+    stats:
+    - PvPCriticalHit
+  - id: 360129
+    grade: Rare
+    stats:
+    - PvPCriticalHit
+    - PvPCriticalHitResist
+  - id: 360128
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 360131
+    grade: Common
+    stats:
+    - PvPAttack
+  - id: 360130
+    grade: Common
+    stats:
+    - PvPEvasion
+  - id: 360141
+    grade: Common
+    stats:
+    - PvPAccuracy
+  - id: 360137
+    grade: Common
+    stats:
+    - PvPAccuracy
+  - id: 360136
+    grade: Rare
+    stats:
+    - PvPCriticalHit
+    - PvPCriticalHitResist
+  - id: 360138
+    grade: Common
+    stats:
+    - PvPCriticalHit
+  - id: 360148
+    grade: Rare
+    stats:
+    - PvPAttack
+    - PvPDefense
+  - id: 360150
+    grade: Common
+    stats:
+    - PvPCriticalHitResist
+  - id: 360144
+    grade: Common
+    stats:
+    - PvPAccuracy
+  - id: 360147
+    grade: Common
+    stats:
+    - PvPAccuracy
+  - id: 360146
+    grade: Common
+    stats:
+    - PvPCriticalHit
+  - id: 360157
+    grade: Common
+    stats:
+    - PvPCriticalHitResist
+  - id: 360156
+    grade: Rare
+    stats:
+    - PvPAttack
+    - PvPDefense
+  - id: 360159
+    grade: Common
+    stats:
+    - PvPDefense
+  - id: 360158
+    grade: Legend
+    stats:
+    - StatusEffectChance
+  - id: 360153
+    grade: Legend
+    stats:
+    - StatusEffectResist
+  - id: 360155
+    grade: Common
+    stats:
+    - PvPEvasion
+  - id: 360154
+    grade: Common
+    stats:
+    - PvPDefense
+  - id: 360165
+    grade: Legend
+    stats:
+    - StatusEffectChance
+  - id: 360164
+    grade: Common
+    stats:
+    - PvPAttack
+  - id: 360161
+    grade: Legend
+    stats:
+    - StatusEffectResist
+  - id: 360160
+    grade: Common
+    stats:
+    - PvPCriticalHitResist
+  - id: 360163
+    grade: Common
+    stats:
+    - PvPEvasion
+  - id: 360172
+    grade: Common
+    stats:
+    - PvPEvasion
+  - id: 360174
+    grade: Common
+    stats:
+    - PvPCriticalHit
+  - id: 360168
+    grade: Common
+    stats:
+    - PvPCriticalHitResist
+  - id: 360170
+    grade: Common
+    stats:
+    - PvPAttack
+  - id: 360181
+    grade: Rare
+    stats:
+    - PvPAttack
+    - PvPDefense
+  - id: 360183
+    grade: Rare
+    stats:
+    - PvPAccuracy
+    - PvPEvasion
+  - id: 360182
+    grade: Common
+    stats:
+    - PvPCriticalHit
+  - id: 360178
+    grade: Common
+    stats:
+    - PvPDefense
+  - id: 360189
+    grade: Rare
+    stats:
+    - PvPAccuracy
+    - PvPEvasion
+  - id: 360188
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 360190
+    grade: Common
+    stats:
+    - PvPCriticalHitResist
+  - id: 360185
+    grade: Common
+    stats:
+    - PvPCriticalHit
+  - id: 360184
+    grade: Common
+    stats:
+    - MaxMP
+  - id: 360187
+    grade: Common
+    stats:
+    - PvPDefense
+  - id: 360186
+    grade: Legend
+    stats:
+    - StatusEffectChance
+  - id: 360196
+    grade: Common
+    stats:
+    - PvPAccuracy
+  - id: 360198
+    grade: Common
+    stats:
+    - PvPDefense
+  - id: 360193
+    grade: Common
+    stats:
+    - PvPAccuracy
+  - id: 360192
+    grade: Rare
+    stats:
+    - PvPCriticalHit
+    - PvPCriticalHitResist
+  - id: 360195
+    grade: Rare
+    stats:
+    - PvPAccuracy
+    - PvPEvasion
+  - id: 360194
+    grade: Common
+    stats:
+    - PvPCriticalHitResist
+  - id: 360205
+    grade: Common
+    stats:
+    - PvPDefense
+  - id: 360207
+    grade: Common
+    stats:
+    - PvPEvasion
+  - id: 360206
+    grade: Common
+    stats:
+    - PvPAttack
+  - id: 360201
+    grade: Common
+    stats:
+    - PvPAccuracy
+  - id: 360203
+    grade: Common
+    stats:
+    - PvPEvasion
+  - id: 360213
+    grade: Common
+    stats:
+    - PvPCriticalHitResist
+  - id: 360212
+    grade: Common
+    stats:
+    - PvPAttack
+  - id: 360215
+    grade: Common
+    stats:
+    - PvPEvasion
+  - id: 360214
+    grade: Legend
+    stats:
+    - StatusEffectResist
+  - id: 360211
+    grade: Unique
+    stats:
+    - PvPDamageBoost
+  - id: 360210
+    grade: Common
+    stats:
+    - PvPCriticalHit
+  - id: 360220
+    grade: Rare
+    stats:
+    - PvPAttack
+    - PvPDefense
+  - id: 360223
+    grade: Common
+    stats:
+    - PvPDefense
+  - id: 360222
+    grade: Legend
+    stats:
+    - StatusEffectChance
+  - id: 360216
+    grade: Rare
+    stats:
+    - PvPCriticalHit
+    - PvPCriticalHitResist
+  - id: 360219
+    grade: Common
+    stats:
+    - PvPAccuracy
+  - id: 360218
+    grade: Unique
+    stats:
+    - PvPDamageTolerance
+  - id: 360225
+    grade: Unique
+    stats:
+    - PvPDamageTolerance
+  - id: 360224
+    grade: Common
+    stats:
+    - PvPAttack

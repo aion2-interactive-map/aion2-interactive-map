@@ -49,6 +49,13 @@ export type CharacterWing = {
   icon: string;
 };
 
+export type CharacterBoardDetail = {
+  boardId: number;
+  openNodes: number[];
+};
+
+export type CharacterBoardDetails = Record<string, CharacterBoardDetail>;
+
 export type CharacterEquipmentDetails = Record<string, CharacterEquipmentDetail>;
 
 export type CharacterProfile = {

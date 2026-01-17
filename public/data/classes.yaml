@@ -1,9 +1,17 @@
 classes:
 - name: Gladiator
+  order: 1
 - name: Templar
-- name: Assassin
+  order: 2
 - name: Ranger
-- name: Sorcerer
+  order: 3
+- name: Assassin
+  order: 4
 - name: Elementalist
+  order: 5
+- name: Sorcerer
+  order: 6
 - name: Cleric
+  order: 7
 - name: Chanter
+  order: 8
