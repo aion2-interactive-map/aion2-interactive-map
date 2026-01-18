@@ -74,7 +74,7 @@ boards:
     - CriticalHitResist
   - id: 710185
     grade: Rare
-    skillId: null
+    skillId: 17730000
   - id: 710191
     grade: Common
     stats:
@@ -115,7 +115,7 @@ boards:
     - CooldownReduction
   - id: 710041
     grade: Rare
-    skillId: null
+    skillId: 17730000
   - id: 710034
     grade: Common
     stats:
@@ -850,7 +850,7 @@ boards:
     - CriticalHitResist
   - id: 730040
     grade: Rare
-    skillId: null
+    skillId: 17730000
   - id: 730035
     grade: Rare
     skillId: 17710000
@@ -1309,7 +1309,7 @@ boards:
     - MaxHP
   - id: 740152
     grade: Rare
-    skillId: null
+    skillId: 17730000
   - id: 740159
     grade: Common
     stats:

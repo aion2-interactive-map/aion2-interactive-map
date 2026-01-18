@@ -386,7 +386,7 @@ boards:
     - MaxHP
   - id: 420050
     grade: Rare
-    skillId: null
+    skillId: 13800000
   - id: 420048
     grade: Common
     stats:
@@ -565,7 +565,7 @@ boards:
     - MaxHP
   - id: 420144
     grade: Rare
-    skillId: null
+    skillId: 13800000
   - id: 420145
     grade: Common
     stats:
@@ -767,7 +767,7 @@ boards:
     - Defense
   - id: 430130
     grade: Rare
-    skillId: null
+    skillId: 13800000
   - id: 430131
     grade: Common
     stats:
@@ -1048,7 +1048,7 @@ boards:
     - MaxHP
   - id: 440037
     grade: Rare
-    skillId: null
+    skillId: 13800000
   - id: 440034
     grade: Legend
     skillId: 13060000

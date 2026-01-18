@@ -142,7 +142,7 @@ boards:
     skillId: 11750000
   - id: 110155
     grade: Legend
-    skillId: null
+    skillId: 11360000
   - id: 110154
     grade: Common
     stats:
@@ -164,7 +164,7 @@ boards:
     - MaxMP
   - id: 110163
     grade: Rare
-    skillId: null
+    skillId: 11720000
   - id: 110162
     grade: Common
     stats:
@@ -247,7 +247,7 @@ boards:
     - Attack
   - id: 110037
     grade: Rare
-    skillId: null
+    skillId: 11720000
   - id: 110039
     grade: Legend
     skillId: 11300000
@@ -446,7 +446,7 @@ boards:
     - MaxMP
   - id: 120082
     grade: Rare
-    skillId: null
+    skillId: 11780000
   - id: 120084
     grade: Common
     stats:
@@ -583,7 +583,7 @@ boards:
     skillId: 11770000
   - id: 120157
     grade: Legend
-    skillId: null
+    skillId: 11360000
   - id: 120156
     grade: Common
     stats:
@@ -621,7 +621,7 @@ boards:
     - MaxMP
   - id: 120176
     grade: Rare
-    skillId: null
+    skillId: 11780000
   - id: 120178
     grade: Common
     stats:
@@ -743,7 +743,7 @@ boards:
     - CriticalHit
   - id: 130084
     grade: Rare
-    skillId: null
+    skillId: 11780000
   - id: 130087
     grade: Common
     stats:
@@ -898,7 +898,7 @@ boards:
     - Attack
   - id: 130162
     grade: Legend
-    skillId: null
+    skillId: 11360000
   - id: 130168
     grade: Common
     stats:
@@ -955,7 +955,7 @@ boards:
     skillId: 11260000
   - id: 130191
     grade: Rare
-    skillId: null
+    skillId: 11720000
   - id: 130193
     grade: Unique
     stats:
@@ -1124,10 +1124,10 @@ boards:
     - MaxMP
   - id: 140065
     grade: Rare
-    skillId: null
+    skillId: 11720000
   - id: 140070
     grade: Legend
-    skillId: null
+    skillId: 11360000
   - id: 140071
     grade: Common
     stats:
@@ -1385,7 +1385,7 @@ boards:
     - MaxHP
   - id: 140187
     grade: Rare
-    skillId: null
+    skillId: 11780000
   - id: 140184
     grade: Legend
     skillId: 11190000

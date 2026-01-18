@@ -81,7 +81,7 @@ boards:
     skillId: 18740000
   - id: 810068
     grade: Legend
-    skillId: null
+    skillId: 18090000
   - id: 810069
     grade: Common
     stats:
@@ -415,7 +415,7 @@ boards:
     - MaxMP
   - id: 820069
     grade: Legend
-    skillId: null
+    skillId: 18090000
   - id: 820070
     grade: Common
     stats:
@@ -766,7 +766,7 @@ boards:
     skillId: 18120000
   - id: 830064
     grade: Legend
-    skillId: null
+    skillId: 18090000
   - id: 830065
     grade: Common
     stats:
@@ -1423,7 +1423,7 @@ boards:
     - MaxHP
   - id: 840184
     grade: Legend
-    skillId: null
+    skillId: 18090000
   - id: 840185
     grade: Common
     stats:

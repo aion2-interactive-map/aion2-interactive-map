@@ -22,6 +22,7 @@ export const AdaptiveTooltip: React.FC<AdaptiveTooltipProps> = (
       <Popover
         placement={rest.placement as any}
         isDisabled={rest.isDisabled}
+        portalContainer={rest.portalContainer}
         {...popoverProps}
       >
         <PopoverTrigger>
