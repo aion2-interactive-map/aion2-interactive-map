@@ -196,7 +196,7 @@ boards:
     - CriticalHitResist
   - id: 210131
     grade: Legend
-    skillId: null
+    skillId: 12010000
   - id: 210130
     grade: Common
     stats:
@@ -468,7 +468,7 @@ boards:
     - CriticalHit
   - id: 220063
     grade: Legend
-    skillId: null
+    skillId: 12010000
   - id: 220067
     grade: Common
     stats:
@@ -842,7 +842,7 @@ boards:
     grade: None
   - id: 230118
     grade: Legend
-    skillId: null
+    skillId: 12010000
   - id: 230123
     grade: Common
     stats:
@@ -1153,7 +1153,7 @@ boards:
     - MaxHP
   - id: 240192
     grade: Legend
-    skillId: null
+    skillId: 12010000
   - id: 240199
     grade: Common
     stats:

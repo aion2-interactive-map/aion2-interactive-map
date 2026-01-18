@@ -454,7 +454,7 @@ boards:
     - CriticalHitResist
   - id: 320082
     grade: Rare
-    skillId: null
+    skillId: 14780000
   - id: 320093
     grade: Common
     stats:
@@ -472,7 +472,7 @@ boards:
     - CriticalHitResist
   - id: 320100
     grade: Rare
-    skillId: null
+    skillId: 14770000
   - id: 320101
     grade: Common
     stats:
@@ -591,7 +591,7 @@ boards:
     - Defense
   - id: 320154
     grade: Rare
-    skillId: null
+    skillId: 14770000
   - id: 320155
     grade: Common
     stats:
@@ -625,7 +625,7 @@ boards:
     - DamageBoost
   - id: 320176
     grade: Rare
-    skillId: null
+    skillId: 14780000
   - id: 320178
     grade: Common
     stats:
@@ -776,7 +776,7 @@ boards:
     - Attack
   - id: 330084
     grade: Rare
-    skillId: null
+    skillId: 14780000
   - id: 330087
     grade: Common
     stats:
@@ -917,7 +917,7 @@ boards:
     - MaxMP
   - id: 330153
     grade: Rare
-    skillId: null
+    skillId: 14770000
   - id: 330155
     grade: Legend
     skillId: 14340000
@@ -1193,7 +1193,7 @@ boards:
     - Defense
   - id: 340102
     grade: Rare
-    skillId: null
+    skillId: 14770000
   - id: 340097
     grade: Common
     stats:
@@ -1399,7 +1399,7 @@ boards:
     skillId: 14130000
   - id: 340187
     grade: Rare
-    skillId: null
+    skillId: 14780000
   - id: 340186
     grade: Common
     stats:

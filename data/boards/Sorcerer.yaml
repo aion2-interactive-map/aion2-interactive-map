@@ -3,7 +3,7 @@ boards:
   nodes:
   - id: 610041
     grade: Rare
-    skillId: null
+    skillId: 15730000
   - id: 610043
     grade: Unique
     stats:
@@ -26,7 +26,7 @@ boards:
     - Attack
   - id: 610037
     grade: Rare
-    skillId: null
+    skillId: 15720000
   - id: 610039
     grade: Legend
     skillId: 15310000
@@ -55,7 +55,7 @@ boards:
     - MaxMP
   - id: 610050
     grade: Legend
-    skillId: null
+    skillId: 15050000
   - id: 610052
     grade: Common
     stats:
@@ -70,7 +70,7 @@ boards:
     - MaxMP
   - id: 610073
     grade: Rare
-    skillId: null
+    skillId: 15740000
   - id: 610072
     grade: Common
     stats:
@@ -184,7 +184,7 @@ boards:
     - CriticalHit
   - id: 610126
     grade: Rare
-    skillId: null
+    skillId: 15740000
   - id: 610113
     grade: None
   - id: 610115
@@ -288,14 +288,14 @@ boards:
     - MaxMP
   - id: 610163
     grade: Rare
-    skillId: null
+    skillId: 15720000
   - id: 610162
     grade: Common
     stats:
     - Attack
   - id: 610185
     grade: Rare
-    skillId: null
+    skillId: 15730000
   - id: 610184
     grade: Common
     stats:
@@ -621,7 +621,7 @@ boards:
     - MaxMP
   - id: 620185
     grade: Legend
-    skillId: null
+    skillId: 15050000
   - id: 620184
     grade: Common
     stats:
@@ -675,7 +675,7 @@ boards:
     - CriticalHitResist
   - id: 630040
     grade: Rare
-    skillId: null
+    skillId: 15730000
   - id: 630043
     grade: Unique
     stats:
@@ -821,7 +821,7 @@ boards:
     - Attack
   - id: 630101
     grade: Legend
-    skillId: null
+    skillId: 15050000
   - id: 630100
     grade: Common
     stats:
@@ -970,7 +970,7 @@ boards:
     - Defense
   - id: 630186
     grade: Rare
-    skillId: null
+    skillId: 15740000
   - id: 630189
     grade: Common
     stats:
@@ -980,7 +980,7 @@ boards:
     skillId: 15240000
   - id: 630191
     grade: Rare
-    skillId: null
+    skillId: 15720000
   - id: 630176
     grade: Common
     stats:
@@ -1120,14 +1120,14 @@ boards:
     - MaxHP
   - id: 640074
     grade: Rare
-    skillId: null
+    skillId: 15740000
   - id: 640079
     grade: Common
     stats:
     - Defense
   - id: 640065
     grade: Rare
-    skillId: null
+    skillId: 15720000
   - id: 640064
     grade: Common
     stats:
@@ -1282,7 +1282,7 @@ boards:
     - Defense
   - id: 640130
     grade: Legend
-    skillId: null
+    skillId: 15050000
   - id: 640133
     grade: Common
     stats:
@@ -1301,7 +1301,7 @@ boards:
     - MaxHP
   - id: 640152
     grade: Rare
-    skillId: null
+    skillId: 15730000
   - id: 640155
     grade: Common
     stats:
