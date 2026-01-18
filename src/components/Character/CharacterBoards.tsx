@@ -339,7 +339,7 @@ const CharacterBoards: React.FC = () => {
                     </PopoverTrigger>
                     <PopoverContent className="bg-character-equipment border-1 border-crafting-border shadow-xl p-0">
                       <div className="p-3 min-w-[240px] max-w-[320px]">
-                        <div className="space-y-4 overflow-y-auto no-scrollbar">
+                        <div className="space-y-4 max-h-[75vh] overflow-y-auto no-scrollbar">
                           {currentStats.length > 0 && (
                             <div>
                               <div className="grid grid-cols-1 gap-1">
