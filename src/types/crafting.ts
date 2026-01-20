@@ -4,3 +4,9 @@ export type SelectedEquipmentState = {
 };
 
 export type SelectedBySlotKey = Record<string, SelectedEquipmentState | undefined>;
+
+export type MaterialRow = {
+  id: number;
+  count: number; // Required count (N)
+  children?: MaterialRow[];
+};

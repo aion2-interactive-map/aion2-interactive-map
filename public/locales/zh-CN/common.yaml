@@ -177,6 +177,7 @@ crafting:
   weaponOrArmor: "武器/防具"
   accessory: "饰品"
   clearAll: "一键清除全部"
+  unitPrice: "单个价格"
 
 server:
   light: "天族"

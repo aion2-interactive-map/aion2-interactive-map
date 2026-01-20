@@ -86,9 +86,21 @@ export default function CharacterSearch() {
   }, [serversForRace, serverId]);
 
   useEffect(() => {
-    const k = debouncedKeyword.trim();
-    const rid = Number(raceId);
-    const sid = serverId === "all" ? undefined : Number(serverId);
+    let k = debouncedKeyword.trim();
+    let rid = Number(raceId);
+    let sid = serverId === "all" ? undefined : Number(serverId);
+
+    // Support name[serverShortName] format
+    const match = k.match(/^(.+)\[(.+)]$/);
+    if (match) {
+      const [, name, serverShortName] = match;
+      const foundServer = servers.find(s => s.serverShortName === serverShortName || s.serverName === serverShortName);
+      if (foundServer) {
+        k = name;
+        rid = foundServer.raceId;
+        sid = foundServer.serverId;
+      }
+    }
 
     setSearchItems([]);
     if (!k || !rid) return;
@@ -110,7 +122,7 @@ export default function CharacterSearch() {
     };
 
     void runSearch();
-  }, [debouncedKeyword, raceId, serverId, region]);
+  }, [debouncedKeyword, raceId, serverId, region, servers]);
 
   async function fetchCharacters(params: {
     keyword: string;
