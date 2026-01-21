@@ -44,7 +44,12 @@ class GameTileLayer extends L.TileLayer {
     const yStr = String(y).padStart(2, "0");
 
     // console.log(coords, xStr, yStr)
-    const relPath = `UI/Map/WorldMap/${selectedMap.name}/Res/${selectedMap.name}_${xStr}_${yStr}.webp`;
+    let relPath;
+    if (selectedMap.name === "Abyss_Reshanta_B") {
+      relPath = `UI/Map/WorldMap/${selectedMap.name}_New/Res/${selectedMap.name}_${xStr}_${yStr}.webp`;
+    } else {
+      relPath = `UI/Map/WorldMap/${selectedMap.name}/Res/${selectedMap.name}_${xStr}_${yStr}.webp`;
+    }
     return getStaticUrl(relPath);
   }
 
