@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
 import { getStaticUrl } from "@/utils/url.ts";
-import type { EquipmentSlot, Item } from "@/types/game.ts";
+import type { EquipmentSlot, ItemMeta as Item } from "@/types/game.ts";
 
 export type EquipmentSlotCardProps = {
   slot: EquipmentSlot;
