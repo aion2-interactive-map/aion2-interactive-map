@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as LeaderboardRouteImport } from './routes/leaderboard'
 import { Route as ForumRouteImport } from './routes/forum'
 import { Route as EnhancementRouteImport } from './routes/enhancement'
 import { Route as CraftingRouteImport } from './routes/crafting'
@@ -16,6 +17,11 @@ import { Route as ClassRouteImport } from './routes/class'
 import { Route as CharacterRouteImport } from './routes/character'
 import { Route as IndexRouteImport } from './routes/index'
 
+const LeaderboardRoute = LeaderboardRouteImport.update({
+  id: '/leaderboard',
+  path: '/leaderboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ForumRoute = ForumRouteImport.update({
   id: '/forum',
   path: '/forum',
@@ -54,6 +60,7 @@ export interface FileRoutesByFullPath {
   '/crafting': typeof CraftingRoute
   '/enhancement': typeof EnhancementRoute
   '/forum': typeof ForumRoute
+  '/leaderboard': typeof LeaderboardRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +69,7 @@ export interface FileRoutesByTo {
   '/crafting': typeof CraftingRoute
   '/enhancement': typeof EnhancementRoute
   '/forum': typeof ForumRoute
+  '/leaderboard': typeof LeaderboardRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,6 +79,7 @@ export interface FileRoutesById {
   '/crafting': typeof CraftingRoute
   '/enhancement': typeof EnhancementRoute
   '/forum': typeof ForumRoute
+  '/leaderboard': typeof LeaderboardRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -81,8 +90,16 @@ export interface FileRouteTypes {
     | '/crafting'
     | '/enhancement'
     | '/forum'
+    | '/leaderboard'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/character' | '/class' | '/crafting' | '/enhancement' | '/forum'
+  to:
+    | '/'
+    | '/character'
+    | '/class'
+    | '/crafting'
+    | '/enhancement'
+    | '/forum'
+    | '/leaderboard'
   id:
     | '__root__'
     | '/'
@@ -91,6 +108,7 @@ export interface FileRouteTypes {
     | '/crafting'
     | '/enhancement'
     | '/forum'
+    | '/leaderboard'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -100,10 +118,18 @@ export interface RootRouteChildren {
   CraftingRoute: typeof CraftingRoute
   EnhancementRoute: typeof EnhancementRoute
   ForumRoute: typeof ForumRoute
+  LeaderboardRoute: typeof LeaderboardRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/leaderboard': {
+      id: '/leaderboard'
+      path: '/leaderboard'
+      fullPath: '/leaderboard'
+      preLoaderRoute: typeof LeaderboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/forum': {
       id: '/forum'
       path: '/forum'
@@ -156,6 +182,7 @@ const rootRouteChildren: RootRouteChildren = {
   CraftingRoute: CraftingRoute,
   EnhancementRoute: EnhancementRoute,
   ForumRoute: ForumRoute,
+  LeaderboardRoute: LeaderboardRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -32,6 +32,7 @@
     --background-image-crafting-tab: linear-gradient(180deg, rgba(244, 244, 244, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
     --background-image-chacracter-page: linear-gradient( 180deg, #B7D4FF 0%, #DFECFF 100%);
     --color-crafting-border: rgba(137, 137, 137, 0.30);
+    --color-leaderboard-page: #E7F1FF;
 
     --color-grade-common: rgba(0, 0, 0, .68);
     --color-grade-rare: #00870b;

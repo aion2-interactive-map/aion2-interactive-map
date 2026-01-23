@@ -15,6 +15,11 @@ export interface GameMapMeta {
   isVisible: boolean;
 }
 
+export const MAP_NAMES = {
+  ABYSS_A: "Abyss_Reshanta_A",
+  ABYSS_B: "Abyss_Reshanta_B",
+} as const;
+
 /**
  * Subtype inside a marker category, e.g.:
  * - locations.tpPoint

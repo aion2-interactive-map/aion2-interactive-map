@@ -5,6 +5,8 @@ import {UserProvider} from "@/context/UserContext.tsx";
 import {DataModeProvider} from "@/hooks/useDataMode.tsx";
 import {ThemeProvider} from "@/context/ThemeContext.tsx";
 import {HeroUIProvider} from "@heroui/react";
+import {LeaderboardProvider} from "@/context/LeaderboardContext.tsx";
+import {GameMapProvider} from "@/context/GameMapContext.tsx";
 // import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 
 // A separate component to handle the redirect logic
@@ -18,12 +20,16 @@ const RootLayout = () => (
       <UserProvider>
         <DataModeProvider>
           <ThemeProvider>
-            <HeroUIProvider>
-              <div className="h-screen w-screen flex flex-col overflow-hidden">
-                <TopNavbar />
-                <Outlet/>
-              </div>
-            </HeroUIProvider>
+            <GameMapProvider>
+              <LeaderboardProvider>
+                <HeroUIProvider>
+                  <div className="h-screen w-screen flex flex-col overflow-hidden">
+                    <TopNavbar />
+                    <Outlet/>
+                  </div>
+                </HeroUIProvider>
+              </LeaderboardProvider>
+            </GameMapProvider>
           </ThemeProvider>
         </DataModeProvider>
       </UserProvider>

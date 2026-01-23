@@ -8,7 +8,7 @@ import type {MapRef} from "@/types/game";
 // import {useTranslation} from "react-i18next";
 // import ReactMarkdown from "react-markdown";
 // import remarkGfm from "remark-gfm";
-import {GameMapProvider, useGameMap} from "@/context/GameMapContext.tsx";
+import {useGameMap} from "@/context/GameMapContext.tsx";
 import {getStaticUrl} from "@/utils/url.ts";
 import {MarkersProvider, useMarkers} from "@/context/MarkersContext.tsx";
 import {GameDataProvider} from "@/context/GameDataContext.tsx";
@@ -128,7 +128,7 @@ const HomePage: React.FC = () => {
 
 const HomePageWrapper: React.FC = () => {
   return (
-    <GameMapProvider>
+    <>
       <ThemeMapBridge />
       <MarkersProvider>
         <UserMarkersProvider>
@@ -137,7 +137,7 @@ const HomePageWrapper: React.FC = () => {
           </GameDataProvider>
         </UserMarkersProvider>
       </MarkersProvider>
-    </GameMapProvider>
+    </>
   );
 };
 

@@ -77,7 +77,16 @@ routes:
   crafting: "装备制作"
   enhancement: "装备强化"
   character: "角色数据"
+  leaderboard: "排行榜"
   forum: "论坛"
+
+leaderboard:
+  artifactRegionRanking: "神器占比大区排名"
+  realtimeArtifactRatio: "实时神器占比"
+  inContention: "数据待上传"
+  rank: "排名"
+  artifactCount: "神器数量"
+  totalArtifacts: "总计神器"
 
 wip:
   title: "此页面正在建设中！"

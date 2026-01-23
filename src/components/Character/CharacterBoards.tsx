@@ -246,10 +246,6 @@ const CharacterBoards: React.FC = () => {
 
   return (
     <div className="flex flex-col gap-3">
-      <div className="flex justify-between items-center px-1">
-        <h3 className="text-base font-bold text-default-800">守护力概览</h3>
-      </div>
-
       <div className="grid grid-cols-3 sm:grid-cols-6 gap-2 sm:gap-3">
         {info.boards.map((board, index) => (
           <AdaptiveTooltip
