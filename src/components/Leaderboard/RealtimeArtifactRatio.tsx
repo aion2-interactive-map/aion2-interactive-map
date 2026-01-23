@@ -104,7 +104,7 @@ const RealtimeArtifactRatio: React.FC = () => {
         serverMatchings.map((matching) => (
           <Card key={matching.id} className="bg-character-equipment shadow-none border-1 border-crafting-border p-4">
             <CardBody className="p-0">
-              <div className="flex items-center justify-between">
+              <div className="flex items-stretch justify-between">
                 {/* Left Column: Server 1 */}
                 <div className="flex-1 flex flex-col items-center">
                   <div 
@@ -116,7 +116,9 @@ const RealtimeArtifactRatio: React.FC = () => {
                   </div>
                   <div className="flex flex-col items-center gap-2 mt-2">
                     <div className="flex items-center gap-2">
-                      <span className="text-[14px] text-foreground">{t(`maps:${MAP_NAMES.ABYSS_A}.description`)}</span>
+                      <span className="text-[14px] text-foreground max-w-[40px] sm:max-w-none whitespace-normal">
+                        {t(`maps:${MAP_NAMES.ABYSS_A}.description`)}
+                      </span>
                       <div className="flex gap-1">
                         {artifactsA.map((artifact) => {
                           const artifactName = t(`markers/${MAP_NAMES.ABYSS_A}:${artifact.markerId}.name`, artifact.marker.name);
@@ -131,7 +133,7 @@ const RealtimeArtifactRatio: React.FC = () => {
                               <img 
                                 src={icon} 
                                 alt={artifactName} 
-                                className="w-12 h-12" 
+                                className="w-7 h-7 sm:w-12 sm:h-12"
                               />
                             </AdaptiveTooltip>
                           );
@@ -146,10 +148,12 @@ const RealtimeArtifactRatio: React.FC = () => {
                 </div>
 
                 {/* Middle: VS */}
-                <div className="flex flex-col items-center px-2">
-                  <img src={vsImage} alt="VS" className="w-10 h-10 object-contain" />
-                  <div className="h-10 flex items-center mt-2">
-                    <Divider orientation="vertical" className="h-full bg-default-500" />
+                <div className="flex flex-col items-center px-2 h-full">
+                  <div className="h-[38px] flex items-center">
+                    <img src={vsImage} alt="VS" className="w-10 h-10 object-contain" />
+                  </div>
+                  <div className="flex-1 flex items-center mt-2">
+                    <Divider orientation="vertical" className="h-[60px] sm:h-[80px] bg-default-500" />
                   </div>
                 </div>
 
@@ -164,7 +168,9 @@ const RealtimeArtifactRatio: React.FC = () => {
                   </div>
                   <div className="flex flex-col items-center gap-2 mt-2">
                     <div className="flex items-center gap-2">
-                      <span className="text-[14px] text-foreground">{t(`maps:${MAP_NAMES.ABYSS_B}.description`)}</span>
+                      <span className="text-[14px] text-foreground max-w-[40px] sm:max-w-none whitespace-normal">
+                        {t(`maps:${MAP_NAMES.ABYSS_B}.description`)}
+                      </span>
                       <div className="flex gap-1">
                         {artifactsB.map((artifact) => {
                           const artifactName = t(`markers/${MAP_NAMES.ABYSS_B}:${artifact.markerId}.name`, artifact.marker.name);
@@ -179,7 +185,7 @@ const RealtimeArtifactRatio: React.FC = () => {
                               <img 
                                 src={icon} 
                                 alt={artifactName} 
-                                className="w-12 h-12" 
+                                className="w-7 h-7 sm:w-12 sm:h-12"
                               />
                             </AdaptiveTooltip>
                           );

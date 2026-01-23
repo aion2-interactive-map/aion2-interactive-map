@@ -1,11 +1,9 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { 
   Card, 
   CardHeader, 
   CardBody, 
-  Select, 
-  SelectItem, 
   Table, 
   TableHeader, 
   TableColumn, 
@@ -15,10 +13,15 @@ import {
   Spinner
 } from "@heroui/react";
 import { useLeaderboard } from "@/context/LeaderboardContext";
-import { MAP_NAMES } from "@/types/game";
 import type {ArtifactCount} from "@/types/leaderboard.ts";
+import LeaderboardSelectors from "./LeaderboardSelectors";
 
-const ArtifactRegionRanking: React.FC = () => {
+interface ArtifactRegionRankingProps {
+  mapName: string;
+  setMapName: (mapName: string) => void;
+}
+
+const ArtifactRegionRanking: React.FC<ArtifactRegionRankingProps> = ({ mapName, setMapName }) => {
   const { t } = useTranslation();
   const { 
     seasons,
@@ -26,23 +29,8 @@ const ArtifactRegionRanking: React.FC = () => {
     fetchArtifactCounts, 
     loadingArtifactCounts,
     serverMatchings,
-    region,
-    setRegion
+    region
   } = useLeaderboard();
-
-  const [mapName, setMapName] = useState<string>(MAP_NAMES.ABYSS_A);
-
-  const selectClassNames = {
-    trigger: "!bg-character-card hover:!bg-character-card focus:!bg-character-card !transition-none border-crafting-border border-1 shadow-none rounded-sm group-data-[hover=true]:!bg-character-card group-data-[focus=true]:!bg-character-card group-data-[focus-visible=true]:!bg-character-card",
-    innerWrapper: "h-10 py-0",
-    popoverContent: "rounded-none p-0"
-  };
-
-  const commonListboxProps = {
-    itemClasses: {
-      base: "rounded-none",
-    },
-  };
 
   const regionSeasonId = useMemo(() => {
     // Find the latest season number across all seasons
@@ -101,42 +89,7 @@ const ArtifactRegionRanking: React.FC = () => {
     <Card className="bg-transparent shadow-none">
       <CardHeader className="flex flex-col items-start gap-3 px-0">
         <p className="text-[22px] text-default-800 pb-4">{t("common:leaderboard.artifactRegionRanking")}</p>
-        <div className="flex gap-2 w-full sm:w-auto">
-          <Select
-            size="sm"
-            selectedKeys={[region]}
-            onSelectionChange={(keys) => setRegion(Array.from(keys)[0] as string)}
-            className="min-w-[100px]"
-            disallowEmptySelection
-            classNames={selectClassNames}
-            popoverProps={{
-              radius: "none",
-            }}
-            listboxProps={commonListboxProps}
-          >
-            <SelectItem key="tw">{t("common:server.tw")}</SelectItem>
-            <SelectItem key="kr">{t("common:server.kr")}</SelectItem>
-          </Select>
-          <Select
-            size="sm"
-            selectedKeys={[mapName]}
-            onSelectionChange={(keys) => setMapName(Array.from(keys)[0] as string)}
-            className="min-w-[150px]"
-            disallowEmptySelection
-            classNames={selectClassNames}
-            popoverProps={{
-              radius: "none",
-            }}
-            listboxProps={commonListboxProps}
-          >
-            <SelectItem key={MAP_NAMES.ABYSS_A}>
-              {t(`maps:${MAP_NAMES.ABYSS_A}.description`)}
-            </SelectItem>
-            <SelectItem key={MAP_NAMES.ABYSS_B}>
-              {t(`maps:${MAP_NAMES.ABYSS_B}.description`)}
-            </SelectItem>
-          </Select>
-        </div>
+        <LeaderboardSelectors mapName={mapName} setMapName={setMapName} className="hidden sm:flex" />
       </CardHeader>
       <CardBody className="px-0">
         <Table 
