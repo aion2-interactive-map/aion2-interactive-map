@@ -231,7 +231,7 @@ export default function CharacterSearch() {
           >
             <FontAwesomeIcon
               icon={faStar}
-              className={isStarred ? "text-warning" : "text-default-300"}
+              className={isStarred ? "text-star" : "text-default-300"}
             />
           </Button>
           <div className="flex items-center gap-3">

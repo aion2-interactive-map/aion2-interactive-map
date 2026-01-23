@@ -21,7 +21,7 @@ export interface LeaderboardContextValue {
   fetchSeasons: () => Promise<void>;
   fetchServerMatchings: (seasonId: string) => Promise<void>;
   fetchArtifacts: () => Promise<void>;
-  fetchArtifactStates: (seasonId: string) => Promise<void>;
+  fetchArtifactStates: (seasonId: string, currentTime?: Date) => Promise<void>;
   fetchArtifactCounts: (seasonId: string, mapName: string) => Promise<void>;
 }
 
@@ -117,14 +117,20 @@ export const LeaderboardProvider: React.FC<{ children: React.ReactNode }> = ({ c
     }
   }, []);
 
-  const fetchArtifactStates = useCallback(async (seasonId: string) => {
+  const fetchArtifactStates = useCallback(async (seasonId: string, currentTime?: Date) => {
     setLoadingArtifactStates(true);
     setError(null);
     try {
       const mapNames = [MAP_NAMES.ABYSS_A, MAP_NAMES.ABYSS_B];
       const promises = mapNames.map(async (mapName) => {
         try {
-          const response = await fetch(getApiUrl(`/api/v1/seasons/${seasonId}/maps/${mapName}/artifacts/states`));
+          let url = getApiUrl(`/api/v1/seasons/${seasonId}/maps/${mapName}/artifacts/states`);
+          if (currentTime) {
+            const urlObj = new URL(url);
+            urlObj.searchParams.set("current_time", currentTime.toISOString());
+            url = urlObj.toString();
+          }
+          const response = await fetch(url);
           if (!response.ok) {
             return [];
           }

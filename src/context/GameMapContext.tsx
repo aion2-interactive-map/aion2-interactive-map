@@ -56,11 +56,16 @@ export const GameMapProvider: React.FC<GameMapProviderProps> = ({children}: Game
   // Initialize selected map
   useEffect(() => {
     if (!maps || maps.length === 0) return;
+    const isIndexPage = window.location.pathname === "/";
+
     if (selectedMap) {
-      setQueryParam("map", selectedMap.name);
+      if (isIndexPage) {
+        setQueryParam("map", selectedMap.name);
+      }
       return;
     }
-    const initialMapId = getQueryParam("map");
+
+    const initialMapId = isIndexPage ? getQueryParam("map") : null;
     if (initialMapId) {
       const matchedMap = maps.find((m) => m.name === initialMapId);
       setSelectedMap(matchedMap);
@@ -69,7 +74,9 @@ export const GameMapProvider: React.FC<GameMapProviderProps> = ({children}: Game
     if (maps.length > 0 && !selectedMap) {
       // optional fallback: load first map
       setSelectedMap(maps[0]);
-      setQueryParam("map", maps[0].name);
+      if (isIndexPage) {
+        setQueryParam("map", maps[0].name);
+      }
     }
   }, [maps, selectedMap]);
 

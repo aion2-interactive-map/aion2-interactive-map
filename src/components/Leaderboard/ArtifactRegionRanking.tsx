@@ -10,11 +10,13 @@ import {
   TableBody, 
   TableRow, 
   TableCell,
-  Spinner
+  Spinner,
+  Select,
+  SelectItem
 } from "@heroui/react";
-import { useLeaderboard } from "@/context/LeaderboardContext";
+import { useLeaderboard, ALL_MAPS_KEY } from "@/context/LeaderboardContext";
 import type {ArtifactCount} from "@/types/leaderboard.ts";
-import LeaderboardSelectors from "./LeaderboardSelectors";
+import { MAP_NAMES } from "@/types/game";
 
 interface ArtifactRegionRankingProps {
   mapName: string;
@@ -29,8 +31,21 @@ const ArtifactRegionRanking: React.FC<ArtifactRegionRankingProps> = ({ mapName, 
     fetchArtifactCounts, 
     loadingArtifactCounts,
     serverMatchings,
-    region
+    region,
+    setRegion
   } = useLeaderboard();
+
+  const selectClassNames = {
+    trigger: "!bg-character-card hover:!bg-character-card focus:!bg-character-card !transition-none border-crafting-border border-1 shadow-none rounded-sm group-data-[hover=true]:!bg-character-card group-data-[focus=true]:!bg-character-card group-data-[focus-visible=true]:!bg-character-card h-[36px] min-h-[36px]",
+    innerWrapper: "h-[36px] py-0",
+    popoverContent: "rounded-none p-0"
+  };
+
+  const commonListboxProps = {
+    itemClasses: {
+      base: "rounded-none",
+    },
+  };
 
   const regionSeasonId = useMemo(() => {
     // Find the latest season number across all seasons
@@ -90,7 +105,45 @@ const ArtifactRegionRanking: React.FC<ArtifactRegionRankingProps> = ({ mapName, 
       <CardHeader className="flex flex-col items-start gap-3 px-0">
         <div className="flex flex-col w-full gap-3 pb-4">
           <p className="text-[22px] text-default-800">{t("common:leaderboard.artifactRegionRanking")}</p>
-          <LeaderboardSelectors mapName={mapName} setMapName={setMapName} />
+          <div className="flex gap-2 w-full">
+            <Select
+              size="sm"
+              selectedKeys={[region]}
+              onSelectionChange={(keys) => setRegion(Array.from(keys)[0] as string)}
+              className="min-w-[100px] flex-1 sm:flex-none sm:w-[120px]"
+              disallowEmptySelection
+              classNames={selectClassNames}
+              popoverProps={{
+                radius: "none",
+              }}
+              listboxProps={commonListboxProps}
+            >
+              <SelectItem key="tw">{t("common:server.tw")}</SelectItem>
+              <SelectItem key="kr">{t("common:server.kr")}</SelectItem>
+            </Select>
+            <Select
+              size="sm"
+              selectedKeys={[mapName]}
+              onSelectionChange={(keys) => setMapName(Array.from(keys)[0] as string)}
+              className="min-w-[150px] flex-[2] sm:flex-none sm:w-[200px]"
+              disallowEmptySelection
+              classNames={selectClassNames}
+              popoverProps={{
+                radius: "none",
+              }}
+              listboxProps={commonListboxProps}
+            >
+              <SelectItem key={ALL_MAPS_KEY}>
+                {t("common:leaderboard.allMaps", "全部地图")}
+              </SelectItem>
+              <SelectItem key={MAP_NAMES.ABYSS_A}>
+                {t(`maps:${MAP_NAMES.ABYSS_A}.description`)}
+              </SelectItem>
+              <SelectItem key={MAP_NAMES.ABYSS_B}>
+                {t(`maps:${MAP_NAMES.ABYSS_B}.description`)}
+              </SelectItem>
+            </Select>
+          </div>
         </div>
       </CardHeader>
       <CardBody className="px-0">
