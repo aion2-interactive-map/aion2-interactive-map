@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Select, SelectItem } from "@heroui/react";
-import { useLeaderboard } from "@/context/LeaderboardContext";
+import { useLeaderboard, ALL_MAPS_KEY } from "@/context/LeaderboardContext";
 import { MAP_NAMES } from "@/types/game";
 
 interface LeaderboardSelectorsProps {
@@ -55,6 +55,9 @@ const LeaderboardSelectors: React.FC<LeaderboardSelectorsProps> = ({ mapName, se
         }}
         listboxProps={commonListboxProps}
       >
+        <SelectItem key={ALL_MAPS_KEY}>
+          {t("common:leaderboard.allMaps", "全部地图")}
+        </SelectItem>
         <SelectItem key={MAP_NAMES.ABYSS_A}>
           {t(`maps:${MAP_NAMES.ABYSS_A}.description`)}
         </SelectItem>

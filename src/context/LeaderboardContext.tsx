@@ -25,6 +25,8 @@ export interface LeaderboardContextValue {
   fetchArtifactCounts: (seasonId: string, mapName: string) => Promise<void>;
 }
 
+export const ALL_MAPS_KEY = "ALL";
+
 const LeaderboardContext = createContext<LeaderboardContextValue | null>(null);
 
 export const LeaderboardProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -149,12 +151,34 @@ export const LeaderboardProvider: React.FC<{ children: React.ReactNode }> = ({ c
     setLoadingArtifactCounts(true);
     setError(null);
     try {
-      const response = await fetch(getApiUrl(`/api/v1/seasons/${seasonId}/maps/${mapName}/artifacts/count`));
-      const result: ApiResponse<ArtifactCount> = await response.json();
-      if (result.errorCode === "Success") {
-        setArtifactCounts(result.data.results);
+      if (mapName === ALL_MAPS_KEY) {
+        const mapNames = [MAP_NAMES.ABYSS_A, MAP_NAMES.ABYSS_B];
+        const promises = mapNames.map(async (name) => {
+          const response = await fetch(getApiUrl(`/api/v1/seasons/${seasonId}/maps/${name}/artifacts/count`));
+          const result: ApiResponse<ArtifactCount> = await response.json();
+          return result.errorCode === "Success" ? result.data.results : [];
+        });
+        const allResults = await Promise.all(promises);
+        
+        // Sum up counts by serverId
+        const sumMap: Record<number, ArtifactCount> = {};
+        allResults.flat().forEach(item => {
+          if (!sumMap[item.serverId]) {
+            sumMap[item.serverId] = { ...item };
+          } else {
+            sumMap[item.serverId].artifactCount += item.artifactCount;
+            sumMap[item.serverId].artifactTotal += item.artifactTotal;
+          }
+        });
+        setArtifactCounts(Object.values(sumMap));
       } else {
-        setError(result.errorMessage || "Failed to fetch artifact counts");
+        const response = await fetch(getApiUrl(`/api/v1/seasons/${seasonId}/maps/${mapName}/artifacts/count`));
+        const result: ApiResponse<ArtifactCount> = await response.json();
+        if (result.errorCode === "Success") {
+          setArtifactCounts(result.data.results);
+        } else {
+          setError(result.errorMessage || "Failed to fetch artifact counts");
+        }
       }
     } catch (e) {
       console.error("Failed to fetch artifact counts:", e);

@@ -1,6 +1,9 @@
-import React, { useMemo, useState, useEffect } from "react";
+import React, { useMemo, useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import { Card, CardHeader, CardBody, Divider } from "@heroui/react";
+import { Card, CardHeader, CardBody, Divider, Button } from "@heroui/react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar as faStarSolid } from "@fortawesome/free-solid-svg-icons";
+import { faStar as faStarRegular } from "@fortawesome/free-regular-svg-icons";
 import { useLeaderboard } from "@/context/LeaderboardContext";
 import { useGameMap } from "@/context/GameMapContext";
 import { MAP_NAMES } from "@/types/game";
@@ -9,6 +12,7 @@ import { AdaptiveTooltip } from "@/components/AdaptiveTooltip";
 
 const RealtimeArtifactRatio: React.FC = () => {
   const ABYSS_MAPS = [MAP_NAMES.ABYSS_A, MAP_NAMES.ABYSS_B];
+  const STARRED_SERVERS_KEY = "starred_artifact_servers";
   
   const markerNs = ABYSS_MAPS.map(x => `markers/${x}`);
   const { t } = useTranslation([...markerNs, "common"]);
@@ -16,6 +20,30 @@ const RealtimeArtifactRatio: React.FC = () => {
   const { maps } = useGameMap();
 
   const [currentTime, setCurrentTime] = useState(new Date());
+  const [starredServerIds, setStarredServerIds] = useState<number[]>(() => {
+    const saved = localStorage.getItem(STARRED_SERVERS_KEY);
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  const toggleStar = useCallback((serverId: number) => {
+    setStarredServerIds(prev => {
+      const next = prev.includes(serverId)
+        ? prev.filter(id => id !== serverId)
+        : [...prev, serverId];
+      localStorage.setItem(STARRED_SERVERS_KEY, JSON.stringify(next));
+      return next;
+    });
+  }, []);
+
+  const sortedMatchings = useMemo(() => {
+    return [...serverMatchings].sort((a, b) => {
+      const aStarred = starredServerIds.includes(a.server1.serverId) || starredServerIds.includes(a.server2.serverId);
+      const bStarred = starredServerIds.includes(b.server1.serverId) || starredServerIds.includes(b.server2.serverId);
+      if (aStarred && !bStarred) return -1;
+      if (!aStarred && bStarred) return 1;
+      return 0;
+    });
+  }, [serverMatchings, starredServerIds]);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -101,16 +129,29 @@ const RealtimeArtifactRatio: React.FC = () => {
       {loadingMatchings || loadingArtifacts ? (
         <p className="text-center py-4">{t("common:ui.loading")}</p>
       ) : (
-        serverMatchings.map((matching) => (
-          <Card key={matching.id} className="bg-character-equipment shadow-none border-1 border-crafting-border p-4">
+        sortedMatchings.map((matching) => (
+          <Card key={matching.id} className="bg-character-equipment shadow-none border-1 border-crafting-border p-4 relative group">
             <CardBody className="p-0">
               <div className="flex items-stretch justify-between">
                 {/* Left Column: Server 1 */}
                 <div className="flex-1 flex flex-col items-center">
                   <div 
-                    className="w-full h-[38px] flex items-center justify-center rounded-md"
+                    className="w-full h-[38px] flex items-center justify-center rounded-md relative"
                     style={{ background: "linear-gradient(135deg, #DBEDFF 0%, #F3FBFF 100%)" }}
                   >
+                    <Button
+                      isIconOnly
+                      size="sm"
+                      variant="light"
+                      className="absolute left-1 z-10 text-default-400 hover:text-warning data-[starred=true]:text-warning"
+                      data-starred={starredServerIds.includes(matching.server1.serverId)}
+                      onClick={() => toggleStar(matching.server1.serverId)}
+                    >
+                      <FontAwesomeIcon 
+                        icon={starredServerIds.includes(matching.server1.serverId) ? faStarSolid : faStarRegular} 
+                        className="text-[16px]"
+                      />
+                    </Button>
                     <span className="text-lg font-bold text-[#1D3557]">{matching.server1.serverName}</span>
                     <span className="text-[14px] font-normal text-default-700">（天{matching.server1.serverId % 1000}）</span>
                   </div>
@@ -124,9 +165,20 @@ const RealtimeArtifactRatio: React.FC = () => {
                           const artifactName = t(`markers/${MAP_NAMES.ABYSS_A}:${artifact.markerId}.name`, artifact.marker.name);
                           const stateData = artifactStateMap[matching.id]?.[artifact.id];
                           const state = stateData?.state;
+                          
+                          let isContention = false;
+                          if (stateData?.recordTime) {
+                            const recordTime = new Date(stateData.recordTime).getTime();
+                            const fortyEightHours = 48 * 60 * 60 * 1000;
+                            const diff = recordTime + fortyEightHours - currentTime.getTime();
+                            if (diff <= 0) isContention = true;
+                          }
+
                           let icon = neutralIcon;
-                          if (state === 1) icon = lightIcon;
-                          else if (state === 2) icon = darkIcon;
+                          if (!isContention) {
+                            if (state === 1) icon = lightIcon;
+                            else if (state === 2) icon = darkIcon;
+                          }
 
                           return (
                             <AdaptiveTooltip key={artifact.id} content={artifactName}>
@@ -160,11 +212,24 @@ const RealtimeArtifactRatio: React.FC = () => {
                 {/* Right Column: Server 2 */}
                 <div className="flex-1 flex flex-col items-center">
                   <div 
-                    className="w-full h-[38px] flex items-center justify-center rounded-md"
+                    className="w-full h-[38px] flex items-center justify-center rounded-md relative"
                     style={{ background: "linear-gradient(225deg, #EFE5FF 0%, #F3FBFF 100%)" }}
                   >
                     <span className="text-lg font-bold text-[#4B0082]">{matching.server2.serverName}</span>
                     <span className="text-[14px] font-normal text-default-700">（魔{matching.server2.serverId % 1000}）</span>
+                    <Button
+                      isIconOnly
+                      size="sm"
+                      variant="light"
+                      className="absolute right-1 z-10 text-default-400 hover:text-warning data-[starred=true]:text-warning"
+                      data-starred={starredServerIds.includes(matching.server2.serverId)}
+                      onClick={() => toggleStar(matching.server2.serverId)}
+                    >
+                      <FontAwesomeIcon 
+                        icon={starredServerIds.includes(matching.server2.serverId) ? faStarSolid : faStarRegular} 
+                        className="text-[16px]"
+                      />
+                    </Button>
                   </div>
                   <div className="flex flex-col items-center gap-2 mt-2">
                     <div className="flex items-center gap-2">
@@ -176,9 +241,20 @@ const RealtimeArtifactRatio: React.FC = () => {
                           const artifactName = t(`markers/${MAP_NAMES.ABYSS_B}:${artifact.markerId}.name`, artifact.marker.name);
                           const stateData = artifactStateMap[matching.id]?.[artifact.id];
                           const state = stateData?.state;
+                          
+                          let isContention = false;
+                          if (stateData?.recordTime) {
+                            const recordTime = new Date(stateData.recordTime).getTime();
+                            const fortyEightHours = 48 * 60 * 60 * 1000;
+                            const diff = recordTime + fortyEightHours - currentTime.getTime();
+                            if (diff <= 0) isContention = true;
+                          }
+
                           let icon = neutralIcon;
-                          if (state === 1) icon = lightIcon;
-                          else if (state === 2) icon = darkIcon;
+                          if (!isContention) {
+                            if (state === 1) icon = lightIcon;
+                            else if (state === 2) icon = darkIcon;
+                          }
 
                           return (
                             <AdaptiveTooltip key={artifact.id} content={artifactName}>

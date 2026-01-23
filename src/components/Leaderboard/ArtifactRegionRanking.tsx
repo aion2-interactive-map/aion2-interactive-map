@@ -88,8 +88,10 @@ const ArtifactRegionRanking: React.FC<ArtifactRegionRankingProps> = ({ mapName, 
   return (
     <Card className="bg-transparent shadow-none">
       <CardHeader className="flex flex-col items-start gap-3 px-0">
-        <p className="text-[22px] text-default-800 pb-4">{t("common:leaderboard.artifactRegionRanking")}</p>
-        <LeaderboardSelectors mapName={mapName} setMapName={setMapName} className="hidden sm:flex" />
+        <div className="flex flex-col w-full gap-3 pb-4">
+          <p className="text-[22px] text-default-800">{t("common:leaderboard.artifactRegionRanking")}</p>
+          <LeaderboardSelectors mapName={mapName} setMapName={setMapName} />
+        </div>
       </CardHeader>
       <CardBody className="px-0">
         <Table 
