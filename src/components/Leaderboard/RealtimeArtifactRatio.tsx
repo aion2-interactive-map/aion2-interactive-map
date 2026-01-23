@@ -98,8 +98,14 @@ const RealtimeArtifactRatio: React.FC = () => {
   const debouncedFetchArtifactStates = useMemo(
     () => {
       let timeout: any;
+      let isFirstCall = true;
       return (seasonId: string) => {
         if (timeout) clearTimeout(timeout);
+        if (isFirstCall) {
+          fetchArtifactStates(seasonId);
+          isFirstCall = false;
+          return;
+        }
         timeout = setTimeout(() => {
           fetchArtifactStates(seasonId);
         }, 5000); // 5 second debounce when auto-updating
