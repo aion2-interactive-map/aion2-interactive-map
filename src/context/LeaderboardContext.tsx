@@ -201,10 +201,15 @@ export const LeaderboardProvider: React.FC<{ children: React.ReactNode }> = ({ c
 
   useEffect(() => {
     if (currentSeason) {
-      fetchServerMatchings(currentSeason.id);
       fetchArtifactStates(currentSeason.id);
     }
-  }, [currentSeason, fetchServerMatchings, fetchArtifactStates]);
+  }, [currentSeason, fetchArtifactStates]);
+
+  useEffect(() => {
+    if (currentSeason) {
+      fetchServerMatchings(currentSeason.id);
+    }
+  }, [currentSeason, fetchServerMatchings]);
 
   return (
     <LeaderboardContext.Provider

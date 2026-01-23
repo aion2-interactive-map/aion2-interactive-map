@@ -31,6 +31,8 @@ const ArtifactRegionRanking: React.FC<ArtifactRegionRankingProps> = ({ mapName, 
     fetchArtifactCounts, 
     loadingArtifactCounts,
     serverMatchings,
+    loadingMatchings,
+    fetchServerMatchings,
     region,
     setRegion
   } = useLeaderboard();
@@ -61,6 +63,12 @@ const ArtifactRegionRanking: React.FC<ArtifactRegionRankingProps> = ({ mapName, 
       fetchArtifactCounts(regionSeasonId, mapName);
     }
   }, [regionSeasonId, mapName, fetchArtifactCounts]);
+
+  useEffect(() => {
+    if (regionSeasonId) {
+      fetchServerMatchings(regionSeasonId);
+    }
+  }, [regionSeasonId, fetchServerMatchings]);
 
   const sortedData = useMemo(() => {
     const sorted = [...artifactCounts]
@@ -147,46 +155,52 @@ const ArtifactRegionRanking: React.FC<ArtifactRegionRankingProps> = ({ mapName, 
         </div>
       </CardHeader>
       <CardBody className="px-0">
-        <Table 
-          aria-label="Artifact Region Ranking"
-          removeWrapper
-          className="min-w-full"
-          classNames={{
-            table: "border-separate border-spacing-y-[10px] -mt-[10px]",
-            thead: "[&>tr]:first:shadow-none",
-            th: "bg-transparent text-foreground font-bold text-[16px] h-auto py-0",
-            // tr: "",
-            td: "bg-character-equipment h-[44px] text-[16px] font-normal text-default-800 border-y-1 border-crafting-border first:border-l-1 last:border-r-1 first:rounded-l-md last:rounded-r-md"
-          }}
-        >
-          <TableHeader>
-            <TableColumn>{t("common:leaderboard.rank")}</TableColumn>
-            <TableColumn>{t("common:server.server")}</TableColumn>
-            <TableColumn align="center">{t("common:leaderboard.artifactCount")}</TableColumn>
-          </TableHeader>
-          <TableBody 
-            emptyContent={loadingArtifactCounts ? <Spinner /> : t("common:leaderboard.inContention")}
-            items={sortedData}
-          >
-            {(item) => {
-              return (
-                <TableRow key={item.serverId}>
-                  <TableCell>
-                    <div className="flex items-center justify-center w-6 h-6">
-                      {item.rank}
-                    </div>
-                  </TableCell>
-                  <TableCell>
-                    <span>{getServerName(item.serverId)}</span>
-                  </TableCell>
-                  <TableCell align="center">
-                    <span>{item.artifactCount}</span>
-                  </TableCell>
-                </TableRow>
-              );
+        {loadingArtifactCounts || loadingMatchings || serverMatchings.length === 0 ? (
+          <div className="flex justify-center items-center py-10">
+            <Spinner />
+          </div>
+        ) : (
+          <Table 
+            aria-label="Artifact Region Ranking"
+            removeWrapper
+            className="min-w-full"
+            classNames={{
+              table: "border-separate border-spacing-y-[10px] -mt-[10px]",
+              thead: "[&>tr]:first:shadow-none",
+              th: "bg-transparent text-foreground font-bold text-[16px] h-auto py-0",
+              // tr: "",
+              td: "bg-character-equipment h-[44px] text-[16px] font-normal text-default-800 border-y-1 border-crafting-border first:border-l-1 last:border-r-1 first:rounded-l-md last:rounded-r-md"
             }}
-          </TableBody>
-        </Table>
+          >
+            <TableHeader>
+              <TableColumn>{t("common:leaderboard.rank")}</TableColumn>
+              <TableColumn>{t("common:server.server")}</TableColumn>
+              <TableColumn align="center">{t("common:leaderboard.artifactCount")}</TableColumn>
+            </TableHeader>
+            <TableBody 
+              emptyContent={t("common:leaderboard.inContention")}
+              items={sortedData}
+            >
+              {(item) => {
+                return (
+                  <TableRow key={item.serverId}>
+                    <TableCell>
+                      <div className="flex items-center justify-center w-6 h-6">
+                        {item.rank}
+                      </div>
+                    </TableCell>
+                    <TableCell>
+                      <span>{getServerName(item.serverId)}</span>
+                    </TableCell>
+                    <TableCell align="center">
+                      <span>{item.artifactCount}</span>
+                    </TableCell>
+                  </TableRow>
+                );
+              }}
+            </TableBody>
+          </Table>
+        )}
       </CardBody>
     </Card>
   );

@@ -117,6 +117,11 @@ const RealtimeArtifactRatio: React.FC = () => {
   useEffect(() => {
     if (targetSeasonId) {
       fetchServerMatchings(targetSeasonId);
+    }
+  }, [targetSeasonId, fetchServerMatchings]);
+
+  useEffect(() => {
+    if (targetSeasonId) {
       if (isAutoUpdate) {
         debouncedFetchArtifactStates(targetSeasonId);
       } else {
