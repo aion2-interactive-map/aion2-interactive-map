@@ -39,7 +39,16 @@ routes:
   crafting: "Crafting"
   enhancement: "Enhancement"
   character: "Character"
+  leaderboard: "Leaderboard"
   forum: "Forum"
+
+leaderboard:
+  artifactRegionRanking: "Artifact Proportion Region Ranking"
+  realtimeArtifactRatio: "Real-time Artifact Proportion"
+  inContention: "Pending Upload"
+  rank: "Rank"
+  artifactCount: "Artifacts"
+  totalArtifacts: "Total"
 
 buttons:
   apply: "Apply"
