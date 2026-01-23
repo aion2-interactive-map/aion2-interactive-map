@@ -77,7 +77,7 @@ routes:
   crafting: "装备制作"
   enhancement: "装备强化"
   character: "角色数据"
-  leaderboard: "排行榜"
+  leaderboard: "🎉排行榜"
   forum: "论坛"
 
 leaderboard:
