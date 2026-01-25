@@ -32,7 +32,6 @@ const ArtifactRegionRanking: React.FC<ArtifactRegionRankingProps> = ({ mapName, 
     loadingArtifactCounts,
     serverMatchings,
     loadingMatchings,
-    fetchServerMatchings,
     region,
     setRegion
   } = useLeaderboard();
@@ -50,11 +49,10 @@ const ArtifactRegionRanking: React.FC<ArtifactRegionRankingProps> = ({ mapName, 
   };
 
   const regionSeasonId = useMemo(() => {
-    // Find the latest season number across all seasons
-    if (seasons.length === 0) return null;
-    const latestSeasonNumber = Math.max(...seasons.map(s => s.number));
-    
-    const season = seasons.find(s => s.serverRegion.toLowerCase() === region.toLowerCase() && s.number === latestSeasonNumber);
+    const regionSeasons = seasons.filter(s => s.serverRegion.toLowerCase() === region.toLowerCase());
+    if (regionSeasons.length === 0) return null;
+    const maxNumber = Math.max(...regionSeasons.map(s => s.number));
+    const season = regionSeasons.find(s => s.number === maxNumber);
     return season?.id || null;
   }, [seasons, region]);
 
@@ -63,12 +61,6 @@ const ArtifactRegionRanking: React.FC<ArtifactRegionRankingProps> = ({ mapName, 
       fetchArtifactCounts(regionSeasonId, mapName);
     }
   }, [regionSeasonId, mapName, fetchArtifactCounts]);
-
-  useEffect(() => {
-    if (regionSeasonId) {
-      fetchServerMatchings(regionSeasonId);
-    }
-  }, [regionSeasonId, fetchServerMatchings]);
 
   const sortedData = useMemo(() => {
     const sorted = [...artifactCounts]

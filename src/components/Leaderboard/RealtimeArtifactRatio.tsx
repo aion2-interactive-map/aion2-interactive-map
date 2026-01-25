@@ -81,18 +81,14 @@ const RealtimeArtifactRatio: React.FC = () => {
   const darkIcon = getStaticUrl("UI/Resource/Texture/Icon/UT_Marker_AbyssArtifact_Dark.webp");
   const vsImage = getStaticUrl("images/Leaderboards/VS.webp");
 
-  // Find the latest season number across all seasons
-  const latestSeasonNumber = useMemo(() => {
-    if (seasons.length === 0) return null;
-    return Math.max(...seasons.map(s => s.number));
-  }, [seasons]);
-
-  // Find the season ID for the selected region and latest season number
+  // Find the season ID for the selected region and its latest season number
   const targetSeasonId = useMemo(() => {
-    if (!latestSeasonNumber) return null;
-    const season = seasons.find(s => s.serverRegion === region && s.number === latestSeasonNumber);
+    const regionSeasons = seasons.filter(s => s.serverRegion.toLowerCase() === region.toLowerCase());
+    if (regionSeasons.length === 0) return null;
+    const maxNumber = Math.max(...regionSeasons.map(s => s.number));
+    const season = regionSeasons.find(s => s.number === maxNumber);
     return season?.id || null;
-  }, [region, latestSeasonNumber, seasons]);
+  }, [region, seasons]);
 
   // Create a memoized debounced version of fetchArtifactStates
   const debouncedFetchArtifactStates = useMemo(
@@ -117,20 +113,17 @@ const RealtimeArtifactRatio: React.FC = () => {
   useEffect(() => {
     if (targetSeasonId) {
       fetchServerMatchings(targetSeasonId);
-    }
-  }, [targetSeasonId, fetchServerMatchings]);
-
-  useEffect(() => {
-    if (targetSeasonId) {
       if (isAutoUpdate) {
         debouncedFetchArtifactStates(targetSeasonId);
       } else {
         const date = selectedDate.toDate();
         fetchArtifactStates(targetSeasonId, date);
       }
+      // Also fetch artifact counts here as it's needed by ArtifactRegionRanking
+      // Doing it here centralizes the fetch for this season
+      // fetchArtifactCounts(targetSeasonId, ALL_MAPS_KEY); // Actually ArtifactRegionRanking might have different mapName
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [targetSeasonId, isAutoUpdate, isAutoUpdate ? null : selectedDate]);
+  }, [targetSeasonId, isAutoUpdate, isAutoUpdate ? null : selectedDate, fetchServerMatchings, debouncedFetchArtifactStates, fetchArtifactStates]);
 
   const artifactStateMap = useMemo(() => {
     const map: Record<string, Record<string, { state: number; recordTime: string }>> = {};
