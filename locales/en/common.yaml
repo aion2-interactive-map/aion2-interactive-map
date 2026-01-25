@@ -49,6 +49,17 @@ leaderboard:
   rank: "Rank"
   artifactCount: "Artifacts"
   totalArtifacts: "Total"
+  artifactState:
+    title: "Artifact Data"
+    uploadTime: "Upload Time"
+    countdown: "Countdown"
+    disabledTime: "Countdown Start Time"
+    light: "Light"
+    dark: "Dark"
+    create: "Create Artifact Data"
+    update: "Update Artifact Data"
+    save: "Save"
+    cancel: "Cancel"
 
 buttons:
   apply: "Apply"
