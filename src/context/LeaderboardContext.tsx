@@ -3,6 +3,8 @@ import { getApiUrl } from "@/utils/url";
 import type { ApiResponse, Season, ServerMatching, Artifact, ArtifactState, ArtifactCount } from "@/types/leaderboard";
 import { MAP_NAMES } from "@/types/game";
 
+import { useUser } from "@/context/UserContext";
+
 export interface LeaderboardContextValue {
   seasons: Season[];
   currentSeason: Season | null;
@@ -23,6 +25,8 @@ export interface LeaderboardContextValue {
   fetchArtifacts: () => Promise<void>;
   fetchArtifactStates: (seasonId: string, currentTime?: Date) => Promise<void>;
   fetchArtifactCounts: (seasonId: string, mapName: string) => Promise<void>;
+  createArtifactState: (seasonId: string, mapName: string, data: any) => Promise<boolean>;
+  updateArtifactState: (seasonId: string, mapName: string, stateId: string, data: any) => Promise<boolean>;
 }
 
 export const ALL_MAPS_KEY = "ALL";
@@ -30,6 +34,8 @@ export const ALL_MAPS_KEY = "ALL";
 const LeaderboardContext = createContext<LeaderboardContextValue | null>(null);
 
 export const LeaderboardProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const { fetchWithAuth } = useUser();
+
   const [seasons, setSeasons] = useState<Season[]>([]);
   const [currentSeason, setCurrentSeason] = useState<Season | null>(null);
   const [serverMatchings, setServerMatchings] = useState<ServerMatching[]>([]);
@@ -135,7 +141,8 @@ export const LeaderboardProvider: React.FC<{ children: React.ReactNode }> = ({ c
             return [];
           }
           const result: ApiResponse<ArtifactState> = await response.json();
-          return result.errorCode === "Success" ? result.data.results : [];
+          console.log(`Fetched artifact states for ${mapName}:`, result.data.results);
+          return result.errorCode === "Success" ? result.data.results.map(s => ({...s, mapName})) : [];
         } catch (innerError) {
           console.error(`Error fetching artifact states for ${mapName}:`, innerError);
           return [];
@@ -194,6 +201,44 @@ export const LeaderboardProvider: React.FC<{ children: React.ReactNode }> = ({ c
     }
   }, []);
 
+  const createArtifactState = useCallback(async (seasonId: string, mapName: string, data: any) => {
+    try {
+      const response = await fetchWithAuth(`/seasons/${seasonId}/maps/${mapName}/artifacts/states`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      const result = await response.json();
+      if (result.errorCode === "Success") {
+        fetchArtifactStates(seasonId);
+        return true;
+      }
+      return false;
+    } catch (e) {
+      console.error("Failed to create artifact state:", e);
+      return false;
+    }
+  }, [fetchWithAuth, fetchArtifactStates]);
+
+  const updateArtifactState = useCallback(async (seasonId: string, mapName: string, stateId: string, data: any) => {
+    try {
+      const response = await fetchWithAuth(`/seasons/${seasonId}/maps/${mapName}/artifacts/states/${stateId}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      const result = await response.json();
+      if (result.errorCode === "Success") {
+        fetchArtifactStates(seasonId);
+        return true;
+      }
+      return false;
+    } catch (e) {
+      console.error("Failed to update artifact state:", e);
+      return false;
+    }
+  }, [fetchWithAuth, fetchArtifactStates]);
+
   useEffect(() => {
     fetchSeasons();
     fetchArtifacts();
@@ -233,6 +278,8 @@ export const LeaderboardProvider: React.FC<{ children: React.ReactNode }> = ({ c
         fetchArtifacts,
         fetchArtifactStates,
         fetchArtifactCounts,
+        createArtifactState,
+        updateArtifactState,
       }}
     >
       {children}

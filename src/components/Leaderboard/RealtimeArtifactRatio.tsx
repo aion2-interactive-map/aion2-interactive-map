@@ -12,6 +12,9 @@ import {getStaticUrl} from "@/utils/url";
 import {AdaptiveTooltip} from "@/components/AdaptiveTooltip";
 import {I18nProvider} from "@react-aria/i18n";
 
+import {useUser} from "@/context/UserContext";
+import ArtifactStateModal from "@/components/Leaderboard/ArtifactStateModal";
+
 const RealtimeArtifactRatio: React.FC = () => {
   const ABYSS_MAPS = [MAP_NAMES.ABYSS_A, MAP_NAMES.ABYSS_B];
   const STARRED_SERVERS_KEY = "starred_artifact_servers";
@@ -30,11 +33,16 @@ const RealtimeArtifactRatio: React.FC = () => {
     region,
     setRegion
   } = useLeaderboard();
+  const {isSuperUser} = useUser();
   const {maps} = useGameMap();
   const [selectedDate, setSelectedDate] = useState(now("Asia/Taipei"));
   const [isAutoUpdate, setIsAutoUpdate] = useState(true);
 
-  const [currentTime, setCurrentTime] = useState(new Date());
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [editingMatching, setEditingMatching] = useState<any>(null);
+  const [editingMapName, setEditingMapName] = useState<string | null>(null);
+  const [editingInitialState, setEditingInitialState] = useState<any>(null);
+
   const [starredServerIds, setStarredServerIds] = useState<number[]>(() => {
     const saved = localStorage.getItem(STARRED_SERVERS_KEY);
     return saved ? JSON.parse(saved) : [];
@@ -59,14 +67,6 @@ const RealtimeArtifactRatio: React.FC = () => {
       return 0;
     });
   }, [serverMatchings, starredServerIds]);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      const time = new Date();
-      setCurrentTime(time);
-    }, 1000);
-    return () => clearInterval(timer);
-  }, []);
 
   useEffect(() => {
     if (!isAutoUpdate) return;
@@ -138,7 +138,9 @@ const RealtimeArtifactRatio: React.FC = () => {
       if (!map[s.serverMatchingId]) {
         map[s.serverMatchingId] = {};
       }
-      map[s.serverMatchingId][s.abyssArtifactId] = {state: s.state, recordTime: s.recordTime};
+      s.states.forEach(artifact => {
+        map[s.serverMatchingId][artifact.abyssArtifactId] = {state: artifact.state, recordTime: s.recordTime};
+      });
     });
     return map;
   }, [artifactStates]);
@@ -147,7 +149,7 @@ const RealtimeArtifactRatio: React.FC = () => {
     if (!recordTimeStr) return "--:--:--";
     const recordTime = new Date(recordTimeStr).getTime();
     const fortyEightHours = 48 * 60 * 60 * 1000;
-    const compareTime = isAutoUpdate ? currentTime.getTime() : selectedDate.toDate().getTime();
+    const compareTime = isAutoUpdate ? Date.now() : selectedDate.toDate().getTime();
     const diff = recordTime + fortyEightHours - compareTime;
 
     if (diff <= 0) {
@@ -173,6 +175,20 @@ const RealtimeArtifactRatio: React.FC = () => {
       .sort((a, b) => a.order - b.order);
     return {artifactsA: a, artifactsB: b};
   }, [artifacts, maps]);
+
+  const handleTimeClick = (matching: any, mapName: string) => {
+    if (!isSuperUser) return;
+    console.log("handleTimeClick", {matchingId: matching.id, mapName});
+    console.log("artifactStates total count:", artifactStates.length);
+    setEditingMatching(matching);
+    setEditingMapName(mapName);
+    // Find initial state for this matching and map
+    const state = artifactStates.find(s => s.serverMatchingId === matching.id && s.mapName === mapName);
+    console.log("Found state:", state);
+
+    setEditingInitialState(state || null);
+    setIsModalOpen(true);
+  };
 
   const selectClassNames = {
     trigger: "!bg-character-card hover:!bg-character-card focus:!bg-character-card !transition-none border-crafting-border border-1 shadow-none rounded-sm group-data-[hover=true]:!bg-character-card group-data-[focus=true]:!bg-character-card group-data-[focus-visible=true]:!bg-character-card h-[36px] min-h-[36px]",
@@ -282,7 +298,7 @@ const RealtimeArtifactRatio: React.FC = () => {
                     </Button>
                     <span className="text-lg font-bold text-[#1D3557]">{matching.server1.serverName}</span>
                     <span
-                      className="text-[14px] font-normal text-default-700">（天{matching.server1.serverId % 1000}）</span>
+                      className="text-[14px] font-normal text-default-700">（{t("common:server.lightAbbr")}{matching.server1.serverId % 1000}）</span>
                   </div>
                   <div className="flex flex-col items-center gap-2 mt-2">
                     <div className="flex items-center gap-2">
@@ -299,7 +315,7 @@ const RealtimeArtifactRatio: React.FC = () => {
                           if (stateData?.recordTime) {
                             const recordTime = new Date(stateData.recordTime).getTime();
                             const fortyEightHours = 48 * 60 * 60 * 1000;
-                            const compareTime = isAutoUpdate ? currentTime.getTime() : selectedDate.toDate().getTime();
+                            const compareTime = isAutoUpdate ? Date.now() : selectedDate.toDate().getTime();
                             const diff = recordTime + fortyEightHours - compareTime;
                             if (diff <= 0) isContention = true;
                           }
@@ -323,7 +339,10 @@ const RealtimeArtifactRatio: React.FC = () => {
                       </div>
                     </div>
                     {/* Third Line: Countdown */}
-                    <div className="text-[20px] text-default-800 font-mono">
+                    <div
+                      className={`text-[20px] text-default-800 font-mono ${isSuperUser ? "cursor-pointer hover:text-primary" : ""}`}
+                      onClick={() => handleTimeClick(matching, MAP_NAMES.ABYSS_A)}
+                    >
                       {formatCountdown(artifactsA.length > 0 ? artifactStateMap[matching.id]?.[artifactsA[0].id]?.recordTime : undefined)}
                     </div>
                   </div>
@@ -347,7 +366,7 @@ const RealtimeArtifactRatio: React.FC = () => {
                   >
                     <span className="text-lg font-bold text-[#4B0082]">{matching.server2.serverName}</span>
                     <span
-                      className="text-[14px] font-normal text-default-700">（魔{matching.server2.serverId % 1000}）</span>
+                      className="text-[14px] font-normal text-default-700">（{t("common:server.darkAbbr")}{matching.server2.serverId % 1000}）</span>
                     <Button
                       isIconOnly
                       size="sm"
@@ -377,7 +396,7 @@ const RealtimeArtifactRatio: React.FC = () => {
                           if (stateData?.recordTime) {
                             const recordTime = new Date(stateData.recordTime).getTime();
                             const fortyEightHours = 48 * 60 * 60 * 1000;
-                            const compareTime = isAutoUpdate ? currentTime.getTime() : selectedDate.toDate().getTime();
+                            const compareTime = isAutoUpdate ? Date.now() : selectedDate.toDate().getTime();
                             const diff = recordTime + fortyEightHours - compareTime;
                             if (diff <= 0) isContention = true;
                           }
@@ -401,7 +420,10 @@ const RealtimeArtifactRatio: React.FC = () => {
                       </div>
                     </div>
                     {/* Third Line: Countdown */}
-                    <div className="text-[20px] text-default-800 font-mono">
+                    <div
+                      className={`text-[20px] text-default-800 font-mono ${isSuperUser ? "cursor-pointer hover:text-primary" : ""}`}
+                      onClick={() => handleTimeClick(matching, MAP_NAMES.ABYSS_B)}
+                    >
                       {formatCountdown(artifactsB.length > 0 ? artifactStateMap[matching.id]?.[artifactsB[0].id]?.recordTime : undefined)}
                     </div>
                   </div>
@@ -410,6 +432,18 @@ const RealtimeArtifactRatio: React.FC = () => {
             </CardBody>
           </Card>
         ))
+      )}
+
+      {isSuperUser && editingMatching && targetSeasonId && editingMapName && (
+        <ArtifactStateModal
+          isOpen={isModalOpen}
+          onOpenChange={setIsModalOpen}
+          matching={editingMatching}
+          mapName={editingMapName}
+          artifacts={editingMapName === MAP_NAMES.ABYSS_A ? artifactsA : artifactsB}
+          initialState={editingInitialState}
+          seasonId={targetSeasonId}
+        />
       )}
     </div>
   );

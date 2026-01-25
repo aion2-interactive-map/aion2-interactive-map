@@ -57,9 +57,12 @@ export interface Artifact {
 
 export interface ArtifactState {
   id: string;
-  abyssArtifactId: string;
   serverMatchingId: string;
-  state: number;
+  mapName: string;
+  states: {
+    abyssArtifactId: string;
+    state: number;
+  }[];
   recordTime: string;
 }
 

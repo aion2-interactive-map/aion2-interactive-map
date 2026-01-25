@@ -87,6 +87,17 @@ leaderboard:
   rank: "排名"
   artifactCount: "神器数量"
   totalArtifacts: "总计神器"
+  artifactState:
+    title: "神器数据"
+    uploadTime: "上传时间"
+    countdown: "倒计时"
+    disabledTime: "倒计时开始时间"
+    light: "天"
+    dark: "魔"
+    create: "创建神器数据"
+    update: "更新神器数据"
+    save: "保存"
+    cancel: "取消"
 
 wip:
   title: "此页面正在建设中！"
