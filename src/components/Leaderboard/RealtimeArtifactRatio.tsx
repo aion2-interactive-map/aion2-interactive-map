@@ -1,7 +1,7 @@
 import React, {useMemo, useState, useEffect, useCallback} from "react";
 import {useTranslation} from "react-i18next";
 import {Card, CardHeader, CardBody, Divider, Button, DatePicker, Select, SelectItem} from "@heroui/react";
-import {now} from "@internationalized/date";
+import {now, getLocalTimeZone} from "@internationalized/date";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faStar as faStarSolid, faRotateRight} from "@fortawesome/free-solid-svg-icons";
 import {faStar as faStarRegular} from "@fortawesome/free-regular-svg-icons";
@@ -35,7 +35,7 @@ const RealtimeArtifactRatio: React.FC = () => {
   } = useLeaderboard();
   const {isSuperUser} = useUser();
   const {maps} = useGameMap();
-  const [selectedDate, setSelectedDate] = useState(now("Asia/Taipei"));
+  const [selectedDate, setSelectedDate] = useState(now(getLocalTimeZone()));
   const [isAutoUpdate, setIsAutoUpdate] = useState(true);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -71,7 +71,7 @@ const RealtimeArtifactRatio: React.FC = () => {
   useEffect(() => {
     if (!isAutoUpdate) return;
     const timer = setInterval(() => {
-      setSelectedDate(now("Asia/Taipei"));
+      setSelectedDate(now(getLocalTimeZone()));
     }, 1000);
     return () => clearInterval(timer);
   }, [isAutoUpdate]);
@@ -255,7 +255,7 @@ const RealtimeArtifactRatio: React.FC = () => {
                         className="absolute right-10 top-1/2 -translate-y-1/2 z-20 h-6 w-6 min-w-0 bg-transparent"
                         onClick={() => {
                           setIsAutoUpdate(true);
-                          setSelectedDate(now("Asia/Taipei"));
+                          setSelectedDate(now(getLocalTimeZone()));
                         }}
                       >
                         <FontAwesomeIcon icon={faRotateRight} className="text-[12px]"/>

@@ -11,7 +11,7 @@ import {
   SelectItem,
   DatePicker,
 } from "@heroui/react";
-import {parseAbsoluteToLocal, now} from "@internationalized/date";
+import {now, getLocalTimeZone, parseAbsoluteToLocal} from "@internationalized/date";
 import {useTranslation} from "react-i18next";
 import {I18nProvider} from "@react-aria/i18n";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -42,7 +42,7 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
   const {t, i18n} = useTranslation("common");
   const {createArtifactState, updateArtifactState} = useLeaderboard();
 
-  const [uploadTime, setUploadTime] = useState(now("Asia/Taipei"));
+  const [uploadTime, setUploadTime] = useState(now(getLocalTimeZone()));
   const [countdown, setCountdown] = useState("48:00:00");
   const [artifactStates, setArtifactStates] = useState<Record<string, number>>({});
 
@@ -70,7 +70,7 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
 
         if (diff <= 0) {
           // Create mode even if initialState exists, because it is expired
-          setUploadTime(now("Asia/Taipei"));
+          setUploadTime(now(getLocalTimeZone()));
           setCountdown("48:00:00");
           
           const states: Record<string, number> = {};
@@ -80,7 +80,7 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
           setArtifactStates(states);
         } else {
           // Update mode
-          setUploadTime(parseAbsoluteToLocal(new Date(initialState.recordTime).toISOString()));
+          setUploadTime(parseAbsoluteToLocal(initialState.recordTime));
           setCountdown(calculateFormattedCountdown(initialState.recordTime));
           
           const states: Record<string, number> = {};
@@ -91,7 +91,7 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
         }
       } else {
         // Create mode
-        setUploadTime(now("Asia/Taipei"));
+        setUploadTime(now(getLocalTimeZone()));
         setCountdown("48:00:00");
         
         const states: Record<string, number> = {};
@@ -119,8 +119,8 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
       const countdownMs = ((h || 0) * 3600 + (m || 0) * 60 + (s || 0)) * 1000;
       const fortyEightHoursMs = 48 * 3600 * 1000;
 
-      const recordDate = new Date(uploadDate.getTime() + countdownMs - fortyEightHoursMs);
-      return parseAbsoluteToLocal(recordDate.toISOString());
+      const recordDateMs = uploadDate.getTime() + countdownMs - fortyEightHoursMs;
+      return parseAbsoluteToLocal(new Date(recordDateMs).toISOString());
     } catch (e) {
       return null;
     }
@@ -134,8 +134,8 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
       const countdownMs = ((h || 0) * 3600 + (m || 0) * 60 + (s || 0)) * 1000;
       const fortyEightHoursMs = 48 * 3600 * 1000;
 
-      const recordDate = new Date(uploadDate.getTime() + countdownMs - fortyEightHoursMs);
-      return recordDate.toISOString();
+      const recordDateMs = uploadDate.getTime() + countdownMs - fortyEightHoursMs;
+      return new Date(recordDateMs).toISOString();
     } catch (e) {
       return "";
     }
@@ -221,7 +221,7 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
             </ModalHeader>
             <ModalBody className="gap-4">
               <I18nProvider locale={i18n.language}>
-                <div className="relative">
+                <div className="relative group/picker">
                   <DatePicker
                     label={t("leaderboard.artifactState.uploadTime")}
                     hideTimeZone
@@ -240,9 +240,9 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
                       size="sm"
                       variant="flat"
                       isIconOnly
-                      className="absolute right-10 top-1/2 -translate-y-1/2 z-20 h-6 w-6 min-w-0 bg-transparent"
+                      className="absolute right-10 bottom-2 z-20 h-6 w-6 min-w-0 bg-transparent"
                       onClick={() => {
-                        setUploadTime(now("Asia/Taipei"));
+                        setUploadTime(now(getLocalTimeZone()));
                       }}
                     >
                       <FontAwesomeIcon icon={faRotateRight} className="text-[12px]"/>
