@@ -9,6 +9,7 @@ export interface LeaderboardContextValue {
   seasons: Season[];
   serverMatchings: ServerMatching[];
   artifacts: Artifact[];
+  artifactsByMap: Record<string, Artifact[]>;
   artifactStates: ArtifactState[];
   artifactCounts: ArtifactCount[];
   loadingSeasons: boolean;
@@ -21,11 +22,13 @@ export interface LeaderboardContextValue {
   setRegion: (region: string) => void;
   fetchSeasons: () => Promise<void>;
   fetchServerMatchings: (seasonId: string) => Promise<void>;
+  fetchServerMatching: (seasonId: string, matchingId: string) => Promise<void>;
   fetchArtifacts: () => Promise<void>;
-  fetchArtifactStates: (seasonId: string, currentTime?: Date) => Promise<void>;
+  fetchArtifactStates: (seasonId: string, currentTime?: Date, serverMatchingId?: string) => Promise<ArtifactState[]>;
   fetchArtifactCounts: (seasonId: string, mapName: string) => Promise<void>;
   createArtifactState: (seasonId: string, mapName: string, data: any) => Promise<boolean>;
   updateArtifactState: (seasonId: string, mapName: string, stateId: string, data: any) => Promise<boolean>;
+  deleteArtifactState: (seasonId: string, mapName: string, stateId: string, serverMatchingId?: string) => Promise<boolean>;
 }
 
 export const ALL_MAPS_KEY = "ALL";
@@ -39,6 +42,7 @@ export const LeaderboardProvider: React.FC<{ children: React.ReactNode }> = ({ c
   const [serverMatchingsBySeason, setServerMatchingsBySeason] = useState<Record<string, ServerMatching[]>>({});
   const [serverMatchings, setServerMatchings] = useState<ServerMatching[]>([]);
   const [artifacts, setArtifacts] = useState<Artifact[]>([]);
+  const [artifactsByMap, setArtifactsByMap] = useState<Record<string, Artifact[]>>({});
   const [artifactStatesBySeason, setArtifactStatesBySeason] = useState<Record<string, ArtifactState[]>>({});
   const [artifactStates, setArtifactStates] = useState<ArtifactState[]>([]);
   const [artifactCountsByMap, setArtifactCountsByMap] = useState<Record<string, Record<string, ArtifactCount[]>>>({});
@@ -101,47 +105,87 @@ export const LeaderboardProvider: React.FC<{ children: React.ReactNode }> = ({ c
     }
   }, [serverMatchingsBySeason]);
 
+  const fetchServerMatching = useCallback(async (seasonId: string, matchingId: string) => {
+    // If we already have it in the list, no need to fetch specifically unless we want to refresh
+    if (serverMatchings.some(m => m.id === matchingId)) {
+      return;
+    }
+
+    setLoadingMatchings(true);
+    setError(null);
+    try {
+      const response = await fetch(getApiUrl(`/api/v1/seasons/${seasonId}/server_matchings/${matchingId}`));
+      const result: ApiResponse<ServerMatching> = await response.json();
+      if (result.errorCode === "Success") {
+        // Note: ApiResponse<T> says result.data.results is T[]. 
+        // If the API returns a single object in 'data', we need to handle it.
+        // Assuming consistency with ApiResponse<T>
+        const fetchedMatching = Array.isArray(result.data.results) ? result.data.results[0] : (result.data as any);
+        
+        if (fetchedMatching) {
+          setServerMatchings(prev => {
+            if (prev.some(m => m.id === matchingId)) return prev;
+            return [...prev, fetchedMatching];
+          });
+        }
+      } else {
+        setError(result.errorMessage || "Failed to fetch server matching");
+      }
+    } catch (e) {
+      console.error("Failed to fetch server matching:", e);
+      setError("Network error fetching server matching");
+    } finally {
+      setLoadingMatchings(false);
+    }
+  }, [serverMatchings]);
+
   const fetchArtifacts = useCallback(async () => {
-    if (artifacts.length > 0) return;
+    if (Object.keys(artifactsByMap).length > 0) return;
     setLoadingArtifacts(true);
     setError(null);
     try {
       const mapIds = [MAP_NAMES.ABYSS_A, MAP_NAMES.ABYSS_B];
+      const newArtifactsByMap: Record<string, Artifact[]> = {};
       const promises = mapIds.map(async (mapId) => {
         try {
           const response = await fetch(getApiUrl(`/api/v1/maps/${mapId}/artifacts/`));
           if (!response.ok) {
-            return [];
+            return { mapId, results: [] };
           }
           const result: ApiResponse<Artifact> = await response.json();
-          return result.errorCode === "Success" ? result.data.results : [];
+          return { mapId, results: result.errorCode === "Success" ? result.data.results : [] };
         } catch (innerError) {
           console.error(`Error fetching artifacts for ${mapId}:`, innerError);
-          return [];
+          return { mapId, results: [] };
         }
       });
 
       const results = await Promise.all(promises);
-      const allArtifacts = results.flat();
-      setArtifacts(allArtifacts);
+      results.forEach(({ mapId, results }) => {
+        newArtifactsByMap[mapId] = results;
+      });
+
+      setArtifactsByMap(newArtifactsByMap);
+      setArtifacts(results.flatMap(r => r.results));
     } catch (e) {
       console.error("Failed to fetch artifacts:", e);
       setError("Network error fetching artifacts");
     } finally {
       setLoadingArtifacts(false);
     }
-  }, [artifacts]);
+  }, [artifactsByMap]);
 
   useEffect(() => {
     fetchSeasons();
     fetchArtifacts();
   }, [fetchSeasons, fetchArtifacts]);
 
-  const fetchArtifactStates = useCallback(async (seasonId: string, currentTime?: Date) => {
-    // We only cache the "current" view (no currentTime)
-    if (!currentTime && artifactStatesBySeason[seasonId]) {
-      setArtifactStates(artifactStatesBySeason[seasonId]);
-      return;
+  const fetchArtifactStates = useCallback(async (seasonId: string, currentTime?: Date, serverMatchingId?: string) => {
+    // We only cache the "current" view (no currentTime, no serverMatchingId filter)
+    if (!currentTime && !serverMatchingId && artifactStatesBySeason[seasonId]) {
+      const cached = artifactStatesBySeason[seasonId];
+      setArtifactStates(cached);
+      return cached;
     }
 
     setLoadingArtifactStates(true);
@@ -151,11 +195,15 @@ export const LeaderboardProvider: React.FC<{ children: React.ReactNode }> = ({ c
       const promises = mapNames.map(async (mapName) => {
         try {
           let url = getApiUrl(`/api/v1/seasons/${seasonId}/maps/${mapName}/artifacts/states`);
+          const urlObj = new URL(url);
           if (currentTime) {
-            const urlObj = new URL(url);
             urlObj.searchParams.set("current_time", currentTime.toISOString());
-            url = urlObj.toString();
           }
+          if (serverMatchingId) {
+            urlObj.searchParams.set("server_matching_id", serverMatchingId);
+          }
+          url = urlObj.toString();
+          
           const response = await fetch(url);
           if (!response.ok) {
             return [];
@@ -172,17 +220,24 @@ export const LeaderboardProvider: React.FC<{ children: React.ReactNode }> = ({ c
       const results = await Promise.all(promises);
       const allStates = results.flat();
       
-      setArtifactStates(allStates);
+      // Only update global states if NOT filtering by serverMatchingId
+      // because the global states are used for the general leaderboard view
+      if (!serverMatchingId) {
+        setArtifactStates(allStates);
 
-      if (!currentTime) {
-        setArtifactStatesBySeason(prev => ({
-          ...prev,
-          [seasonId]: allStates
-        }));
+        if (!currentTime) {
+          setArtifactStatesBySeason(prev => ({
+            ...prev,
+            [seasonId]: allStates
+          }));
+        }
       }
+
+      return allStates;
     } catch (e) {
       console.error("Failed to fetch artifact states:", e);
       setError("Network error fetching artifact states");
+      return [];
     } finally {
       setLoadingArtifactStates(false);
     }
@@ -258,7 +313,10 @@ export const LeaderboardProvider: React.FC<{ children: React.ReactNode }> = ({ c
         // Clear caches because data changed
         setArtifactStatesBySeason({});
         setArtifactCountsByMap({});
-        fetchArtifactStates(seasonId);
+        // Only refresh global state if this wasn't a targeted update for a specific matching detail view
+        if (!data.serverMatchingId) {
+          fetchArtifactStates(seasonId);
+        }
         return true;
       }
       return false;
@@ -280,12 +338,38 @@ export const LeaderboardProvider: React.FC<{ children: React.ReactNode }> = ({ c
         // Clear caches because data changed
         setArtifactStatesBySeason({});
         setArtifactCountsByMap({});
-        fetchArtifactStates(seasonId);
+        // Only refresh global state if this wasn't a targeted update for a specific matching detail view
+        if (!data.serverMatchingId) {
+          fetchArtifactStates(seasonId);
+        }
         return true;
       }
       return false;
     } catch (e) {
       console.error("Failed to update artifact state:", e);
+      return false;
+    }
+  }, [fetchWithAuth, fetchArtifactStates]);
+
+  const deleteArtifactState = useCallback(async (seasonId: string, mapName: string, stateId: string, serverMatchingId?: string) => {
+    try {
+      const response = await fetchWithAuth(`/seasons/${seasonId}/maps/${mapName}/artifacts/states/${stateId}`, {
+        method: "DELETE",
+      });
+      const result = await response.json();
+      if (result.errorCode === "Success") {
+        // Clear caches because data changed
+        setArtifactStatesBySeason({});
+        setArtifactCountsByMap({});
+        // Only refresh global state if this wasn't a targeted update for a specific matching detail view
+        if (!serverMatchingId) {
+          fetchArtifactStates(seasonId);
+        }
+        return true;
+      }
+      return false;
+    } catch (e) {
+      console.error("Failed to delete artifact state:", e);
       return false;
     }
   }, [fetchWithAuth, fetchArtifactStates]);
@@ -296,6 +380,7 @@ export const LeaderboardProvider: React.FC<{ children: React.ReactNode }> = ({ c
         seasons,
         serverMatchings,
         artifacts,
+        artifactsByMap,
         artifactStates,
         artifactCounts,
         loadingSeasons,
@@ -313,6 +398,8 @@ export const LeaderboardProvider: React.FC<{ children: React.ReactNode }> = ({ c
         fetchArtifactCounts,
         createArtifactState,
         updateArtifactState,
+        deleteArtifactState,
+        fetchServerMatching,
       }}
     >
       {children}

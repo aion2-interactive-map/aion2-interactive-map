@@ -6,7 +6,6 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faStar as faStarSolid, faRotateRight} from "@fortawesome/free-solid-svg-icons";
 import {faStar as faStarRegular} from "@fortawesome/free-regular-svg-icons";
 import {useLeaderboard} from "@/context/LeaderboardContext";
-import {useGameMap} from "@/context/GameMapContext";
 import {MAP_NAMES} from "@/types/game";
 import {getStaticUrl} from "@/utils/url";
 import {AdaptiveTooltip} from "@/components/AdaptiveTooltip";
@@ -14,8 +13,10 @@ import {I18nProvider} from "@react-aria/i18n";
 
 import {useUser} from "@/context/UserContext";
 import ArtifactStateModal from "@/components/Leaderboard/ArtifactStateModal";
+import { useNavigate } from "@tanstack/react-router";
 
 const RealtimeArtifactRatio: React.FC = () => {
+  const navigate = useNavigate();
   const ABYSS_MAPS = [MAP_NAMES.ABYSS_A, MAP_NAMES.ABYSS_B];
   const STARRED_SERVERS_KEY = "starred_artifact_servers";
 
@@ -25,7 +26,7 @@ const RealtimeArtifactRatio: React.FC = () => {
     seasons,
     serverMatchings,
     loadingMatchings,
-    artifacts,
+    artifactsByMap,
     loadingArtifacts,
     artifactStates,
     fetchServerMatchings,
@@ -34,7 +35,6 @@ const RealtimeArtifactRatio: React.FC = () => {
     setRegion
   } = useLeaderboard();
   const {isSuperUser} = useUser();
-  const {maps} = useGameMap();
   const [selectedDate, setSelectedDate] = useState(now(getLocalTimeZone()));
   const [isAutoUpdate, setIsAutoUpdate] = useState(true);
 
@@ -157,17 +157,10 @@ const RealtimeArtifactRatio: React.FC = () => {
   };
 
   const {artifactsA, artifactsB} = useMemo(() => {
-    const mapA = maps.find(m => m.name === MAP_NAMES.ABYSS_A);
-    const mapB = maps.find(m => m.name === MAP_NAMES.ABYSS_B);
-
-    const a = artifacts
-      .filter((art) => art.marker.mapId === mapA?.id)
-      .sort((a, b) => a.order - b.order);
-    const b = artifacts
-      .filter((art) => art.marker.mapId === mapB?.id)
-      .sort((a, b) => a.order - b.order);
+    const a = (artifactsByMap[MAP_NAMES.ABYSS_A] || []).sort((a, b) => a.order - b.order);
+    const b = (artifactsByMap[MAP_NAMES.ABYSS_B] || []).sort((a, b) => a.order - b.order);
     return {artifactsA: a, artifactsB: b};
-  }, [artifacts, maps]);
+  }, [artifactsByMap]);
 
   const handleTimeClick = (matching: any, mapName: string) => {
     if (!isSuperUser) return;
@@ -267,6 +260,8 @@ const RealtimeArtifactRatio: React.FC = () => {
       ) : (
         sortedMatchings.map((matching) => (
           <Card key={matching.id}
+                isPressable
+                onClick={() => navigate({ to: `/leaderboard/artifacts/${matching.id}` })}
                 className="bg-character-equipment shadow-none border-1 border-crafting-border p-4 relative group">
             <CardBody className="p-0">
               <div className="flex items-stretch justify-between">
@@ -276,14 +271,17 @@ const RealtimeArtifactRatio: React.FC = () => {
                     className="w-full h-[38px] flex items-center justify-center rounded-md relative"
                     style={{background: "linear-gradient(135deg, #DBEDFF 0%, #F3FBFF 100%)"}}
                   >
-                    <Button
-                      isIconOnly
-                      size="sm"
-                      variant="light"
-                      className="absolute left-1 z-10 text-default-400 hover:text-star data-[starred=true]:text-star"
-                      data-starred={starredServerIds.includes(matching.server1.serverId)}
-                      onClick={() => toggleStar(matching.server1.serverId)}
-                    >
+                      <Button
+                        isIconOnly
+                        size="sm"
+                        variant="light"
+                        className="absolute left-1 z-10 text-default-400 hover:text-star data-[starred=true]:text-star"
+                        data-starred={starredServerIds.includes(matching.server1.serverId)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          toggleStar(matching.server1.serverId);
+                        }}
+                      >
                       <FontAwesomeIcon
                         icon={starredServerIds.includes(matching.server1.serverId) ? faStarSolid : faStarRegular}
                         className="text-[16px]"

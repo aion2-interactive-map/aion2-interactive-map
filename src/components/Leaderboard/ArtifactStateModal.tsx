@@ -10,6 +10,7 @@ import {
   Select,
   SelectItem,
   DatePicker,
+  Switch,
 } from "@heroui/react";
 import {now, getLocalTimeZone, parseAbsoluteToLocal} from "@internationalized/date";
 import {useTranslation} from "react-i18next";
@@ -35,16 +36,21 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
   onOpenChange,
   matching,
   mapName,
-  artifacts,
   initialState,
   seasonId
 }) => {
   const {t, i18n} = useTranslation("common");
-  const {createArtifactState, updateArtifactState} = useLeaderboard();
+  const {createArtifactState, updateArtifactState, artifactsByMap} = useLeaderboard();
+  
+  const mapArtifacts = useMemo(() => {
+    return (artifactsByMap[mapName] || []).sort((a, b) => a.order - b.order);
+  }, [artifactsByMap, mapName]);
 
   const [uploadTime, setUploadTime] = useState(now(getLocalTimeZone()));
   const [countdown, setCountdown] = useState("48:00:00");
   const [artifactStates, setArtifactStates] = useState<Record<string, number>>({});
+  const [isCountdownMode, setIsCountdownMode] = useState(false);
+  const [manualRecordTime, setManualRecordTime] = useState(now(getLocalTimeZone()));
 
   const calculateFormattedCountdown = (recordTimeStr: string) => {
     const recordTime = new Date(recordTimeStr).getTime();
@@ -68,20 +74,30 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
         const fortyEightHours = 48 * 60 * 60 * 1000;
         const diff = recordDate.getTime() + fortyEightHours - Date.now();
 
-        if (diff <= 0) {
-          // Create mode even if initialState exists, because it is expired
+        if (diff <= 0 || !initialState.id) {
+          // Create mode (even if initialState exists but has no id, it's a template)
           setUploadTime(now(getLocalTimeZone()));
           setCountdown("48:00:00");
+          setManualRecordTime(now(getLocalTimeZone()));
+          setIsCountdownMode(true);
           
           const states: Record<string, number> = {};
-          artifacts.forEach(a => {
-             states[a.id] = 1; // Default to light
-          });
+          if (initialState.states) {
+            initialState.states.forEach(s => {
+              states[s.abyssArtifactId] = s.state;
+            });
+          } else {
+            mapArtifacts.forEach(a => {
+              states[a.id] = 1; // Default to light
+            });
+          }
           setArtifactStates(states);
         } else {
           // Update mode
           setUploadTime(parseAbsoluteToLocal(initialState.recordTime));
           setCountdown(calculateFormattedCountdown(initialState.recordTime));
+          setManualRecordTime(parseAbsoluteToLocal(initialState.recordTime));
+          setIsCountdownMode(false);
           
           const states: Record<string, number> = {};
           initialState.states.forEach(s => {
@@ -93,18 +109,20 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
         // Create mode
         setUploadTime(now(getLocalTimeZone()));
         setCountdown("48:00:00");
+        setManualRecordTime(now(getLocalTimeZone()));
+        setIsCountdownMode(true);
         
         const states: Record<string, number> = {};
-        artifacts.forEach(a => {
+        mapArtifacts.forEach(a => {
            states[a.id] = 1; // Default to light
         });
         setArtifactStates(states);
       }
     }
-  }, [isOpen, initialState, artifacts]);
+  }, [isOpen, initialState, mapArtifacts]);
 
   const isUpdateMode = useMemo(() => {
-    if (!initialState) return false;
+    if (!initialState || !initialState.id) return false;
     const recordDate = new Date(initialState.recordTime);
     const fortyEightHours = 48 * 60 * 60 * 1000;
     const result = (recordDate.getTime() + fortyEightHours - Date.now()) > 0;
@@ -112,6 +130,9 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
   }, [initialState]);
 
   const disabledTimeValue = useMemo(() => {
+    if (!isCountdownMode) {
+      return manualRecordTime;
+    }
     if (!uploadTime || !countdown) return null;
     try {
       const uploadDate = uploadTime.toDate();
@@ -124,9 +145,12 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
     } catch (e) {
       return null;
     }
-  }, [uploadTime, countdown]);
+  }, [uploadTime, countdown, isCountdownMode, manualRecordTime]);
 
   const recordTimeForApi = useMemo(() => {
+    if (!isCountdownMode) {
+      return manualRecordTime ? new Date(manualRecordTime.toDate()).toISOString() : "";
+    }
     if (!uploadTime || !countdown) return "";
     try {
       const uploadDate = uploadTime.toDate();
@@ -139,7 +163,7 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
     } catch (e) {
       return "";
     }
-  }, [uploadTime, countdown]);
+  }, [uploadTime, countdown, isCountdownMode, manualRecordTime]);
 
   const handleSave = async () => {
     const statesData = Object.entries(artifactStates).map(([id, state]) => ({
@@ -174,7 +198,7 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
     const artifactName = t(`markers/${artifact.marker.mapId}:${artifact.markerId}.name`, artifact.marker.name);
     return (
       <div key={artifact.id} className="flex items-center justify-between gap-4">
-        <span className="text-sm">{artifactName}</span>
+        <span className="text-sm flex-1">{artifactName}</span>
         <Select
           size="sm"
           className="w-[100px]"
@@ -209,7 +233,7 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
   };
 
   return (
-    <Modal isOpen={isOpen} onOpenChange={onOpenChange} size="lg" classNames={{
+    <Modal isOpen={isOpen} onOpenChange={onOpenChange} size="xl" classNames={{
       base: "bg-character-equipment",
     }}>
       <ModalContent>
@@ -220,58 +244,88 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
               {` - ${matching.server1.serverName} VS ${matching.server2.serverName}`}
             </ModalHeader>
             <ModalBody className="gap-4">
+              <div className="flex items-center gap-2 mb-2">
+                <Switch 
+                  isSelected={isCountdownMode} 
+                  onValueChange={setIsCountdownMode}
+                  size="sm"
+                >
+                  {t("leaderboard.artifactState.countdownMode")}
+                </Switch>
+              </div>
               <I18nProvider locale={i18n.language}>
-                <div className="relative group/picker">
+                {isCountdownMode ? (
+                  <>
+                    <div className="relative group/picker">
+                      <DatePicker
+                        label={t("leaderboard.artifactState.uploadTime")}
+                        hideTimeZone
+                        showMonthAndYearPickers
+                        value={uploadTime}
+                        onChange={(value) => {
+                          if (value) {
+                            setUploadTime(value);
+                          }
+                        }}
+                        classNames={inputClassNames}
+                        granularity="second"
+                      />
+                      <AdaptiveTooltip content={t("common:leaderboard.resetToNow", "重置到当前时间")}>
+                        <Button
+                          size="sm"
+                          variant="flat"
+                          isIconOnly
+                          className="absolute right-10 bottom-2 z-20 h-6 w-6 min-w-0 bg-transparent"
+                          onClick={() => {
+                            setUploadTime(now(getLocalTimeZone()));
+                          }}
+                        >
+                          <FontAwesomeIcon icon={faRotateRight} className="text-[12px]"/>
+                        </Button>
+                      </AdaptiveTooltip>
+                    </div>
+                    <Input
+                      label={t("leaderboard.artifactState.countdown")}
+                      placeholder="hh:mm:ss"
+                      value={countdown}
+                      onChange={(e) => setCountdown(e.target.value)}
+                      classNames={inputClassNames}
+                    />
+                  </>
+                ) : (
                   <DatePicker
-                    label={t("leaderboard.artifactState.uploadTime")}
+                    label={t("leaderboard.artifactState.recordTime")}
                     hideTimeZone
                     showMonthAndYearPickers
-                    value={uploadTime}
+                    value={manualRecordTime}
                     onChange={(value) => {
                       if (value) {
-                        setUploadTime(value);
+                        setManualRecordTime(value);
                       }
                     }}
                     classNames={inputClassNames}
                     granularity="second"
                   />
-                  <AdaptiveTooltip content={t("common:leaderboard.resetToNow", "重置到当前时间")}>
-                    <Button
-                      size="sm"
-                      variant="flat"
-                      isIconOnly
-                      className="absolute right-10 bottom-2 z-20 h-6 w-6 min-w-0 bg-transparent"
-                      onClick={() => {
-                        setUploadTime(now(getLocalTimeZone()));
-                      }}
-                    >
-                      <FontAwesomeIcon icon={faRotateRight} className="text-[12px]"/>
-                    </Button>
-                  </AdaptiveTooltip>
-                </div>
+                )}
               </I18nProvider>
-              <Input
-                label={t("leaderboard.artifactState.countdown")}
-                placeholder="hh:mm:ss"
-                value={countdown}
-                onChange={(e) => setCountdown(e.target.value)}
-                classNames={inputClassNames}
-              />
-              <I18nProvider locale={i18n.language}>
-                <DatePicker
-                  label={t("leaderboard.artifactState.disabledTime")}
-                  hideTimeZone
-                  showMonthAndYearPickers
-                  value={disabledTimeValue}
-                  isDisabled
-                  classNames={inputClassNames}
-                  granularity="second"
-                />
-              </I18nProvider>
+              
+              {isCountdownMode && (
+                <I18nProvider locale={i18n.language}>
+                  <DatePicker
+                    label={t("leaderboard.artifactState.recordTime")}
+                    hideTimeZone
+                    showMonthAndYearPickers
+                    value={disabledTimeValue}
+                    isDisabled
+                    classNames={inputClassNames}
+                    granularity="second"
+                  />
+                </I18nProvider>
+              )}
               
               <div className="flex flex-col gap-2 mt-2">
                 <p className="font-bold">{t(`maps:${mapName}.description`)}</p>
-                {artifacts.map(renderArtifactSelect)}
+                {mapArtifacts.map(renderArtifactSelect)}
               </div>
             </ModalBody>
             <ModalFooter>

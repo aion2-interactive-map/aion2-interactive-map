@@ -74,7 +74,7 @@ const TopNavbar: React.FC = () => {
             className="w-[100px] h-[38px] object-contain"
           />
           {routes.map((route) => {
-            const isActive = currentPath === route.path;
+            const isActive = currentPath === route.path || (route.path !== "/" && currentPath.startsWith(route.path));
             return (
               <NavbarItem
                 isActive={isActive}

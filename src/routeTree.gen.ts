@@ -16,6 +16,7 @@ import { Route as CraftingRouteImport } from './routes/crafting'
 import { Route as ClassRouteImport } from './routes/class'
 import { Route as CharacterRouteImport } from './routes/character'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as LeaderboardArtifactsMatchingIdRouteImport } from './routes/leaderboard.artifacts.$matchingId'
 
 const LeaderboardRoute = LeaderboardRouteImport.update({
   id: '/leaderboard',
@@ -52,6 +53,12 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LeaderboardArtifactsMatchingIdRoute =
+  LeaderboardArtifactsMatchingIdRouteImport.update({
+    id: '/artifacts/$matchingId',
+    path: '/artifacts/$matchingId',
+    getParentRoute: () => LeaderboardRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -60,7 +67,8 @@ export interface FileRoutesByFullPath {
   '/crafting': typeof CraftingRoute
   '/enhancement': typeof EnhancementRoute
   '/forum': typeof ForumRoute
-  '/leaderboard': typeof LeaderboardRoute
+  '/leaderboard': typeof LeaderboardRouteWithChildren
+  '/leaderboard/artifacts/$matchingId': typeof LeaderboardArtifactsMatchingIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -69,7 +77,8 @@ export interface FileRoutesByTo {
   '/crafting': typeof CraftingRoute
   '/enhancement': typeof EnhancementRoute
   '/forum': typeof ForumRoute
-  '/leaderboard': typeof LeaderboardRoute
+  '/leaderboard': typeof LeaderboardRouteWithChildren
+  '/leaderboard/artifacts/$matchingId': typeof LeaderboardArtifactsMatchingIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -79,7 +88,8 @@ export interface FileRoutesById {
   '/crafting': typeof CraftingRoute
   '/enhancement': typeof EnhancementRoute
   '/forum': typeof ForumRoute
-  '/leaderboard': typeof LeaderboardRoute
+  '/leaderboard': typeof LeaderboardRouteWithChildren
+  '/leaderboard/artifacts/$matchingId': typeof LeaderboardArtifactsMatchingIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -91,6 +101,7 @@ export interface FileRouteTypes {
     | '/enhancement'
     | '/forum'
     | '/leaderboard'
+    | '/leaderboard/artifacts/$matchingId'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -100,6 +111,7 @@ export interface FileRouteTypes {
     | '/enhancement'
     | '/forum'
     | '/leaderboard'
+    | '/leaderboard/artifacts/$matchingId'
   id:
     | '__root__'
     | '/'
@@ -109,6 +121,7 @@ export interface FileRouteTypes {
     | '/enhancement'
     | '/forum'
     | '/leaderboard'
+    | '/leaderboard/artifacts/$matchingId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -118,7 +131,7 @@ export interface RootRouteChildren {
   CraftingRoute: typeof CraftingRoute
   EnhancementRoute: typeof EnhancementRoute
   ForumRoute: typeof ForumRoute
-  LeaderboardRoute: typeof LeaderboardRoute
+  LeaderboardRoute: typeof LeaderboardRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -172,8 +185,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/leaderboard/artifacts/$matchingId': {
+      id: '/leaderboard/artifacts/$matchingId'
+      path: '/artifacts/$matchingId'
+      fullPath: '/leaderboard/artifacts/$matchingId'
+      preLoaderRoute: typeof LeaderboardArtifactsMatchingIdRouteImport
+      parentRoute: typeof LeaderboardRoute
+    }
   }
 }
+
+interface LeaderboardRouteChildren {
+  LeaderboardArtifactsMatchingIdRoute: typeof LeaderboardArtifactsMatchingIdRoute
+}
+
+const LeaderboardRouteChildren: LeaderboardRouteChildren = {
+  LeaderboardArtifactsMatchingIdRoute: LeaderboardArtifactsMatchingIdRoute,
+}
+
+const LeaderboardRouteWithChildren = LeaderboardRoute._addFileChildren(
+  LeaderboardRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -182,7 +214,7 @@ const rootRouteChildren: RootRouteChildren = {
   CraftingRoute: CraftingRoute,
   EnhancementRoute: EnhancementRoute,
   ForumRoute: ForumRoute,
-  LeaderboardRoute: LeaderboardRoute,
+  LeaderboardRoute: LeaderboardRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
