@@ -3,17 +3,17 @@ import {useTranslation} from "react-i18next";
 import {Card, CardHeader, CardBody, Divider, Button, DatePicker, Select, SelectItem} from "@heroui/react";
 import {now, getLocalTimeZone} from "@internationalized/date";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faStar as faStarSolid, faRotateRight} from "@fortawesome/free-solid-svg-icons";
-import {faStar as faStarRegular} from "@fortawesome/free-regular-svg-icons";
+import {
+  faRotateRight
+} from "@fortawesome/free-solid-svg-icons";
 import {useLeaderboard} from "@/context/LeaderboardContext";
 import {MAP_NAMES} from "@/types/game";
 import {getStaticUrl} from "@/utils/url";
 import {AdaptiveTooltip} from "@/components/AdaptiveTooltip";
 import {I18nProvider} from "@react-aria/i18n";
 
-import {useUser} from "@/context/UserContext";
-import ArtifactStateModal from "@/components/Leaderboard/ArtifactStateModal";
 import { useNavigate } from "@tanstack/react-router";
+import ServerArtifactColumn from "./ServerArtifactColumn";
 
 const RealtimeArtifactRatio: React.FC = () => {
   const navigate = useNavigate();
@@ -34,14 +34,8 @@ const RealtimeArtifactRatio: React.FC = () => {
     region,
     setRegion
   } = useLeaderboard();
-  const {isSuperUser} = useUser();
   const [selectedDate, setSelectedDate] = useState(now(getLocalTimeZone()));
   const [isAutoUpdate, setIsAutoUpdate] = useState(true);
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [editingMatching, setEditingMatching] = useState<any>(null);
-  const [editingMapName, setEditingMapName] = useState<string | null>(null);
-  const [editingInitialState, setEditingInitialState] = useState<any>(null);
 
   const [starredServerIds, setStarredServerIds] = useState<number[]>(() => {
     const saved = localStorage.getItem(STARRED_SERVERS_KEY);
@@ -126,13 +120,17 @@ const RealtimeArtifactRatio: React.FC = () => {
   }, [targetSeasonId, isAutoUpdate, isAutoUpdate ? null : selectedDate, fetchServerMatchings, debouncedFetchArtifactStates, fetchArtifactStates]);
 
   const artifactStateMap = useMemo(() => {
-    const map: Record<string, Record<string, { state: number; recordTime: string }>> = {};
+    const map: Record<string, Record<string, { state: number; recordTime: string; contributors: any[] }>> = {};
     artifactStates.forEach(s => {
       if (!map[s.serverMatchingId]) {
         map[s.serverMatchingId] = {};
       }
       s.states.forEach(artifact => {
-        map[s.serverMatchingId][artifact.abyssArtifactId] = {state: artifact.state, recordTime: s.recordTime};
+        map[s.serverMatchingId][artifact.abyssArtifactId] = {
+          state: artifact.state,
+          recordTime: s.recordTime,
+          contributors: s.contributors || []
+        };
       });
     });
     return map;
@@ -161,20 +159,6 @@ const RealtimeArtifactRatio: React.FC = () => {
     const b = (artifactsByMap[MAP_NAMES.ABYSS_B] || []).sort((a, b) => a.order - b.order);
     return {artifactsA: a, artifactsB: b};
   }, [artifactsByMap]);
-
-  const handleTimeClick = (matching: any, mapName: string) => {
-    if (!isSuperUser) return;
-    console.log("handleTimeClick", {matchingId: matching.id, mapName});
-    console.log("artifactStates total count:", artifactStates.length);
-    setEditingMatching(matching);
-    setEditingMapName(mapName);
-    // Find initial state for this matching and map
-    const state = artifactStates.find(s => s.serverMatchingId === matching.id && s.mapName === mapName);
-    console.log("Found state:", state);
-
-    setEditingInitialState(state || null);
-    setIsModalOpen(true);
-  };
 
   const selectClassNames = {
     trigger: "!bg-character-card hover:!bg-character-card focus:!bg-character-card !transition-none border-crafting-border border-1 shadow-none rounded-sm group-data-[hover=true]:!bg-character-card group-data-[focus=true]:!bg-character-card group-data-[focus-visible=true]:!bg-character-card h-[36px] min-h-[36px]",
@@ -265,79 +249,21 @@ const RealtimeArtifactRatio: React.FC = () => {
                 className="bg-character-equipment shadow-none border-1 border-crafting-border p-4 relative group">
             <CardBody className="p-0">
               <div className="flex items-stretch justify-between">
-                {/* Left Column: Server 1 */}
-                <div className="flex-1 flex flex-col items-center">
-                  <div
-                    className="w-full h-[38px] flex items-center justify-center rounded-md relative"
-                    style={{background: "linear-gradient(135deg, #DBEDFF 0%, #F3FBFF 100%)"}}
-                  >
-                      <Button
-                        isIconOnly
-                        size="sm"
-                        variant="light"
-                        className="absolute left-1 z-10 text-default-400 hover:text-star data-[starred=true]:text-star"
-                        data-starred={starredServerIds.includes(matching.server1.serverId)}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          toggleStar(matching.server1.serverId);
-                        }}
-                      >
-                      <FontAwesomeIcon
-                        icon={starredServerIds.includes(matching.server1.serverId) ? faStarSolid : faStarRegular}
-                        className="text-[16px]"
-                      />
-                    </Button>
-                    <span className="text-lg font-bold text-[#1D3557]">{matching.server1.serverName}</span>
-                    <span
-                      className="text-[14px] font-normal text-default-700">（{t("common:server.lightAbbr")}{matching.server1.serverId % 1000}）</span>
-                  </div>
-                  <div className="flex flex-col items-center gap-2 mt-2">
-                    <div className="flex items-center gap-2">
-                      <span className="text-[14px] text-foreground max-w-[40px] sm:max-w-none whitespace-normal">
-                        {t(`maps:${MAP_NAMES.ABYSS_A}.description`)}
-                      </span>
-                      <div className="flex gap-1">
-                        {artifactsA.map((artifact) => {
-                          const artifactName = t(`markers/${MAP_NAMES.ABYSS_A}:${artifact.markerId}.name`, artifact.marker.name);
-                          const stateData = artifactStateMap[matching.id]?.[artifact.id];
-                          const state = stateData?.state;
-
-                          let isContention = false;
-                          if (stateData?.recordTime) {
-                            const recordTime = new Date(stateData.recordTime).getTime();
-                            const fortyEightHours = 48 * 60 * 60 * 1000;
-                            const compareTime = isAutoUpdate ? Date.now() : selectedDate.toDate().getTime();
-                            const diff = recordTime + fortyEightHours - compareTime;
-                            if (diff <= 0) isContention = true;
-                          }
-
-                          let icon = neutralIcon;
-                          if (!isContention) {
-                            if (state === 1) icon = lightIcon;
-                            else if (state === 2) icon = darkIcon;
-                          }
-
-                          return (
-                            <AdaptiveTooltip key={artifact.id} content={artifactName}>
-                              <img
-                                src={icon}
-                                alt={artifactName}
-                                className="w-7 h-7 sm:w-12 sm:h-12"
-                              />
-                            </AdaptiveTooltip>
-                          );
-                        })}
-                      </div>
-                    </div>
-                    {/* Third Line: Countdown */}
-                    <div
-                      className={`text-[20px] text-default-800 font-mono ${isSuperUser ? "cursor-pointer hover:text-primary" : ""}`}
-                      onClick={() => handleTimeClick(matching, MAP_NAMES.ABYSS_A)}
-                    >
-                      {formatCountdown(artifactsA.length > 0 ? artifactStateMap[matching.id]?.[artifactsA[0].id]?.recordTime : undefined)}
-                    </div>
-                  </div>
-                </div>
+                <ServerArtifactColumn
+                  matching={matching}
+                  server={matching.server1}
+                  isServer1={true}
+                  artifacts={artifactsA}
+                  mapName={MAP_NAMES.ABYSS_A}
+                  artifactStateMap={artifactStateMap}
+                  isAutoUpdate={isAutoUpdate}
+                  selectedDate={selectedDate}
+                  starredServerIds={starredServerIds}
+                  toggleStar={toggleStar}
+                  formatCountdown={formatCountdown}
+                  t={t}
+                  icons={{neutral: neutralIcon, light: lightIcon, dark: darkIcon}}
+                />
 
                 {/* Middle: VS */}
                 <div className="flex flex-col items-center px-2 h-full">
@@ -349,92 +275,25 @@ const RealtimeArtifactRatio: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Right Column: Server 2 */}
-                <div className="flex-1 flex flex-col items-center">
-                  <div
-                    className="w-full h-[38px] flex items-center justify-center rounded-md relative"
-                    style={{background: "linear-gradient(225deg, #EFE5FF 0%, #F3FBFF 100%)"}}
-                  >
-                    <span className="text-lg font-bold text-[#4B0082]">{matching.server2.serverName}</span>
-                    <span
-                      className="text-[14px] font-normal text-default-700">（{t("common:server.darkAbbr")}{matching.server2.serverId % 1000}）</span>
-                    <Button
-                      isIconOnly
-                      size="sm"
-                      variant="light"
-                      className="absolute right-1 z-10 text-default-400 hover:text-star data-[starred=true]:text-star"
-                      data-starred={starredServerIds.includes(matching.server2.serverId)}
-                      onClick={() => toggleStar(matching.server2.serverId)}
-                    >
-                      <FontAwesomeIcon
-                        icon={starredServerIds.includes(matching.server2.serverId) ? faStarSolid : faStarRegular}
-                        className="text-[16px]"
-                      />
-                    </Button>
-                  </div>
-                  <div className="flex flex-col items-center gap-2 mt-2">
-                    <div className="flex items-center gap-2">
-                      <span className="text-[14px] text-foreground max-w-[40px] sm:max-w-none whitespace-normal">
-                        {t(`maps:${MAP_NAMES.ABYSS_B}.description`)}
-                      </span>
-                      <div className="flex gap-1">
-                        {artifactsB.map((artifact) => {
-                          const artifactName = t(`markers/${MAP_NAMES.ABYSS_B}:${artifact.markerId}.name`, artifact.marker.name);
-                          const stateData = artifactStateMap[matching.id]?.[artifact.id];
-                          const state = stateData?.state;
-
-                          let isContention = false;
-                          if (stateData?.recordTime) {
-                            const recordTime = new Date(stateData.recordTime).getTime();
-                            const fortyEightHours = 48 * 60 * 60 * 1000;
-                            const compareTime = isAutoUpdate ? Date.now() : selectedDate.toDate().getTime();
-                            const diff = recordTime + fortyEightHours - compareTime;
-                            if (diff <= 0) isContention = true;
-                          }
-
-                          let icon = neutralIcon;
-                          if (!isContention) {
-                            if (state === 1) icon = lightIcon;
-                            else if (state === 2) icon = darkIcon;
-                          }
-
-                          return (
-                            <AdaptiveTooltip key={artifact.id} content={artifactName}>
-                              <img
-                                src={icon}
-                                alt={artifactName}
-                                className="w-7 h-7 sm:w-12 sm:h-12"
-                              />
-                            </AdaptiveTooltip>
-                          );
-                        })}
-                      </div>
-                    </div>
-                    {/* Third Line: Countdown */}
-                    <div
-                      className={`text-[20px] text-default-800 font-mono ${isSuperUser ? "cursor-pointer hover:text-primary" : ""}`}
-                      onClick={() => handleTimeClick(matching, MAP_NAMES.ABYSS_B)}
-                    >
-                      {formatCountdown(artifactsB.length > 0 ? artifactStateMap[matching.id]?.[artifactsB[0].id]?.recordTime : undefined)}
-                    </div>
-                  </div>
-                </div>
+                <ServerArtifactColumn
+                  matching={matching}
+                  server={matching.server2}
+                  isServer1={false}
+                  artifacts={artifactsB}
+                  mapName={MAP_NAMES.ABYSS_B}
+                  artifactStateMap={artifactStateMap}
+                  isAutoUpdate={isAutoUpdate}
+                  selectedDate={selectedDate}
+                  starredServerIds={starredServerIds}
+                  toggleStar={toggleStar}
+                  formatCountdown={formatCountdown}
+                  t={t}
+                  icons={{neutral: neutralIcon, light: lightIcon, dark: darkIcon}}
+                />
               </div>
             </CardBody>
           </Card>
         ))
-      )}
-
-      {isSuperUser && editingMatching && targetSeasonId && editingMapName && (
-        <ArtifactStateModal
-          isOpen={isModalOpen}
-          onOpenChange={setIsModalOpen}
-          matching={editingMatching}
-          mapName={editingMapName}
-          artifacts={editingMapName === MAP_NAMES.ABYSS_A ? artifactsA : artifactsB}
-          initialState={editingInitialState}
-          seasonId={targetSeasonId}
-        />
       )}
     </div>
   );

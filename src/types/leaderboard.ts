@@ -64,6 +64,18 @@ export interface ArtifactState {
     state: number;
   }[];
   recordTime: string;
+  contributors: {
+    id: string;
+    userId: string;
+    user: {
+      id: string;
+      name: string;
+      email: string;
+      isActive: boolean;
+      isSuperuser: boolean;
+      isVerified: boolean;
+    };
+  }[];
 }
 
 export interface ArtifactCount {

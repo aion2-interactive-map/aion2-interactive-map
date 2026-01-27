@@ -103,6 +103,7 @@ leaderboard:
   options: "选项"
   timeDiffToNext: "距离下条记录时间"
   deleteConfirm: "你确定要删除这条记录吗？"
+  providedBy: "信息由 <emph>{{username}}</emph> 提供"
 
 wip:
   title: "此页面正在建设中！"
