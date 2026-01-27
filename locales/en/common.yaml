@@ -60,6 +60,7 @@ leaderboard:
     update: "Update Artifact Data"
     save: "Save"
     cancel: "Cancel"
+  providedBy: "Provided by <emph>{{username}}</emph>"
 
 buttons:
   apply: "Apply"
