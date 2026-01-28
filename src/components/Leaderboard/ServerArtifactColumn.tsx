@@ -118,9 +118,6 @@ const ServerArtifactColumn: React.FC<ServerArtifactColumnProps> = ({
         {/* Third Line: Countdown */}
         <div
           className="text-[20px] text-default-800 font-mono"
-          onClick={(e) => {
-            e.stopPropagation();
-          }}
         >
           {formatCountdown(artifacts.length > 0 ? artifactStateMap[matching.id]?.[artifacts[0].id]?.recordTime : undefined)}
         </div>

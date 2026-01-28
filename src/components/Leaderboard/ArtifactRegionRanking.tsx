@@ -170,7 +170,7 @@ const ArtifactRegionRanking: React.FC<ArtifactRegionRankingProps> = ({ mapName, 
               <TableColumn align="center">{t("common:leaderboard.artifactCount")}</TableColumn>
             </TableHeader>
             <TableBody 
-              emptyContent={t("common:leaderboard.inContention")}
+              emptyContent={t("common:ui.noData")}
               items={sortedData}
             >
               {(item) => {

@@ -144,7 +144,12 @@ const RealtimeArtifactRatio: React.FC = () => {
     const diff = recordTime + fortyEightHours - compareTime;
 
     if (diff <= 0) {
-      return t("common:leaderboard.inContention", "数据待上传");
+      const absDiff = Math.abs(diff);
+      const h = Math.floor(absDiff / (1000 * 60 * 60));
+      const m = Math.floor((absDiff % (1000 * 60 * 60)) / (1000 * 60));
+      const s = Math.floor((absDiff % (1000 * 60)) / 1000);
+      const formatted = `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
+      return t("common:leaderboard.refreshedAgo", { time: formatted });
     }
 
     const hours = Math.floor(diff / (1000 * 60 * 60));

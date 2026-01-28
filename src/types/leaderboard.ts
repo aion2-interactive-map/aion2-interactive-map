@@ -64,6 +64,7 @@ export interface ArtifactState {
     state: number;
   }[];
   recordTime: string;
+  isVerified: boolean;
   contributors: {
     id: string;
     userId: string;

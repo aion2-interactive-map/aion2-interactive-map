@@ -16,7 +16,14 @@ import {
   Tooltip,
 } from "@heroui/react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faEdit, faTrash, faPlus, faArrowLeft} from "@fortawesome/free-solid-svg-icons";
+import {
+  faEdit,
+  faTrash,
+  faPlus,
+  faArrowLeft,
+  faCheckCircle,
+  faTimesCircle
+} from "@fortawesome/free-solid-svg-icons";
 import {useLeaderboard} from "@/context/LeaderboardContext.tsx";
 import {MAP_NAMES} from "@/types/game.ts";
 import {useUser} from "@/context/UserContext.tsx";
@@ -36,7 +43,7 @@ function ArtifactDetailsPage() {
   const ABYSS_MAPS = [MAP_NAMES.ABYSS_A, MAP_NAMES.ABYSS_B];
   const markerNs = ABYSS_MAPS.map((x) => `markers/${x}`);
   const {t} = useTranslation([...markerNs, "common"]);
-  const {isSuperUser} = useUser();
+  const {user, isSuperUser} = useUser();
   const {
     seasons,
     serverMatchings,
@@ -140,7 +147,11 @@ function ArtifactDetailsPage() {
     const minutes = Math.floor((absDiff % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((absDiff % (1000 * 60)) / 1000);
 
-    return `${isNegative ? "-" : ""}${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+    const formatted = `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+    if (isNegative) {
+      return t("common:leaderboard.refreshedAgo", { time: formatted });
+    }
+    return formatted;
   };
 
   const neutralIcon = getStaticUrl("UI/Resource/Texture/Icon/UT_Marker_AbyssArtifact_Neutral.webp");
@@ -177,7 +188,7 @@ function ArtifactDetailsPage() {
               <Card key={mapName} className="bg-character-equipment shadow-none border-1 border-crafting-border">
                 <CardHeader className="flex justify-between items-center px-6 py-4">
                   <h2 className="text-xl font-bold">{t(`maps:${mapName}.description`)}</h2>
-                  {isSuperUser && (
+                  {user && (
                     <Button
                       size="sm"
                       color="default"
@@ -208,6 +219,8 @@ function ArtifactDetailsPage() {
                           label: t(`markers/${mapName}:${art.markerId}.name`, {defaultValue: art.marker.name}),
                           isArtifact: true
                         })),
+                        {id: "is_verified", label: t("common:leaderboard.artifactState.isVerified"), width: 100},
+                        {id: "contributors", label: t("common:leaderboard.artifactState.contributors"), width: 200},
                         {id: "options", label: t("common:leaderboard.options"), width: 100}
                       ]}
                     >
@@ -259,7 +272,7 @@ function ArtifactDetailsPage() {
                           const timeDiff = formatTimeDiff(item.state.recordTime, item.nextState.recordTime);
                           return (
                             <TableRow key={item.id} className="bg-default-50/30">
-                              <TableCell colSpan={arts.length + 2}>
+                              <TableCell colSpan={arts.length + 4}>
                                 <div className="flex justify-center items-center px-4 py-1">
                                   <span className="text-sm text-default-800 italic text-center">
                                     {t("common:leaderboard.timeDiffToNext", "Time diff to next record")}: {timeDiff}
@@ -288,34 +301,65 @@ function ArtifactDetailsPage() {
                                 </TableCell>
                               );
                             })}
+                            <TableCell key="is_verified">
+                              <div className="flex justify-center">
+                                <FontAwesomeIcon
+                                  icon={item.state.isVerified ? faCheckCircle : faTimesCircle}
+                                  className={item.state.isVerified ? "text-success" : "text-default-400"}
+                                />
+                              </div>
+                            </TableCell>
+                            <TableCell key="contributors">
+                              <div className="flex flex-col items-center gap-1">
+                                {item.state.contributors && item.state.contributors.length > 0 ? (
+                                  item.state.contributors.map((c: any) => (
+                                    <span key={c.id} className="text-xs text-primary bg-primary/10 px-2 py-0.5 rounded-full">
+                                      {c.user.name}
+                                    </span>
+                                  ))
+                                ) : (
+                                  <span className="text-xs text-default-400">-</span>
+                                )}
+                              </div>
+                            </TableCell>
                             <TableCell key="options">
                               <div className="flex justify-center gap-2">
-                                {isSuperUser && (
-                                  <>
-                                    <Tooltip content={t("common:ui.edit")}>
-                                      <Button
-                                        isIconOnly
-                                        size="sm"
-                                        variant="light"
-                                        onClick={() => handleEdit(item.state, item.mapName)}
-                                      >
-                                        <FontAwesomeIcon icon={faEdit} className="text-primary"/>
-                                      </Button>
-                                    </Tooltip>
-                                    <PopConfirm
-                                      title={t("common:leaderboard.deleteConfirm", "Are you sure you want to delete this record?")}
-                                      onConfirm={() => handleDelete(item.state)}
-                                    >
-                                      <Button
-                                        isIconOnly
-                                        size="sm"
-                                        variant="light"
-                                      >
-                                        <FontAwesomeIcon icon={faTrash} className="text-danger"/>
-                                      </Button>
-                                    </PopConfirm>
-                                  </>
-                                )}
+                                {(() => {
+                                  const isContributor = item.state.contributors?.some((c: any) => c.userId === user?.id);
+                                  const canEdit = isSuperUser || isContributor;
+                                  const canDelete = isSuperUser;
+                                  
+                                  return (
+                                    <>
+                                      {canEdit && (
+                                        <Tooltip content={t("common:ui.edit")}>
+                                          <Button
+                                            isIconOnly
+                                            size="sm"
+                                            variant="light"
+                                            onClick={() => handleEdit(item.state, item.mapName)}
+                                          >
+                                            <FontAwesomeIcon icon={faEdit} className="text-primary"/>
+                                          </Button>
+                                        </Tooltip>
+                                      )}
+                                      {canDelete && (
+                                        <PopConfirm
+                                          title={t("common:leaderboard.deleteConfirm", "Are you sure you want to delete this record?")}
+                                          onConfirm={() => handleDelete(item.state)}
+                                        >
+                                          <Button
+                                            isIconOnly
+                                            size="sm"
+                                            variant="light"
+                                          >
+                                            <FontAwesomeIcon icon={faTrash} className="text-danger"/>
+                                          </Button>
+                                        </PopConfirm>
+                                      )}
+                                    </>
+                                  );
+                                })()}
                               </div>
                             </TableCell>
                           </TableRow>
