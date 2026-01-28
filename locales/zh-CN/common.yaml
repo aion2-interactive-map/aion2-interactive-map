@@ -83,6 +83,7 @@ routes:
 leaderboard:
   artifactRegionRanking: "神器占比大区排名"
   realtimeArtifactRatio: "实时神器占比"
+  refreshedAgo: "{{time}}前刷新"
   inContention: "数据待上传"
   rank: "排名"
   artifactCount: "神器数量"
@@ -96,6 +97,8 @@ leaderboard:
     disabledTime: "倒计时开始时间"
     light: "天"
     dark: "魔"
+    isVerified: "已验证"
+    contributors: "贡献者"
     create: "创建神器数据"
     update: "更新神器数据"
     save: "保存"

@@ -15,6 +15,10 @@ ui:
   search: "搜尋"
 
 leaderboard:
+  refreshedAgo: "{{time}}前重新整理"
+  artifactState:
+    isVerified: "已驗證"
+    contributors: "貢獻者"
   providedBy: "資訊由 <emph>{{username}}</emph> 提供"
 
 menu:

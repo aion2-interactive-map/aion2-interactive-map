@@ -45,6 +45,7 @@ routes:
 leaderboard:
   artifactRegionRanking: "Artifact Proportion Region Ranking"
   realtimeArtifactRatio: "Real-time Artifact Proportion"
+  refreshedAgo: "Refreshed {{time}} ago"
   inContention: "Pending Upload"
   rank: "Rank"
   artifactCount: "Artifacts"
@@ -56,6 +57,8 @@ leaderboard:
     disabledTime: "Countdown Start Time"
     light: "Light"
     dark: "Dark"
+    isVerified: "Verified"
+    contributors: "Contributors"
     create: "Create Artifact Data"
     update: "Update Artifact Data"
     save: "Save"
