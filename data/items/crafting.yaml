@@ -1,4169 +1,6389 @@
 crafting:
+- id: 610710001
+  splendent_id:
+  materials:
+  - id: 610620013
+    count: 2
+  - id: 630541001
+    count: 1
+- id: 610710006
+  splendent_id:
+  materials:
+  - id: 610511007
+    count: 2
+  - id: 630520001
+    count: 1
+- id: 610710007
+  splendent_id:
+  materials:
+  - id: 610511008
+    count: 2
+  - id: 630520002
+    count: 1
+- id: 610710008
+  splendent_id:
+  materials:
+  - id: 610511009
+    count: 2
+  - id: 630520003
+    count: 1
+- id: 610710014
+  splendent_id:
+  materials:
+  - id: 610511022
+    count: 2
+  - id: 630520003
+    count: 2
+- id: 610710012
+  splendent_id:
+  materials:
+  - id: 610511018
+    count: 2
+  - id: 630520010
+    count: 1
+- id: 610710016
+  splendent_id:
+  materials:
+  - id: 610511026
+    count: 2
+  - id: 630520010
+    count: 2
+- id: 110260023
+  splendent_id: 110250014
+  materials:
+  - id: 610530001
+    count: 5
+  - id: 610610013
+    count: 2
   - id: 610710001
-    splendent_id:
-    materials:
-      - id: 610620013
-        count: 2
-      - id: 630541001
-        count: 1
+    count: 3
+  race: light
+- id: 110260024
+  splendent_id: 110250016
+  materials:
+  - id: 610530001
+    count: 5
+  - id: 610610013
+    count: 2
+  - id: 610710001
+    count: 3
+  race: dark
+- id: 110160023
+  splendent_id: 110150014
+  materials:
+  - id: 610530001
+    count: 5
+  - id: 610610013
+    count: 2
+  - id: 610710001
+    count: 3
+  race: light
+- id: 110160024
+  splendent_id: 110150016
+  materials:
+  - id: 610530001
+    count: 5
+  - id: 610610013
+    count: 2
+  - id: 610710001
+    count: 3
+  race: dark
+- id: 110360023
+  splendent_id: 110350014
+  materials:
+  - id: 610530001
+    count: 5
+  - id: 610610013
+    count: 2
+  - id: 610710001
+    count: 3
+  race: light
+- id: 110360024
+  splendent_id: 110350016
+  materials:
+  - id: 610530001
+    count: 5
+  - id: 610610013
+    count: 2
+  - id: 610710001
+    count: 3
+  race: dark
+- id: 110760023
+  splendent_id: 110750014
+  materials:
+  - id: 610530001
+    count: 5
+  - id: 610610013
+    count: 2
+  - id: 610710001
+    count: 3
+  race: light
+- id: 110760024
+  splendent_id: 110750016
+  materials:
+  - id: 610530001
+    count: 5
+  - id: 610610013
+    count: 2
+  - id: 610710001
+    count: 3
+  race: dark
+- id: 115060023
+  splendent_id: 115050014
+  materials:
+  - id: 610530001
+    count: 5
+  - id: 610610013
+    count: 2
+  - id: 610710001
+    count: 3
+  race: light
+- id: 115060024
+  splendent_id: 115050016
+  materials:
+  - id: 610530001
+    count: 5
+  - id: 610610013
+    count: 2
+  - id: 610710001
+    count: 3
+  race: dark
+- id: 110250015
+  splendent_id: 110240012
+  materials:
+  - id: 110250014
+    count: 1
+  - id: 610530005
+    count: 5
+  - id: 610610014
+    count: 3
+  - id: 610620014
+    count: 6
+  race: light
+- id: 110250017
+  splendent_id: 110240014
+  materials:
+  - id: 110250016
+    count: 1
+  - id: 610530005
+    count: 5
+  - id: 610610014
+    count: 3
+  - id: 610620014
+    count: 6
+  race: dark
+- id: 110150015
+  splendent_id: 110140012
+  materials:
+  - id: 110150014
+    count: 1
+  - id: 610530005
+    count: 5
+  - id: 610610014
+    count: 3
+  - id: 610620014
+    count: 6
+  race: light
+- id: 110150017
+  splendent_id: 110140014
+  materials:
+  - id: 110150016
+    count: 1
+  - id: 610530005
+    count: 5
+  - id: 610610014
+    count: 3
+  - id: 610620014
+    count: 6
+  race: dark
+- id: 110350015
+  splendent_id: 110340012
+  materials:
+  - id: 110350014
+    count: 1
+  - id: 610530005
+    count: 5
+  - id: 610610014
+    count: 3
+  - id: 610620014
+    count: 6
+  race: light
+- id: 110350017
+  splendent_id: 110340014
+  materials:
+  - id: 110350016
+    count: 1
+  - id: 610530005
+    count: 5
+  - id: 610610014
+    count: 3
+  - id: 610620014
+    count: 6
+  race: dark
+- id: 110750015
+  splendent_id: 110740012
+  materials:
+  - id: 110750014
+    count: 1
+  - id: 610530005
+    count: 5
+  - id: 610610014
+    count: 3
+  - id: 610620014
+    count: 6
+  race: light
+- id: 110750017
+  splendent_id: 110740014
+  materials:
+  - id: 110750016
+    count: 1
+  - id: 610530005
+    count: 5
+  - id: 610610014
+    count: 3
+  - id: 610620014
+    count: 6
+  race: dark
+- id: 115050015
+  splendent_id: 115040012
+  materials:
+  - id: 115050014
+    count: 1
+  - id: 610530005
+    count: 5
+  - id: 610610014
+    count: 3
+  - id: 610620014
+    count: 6
+  race: light
+- id: 115050017
+  splendent_id: 115040014
+  materials:
+  - id: 115050016
+    count: 1
+  - id: 610530005
+    count: 5
+  - id: 610610014
+    count: 3
+  - id: 610620014
+    count: 6
+  race: dark
+- id: 110240013
+  splendent_id: 110230013
+  materials:
+  - id: 110240012
+    count: 1
+  - id: 610530008
+    count: 5
+  - id: 610610015
+    count: 4
+  - id: 610620015
+    count: 8
+  race: light
+- id: 110240015
+  splendent_id: 110230014
+  materials:
+  - id: 110240014
+    count: 1
+  - id: 610530008
+    count: 5
+  - id: 610610015
+    count: 4
+  - id: 610620015
+    count: 8
+  race: dark
+- id: 110140013
+  splendent_id: 110130013
+  materials:
+  - id: 110140012
+    count: 1
+  - id: 610530008
+    count: 5
+  - id: 610610015
+    count: 4
+  - id: 610620015
+    count: 8
+  race: light
+- id: 110140015
+  splendent_id: 110130014
+  materials:
+  - id: 110140014
+    count: 1
+  - id: 610530008
+    count: 5
+  - id: 610610015
+    count: 4
+  - id: 610620015
+    count: 8
+  race: dark
+- id: 110340013
+  splendent_id: 110330013
+  materials:
+  - id: 110340012
+    count: 1
+  - id: 610530008
+    count: 5
+  - id: 610610015
+    count: 4
+  - id: 610620015
+    count: 8
+  race: light
+- id: 110340015
+  splendent_id: 110330014
+  materials:
+  - id: 110340014
+    count: 1
+  - id: 610530008
+    count: 5
+  - id: 610610015
+    count: 4
+  - id: 610620015
+    count: 8
+  race: dark
+- id: 110740013
+  splendent_id: 110730013
+  materials:
+  - id: 110740012
+    count: 1
+  - id: 610530008
+    count: 5
+  - id: 610610015
+    count: 4
+  - id: 610620015
+    count: 8
+  race: light
+- id: 110740015
+  splendent_id: 110730014
+  materials:
+  - id: 110740014
+    count: 1
+  - id: 610530008
+    count: 5
+  - id: 610610015
+    count: 4
+  - id: 610620015
+    count: 8
+  race: dark
+- id: 115040013
+  splendent_id: 115030013
+  materials:
+  - id: 115040012
+    count: 1
+  - id: 610530008
+    count: 5
+  - id: 610610015
+    count: 4
+  - id: 610620015
+    count: 8
+  race: light
+- id: 115040015
+  splendent_id: 115030014
+  materials:
+  - id: 115040014
+    count: 1
+  - id: 610530008
+    count: 5
+  - id: 610610015
+    count: 4
+  - id: 610620015
+    count: 8
+  race: dark
+- id: 110230015
+  splendent_id: 110230017
+  materials:
+  - id: 110230013
+    count: 1
+  - id: 610511013
+    count: 10
+  - id: 610530010
+    count: 5
+  - id: 610610016
+    count: 7
+  - id: 610620016
+    count: 12
   - id: 610710006
-    splendent_id:
-    materials:
-      - id: 610511007
-        count: 2
-      - id: 630520001
-        count: 1
+    count: 22
+  race: light
+- id: 110230019
+  splendent_id: 110230021
+  materials:
+  - id: 110230014
+    count: 1
+  - id: 610511013
+    count: 10
+  - id: 610530010
+    count: 5
+  - id: 610610016
+    count: 7
+  - id: 610620016
+    count: 12
+  - id: 610710006
+    count: 22
+  race: dark
+- id: 110130015
+  splendent_id: 110130017
+  materials:
+  - id: 110130013
+    count: 1
+  - id: 610511013
+    count: 10
+  - id: 610530010
+    count: 5
+  - id: 610610016
+    count: 7
+  - id: 610620016
+    count: 12
+  - id: 610710006
+    count: 22
+  race: light
+- id: 110130019
+  splendent_id: 110130021
+  materials:
+  - id: 110130014
+    count: 1
+  - id: 610511013
+    count: 10
+  - id: 610530010
+    count: 5
+  - id: 610610016
+    count: 7
+  - id: 610620016
+    count: 12
+  - id: 610710006
+    count: 22
+  race: dark
+- id: 110330015
+  splendent_id: 110330017
+  materials:
+  - id: 110330013
+    count: 1
+  - id: 610511013
+    count: 10
+  - id: 610530010
+    count: 5
+  - id: 610610016
+    count: 7
+  - id: 610620016
+    count: 12
+  - id: 610710006
+    count: 22
+  race: light
+- id: 110330019
+  splendent_id: 110330021
+  materials:
+  - id: 110330014
+    count: 1
+  - id: 610511013
+    count: 10
+  - id: 610530010
+    count: 5
+  - id: 610610016
+    count: 7
+  - id: 610620016
+    count: 12
+  - id: 610710006
+    count: 22
+  race: dark
+- id: 110730015
+  splendent_id: 110730017
+  materials:
+  - id: 110730013
+    count: 1
+  - id: 610511013
+    count: 10
+  - id: 610530010
+    count: 5
+  - id: 610610016
+    count: 7
+  - id: 610620016
+    count: 12
+  - id: 610710006
+    count: 22
+  race: light
+- id: 110730019
+  splendent_id: 110730021
+  materials:
+  - id: 110730014
+    count: 1
+  - id: 610511013
+    count: 10
+  - id: 610530010
+    count: 5
+  - id: 610610016
+    count: 7
+  - id: 610620016
+    count: 12
+  - id: 610710006
+    count: 22
+  race: dark
+- id: 115030015
+  splendent_id: 115030017
+  materials:
+  - id: 115030013
+    count: 1
+  - id: 610511013
+    count: 10
+  - id: 610530010
+    count: 5
+  - id: 610610016
+    count: 7
+  - id: 610620016
+    count: 12
+  - id: 610710006
+    count: 22
+  race: light
+- id: 115030019
+  splendent_id: 115030021
+  materials:
+  - id: 115030014
+    count: 1
+  - id: 610511013
+    count: 10
+  - id: 610530010
+    count: 5
+  - id: 610610016
+    count: 7
+  - id: 610620016
+    count: 12
+  - id: 610710006
+    count: 22
+  race: dark
+- id: 110230016
+  splendent_id: 110230018
+  materials:
+  - id: 110230013
+    count: 2
+  - id: 610511013
+    count: 8
+  - id: 610511014
+    count: 14
+  - id: 610530010
+    count: 9
+  - id: 610610016
+    count: 12
+  - id: 610620016
+    count: 21
   - id: 610710007
-    splendent_id:
-    materials:
-      - id: 610511008
-        count: 2
-      - id: 630520002
-        count: 1
+    count: 29
+  race: light
+- id: 110230020
+  splendent_id: 110230022
+  materials:
+  - id: 110230014
+    count: 2
+  - id: 610511013
+    count: 8
+  - id: 610511014
+    count: 14
+  - id: 610530010
+    count: 9
+  - id: 610610016
+    count: 12
+  - id: 610620016
+    count: 21
+  - id: 610710007
+    count: 29
+  race: dark
+- id: 110130016
+  splendent_id: 110130018
+  materials:
+  - id: 110130013
+    count: 2
+  - id: 610511013
+    count: 8
+  - id: 610511014
+    count: 14
+  - id: 610530010
+    count: 9
+  - id: 610610016
+    count: 12
+  - id: 610620016
+    count: 21
+  - id: 610710007
+    count: 29
+  race: light
+- id: 110130020
+  splendent_id: 110130022
+  materials:
+  - id: 110130014
+    count: 2
+  - id: 610511013
+    count: 8
+  - id: 610511014
+    count: 14
+  - id: 610530010
+    count: 9
+  - id: 610610016
+    count: 12
+  - id: 610620016
+    count: 21
+  - id: 610710007
+    count: 29
+  race: dark
+- id: 110330016
+  splendent_id: 110330018
+  materials:
+  - id: 110330013
+    count: 2
+  - id: 610511013
+    count: 8
+  - id: 610511014
+    count: 14
+  - id: 610530010
+    count: 9
+  - id: 610610016
+    count: 12
+  - id: 610620016
+    count: 21
+  - id: 610710007
+    count: 29
+  race: light
+- id: 110330020
+  splendent_id: 110330022
+  materials:
+  - id: 110330014
+    count: 2
+  - id: 610511013
+    count: 8
+  - id: 610511014
+    count: 14
+  - id: 610530010
+    count: 9
+  - id: 610610016
+    count: 12
+  - id: 610620016
+    count: 21
+  - id: 610710007
+    count: 29
+  race: dark
+- id: 110730016
+  splendent_id: 110730018
+  materials:
+  - id: 110730013
+    count: 2
+  - id: 610511013
+    count: 8
+  - id: 610511014
+    count: 14
+  - id: 610530010
+    count: 9
+  - id: 610610016
+    count: 12
+  - id: 610620016
+    count: 21
+  - id: 610710007
+    count: 29
+  race: light
+- id: 110730020
+  splendent_id: 110730022
+  materials:
+  - id: 110730014
+    count: 2
+  - id: 610511013
+    count: 8
+  - id: 610511014
+    count: 14
+  - id: 610530010
+    count: 9
+  - id: 610610016
+    count: 12
+  - id: 610620016
+    count: 21
+  - id: 610710007
+    count: 29
+  race: dark
+- id: 115030016
+  splendent_id: 115030018
+  materials:
+  - id: 115030013
+    count: 2
+  - id: 610511013
+    count: 8
+  - id: 610511014
+    count: 14
+  - id: 610530010
+    count: 9
+  - id: 610610016
+    count: 12
+  - id: 610620016
+    count: 21
+  - id: 610710007
+    count: 29
+  race: light
+- id: 115030020
+  splendent_id: 115030022
+  materials:
+  - id: 115030014
+    count: 2
+  - id: 610511013
+    count: 8
+  - id: 610511014
+    count: 14
+  - id: 610530010
+    count: 9
+  - id: 610610016
+    count: 12
+  - id: 610620016
+    count: 21
+  - id: 610710007
+    count: 29
+  race: dark
+- id: 110230023
+  splendent_id: 110230045
+  materials:
+  - id: 110230013
+    count: 3
+  - id: 610511013
+    count: 6
+  - id: 610511014
+    count: 11
+  - id: 610511015
+    count: 21
+  - id: 610530010
+    count: 15
+  - id: 610610016
+    count: 21
+  - id: 610620016
+    count: 36
   - id: 610710008
-    splendent_id:
-    materials:
-      - id: 610511009
-        count: 2
-      - id: 630520003
-        count: 1
+    count: 41
+  race: light
+- id: 110230024
+  splendent_id: 110230046
+  materials:
+  - id: 110230014
+    count: 3
+  - id: 610511013
+    count: 6
+  - id: 610511014
+    count: 11
+  - id: 610511015
+    count: 21
+  - id: 610530010
+    count: 15
+  - id: 610610016
+    count: 21
+  - id: 610620016
+    count: 36
+  - id: 610710008
+    count: 41
+  race: dark
+- id: 110130023
+  splendent_id: 110130045
+  materials:
+  - id: 110130013
+    count: 3
+  - id: 610511013
+    count: 6
+  - id: 610511014
+    count: 11
+  - id: 610511015
+    count: 21
+  - id: 610530010
+    count: 15
+  - id: 610610016
+    count: 21
+  - id: 610620016
+    count: 36
+  - id: 610710008
+    count: 41
+  race: light
+- id: 110130024
+  splendent_id: 110130046
+  materials:
+  - id: 110130014
+    count: 3
+  - id: 610511013
+    count: 6
+  - id: 610511014
+    count: 11
+  - id: 610511015
+    count: 21
+  - id: 610530010
+    count: 15
+  - id: 610610016
+    count: 21
+  - id: 610620016
+    count: 36
+  - id: 610710008
+    count: 41
+  race: dark
+- id: 110330023
+  splendent_id: 110330045
+  materials:
+  - id: 110330013
+    count: 3
+  - id: 610511013
+    count: 6
+  - id: 610511014
+    count: 11
+  - id: 610511015
+    count: 21
+  - id: 610530010
+    count: 15
+  - id: 610610016
+    count: 21
+  - id: 610620016
+    count: 36
+  - id: 610710008
+    count: 41
+  race: light
+- id: 110330024
+  splendent_id: 110330046
+  materials:
+  - id: 110330014
+    count: 3
+  - id: 610511013
+    count: 6
+  - id: 610511014
+    count: 11
+  - id: 610511015
+    count: 21
+  - id: 610530010
+    count: 15
+  - id: 610610016
+    count: 21
+  - id: 610620016
+    count: 36
+  - id: 610710008
+    count: 41
+  race: dark
+- id: 110730023
+  splendent_id: 110730045
+  materials:
+  - id: 110730013
+    count: 3
+  - id: 610511013
+    count: 6
+  - id: 610511014
+    count: 11
+  - id: 610511015
+    count: 21
+  - id: 610530010
+    count: 15
+  - id: 610610016
+    count: 21
+  - id: 610620016
+    count: 36
+  - id: 610710008
+    count: 41
+  race: light
+- id: 110730024
+  splendent_id: 110730046
+  materials:
+  - id: 110730014
+    count: 3
+  - id: 610511013
+    count: 6
+  - id: 610511014
+    count: 11
+  - id: 610511015
+    count: 21
+  - id: 610530010
+    count: 15
+  - id: 610610016
+    count: 21
+  - id: 610620016
+    count: 36
+  - id: 610710008
+    count: 41
+  race: dark
+- id: 115030023
+  splendent_id: 115030045
+  materials:
+  - id: 115030013
+    count: 3
+  - id: 610511013
+    count: 6
+  - id: 610511014
+    count: 11
+  - id: 610511015
+    count: 21
+  - id: 610530010
+    count: 15
+  - id: 610610016
+    count: 21
+  - id: 610620016
+    count: 36
+  - id: 610710008
+    count: 41
+  race: light
+- id: 115030024
+  splendent_id: 115030046
+  materials:
+  - id: 115030014
+    count: 3
+  - id: 610511013
+    count: 6
+  - id: 610511014
+    count: 11
+  - id: 610511015
+    count: 21
+  - id: 610530010
+    count: 15
+  - id: 610610016
+    count: 21
+  - id: 610620016
+    count: 36
+  - id: 610710008
+    count: 41
+  race: dark
+- id: 110230087
+  splendent_id: 110230089
+  materials:
+  - id: 110230013
+    count: 4
+  - id: 610511013
+    count: 4
+  - id: 610511014
+    count: 8
+  - id: 610511015
+    count: 16
+  - id: 610511023
+    count: 18
+  - id: 610511028
+    count: 18
+  - id: 610530010
+    count: 26
+  - id: 610610016
+    count: 36
+  - id: 610620016
+    count: 62
+  - id: 610710014
+    count: 69
+  race: light
+- id: 110230088
+  splendent_id: 110230090
+  materials:
+  - id: 110230014
+    count: 4
+  - id: 610511013
+    count: 4
+  - id: 610511014
+    count: 8
+  - id: 610511015
+    count: 16
+  - id: 610511023
+    count: 18
+  - id: 610511028
+    count: 18
+  - id: 610530010
+    count: 26
+  - id: 610610016
+    count: 36
+  - id: 610620016
+    count: 62
+  - id: 610710014
+    count: 69
+  race: dark
+- id: 110130087
+  splendent_id: 110130089
+  materials:
+  - id: 110130013
+    count: 4
+  - id: 610511013
+    count: 4
+  - id: 610511014
+    count: 8
+  - id: 610511015
+    count: 16
+  - id: 610511023
+    count: 18
+  - id: 610511028
+    count: 18
+  - id: 610530010
+    count: 26
+  - id: 610610016
+    count: 36
+  - id: 610620016
+    count: 62
+  - id: 610710014
+    count: 69
+  race: light
+- id: 110130088
+  splendent_id: 110130090
+  materials:
+  - id: 110130014
+    count: 4
+  - id: 610511013
+    count: 4
+  - id: 610511014
+    count: 8
+  - id: 610511015
+    count: 16
+  - id: 610511023
+    count: 18
+  - id: 610511028
+    count: 18
+  - id: 610530010
+    count: 26
+  - id: 610610016
+    count: 36
+  - id: 610620016
+    count: 62
+  - id: 610710014
+    count: 69
+  race: dark
+- id: 110330087
+  splendent_id: 110330089
+  materials:
+  - id: 110330013
+    count: 4
+  - id: 610511013
+    count: 4
+  - id: 610511014
+    count: 8
+  - id: 610511015
+    count: 16
+  - id: 610511023
+    count: 18
+  - id: 610511028
+    count: 18
+  - id: 610530010
+    count: 26
+  - id: 610610016
+    count: 36
+  - id: 610620016
+    count: 62
+  - id: 610710014
+    count: 69
+  race: light
+- id: 110330088
+  splendent_id: 110330090
+  materials:
+  - id: 110330014
+    count: 4
+  - id: 610511013
+    count: 4
+  - id: 610511014
+    count: 8
+  - id: 610511015
+    count: 16
+  - id: 610511023
+    count: 18
+  - id: 610511028
+    count: 18
+  - id: 610530010
+    count: 26
+  - id: 610610016
+    count: 36
+  - id: 610620016
+    count: 62
+  - id: 610710014
+    count: 69
+  race: dark
+- id: 110730087
+  splendent_id: 110730089
+  materials:
+  - id: 110730013
+    count: 4
+  - id: 610511013
+    count: 4
+  - id: 610511014
+    count: 8
+  - id: 610511015
+    count: 16
+  - id: 610511023
+    count: 18
+  - id: 610511028
+    count: 18
+  - id: 610530010
+    count: 26
+  - id: 610610016
+    count: 36
+  - id: 610620016
+    count: 62
+  - id: 610710014
+    count: 69
+  race: light
+- id: 110730088
+  splendent_id: 110730090
+  materials:
+  - id: 110730014
+    count: 4
+  - id: 610511013
+    count: 4
+  - id: 610511014
+    count: 8
+  - id: 610511015
+    count: 16
+  - id: 610511023
+    count: 18
+  - id: 610511028
+    count: 18
+  - id: 610530010
+    count: 26
+  - id: 610610016
+    count: 36
+  - id: 610620016
+    count: 62
+  - id: 610710014
+    count: 69
+  race: dark
+- id: 115030085
+  splendent_id: 115030087
+  materials:
+  - id: 115030013
+    count: 4
+  - id: 610511013
+    count: 4
+  - id: 610511014
+    count: 8
+  - id: 610511015
+    count: 16
+  - id: 610511023
+    count: 18
+  - id: 610511028
+    count: 18
+  - id: 610530010
+    count: 26
+  - id: 610610016
+    count: 36
+  - id: 610620016
+    count: 62
+  - id: 610710014
+    count: 69
+  race: light
+- id: 115030086
+  splendent_id: 115030088
+  materials:
+  - id: 115030014
+    count: 4
+  - id: 610511013
+    count: 4
+  - id: 610511014
+    count: 8
+  - id: 610511015
+    count: 16
+  - id: 610511023
+    count: 18
+  - id: 610511028
+    count: 18
+  - id: 610530010
+    count: 26
+  - id: 610610016
+    count: 36
+  - id: 610620016
+    count: 62
+  - id: 610710014
+    count: 69
+  race: dark
+- id: 110220001
+  splendent_id: 110220006
+  materials:
+  - id: 110230013
+    count: 5
+  - id: 610511013
+    count: 18
+  - id: 610511014
+    count: 27
+  - id: 610511015
+    count: 42
+  - id: 610511019
+    count: 19
+  - id: 610530010
+    count: 50
+  - id: 610610016
+    count: 70
+  - id: 610620016
+    count: 121
   - id: 610710012
-    splendent_id:
-    materials:
-      - id: 610511018
-        count: 2
-      - id: 630520010
-        count: 1
+    count: 122
+  race: light
+- id: 110220002
+  splendent_id: 110220007
+  materials:
+  - id: 110230014
+    count: 5
+  - id: 610511013
+    count: 18
+  - id: 610511014
+    count: 27
+  - id: 610511015
+    count: 42
+  - id: 610511019
+    count: 19
+  - id: 610530010
+    count: 50
+  - id: 610610016
+    count: 70
+  - id: 610620016
+    count: 121
+  - id: 610710012
+    count: 122
+  race: dark
+- id: 110120001
+  splendent_id: 110120006
+  materials:
+  - id: 110130013
+    count: 5
+  - id: 610511013
+    count: 18
+  - id: 610511014
+    count: 27
+  - id: 610511015
+    count: 42
+  - id: 610511019
+    count: 19
+  - id: 610530010
+    count: 50
+  - id: 610610016
+    count: 70
+  - id: 610620016
+    count: 121
+  - id: 610710012
+    count: 122
+  race: light
+- id: 110120002
+  splendent_id: 110120007
+  materials:
+  - id: 110130014
+    count: 5
+  - id: 610511013
+    count: 18
+  - id: 610511014
+    count: 27
+  - id: 610511015
+    count: 42
+  - id: 610511019
+    count: 19
+  - id: 610530010
+    count: 50
+  - id: 610610016
+    count: 70
+  - id: 610620016
+    count: 121
+  - id: 610710012
+    count: 122
+  race: dark
+- id: 110320001
+  splendent_id: 110320006
+  materials:
+  - id: 110330013
+    count: 5
+  - id: 610511013
+    count: 18
+  - id: 610511014
+    count: 27
+  - id: 610511015
+    count: 42
+  - id: 610511019
+    count: 19
+  - id: 610530010
+    count: 50
+  - id: 610610016
+    count: 70
+  - id: 610620016
+    count: 121
+  - id: 610710012
+    count: 122
+  race: light
+- id: 110320002
+  splendent_id: 110320007
+  materials:
+  - id: 110330014
+    count: 5
+  - id: 610511013
+    count: 18
+  - id: 610511014
+    count: 27
+  - id: 610511015
+    count: 42
+  - id: 610511019
+    count: 19
+  - id: 610530010
+    count: 50
+  - id: 610610016
+    count: 70
+  - id: 610620016
+    count: 121
+  - id: 610710012
+    count: 122
+  race: dark
+- id: 110720001
+  splendent_id: 110720006
+  materials:
+  - id: 110730013
+    count: 5
+  - id: 610511013
+    count: 18
+  - id: 610511014
+    count: 27
+  - id: 610511015
+    count: 42
+  - id: 610511019
+    count: 19
+  - id: 610530010
+    count: 50
+  - id: 610610016
+    count: 70
+  - id: 610620016
+    count: 121
+  - id: 610710012
+    count: 122
+  race: light
+- id: 110720002
+  splendent_id: 110720007
+  materials:
+  - id: 110730014
+    count: 5
+  - id: 610511013
+    count: 18
+  - id: 610511014
+    count: 27
+  - id: 610511015
+    count: 42
+  - id: 610511019
+    count: 19
+  - id: 610530010
+    count: 50
+  - id: 610610016
+    count: 70
+  - id: 610620016
+    count: 121
+  - id: 610710012
+    count: 122
+  race: dark
+- id: 115020001
+  splendent_id: 115020006
+  materials:
+  - id: 115030013
+    count: 5
+  - id: 610511013
+    count: 18
+  - id: 610511014
+    count: 27
+  - id: 610511015
+    count: 42
+  - id: 610511019
+    count: 19
+  - id: 610530010
+    count: 50
+  - id: 610610016
+    count: 70
+  - id: 610620016
+    count: 121
+  - id: 610710012
+    count: 122
+  race: light
+- id: 115020002
+  splendent_id: 115020007
+  materials:
+  - id: 115030014
+    count: 5
+  - id: 610511013
+    count: 18
+  - id: 610511014
+    count: 27
+  - id: 610511015
+    count: 42
+  - id: 610511019
+    count: 19
+  - id: 610530010
+    count: 50
+  - id: 610610016
+    count: 70
+  - id: 610620016
+    count: 121
+  - id: 610710012
+    count: 122
+  race: dark
+- id: 110220017
+  splendent_id: 110220019
+  materials:
+  - id: 115030013
+    count: 8
+  - id: 610511013
+    count: 28
+  - id: 610511014
+    count: 48
+  - id: 610511015
+    count: 72
+  - id: 610511019
+    count: 30
+  - id: 610511023
+    count: 86
+  - id: 610511027
+    count: 55
+  - id: 610511028
+    count: 86
+  - id: 610530010
+    count: 100
+  - id: 610610016
+    count: 138
+  - id: 610620016
+    count: 238
+  - id: 610710016
+    count: 183
+  race: light
+- id: 110220018
+  splendent_id: 110220020
+  materials:
+  - id: 115030014
+    count: 8
+  - id: 610511013
+    count: 28
+  - id: 610511014
+    count: 48
+  - id: 610511015
+    count: 72
+  - id: 610511019
+    count: 30
+  - id: 610511023
+    count: 86
+  - id: 610511027
+    count: 55
+  - id: 610511028
+    count: 86
+  - id: 610530010
+    count: 100
+  - id: 610610016
+    count: 138
+  - id: 610620016
+    count: 238
+  - id: 610710016
+    count: 183
+  race: dark
+- id: 110120017
+  splendent_id: 110120019
+  materials:
+  - id: 115030013
+    count: 8
+  - id: 610511013
+    count: 28
+  - id: 610511014
+    count: 48
+  - id: 610511015
+    count: 72
+  - id: 610511019
+    count: 30
+  - id: 610511023
+    count: 86
+  - id: 610511027
+    count: 55
+  - id: 610511028
+    count: 86
+  - id: 610530010
+    count: 100
+  - id: 610610016
+    count: 138
+  - id: 610620016
+    count: 238
+  - id: 610710016
+    count: 183
+  race: light
+- id: 110120018
+  splendent_id: 110120020
+  materials:
+  - id: 115030014
+    count: 8
+  - id: 610511013
+    count: 28
+  - id: 610511014
+    count: 48
+  - id: 610511015
+    count: 72
+  - id: 610511019
+    count: 30
+  - id: 610511023
+    count: 86
+  - id: 610511027
+    count: 55
+  - id: 610511028
+    count: 86
+  - id: 610530010
+    count: 100
+  - id: 610610016
+    count: 138
+  - id: 610620016
+    count: 238
+  - id: 610710016
+    count: 183
+  race: dark
+- id: 110320017
+  splendent_id: 110320019
+  materials:
+  - id: 115030013
+    count: 8
+  - id: 610511013
+    count: 28
+  - id: 610511014
+    count: 48
+  - id: 610511015
+    count: 72
+  - id: 610511019
+    count: 30
+  - id: 610511023
+    count: 86
+  - id: 610511027
+    count: 55
+  - id: 610511028
+    count: 86
+  - id: 610530010
+    count: 100
+  - id: 610610016
+    count: 138
+  - id: 610620016
+    count: 238
+  - id: 610710016
+    count: 183
+  race: light
+- id: 110320018
+  splendent_id: 110320020
+  materials:
+  - id: 115030014
+    count: 8
+  - id: 610511013
+    count: 28
+  - id: 610511014
+    count: 48
+  - id: 610511015
+    count: 72
+  - id: 610511019
+    count: 30
+  - id: 610511023
+    count: 86
+  - id: 610511027
+    count: 55
+  - id: 610511028
+    count: 86
+  - id: 610530010
+    count: 100
+  - id: 610610016
+    count: 138
+  - id: 610620016
+    count: 238
+  - id: 610710016
+    count: 183
+  race: dark
+- id: 110720017
+  splendent_id: 110720019
+  materials:
+  - id: 115030013
+    count: 8
+  - id: 610511013
+    count: 28
+  - id: 610511014
+    count: 48
+  - id: 610511015
+    count: 72
+  - id: 610511019
+    count: 30
+  - id: 610511023
+    count: 86
+  - id: 610511027
+    count: 55
+  - id: 610511028
+    count: 86
+  - id: 610530010
+    count: 100
+  - id: 610610016
+    count: 138
+  - id: 610620016
+    count: 238
+  - id: 610710016
+    count: 183
+  race: light
+- id: 110720018
+  splendent_id: 110720020
+  materials:
+  - id: 115030014
+    count: 8
+  - id: 610511013
+    count: 28
+  - id: 610511014
+    count: 48
+  - id: 610511015
+    count: 72
+  - id: 610511019
+    count: 30
+  - id: 610511023
+    count: 86
+  - id: 610511027
+    count: 55
+  - id: 610511028
+    count: 86
+  - id: 610530010
+    count: 100
+  - id: 610610016
+    count: 138
+  - id: 610620016
+    count: 238
+  - id: 610710016
+    count: 183
+  race: dark
+- id: 115020017
+  splendent_id: 115020019
+  materials:
+  - id: 115030013
+    count: 8
+  - id: 610511013
+    count: 28
+  - id: 610511014
+    count: 48
+  - id: 610511015
+    count: 72
+  - id: 610511019
+    count: 30
+  - id: 610511023
+    count: 86
+  - id: 610511027
+    count: 55
+  - id: 610511028
+    count: 86
+  - id: 610530010
+    count: 100
+  - id: 610610016
+    count: 138
+  - id: 610620016
+    count: 238
+  - id: 610710016
+    count: 183
+  race: light
+- id: 115020018
+  splendent_id: 115020020
+  materials:
+  - id: 115030014
+    count: 8
+  - id: 610511013
+    count: 28
+  - id: 610511014
+    count: 48
+  - id: 610511015
+    count: 72
+  - id: 610511019
+    count: 30
+  - id: 610511023
+    count: 86
+  - id: 610511027
+    count: 55
+  - id: 610511028
+    count: 86
+  - id: 610530010
+    count: 100
+  - id: 610610016
+    count: 138
+  - id: 610620016
+    count: 238
+  - id: 610710016
+    count: 183
+  race: dark
+- id: 610710001
+  splendent_id:
+  materials:
+  - id: 610620013
+    count: 2
+  - id: 630541001
+    count: 1
+- id: 610720011
+  splendent_id:
+  materials:
+  - id: 610530011
+    count: 2
+- id: 610710009
+  splendent_id:
+  materials:
+  - id: 610511004
+    count: 2
+  - id: 630520004
+    count: 1
+- id: 610710010
+  splendent_id:
+  materials:
+  - id: 610511005
+    count: 2
+  - id: 630520005
+    count: 1
+- id: 610710011
+  splendent_id:
+  materials:
+  - id: 610511006
+    count: 2
+  - id: 630520006
+    count: 1
+- id: 610710013
+  splendent_id:
+  materials:
+  - id: 610511017
+    count: 2
+  - id: 630520011
+    count: 1
+- id: 610710015
+  splendent_id:
+  materials:
+  - id: 610511021
+    count: 2
+  - id: 630520006
+    count: 2
+- id: 610710017
+  splendent_id:
+  materials:
+  - id: 610511025
+    count: 2
+  - id: 630520011
+    count: 2
+- id: 210160023
+  splendent_id: 210150014
+  materials:
+  - id: 610530001
+    count: 3
+  - id: 610610013
+    count: 1
+  - id: 610710001
+    count: 2
   - id: 610720011
-    splendent_id:
-    materials:
-      - id: 610530011
-        count: 2
+    count: 4
+  race: light
+- id: 210160024
+  splendent_id: 210150016
+  materials:
+  - id: 610530001
+    count: 3
+  - id: 610610013
+    count: 1
+  - id: 610710001
+    count: 2
+  - id: 610720011
+    count: 4
+  race: dark
+- id: 210260023
+  splendent_id: 210250014
+  materials:
+  - id: 610530001
+    count: 2
+  - id: 610610013
+    count: 1
+  - id: 610710001
+    count: 2
+  - id: 610720011
+    count: 3
+  race: light
+- id: 210260024
+  splendent_id: 210250016
+  materials:
+  - id: 610530001
+    count: 2
+  - id: 610610013
+    count: 1
+  - id: 610710001
+    count: 2
+  - id: 610720011
+    count: 3
+  race: dark
+- id: 210360023
+  splendent_id: 210350014
+  materials:
+  - id: 610530001
+    count: 2
+  - id: 610610013
+    count: 1
+  - id: 610710001
+    count: 1
+  - id: 610720011
+    count: 3
+  race: light
+- id: 210360024
+  splendent_id: 210350016
+  materials:
+  - id: 610530001
+    count: 2
+  - id: 610610013
+    count: 1
+  - id: 610710001
+    count: 1
+  - id: 610720011
+    count: 3
+  race: dark
+- id: 210460023
+  splendent_id: 210450014
+  materials:
+  - id: 610530001
+    count: 3
+  - id: 610610013
+    count: 1
+  - id: 610710001
+    count: 1
+  - id: 610720011
+    count: 3
+  race: light
+- id: 210460024
+  splendent_id: 210450016
+  materials:
+  - id: 610530001
+    count: 3
+  - id: 610610013
+    count: 1
+  - id: 610710001
+    count: 1
+  - id: 610720011
+    count: 3
+  race: dark
+- id: 210560023
+  splendent_id: 210550014
+  materials:
+  - id: 610530001
+    count: 2
+  - id: 610610013
+    count: 1
+  - id: 610710001
+    count: 1
+  - id: 610720011
+    count: 2
+  race: light
+- id: 210560024
+  splendent_id: 210550016
+  materials:
+  - id: 610530001
+    count: 2
+  - id: 610610013
+    count: 1
+  - id: 610710001
+    count: 1
+  - id: 610720011
+    count: 2
+  race: dark
+- id: 210660023
+  splendent_id: 210650014
+  materials:
+  - id: 610530001
+    count: 2
+  - id: 610610013
+    count: 1
+  - id: 610710001
+    count: 1
+  - id: 610720011
+    count: 3
+  race: light
+- id: 210660024
+  splendent_id: 210650016
+  materials:
+  - id: 610530001
+    count: 2
+  - id: 610610013
+    count: 1
+  - id: 610710001
+    count: 1
+  - id: 610720011
+    count: 3
+  race: dark
+- id: 210760023
+  splendent_id: 210750014
+  materials:
+  - id: 610530001
+    count: 2
+  - id: 610610013
+    count: 1
+  - id: 610710001
+    count: 1
+  - id: 610720011
+    count: 2
+  race: light
+- id: 210760024
+  splendent_id: 210750016
+  materials:
+  - id: 610530001
+    count: 2
+  - id: 610610013
+    count: 1
+  - id: 610710001
+    count: 1
+  - id: 610720011
+    count: 2
+  race: dark
+- id: 210150015
+  splendent_id: 210140012
+  materials:
+  - id: 210150014
+    count: 1
+  - id: 610530005
+    count: 3
+  - id: 610610014
+    count: 2
+  - id: 610620014
+    count: 4
+  race: light
+- id: 210150017
+  splendent_id: 210140014
+  materials:
+  - id: 210150016
+    count: 1
+  - id: 610530005
+    count: 3
+  - id: 610610014
+    count: 2
+  - id: 610620014
+    count: 4
+  race: dark
+- id: 210250015
+  splendent_id: 210240012
+  materials:
+  - id: 210250014
+    count: 1
+  - id: 610530005
+    count: 2
+  - id: 610610014
+    count: 2
+  - id: 610620014
+    count: 3
+  race: light
+- id: 210250017
+  splendent_id: 210240014
+  materials:
+  - id: 210250016
+    count: 1
+  - id: 610530005
+    count: 2
+  - id: 610610014
+    count: 2
+  - id: 610620014
+    count: 3
+  race: dark
+- id: 210350015
+  splendent_id: 210340012
+  materials:
+  - id: 210350014
+    count: 1
+  - id: 610530005
+    count: 2
+  - id: 610610014
+    count: 1
+  - id: 610620014
+    count: 3
+  race: light
+- id: 210350017
+  splendent_id: 210340014
+  materials:
+  - id: 210350016
+    count: 1
+  - id: 610530005
+    count: 2
+  - id: 610610014
+    count: 1
+  - id: 610620014
+    count: 3
+  race: dark
+- id: 210450015
+  splendent_id: 210440012
+  materials:
+  - id: 210450014
+    count: 1
+  - id: 610530005
+    count: 2
+  - id: 610610014
+    count: 1
+  - id: 610620014
+    count: 3
+  race: light
+- id: 210450017
+  splendent_id: 210440014
+  materials:
+  - id: 210450016
+    count: 1
+  - id: 610530005
+    count: 2
+  - id: 610610014
+    count: 1
+  - id: 610620014
+    count: 3
+  race: dark
+- id: 210550015
+  splendent_id: 210540012
+  materials:
+  - id: 210550014
+    count: 1
+  - id: 610530005
+    count: 2
+  - id: 610610014
+    count: 1
+  - id: 610620014
+    count: 2
+  race: light
+- id: 210550017
+  splendent_id: 210540014
+  materials:
+  - id: 210550016
+    count: 1
+  - id: 610530005
+    count: 2
+  - id: 610610014
+    count: 1
+  - id: 610620014
+    count: 2
+  race: dark
+- id: 210650015
+  splendent_id: 210640012
+  materials:
+  - id: 210650014
+    count: 1
+  - id: 610530005
+    count: 2
+  - id: 610610014
+    count: 1
+  - id: 610620014
+    count: 3
+  race: light
+- id: 210650017
+  splendent_id: 210640014
+  materials:
+  - id: 210650016
+    count: 1
+  - id: 610530005
+    count: 2
+  - id: 610610014
+    count: 1
+  - id: 610620014
+    count: 3
+  race: dark
+- id: 210750015
+  splendent_id: 210740012
+  materials:
+  - id: 210750014
+    count: 1
+  - id: 610530005
+    count: 2
+  - id: 610610014
+    count: 1
+  - id: 610620014
+    count: 2
+  race: light
+- id: 210750017
+  splendent_id: 210740014
+  materials:
+  - id: 210750016
+    count: 1
+  - id: 610530005
+    count: 2
+  - id: 610610014
+    count: 1
+  - id: 610620014
+    count: 2
+  race: dark
+- id: 210140013
+  splendent_id: 210130013
+  materials:
+  - id: 210140012
+    count: 1
+  - id: 610530008
+    count: 3
+  - id: 610610015
+    count: 3
+  - id: 610620015
+    count: 5
+  race: light
+- id: 210140015
+  splendent_id: 210130014
+  materials:
+  - id: 210140014
+    count: 1
+  - id: 610530008
+    count: 3
+  - id: 610610015
+    count: 3
+  - id: 610620015
+    count: 5
+  race: dark
+- id: 210240013
+  splendent_id: 210230013
+  materials:
+  - id: 210240012
+    count: 1
+  - id: 610530008
+    count: 2
+  - id: 610610015
+    count: 2
+  - id: 610620015
+    count: 4
+  race: light
+- id: 210240015
+  splendent_id: 210230014
+  materials:
+  - id: 210240014
+    count: 1
+  - id: 610530008
+    count: 2
+  - id: 610610015
+    count: 2
+  - id: 610620015
+    count: 4
+  race: dark
+- id: 210340013
+  splendent_id: 210330013
+  materials:
+  - id: 210340012
+    count: 1
+  - id: 610530008
+    count: 2
+  - id: 610610015
+    count: 2
+  - id: 610620015
+    count: 3
+  race: light
+- id: 210340015
+  splendent_id: 210330014
+  materials:
+  - id: 210340014
+    count: 1
+  - id: 610530008
+    count: 2
+  - id: 610610015
+    count: 2
+  - id: 610620015
+    count: 3
+  race: dark
+- id: 210440013
+  splendent_id: 210430013
+  materials:
+  - id: 210440012
+    count: 1
+  - id: 610530008
+    count: 2
+  - id: 610610015
+    count: 2
+  - id: 610620015
+    count: 3
+  race: light
+- id: 210440015
+  splendent_id: 210430014
+  materials:
+  - id: 210440014
+    count: 1
+  - id: 610530008
+    count: 2
+  - id: 610610015
+    count: 2
+  - id: 610620015
+    count: 3
+  race: dark
+- id: 210540013
+  splendent_id: 210530013
+  materials:
+  - id: 210540012
+    count: 1
+  - id: 610530008
+    count: 2
+  - id: 610610015
+    count: 2
+  - id: 610620015
+    count: 3
+  race: light
+- id: 210540015
+  splendent_id: 210530014
+  materials:
+  - id: 210540014
+    count: 1
+  - id: 610530008
+    count: 2
+  - id: 610610015
+    count: 2
+  - id: 610620015
+    count: 3
+  race: dark
+- id: 210640013
+  splendent_id: 210630013
+  materials:
+  - id: 210640012
+    count: 1
+  - id: 610530008
+    count: 2
+  - id: 610610015
+    count: 2
+  - id: 610620015
+    count: 3
+  race: light
+- id: 210640015
+  splendent_id: 210630014
+  materials:
+  - id: 210640014
+    count: 1
+  - id: 610530008
+    count: 2
+  - id: 610610015
+    count: 2
+  - id: 610620015
+    count: 3
+  race: dark
+- id: 210740013
+  splendent_id: 210730013
+  materials:
+  - id: 210740012
+    count: 1
+  - id: 610530008
+    count: 2
+  - id: 610610015
+    count: 2
+  - id: 610620015
+    count: 3
+  race: light
+- id: 210740015
+  splendent_id: 210730014
+  materials:
+  - id: 210740014
+    count: 1
+  - id: 610530008
+    count: 2
+  - id: 610610015
+    count: 2
+  - id: 610620015
+    count: 3
+  race: dark
+- id: 210130015
+  splendent_id: 210130017
+  materials:
+  - id: 210130013
+    count: 1
+  - id: 610511013
+    count: 7
+  - id: 610530010
+    count: 3
+  - id: 610610016
+    count: 5
+  - id: 610620016
+    count: 8
   - id: 610710009
-    splendent_id:
-    materials:
-      - id: 610511004
-        count: 2
-      - id: 630520004
-        count: 1
+    count: 15
+  race: light
+- id: 210130019
+  splendent_id: 210130021
+  materials:
+  - id: 210130014
+    count: 1
+  - id: 610511013
+    count: 7
+  - id: 610530010
+    count: 3
+  - id: 610610016
+    count: 5
+  - id: 610620016
+    count: 8
+  - id: 610710009
+    count: 15
+  race: dark
+- id: 210230015
+  splendent_id: 210230017
+  materials:
+  - id: 210230013
+    count: 1
+  - id: 610511013
+    count: 5
+  - id: 610530010
+    count: 2
+  - id: 610610016
+    count: 4
+  - id: 610620016
+    count: 6
+  - id: 610710009
+    count: 11
+  race: light
+- id: 210230019
+  splendent_id: 210230021
+  materials:
+  - id: 210230014
+    count: 1
+  - id: 610511013
+    count: 5
+  - id: 610530010
+    count: 2
+  - id: 610610016
+    count: 4
+  - id: 610620016
+    count: 6
+  - id: 610710009
+    count: 11
+  race: dark
+- id: 210330015
+  splendent_id: 210330017
+  materials:
+  - id: 210330013
+    count: 1
+  - id: 610511013
+    count: 4
+  - id: 610530010
+    count: 2
+  - id: 610610016
+    count: 3
+  - id: 610620016
+    count: 5
+  - id: 610710009
+    count: 9
+  race: light
+- id: 210330019
+  splendent_id: 210330021
+  materials:
+  - id: 210330014
+    count: 1
+  - id: 610511013
+    count: 4
+  - id: 610530010
+    count: 2
+  - id: 610610016
+    count: 3
+  - id: 610620016
+    count: 5
+  - id: 610710009
+    count: 9
+  race: dark
+- id: 210430015
+  splendent_id: 210430017
+  materials:
+  - id: 210430013
+    count: 1
+  - id: 610511013
+    count: 4
+  - id: 610530010
+    count: 2
+  - id: 610610016
+    count: 3
+  - id: 610620016
+    count: 5
+  - id: 610710009
+    count: 9
+  race: light
+- id: 210430019
+  splendent_id: 210430021
+  materials:
+  - id: 210430014
+    count: 1
+  - id: 610511013
+    count: 4
+  - id: 610530010
+    count: 2
+  - id: 610610016
+    count: 3
+  - id: 610620016
+    count: 5
+  - id: 610710009
+    count: 9
+  race: dark
+- id: 210530015
+  splendent_id: 210530017
+  materials:
+  - id: 210530013
+    count: 1
+  - id: 610511013
+    count: 3
+  - id: 610530010
+    count: 2
+  - id: 610610016
+    count: 2
+  - id: 610620016
+    count: 4
+  - id: 610710009
+    count: 7
+  race: light
+- id: 210530019
+  splendent_id: 210530021
+  materials:
+  - id: 210530014
+    count: 1
+  - id: 610511013
+    count: 3
+  - id: 610530010
+    count: 2
+  - id: 610610016
+    count: 2
+  - id: 610620016
+    count: 4
+  - id: 610710009
+    count: 7
+  race: dark
+- id: 210630015
+  splendent_id: 210630017
+  materials:
+  - id: 210630013
+    count: 1
+  - id: 610511013
+    count: 4
+  - id: 610530010
+    count: 3
+  - id: 610610016
+    count: 3
+  - id: 610620016
+    count: 5
+  - id: 610710009
+    count: 9
+  race: light
+- id: 210630019
+  splendent_id: 210630021
+  materials:
+  - id: 210630014
+    count: 1
+  - id: 610511013
+    count: 4
+  - id: 610530010
+    count: 3
+  - id: 610610016
+    count: 3
+  - id: 610620016
+    count: 5
+  - id: 610710009
+    count: 9
+  race: dark
+- id: 210730015
+  splendent_id: 210730017
+  materials:
+  - id: 210730013
+    count: 1
+  - id: 610511013
+    count: 3
+  - id: 610530010
+    count: 2
+  - id: 610610016
+    count: 2
+  - id: 610620016
+    count: 4
+  - id: 610710009
+    count: 7
+  race: light
+- id: 210730019
+  splendent_id: 210730021
+  materials:
+  - id: 210730014
+    count: 1
+  - id: 610511013
+    count: 3
+  - id: 610530010
+    count: 2
+  - id: 610610016
+    count: 2
+  - id: 610620016
+    count: 4
+  - id: 610710009
+    count: 7
+  race: dark
+- id: 210130016
+  splendent_id: 210130018
+  materials:
+  - id: 210130013
+    count: 2
+  - id: 610511013
+    count: 5
+  - id: 610511014
+    count: 9
+  - id: 610530010
+    count: 6
+  - id: 610610016
+    count: 8
+  - id: 610620016
+    count: 14
   - id: 610710010
-    splendent_id:
-    materials:
-      - id: 610511005
-        count: 2
-      - id: 630520005
-        count: 1
+    count: 19
+  race: light
+- id: 210130020
+  splendent_id: 210130022
+  materials:
+  - id: 210130014
+    count: 2
+  - id: 610511013
+    count: 5
+  - id: 610511014
+    count: 9
+  - id: 610530010
+    count: 6
+  - id: 610610016
+    count: 8
+  - id: 610620016
+    count: 14
+  - id: 610710010
+    count: 19
+  race: dark
+- id: 210230016
+  splendent_id: 210230018
+  materials:
+  - id: 210230013
+    count: 2
+  - id: 610511013
+    count: 4
+  - id: 610511014
+    count: 7
+  - id: 610530010
+    count: 4
+  - id: 610610016
+    count: 6
+  - id: 610620016
+    count: 10
+  - id: 610710010
+    count: 14
+  race: light
+- id: 210230020
+  splendent_id: 210230022
+  materials:
+  - id: 210230014
+    count: 2
+  - id: 610511013
+    count: 4
+  - id: 610511014
+    count: 7
+  - id: 610530010
+    count: 4
+  - id: 610610016
+    count: 6
+  - id: 610620016
+    count: 10
+  - id: 610710010
+    count: 14
+  race: dark
+- id: 210330016
+  splendent_id: 210330018
+  materials:
+  - id: 210330013
+    count: 2
+  - id: 610511013
+    count: 3
+  - id: 610511014
+    count: 6
+  - id: 610530010
+    count: 3
+  - id: 610610016
+    count: 5
+  - id: 610620016
+    count: 8
+  - id: 610710010
+    count: 12
+  race: light
+- id: 210330020
+  splendent_id: 210330022
+  materials:
+  - id: 210330014
+    count: 2
+  - id: 610511013
+    count: 3
+  - id: 610511014
+    count: 6
+  - id: 610530010
+    count: 3
+  - id: 610610016
+    count: 5
+  - id: 610620016
+    count: 8
+  - id: 610710010
+    count: 12
+  race: dark
+- id: 210430016
+  splendent_id: 210430018
+  materials:
+  - id: 210430013
+    count: 2
+  - id: 610511013
+    count: 3
+  - id: 610511014
+    count: 6
+  - id: 610530010
+    count: 3
+  - id: 610610016
+    count: 5
+  - id: 610620016
+    count: 8
+  - id: 610710010
+    count: 12
+  race: light
+- id: 210430020
+  splendent_id: 210430022
+  materials:
+  - id: 210430014
+    count: 2
+  - id: 610511013
+    count: 3
+  - id: 610511014
+    count: 6
+  - id: 610530010
+    count: 3
+  - id: 610610016
+    count: 5
+  - id: 610620016
+    count: 8
+  - id: 610710010
+    count: 12
+  race: dark
+- id: 210530016
+  splendent_id: 210530018
+  materials:
+  - id: 210530013
+    count: 2
+  - id: 610511013
+    count: 2
+  - id: 610511014
+    count: 5
+  - id: 610530010
+    count: 2
+  - id: 610610016
+    count: 4
+  - id: 610620016
+    count: 6
+  - id: 610710010
+    count: 10
+  race: light
+- id: 210530020
+  splendent_id: 210530022
+  materials:
+  - id: 210530014
+    count: 2
+  - id: 610511013
+    count: 2
+  - id: 610511014
+    count: 5
+  - id: 610530010
+    count: 2
+  - id: 610610016
+    count: 4
+  - id: 610620016
+    count: 6
+  - id: 610710010
+    count: 10
+  race: dark
+- id: 210630016
+  splendent_id: 210630018
+  materials:
+  - id: 210630013
+    count: 2
+  - id: 610511013
+    count: 2
+  - id: 610511014
+    count: 6
+  - id: 610530010
+    count: 2
+  - id: 610610016
+    count: 5
+  - id: 610620016
+    count: 7
+  - id: 610710010
+    count: 10
+  race: light
+- id: 210630020
+  splendent_id: 210630022
+  materials:
+  - id: 210630014
+    count: 2
+  - id: 610511013
+    count: 2
+  - id: 610511014
+    count: 6
+  - id: 610530010
+    count: 2
+  - id: 610610016
+    count: 5
+  - id: 610620016
+    count: 7
+  - id: 610710010
+    count: 10
+  race: dark
+- id: 210730016
+  splendent_id: 210730018
+  materials:
+  - id: 210730013
+    count: 2
+  - id: 610511013
+    count: 2
+  - id: 610511014
+    count: 5
+  - id: 610530010
+    count: 2
+  - id: 610610016
+    count: 4
+  - id: 610620016
+    count: 6
+  - id: 610710010
+    count: 10
+  race: light
+- id: 210730020
+  splendent_id: 210730022
+  materials:
+  - id: 210730014
+    count: 2
+  - id: 610511013
+    count: 2
+  - id: 610511014
+    count: 5
+  - id: 610530010
+    count: 2
+  - id: 610610016
+    count: 4
+  - id: 610620016
+    count: 6
+  - id: 610710010
+    count: 10
+  race: dark
+- id: 210130023
+  splendent_id: 210130040
+  materials:
+  - id: 210130013
+    count: 3
+  - id: 610511013
+    count: 4
+  - id: 610511014
+    count: 7
+  - id: 610511015
+    count: 14
+  - id: 610530010
+    count: 10
+  - id: 610610016
+    count: 14
+  - id: 610620016
+    count: 24
   - id: 610710011
-    splendent_id:
-    materials:
-      - id: 610511006
-        count: 2
-      - id: 630520006
-        count: 1
+    count: 27
+  race: light
+- id: 210130024
+  splendent_id: 210130041
+  materials:
+  - id: 210130014
+    count: 3
+  - id: 610511013
+    count: 4
+  - id: 610511014
+    count: 7
+  - id: 610511015
+    count: 14
+  - id: 610530010
+    count: 10
+  - id: 610610016
+    count: 14
+  - id: 610620016
+    count: 24
+  - id: 610710011
+    count: 27
+  race: dark
+- id: 210230023
+  splendent_id: 210230040
+  materials:
+  - id: 210230013
+    count: 3
+  - id: 610511013
+    count: 3
+  - id: 610511014
+    count: 5
+  - id: 610511015
+    count: 11
+  - id: 610530010
+    count: 8
+  - id: 610610016
+    count: 11
+  - id: 610620016
+    count: 18
+  - id: 610710011
+    count: 20
+  race: light
+- id: 210230024
+  splendent_id: 210230041
+  materials:
+  - id: 210230014
+    count: 3
+  - id: 610511013
+    count: 3
+  - id: 610511014
+    count: 5
+  - id: 610511015
+    count: 11
+  - id: 610530010
+    count: 8
+  - id: 610610016
+    count: 11
+  - id: 610620016
+    count: 18
+  - id: 610710011
+    count: 20
+  race: dark
+- id: 210330023
+  splendent_id: 210330040
+  materials:
+  - id: 210330013
+    count: 3
+  - id: 610511013
+    count: 2
+  - id: 610511014
+    count: 4
+  - id: 610511015
+    count: 9
+  - id: 610530010
+    count: 7
+  - id: 610610016
+    count: 9
+  - id: 610620016
+    count: 15
+  - id: 610710011
+    count: 17
+  race: light
+- id: 210330024
+  splendent_id: 210330041
+  materials:
+  - id: 210330014
+    count: 3
+  - id: 610511013
+    count: 2
+  - id: 610511014
+    count: 4
+  - id: 610511015
+    count: 9
+  - id: 610530010
+    count: 7
+  - id: 610610016
+    count: 9
+  - id: 610620016
+    count: 15
+  - id: 610710011
+    count: 17
+  race: dark
+- id: 210430023
+  splendent_id: 210430040
+  materials:
+  - id: 210430013
+    count: 3
+  - id: 610511013
+    count: 2
+  - id: 610511014
+    count: 4
+  - id: 610511015
+    count: 9
+  - id: 610530010
+    count: 7
+  - id: 610610016
+    count: 9
+  - id: 610620016
+    count: 15
+  - id: 610710011
+    count: 17
+  race: light
+- id: 210430024
+  splendent_id: 210430041
+  materials:
+  - id: 210430014
+    count: 3
+  - id: 610511013
+    count: 2
+  - id: 610511014
+    count: 4
+  - id: 610511015
+    count: 9
+  - id: 610530010
+    count: 7
+  - id: 610610016
+    count: 9
+  - id: 610620016
+    count: 15
+  - id: 610710011
+    count: 17
+  race: dark
+- id: 210530023
+  splendent_id: 210530040
+  materials:
+  - id: 210530013
+    count: 3
+  - id: 610511013
+    count: 2
+  - id: 610511014
+    count: 3
+  - id: 610511015
+    count: 7
+  - id: 610530010
+    count: 6
+  - id: 610610016
+    count: 7
+  - id: 610620016
+    count: 12
+  - id: 610710011
+    count: 14
+  race: light
+- id: 210530024
+  splendent_id: 210530041
+  materials:
+  - id: 210530014
+    count: 3
+  - id: 610511013
+    count: 2
+  - id: 610511014
+    count: 3
+  - id: 610511015
+    count: 7
+  - id: 610530010
+    count: 6
+  - id: 610610016
+    count: 7
+  - id: 610620016
+    count: 12
+  - id: 610710011
+    count: 14
+  race: dark
+- id: 210630023
+  splendent_id: 210630040
+  materials:
+  - id: 210630013
+    count: 3
+  - id: 610511013
+    count: 2
+  - id: 610511014
+    count: 4
+  - id: 610511015
+    count: 9
+  - id: 610530010
+    count: 7
+  - id: 610610016
+    count: 9
+  - id: 610620016
+    count: 15
+  - id: 610710011
+    count: 17
+  race: light
+- id: 210630024
+  splendent_id: 210630041
+  materials:
+  - id: 210630014
+    count: 3
+  - id: 610511013
+    count: 2
+  - id: 610511014
+    count: 4
+  - id: 610511015
+    count: 9
+  - id: 610530010
+    count: 7
+  - id: 610610016
+    count: 9
+  - id: 610620016
+    count: 15
+  - id: 610710011
+    count: 17
+  race: dark
+- id: 210730023
+  splendent_id: 210730040
+  materials:
+  - id: 210730013
+    count: 3
+  - id: 610511013
+    count: 2
+  - id: 610511014
+    count: 3
+  - id: 610511015
+    count: 7
+  - id: 610530010
+    count: 6
+  - id: 610610016
+    count: 7
+  - id: 610620016
+    count: 12
+  - id: 610710011
+    count: 14
+  race: light
+- id: 210730024
+  splendent_id: 210730041
+  materials:
+  - id: 210730014
+    count: 3
+  - id: 610511013
+    count: 2
+  - id: 610511014
+    count: 3
+  - id: 610511015
+    count: 7
+  - id: 610530010
+    count: 6
+  - id: 610610016
+    count: 7
+  - id: 610620016
+    count: 12
+  - id: 610710011
+    count: 14
+  race: dark
+- id: 210120001
+  splendent_id: 210120006
+  materials:
+  - id: 210130013
+    count: 5
+  - id: 610511013
+    count: 12
+  - id: 610511014
+    count: 18
+  - id: 610511015
+    count: 28
+  - id: 610511019
+    count: 13
+  - id: 610530010
+    count: 33
+  - id: 610610016
+    count: 47
+  - id: 610620016
+    count: 81
   - id: 610710013
-    splendent_id:
-    materials:
-      - id: 610511017
-        count: 2
-      - id: 630520011
-        count: 1
-  - id: 610730016
-    splendent_id:
-    materials:
-      - id: 610660025
-        count: 2
-      - id: 630542001
-        count: 1
-  - id: 610730021
-    splendent_id:
-    materials:
-      - id: 610660027
-        count: 2
-      - id: 630542001
-        count: 1
-  - id: 610730020
-    splendent_id:
-    materials:
-      - id: 610660026
-        count: 2
-      - id: 630542001
-        count: 1
-  - id: 610730006
-    splendent_id:
-    materials:
-      - id: 610650011
-        count: 2
-      - id: 630542005
-        count: 1
-  - id: 610740015
-    splendent_id:
-    materials:
-      - id: 610530014
-        count: 2
-      - id: 630543005
-        count: 1
-  - id: 610730022
-    splendent_id:
-    materials:
-      - id: 610511001
-        count: 2
-      - id: 630520007
-        count: 1
-  - id: 610730023
-    splendent_id:
-    materials:
-      - id: 610511002
-        count: 2
-      - id: 630520008
-        count: 1
-  - id: 610730024
-    splendent_id:
-    materials:
-      - id: 610511003
-        count: 2
-      - id: 630520009
-        count: 1
-  - id: 610730025
-    splendent_id:
-    materials:
-      - id: 610511016
-        count: 2
-      - id: 630520012
-        count: 1
+    count: 81
+  race: light
+- id: 210120002
+  splendent_id: 210120007
+  materials:
+  - id: 210130014
+    count: 5
+  - id: 610511013
+    count: 12
+  - id: 610511014
+    count: 18
+  - id: 610511015
+    count: 28
+  - id: 610511019
+    count: 13
+  - id: 610530010
+    count: 33
+  - id: 610610016
+    count: 47
+  - id: 610620016
+    count: 81
+  - id: 610710013
+    count: 81
+  race: dark
+- id: 210220001
+  splendent_id: 210220006
+  materials:
+  - id: 210230013
+    count: 5
+  - id: 610511013
+    count: 9
+  - id: 610511014
+    count: 14
+  - id: 610511015
+    count: 21
+  - id: 610511019
+    count: 10
+  - id: 610530010
+    count: 25
+  - id: 610610016
+    count: 35
+  - id: 610620016
+    count: 61
+  - id: 610710013
+    count: 61
+  race: light
+- id: 210220002
+  splendent_id: 210220007
+  materials:
+  - id: 210230014
+    count: 5
+  - id: 610511013
+    count: 9
+  - id: 610511014
+    count: 14
+  - id: 610511015
+    count: 21
+  - id: 610511019
+    count: 10
+  - id: 610530010
+    count: 25
+  - id: 610610016
+    count: 35
+  - id: 610620016
+    count: 61
+  - id: 610710013
+    count: 61
+  race: dark
+- id: 210320001
+  splendent_id: 210320006
+  materials:
+  - id: 210330013
+    count: 5
+  - id: 610511013
+    count: 7
+  - id: 610511014
+    count: 12
+  - id: 610511015
+    count: 17
+  - id: 610511019
+    count: 8
+  - id: 610530010
+    count: 21
+  - id: 610610016
+    count: 29
+  - id: 610620016
+    count: 51
+  - id: 610710013
+    count: 51
+  race: light
+- id: 210320002
+  splendent_id: 210320007
+  materials:
+  - id: 210330014
+    count: 5
+  - id: 610511013
+    count: 7
+  - id: 610511014
+    count: 12
+  - id: 610511015
+    count: 17
+  - id: 610511019
+    count: 8
+  - id: 610530010
+    count: 21
+  - id: 610610016
+    count: 29
+  - id: 610620016
+    count: 51
+  - id: 610710013
+    count: 51
+  race: dark
+- id: 210420001
+  splendent_id: 210420006
+  materials:
+  - id: 210430013
+    count: 5
+  - id: 610511013
+    count: 7
+  - id: 610511014
+    count: 12
+  - id: 610511015
+    count: 17
+  - id: 610511019
+    count: 8
+  - id: 610530010
+    count: 21
+  - id: 610610016
+    count: 29
+  - id: 610620016
+    count: 51
+  - id: 610710013
+    count: 51
+  race: light
+- id: 210420002
+  splendent_id: 210420007
+  materials:
+  - id: 210430014
+    count: 5
+  - id: 610511013
+    count: 7
+  - id: 610511014
+    count: 12
+  - id: 610511015
+    count: 17
+  - id: 610511019
+    count: 8
+  - id: 610530010
+    count: 21
+  - id: 610610016
+    count: 29
+  - id: 610620016
+    count: 51
+  - id: 610710013
+    count: 51
+  race: dark
+- id: 210520001
+  splendent_id: 210520006
+  materials:
+  - id: 210530013
+    count: 5
+  - id: 610511013
+    count: 6
+  - id: 610511014
+    count: 10
+  - id: 610511015
+    count: 14
+  - id: 610511019
+    count: 6
+  - id: 610530010
+    count: 17
+  - id: 610610016
+    count: 23
+  - id: 610620016
+    count: 41
+  - id: 610710013
+    count: 41
+  race: light
+- id: 210520002
+  splendent_id: 210520007
+  materials:
+  - id: 210530014
+    count: 5
+  - id: 610511013
+    count: 6
+  - id: 610511014
+    count: 10
+  - id: 610511015
+    count: 14
+  - id: 610511019
+    count: 6
+  - id: 610530010
+    count: 17
+  - id: 610610016
+    count: 23
+  - id: 610620016
+    count: 41
+  - id: 610710013
+    count: 41
+  race: dark
+- id: 210620001
+  splendent_id: 210620006
+  materials:
+  - id: 210630013
+    count: 5
+  - id: 610511013
+    count: 8
+  - id: 610511014
+    count: 13
+  - id: 610511015
+    count: 18
+  - id: 610511019
+    count: 8
+  - id: 610530010
+    count: 21
+  - id: 610610016
+    count: 29
+  - id: 610620016
+    count: 51
+  - id: 610710013
+    count: 51
+  race: light
+- id: 210620002
+  splendent_id: 210620007
+  materials:
+  - id: 210630014
+    count: 5
+  - id: 610511013
+    count: 8
+  - id: 610511014
+    count: 13
+  - id: 610511015
+    count: 18
+  - id: 610511019
+    count: 8
+  - id: 610530010
+    count: 21
+  - id: 610610016
+    count: 29
+  - id: 610620016
+    count: 51
+  - id: 610710013
+    count: 51
+  race: dark
+- id: 210720001
+  splendent_id: 210720006
+  materials:
+  - id: 210730013
+    count: 5
+  - id: 610511013
+    count: 6
+  - id: 610511014
+    count: 10
+  - id: 610511015
+    count: 14
+  - id: 610511019
+    count: 6
+  - id: 610530010
+    count: 17
+  - id: 610610016
+    count: 23
+  - id: 610620016
+    count: 41
+  - id: 610710013
+    count: 41
+  race: light
+- id: 210720002
+  splendent_id: 210720007
+  materials:
+  - id: 210730014
+    count: 5
+  - id: 610511013
+    count: 6
+  - id: 610511014
+    count: 10
+  - id: 610511015
+    count: 14
+  - id: 610511019
+    count: 6
+  - id: 610530010
+    count: 17
+  - id: 610610016
+    count: 23
+  - id: 610620016
+    count: 41
+  - id: 610710013
+    count: 41
+  race: dark
+- id: 210130095
+  splendent_id: 210130097
+  materials:
+  - id: 210130013
+    count: 4
+  - id: 610511013
+    count: 3
+  - id: 610511014
+    count: 5
+  - id: 610511015
+    count: 11
+  - id: 610511023
+    count: 12
+  - id: 610511028
+    count: 12
+  - id: 610530010
+    count: 17
+  - id: 610610016
+    count: 24
+  - id: 610620016
+    count: 41
+  - id: 610710015
+    count: 46
+  race: light
+- id: 210130096
+  splendent_id: 210130098
+  materials:
+  - id: 210130014
+    count: 4
+  - id: 610511013
+    count: 3
+  - id: 610511014
+    count: 5
+  - id: 610511015
+    count: 11
+  - id: 610511023
+    count: 12
+  - id: 610511028
+    count: 12
+  - id: 610530010
+    count: 17
+  - id: 610610016
+    count: 24
+  - id: 610620016
+    count: 41
+  - id: 610710015
+    count: 46
+  race: dark
+- id: 210230094
+  splendent_id: 210230096
+  materials:
+  - id: 210230013
+    count: 4
+  - id: 610511013
+    count: 2
+  - id: 610511014
+    count: 4
+  - id: 610511015
+    count: 8
+  - id: 610511023
+    count: 9
+  - id: 610511028
+    count: 9
+  - id: 610530010
+    count: 13
+  - id: 610610016
+    count: 18
+  - id: 610620016
+    count: 31
+  - id: 610710015
+    count: 36
+  race: light
+- id: 210230095
+  splendent_id: 210230097
+  materials:
+  - id: 210230014
+    count: 4
+  - id: 610511013
+    count: 2
+  - id: 610511014
+    count: 4
+  - id: 610511015
+    count: 8
+  - id: 610511023
+    count: 9
+  - id: 610511028
+    count: 9
+  - id: 610530010
+    count: 13
+  - id: 610610016
+    count: 18
+  - id: 610620016
+    count: 31
+  - id: 610710015
+    count: 36
+  race: dark
+- id: 210330094
+  splendent_id: 210330096
+  materials:
+  - id: 210330013
+    count: 4
+  - id: 610511013
+    count: 2
+  - id: 610511014
+    count: 3
+  - id: 610511015
+    count: 7
+  - id: 610511023
+    count: 7
+  - id: 610511028
+    count: 7
+  - id: 610530010
+    count: 11
+  - id: 610610016
+    count: 15
+  - id: 610620016
+    count: 26
+  - id: 610710015
+    count: 29
+  race: light
+- id: 210330095
+  splendent_id: 210330097
+  materials:
+  - id: 210330014
+    count: 4
+  - id: 610511013
+    count: 2
+  - id: 610511014
+    count: 3
+  - id: 610511015
+    count: 7
+  - id: 610511023
+    count: 7
+  - id: 610511028
+    count: 7
+  - id: 610530010
+    count: 11
+  - id: 610610016
+    count: 15
+  - id: 610620016
+    count: 26
+  - id: 610710015
+    count: 29
+  race: dark
+- id: 210430094
+  splendent_id: 210430096
+  materials:
+  - id: 210430013
+    count: 4
+  - id: 610511013
+    count: 2
+  - id: 610511014
+    count: 3
+  - id: 610511015
+    count: 7
+  - id: 610511023
+    count: 7
+  - id: 610511028
+    count: 7
+  - id: 610530010
+    count: 11
+  - id: 610610016
+    count: 15
+  - id: 610620016
+    count: 26
+  - id: 610710015
+    count: 29
+  race: light
+- id: 210430095
+  splendent_id: 210430097
+  materials:
+  - id: 210430014
+    count: 4
+  - id: 610511013
+    count: 2
+  - id: 610511014
+    count: 3
+  - id: 610511015
+    count: 7
+  - id: 610511023
+    count: 7
+  - id: 610511028
+    count: 7
+  - id: 610530010
+    count: 11
+  - id: 610610016
+    count: 15
+  - id: 610620016
+    count: 26
+  - id: 610710015
+    count: 29
+  race: dark
+- id: 210530094
+  splendent_id: 210530096
+  materials:
+  - id: 210530013
+    count: 4
+  - id: 610511013
+    count: 2
+  - id: 610511014
+    count: 2
+  - id: 610511015
+    count: 6
+  - id: 610511023
+    count: 6
+  - id: 610511028
+    count: 6
+  - id: 610530010
+    count: 9
+  - id: 610610016
+    count: 12
+  - id: 610620016
+    count: 21
+  - id: 610710015
+    count: 23
+  race: light
+- id: 210530095
+  splendent_id: 210530097
+  materials:
+  - id: 210530014
+    count: 4
+  - id: 610511013
+    count: 2
+  - id: 610511014
+    count: 2
+  - id: 610511015
+    count: 6
+  - id: 610511023
+    count: 6
+  - id: 610511028
+    count: 6
+  - id: 610530010
+    count: 9
+  - id: 610610016
+    count: 12
+  - id: 610620016
+    count: 21
+  - id: 610710015
+    count: 23
+  race: dark
+- id: 210630094
+  splendent_id: 210630096
+  materials:
+  - id: 210630013
+    count: 4
+  - id: 610511013
+    count: 2
+  - id: 610511014
+    count: 2
+  - id: 610511015
+    count: 7
+  - id: 610511023
+    count: 7
+  - id: 610511028
+    count: 7
+  - id: 610530010
+    count: 11
+  - id: 610610016
+    count: 15
+  - id: 610620016
+    count: 26
+  - id: 610710015
+    count: 29
+  race: light
+- id: 210630095
+  splendent_id: 210630097
+  materials:
+  - id: 210630014
+    count: 4
+  - id: 610511013
+    count: 2
+  - id: 610511014
+    count: 2
+  - id: 610511015
+    count: 7
+  - id: 610511023
+    count: 7
+  - id: 610511028
+    count: 7
+  - id: 610530010
+    count: 11
+  - id: 610610016
+    count: 15
+  - id: 610620016
+    count: 26
+  - id: 610710015
+    count: 29
+  race: dark
+- id: 210730094
+  splendent_id: 210730096
+  materials:
+  - id: 210730013
+    count: 4
+  - id: 610511013
+    count: 2
+  - id: 610511014
+    count: 2
+  - id: 610511015
+    count: 6
+  - id: 610511023
+    count: 6
+  - id: 610511028
+    count: 6
+  - id: 610530010
+    count: 9
+  - id: 610610016
+    count: 12
+  - id: 610620016
+    count: 21
+  - id: 610710015
+    count: 23
+  race: light
+- id: 210730095
+  splendent_id: 210730097
+  materials:
+  - id: 210730014
+    count: 4
+  - id: 610511013
+    count: 2
+  - id: 610511014
+    count: 2
+  - id: 610511015
+    count: 6
+  - id: 610511023
+    count: 6
+  - id: 610511028
+    count: 6
+  - id: 610530010
+    count: 9
+  - id: 610610016
+    count: 12
+  - id: 610620016
+    count: 21
+  - id: 610710015
+    count: 23
+  race: dark
+- id: 210120017
+  splendent_id: 210120019
+  materials:
+  - id: 210130013
+    count: 8
+  - id: 610511013
+    count: 19
+  - id: 610511014
+    count: 32
+  - id: 610511015
+    count: 48
+  - id: 610511019
+    count: 20
+  - id: 610511023
+    count: 57
+  - id: 610511027
+    count: 37
+  - id: 610511028
+    count: 57
+  - id: 610530010
+    count: 67
+  - id: 610610016
+    count: 92
+  - id: 610620016
+    count: 159
+  - id: 610710017
+    count: 122
+  race: light
+- id: 210120018
+  splendent_id: 210120020
+  materials:
+  - id: 210130014
+    count: 8
+  - id: 610511013
+    count: 19
+  - id: 610511014
+    count: 32
+  - id: 610511015
+    count: 48
+  - id: 610511019
+    count: 20
+  - id: 610511023
+    count: 57
+  - id: 610511027
+    count: 37
+  - id: 610511028
+    count: 57
+  - id: 610530010
+    count: 67
+  - id: 610610016
+    count: 92
+  - id: 610620016
+    count: 159
+  - id: 610710017
+    count: 122
+  race: dark
+- id: 210220017
+  splendent_id: 210220019
+  materials:
+  - id: 210230013
+    count: 8
+  - id: 610511013
+    count: 14
+  - id: 610511014
+    count: 24
+  - id: 610511015
+    count: 36
+  - id: 610511019
+    count: 15
+  - id: 610511023
+    count: 43
+  - id: 610511027
+    count: 28
+  - id: 610511028
+    count: 43
+  - id: 610530010
+    count: 50
+  - id: 610610016
+    count: 69
+  - id: 610620016
+    count: 119
+  - id: 610710017
+    count: 91
+  race: light
+- id: 210220018
+  splendent_id: 210220020
+  materials:
+  - id: 210230014
+    count: 8
+  - id: 610511013
+    count: 14
+  - id: 610511014
+    count: 24
+  - id: 610511015
+    count: 36
+  - id: 610511019
+    count: 15
+  - id: 610511023
+    count: 43
+  - id: 610511027
+    count: 28
+  - id: 610511028
+    count: 43
+  - id: 610530010
+    count: 50
+  - id: 610610016
+    count: 69
+  - id: 610620016
+    count: 119
+  - id: 610710017
+    count: 91
+  race: dark
+- id: 210320017
+  splendent_id: 210320019
+  materials:
+  - id: 210330013
+    count: 8
+  - id: 610511013
+    count: 12
+  - id: 610511014
+    count: 20
+  - id: 610511015
+    count: 30
+  - id: 610511019
+    count: 13
+  - id: 610511023
+    count: 36
+  - id: 610511027
+    count: 23
+  - id: 610511028
+    count: 36
+  - id: 610530010
+    count: 42
+  - id: 610610016
+    count: 58
+  - id: 610620016
+    count: 99
+  - id: 610710017
+    count: 76
+  race: light
+- id: 210320018
+  splendent_id: 210320020
+  materials:
+  - id: 210330014
+    count: 8
+  - id: 610511013
+    count: 12
+  - id: 610511014
+    count: 20
+  - id: 610511015
+    count: 30
+  - id: 610511019
+    count: 13
+  - id: 610511023
+    count: 36
+  - id: 610511027
+    count: 23
+  - id: 610511028
+    count: 36
+  - id: 610530010
+    count: 42
+  - id: 610610016
+    count: 58
+  - id: 610620016
+    count: 99
+  - id: 610710017
+    count: 76
+  race: dark
+- id: 210420017
+  splendent_id: 210420019
+  materials:
+  - id: 210430013
+    count: 8
+  - id: 610511013
+    count: 12
+  - id: 610511014
+    count: 20
+  - id: 610511015
+    count: 30
+  - id: 610511019
+    count: 13
+  - id: 610511023
+    count: 36
+  - id: 610511027
+    count: 23
+  - id: 610511028
+    count: 36
+  - id: 610530010
+    count: 42
+  - id: 610610016
+    count: 58
+  - id: 610620016
+    count: 99
+  - id: 610710017
+    count: 76
+  race: light
+- id: 210420018
+  splendent_id: 210420020
+  materials:
+  - id: 210430014
+    count: 8
+  - id: 610511013
+    count: 12
+  - id: 610511014
+    count: 20
+  - id: 610511015
+    count: 30
+  - id: 610511019
+    count: 13
+  - id: 610511023
+    count: 36
+  - id: 610511027
+    count: 23
+  - id: 610511028
+    count: 36
+  - id: 610530010
+    count: 42
+  - id: 610610016
+    count: 58
+  - id: 610620016
+    count: 99
+  - id: 610710017
+    count: 76
+  race: dark
+- id: 210520017
+  splendent_id: 210520019
+  materials:
+  - id: 210530013
+    count: 8
+  - id: 610511013
+    count: 10
+  - id: 610511014
+    count: 16
+  - id: 610511015
+    count: 24
+  - id: 610511019
+    count: 10
+  - id: 610511023
+    count: 29
+  - id: 610511027
+    count: 18
+  - id: 610511028
+    count: 29
+  - id: 610530010
+    count: 34
+  - id: 610610016
+    count: 46
+  - id: 610620016
+    count: 79
+  - id: 610710017
+    count: 61
+  race: light
+- id: 210520018
+  splendent_id: 210520020
+  materials:
+  - id: 210530014
+    count: 8
+  - id: 610511013
+    count: 10
+  - id: 610511014
+    count: 16
+  - id: 610511015
+    count: 24
+  - id: 610511019
+    count: 10
+  - id: 610511023
+    count: 29
+  - id: 610511027
+    count: 18
+  - id: 610511028
+    count: 29
+  - id: 610530010
+    count: 34
+  - id: 610610016
+    count: 46
+  - id: 610620016
+    count: 79
+  - id: 610710017
+    count: 61
+  race: dark
+- id: 210620017
+  splendent_id: 210620019
+  materials:
+  - id: 210630013
+    count: 8
+  - id: 610511013
+    count: 12
+  - id: 610511014
+    count: 20
+  - id: 610511015
+    count: 30
+  - id: 610511019
+    count: 12
+  - id: 610511023
+    count: 36
+  - id: 610511027
+    count: 22
+  - id: 610511028
+    count: 36
+  - id: 610530010
+    count: 42
+  - id: 610610016
+    count: 57
+  - id: 610620016
+    count: 99
+  - id: 610710017
+    count: 76
+  race: light
+- id: 210620018
+  splendent_id: 210620020
+  materials:
+  - id: 210630014
+    count: 8
+  - id: 610511013
+    count: 12
+  - id: 610511014
+    count: 20
+  - id: 610511015
+    count: 30
+  - id: 610511019
+    count: 12
+  - id: 610511023
+    count: 36
+  - id: 610511027
+    count: 22
+  - id: 610511028
+    count: 36
+  - id: 610530010
+    count: 42
+  - id: 610610016
+    count: 57
+  - id: 610620016
+    count: 99
+  - id: 610710017
+    count: 76
+  race: dark
+- id: 210720017
+  splendent_id: 210720019
+  materials:
+  - id: 210730013
+    count: 8
+  - id: 610511013
+    count: 10
+  - id: 610511014
+    count: 16
+  - id: 610511015
+    count: 24
+  - id: 610511019
+    count: 10
+  - id: 610511023
+    count: 29
+  - id: 610511027
+    count: 18
+  - id: 610511028
+    count: 29
+  - id: 610530010
+    count: 34
+  - id: 610610016
+    count: 46
+  - id: 610620016
+    count: 79
+  - id: 610710017
+    count: 61
+  race: light
+- id: 210720018
+  splendent_id: 210720020
+  materials:
+  - id: 210730014
+    count: 8
+  - id: 610511013
+    count: 10
+  - id: 610511014
+    count: 16
+  - id: 610511015
+    count: 24
+  - id: 610511019
+    count: 10
+  - id: 610511023
+    count: 29
+  - id: 610511027
+    count: 18
+  - id: 610511028
+    count: 29
+  - id: 610530010
+    count: 34
+  - id: 610610016
+    count: 46
+  - id: 610620016
+    count: 79
+  - id: 610710017
+    count: 61
+  race: dark
+- id: 610530001
+  splendent_id:
+  materials: []
+- id: 610610013
+  splendent_id:
+  materials: []
+- id:
+  splendent_id:
+  materials:
+  - id: 610530014
+    count: 1
+- id:
+  splendent_id:
+  materials:
+  - id: 610650011
+    count: 1
+- id:
+  splendent_id:
+  materials:
+  - id: 610660025
+    count: 1
+- id:
+  splendent_id:
+  materials:
+  - id: 610660026
+    count: 1
+- id:
+  splendent_id:
+  materials:
+  - id: 610660027
+    count: 1
+- id: 610740015
+  splendent_id:
+  materials:
+  - id: 610530014
+    count: 2
+  - id: 630543005
+    count: 1
+- id: 610730022
+  splendent_id:
+  materials:
+  - id: 610511001
+    count: 2
+  - id: 630520007
+    count: 1
+- id: 610730023
+  splendent_id:
+  materials:
+  - id: 610511002
+    count: 2
+  - id: 630520008
+    count: 1
+- id: 610730024
+  splendent_id:
+  materials:
+  - id: 610511003
+    count: 2
+  - id: 630520009
+    count: 1
+- id: 610730025
+  splendent_id:
+  materials:
+  - id: 610511016
+    count: 2
+  - id: 630520012
+    count: 1
+- id: 610730026
+  splendent_id:
+  materials:
+  - id: 610511020
+    count: 2
+  - id: 630520009
+    count: 2
+- id: 610730027
+  splendent_id:
+  materials:
+  - id: 610511024
+    count: 2
+  - id: 630520012
+    count: 2
+- id: 511360003
+  splendent_id:
+  materials:
+  - id: 511360001
+    count: 5
   - id: 610740001
-    splendent_id:
-    materials:
-      - id: 610530014
-        count: 1
-  - id: 610740011
-    splendent_id:
-    materials:
-      - id: 610650011
-        count: 1
-  - id: 610740008
-    splendent_id:
-    materials:
-      - id: 610660025
-        count: 1
-  - id: 610740009
-    splendent_id:
-    materials:
-      - id: 610660026
-        count: 1
+    count: 3
+  - id: 630543008
+    count: 2
+- id: 513560003
+  splendent_id:
+  materials:
+  - id: 513560001
+    count: 5
+  - id: 610740001
+    count: 3
+  - id: 630543008
+    count: 2
+- id: 511351002
+  splendent_id:
+  materials:
+  - id: 511351001
+    count: 5
+  - id: 610740001
+    count: 5
+  - id: 630543008
+    count: 3
+- id: 513551002
+  splendent_id:
+  materials:
+  - id: 513551001
+    count: 5
+  - id: 610740001
+    count: 5
+  - id: 630543008
+    count: 3
+- id: 511060006
+  splendent_id: 511060034
+  materials:
+  - id: 610740001
+    count: 2
   - id: 610740010
-    splendent_id:
-    materials:
-      - id: 610660027
-        count: 1
+    count: 3
+  - id: 610740011
+    count: 1
+  - id: 630543008
+    count: 1
+- id: 511060015
+  splendent_id: 511060030
+  materials:
+  - id: 531060003
+    count: 1
+  - id: 610740010
+    count: 3
+  - id: 610740011
+    count: 1
+  - id: 630543008
+    count: 1
+- id: 511060016
+  splendent_id: 511060031
+  materials:
+  - id: 531060004
+    count: 1
+  - id: 610740008
+    count: 3
+  - id: 610740011
+    count: 1
+  - id: 630543008
+    count: 1
+- id: 511060028
+  splendent_id: 511060033
+  materials:
+  - id: 531060027
+    count: 1
+  - id: 610740009
+    count: 3
+  - id: 610740011
+    count: 1
+  - id: 630543008
+    count: 1
+- id: 511060017
+  splendent_id: 511060032
+  materials:
+  - id: 531060005
+    count: 1
+  - id: 610740008
+    count: 1
+  - id: 610740009
+    count: 1
+  - id: 610740010
+    count: 1
+  - id: 610740011
+    count: 1
+  - id: 630543008
+    count: 1
+- id: 511060002
+  splendent_id: 511060029
+  materials:
+  - id: 610740001
+    count: 2
+  - id: 610740008
+    count: 3
+  - id: 610740011
+    count: 1
+  - id: 630543013
+    count: 1
+- id: 511060025
+  splendent_id: 511060035
+  materials:
+  - id: 610740001
+    count: 5
+  - id: 610740009
+    count: 3
+  - id: 610740011
+    count: 1
+  - id: 630543013
+    count: 1
+- id:
+  splendent_id:
+  materials:
+  - id: 610670045
+    count: 1
+  - id: 630543001
+    count: 1
+- id: 510116005
+  splendent_id:
+  materials:
+  - id: 610670041
+    count: 1
+  - id: 610670042
+    count: 1
+- id: 510126003
+  splendent_id:
+  materials:
+  - id: 610670042
+    count: 1
+  - id: 610740001
+    count: 1
+  - id: 630543002
+    count: 1
+- id: 510126002
+  splendent_id:
+  materials:
+  - id: 530126003
+    count: 1
+  - id: 610670041
+    count: 1
+  - id: 630543002
+    count: 1
+- id: 510116006
+  splendent_id:
+  materials:
+  - id: 530126003
+    count: 3
+  - id: 610670045
+    count: 1
+  - id: 630543002
+    count: 1
+- id: 510116010
+  splendent_id:
+  materials:
+  - id: 510116005
+    count: 2
+  - id: 610670045
+    count: 1
+  - id: 610670046
+    count: 1
+  - id: 630543002
+    count: 1
+- id: 510146002
+  splendent_id:
+  materials:
+  - id: 530146001
+    count: 1
+  - id: 610670046
+    count: 1
+  - id: 630543002
+    count: 1
+- id: 110560023
+  splendent_id: 110550014
+  materials:
+  - id: 610530001
+    count: 5
+  - id: 610610013
+    count: 2
   - id: 610740015
-    splendent_id:
-    materials:
-      - id: 610530014
-        count: 2
-      - id: 630543005
-        count: 1
+    count: 3
+- id: 110660023
+  splendent_id: 110650014
+  materials:
+  - id: 610530001
+    count: 5
+  - id: 610610013
+    count: 2
+  - id: 610740015
+    count: 3
+- id: 110550015
+  splendent_id: 110540012
+  materials:
+  - id: 110550014
+    count: 1
+  - id: 610530005
+    count: 5
+  - id: 610610014
+    count: 3
+  - id: 610660030
+    count: 6
+- id: 110650015
+  splendent_id: 110640012
+  materials:
+  - id: 110650014
+    count: 1
+  - id: 610530005
+    count: 5
+  - id: 610610014
+    count: 3
+  - id: 610660028
+    count: 6
+- id: 110540013
+  splendent_id: 110530013
+  materials:
+  - id: 110540012
+    count: 1
+  - id: 610530008
+    count: 5
+  - id: 610610015
+    count: 4
+  - id: 610660033
+    count: 8
+- id: 110640013
+  splendent_id: 110630013
+  materials:
+  - id: 110640012
+    count: 1
+  - id: 610530008
+    count: 5
+  - id: 610610015
+    count: 4
+  - id: 610660031
+    count: 8
+- id: 110530015
+  splendent_id: 110530017
+  materials:
+  - id: 110530013
+    count: 1
+  - id: 610511013
+    count: 10
+  - id: 610530010
+    count: 5
+  - id: 610610016
+    count: 7
+  - id: 610660036
+    count: 12
   - id: 610730022
-    splendent_id:
-    materials:
-      - id: 610511001
-        count: 2
-      - id: 630520007
-        count: 1
+    count: 22
+  race: light
+- id: 110530019
+  splendent_id: 110530021
+  materials:
+  - id: 110530013
+    count: 1
+  - id: 610511013
+    count: 10
+  - id: 610530010
+    count: 5
+  - id: 610610016
+    count: 7
+  - id: 610660036
+    count: 12
+  - id: 610730022
+    count: 22
+  race: dark
+- id: 110630015
+  splendent_id: 110630017
+  materials:
+  - id: 110630013
+    count: 1
+  - id: 610511013
+    count: 10
+  - id: 610530010
+    count: 5
+  - id: 610610016
+    count: 7
+  - id: 610660034
+    count: 12
+  - id: 610730022
+    count: 22
+  race: light
+- id: 110630019
+  splendent_id: 110630021
+  materials:
+  - id: 110630013
+    count: 1
+  - id: 610511013
+    count: 10
+  - id: 610530010
+    count: 5
+  - id: 610610016
+    count: 7
+  - id: 610660034
+    count: 12
+  - id: 610730022
+    count: 22
+  race: dark
+- id: 110530016
+  splendent_id: 110530018
+  materials:
+  - id: 110530013
+    count: 2
+  - id: 610511013
+    count: 8
+  - id: 610511014
+    count: 14
+  - id: 610530010
+    count: 9
+  - id: 610610016
+    count: 12
+  - id: 610660036
+    count: 21
   - id: 610730023
-    splendent_id:
-    materials:
-      - id: 610511002
-        count: 2
-      - id: 630520008
-        count: 1
+    count: 29
+  race: light
+- id: 110530020
+  splendent_id: 110530022
+  materials:
+  - id: 110530013
+    count: 2
+  - id: 610511013
+    count: 8
+  - id: 610511014
+    count: 14
+  - id: 610530010
+    count: 9
+  - id: 610610016
+    count: 12
+  - id: 610660036
+    count: 21
+  - id: 610730023
+    count: 29
+  race: dark
+- id: 110630016
+  splendent_id: 110630018
+  materials:
+  - id: 110630013
+    count: 2
+  - id: 610511013
+    count: 8
+  - id: 610511014
+    count: 14
+  - id: 610530010
+    count: 9
+  - id: 610610016
+    count: 12
+  - id: 610660034
+    count: 21
+  - id: 610730023
+    count: 29
+  race: light
+- id: 110630020
+  splendent_id: 110630022
+  materials:
+  - id: 110630013
+    count: 2
+  - id: 610511013
+    count: 8
+  - id: 610511014
+    count: 14
+  - id: 610530010
+    count: 9
+  - id: 610610016
+    count: 12
+  - id: 610660034
+    count: 21
+  - id: 610730023
+    count: 29
+  race: dark
+- id: 110530023
+  splendent_id: 110530045
+  materials:
+  - id: 110530013
+    count: 3
+  - id: 610511013
+    count: 6
+  - id: 610511014
+    count: 11
+  - id: 610511015
+    count: 21
+  - id: 610530010
+    count: 15
+  - id: 610610016
+    count: 21
+  - id: 610660036
+    count: 36
   - id: 610730024
-    splendent_id:
-    materials:
-      - id: 610511003
-        count: 2
-      - id: 630520009
-        count: 1
+    count: 41
+  race: light
+- id: 110530024
+  splendent_id: 110530046
+  materials:
+  - id: 110530013
+    count: 3
+  - id: 610511013
+    count: 6
+  - id: 610511014
+    count: 11
+  - id: 610511015
+    count: 21
+  - id: 610530010
+    count: 15
+  - id: 610610016
+    count: 21
+  - id: 610660036
+    count: 36
+  - id: 610730024
+    count: 41
+  race: dark
+- id: 110630023
+  splendent_id: 110630045
+  materials:
+  - id: 110630013
+    count: 3
+  - id: 610511013
+    count: 6
+  - id: 610511014
+    count: 11
+  - id: 610511015
+    count: 21
+  - id: 610530010
+    count: 15
+  - id: 610610016
+    count: 21
+  - id: 610660034
+    count: 36
+  - id: 610730024
+    count: 41
+  race: light
+- id: 110630024
+  splendent_id: 110630046
+  materials:
+  - id: 110630013
+    count: 3
+  - id: 610511013
+    count: 6
+  - id: 610511014
+    count: 11
+  - id: 610511015
+    count: 21
+  - id: 610530010
+    count: 15
+  - id: 610610016
+    count: 21
+  - id: 610660034
+    count: 36
+  - id: 610730024
+    count: 41
+  race: dark
+- id: 110520001
+  splendent_id: 110520006
+  materials:
+  - id: 110530013
+    count: 5
+  - id: 610511013
+    count: 18
+  - id: 610511014
+    count: 27
+  - id: 610511015
+    count: 42
+  - id: 610511019
+    count: 19
+  - id: 610530010
+    count: 50
+  - id: 610610016
+    count: 70
+  - id: 610660036
+    count: 121
   - id: 610730025
-    splendent_id:
-    materials:
-      - id: 610511016
-        count: 2
-      - id: 630520012
-        count: 1
-  - id:
-    splendent_id:
-    materials: [ ]
-  - id: 110260023
-    splendent_id: 110250014
-    materials:
-      - id: 610530001
-        count: 5
-      - id: 610610013
-        count: 2
-      - id: 610710001
-        count: 3
-    race: light
-  - id: 110260024
-    splendent_id: 110250016
-    materials:
-      - id: 610530001
-        count: 5
-      - id: 610610013
-        count: 2
-      - id: 610710001
-        count: 3
-    race: dark
-  - id: 110160023
-    splendent_id: 110150014
-    materials:
-      - id: 610530001
-        count: 5
-      - id: 610610013
-        count: 2
-      - id: 610710001
-        count: 3
-    race: light
-  - id: 110160024
-    splendent_id: 110150016
-    materials:
-      - id: 610530001
-        count: 5
-      - id: 610610013
-        count: 2
-      - id: 610710001
-        count: 3
-    race: dark
-  - id: 110360023
-    splendent_id: 110350014
-    materials:
-      - id: 610530001
-        count: 5
-      - id: 610610013
-        count: 2
-      - id: 610710001
-        count: 3
-    race: light
-  - id: 110360024
-    splendent_id: 110350016
-    materials:
-      - id: 610530001
-        count: 5
-      - id: 610610013
-        count: 2
-      - id: 610710001
-        count: 3
-    race: dark
-  - id: 110760023
-    splendent_id: 110750014
-    materials:
-      - id: 610530001
-        count: 5
-      - id: 610610013
-        count: 2
-      - id: 610710001
-        count: 3
-    race: light
-  - id: 110760024
-    splendent_id: 110750016
-    materials:
-      - id: 610530001
-        count: 5
-      - id: 610610013
-        count: 2
-      - id: 610710001
-        count: 3
-    race: dark
-  - id: 115060023
-    splendent_id: 115050014
-    materials:
-      - id: 610530001
-        count: 5
-      - id: 610610013
-        count: 2
-      - id: 610710001
-        count: 3
-    race: light
-  - id: 115060024
-    splendent_id: 115050016
-    materials:
-      - id: 610530001
-        count: 5
-      - id: 610610013
-        count: 2
-      - id: 610710001
-        count: 3
-    race: dark
-  - id: 110250015
-    splendent_id: 110240012
-    materials:
-      - id: 110250014
-        count: 1
-      - id: 610530005
-        count: 5
-      - id: 610610014
-        count: 3
-      - id: 610620014
-        count: 6
-    race: light
-  - id: 110250017
-    splendent_id: 110240014
-    materials:
-      - id: 110250016
-        count: 1
-      - id: 610530005
-        count: 5
-      - id: 610610014
-        count: 3
-      - id: 610620014
-        count: 6
-    race: dark
-  - id: 110150015
-    splendent_id: 110140012
-    materials:
-      - id: 110150014
-        count: 1
-      - id: 610530005
-        count: 5
-      - id: 610610014
-        count: 3
-      - id: 610620014
-        count: 6
-    race: light
-  - id: 110150017
-    splendent_id: 110140014
-    materials:
-      - id: 110150016
-        count: 1
-      - id: 610530005
-        count: 5
-      - id: 610610014
-        count: 3
-      - id: 610620014
-        count: 6
-    race: dark
-  - id: 110350015
-    splendent_id: 110340012
-    materials:
-      - id: 110350014
-        count: 1
-      - id: 610530005
-        count: 5
-      - id: 610610014
-        count: 3
-      - id: 610620014
-        count: 6
-    race: light
-  - id: 110350017
-    splendent_id: 110340014
-    materials:
-      - id: 110350016
-        count: 1
-      - id: 610530005
-        count: 5
-      - id: 610610014
-        count: 3
-      - id: 610620014
-        count: 6
-    race: dark
-  - id: 110750015
-    splendent_id: 110740012
-    materials:
-      - id: 110750014
-        count: 1
-      - id: 610530005
-        count: 5
-      - id: 610610014
-        count: 3
-      - id: 610620014
-        count: 6
-    race: light
-  - id: 110750017
-    splendent_id: 110740014
-    materials:
-      - id: 110750016
-        count: 1
-      - id: 610530005
-        count: 5
-      - id: 610610014
-        count: 3
-      - id: 610620014
-        count: 6
-    race: dark
-  - id: 115050015
-    splendent_id: 115040012
-    materials:
-      - id: 115050014
-        count: 1
-      - id: 610530005
-        count: 5
-      - id: 610610014
-        count: 3
-      - id: 610620014
-        count: 6
-    race: light
-  - id: 115050017
-    splendent_id: 115040014
-    materials:
-      - id: 115050016
-        count: 1
-      - id: 610530005
-        count: 5
-      - id: 610610014
-        count: 3
-      - id: 610620014
-        count: 6
-    race: dark
-  - id: 110240013
-    splendent_id: 110230013
-    materials:
-      - id: 110240012
-        count: 1
-      - id: 610530008
-        count: 5
-      - id: 610610015
-        count: 4
-      - id: 610620015
-        count: 8
-    race: light
-  - id: 110240015
-    splendent_id: 110230014
-    materials:
-      - id: 110240014
-        count: 1
-      - id: 610530008
-        count: 5
-      - id: 610610015
-        count: 4
-      - id: 610620015
-        count: 8
-    race: dark
-  - id: 110140013
-    splendent_id: 110130013
-    materials:
-      - id: 110140012
-        count: 1
-      - id: 610530008
-        count: 5
-      - id: 610610015
-        count: 4
-      - id: 610620015
-        count: 8
-    race: light
-  - id: 110140015
-    splendent_id: 110130014
-    materials:
-      - id: 110140014
-        count: 1
-      - id: 610530008
-        count: 5
-      - id: 610610015
-        count: 4
-      - id: 610620015
-        count: 8
-    race: dark
-  - id: 110340013
-    splendent_id: 110330013
-    materials:
-      - id: 110340012
-        count: 1
-      - id: 610530008
-        count: 5
-      - id: 610610015
-        count: 4
-      - id: 610620015
-        count: 8
-    race: light
-  - id: 110340015
-    splendent_id: 110330014
-    materials:
-      - id: 110340014
-        count: 1
-      - id: 610530008
-        count: 5
-      - id: 610610015
-        count: 4
-      - id: 610620015
-        count: 8
-    race: dark
-  - id: 110740013
-    splendent_id: 110730013
-    materials:
-      - id: 110740012
-        count: 1
-      - id: 610530008
-        count: 5
-      - id: 610610015
-        count: 4
-      - id: 610620015
-        count: 8
-    race: light
-  - id: 110740015
-    splendent_id: 110730014
-    materials:
-      - id: 110740014
-        count: 1
-      - id: 610530008
-        count: 5
-      - id: 610610015
-        count: 4
-      - id: 610620015
-        count: 8
-    race: dark
-  - id: 115040013
-    splendent_id: 115030013
-    materials:
-      - id: 115040012
-        count: 1
-      - id: 610530008
-        count: 5
-      - id: 610610015
-        count: 4
-      - id: 610620015
-        count: 8
-    race: light
-  - id: 115040015
-    splendent_id: 115030014
-    materials:
-      - id: 115040014
-        count: 1
-      - id: 610530008
-        count: 5
-      - id: 610610015
-        count: 4
-      - id: 610620015
-        count: 8
-    race: dark
-  - id: 110230015
-    splendent_id: 110230017
-    materials:
-      - id: 110230013
-        count: 1
-      - id: 610511013
-        count: 10
-      - id: 610530010
-        count: 5
-      - id: 610610016
-        count: 7
-      - id: 610620016
-        count: 12
-      - id: 610710006
-        count: 22
-    race: light
-  - id: 110230019
-    splendent_id: 110230021
-    materials:
-      - id: 110230014
-        count: 1
-      - id: 610511013
-        count: 10
-      - id: 610530010
-        count: 5
-      - id: 610610016
-        count: 7
-      - id: 610620016
-        count: 12
-      - id: 610710006
-        count: 22
-    race: dark
-  - id: 110130015
-    splendent_id: 110130017
-    materials:
-      - id: 110130013
-        count: 1
-      - id: 610511013
-        count: 10
-      - id: 610530010
-        count: 5
-      - id: 610610016
-        count: 7
-      - id: 610620016
-        count: 12
-      - id: 610710006
-        count: 22
-    race: light
-  - id: 110130019
-    splendent_id: 110130021
-    materials:
-      - id: 110130014
-        count: 1
-      - id: 610511013
-        count: 10
-      - id: 610530010
-        count: 5
-      - id: 610610016
-        count: 7
-      - id: 610620016
-        count: 12
-      - id: 610710006
-        count: 22
-    race: dark
-  - id: 110330015
-    splendent_id: 110330017
-    materials:
-      - id: 110330013
-        count: 1
-      - id: 610511013
-        count: 10
-      - id: 610530010
-        count: 5
-      - id: 610610016
-        count: 7
-      - id: 610620016
-        count: 12
-      - id: 610710006
-        count: 22
-    race: light
-  - id: 110330019
-    splendent_id: 110330021
-    materials:
-      - id: 110330014
-        count: 1
-      - id: 610511013
-        count: 10
-      - id: 610530010
-        count: 5
-      - id: 610610016
-        count: 7
-      - id: 610620016
-        count: 12
-      - id: 610710006
-        count: 22
-    race: dark
-  - id: 110730015
-    splendent_id: 110730017
-    materials:
-      - id: 110730013
-        count: 1
-      - id: 610511013
-        count: 10
-      - id: 610530010
-        count: 5
-      - id: 610610016
-        count: 7
-      - id: 610620016
-        count: 12
-      - id: 610710006
-        count: 22
-    race: light
-  - id: 110730019
-    splendent_id: 110730021
-    materials:
-      - id: 110730014
-        count: 1
-      - id: 610511013
-        count: 10
-      - id: 610530010
-        count: 5
-      - id: 610610016
-        count: 7
-      - id: 610620016
-        count: 12
-      - id: 610710006
-        count: 22
-    race: dark
-  - id: 115030015
-    splendent_id: 115030017
-    materials:
-      - id: 115030013
-        count: 1
-      - id: 610511013
-        count: 10
-      - id: 610530010
-        count: 5
-      - id: 610610016
-        count: 7
-      - id: 610620016
-        count: 12
-      - id: 610710006
-        count: 22
-    race: light
-  - id: 115030019
-    splendent_id: 115030021
-    materials:
-      - id: 115030014
-        count: 1
-      - id: 610511013
-        count: 10
-      - id: 610530010
-        count: 5
-      - id: 610610016
-        count: 7
-      - id: 610620016
-        count: 12
-      - id: 610710006
-        count: 22
-    race: dark
-  - id: 110230016
-    splendent_id: 110230018
-    materials:
-      - id: 110230013
-        count: 2
-      - id: 610511013
-        count: 8
-      - id: 610511014
-        count: 14
-      - id: 610530010
-        count: 9
-      - id: 610610016
-        count: 12
-      - id: 610620016
-        count: 21
-      - id: 610710007
-        count: 29
-    race: light
-  - id: 110230020
-    splendent_id: 110230022
-    materials:
-      - id: 110230014
-        count: 2
-      - id: 610511013
-        count: 8
-      - id: 610511014
-        count: 14
-      - id: 610530010
-        count: 9
-      - id: 610610016
-        count: 12
-      - id: 610620016
-        count: 21
-      - id: 610710007
-        count: 29
-    race: dark
-  - id: 110130016
-    splendent_id: 110130018
-    materials:
-      - id: 110130013
-        count: 2
-      - id: 610511013
-        count: 8
-      - id: 610511014
-        count: 14
-      - id: 610530010
-        count: 9
-      - id: 610610016
-        count: 12
-      - id: 610620016
-        count: 21
-      - id: 610710007
-        count: 29
-    race: light
-  - id: 110130020
-    splendent_id: 110130022
-    materials:
-      - id: 110130014
-        count: 2
-      - id: 610511013
-        count: 8
-      - id: 610511014
-        count: 14
-      - id: 610530010
-        count: 9
-      - id: 610610016
-        count: 12
-      - id: 610620016
-        count: 21
-      - id: 610710007
-        count: 29
-    race: dark
-  - id: 110330016
-    splendent_id: 110330018
-    materials:
-      - id: 110330013
-        count: 2
-      - id: 610511013
-        count: 8
-      - id: 610511014
-        count: 14
-      - id: 610530010
-        count: 9
-      - id: 610610016
-        count: 12
-      - id: 610620016
-        count: 21
-      - id: 610710007
-        count: 29
-    race: light
-  - id: 110330020
-    splendent_id: 110330022
-    materials:
-      - id: 110330014
-        count: 2
-      - id: 610511013
-        count: 8
-      - id: 610511014
-        count: 14
-      - id: 610530010
-        count: 9
-      - id: 610610016
-        count: 12
-      - id: 610620016
-        count: 21
-      - id: 610710007
-        count: 29
-    race: dark
-  - id: 110730016
-    splendent_id: 110730018
-    materials:
-      - id: 110730013
-        count: 2
-      - id: 610511013
-        count: 8
-      - id: 610511014
-        count: 14
-      - id: 610530010
-        count: 9
-      - id: 610610016
-        count: 12
-      - id: 610620016
-        count: 21
-      - id: 610710007
-        count: 29
-    race: light
-  - id: 110730020
-    splendent_id: 110730022
-    materials:
-      - id: 110730014
-        count: 2
-      - id: 610511013
-        count: 8
-      - id: 610511014
-        count: 14
-      - id: 610530010
-        count: 9
-      - id: 610610016
-        count: 12
-      - id: 610620016
-        count: 21
-      - id: 610710007
-        count: 29
-    race: dark
-  - id: 115030016
-    splendent_id: 115030018
-    materials:
-      - id: 115030013
-        count: 2
-      - id: 610511013
-        count: 8
-      - id: 610511014
-        count: 14
-      - id: 610530010
-        count: 9
-      - id: 610610016
-        count: 12
-      - id: 610620016
-        count: 21
-      - id: 610710007
-        count: 29
-    race: light
-  - id: 115030020
-    splendent_id: 115030022
-    materials:
-      - id: 115030014
-        count: 2
-      - id: 610511013
-        count: 8
-      - id: 610511014
-        count: 14
-      - id: 610530010
-        count: 9
-      - id: 610610016
-        count: 12
-      - id: 610620016
-        count: 21
-      - id: 610710007
-        count: 29
-    race: dark
-  - id: 110230023
-    splendent_id: 110230045
-    materials:
-      - id: 110230013
-        count: 3
-      - id: 610511013
-        count: 6
-      - id: 610511014
-        count: 11
-      - id: 610511015
-        count: 21
-      - id: 610530010
-        count: 15
-      - id: 610610016
-        count: 21
-      - id: 610620016
-        count: 36
-      - id: 610710008
-        count: 41
-    race: light
-  - id: 110230024
-    splendent_id: 110230046
-    materials:
-      - id: 110230014
-        count: 3
-      - id: 610511013
-        count: 6
-      - id: 610511014
-        count: 11
-      - id: 610511015
-        count: 21
-      - id: 610530010
-        count: 15
-      - id: 610610016
-        count: 21
-      - id: 610620016
-        count: 36
-      - id: 610710008
-        count: 41
-    race: dark
-  - id: 110130023
-    splendent_id: 110130045
-    materials:
-      - id: 110130013
-        count: 3
-      - id: 610511013
-        count: 6
-      - id: 610511014
-        count: 11
-      - id: 610511015
-        count: 21
-      - id: 610530010
-        count: 15
-      - id: 610610016
-        count: 21
-      - id: 610620016
-        count: 36
-      - id: 610710008
-        count: 41
-    race: light
-  - id: 110130024
-    splendent_id: 110130046
-    materials:
-      - id: 110130014
-        count: 3
-      - id: 610511013
-        count: 6
-      - id: 610511014
-        count: 11
-      - id: 610511015
-        count: 21
-      - id: 610530010
-        count: 15
-      - id: 610610016
-        count: 21
-      - id: 610620016
-        count: 36
-      - id: 610710008
-        count: 41
-    race: dark
-  - id: 110330023
-    splendent_id: 110330045
-    materials:
-      - id: 110330013
-        count: 3
-      - id: 610511013
-        count: 6
-      - id: 610511014
-        count: 11
-      - id: 610511015
-        count: 21
-      - id: 610530010
-        count: 15
-      - id: 610610016
-        count: 21
-      - id: 610620016
-        count: 36
-      - id: 610710008
-        count: 41
-    race: light
-  - id: 110330024
-    splendent_id: 110330046
-    materials:
-      - id: 110330014
-        count: 3
-      - id: 610511013
-        count: 6
-      - id: 610511014
-        count: 11
-      - id: 610511015
-        count: 21
-      - id: 610530010
-        count: 15
-      - id: 610610016
-        count: 21
-      - id: 610620016
-        count: 36
-      - id: 610710008
-        count: 41
-    race: dark
-  - id: 110730023
-    splendent_id: 110730045
-    materials:
-      - id: 110730013
-        count: 3
-      - id: 610511013
-        count: 6
-      - id: 610511014
-        count: 11
-      - id: 610511015
-        count: 21
-      - id: 610530010
-        count: 15
-      - id: 610610016
-        count: 21
-      - id: 610620016
-        count: 36
-      - id: 610710008
-        count: 41
-    race: light
-  - id: 110730024
-    splendent_id: 110730046
-    materials:
-      - id: 110730014
-        count: 3
-      - id: 610511013
-        count: 6
-      - id: 610511014
-        count: 11
-      - id: 610511015
-        count: 21
-      - id: 610530010
-        count: 15
-      - id: 610610016
-        count: 21
-      - id: 610620016
-        count: 36
-      - id: 610710008
-        count: 41
-    race: dark
-  - id: 115030023
-    splendent_id: 115030045
-    materials:
-      - id: 115030013
-        count: 3
-      - id: 610511013
-        count: 6
-      - id: 610511014
-        count: 11
-      - id: 610511015
-        count: 21
-      - id: 610530010
-        count: 15
-      - id: 610610016
-        count: 21
-      - id: 610620016
-        count: 36
-      - id: 610710008
-        count: 41
-    race: light
-  - id: 115030024
-    splendent_id: 115030046
-    materials:
-      - id: 115030014
-        count: 3
-      - id: 610511013
-        count: 6
-      - id: 610511014
-        count: 11
-      - id: 610511015
-        count: 21
-      - id: 610530010
-        count: 15
-      - id: 610610016
-        count: 21
-      - id: 610620016
-        count: 36
-      - id: 610710008
-        count: 41
-    race: dark
-  - id: 110220001
-    splendent_id: 110220006
-    materials:
-      - id: 110230013
-        count: 5
-      - id: 610511013
-        count: 18
-      - id: 610511014
-        count: 27
-      - id: 610511015
-        count: 42
-      - id: 610511019
-        count: 19
-      - id: 610530010
-        count: 50
-      - id: 610610016
-        count: 70
-      - id: 610620016
-        count: 121
-      - id: 610710012
-        count: 122
-    race: light
-  - id: 110220002
-    splendent_id: 110220007
-    materials:
-      - id: 110230014
-        count: 5
-      - id: 610511013
-        count: 18
-      - id: 610511014
-        count: 27
-      - id: 610511015
-        count: 42
-      - id: 610511019
-        count: 19
-      - id: 610530010
-        count: 50
-      - id: 610610016
-        count: 70
-      - id: 610620016
-        count: 121
-      - id: 610710012
-        count: 122
-    race: dark
-  - id: 110120001
-    splendent_id: 110120006
-    materials:
-      - id: 110130013
-        count: 5
-      - id: 610511013
-        count: 18
-      - id: 610511014
-        count: 27
-      - id: 610511015
-        count: 42
-      - id: 610511019
-        count: 19
-      - id: 610530010
-        count: 50
-      - id: 610610016
-        count: 70
-      - id: 610620016
-        count: 121
-      - id: 610710012
-        count: 122
-    race: light
-  - id: 110120002
-    splendent_id: 110120007
-    materials:
-      - id: 110130014
-        count: 5
-      - id: 610511013
-        count: 18
-      - id: 610511014
-        count: 27
-      - id: 610511015
-        count: 42
-      - id: 610511019
-        count: 19
-      - id: 610530010
-        count: 50
-      - id: 610610016
-        count: 70
-      - id: 610620016
-        count: 121
-      - id: 610710012
-        count: 122
-    race: dark
-  - id: 110320001
-    splendent_id: 110320006
-    materials:
-      - id: 110330013
-        count: 5
-      - id: 610511013
-        count: 18
-      - id: 610511014
-        count: 27
-      - id: 610511015
-        count: 42
-      - id: 610511019
-        count: 19
-      - id: 610530010
-        count: 50
-      - id: 610610016
-        count: 70
-      - id: 610620016
-        count: 121
-      - id: 610710012
-        count: 122
-    race: light
-  - id: 110320002
-    splendent_id: 110320007
-    materials:
-      - id: 110330014
-        count: 5
-      - id: 610511013
-        count: 18
-      - id: 610511014
-        count: 27
-      - id: 610511015
-        count: 42
-      - id: 610511019
-        count: 19
-      - id: 610530010
-        count: 50
-      - id: 610610016
-        count: 70
-      - id: 610620016
-        count: 121
-      - id: 610710012
-        count: 122
-    race: dark
-  - id: 110720001
-    splendent_id: 110720006
-    materials:
-      - id: 110730013
-        count: 5
-      - id: 610511013
-        count: 18
-      - id: 610511014
-        count: 27
-      - id: 610511015
-        count: 42
-      - id: 610511019
-        count: 19
-      - id: 610530010
-        count: 50
-      - id: 610610016
-        count: 70
-      - id: 610620016
-        count: 121
-      - id: 610710012
-        count: 122
-    race: light
-  - id: 110720002
-    splendent_id: 110720007
-    materials:
-      - id: 110730014
-        count: 5
-      - id: 610511013
-        count: 18
-      - id: 610511014
-        count: 27
-      - id: 610511015
-        count: 42
-      - id: 610511019
-        count: 19
-      - id: 610530010
-        count: 50
-      - id: 610610016
-        count: 70
-      - id: 610620016
-        count: 121
-      - id: 610710012
-        count: 122
-    race: dark
-  - id: 115020001
-    splendent_id: 115020006
-    materials:
-      - id: 115030013
-        count: 5
-      - id: 610511013
-        count: 18
-      - id: 610511014
-        count: 27
-      - id: 610511015
-        count: 42
-      - id: 610511019
-        count: 19
-      - id: 610530010
-        count: 50
-      - id: 610610016
-        count: 70
-      - id: 610620016
-        count: 121
-      - id: 610710012
-        count: 122
-    race: light
-  - id: 115020002
-    splendent_id: 115020007
-    materials:
-      - id: 115030014
-        count: 5
-      - id: 610511013
-        count: 18
-      - id: 610511014
-        count: 27
-      - id: 610511015
-        count: 42
-      - id: 610511019
-        count: 19
-      - id: 610530010
-        count: 50
-      - id: 610610016
-        count: 70
-      - id: 610620016
-        count: 121
-      - id: 610710012
-        count: 122
-    race: dark
-  - id: 210160023
-    splendent_id: 210150014
-    materials:
-      - id: 610530001
-        count: 3
-      - id: 610610013
-        count: 1
-      - id: 610710001
-        count: 2
-      - id: 610720011
-        count: 4
-    race: light
-  - id: 210160024
-    splendent_id: 210150016
-    materials:
-      - id: 610530001
-        count: 3
-      - id: 610610013
-        count: 1
-      - id: 610710001
-        count: 2
-      - id: 610720011
-        count: 4
-    race: dark
-  - id: 210260023
-    splendent_id: 210250014
-    materials:
-      - id: 610530001
-        count: 2
-      - id: 610610013
-        count: 1
-      - id: 610710001
-        count: 2
-      - id: 610720011
-        count: 3
-    race: light
-  - id: 210260024
-    splendent_id: 210250016
-    materials:
-      - id: 610530001
-        count: 2
-      - id: 610610013
-        count: 1
-      - id: 610710001
-        count: 2
-      - id: 610720011
-        count: 3
-    race: dark
-  - id: 210360023
-    splendent_id: 210350014
-    materials:
-      - id: 610530001
-        count: 2
-      - id: 610610013
-        count: 1
-      - id: 610710001
-        count: 1
-      - id: 610720011
-        count: 3
-    race: light
-  - id: 210360024
-    splendent_id: 210350016
-    materials:
-      - id: 610530001
-        count: 2
-      - id: 610610013
-        count: 1
-      - id: 610710001
-        count: 1
-      - id: 610720011
-        count: 3
-    race: dark
-  - id: 210460023
-    splendent_id: 210450014
-    materials:
-      - id: 610530001
-        count: 3
-      - id: 610610013
-        count: 1
-      - id: 610710001
-        count: 1
-      - id: 610720011
-        count: 3
-    race: light
-  - id: 210460024
-    splendent_id: 210450016
-    materials:
-      - id: 610530001
-        count: 3
-      - id: 610610013
-        count: 1
-      - id: 610710001
-        count: 1
-      - id: 610720011
-        count: 3
-    race: dark
-  - id: 210560023
-    splendent_id: 210550014
-    materials:
-      - id: 610530001
-        count: 2
-      - id: 610610013
-        count: 1
-      - id: 610710001
-        count: 1
-      - id: 610720011
-        count: 2
-    race: light
-  - id: 210560024
-    splendent_id: 210550016
-    materials:
-      - id: 610530001
-        count: 2
-      - id: 610610013
-        count: 1
-      - id: 610710001
-        count: 1
-      - id: 610720011
-        count: 2
-    race: dark
-  - id: 210660023
-    splendent_id: 210650014
-    materials:
-      - id: 610530001
-        count: 2
-      - id: 610610013
-        count: 1
-      - id: 610710001
-        count: 1
-      - id: 610720011
-        count: 3
-    race: light
-  - id: 210660024
-    splendent_id: 210650016
-    materials:
-      - id: 610530001
-        count: 2
-      - id: 610610013
-        count: 1
-      - id: 610710001
-        count: 1
-      - id: 610720011
-        count: 3
-    race: dark
-  - id: 210760023
-    splendent_id: 210750014
-    materials:
-      - id: 610530001
-        count: 2
-      - id: 610610013
-        count: 1
-      - id: 610710001
-        count: 1
-      - id: 610720011
-        count: 2
-    race: light
-  - id: 210760024
-    splendent_id: 210750016
-    materials:
-      - id: 610530001
-        count: 2
-      - id: 610610013
-        count: 1
-      - id: 610710001
-        count: 1
-      - id: 610720011
-        count: 2
-    race: dark
-  - id: 210150015
-    splendent_id: 210140012
-    materials:
-      - id: 210150014
-        count: 1
-      - id: 610530005
-        count: 3
-      - id: 610610014
-        count: 2
-      - id: 610620014
-        count: 4
-    race: light
-  - id: 210150017
-    splendent_id: 210140014
-    materials:
-      - id: 210150016
-        count: 1
-      - id: 610530005
-        count: 3
-      - id: 610610014
-        count: 2
-      - id: 610620014
-        count: 4
-    race: dark
-  - id: 210250015
-    splendent_id: 210240012
-    materials:
-      - id: 210250014
-        count: 1
-      - id: 610530005
-        count: 2
-      - id: 610610014
-        count: 2
-      - id: 610620014
-        count: 3
-    race: light
-  - id: 210250017
-    splendent_id: 210240014
-    materials:
-      - id: 210250016
-        count: 1
-      - id: 610530005
-        count: 2
-      - id: 610610014
-        count: 2
-      - id: 610620014
-        count: 3
-    race: dark
-  - id: 210350015
-    splendent_id: 210340012
-    materials:
-      - id: 210350014
-        count: 1
-      - id: 610530005
-        count: 2
-      - id: 610610014
-        count: 1
-      - id: 610620014
-        count: 3
-    race: light
-  - id: 210350017
-    splendent_id: 210340014
-    materials:
-      - id: 210350016
-        count: 1
-      - id: 610530005
-        count: 2
-      - id: 610610014
-        count: 1
-      - id: 610620014
-        count: 3
-    race: dark
-  - id: 210450015
-    splendent_id: 210440012
-    materials:
-      - id: 210450014
-        count: 1
-      - id: 610530005
-        count: 2
-      - id: 610610014
-        count: 1
-      - id: 610620014
-        count: 3
-    race: light
-  - id: 210450017
-    splendent_id: 210440014
-    materials:
-      - id: 210450016
-        count: 1
-      - id: 610530005
-        count: 2
-      - id: 610610014
-        count: 1
-      - id: 610620014
-        count: 3
-    race: dark
-  - id: 210550015
-    splendent_id: 210540012
-    materials:
-      - id: 210550014
-        count: 1
-      - id: 610530005
-        count: 2
-      - id: 610610014
-        count: 1
-      - id: 610620014
-        count: 2
-    race: light
-  - id: 210550017
-    splendent_id: 210540014
-    materials:
-      - id: 210550016
-        count: 1
-      - id: 610530005
-        count: 2
-      - id: 610610014
-        count: 1
-      - id: 610620014
-        count: 2
-    race: dark
-  - id: 210650015
-    splendent_id: 210640012
-    materials:
-      - id: 210650014
-        count: 1
-      - id: 610530005
-        count: 2
-      - id: 610610014
-        count: 1
-      - id: 610620014
-        count: 3
-    race: light
-  - id: 210650017
-    splendent_id: 210640014
-    materials:
-      - id: 210650016
-        count: 1
-      - id: 610530005
-        count: 2
-      - id: 610610014
-        count: 1
-      - id: 610620014
-        count: 3
-    race: dark
-  - id: 210750015
-    splendent_id: 210740012
-    materials:
-      - id: 210750014
-        count: 1
-      - id: 610530005
-        count: 2
-      - id: 610610014
-        count: 1
-      - id: 610620014
-        count: 2
-    race: light
-  - id: 210750017
-    splendent_id: 210740014
-    materials:
-      - id: 210750016
-        count: 1
-      - id: 610530005
-        count: 2
-      - id: 610610014
-        count: 1
-      - id: 610620014
-        count: 2
-    race: dark
-  - id: 210140013
-    splendent_id: 210130013
-    materials:
-      - id: 210140012
-        count: 1
-      - id: 610530008
-        count: 3
-      - id: 610610015
-        count: 3
-      - id: 610620015
-        count: 5
-    race: light
-  - id: 210140015
-    splendent_id: 210130014
-    materials:
-      - id: 210140014
-        count: 1
-      - id: 610530008
-        count: 3
-      - id: 610610015
-        count: 3
-      - id: 610620015
-        count: 5
-    race: dark
-  - id: 210240013
-    splendent_id: 210230013
-    materials:
-      - id: 210240012
-        count: 1
-      - id: 610530008
-        count: 2
-      - id: 610610015
-        count: 2
-      - id: 610620015
-        count: 4
-    race: light
-  - id: 210240015
-    splendent_id: 210230014
-    materials:
-      - id: 210240014
-        count: 1
-      - id: 610530008
-        count: 2
-      - id: 610610015
-        count: 2
-      - id: 610620015
-        count: 4
-    race: dark
-  - id: 210340013
-    splendent_id: 210330013
-    materials:
-      - id: 210340012
-        count: 1
-      - id: 610530008
-        count: 2
-      - id: 610610015
-        count: 2
-      - id: 610620015
-        count: 3
-    race: light
-  - id: 210340015
-    splendent_id: 210330014
-    materials:
-      - id: 210340014
-        count: 1
-      - id: 610530008
-        count: 2
-      - id: 610610015
-        count: 2
-      - id: 610620015
-        count: 3
-    race: dark
-  - id: 210440013
-    splendent_id: 210430013
-    materials:
-      - id: 210440012
-        count: 1
-      - id: 610530008
-        count: 2
-      - id: 610610015
-        count: 2
-      - id: 610620015
-        count: 3
-    race: light
-  - id: 210440015
-    splendent_id: 210430014
-    materials:
-      - id: 210440014
-        count: 1
-      - id: 610530008
-        count: 2
-      - id: 610610015
-        count: 2
-      - id: 610620015
-        count: 3
-    race: dark
-  - id: 210540013
-    splendent_id: 210530013
-    materials:
-      - id: 210540012
-        count: 1
-      - id: 610530008
-        count: 2
-      - id: 610610015
-        count: 2
-      - id: 610620015
-        count: 3
-    race: light
-  - id: 210540015
-    splendent_id: 210530014
-    materials:
-      - id: 210540014
-        count: 1
-      - id: 610530008
-        count: 2
-      - id: 610610015
-        count: 2
-      - id: 610620015
-        count: 3
-    race: dark
-  - id: 210640013
-    splendent_id: 210630013
-    materials:
-      - id: 210640012
-        count: 1
-      - id: 610530008
-        count: 2
-      - id: 610610015
-        count: 2
-      - id: 610620015
-        count: 3
-    race: light
-  - id: 210640015
-    splendent_id: 210630014
-    materials:
-      - id: 210640014
-        count: 1
-      - id: 610530008
-        count: 2
-      - id: 610610015
-        count: 2
-      - id: 610620015
-        count: 3
-    race: dark
-  - id: 210740013
-    splendent_id: 210730013
-    materials:
-      - id: 210740012
-        count: 1
-      - id: 610530008
-        count: 2
-      - id: 610610015
-        count: 2
-      - id: 610620015
-        count: 3
-    race: light
-  - id: 210740015
-    splendent_id: 210730014
-    materials:
-      - id: 210740014
-        count: 1
-      - id: 610530008
-        count: 2
-      - id: 610610015
-        count: 2
-      - id: 610620015
-        count: 3
-    race: dark
-  - id: 210130015
-    splendent_id: 210130017
-    materials:
-      - id: 210130013
-        count: 1
-      - id: 610511013
-        count: 7
-      - id: 610530010
-        count: 3
-      - id: 610610016
-        count: 5
-      - id: 610620016
-        count: 8
-      - id: 610710009
-        count: 15
-    race: light
-  - id: 210130019
-    splendent_id: 210130021
-    materials:
-      - id: 210130014
-        count: 1
-      - id: 610511013
-        count: 7
-      - id: 610530010
-        count: 3
-      - id: 610610016
-        count: 5
-      - id: 610620016
-        count: 8
-      - id: 610710009
-        count: 15
-    race: dark
-  - id: 210230015
-    splendent_id: 210230017
-    materials:
-      - id: 210230013
-        count: 1
-      - id: 610511013
-        count: 5
-      - id: 610530010
-        count: 2
-      - id: 610610016
-        count: 4
-      - id: 610620016
-        count: 6
-      - id: 610710009
-        count: 11
-    race: light
-  - id: 210230019
-    splendent_id: 210230021
-    materials:
-      - id: 210230014
-        count: 1
-      - id: 610511013
-        count: 5
-      - id: 610530010
-        count: 2
-      - id: 610610016
-        count: 4
-      - id: 610620016
-        count: 6
-      - id: 610710009
-        count: 11
-    race: dark
-  - id: 210330015
-    splendent_id: 210330017
-    materials:
-      - id: 210330013
-        count: 1
-      - id: 610511013
-        count: 4
-      - id: 610530010
-        count: 2
-      - id: 610610016
-        count: 3
-      - id: 610620016
-        count: 5
-      - id: 610710009
-        count: 9
-    race: light
-  - id: 210330019
-    splendent_id: 210330021
-    materials:
-      - id: 210330014
-        count: 1
-      - id: 610511013
-        count: 4
-      - id: 610530010
-        count: 2
-      - id: 610610016
-        count: 3
-      - id: 610620016
-        count: 5
-      - id: 610710009
-        count: 9
-    race: dark
-  - id: 210430015
-    splendent_id: 210430017
-    materials:
-      - id: 210430013
-        count: 1
-      - id: 610511013
-        count: 4
-      - id: 610530010
-        count: 2
-      - id: 610610016
-        count: 3
-      - id: 610620016
-        count: 5
-      - id: 610710009
-        count: 9
-    race: light
-  - id: 210430019
-    splendent_id: 210430021
-    materials:
-      - id: 210430014
-        count: 1
-      - id: 610511013
-        count: 4
-      - id: 610530010
-        count: 2
-      - id: 610610016
-        count: 3
-      - id: 610620016
-        count: 5
-      - id: 610710009
-        count: 9
-    race: dark
-  - id: 210530015
-    splendent_id: 210530017
-    materials:
-      - id: 210530013
-        count: 1
-      - id: 610511013
-        count: 3
-      - id: 610530010
-        count: 2
-      - id: 610610016
-        count: 2
-      - id: 610620016
-        count: 4
-      - id: 610710009
-        count: 7
-    race: light
-  - id: 210530019
-    splendent_id: 210530021
-    materials:
-      - id: 210530014
-        count: 1
-      - id: 610511013
-        count: 3
-      - id: 610530010
-        count: 2
-      - id: 610610016
-        count: 2
-      - id: 610620016
-        count: 4
-      - id: 610710009
-        count: 7
-    race: dark
-  - id: 210630015
-    splendent_id: 210630017
-    materials:
-      - id: 210630013
-        count: 1
-      - id: 610511013
-        count: 4
-      - id: 610530010
-        count: 3
-      - id: 610610016
-        count: 3
-      - id: 610620016
-        count: 5
-      - id: 610710009
-        count: 9
-    race: light
-  - id: 210630019
-    splendent_id: 210630021
-    materials:
-      - id: 210630014
-        count: 1
-      - id: 610511013
-        count: 4
-      - id: 610530010
-        count: 3
-      - id: 610610016
-        count: 3
-      - id: 610620016
-        count: 5
-      - id: 610710009
-        count: 9
-    race: dark
-  - id: 210730015
-    splendent_id: 210730017
-    materials:
-      - id: 210730013
-        count: 1
-      - id: 610511013
-        count: 3
-      - id: 610530010
-        count: 2
-      - id: 610610016
-        count: 2
-      - id: 610620016
-        count: 4
-      - id: 610710009
-        count: 7
-    race: light
-  - id: 210730019
-    splendent_id: 210730021
-    materials:
-      - id: 210730014
-        count: 1
-      - id: 610511013
-        count: 3
-      - id: 610530010
-        count: 2
-      - id: 610610016
-        count: 2
-      - id: 610620016
-        count: 4
-      - id: 610710009
-        count: 7
-    race: dark
-  - id: 210130016
-    splendent_id: 210130018
-    materials:
-      - id: 210130013
-        count: 2
-      - id: 610511013
-        count: 5
-      - id: 610511014
-        count: 9
-      - id: 610530010
-        count: 6
-      - id: 610610016
-        count: 8
-      - id: 610620016
-        count: 14
-      - id: 610710010
-        count: 19
-    race: light
-  - id: 210130020
-    splendent_id: 210130022
-    materials:
-      - id: 210130014
-        count: 2
-      - id: 610511013
-        count: 5
-      - id: 610511014
-        count: 9
-      - id: 610530010
-        count: 6
-      - id: 610610016
-        count: 8
-      - id: 610620016
-        count: 14
-      - id: 610710010
-        count: 19
-    race: dark
-  - id: 210230016
-    splendent_id: 210230018
-    materials:
-      - id: 210230013
-        count: 2
-      - id: 610511013
-        count: 4
-      - id: 610511014
-        count: 7
-      - id: 610530010
-        count: 4
-      - id: 610610016
-        count: 6
-      - id: 610620016
-        count: 10
-      - id: 610710010
-        count: 14
-    race: light
-  - id: 210230020
-    splendent_id: 210230022
-    materials:
-      - id: 210230014
-        count: 2
-      - id: 610511013
-        count: 4
-      - id: 610511014
-        count: 7
-      - id: 610530010
-        count: 4
-      - id: 610610016
-        count: 6
-      - id: 610620016
-        count: 10
-      - id: 610710010
-        count: 14
-    race: dark
-  - id: 210330016
-    splendent_id: 210330018
-    materials:
-      - id: 210330013
-        count: 2
-      - id: 610511013
-        count: 3
-      - id: 610511014
-        count: 6
-      - id: 610530010
-        count: 3
-      - id: 610610016
-        count: 5
-      - id: 610620016
-        count: 8
-      - id: 610710010
-        count: 12
-    race: light
-  - id: 210330020
-    splendent_id: 210330022
-    materials:
-      - id: 210330014
-        count: 2
-      - id: 610511013
-        count: 3
-      - id: 610511014
-        count: 6
-      - id: 610530010
-        count: 3
-      - id: 610610016
-        count: 5
-      - id: 610620016
-        count: 8
-      - id: 610710010
-        count: 12
-    race: dark
-  - id: 210430016
-    splendent_id: 210430018
-    materials:
-      - id: 210430013
-        count: 2
-      - id: 610511013
-        count: 3
-      - id: 610511014
-        count: 6
-      - id: 610530010
-        count: 3
-      - id: 610610016
-        count: 5
-      - id: 610620016
-        count: 8
-      - id: 610710010
-        count: 12
-    race: light
-  - id: 210430020
-    splendent_id: 210430022
-    materials:
-      - id: 210430014
-        count: 2
-      - id: 610511013
-        count: 3
-      - id: 610511014
-        count: 6
-      - id: 610530010
-        count: 3
-      - id: 610610016
-        count: 5
-      - id: 610620016
-        count: 8
-      - id: 610710010
-        count: 12
-    race: dark
-  - id: 210530016
-    splendent_id: 210530018
-    materials:
-      - id: 210530013
-        count: 2
-      - id: 610511013
-        count: 2
-      - id: 610511014
-        count: 5
-      - id: 610530010
-        count: 2
-      - id: 610610016
-        count: 4
-      - id: 610620016
-        count: 6
-      - id: 610710010
-        count: 10
-    race: light
-  - id: 210530020
-    splendent_id: 210530022
-    materials:
-      - id: 210530014
-        count: 2
-      - id: 610511013
-        count: 2
-      - id: 610511014
-        count: 5
-      - id: 610530010
-        count: 2
-      - id: 610610016
-        count: 4
-      - id: 610620016
-        count: 6
-      - id: 610710010
-        count: 10
-    race: dark
-  - id: 210630016
-    splendent_id: 210630018
-    materials:
-      - id: 210630013
-        count: 2
-      - id: 610511013
-        count: 2
-      - id: 610511014
-        count: 6
-      - id: 610530010
-        count: 2
-      - id: 610610016
-        count: 5
-      - id: 610620016
-        count: 7
-      - id: 610710010
-        count: 10
-    race: light
-  - id: 210630020
-    splendent_id: 210630022
-    materials:
-      - id: 210630014
-        count: 2
-      - id: 610511013
-        count: 2
-      - id: 610511014
-        count: 6
-      - id: 610530010
-        count: 2
-      - id: 610610016
-        count: 5
-      - id: 610620016
-        count: 7
-      - id: 610710010
-        count: 10
-    race: dark
-  - id: 210730016
-    splendent_id: 210730018
-    materials:
-      - id: 210730013
-        count: 2
-      - id: 610511013
-        count: 2
-      - id: 610511014
-        count: 5
-      - id: 610530010
-        count: 2
-      - id: 610610016
-        count: 4
-      - id: 610620016
-        count: 6
-      - id: 610710010
-        count: 10
-    race: light
-  - id: 210730020
-    splendent_id: 210730022
-    materials:
-      - id: 210730014
-        count: 2
-      - id: 610511013
-        count: 2
-      - id: 610511014
-        count: 5
-      - id: 610530010
-        count: 2
-      - id: 610610016
-        count: 4
-      - id: 610620016
-        count: 6
-      - id: 610710010
-        count: 10
-    race: dark
-  - id: 210130023
-    splendent_id: 210130040
-    materials:
-      - id: 210130013
-        count: 3
-      - id: 610511013
-        count: 4
-      - id: 610511014
-        count: 7
-      - id: 610511015
-        count: 14
-      - id: 610530010
-        count: 10
-      - id: 610610016
-        count: 14
-      - id: 610620016
-        count: 24
-      - id: 610710011
-        count: 27
-    race: light
-  - id: 210130024
-    splendent_id: 210130041
-    materials:
-      - id: 210130014
-        count: 3
-      - id: 610511013
-        count: 4
-      - id: 610511014
-        count: 7
-      - id: 610511015
-        count: 14
-      - id: 610530010
-        count: 10
-      - id: 610610016
-        count: 14
-      - id: 610620016
-        count: 24
-      - id: 610710011
-        count: 27
-    race: dark
-  - id: 210230023
-    splendent_id: 210230040
-    materials:
-      - id: 210230013
-        count: 3
-      - id: 610511013
-        count: 3
-      - id: 610511014
-        count: 5
-      - id: 610511015
-        count: 11
-      - id: 610530010
-        count: 8
-      - id: 610610016
-        count: 11
-      - id: 610620016
-        count: 18
-      - id: 610710011
-        count: 20
-    race: light
-  - id: 210230024
-    splendent_id: 210230041
-    materials:
-      - id: 210230014
-        count: 3
-      - id: 610511013
-        count: 3
-      - id: 610511014
-        count: 5
-      - id: 610511015
-        count: 11
-      - id: 610530010
-        count: 8
-      - id: 610610016
-        count: 11
-      - id: 610620016
-        count: 18
-      - id: 610710011
-        count: 20
-    race: dark
-  - id: 210330023
-    splendent_id: 210330040
-    materials:
-      - id: 210330013
-        count: 3
-      - id: 610511013
-        count: 2
-      - id: 610511014
-        count: 4
-      - id: 610511015
-        count: 9
-      - id: 610530010
-        count: 7
-      - id: 610610016
-        count: 9
-      - id: 610620016
-        count: 15
-      - id: 610710011
-        count: 17
-    race: light
-  - id: 210330024
-    splendent_id: 210330041
-    materials:
-      - id: 210330014
-        count: 3
-      - id: 610511013
-        count: 2
-      - id: 610511014
-        count: 4
-      - id: 610511015
-        count: 9
-      - id: 610530010
-        count: 7
-      - id: 610610016
-        count: 9
-      - id: 610620016
-        count: 15
-      - id: 610710011
-        count: 17
-    race: dark
-  - id: 210430023
-    splendent_id: 210430040
-    materials:
-      - id: 210430013
-        count: 3
-      - id: 610511013
-        count: 2
-      - id: 610511014
-        count: 4
-      - id: 610511015
-        count: 9
-      - id: 610530010
-        count: 7
-      - id: 610610016
-        count: 9
-      - id: 610620016
-        count: 15
-      - id: 610710011
-        count: 17
-    race: light
-  - id: 210430024
-    splendent_id: 210430041
-    materials:
-      - id: 210430014
-        count: 3
-      - id: 610511013
-        count: 2
-      - id: 610511014
-        count: 4
-      - id: 610511015
-        count: 9
-      - id: 610530010
-        count: 7
-      - id: 610610016
-        count: 9
-      - id: 610620016
-        count: 15
-      - id: 610710011
-        count: 17
-    race: dark
-  - id: 210530023
-    splendent_id: 210530040
-    materials:
-      - id: 210530013
-        count: 3
-      - id: 610511013
-        count: 2
-      - id: 610511014
-        count: 3
-      - id: 610511015
-        count: 7
-      - id: 610530010
-        count: 6
-      - id: 610610016
-        count: 7
-      - id: 610620016
-        count: 12
-      - id: 610710011
-        count: 14
-    race: light
-  - id: 210530024
-    splendent_id: 210530041
-    materials:
-      - id: 210530014
-        count: 3
-      - id: 610511013
-        count: 2
-      - id: 610511014
-        count: 3
-      - id: 610511015
-        count: 7
-      - id: 610530010
-        count: 6
-      - id: 610610016
-        count: 7
-      - id: 610620016
-        count: 12
-      - id: 610710011
-        count: 14
-    race: dark
-  - id: 210630023
-    splendent_id: 210630040
-    materials:
-      - id: 210630013
-        count: 3
-      - id: 610511013
-        count: 2
-      - id: 610511014
-        count: 4
-      - id: 610511015
-        count: 9
-      - id: 610530010
-        count: 7
-      - id: 610610016
-        count: 9
-      - id: 610620016
-        count: 15
-      - id: 610710011
-        count: 17
-    race: light
-  - id: 210630024
-    splendent_id: 210630041
-    materials:
-      - id: 210630014
-        count: 3
-      - id: 610511013
-        count: 2
-      - id: 610511014
-        count: 4
-      - id: 610511015
-        count: 9
-      - id: 610530010
-        count: 7
-      - id: 610610016
-        count: 9
-      - id: 610620016
-        count: 15
-      - id: 610710011
-        count: 17
-    race: dark
-  - id: 210730023
-    splendent_id: 210730040
-    materials:
-      - id: 210730013
-        count: 3
-      - id: 610511013
-        count: 2
-      - id: 610511014
-        count: 3
-      - id: 610511015
-        count: 7
-      - id: 610530010
-        count: 6
-      - id: 610610016
-        count: 7
-      - id: 610620016
-        count: 12
-      - id: 610710011
-        count: 14
-    race: light
-  - id: 210730024
-    splendent_id: 210730041
-    materials:
-      - id: 210730014
-        count: 3
-      - id: 610511013
-        count: 2
-      - id: 610511014
-        count: 3
-      - id: 610511015
-        count: 7
-      - id: 610530010
-        count: 6
-      - id: 610610016
-        count: 7
-      - id: 610620016
-        count: 12
-      - id: 610710011
-        count: 14
-    race: dark
-  - id: 210120001
-    splendent_id: 210120006
-    materials:
-      - id: 210130013
-        count: 5
-      - id: 610511013
-        count: 12
-      - id: 610511014
-        count: 18
-      - id: 610511015
-        count: 28
-      - id: 610511019
-        count: 13
-      - id: 610530010
-        count: 33
-      - id: 610610016
-        count: 47
-      - id: 610620016
-        count: 81
-      - id: 610710013
-        count: 81
-    race: light
-  - id: 210120002
-    splendent_id: 210120007
-    materials:
-      - id: 210130014
-        count: 5
-      - id: 610511013
-        count: 12
-      - id: 610511014
-        count: 18
-      - id: 610511015
-        count: 28
-      - id: 610511019
-        count: 13
-      - id: 610530010
-        count: 33
-      - id: 610610016
-        count: 47
-      - id: 610620016
-        count: 81
-      - id: 610710013
-        count: 81
-    race: dark
-  - id: 210220001
-    splendent_id: 210220006
-    materials:
-      - id: 210230013
-        count: 5
-      - id: 610511013
-        count: 9
-      - id: 610511014
-        count: 14
-      - id: 610511015
-        count: 21
-      - id: 610511019
-        count: 10
-      - id: 610530010
-        count: 25
-      - id: 610610016
-        count: 35
-      - id: 610620016
-        count: 61
-      - id: 610710013
-        count: 61
-    race: light
-  - id: 210220002
-    splendent_id: 210220007
-    materials:
-      - id: 210230014
-        count: 5
-      - id: 610511013
-        count: 9
-      - id: 610511014
-        count: 14
-      - id: 610511015
-        count: 21
-      - id: 610511019
-        count: 10
-      - id: 610530010
-        count: 25
-      - id: 610610016
-        count: 35
-      - id: 610620016
-        count: 61
-      - id: 610710013
-        count: 61
-    race: dark
-  - id: 210320001
-    splendent_id: 210320006
-    materials:
-      - id: 210330013
-        count: 5
-      - id: 610511013
-        count: 7
-      - id: 610511014
-        count: 12
-      - id: 610511015
-        count: 17
-      - id: 610511019
-        count: 8
-      - id: 610530010
-        count: 21
-      - id: 610610016
-        count: 29
-      - id: 610620016
-        count: 51
-      - id: 610710013
-        count: 51
-    race: light
-  - id: 210320002
-    splendent_id: 210320007
-    materials:
-      - id: 210330014
-        count: 5
-      - id: 610511013
-        count: 7
-      - id: 610511014
-        count: 12
-      - id: 610511015
-        count: 17
-      - id: 610511019
-        count: 8
-      - id: 610530010
-        count: 21
-      - id: 610610016
-        count: 29
-      - id: 610620016
-        count: 51
-      - id: 610710013
-        count: 51
-    race: dark
-  - id: 210420001
-    splendent_id: 210420006
-    materials:
-      - id: 210430013
-        count: 5
-      - id: 610511013
-        count: 7
-      - id: 610511014
-        count: 12
-      - id: 610511015
-        count: 17
-      - id: 610511019
-        count: 8
-      - id: 610530010
-        count: 21
-      - id: 610610016
-        count: 29
-      - id: 610620016
-        count: 51
-      - id: 610710013
-        count: 51
-    race: light
-  - id: 210420002
-    splendent_id: 210420007
-    materials:
-      - id: 210430014
-        count: 5
-      - id: 610511013
-        count: 7
-      - id: 610511014
-        count: 12
-      - id: 610511015
-        count: 17
-      - id: 610511019
-        count: 8
-      - id: 610530010
-        count: 21
-      - id: 610610016
-        count: 29
-      - id: 610620016
-        count: 51
-      - id: 610710013
-        count: 51
-    race: dark
-  - id: 210520001
-    splendent_id: 210520006
-    materials:
-      - id: 210530013
-        count: 5
-      - id: 610511013
-        count: 6
-      - id: 610511014
-        count: 10
-      - id: 610511015
-        count: 14
-      - id: 610511019
-        count: 6
-      - id: 610530010
-        count: 17
-      - id: 610610016
-        count: 23
-      - id: 610620016
-        count: 41
-      - id: 610710013
-        count: 41
-    race: light
-  - id: 210520002
-    splendent_id: 210520007
-    materials:
-      - id: 210530014
-        count: 5
-      - id: 610511013
-        count: 6
-      - id: 610511014
-        count: 10
-      - id: 610511015
-        count: 14
-      - id: 610511019
-        count: 6
-      - id: 610530010
-        count: 17
-      - id: 610610016
-        count: 23
-      - id: 610620016
-        count: 41
-      - id: 610710013
-        count: 41
-    race: dark
-  - id: 210620001
-    splendent_id: 210620006
-    materials:
-      - id: 210630013
-        count: 5
-      - id: 610511013
-        count: 8
-      - id: 610511014
-        count: 13
-      - id: 610511015
-        count: 18
-      - id: 610511019
-        count: 8
-      - id: 610530010
-        count: 21
-      - id: 610610016
-        count: 29
-      - id: 610620016
-        count: 51
-      - id: 610710013
-        count: 51
-    race: light
-  - id: 210620002
-    splendent_id: 210620007
-    materials:
-      - id: 210630014
-        count: 5
-      - id: 610511013
-        count: 8
-      - id: 610511014
-        count: 13
-      - id: 610511015
-        count: 18
-      - id: 610511019
-        count: 8
-      - id: 610530010
-        count: 21
-      - id: 610610016
-        count: 29
-      - id: 610620016
-        count: 51
-      - id: 610710013
-        count: 51
-    race: dark
-  - id: 210720001
-    splendent_id: 210720006
-    materials:
-      - id: 210730013
-        count: 5
-      - id: 610511013
-        count: 6
-      - id: 610511014
-        count: 10
-      - id: 610511015
-        count: 14
-      - id: 610511019
-        count: 6
-      - id: 610530010
-        count: 17
-      - id: 610610016
-        count: 23
-      - id: 610620016
-        count: 41
-      - id: 610710013
-        count: 41
-    race: light
-  - id: 210720002
-    splendent_id: 210720007
-    materials:
-      - id: 210730014
-        count: 5
-      - id: 610511013
-        count: 6
-      - id: 610511014
-        count: 10
-      - id: 610511015
-        count: 14
-      - id: 610511019
-        count: 6
-      - id: 610530010
-        count: 17
-      - id: 610610016
-        count: 23
-      - id: 610620016
-        count: 41
-      - id: 610710013
-        count: 41
-    race: dark
-  - id: 110460023
-    splendent_id: 110450014
-    materials:
-      - id: 610530001
-        count: 5
-      - id: 610610013
-        count: 2
-      - id: 610730006
-        count: 3
-  - id: 110860023
-    splendent_id: 110850014
-    materials:
-      - id: 610530001
-        count: 5
-      - id: 610610013
-        count: 2
-      - id: 610730006
-        count: 3
-  - id: 110450015
-    splendent_id: 110440012
-    materials:
-      - id: 110450014
-        count: 1
-      - id: 610530005
-        count: 5
-      - id: 610610014
-        count: 3
-      - id: 610650013
-        count: 6
-  - id: 110850015
-    splendent_id: 110840012
-    materials:
-      - id: 110850014
-        count: 1
-      - id: 610530005
-        count: 5
-      - id: 610610014
-        count: 3
-      - id: 610650013
-        count: 6
-  - id: 110440013
-    splendent_id: 110430013
-    materials:
-      - id: 110440012
-        count: 1
-      - id: 610530008
-        count: 5
-      - id: 610610015
-        count: 4
-      - id: 610650015
-        count: 8
-  - id: 110840013
-    splendent_id: 110830013
-    materials:
-      - id: 110840012
-        count: 1
-      - id: 610530008
-        count: 5
-      - id: 610610015
-        count: 4
-      - id: 610650015
-        count: 8
-  - id: 110430015
-    splendent_id: 110430017
-    materials:
-      - id: 110430013
-        count: 1
-      - id: 610511013
-        count: 10
-      - id: 610530010
-        count: 5
-      - id: 610610016
-        count: 7
-      - id: 610650017
-        count: 12
-      - id: 610730022
-        count: 22
-    race: light
-  - id: 110430019
-    splendent_id: 110430021
-    materials:
-      - id: 110430014
-        count: 1
-      - id: 610511013
-        count: 10
-      - id: 610530010
-        count: 5
-      - id: 610610016
-        count: 7
-      - id: 610650018
-        count: 12
-      - id: 610730022
-        count: 22
-    race: dark
-  - id: 110830015
-    splendent_id: 110830017
-    materials:
-      - id: 110830013
-        count: 1
-      - id: 610511013
-        count: 10
-      - id: 610530010
-        count: 5
-      - id: 610610016
-        count: 7
-      - id: 610650017
-        count: 12
-      - id: 610730022
-        count: 22
-    race: light
-  - id: 110830019
-    splendent_id: 110830021
-    materials:
-      - id: 110830014
-        count: 1
-      - id: 610511013
-        count: 10
-      - id: 610530010
-        count: 5
-      - id: 610610016
-        count: 7
-      - id: 610650018
-        count: 12
-      - id: 610730022
-        count: 22
-    race: dark
-  - id: 110430016
-    splendent_id: 110430018
-    materials:
-      - id: 110430013
-        count: 2
-      - id: 610511013
-        count: 8
-      - id: 610511014
-        count: 14
-      - id: 610530010
-        count: 9
-      - id: 610610016
-        count: 12
-      - id: 610650017
-        count: 21
-      - id: 610730023
-        count: 29
-    race: light
-  - id: 110430020
-    splendent_id: 110430022
-    materials:
-      - id: 110430014
-        count: 2
-      - id: 610511013
-        count: 8
-      - id: 610511014
-        count: 14
-      - id: 610530010
-        count: 9
-      - id: 610610016
-        count: 12
-      - id: 610650018
-        count: 21
-      - id: 610730023
-        count: 29
-    race: dark
-  - id: 110830016
-    splendent_id: 110830018
-    materials:
-      - id: 110830013
-        count: 2
-      - id: 610511013
-        count: 8
-      - id: 610511014
-        count: 14
-      - id: 610530010
-        count: 9
-      - id: 610610016
-        count: 12
-      - id: 610650017
-        count: 21
-      - id: 610730023
-        count: 29
-    race: light
-  - id: 110830020
-    splendent_id: 110830022
-    materials:
-      - id: 110830014
-        count: 2
-      - id: 610511013
-        count: 8
-      - id: 610511014
-        count: 14
-      - id: 610530010
-        count: 9
-      - id: 610610016
-        count: 12
-      - id: 610650018
-        count: 21
-      - id: 610730023
-        count: 29
-    race: dark
-  - id: 110430023
-    splendent_id: 110430045
-    materials:
-      - id: 110430013
-        count: 3
-      - id: 610511013
-        count: 6
-      - id: 610511014
-        count: 11
-      - id: 610511015
-        count: 21
-      - id: 610530010
-        count: 15
-      - id: 610610016
-        count: 21
-      - id: 610650017
-        count: 36
-      - id: 610730024
-        count: 41
-    race: light
-  - id: 110430024
-    splendent_id: 110430046
-    materials:
-      - id: 110430014
-        count: 3
-      - id: 610511013
-        count: 6
-      - id: 610511014
-        count: 11
-      - id: 610511015
-        count: 21
-      - id: 610530010
-        count: 15
-      - id: 610610016
-        count: 21
-      - id: 610650018
-        count: 36
-      - id: 610730024
-        count: 41
-    race: dark
-  - id: 110830023
-    splendent_id: 110830045
-    materials:
-      - id: 110830013
-        count: 3
-      - id: 610511013
-        count: 6
-      - id: 610511014
-        count: 11
-      - id: 610511015
-        count: 21
-      - id: 610530010
-        count: 15
-      - id: 610610016
-        count: 21
-      - id: 610650017
-        count: 36
-      - id: 610730024
-        count: 41
-    race: light
-  - id: 110830024
-    splendent_id: 110830046
-    materials:
-      - id: 110830014
-        count: 3
-      - id: 610511013
-        count: 6
-      - id: 610511014
-        count: 11
-      - id: 610511015
-        count: 21
-      - id: 610530010
-        count: 15
-      - id: 610610016
-        count: 21
-      - id: 610650018
-        count: 36
-      - id: 610730024
-        count: 41
-    race: dark
-  - id: 110420001
-    splendent_id: 110420006
-    materials:
-      - id: 110430013
-        count: 5
-      - id: 610511013
-        count: 18
-      - id: 610511014
-        count: 27
-      - id: 610511015
-        count: 42
-      - id: 610511019
-        count: 19
-      - id: 610530010
-        count: 50
-      - id: 610610016
-        count: 70
-      - id: 610650017
-        count: 121
-      - id: 610710012
-        count: 122
-    race: light
-  - id: 110420002
-    splendent_id: 110420007
-    materials:
-      - id: 110430014
-        count: 5
-      - id: 610511013
-        count: 18
-      - id: 610511014
-        count: 27
-      - id: 610511015
-        count: 42
-      - id: 610511019
-        count: 19
-      - id: 610530010
-        count: 50
-      - id: 610610016
-        count: 70
-      - id: 610650018
-        count: 121
-      - id: 610710012
-        count: 122
-    race: dark
-  - id: 110820001
-    splendent_id: 110820006
-    materials:
-      - id: 110830013
-        count: 5
-      - id: 610511013
-        count: 18
-      - id: 610511014
-        count: 27
-      - id: 610511015
-        count: 42
-      - id: 610511019
-        count: 19
-      - id: 610530010
-        count: 50
-      - id: 610610016
-        count: 70
-      - id: 610650017
-        count: 121
-      - id: 610710012
-        count: 122
-    race: light
-  - id: 110820002
-    splendent_id: 110820007
-    materials:
-      - id: 110830014
-        count: 5
-      - id: 610511013
-        count: 18
-      - id: 610511014
-        count: 27
-      - id: 610511015
-        count: 42
-      - id: 610511019
-        count: 19
-      - id: 610530010
-        count: 50
-      - id: 610610016
-        count: 70
-      - id: 610650018
-        count: 121
-      - id: 610710012
-        count: 122
-    race: dark
-  - id: 310360017
-    splendent_id: 310350010
-    materials:
-      - id: 610530001
-        count: 2
-      - id: 610610013
-        count: 1
-      - id: 610730016
-        count: 1
-  - id: 310260017
-    splendent_id: 310250010
-    materials:
-      - id: 610530001
-        count: 3
-      - id: 610610013
-        count: 1
-      - id: 610730020
-        count: 1
-  - id: 310160017
-    splendent_id: 310150010
-    materials:
-      - id: 610530001
-        count: 4
-      - id: 610610013
-        count: 1
-      - id: 610730021
-        count: 1
+    count: 122
+  race: light
+- id: 110520002
+  splendent_id: 110520007
+  materials:
+  - id: 110530013
+    count: 5
+  - id: 610511013
+    count: 18
+  - id: 610511014
+    count: 27
+  - id: 610511015
+    count: 42
+  - id: 610511019
+    count: 19
+  - id: 610530010
+    count: 50
+  - id: 610610016
+    count: 70
+  - id: 610660036
+    count: 121
+  - id: 610730025
+    count: 122
+  race: dark
+- id: 110620001
+  splendent_id: 110620006
+  materials:
+  - id: 110630013
+    count: 5
+  - id: 610511013
+    count: 18
+  - id: 610511014
+    count: 27
+  - id: 610511015
+    count: 42
+  - id: 610511019
+    count: 19
+  - id: 610530010
+    count: 50
+  - id: 610610016
+    count: 70
+  - id: 610660034
+    count: 121
+  - id: 610730025
+    count: 122
+  race: light
+- id: 110620002
+  splendent_id: 110620007
+  materials:
+  - id: 110630013
+    count: 5
+  - id: 610511013
+    count: 18
+  - id: 610511014
+    count: 27
+  - id: 610511015
+    count: 42
+  - id: 610511019
+    count: 19
+  - id: 610530010
+    count: 50
+  - id: 610610016
+    count: 70
+  - id: 610660034
+    count: 121
+  - id: 610730025
+    count: 122
+  race: dark
+- id: 110530087
+  splendent_id: 110530089
+  materials:
+  - id: 110530013
+    count: 4
+  - id: 610511013
+    count: 4
+  - id: 610511014
+    count: 8
+  - id: 610511015
+    count: 16
+  - id: 610511023
+    count: 18
+  - id: 610511028
+    count: 18
+  - id: 610530010
+    count: 26
+  - id: 610610016
+    count: 36
+  - id: 610660036
+    count: 62
+  - id: 610730026
+    count: 69
+  race: light
+- id: 110530088
+  splendent_id: 110530090
+  materials:
+  - id: 110530013
+    count: 4
+  - id: 610511013
+    count: 4
+  - id: 610511014
+    count: 8
+  - id: 610511015
+    count: 16
+  - id: 610511023
+    count: 18
+  - id: 610511028
+    count: 18
+  - id: 610530010
+    count: 26
+  - id: 610610016
+    count: 36
+  - id: 610660036
+    count: 62
+  - id: 610730026
+    count: 69
+  race: dark
+- id: 110630087
+  splendent_id: 110630089
+  materials:
+  - id: 110630013
+    count: 4
+  - id: 610511013
+    count: 4
+  - id: 610511014
+    count: 8
+  - id: 610511015
+    count: 16
+  - id: 610511023
+    count: 18
+  - id: 610511028
+    count: 18
+  - id: 610530010
+    count: 26
+  - id: 610610016
+    count: 36
+  - id: 610660034
+    count: 62
+  - id: 610730026
+    count: 69
+  race: light
+- id: 110630088
+  splendent_id: 110630090
+  materials:
+  - id: 110630013
+    count: 4
+  - id: 610511013
+    count: 4
+  - id: 610511014
+    count: 8
+  - id: 610511015
+    count: 16
+  - id: 610511023
+    count: 18
+  - id: 610511028
+    count: 18
+  - id: 610530010
+    count: 26
+  - id: 610610016
+    count: 36
+  - id: 610660034
+    count: 62
+  - id: 610730026
+    count: 69
+  race: dark
+- id: 110520017
+  splendent_id: 110520019
+  materials:
+  - id: 110530013
+    count: 8
+  - id: 610511013
+    count: 28
+  - id: 610511014
+    count: 48
+  - id: 610511015
+    count: 72
+  - id: 610511019
+    count: 30
+  - id: 610511023
+    count: 86
+  - id: 610511027
+    count: 55
+  - id: 610511028
+    count: 86
+  - id: 610530010
+    count: 100
+  - id: 610610016
+    count: 138
+  - id: 610660036
+    count: 238
+  - id: 610730027
+    count: 183
+  race: light
+- id: 110520018
+  splendent_id: 110520020
+  materials:
+  - id: 110530013
+    count: 8
+  - id: 610511013
+    count: 28
+  - id: 610511014
+    count: 48
+  - id: 610511015
+    count: 72
+  - id: 610511019
+    count: 30
+  - id: 610511023
+    count: 86
+  - id: 610511027
+    count: 55
+  - id: 610511028
+    count: 86
+  - id: 610530010
+    count: 100
+  - id: 610610016
+    count: 138
+  - id: 610660036
+    count: 238
+  - id: 610730027
+    count: 183
+  race: dark
+- id: 110620017
+  splendent_id: 110620019
+  materials:
+  - id: 110630013
+    count: 8
+  - id: 610511013
+    count: 28
+  - id: 610511014
+    count: 48
+  - id: 610511015
+    count: 72
+  - id: 610511019
+    count: 30
+  - id: 610511023
+    count: 86
+  - id: 610511027
+    count: 55
+  - id: 610511028
+    count: 86
+  - id: 610530010
+    count: 100
+  - id: 610610016
+    count: 138
+  - id: 610660034
+    count: 238
+  - id: 610730027
+    count: 183
+  race: light
+- id: 110620018
+  splendent_id: 110620020
+  materials:
+  - id: 110630013
+    count: 8
+  - id: 610511013
+    count: 28
+  - id: 610511014
+    count: 48
+  - id: 610511015
+    count: 72
+  - id: 610511019
+    count: 30
+  - id: 610511023
+    count: 86
+  - id: 610511027
+    count: 55
+  - id: 610511028
+    count: 86
+  - id: 610530010
+    count: 100
+  - id: 610610016
+    count: 138
+  - id: 610660034
+    count: 238
+  - id: 610730027
+    count: 183
+  race: dark
+- id: 610730016
+  splendent_id:
+  materials:
+  - id: 610660025
+    count: 2
+  - id: 630542001
+    count: 1
+- id: 610730021
+  splendent_id:
+  materials:
+  - id: 610660027
+    count: 2
+  - id: 630542001
+    count: 1
+- id: 610730020
+  splendent_id:
+  materials:
+  - id: 610660026
+    count: 2
+  - id: 630542001
+    count: 1
+- id: 610730006
+  splendent_id:
+  materials:
+  - id: 610650011
+    count: 2
+  - id: 630542005
+    count: 1
+- id: 610740015
+  splendent_id:
+  materials:
+  - id: 610530014
+    count: 2
+  - id: 630543005
+    count: 1
+- id: 610730022
+  splendent_id:
+  materials:
+  - id: 610511001
+    count: 2
+  - id: 630520007
+    count: 1
+- id: 610730023
+  splendent_id:
+  materials:
+  - id: 610511002
+    count: 2
+  - id: 630520008
+    count: 1
+- id: 610730024
+  splendent_id:
+  materials:
+  - id: 610511003
+    count: 2
+  - id: 630520009
+    count: 1
+- id: 610730025
+  splendent_id:
+  materials:
+  - id: 610511016
+    count: 2
+  - id: 630520012
+    count: 1
+- id: 610730026
+  splendent_id:
+  materials:
+  - id: 610511020
+    count: 2
+  - id: 630520009
+    count: 2
+- id: 610730027
+  splendent_id:
+  materials:
+  - id: 610511024
+    count: 2
+  - id: 630520012
+    count: 2
+- id: 110460023
+  splendent_id: 110450014
+  materials:
+  - id: 610530001
+    count: 5
+  - id: 610610013
+    count: 2
+  - id: 610730006
+    count: 3
+- id: 110860023
+  splendent_id: 110850014
+  materials:
+  - id: 610530001
+    count: 5
+  - id: 610610013
+    count: 2
+  - id: 610730006
+    count: 3
+- id: 110450015
+  splendent_id: 110440012
+  materials:
+  - id: 110450014
+    count: 1
+  - id: 610530005
+    count: 5
+  - id: 610610014
+    count: 3
+  - id: 610650013
+    count: 6
+- id: 110850015
+  splendent_id: 110840012
+  materials:
+  - id: 110850014
+    count: 1
+  - id: 610530005
+    count: 5
+  - id: 610610014
+    count: 3
+  - id: 610650013
+    count: 6
+- id: 110440013
+  splendent_id: 110430013
+  materials:
+  - id: 110440012
+    count: 1
+  - id: 610530008
+    count: 5
+  - id: 610610015
+    count: 4
+  - id: 610650015
+    count: 8
+- id: 110840013
+  splendent_id: 110830013
+  materials:
+  - id: 110840012
+    count: 1
+  - id: 610530008
+    count: 5
+  - id: 610610015
+    count: 4
+  - id: 610650015
+    count: 8
+- id: 110430015
+  splendent_id: 110430017
+  materials:
+  - id: 110430013
+    count: 1
+  - id: 610511013
+    count: 10
+  - id: 610530010
+    count: 5
+  - id: 610610016
+    count: 7
+  - id: 610650017
+    count: 12
+  - id: 610730022
+    count: 22
+  race: light
+- id: 110430019
+  splendent_id: 110430021
+  materials:
+  - id: 110430014
+    count: 1
+  - id: 610511013
+    count: 10
+  - id: 610530010
+    count: 5
+  - id: 610610016
+    count: 7
+  - id: 610650018
+    count: 12
+  - id: 610730022
+    count: 22
+  race: dark
+- id: 110830015
+  splendent_id: 110830017
+  materials:
+  - id: 110830013
+    count: 1
+  - id: 610511013
+    count: 10
+  - id: 610530010
+    count: 5
+  - id: 610610016
+    count: 7
+  - id: 610650017
+    count: 12
+  - id: 610730022
+    count: 22
+  race: light
+- id: 110830019
+  splendent_id: 110830021
+  materials:
+  - id: 110830014
+    count: 1
+  - id: 610511013
+    count: 10
+  - id: 610530010
+    count: 5
+  - id: 610610016
+    count: 7
+  - id: 610650018
+    count: 12
+  - id: 610730022
+    count: 22
+  race: dark
+- id: 110430016
+  splendent_id: 110430018
+  materials:
+  - id: 110430013
+    count: 2
+  - id: 610511013
+    count: 8
+  - id: 610511014
+    count: 14
+  - id: 610530010
+    count: 9
+  - id: 610610016
+    count: 12
+  - id: 610650017
+    count: 21
+  - id: 610730023
+    count: 29
+  race: light
+- id: 110430020
+  splendent_id: 110430022
+  materials:
+  - id: 110430014
+    count: 2
+  - id: 610511013
+    count: 8
+  - id: 610511014
+    count: 14
+  - id: 610530010
+    count: 9
+  - id: 610610016
+    count: 12
+  - id: 610650018
+    count: 21
+  - id: 610730023
+    count: 29
+  race: dark
+- id: 110830016
+  splendent_id: 110830018
+  materials:
+  - id: 110830013
+    count: 2
+  - id: 610511013
+    count: 8
+  - id: 610511014
+    count: 14
+  - id: 610530010
+    count: 9
+  - id: 610610016
+    count: 12
+  - id: 610650017
+    count: 21
+  - id: 610730023
+    count: 29
+  race: light
+- id: 110830020
+  splendent_id: 110830022
+  materials:
+  - id: 110830014
+    count: 2
+  - id: 610511013
+    count: 8
+  - id: 610511014
+    count: 14
+  - id: 610530010
+    count: 9
+  - id: 610610016
+    count: 12
+  - id: 610650018
+    count: 21
+  - id: 610730023
+    count: 29
+  race: dark
+- id: 110430023
+  splendent_id: 110430045
+  materials:
+  - id: 110430013
+    count: 5
+  - id: 610511013
+    count: 6
+  - id: 610511014
+    count: 11
+  - id: 610511015
+    count: 21
+  - id: 610530010
+    count: 15
+  - id: 610610016
+    count: 21
+  - id: 610650017
+    count: 36
+  - id: 610730024
+    count: 41
+  race: light
+- id: 110430024
+  splendent_id: 110430046
+  materials:
+  - id: 110430014
+    count: 5
+  - id: 610511013
+    count: 6
+  - id: 610511014
+    count: 11
+  - id: 610511015
+    count: 21
+  - id: 610530010
+    count: 15
+  - id: 610610016
+    count: 21
+  - id: 610650018
+    count: 36
+  - id: 610730024
+    count: 41
+  race: dark
+- id: 110830023
+  splendent_id: 110830045
+  materials:
+  - id: 110830013
+    count: 5
+  - id: 610511013
+    count: 6
+  - id: 610511014
+    count: 11
+  - id: 610511015
+    count: 21
+  - id: 610530010
+    count: 15
+  - id: 610610016
+    count: 21
+  - id: 610650017
+    count: 36
+  - id: 610730024
+    count: 41
+  race: light
+- id: 110830024
+  splendent_id: 110830046
+  materials:
+  - id: 110830014
+    count: 5
+  - id: 610511013
+    count: 6
+  - id: 610511014
+    count: 11
+  - id: 610511015
+    count: 21
+  - id: 610530010
+    count: 15
+  - id: 610610016
+    count: 21
+  - id: 610650018
+    count: 36
+  - id: 610730024
+    count: 41
+  race: dark
+- id: 110430087
+  splendent_id: 110430089
+  materials:
+  - id: 110430013
+    count: 4
+  - id: 610511013
+    count: 4
+  - id: 610511014
+    count: 8
+  - id: 610511015
+    count: 16
+  - id: 610511023
+    count: 18
+  - id: 610511028
+    count: 18
+  - id: 610530010
+    count: 26
+  - id: 610610016
+    count: 36
+  - id: 610650017
+    count: 62
+  - id: 610730026
+    count: 69
+  race: light
+- id: 110430088
+  splendent_id: 110430090
+  materials:
+  - id: 110430014
+    count: 4
+  - id: 610511013
+    count: 4
+  - id: 610511014
+    count: 8
+  - id: 610511015
+    count: 16
+  - id: 610511023
+    count: 18
+  - id: 610511028
+    count: 18
+  - id: 610530010
+    count: 26
+  - id: 610610016
+    count: 36
+  - id: 610650018
+    count: 62
+  - id: 610730026
+    count: 69
+  race: dark
+- id: 110830087
+  splendent_id: 110830089
+  materials:
+  - id: 110830013
+    count: 4
+  - id: 610511013
+    count: 4
+  - id: 610511014
+    count: 8
+  - id: 610511015
+    count: 16
+  - id: 610511023
+    count: 18
+  - id: 610511028
+    count: 18
+  - id: 610530010
+    count: 26
+  - id: 610610016
+    count: 36
+  - id: 610650017
+    count: 62
+  - id: 610730026
+    count: 69
+  race: light
+- id: 110830088
+  splendent_id: 110830090
+  materials:
+  - id: 110830014
+    count: 4
+  - id: 610511013
+    count: 4
+  - id: 610511014
+    count: 8
+  - id: 610511015
+    count: 16
+  - id: 610511023
+    count: 18
+  - id: 610511028
+    count: 18
+  - id: 610530010
+    count: 26
+  - id: 610610016
+    count: 36
+  - id: 610650018
+    count: 62
+  - id: 610730026
+    count: 69
+  race: dark
+- id: 110420001
+  splendent_id: 110420006
+  materials:
+  - id: 110430013
+    count: 5
+  - id: 610511013
+    count: 18
+  - id: 610511014
+    count: 27
+  - id: 610511015
+    count: 42
+  - id: 610511019
+    count: 19
+  - id: 610530010
+    count: 50
+  - id: 610610016
+    count: 70
+  - id: 610650017
+    count: 121
+  - id: 610710012
+    count: 122
+  race: light
+- id: 110420002
+  splendent_id: 110420007
+  materials:
+  - id: 110430014
+    count: 5
+  - id: 610511013
+    count: 18
+  - id: 610511014
+    count: 27
+  - id: 610511015
+    count: 42
+  - id: 610511019
+    count: 19
+  - id: 610530010
+    count: 50
+  - id: 610610016
+    count: 70
+  - id: 610650018
+    count: 121
+  - id: 610710012
+    count: 122
+  race: dark
+- id: 110420017
+  splendent_id: 110420019
+  materials:
+  - id: 110430013
+    count: 8
+  - id: 610511013
+    count: 28
+  - id: 610511014
+    count: 48
+  - id: 610511015
+    count: 72
+  - id: 610511019
+    count: 30
+  - id: 610511023
+    count: 86
+  - id: 610511027
+    count: 55
+  - id: 610511028
+    count: 86
+  - id: 610530010
+    count: 100
+  - id: 610610016
+    count: 138
+  - id: 610650017
+    count: 238
+  - id: 610730027
+    count: 183
+  race: light
+- id: 110420018
+  splendent_id: 110420020
+  materials:
+  - id: 110430014
+    count: 8
+  - id: 610511013
+    count: 28
+  - id: 610511014
+    count: 48
+  - id: 610511015
+    count: 72
+  - id: 610511019
+    count: 30
+  - id: 610511023
+    count: 86
+  - id: 610511027
+    count: 55
+  - id: 610511028
+    count: 86
+  - id: 610530010
+    count: 100
+  - id: 610610016
+    count: 138
+  - id: 610650018
+    count: 238
+  - id: 610730027
+    count: 183
+  race: dark
+- id: 110820001
+  splendent_id: 110820006
+  materials:
+  - id: 110830013
+    count: 5
+  - id: 610511013
+    count: 18
+  - id: 610511014
+    count: 27
+  - id: 610511015
+    count: 42
+  - id: 610511019
+    count: 19
+  - id: 610530010
+    count: 50
+  - id: 610610016
+    count: 70
+  - id: 610650017
+    count: 121
+  - id: 610710012
+    count: 122
+  race: light
+- id: 110820002
+  splendent_id: 110820007
+  materials:
+  - id: 110830014
+    count: 5
+  - id: 610511013
+    count: 18
+  - id: 610511014
+    count: 27
+  - id: 610511015
+    count: 42
+  - id: 610511019
+    count: 19
+  - id: 610530010
+    count: 50
+  - id: 610610016
+    count: 70
+  - id: 610650018
+    count: 121
+  - id: 610710012
+    count: 122
+  race: dark
+- id: 110820017
+  splendent_id: 110820019
+  materials:
+  - id: 110830013
+    count: 8
+  - id: 610511013
+    count: 28
+  - id: 610511014
+    count: 48
+  - id: 610511015
+    count: 72
+  - id: 610511019
+    count: 30
+  - id: 610511023
+    count: 86
+  - id: 610511027
+    count: 55
+  - id: 610511028
+    count: 86
+  - id: 610530010
+    count: 100
+  - id: 610610016
+    count: 138
+  - id: 610650017
+    count: 238
+  - id: 610730027
+    count: 183
+  race: light
+- id: 110820018
+  splendent_id: 110820020
+  materials:
+  - id: 110830014
+    count: 8
+  - id: 610511013
+    count: 28
+  - id: 610511014
+    count: 48
+  - id: 610511015
+    count: 72
+  - id: 610511019
+    count: 30
+  - id: 610511023
+    count: 86
+  - id: 610511027
+    count: 55
+  - id: 610511028
+    count: 86
+  - id: 610530010
+    count: 100
+  - id: 610610016
+    count: 138
+  - id: 610650018
+    count: 238
+  - id: 610730027
+    count: 183
+  race: dark
+- id: 310360017
+  splendent_id: 310350010
+  materials:
+  - id: 610530001
+    count: 2
+  - id: 610610013
+    count: 1
+  - id: 610730016
+    count: 1
+- id: 310260017
+  splendent_id: 310250010
+  materials:
+  - id: 610530001
+    count: 3
+  - id: 610610013
+    count: 1
+  - id: 610730020
+    count: 1
+- id: 310160017
+  splendent_id: 310150010
+  materials:
+  - id: 610530001
+    count: 4
+  - id: 610610013
+    count: 1
+  - id: 610730021
+    count: 1
+- id: 310460003
+  splendent_id:
+  materials:
+  - id: 610530001
+    count: 2
+  - id: 610610013
+    count: 1
+  - id: 610740015
+    count: 1
+- id: 310350011
+  splendent_id: 310340012
+  materials:
+  - id: 310350010
+    count: 1
+  - id: 610530005
+    count: 2
+  - id: 610610014
+    count: 1
+  - id: 610660028
+    count: 2
+- id: 310250011
+  splendent_id: 310240012
+  materials:
+  - id: 310250010
+    count: 1
+  - id: 610530005
+    count: 3
+  - id: 610610014
+    count: 2
+  - id: 610660029
+    count: 3
+- id: 310150011
+  splendent_id: 310140012
+  materials:
+  - id: 610530005
+    count: 4
+  - id: 610610014
+    count: 2
+  - id: 610660030
+    count: 4
+- id: 310450017
+  splendent_id:
+  materials:
   - id: 310460003
-    splendent_id:
-    materials:
-      - id: 610530001
-        count: 2
-      - id: 610610013
-        count: 1
-      - id: 610740015
-        count: 1
-  - id: 310350011
-    splendent_id: 310340012
-    materials:
-      - id: 310350010
-        count: 1
-      - id: 610530005
-        count: 2
-      - id: 610610014
-        count: 1
-      - id: 610660028
-        count: 2
-  - id: 310250011
-    splendent_id: 310240012
-    materials:
-      - id: 310250010
-        count: 1
-      - id: 610530005
-        count: 3
-      - id: 610610014
-        count: 2
-      - id: 610660029
-        count: 3
-  - id: 310150011
-    splendent_id: 310140012
-    materials:
-      - id: 610530005
-        count: 4
-      - id: 610610014
-        count: 2
-      - id: 610660030
-        count: 4
+    count: 3
+  - id: 610530005
+    count: 2
+  - id: 610610014
+    count: 2
+- id: 310340013
+  splendent_id: 310330013
+  materials:
+  - id: 310340012
+    count: 1
+  - id: 610530008
+    count: 2
+  - id: 610610015
+    count: 1
+  - id: 610660031
+    count: 3
+- id: 310240013
+  splendent_id: 310230013
+  materials:
+  - id: 310240012
+    count: 1
+  - id: 610530008
+    count: 3
+  - id: 610610015
+    count: 2
+  - id: 610660032
+    count: 4
+- id: 310140013
+  splendent_id: 310130013
+  materials:
+  - id: 310140012
+    count: 1
+  - id: 610530008
+    count: 4
+  - id: 610610015
+    count: 2
+  - id: 610660033
+    count: 5
+- id: 310440017
+  splendent_id:
+  materials:
   - id: 310450017
-    splendent_id:
-    materials:
-      - id: 310460003
-        count: 3
-      - id: 610530005
-        count: 2
-      - id: 610610014
-        count: 2
-  - id: 310340013
-    splendent_id: 310330013
-    materials:
-      - id: 310340012
-        count: 1
-      - id: 610530008
-        count: 2
-      - id: 610610015
-        count: 1
-      - id: 610660031
-        count: 3
-  - id: 310240013
-    splendent_id: 310230013
-    materials:
-      - id: 310240012
-        count: 1
-      - id: 610530008
-        count: 3
-      - id: 610610015
-        count: 2
-      - id: 610660032
-        count: 4
-  - id: 310140013
-    splendent_id: 310130013
-    materials:
-      - id: 310140012
-        count: 1
-      - id: 610530008
-        count: 4
-      - id: 610610015
-        count: 2
-      - id: 610660033
-        count: 5
-  - id: 310440017
-    splendent_id:
-    materials:
-      - id: 310450017
-        count: 3
-      - id: 610530008
-        count: 2
-      - id: 610610015
-        count: 3
-  - id: 310330015
-    splendent_id: 310330017
-    materials:
-      - id: 310330013
-        count: 1
-      - id: 610511013
-        count: 4
-      - id: 610530010
-        count: 2
-      - id: 610610016
-        count: 3
-      - id: 610660034
-        count: 5
-      - id: 610730022
-        count: 8
-    race: light
-  - id: 310330019
-    splendent_id: 310330021
-    materials:
-      - id: 310330013
-        count: 1
-      - id: 610511013
-        count: 4
-      - id: 610530010
-        count: 2
-      - id: 610610016
-        count: 3
-      - id: 610660034
-        count: 5
-      - id: 610730022
-        count: 8
-    race: dark
-  - id: 310230015
-    splendent_id: 310230017
-    materials:
-      - id: 310230013
-        count: 1
-      - id: 610511013
-        count: 5
-      - id: 610530010
-        count: 3
-      - id: 610610016
-        count: 4
-      - id: 610660035
-        count: 6
-      - id: 610730022
-        count: 11
-    race: light
-  - id: 310230019
-    splendent_id: 310230021
-    materials:
-      - id: 310230013
-        count: 1
-      - id: 610511013
-        count: 5
-      - id: 610530010
-        count: 3
-      - id: 610610016
-        count: 4
-      - id: 610660035
-        count: 6
-      - id: 610730022
-        count: 11
-    race: dark
-  - id: 310130015
-    splendent_id: 310130017
-    materials:
-      - id: 310130013
-        count: 1
-      - id: 610511013
-        count: 6
-      - id: 610530010
-        count: 4
-      - id: 610610016
-        count: 6
-      - id: 610660036
-        count: 8
-      - id: 610730022
-        count: 14
-    race: light
-  - id: 310130019
-    splendent_id: 310130021
-    materials:
-      - id: 310130013
-        count: 1
-      - id: 610511013
-        count: 6
-      - id: 610530010
-        count: 4
-      - id: 610610016
-        count: 6
-      - id: 610660036
-        count: 8
-      - id: 610730022
-        count: 14
-    race: dark
-  - id: 310330016
-    splendent_id: 310330018
-    materials:
-      - id: 310330013
-        count: 2
-      - id: 610511013
-        count: 3
-      - id: 610511014
-        count: 5
-      - id: 610530010
-        count: 4
-      - id: 610610016
-        count: 4
-      - id: 610660034
-        count: 8
-      - id: 610730023
-        count: 11
-    race: light
-  - id: 310330020
-    splendent_id: 310330022
-    materials:
-      - id: 310330013
-        count: 2
-      - id: 610511013
-        count: 3
-      - id: 610511014
-        count: 5
-      - id: 610530010
-        count: 4
-      - id: 610610016
-        count: 4
-      - id: 610660034
-        count: 8
-      - id: 610730023
-        count: 11
-    race: dark
-  - id: 310230016
-    splendent_id: 310230018
-    materials:
-      - id: 310230013
-        count: 2
-      - id: 610511013
-        count: 4
-      - id: 610511014
-        count: 7
-      - id: 610530010
-        count: 5
-      - id: 610610016
-        count: 6
-      - id: 610660035
-        count: 11
-      - id: 610730023
-        count: 15
-    race: light
-  - id: 310230020
-    splendent_id: 310230022
-    materials:
-      - id: 310230013
-        count: 2
-      - id: 610511013
-        count: 4
-      - id: 610511014
-        count: 7
-      - id: 610530010
-        count: 5
-      - id: 610610016
-        count: 6
-      - id: 610660035
-        count: 11
-      - id: 610730023
-        count: 15
-    race: dark
-  - id: 310130016
-    splendent_id: 310130018
-    materials:
-      - id: 310130013
-        count: 2
-      - id: 610511013
-        count: 5
-      - id: 610511014
-        count: 9
-      - id: 610530010
-        count: 6
-      - id: 610610016
-        count: 7
-      - id: 610660036
-        count: 14
-      - id: 610730023
-        count: 19
-    race: light
-  - id: 310130020
-    splendent_id: 310130022
-    materials:
-      - id: 310130013
-        count: 2
-      - id: 610511013
-        count: 5
-      - id: 610511014
-        count: 9
-      - id: 610530010
-        count: 6
-      - id: 610610016
-        count: 7
-      - id: 610660036
-        count: 14
-      - id: 610730023
-        count: 19
-    race: dark
-  - id: 310330023
-    splendent_id: 310330040
-    materials:
-      - id: 310330013
-        count: 3
-      - id: 610511013
-        count: 2
-      - id: 610511014
-        count: 4
-      - id: 610511015
-        count: 8
-      - id: 610530010
-        count: 6
-      - id: 610610016
-        count: 8
-      - id: 610660034
-        count: 13
-      - id: 610730024
-        count: 16
-    race: light
-  - id: 310330024
-    splendent_id: 310330041
-    materials:
-      - id: 310330013
-        count: 3
-      - id: 610511013
-        count: 2
-      - id: 610511014
-        count: 4
-      - id: 610511015
-        count: 8
-      - id: 610530010
-        count: 6
-      - id: 610610016
-        count: 8
-      - id: 610660034
-        count: 13
-      - id: 610730024
-        count: 16
-    race: dark
-  - id: 310230023
-    splendent_id: 310230040
-    materials:
-      - id: 310230013
-        count: 3
-      - id: 610511013
-        count: 3
-      - id: 610511014
-        count: 6
-      - id: 610511015
-        count: 11
-      - id: 610530010
-        count: 8
-      - id: 610610016
-        count: 11
-      - id: 610660035
-        count: 18
-      - id: 610730024
-        count: 21
-    race: light
-  - id: 310230024
-    splendent_id: 310230041
-    materials:
-      - id: 310230013
-        count: 3
-      - id: 610511013
-        count: 3
-      - id: 610511014
-        count: 6
-      - id: 610511015
-        count: 11
-      - id: 610530010
-        count: 8
-      - id: 610610016
-        count: 11
-      - id: 610660035
-        count: 18
-      - id: 610730024
-        count: 21
-    race: dark
-  - id: 310130023
-    splendent_id: 310130040
-    materials:
-      - id: 310130013
-        count: 3
-      - id: 610511013
-        count: 4
-      - id: 610511014
-        count: 7
-      - id: 610511015
-        count: 14
-      - id: 610530010
-        count: 10
-      - id: 610610016
-        count: 14
-      - id: 610660036
-        count: 22
-      - id: 610730024
-        count: 26
-    race: light
-  - id: 310130024
-    splendent_id: 310130041
-    materials:
-      - id: 310130013
-        count: 3
-      - id: 610511013
-        count: 4
-      - id: 610511014
-        count: 7
-      - id: 610511015
-        count: 14
-      - id: 610530010
-        count: 10
-      - id: 610610016
-        count: 14
-      - id: 610660036
-        count: 22
-      - id: 610730024
-        count: 26
-    race: dark
-  - id: 310320001
-    splendent_id: 310320006
-    materials:
-      - id: 310330013
-        count: 5
-      - id: 610511013
-        count: 7
-      - id: 610511014
-        count: 11
-      - id: 610511015
-        count: 16
-      - id: 610511019
-        count: 9
-      - id: 610530010
-        count: 19
-      - id: 610610016
-        count: 26
-      - id: 610660034
-        count: 46
-      - id: 610730025
-        count: 46
-    race: light
-  - id: 310320002
-    splendent_id: 310320007
-    materials:
-      - id: 310330013
-        count: 5
-      - id: 610511013
-        count: 7
-      - id: 610511014
-        count: 11
-      - id: 610511015
-        count: 16
-      - id: 610511019
-        count: 9
-      - id: 610530010
-        count: 19
-      - id: 610610016
-        count: 26
-      - id: 610660034
-        count: 46
-      - id: 610730025
-        count: 46
-    race: dark
-  - id: 310220001
-    splendent_id: 310220006
-    materials:
-      - id: 310230013
-        count: 5
-      - id: 610511013
-        count: 9
-      - id: 610511014
-        count: 14
-      - id: 610511015
-        count: 21
-      - id: 610511019
-        count: 10
-      - id: 610530010
-        count: 25
-      - id: 610610016
-        count: 35
-      - id: 610660035
-        count: 61
-      - id: 610730025
-        count: 61
-    race: light
-  - id: 310220002
-    splendent_id: 310220007
-    materials:
-      - id: 310230013
-        count: 5
-      - id: 610511013
-        count: 9
-      - id: 610511014
-        count: 14
-      - id: 610511015
-        count: 21
-      - id: 610511019
-        count: 10
-      - id: 610530010
-        count: 25
-      - id: 610610016
-        count: 35
-      - id: 610660035
-        count: 61
-      - id: 610730025
-        count: 61
-    race: dark
-  - id: 310120001
-    splendent_id: 310120006
-    materials:
-      - id: 310130013
-        count: 5
-      - id: 610511013
-        count: 11
-      - id: 610511014
-        count: 18
-      - id: 610511015
-        count: 26
-      - id: 610511019
-        count: 13
-      - id: 610530010
-        count: 31
-      - id: 610610016
-        count: 44
-      - id: 610660036
-        count: 76
-      - id: 610730025
-        count: 76
-    race: light
-  - id: 310120002
-    splendent_id: 310120007
-    materials:
-      - id: 310130013
-        count: 5
-      - id: 610511013
-        count: 11
-      - id: 610511014
-        count: 18
-      - id: 610511015
-        count: 26
-      - id: 610511019
-        count: 13
-      - id: 610530010
-        count: 31
-      - id: 610610016
-        count: 44
-      - id: 610660036
-        count: 76
-      - id: 610730025
-        count: 76
-    race: dark
-  - id: 110560023
-    splendent_id: 110550014
-    materials:
-      - id: 610530001
-        count: 5
-      - id: 610610013
-        count: 2
-      - id: 610740015
-        count: 3
-  - id: 110660023
-    splendent_id: 110650014
-    materials:
-      - id: 610530001
-        count: 5
-      - id: 610610013
-        count: 2
-      - id: 610740015
-        count: 3
-  - id: 110550015
-    splendent_id: 110540012
-    materials:
-      - id: 110550014
-        count: 1
-      - id: 610530005
-        count: 5
-      - id: 610610014
-        count: 3
-      - id: 610660030
-        count: 6
-  - id: 110650015
-    splendent_id: 110640012
-    materials:
-      - id: 110650014
-        count: 1
-      - id: 610530005
-        count: 5
-      - id: 610610014
-        count: 3
-      - id: 610660030
-        count: 6
-  - id: 110540013
-    splendent_id: 110530013
-    materials:
-      - id: 110540012
-        count: 1
-      - id: 610530008
-        count: 5
-      - id: 610610015
-        count: 4
-      - id: 610660033
-        count: 8
-  - id: 110640013
-    splendent_id: 110630013
-    materials:
-      - id: 110640012
-        count: 1
-      - id: 610530008
-        count: 5
-      - id: 610610015
-        count: 4
-      - id: 610660033
-        count: 8
-  - id: 110530015
-    splendent_id: 110530017
-    materials:
-      - id: 110530013
-        count: 1
-      - id: 610511013
-        count: 10
-      - id: 610530010
-        count: 5
-      - id: 610610016
-        count: 7
-      - id: 610660036
-        count: 12
-      - id: 610730022
-        count: 22
-    race: light
-  - id: 110530019
-    splendent_id: 110530021
-    materials:
-      - id: 110530013
-        count: 1
-      - id: 610511013
-        count: 10
-      - id: 610530010
-        count: 5
-      - id: 610610016
-        count: 7
-      - id: 610660036
-        count: 12
-      - id: 610730022
-        count: 22
-    race: dark
-  - id: 110630015
-    splendent_id: 110630017
-    materials:
-      - id: 110630013
-        count: 1
-      - id: 610511013
-        count: 10
-      - id: 610530010
-        count: 5
-      - id: 610610016
-        count: 7
-      - id: 610660036
-        count: 12
-      - id: 610730022
-        count: 22
-    race: light
-  - id: 110630019
-    splendent_id: 110630021
-    materials:
-      - id: 110630013
-        count: 1
-      - id: 610511013
-        count: 10
-      - id: 610530010
-        count: 5
-      - id: 610610016
-        count: 7
-      - id: 610660036
-        count: 12
-      - id: 610730022
-        count: 22
-    race: dark
-  - id: 110530016
-    splendent_id: 110530018
-    materials:
-      - id: 110530013
-        count: 2
-      - id: 610511013
-        count: 8
-      - id: 610511014
-        count: 14
-      - id: 610530010
-        count: 9
-      - id: 610610016
-        count: 12
-      - id: 610660036
-        count: 21
-      - id: 610730023
-        count: 29
-    race: light
-  - id: 110530020
-    splendent_id: 110530022
-    materials:
-      - id: 110530013
-        count: 2
-      - id: 610511013
-        count: 8
-      - id: 610511014
-        count: 14
-      - id: 610530010
-        count: 9
-      - id: 610610016
-        count: 12
-      - id: 610660036
-        count: 21
-      - id: 610730023
-        count: 29
-    race: dark
-  - id: 110630016
-    splendent_id: 110630018
-    materials:
-      - id: 110630013
-        count: 2
-      - id: 610511013
-        count: 8
-      - id: 610511014
-        count: 14
-      - id: 610530010
-        count: 9
-      - id: 610610016
-        count: 12
-      - id: 610660036
-        count: 21
-      - id: 610730023
-        count: 29
-    race: light
-  - id: 110630020
-    splendent_id: 110630022
-    materials:
-      - id: 110630013
-        count: 2
-      - id: 610511013
-        count: 8
-      - id: 610511014
-        count: 14
-      - id: 610530010
-        count: 9
-      - id: 610610016
-        count: 12
-      - id: 610660036
-        count: 21
-      - id: 610730023
-        count: 29
-    race: dark
-  - id: 110530023
-    splendent_id: 110530045
-    materials:
-      - id: 110530013
-        count: 3
-      - id: 610511013
-        count: 6
-      - id: 610511014
-        count: 11
-      - id: 610511015
-        count: 21
-      - id: 610530010
-        count: 15
-      - id: 610610016
-        count: 21
-      - id: 610660036
-        count: 36
-      - id: 610730024
-        count: 41
-    race: light
-  - id: 110530024
-    splendent_id: 110530046
-    materials:
-      - id: 110530013
-        count: 3
-      - id: 610511013
-        count: 6
-      - id: 610511014
-        count: 11
-      - id: 610511015
-        count: 21
-      - id: 610530010
-        count: 15
-      - id: 610610016
-        count: 21
-      - id: 610660036
-        count: 36
-      - id: 610730024
-        count: 41
-    race: dark
-  - id: 110630023
-    splendent_id: 110630045
-    materials:
-      - id: 110630013
-        count: 3
-      - id: 610511013
-        count: 6
-      - id: 610511014
-        count: 11
-      - id: 610511015
-        count: 21
-      - id: 610530010
-        count: 15
-      - id: 610610016
-        count: 21
-      - id: 610660036
-        count: 36
-      - id: 610730024
-        count: 41
-    race: light
-  - id: 110630024
-    splendent_id: 110630046
-    materials:
-      - id: 110630013
-        count: 3
-      - id: 610511013
-        count: 6
-      - id: 610511014
-        count: 11
-      - id: 610511015
-        count: 21
-      - id: 610530010
-        count: 15
-      - id: 610610016
-        count: 21
-      - id: 610660036
-        count: 36
-      - id: 610730024
-        count: 41
-    race: dark
-  - id: 110520001
-    splendent_id: 110520006
-    materials:
-      - id: 110530013
-        count: 5
-      - id: 610511013
-        count: 18
-      - id: 610511014
-        count: 27
-      - id: 610511015
-        count: 42
-      - id: 610511019
-        count: 19
-      - id: 610530010
-        count: 50
-      - id: 610610016
-        count: 70
-      - id: 610660036
-        count: 121
-      - id: 610730025
-        count: 122
-    race: light
-  - id: 110520002
-    splendent_id: 110520007
-    materials:
-      - id: 110530013
-        count: 5
-      - id: 610511013
-        count: 18
-      - id: 610511014
-        count: 27
-      - id: 610511015
-        count: 42
-      - id: 610511019
-        count: 19
-      - id: 610530010
-        count: 50
-      - id: 610610016
-        count: 70
-      - id: 610660036
-        count: 121
-      - id: 610730025
-        count: 122
-    race: dark
-  - id: 110620001
-    splendent_id: 110620006
-    materials:
-      - id: 110630013
-        count: 5
-      - id: 610511013
-        count: 18
-      - id: 610511014
-        count: 27
-      - id: 610511015
-        count: 42
-      - id: 610511019
-        count: 19
-      - id: 610530010
-        count: 50
-      - id: 610610016
-        count: 70
-      - id: 610660036
-        count: 121
-      - id: 610730025
-        count: 122
-    race: light
-  - id: 110620002
-    splendent_id: 110620007
-    materials:
-      - id: 110630013
-        count: 5
-      - id: 610511013
-        count: 18
-      - id: 610511014
-        count: 27
-      - id: 610511015
-        count: 42
-      - id: 610511019
-        count: 19
-      - id: 610530010
-        count: 50
-      - id: 610610016
-        count: 70
-      - id: 610660036
-        count: 121
-      - id: 610730025
-        count: 122
-    race: dark
+    count: 3
+  - id: 610530008
+    count: 2
+  - id: 610610015
+    count: 3
+- id: 310330015
+  splendent_id: 310330017
+  materials:
+  - id: 310330013
+    count: 1
+  - id: 610511013
+    count: 4
+  - id: 610530010
+    count: 2
+  - id: 610610016
+    count: 3
+  - id: 610660034
+    count: 5
+  - id: 610730022
+    count: 8
+  race: light
+- id: 310330019
+  splendent_id: 310330021
+  materials:
+  - id: 310330013
+    count: 1
+  - id: 610511013
+    count: 4
+  - id: 610530010
+    count: 2
+  - id: 610610016
+    count: 3
+  - id: 610660034
+    count: 5
+  - id: 610730022
+    count: 8
+  race: dark
+- id: 310230015
+  splendent_id: 310230017
+  materials:
+  - id: 310230013
+    count: 1
+  - id: 610511013
+    count: 5
+  - id: 610530010
+    count: 3
+  - id: 610610016
+    count: 4
+  - id: 610660035
+    count: 6
+  - id: 610730022
+    count: 11
+  race: light
+- id: 310230019
+  splendent_id: 310230021
+  materials:
+  - id: 310230013
+    count: 1
+  - id: 610511013
+    count: 5
+  - id: 610530010
+    count: 3
+  - id: 610610016
+    count: 4
+  - id: 610660035
+    count: 6
+  - id: 610730022
+    count: 11
+  race: dark
+- id: 310130015
+  splendent_id: 310130017
+  materials:
+  - id: 310130013
+    count: 1
+  - id: 610511013
+    count: 6
+  - id: 610530010
+    count: 4
+  - id: 610610016
+    count: 5
+  - id: 610660036
+    count: 8
+  - id: 610730022
+    count: 14
+  race: light
+- id: 310130019
+  splendent_id: 310130021
+  materials:
+  - id: 310130013
+    count: 1
+  - id: 610511013
+    count: 6
+  - id: 610530010
+    count: 4
+  - id: 610610016
+    count: 5
+  - id: 610660036
+    count: 8
+  - id: 610730022
+    count: 14
+  race: dark
+- id: 310330016
+  splendent_id: 310330018
+  materials:
+  - id: 310330013
+    count: 2
+  - id: 610511013
+    count: 3
+  - id: 610511014
+    count: 5
+  - id: 610530010
+    count: 4
+  - id: 610610016
+    count: 4
+  - id: 610660034
+    count: 8
+  - id: 610730023
+    count: 11
+  race: light
+- id: 310330020
+  splendent_id: 310330022
+  materials:
+  - id: 310330013
+    count: 2
+  - id: 610511013
+    count: 3
+  - id: 610511014
+    count: 5
+  - id: 610530010
+    count: 4
+  - id: 610610016
+    count: 4
+  - id: 610660034
+    count: 8
+  - id: 610730023
+    count: 11
+  race: dark
+- id: 310230016
+  splendent_id: 310230018
+  materials:
+  - id: 310230013
+    count: 2
+  - id: 610511013
+    count: 4
+  - id: 610511014
+    count: 7
+  - id: 610530010
+    count: 5
+  - id: 610610016
+    count: 6
+  - id: 610660035
+    count: 11
+  - id: 610730023
+    count: 15
+  race: light
+- id: 310230020
+  splendent_id: 310230022
+  materials:
+  - id: 310230013
+    count: 2
+  - id: 610511013
+    count: 4
+  - id: 610511014
+    count: 7
+  - id: 610530010
+    count: 5
+  - id: 610610016
+    count: 6
+  - id: 610660035
+    count: 11
+  - id: 610730023
+    count: 15
+  race: dark
+- id: 310130016
+  splendent_id: 310130018
+  materials:
+  - id: 310130013
+    count: 2
+  - id: 610511013
+    count: 5
+  - id: 610511014
+    count: 9
+  - id: 610530010
+    count: 6
+  - id: 610610016
+    count: 7
+  - id: 610660036
+    count: 14
+  - id: 610730023
+    count: 19
+  race: light
+- id: 310130020
+  splendent_id: 310130022
+  materials:
+  - id: 310130013
+    count: 2
+  - id: 610511013
+    count: 5
+  - id: 610511014
+    count: 9
+  - id: 610530010
+    count: 6
+  - id: 610610016
+    count: 7
+  - id: 610660036
+    count: 14
+  - id: 610730023
+    count: 19
+  race: dark
+- id: 310330023
+  splendent_id: 310330040
+  materials:
+  - id: 310330013
+    count: 3
+  - id: 610511013
+    count: 2
+  - id: 610511014
+    count: 4
+  - id: 610511015
+    count: 8
+  - id: 610530010
+    count: 6
+  - id: 610610016
+    count: 8
+  - id: 610660034
+    count: 13
+  - id: 610730024
+    count: 16
+  race: light
+- id: 310330024
+  splendent_id: 310330041
+  materials:
+  - id: 310330013
+    count: 3
+  - id: 610511013
+    count: 2
+  - id: 610511014
+    count: 4
+  - id: 610511015
+    count: 8
+  - id: 610530010
+    count: 6
+  - id: 610610016
+    count: 8
+  - id: 610660034
+    count: 13
+  - id: 610730024
+    count: 16
+  race: dark
+- id: 310230023
+  splendent_id: 310230040
+  materials:
+  - id: 310230013
+    count: 3
+  - id: 610511013
+    count: 3
+  - id: 610511014
+    count: 6
+  - id: 610511015
+    count: 11
+  - id: 610530010
+    count: 8
+  - id: 610610016
+    count: 11
+  - id: 610660035
+    count: 18
+  - id: 610730024
+    count: 21
+  race: light
+- id: 310230024
+  splendent_id: 310230041
+  materials:
+  - id: 310230013
+    count: 3
+  - id: 610511013
+    count: 3
+  - id: 610511014
+    count: 6
+  - id: 610511015
+    count: 11
+  - id: 610530010
+    count: 8
+  - id: 610610016
+    count: 11
+  - id: 610660035
+    count: 18
+  - id: 610730024
+    count: 21
+  race: dark
+- id: 310130023
+  splendent_id: 310130040
+  materials:
+  - id: 310130013
+    count: 3
+  - id: 610511013
+    count: 4
+  - id: 610511014
+    count: 7
+  - id: 610511015
+    count: 14
+  - id: 610530010
+    count: 10
+  - id: 610610016
+    count: 14
+  - id: 610660036
+    count: 22
+  - id: 610730024
+    count: 26
+  race: light
+- id: 310130024
+  splendent_id: 310130041
+  materials:
+  - id: 310130013
+    count: 3
+  - id: 610511013
+    count: 4
+  - id: 610511014
+    count: 7
+  - id: 610511015
+    count: 14
+  - id: 610530010
+    count: 10
+  - id: 610610016
+    count: 14
+  - id: 610660036
+    count: 22
+  - id: 610730024
+    count: 26
+  race: dark
+- id: 310320001
+  splendent_id: 310320006
+  materials:
+  - id: 310330013
+    count: 5
+  - id: 610511013
+    count: 7
+  - id: 610511014
+    count: 11
+  - id: 610511015
+    count: 16
+  - id: 610511019
+    count: 9
+  - id: 610530010
+    count: 19
+  - id: 610610016
+    count: 26
+  - id: 610660034
+    count: 46
+  - id: 610730025
+    count: 46
+  race: light
+- id: 310320002
+  splendent_id: 310320007
+  materials:
+  - id: 310330013
+    count: 5
+  - id: 610511013
+    count: 7
+  - id: 610511014
+    count: 11
+  - id: 610511015
+    count: 16
+  - id: 610511019
+    count: 9
+  - id: 610530010
+    count: 19
+  - id: 610610016
+    count: 26
+  - id: 610660034
+    count: 46
+  - id: 610730025
+    count: 46
+  race: dark
+- id: 310220001
+  splendent_id: 310220006
+  materials:
+  - id: 310230013
+    count: 5
+  - id: 610511013
+    count: 9
+  - id: 610511014
+    count: 14
+  - id: 610511015
+    count: 21
+  - id: 610511019
+    count: 10
+  - id: 610530010
+    count: 25
+  - id: 610610016
+    count: 35
+  - id: 610660035
+    count: 61
+  - id: 610730025
+    count: 61
+  race: light
+- id: 310220002
+  splendent_id: 310220007
+  materials:
+  - id: 310230013
+    count: 5
+  - id: 610511013
+    count: 9
+  - id: 610511014
+    count: 14
+  - id: 610511015
+    count: 21
+  - id: 610511019
+    count: 10
+  - id: 610530010
+    count: 25
+  - id: 610610016
+    count: 35
+  - id: 610660035
+    count: 61
+  - id: 610730025
+    count: 61
+  race: dark
+- id: 310120001
+  splendent_id: 310120006
+  materials:
+  - id: 310130013
+    count: 5
+  - id: 610511013
+    count: 11
+  - id: 610511014
+    count: 18
+  - id: 610511015
+    count: 26
+  - id: 610511019
+    count: 13
+  - id: 610530010
+    count: 31
+  - id: 610610016
+    count: 44
+  - id: 610660036
+    count: 76
+  - id: 610730025
+    count: 76
+  race: light
+- id: 310120002
+  splendent_id: 310120007
+  materials:
+  - id: 310130013
+    count: 5
+  - id: 610511013
+    count: 11
+  - id: 610511014
+    count: 18
+  - id: 610511015
+    count: 26
+  - id: 610511019
+    count: 13
+  - id: 610530010
+    count: 31
+  - id: 610610016
+    count: 44
+  - id: 610660036
+    count: 76
+  - id: 610730025
+    count: 76
+  race: dark
+- id: 310130096
+  splendent_id: 310130098
+  materials:
+  - id: 310130013
+    count: 4
+  - id: 610511013
+    count: 2
+  - id: 610511014
+    count: 5
+  - id: 610511015
+    count: 10
+  - id: 610511023
+    count: 11
+  - id: 610511028
+    count: 11
+  - id: 610530010
+    count: 16
+  - id: 610610016
+    count: 22
+  - id: 610660036
+    count: 39
+  - id: 610730026
+    count: 44
+  race: light
+- id: 310130097
+  splendent_id: 310130099
+  materials:
+  - id: 310130013
+    count: 4
+  - id: 610511013
+    count: 2
+  - id: 610511014
+    count: 5
+  - id: 610511015
+    count: 10
+  - id: 610511023
+    count: 11
+  - id: 610511028
+    count: 11
+  - id: 610530010
+    count: 16
+  - id: 610610016
+    count: 22
+  - id: 610660036
+    count: 39
+  - id: 610730026
+    count: 44
+  race: dark
+- id: 310120019
+  splendent_id: 310120021
+  materials:
+  - id: 310130013
+    count: 8
+  - id: 610511013
+    count: 17
+  - id: 610511014
+    count: 30
+  - id: 610511015
+    count: 45
+  - id: 610511019
+    count: 19
+  - id: 610511023
+    count: 54
+  - id: 610511027
+    count: 35
+  - id: 610511028
+    count: 54
+  - id: 610530010
+    count: 62
+  - id: 610610016
+    count: 86
+  - id: 610660036
+    count: 149
+  - id: 610730027
+    count: 115
+  race: light
+- id: 310120020
+  splendent_id: 310120022
+  materials:
+  - id: 310130013
+    count: 8
+  - id: 610511013
+    count: 17
+  - id: 610511014
+    count: 30
+  - id: 610511015
+    count: 45
+  - id: 610511019
+    count: 19
+  - id: 610511023
+    count: 54
+  - id: 610511027
+    count: 35
+  - id: 610511028
+    count: 54
+  - id: 610530010
+    count: 62
+  - id: 610610016
+    count: 86
+  - id: 610660036
+    count: 149
+  - id: 610730027
+    count: 115
+  race: dark
+- id: 310330098
+  splendent_id: 310330100
+  materials:
+  - id: 310330013
+    count: 4
+  - id: 610511013
+    count: 1
+  - id: 610511014
+    count: 3
+  - id: 610511015
+    count: 6
+  - id: 610511023
+    count: 7
+  - id: 610511028
+    count: 7
+  - id: 610530010
+    count: 10
+  - id: 610610016
+    count: 13
+  - id: 610660034
+    count: 23
+  - id: 610730026
+    count: 26
+  race: light
+- id: 310330099
+  splendent_id: 310330101
+  materials:
+  - id: 310330013
+    count: 4
+  - id: 610511013
+    count: 1
+  - id: 610511014
+    count: 3
+  - id: 610511015
+    count: 6
+  - id: 610511023
+    count: 7
+  - id: 610511028
+    count: 7
+  - id: 610530010
+    count: 10
+  - id: 610610016
+    count: 13
+  - id: 610660034
+    count: 23
+  - id: 610730026
+    count: 26
+  race: dark
+- id: 310320019
+  splendent_id: 310320021
+  materials:
+  - id: 310330013
+    count: 8
+  - id: 610511013
+    count: 10
+  - id: 610511014
+    count: 18
+  - id: 610511015
+    count: 27
+  - id: 610511019
+    count: 11
+  - id: 610511023
+    count: 32
+  - id: 610511027
+    count: 21
+  - id: 610511028
+    count: 32
+  - id: 610530010
+    count: 37
+  - id: 610610016
+    count: 52
+  - id: 610660034
+    count: 89
+  - id: 610730027
+    count: 69
+  race: light
+- id: 310320020
+  splendent_id: 310320022
+  materials:
+  - id: 310330013
+    count: 8
+  - id: 610511013
+    count: 10
+  - id: 610511014
+    count: 18
+  - id: 610511015
+    count: 27
+  - id: 610511019
+    count: 11
+  - id: 610511023
+    count: 32
+  - id: 610511027
+    count: 21
+  - id: 610511028
+    count: 32
+  - id: 610530010
+    count: 37
+  - id: 610610016
+    count: 52
+  - id: 610660034
+    count: 89
+  - id: 610730027
+    count: 69
+  race: dark
+- id: 310230098
+  splendent_id: 310230100
+  materials:
+  - id: 310230013
+    count: 4
+  - id: 610511013
+    count: 2
+  - id: 610511014
+    count: 4
+  - id: 610511015
+    count: 8
+  - id: 610511023
+    count: 9
+  - id: 610511028
+    count: 9
+  - id: 610530010
+    count: 13
+  - id: 610610016
+    count: 18
+  - id: 610660035
+    count: 31
+  - id: 610730026
+    count: 35
+  race: light
+- id: 310230099
+  splendent_id: 310230101
+  materials:
+  - id: 310230013
+    count: 4
+  - id: 610511013
+    count: 2
+  - id: 610511014
+    count: 4
+  - id: 610511015
+    count: 8
+  - id: 610511023
+    count: 9
+  - id: 610511028
+    count: 9
+  - id: 610530010
+    count: 13
+  - id: 610610016
+    count: 18
+  - id: 610660035
+    count: 31
+  - id: 610730026
+    count: 35
+  race: dark
+- id: 310220019
+  splendent_id: 310220021
+  materials:
+  - id: 310230013
+    count: 8
+  - id: 610511013
+    count: 14
+  - id: 610511014
+    count: 24
+  - id: 610511015
+    count: 36
+  - id: 610511019
+    count: 15
+  - id: 610511023
+    count: 43
+  - id: 610511027
+    count: 28
+  - id: 610511028
+    count: 43
+  - id: 610530010
+    count: 50
+  - id: 610610016
+    count: 69
+  - id: 610660035
+    count: 119
+  - id: 610730027
+    count: 92
+  race: light
+- id: 310220020
+  splendent_id: 310220022
+  materials:
+  - id: 310230013
+    count: 8
+  - id: 610511013
+    count: 14
+  - id: 610511014
+    count: 24
+  - id: 610511015
+    count: 36
+  - id: 610511019
+    count: 15
+  - id: 610511023
+    count: 43
+  - id: 610511027
+    count: 28
+  - id: 610511028
+    count: 43
+  - id: 610530010
+    count: 50
+  - id: 610610016
+    count: 69
+  - id: 610660035
+    count: 119
+  - id: 610730027
+    count: 92
+  race: dark

@@ -9227,6 +9227,10 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Craft_Craft_Draconic_L_lv3_03.webp
   subtype: CraftResource
+- id: 610511028
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Item_Craft_Drop_Draconic_Soul_A_l_005a.webp
+  subtype: CraftResource
 - id: 610530010
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Craft_SmeltStone_Equip_A_e_002.webp
@@ -31927,3 +31931,11 @@ items:
   grade: Common
   icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Exp_A_003.webp
   subtype: Other
+- id: 310900001
+  grade: Special
+  icon: UI/Resource/Texture/Item/ETC/Icon_Acc_Rune_R_002.webp
+  subtype: Rune
+- id: 310900002
+  grade: Special
+  icon: UI/Resource/Texture/Item/ETC/Icon_Acc_Rune_R_004.webp
+  subtype: Rune
