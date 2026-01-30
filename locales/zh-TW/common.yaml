@@ -20,6 +20,7 @@ leaderboard:
     isVerified: "已驗證"
     contributors: "貢獻者"
   providedBy: "資訊由 <emph>{{username}}</emph> 提供"
+  submitData: "點擊提交數據"
 
 menu:
   home: "首頁"

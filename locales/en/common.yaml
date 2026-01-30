@@ -64,6 +64,7 @@ leaderboard:
     save: "Save"
     cancel: "Cancel"
   providedBy: "Provided by <emph>{{username}}</emph>"
+  submitData: "Click to submit data"
 
 buttons:
   apply: "Apply"
