@@ -136,19 +136,19 @@ const RealtimeArtifactRatio: React.FC = () => {
     return map;
   }, [artifactStates]);
 
-  const formatCountdown = (recordTimeStr: string | undefined) => {
-    if (!recordTimeStr) return "--:--:--";
+  const formatCountdown = (recordTimeStr: string | undefined, hasContributors: boolean) => {
+    if (!recordTimeStr || !hasContributors) return t("common:leaderboard.inContention");
     const recordTime = new Date(recordTimeStr).getTime();
     const fortyEightHours = 48 * 60 * 60 * 1000;
     const compareTime = isAutoUpdate ? Date.now() : selectedDate.toDate().getTime();
     const diff = recordTime + fortyEightHours - compareTime;
 
     if (diff <= 0) {
-      const absDiff = Math.abs(diff);
-      const h = Math.floor(absDiff / (1000 * 60 * 60));
-      const m = Math.floor((absDiff % (1000 * 60 * 60)) / (1000 * 60));
-      const s = Math.floor((absDiff % (1000 * 60)) / 1000);
-      const formatted = `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
+      const timeDiff = Math.abs(diff);
+      const hours = Math.floor(timeDiff / (1000 * 60 * 60));
+      const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+      const formatted = `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
       return t("common:leaderboard.refreshedAgo", { time: formatted });
     }
 
@@ -260,6 +260,7 @@ const RealtimeArtifactRatio: React.FC = () => {
                   isServer1={true}
                   artifacts={artifactsA}
                   mapName={MAP_NAMES.ABYSS_A}
+                  artifactStates={artifactStates.filter(s => s.serverMatchingId === matching.id && s.mapName === MAP_NAMES.ABYSS_A)}
                   artifactStateMap={artifactStateMap}
                   isAutoUpdate={isAutoUpdate}
                   selectedDate={selectedDate}
@@ -286,6 +287,7 @@ const RealtimeArtifactRatio: React.FC = () => {
                   isServer1={false}
                   artifacts={artifactsB}
                   mapName={MAP_NAMES.ABYSS_B}
+                  artifactStates={artifactStates.filter(s => s.serverMatchingId === matching.id && s.mapName === MAP_NAMES.ABYSS_B)}
                   artifactStateMap={artifactStateMap}
                   isAutoUpdate={isAutoUpdate}
                   selectedDate={selectedDate}

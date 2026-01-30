@@ -70,10 +70,6 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
   useEffect(() => {
     if (isOpen) {
       if (initialState) {
-        const recordDate = new Date(initialState.recordTime);
-        const fortyEightHours = 48 * 60 * 60 * 1000;
-        const diff = recordDate.getTime() + fortyEightHours - Date.now();
-
         if (initialState.id) {
           // Update mode
           setUploadTime(parseAbsoluteToLocal(initialState.recordTime));
