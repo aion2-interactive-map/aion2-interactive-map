@@ -74,8 +74,20 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
         const fortyEightHours = 48 * 60 * 60 * 1000;
         const diff = recordDate.getTime() + fortyEightHours - Date.now();
 
-        if (diff <= 0 || !initialState.id) {
-          // Create mode (even if initialState exists but has no id, it's a template)
+        if (initialState.id) {
+          // Update mode
+          setUploadTime(parseAbsoluteToLocal(initialState.recordTime));
+          setCountdown(calculateFormattedCountdown(initialState.recordTime));
+          setManualRecordTime(parseAbsoluteToLocal(initialState.recordTime));
+          setIsCountdownMode(false);
+          
+          const states: Record<string, number> = {};
+          initialState.states.forEach(s => {
+            states[s.abyssArtifactId] = s.state;
+          });
+          setArtifactStates(states);
+        } else {
+          // Create mode (initialState exists but has no id, it's a template)
           setUploadTime(now(getLocalTimeZone()));
           setCountdown("48:00:00");
           setManualRecordTime(now(getLocalTimeZone()));
@@ -91,18 +103,6 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
               states[a.id] = 1; // Default to light
             });
           }
-          setArtifactStates(states);
-        } else {
-          // Update mode
-          setUploadTime(parseAbsoluteToLocal(initialState.recordTime));
-          setCountdown(calculateFormattedCountdown(initialState.recordTime));
-          setManualRecordTime(parseAbsoluteToLocal(initialState.recordTime));
-          setIsCountdownMode(false);
-          
-          const states: Record<string, number> = {};
-          initialState.states.forEach(s => {
-            states[s.abyssArtifactId] = s.state;
-          });
           setArtifactStates(states);
         }
       } else {
@@ -122,11 +122,7 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
   }, [isOpen, initialState, mapArtifacts]);
 
   const isUpdateMode = useMemo(() => {
-    if (!initialState || !initialState.id) return false;
-    const recordDate = new Date(initialState.recordTime);
-    const fortyEightHours = 48 * 60 * 60 * 1000;
-    const result = (recordDate.getTime() + fortyEightHours - Date.now()) > 0;
-    return result;
+    return !!(initialState && initialState.id);
   }, [initialState]);
 
   const disabledTimeValue = useMemo(() => {
