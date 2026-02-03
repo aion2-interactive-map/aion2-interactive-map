@@ -26,8 +26,8 @@ export interface LeaderboardContextValue {
   fetchArtifacts: () => Promise<void>;
   fetchArtifactStates: (seasonId: string, currentTime?: Date, serverMatchingId?: string) => Promise<ArtifactState[]>;
   fetchArtifactCounts: (seasonId: string, mapName: string) => Promise<void>;
-  createArtifactState: (seasonId: string, mapName: string, data: any) => Promise<boolean>;
-  updateArtifactState: (seasonId: string, mapName: string, stateId: string, data: any) => Promise<boolean>;
+  createArtifactState: (seasonId: string, mapName: string, data: any) => Promise<any>;
+  updateArtifactState: (seasonId: string, mapName: string, stateId: string, data: any) => Promise<any>;
   deleteArtifactState: (seasonId: string, mapName: string, stateId: string, serverMatchingId?: string) => Promise<boolean>;
 }
 
@@ -317,12 +317,11 @@ export const LeaderboardProvider: React.FC<{ children: React.ReactNode }> = ({ c
         if (!data.serverMatchingId) {
           fetchArtifactStates(seasonId);
         }
-        return true;
       }
-      return false;
+      return result;
     } catch (e) {
       console.error("Failed to create artifact state:", e);
-      return false;
+      return { errorCode: "NetworkError", errorMessage: String(e) };
     }
   }, [fetchWithAuth, fetchArtifactStates]);
 
@@ -342,12 +341,11 @@ export const LeaderboardProvider: React.FC<{ children: React.ReactNode }> = ({ c
         if (!data.serverMatchingId) {
           fetchArtifactStates(seasonId);
         }
-        return true;
       }
-      return false;
+      return result;
     } catch (e) {
       console.error("Failed to update artifact state:", e);
-      return false;
+      return { errorCode: "NetworkError", errorMessage: String(e) };
     }
   }, [fetchWithAuth, fetchArtifactStates]);
 

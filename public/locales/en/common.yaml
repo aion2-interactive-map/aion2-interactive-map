@@ -14,6 +14,8 @@ ui:
   close: "Close"
   loading: "Loading..."
   search: "Search"
+  noData: "No Data"
+  add: "Add"
 
 theme:
   auto: "Auto (Change with Map)"
@@ -63,7 +65,11 @@ leaderboard:
     update: "Update Artifact Data"
     save: "Save"
     cancel: "Cancel"
+    verify: "Verify"
+    validationError: "Create/Edit failed, at least 48 hours between two records."
   providedBy: "Provided by <emph>{{username}}</emph>"
+  artifactAdmins: "Artifact Admins"
+  addArtifactAdmin: "Add Artifact Admin"
   submitData: "Click to submit data"
 
 buttons:

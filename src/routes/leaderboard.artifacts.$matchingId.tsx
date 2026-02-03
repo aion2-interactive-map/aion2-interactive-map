@@ -14,6 +14,14 @@ import {
   CardBody,
   Divider,
   Tooltip,
+  Chip,
+  Modal,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Autocomplete,
+  AutocompleteItem,
 } from "@heroui/react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {
@@ -30,8 +38,27 @@ import {useUser} from "@/context/UserContext.tsx";
 import ArtifactStateModal from "@/components/Leaderboard/ArtifactStateModal.tsx";
 import PopConfirm from "@/components/PopConfirm";
 import Footer from "@/components/Footer.tsx";
-import {getStaticUrl} from "@/utils/url.ts";
+import {getStaticUrl, getApiUrl} from "@/utils/url.ts";
+import {useDebounce} from "@/hooks/useDebounce";
 import type {ArtifactState} from "@/types/leaderboard.ts";
+
+interface ArtifactAdmin {
+  id: string;
+  user: {
+    id: string;
+    email: string;
+    name: string;
+  };
+}
+
+interface UserSearchItem {
+  id: string;
+  email: string;
+  isActive: boolean;
+  isSuperuser: boolean;
+  isVerified: boolean;
+  name: string;
+}
 
 export const Route = createFileRoute("/leaderboard/artifacts/$matchingId")({
   component: ArtifactDetailsPage,
@@ -43,7 +70,7 @@ function ArtifactDetailsPage() {
   const ABYSS_MAPS = [MAP_NAMES.ABYSS_A, MAP_NAMES.ABYSS_B];
   const markerNs = ABYSS_MAPS.map((x) => `markers/${x}`);
   const {t} = useTranslation([...markerNs, "common"]);
-  const {user, isSuperUser} = useUser();
+  const {user, isSuperUser, fetchWithAuth} = useUser();
   const {
     seasons,
     serverMatchings,
@@ -58,6 +85,21 @@ function ArtifactDetailsPage() {
   const [editingMapName, setEditingMapName] = useState<string | null>(null);
   const [editingInitialState, setEditingInitialState] = useState<ArtifactState | null>(null);
   const [matchingArtifactStates, setMatchingArtifactStates] = useState<ArtifactState[]>([]);
+  const [admins, setAdmins] = useState<ArtifactAdmin[]>([]);
+  const [isAdminModalOpen, setIsAdminModalOpen] = useState(false);
+  const [newAdminUserId, setNewAdminUserId] = useState("");
+  const [userSearchKeyword, setUserSearchKeyword] = useState("");
+  const debouncedUserSearchKeyword = useDebounce(userSearchKeyword, 500);
+  const [userSearchResults, setUserSearchResults] = useState<UserSearchItem[]>([]);
+  const [isUserSearchLoading, setIsUserSearchLoading] = useState(false);
+
+  useEffect(() => {
+    if (!isAdminModalOpen) {
+      setNewAdminUserId("");
+      setUserSearchKeyword("");
+      setUserSearchResults([]);
+    }
+  }, [isAdminModalOpen]);
 
   const matching = useMemo(
     () => serverMatchings.find((m) => m.id === matchingId),
@@ -73,6 +115,77 @@ function ArtifactDetailsPage() {
     return season?.id || null;
   }, [region, seasons, matching]);
 
+  const fetchAdmins = async () => {
+    if (!targetSeasonId || !matchingId) return;
+    try {
+      const res = await fetch(getApiUrl(`/api/v1/seasons/${targetSeasonId}/server_matchings/${matchingId}/abyss_artifact_admins/`));
+      if (res.ok) {
+        const json = await res.json();
+        if (json.errorCode === "Success") {
+          setAdmins(json.data.results);
+        }
+      }
+    } catch (e) {
+      console.error("Failed to fetch admins", e);
+    }
+  };
+
+  useEffect(() => {
+    const searchUsers = async () => {
+      const keyword = debouncedUserSearchKeyword.trim();
+      if (!keyword) {
+        setUserSearchResults([]);
+        return;
+      }
+
+      setIsUserSearchLoading(true);
+      try {
+        const res = await fetchWithAuth(`/users/search?name=${encodeURIComponent(keyword)}`);
+        if (res.ok) {
+          const json = await res.json();
+          if (json.errorCode === "Success") {
+            setUserSearchResults(json.data.results);
+          }
+        }
+      } catch (e) {
+        console.error("Failed to search users", e);
+      } finally {
+        setIsUserSearchLoading(false);
+      }
+    };
+
+    searchUsers();
+  }, [debouncedUserSearchKeyword]);
+
+  const handleAddAdmin = async () => {
+    if (!targetSeasonId || !matchingId || !newAdminUserId) return;
+    try {
+      const res = await fetchWithAuth(`/seasons/${targetSeasonId}/server_matchings/${matchingId}/abyss_artifact_admins/${newAdminUserId}`, {
+        method: "POST"
+      });
+      if (res.ok) {
+        setIsAdminModalOpen(false);
+        fetchAdmins();
+      }
+    } catch (e) {
+      console.error("Failed to add admin", e);
+    }
+  };
+
+  const handleDeleteAdmin = async (userId: string) => {
+    if (!targetSeasonId || !matchingId) return;
+    try {
+      const res = await fetchWithAuth(`/seasons/${targetSeasonId}/server_matchings/${matchingId}/abyss_artifact_admins/${userId}`, {
+        method: "DELETE"
+      });
+      if (res.ok) {
+        fetchAdmins();
+      }
+    } catch (e) {
+      console.error("Failed to delete admin", e);
+    }
+  };
+
   useEffect(() => {
     if (targetSeasonId) {
       if (!matching) {
@@ -81,6 +194,7 @@ function ArtifactDetailsPage() {
       fetchArtifactStates(targetSeasonId, undefined, matchingId).then((states) => {
         setMatchingArtifactStates(states);
       });
+      fetchAdmins();
     }
   }, [targetSeasonId, matchingId, matching, fetchServerMatching, fetchArtifactStates]);
 
@@ -121,6 +235,22 @@ function ArtifactDetailsPage() {
     // Use baseState as template (without id)
     setEditingInitialState(baseState ? {...baseState, id: ""} : null);
     setIsModalOpen(true);
+  };
+
+  const handleVerify = async (state: ArtifactState) => {
+    if (!targetSeasonId) return;
+    try {
+      const res = await fetchWithAuth(`/seasons/${targetSeasonId}/maps/${state.mapName}/artifacts/states/${state.id}/verify`, {
+        method: "POST"
+      });
+      if (res.ok) {
+        // Refresh local states
+        const states = await fetchArtifactStates(targetSeasonId, undefined, matchingId);
+        setMatchingArtifactStates(states);
+      }
+    } catch (e) {
+      console.error("Failed to verify admin", e);
+    }
   };
 
   const handleDelete = async (state: ArtifactState) => {
@@ -179,6 +309,45 @@ function ArtifactDetailsPage() {
               {matching ? `${matching.server1.serverName} VS ${matching.server2.serverName}` : t("common:leaderboard.artifactDetails")}
             </h1>
           </div>
+
+          <Card className="bg-character-equipment shadow-none border-1 border-crafting-border">
+            <CardHeader className="flex justify-between items-center px-6 py-3">
+              <div className="flex items-center gap-2">
+                <span className="font-bold">{t("common:leaderboard.artifactAdmins")}</span>
+                <div className="flex flex-wrap gap-2">
+                  {admins.map((admin) => (
+                    <PopConfirm
+                      key={admin.id}
+                      title={t("common:ui.confirmDelete")}
+                      onConfirm={() => handleDeleteAdmin(admin.user.id)}
+                    >
+                      <Chip
+                        variant="flat"
+                        color="primary"
+                        onClose={isSuperUser ? () => {} : undefined}
+                      >
+                        {admin.user.name || admin.user.email}
+                      </Chip>
+                    </PopConfirm>
+                  ))}
+                  {admins.length === 0 && (
+                    <span className="text-sm text-default-400">{t("common:ui.noData")}</span>
+                  )}
+                </div>
+              </div>
+              {isSuperUser && (
+                <Button
+                  size="sm"
+                  color="primary"
+                  variant="flat"
+                  startContent={<FontAwesomeIcon icon={faPlus}/>}
+                  onClick={() => setIsAdminModalOpen(true)}
+                >
+                  {t("common:ui.add")}
+                </Button>
+              )}
+            </CardHeader>
+          </Card>
 
           {ABYSS_MAPS.map((mapName) => {
             const states = statesByMap[mapName] || [];
@@ -275,7 +444,7 @@ function ArtifactDetailsPage() {
                               <TableCell colSpan={arts.length + 4}>
                                 <div className="flex justify-center items-center px-4 py-1">
                                   <span className="text-sm text-default-800 italic text-center">
-                                    {t("common:leaderboard.timeDiffToNext", "Time diff to next record")}: {timeDiff}
+                                    {t("common:leaderboard.timeDiffToNext")}: {timeDiff}
                                   </span>
                                 </div>
                               </TableCell>
@@ -326,11 +495,25 @@ function ArtifactDetailsPage() {
                               <div className="flex justify-center gap-2">
                                 {(() => {
                                   const isContributor = item.state.contributors?.some((c: any) => c.userId === user?.id);
-                                  const canEdit = isSuperUser || isContributor;
-                                  const canDelete = isSuperUser;
+                                  const isAdmin = admins.some(a => a.user.id === user?.id);
+                                  const canEdit = isSuperUser || isAdmin || isContributor;
+                                  const canDelete = isSuperUser || isAdmin;
+                                  const canVerify = (isSuperUser || isAdmin) && !item.state.isVerified;
                                   
                                   return (
                                     <>
+                                      {canVerify && (
+                                        <Tooltip content={t("common:leaderboard.artifactState.verify")}>
+                                          <Button
+                                            isIconOnly
+                                            size="sm"
+                                            variant="light"
+                                            onClick={() => handleVerify(item.state)}
+                                          >
+                                            <FontAwesomeIcon icon={faCheckCircle} className="text-success"/>
+                                          </Button>
+                                        </Tooltip>
+                                      )}
                                       {canEdit && (
                                         <Tooltip content={t("common:ui.edit")}>
                                           <Button
@@ -394,6 +577,48 @@ function ArtifactDetailsPage() {
             seasonId={targetSeasonId!}
           />
         )}
+
+        <Modal isOpen={isAdminModalOpen} onOpenChange={setIsAdminModalOpen}>
+          <ModalContent className="bg-character-card">
+            {(onClose) => (
+              <>
+                <ModalHeader className="flex flex-col gap-1">
+                  {t("common:leaderboard.addArtifactAdmin")}
+                </ModalHeader>
+                <ModalBody>
+                  <Autocomplete
+                    autoFocus
+                    label={t("common:auth.username")}
+                    placeholder={t("common:ui.search")}
+                    variant="bordered"
+                    items={userSearchResults}
+                    isLoading={isUserSearchLoading}
+                    inputValue={userSearchKeyword}
+                    onInputChange={setUserSearchKeyword}
+                    onSelectionChange={(key) => setNewAdminUserId(String(key))}
+                  >
+                    {(item) => (
+                      <AutocompleteItem key={item.id} textValue={item.name || item.email}>
+                        <div className="flex flex-col">
+                          <span className="text-sm font-medium">{item.name || "No Name"}</span>
+                          <span className="text-xs text-default-800">{item.email}</span>
+                        </div>
+                      </AutocompleteItem>
+                    )}
+                  </Autocomplete>
+                </ModalBody>
+                <ModalFooter>
+                  <Button color="danger" variant="flat" onPress={onClose}>
+                    {t("common:ui.cancel")}
+                  </Button>
+                  <Button color="primary" onPress={handleAddAdmin}>
+                    {t("common:ui.add")}
+                  </Button>
+                </ModalFooter>
+              </>
+            )}
+          </ModalContent>
+        </Modal>
       </div>
       <Footer/>
     </div>

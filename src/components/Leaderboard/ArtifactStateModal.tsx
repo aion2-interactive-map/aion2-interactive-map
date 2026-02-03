@@ -11,6 +11,7 @@ import {
   SelectItem,
   DatePicker,
   Switch,
+  Alert,
 } from "@heroui/react";
 import {now, getLocalTimeZone, parseAbsoluteToLocal} from "@internationalized/date";
 import {useTranslation} from "react-i18next";
@@ -51,6 +52,7 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
   const [artifactStates, setArtifactStates] = useState<Record<string, number>>({});
   const [isCountdownMode, setIsCountdownMode] = useState(false);
   const [manualRecordTime, setManualRecordTime] = useState(now(getLocalTimeZone()));
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const calculateFormattedCountdown = (recordTimeStr: string) => {
     const recordTime = new Date(recordTimeStr).getTime();
@@ -69,6 +71,7 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
 
   useEffect(() => {
     if (isOpen) {
+      setErrorMessage(null);
       if (initialState) {
         if (initialState.id) {
           // Update mode
@@ -163,22 +166,30 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
       state
     }));
 
-    let success = false;
+    let result: any = null;
     if (isUpdateMode && initialState) {
-        success = await updateArtifactState(seasonId, mapName, initialState.id, {
+        result = await updateArtifactState(seasonId, mapName, initialState.id, {
             states: statesData,
             recordTime: recordTimeForApi
         });
     } else {
-        success = await createArtifactState(seasonId, mapName, {
+        result = await createArtifactState(seasonId, mapName, {
             serverMatchingId: matching.id,
             states: statesData,
             recordTime: recordTimeForApi
         });
     }
 
-    if (success) {
+    if (result && result.errorCode === "Success") {
       onOpenChange(false);
+    } else if (result) {
+      if (result.errorCode === "ValidationError") {
+        setErrorMessage(t("leaderboard.artifactState.validationError"));
+      } else {
+        setErrorMessage(result.errorMessage || t("errors.unknown"));
+      }
+    } else {
+      setErrorMessage(t("errors.unknown"));
     }
   };
 
@@ -236,6 +247,11 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
               {` - ${matching.server1.serverName} VS ${matching.server2.serverName}`}
             </ModalHeader>
             <ModalBody className="gap-4">
+              {errorMessage && (
+                <Alert color="danger" variant="flat" onClose={() => setErrorMessage(null)}>
+                  {errorMessage}
+                </Alert>
+              )}
               <div className="flex items-center gap-2 mb-2">
                 <Switch 
                   isSelected={isCountdownMode} 

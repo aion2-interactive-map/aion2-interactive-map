@@ -13,13 +13,19 @@ ui:
   close: "關閉"
   loading: "載入中..."
   search: "搜尋"
+  noData: "暫無數據"
+  add: "添加"
 
 leaderboard:
   refreshedAgo: "{{time}}前重新整理"
   artifactState:
     isVerified: "已驗證"
     contributors: "貢獻者"
+    verify: "驗證"
+    validationError: "創建/編輯失敗，兩條數據至少間隔48小時"
   providedBy: "資訊由 <emph>{{username}}</emph> 提供"
+  artifactAdmins: "神器管理員"
+  addArtifactAdmin: "添加神器管理員"
   submitData: "點擊提交數據"
 
 menu:

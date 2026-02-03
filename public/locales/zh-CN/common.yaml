@@ -22,6 +22,8 @@ ui:
   edit: "编辑"
   confirmDelete: "你确定要删除吗？"
   clear: "清除"
+  noData: "暂无数据"
+  add: "添加"
 
 auth:
   login: "登录"
@@ -103,9 +105,13 @@ leaderboard:
     update: "更新神器数据"
     save: "保存"
     cancel: "取消"
+    verify: "验证"
+    validationError: "创建/编辑失败，两条数据至少间隔48小时"
   options: "选项"
   timeDiffToNext: "距离下条记录时间"
   deleteConfirm: "你确定要删除这条记录吗？"
+  artifactAdmins: "神器管理员"
+  addArtifactAdmin: "添加神器管理员"
   providedBy: "信息由 <emph>{{username}}</emph> 提供"
   submitData: "点击提交数据"
 
