@@ -7,7 +7,6 @@ import { MaterialsView } from "@/components/Crafting/MaterialsView.tsx";
 import { useTranslation } from "react-i18next";
 import type { SelectedBySlotKey } from "@/types/crafting.ts";
 import { useTheme } from "@/context/ThemeContext";
-import {getStaticUrl} from "@/utils/url.ts";
 import Footer from "@/components/Footer.tsx";
 
 const STORAGE_SELECTED_TIER = "aion2.crafting.selectedTier.v1";
@@ -17,8 +16,8 @@ const STORAGE_SELECTED_EQUIPMENTS_DARK = "aion2.crafting.selectedEquipments.v1.d
 
 type Race = "light" | "dark";
 
-const TIER_KEYS_LIGHT = ["trueDragon", "whiteDragon", "wiseDragon", "nobleDragon"] as const;
-const TIER_KEYS_DARK = ["starDragon", "darkDragon", "ebonyDragon", "hornedDragon"] as const;
+const TIER_KEYS_LIGHT = ["trueDragon", "whiteDragon", "wiseDragon", "celestialDragon", "nobleDragon", "nobleDragonEmperor"] as const;
+const TIER_KEYS_DARK = ["starDragon", "darkDragon", "ebonyDragon", "demonicDragon", "hornedDragon", "hornedDragonEmperor"] as const;
 
 type TierKeyLight = (typeof TIER_KEYS_LIGHT)[number];
 type TierKeyDark = (typeof TIER_KEYS_DARK)[number];
@@ -263,19 +262,9 @@ function Page() {
 
   return (
     <div className="flex h-full w-full flex-col bg-crafting-page overflow-y-auto">
-      <div className="grid w-full flex-1" style={{ gridTemplateColumns: "1fr 1068px 1fr" }}>
-        <div className="hidden lg:flex items-center justify-center">
-          <img
-            src={getStaticUrl("images/CraftAdv.webp")}
-            alt="Left decoration"
-            className="w-[220px]"
-          />
-        </div>
-
-        <div className="mx-auto w-full max-w-[1068px] pt-3 px-4 sm:px-0">
-          {/* Split header row: left (race tabs) aligned with left card, right (tier tabs) aligned with right card */}
-          <div className="mb-4 flex flex-col md:flex-row gap-4 md:pr-1">
-            {/* Left container (align with left card width) */}
+      <div className="w-full flex-1">
+        <div className="mx-auto w-full max-w-[1200px] pt-3 px-4 sm:px-0">
+          <div className="flex flex-col md:flex-row gap-4 mb-4">
             <div className="w-full md:w-[220px] shrink-0">
               <Tabs
                 selectedKey={race}
@@ -295,14 +284,13 @@ function Page() {
               </Tabs>
             </div>
 
-            {/* Right container (fills remaining width) */}
             <div className="min-w-0 flex-1">
               <Tabs
                 selectedKey={activeTier}
                 onSelectionChange={(k) => onTierChange(k as TierKey)}
                 variant="underlined"
                 color={race == "light" ? "primary" : "default"}
-                className="w-full md:w-[832px] border-gray-300 bg-transparent"
+                className="w-full border-gray-300 bg-transparent"
                 classNames={{
                   tabList: "flex w-full overflow-x-auto no-scrollbar",
                   tab: "h-[34px] flex-1 min-w-[100px] justify-center",
@@ -336,7 +324,7 @@ function Page() {
             </Card>
 
             {/* Right panel */}
-            <Card className="h-auto md:h-[726px] w-full md:w-[832px] min-w-0 bg-transparent" shadow="none">
+            <Card className="h-auto md:h-[726px] w-full flex-1 min-w-0 bg-transparent" shadow="none">
               <CardBody className="h-full min-h-0 px-1 py-0">
                 <MaterialsView selectedBySlotKey={selectedBySlotKey} />
               </CardBody>
