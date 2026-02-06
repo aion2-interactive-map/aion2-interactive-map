@@ -1,16 +1,22 @@
 trueDragon:
-  name: 真龙
+  name: 真龙王
 whiteDragon:
-  name: 白龙
+  name: 白龙王
 wiseDragon:
-  name: 鸣龙
+  name: 鸣龙王
+celestialDragon:
+  name: 天龙王
 nobleDragon:
-  name: 应龙
+  name: 应龙王
+nobleDragonEmperor:
+  name: 应龙霸王
 starDragon:
-  name: 乾龙
+  name: 乾龙王
 darkDragon:
-  name: 黑龙
+  name: 黑龙王
 ebonyDragon:
-  name: 暗龙
+  name: 暗龙王
 hornedDragon:
-  name: 夔龙
+  name: 夔龙王
+hornedDragonEmperor:
+  name: 夔龙霸王
