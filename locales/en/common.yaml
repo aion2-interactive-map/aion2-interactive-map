@@ -55,6 +55,7 @@ leaderboard:
   artifactState:
     title: "Artifact Data"
     uploadTime: "Upload Time"
+    recordTime: "Capture Date"
     countdown: "Countdown"
     disabledTime: "Countdown Start Time"
     light: "Light"
@@ -66,6 +67,7 @@ leaderboard:
     save: "Save"
     cancel: "Cancel"
     verify: "Verify"
+    timeFixedNote: "Time is fixed to {{time}} (local time)"
     validationError: "Create/Edit failed, at least 48 hours between two records."
   providedBy: "Provided by <emph>{{username}}</emph>"
   artifactAdmins: "Artifact Admins"
