@@ -48,6 +48,7 @@ leaderboard:
   artifactRegionRanking: "Artifact Proportion Region Ranking"
   realtimeArtifactRatio: "Real-time Artifact Proportion"
   refreshedAgo: "Refreshed {{time}} ago"
+  refreshIn: "Refresh in {{time}}"
   inContention: "Pending Upload"
   rank: "Rank"
   artifactCount: "Artifacts"

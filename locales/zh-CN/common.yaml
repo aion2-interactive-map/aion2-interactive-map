@@ -86,6 +86,7 @@ leaderboard:
   artifactRegionRanking: "神器占比大区排名"
   realtimeArtifactRatio: "实时神器占比"
   refreshedAgo: "{{time}}前刷新"
+  refreshIn: "{{time}}后刷新"
   inContention: "数据待上传"
   rank: "排名"
   artifactCount: "神器数量"
