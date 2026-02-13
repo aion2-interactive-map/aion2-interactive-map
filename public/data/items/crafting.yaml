@@ -938,19 +938,19 @@ crafting:
   - id: 610511014
     count: 8
   - id: 610511015
-    count: 16
+    count: 13
   - id: 610511023
-    count: 18
+    count: 15
   - id: 610511028
-    count: 18
+    count: 15
   - id: 610530010
-    count: 26
+    count: 21
   - id: 610610016
-    count: 36
+    count: 29
   - id: 610620016
-    count: 62
+    count: 49
   - id: 610710014
-    count: 69
+    count: 55
   race: light
 - id: 110230088
   splendent_id: 110230090
@@ -962,19 +962,19 @@ crafting:
   - id: 610511014
     count: 8
   - id: 610511015
-    count: 16
+    count: 13
   - id: 610511023
-    count: 18
+    count: 15
   - id: 610511028
-    count: 18
+    count: 15
   - id: 610530010
-    count: 26
+    count: 21
   - id: 610610016
-    count: 36
+    count: 29
   - id: 610620016
-    count: 62
+    count: 49
   - id: 610710014
-    count: 69
+    count: 55
   race: dark
 - id: 110130087
   splendent_id: 110130089
@@ -986,19 +986,19 @@ crafting:
   - id: 610511014
     count: 8
   - id: 610511015
-    count: 16
+    count: 13
   - id: 610511023
-    count: 18
+    count: 15
   - id: 610511028
-    count: 18
+    count: 15
   - id: 610530010
-    count: 26
+    count: 21
   - id: 610610016
-    count: 36
+    count: 29
   - id: 610620016
-    count: 62
+    count: 49
   - id: 610710014
-    count: 69
+    count: 55
   race: light
 - id: 110130088
   splendent_id: 110130090
@@ -1010,19 +1010,19 @@ crafting:
   - id: 610511014
     count: 8
   - id: 610511015
-    count: 16
+    count: 13
   - id: 610511023
-    count: 18
+    count: 15
   - id: 610511028
-    count: 18
+    count: 15
   - id: 610530010
-    count: 26
+    count: 21
   - id: 610610016
-    count: 36
+    count: 29
   - id: 610620016
-    count: 62
+    count: 49
   - id: 610710014
-    count: 69
+    count: 55
   race: dark
 - id: 110330087
   splendent_id: 110330089
@@ -1034,19 +1034,19 @@ crafting:
   - id: 610511014
     count: 8
   - id: 610511015
-    count: 16
+    count: 13
   - id: 610511023
-    count: 18
+    count: 15
   - id: 610511028
-    count: 18
+    count: 15
   - id: 610530010
-    count: 26
+    count: 21
   - id: 610610016
-    count: 36
+    count: 29
   - id: 610620016
-    count: 62
+    count: 49
   - id: 610710014
-    count: 69
+    count: 55
   race: light
 - id: 110330088
   splendent_id: 110330090
@@ -1058,19 +1058,19 @@ crafting:
   - id: 610511014
     count: 8
   - id: 610511015
-    count: 16
+    count: 13
   - id: 610511023
-    count: 18
+    count: 15
   - id: 610511028
-    count: 18
+    count: 15
   - id: 610530010
-    count: 26
+    count: 21
   - id: 610610016
-    count: 36
+    count: 29
   - id: 610620016
-    count: 62
+    count: 49
   - id: 610710014
-    count: 69
+    count: 55
   race: dark
 - id: 110730087
   splendent_id: 110730089
@@ -1082,19 +1082,19 @@ crafting:
   - id: 610511014
     count: 8
   - id: 610511015
-    count: 16
+    count: 13
   - id: 610511023
-    count: 18
+    count: 15
   - id: 610511028
-    count: 18
+    count: 15
   - id: 610530010
-    count: 26
+    count: 21
   - id: 610610016
-    count: 36
+    count: 29
   - id: 610620016
-    count: 62
+    count: 49
   - id: 610710014
-    count: 69
+    count: 55
   race: light
 - id: 110730088
   splendent_id: 110730090
@@ -1106,19 +1106,19 @@ crafting:
   - id: 610511014
     count: 8
   - id: 610511015
-    count: 16
+    count: 13
   - id: 610511023
-    count: 18
+    count: 15
   - id: 610511028
-    count: 18
+    count: 15
   - id: 610530010
-    count: 26
+    count: 21
   - id: 610610016
-    count: 36
+    count: 29
   - id: 610620016
-    count: 62
+    count: 49
   - id: 610710014
-    count: 69
+    count: 55
   race: dark
 - id: 115030085
   splendent_id: 115030087
@@ -1130,19 +1130,19 @@ crafting:
   - id: 610511014
     count: 8
   - id: 610511015
-    count: 16
+    count: 13
   - id: 610511023
-    count: 18
+    count: 15
   - id: 610511028
-    count: 18
+    count: 15
   - id: 610530010
-    count: 26
+    count: 21
   - id: 610610016
-    count: 36
+    count: 29
   - id: 610620016
-    count: 62
+    count: 49
   - id: 610710014
-    count: 69
+    count: 55
   race: light
 - id: 115030086
   splendent_id: 115030088
@@ -1154,19 +1154,19 @@ crafting:
   - id: 610511014
     count: 8
   - id: 610511015
-    count: 16
+    count: 13
   - id: 610511023
-    count: 18
+    count: 15
   - id: 610511028
-    count: 18
+    count: 15
   - id: 610530010
-    count: 26
+    count: 21
   - id: 610610016
-    count: 36
+    count: 29
   - id: 610620016
-    count: 62
+    count: 49
   - id: 610710014
-    count: 69
+    count: 55
   race: dark
 - id: 110220001
   splendent_id: 110220006
@@ -1391,226 +1391,226 @@ crafting:
 - id: 110220017
   splendent_id: 110220019
   materials:
-  - id: 115030013
+  - id: 110230013
     count: 8
   - id: 610511013
-    count: 28
+    count: 14
   - id: 610511014
-    count: 48
+    count: 21
   - id: 610511015
-    count: 72
+    count: 33
   - id: 610511019
-    count: 30
+    count: 15
   - id: 610511023
-    count: 86
+    count: 52
   - id: 610511027
-    count: 55
+    count: 30
   - id: 610511028
-    count: 86
+    count: 52
   - id: 610530010
-    count: 100
+    count: 70
   - id: 610610016
-    count: 138
+    count: 96
   - id: 610620016
-    count: 238
+    count: 166
   - id: 610710016
-    count: 183
+    count: 127
   race: light
 - id: 110220018
   splendent_id: 110220020
   materials:
-  - id: 115030014
+  - id: 110230014
     count: 8
   - id: 610511013
-    count: 28
+    count: 14
   - id: 610511014
-    count: 48
+    count: 21
   - id: 610511015
-    count: 72
+    count: 33
   - id: 610511019
-    count: 30
+    count: 15
   - id: 610511023
-    count: 86
+    count: 52
   - id: 610511027
-    count: 55
+    count: 30
   - id: 610511028
-    count: 86
+    count: 52
   - id: 610530010
-    count: 100
+    count: 70
   - id: 610610016
-    count: 138
+    count: 96
   - id: 610620016
-    count: 238
+    count: 166
   - id: 610710016
-    count: 183
+    count: 127
   race: dark
 - id: 110120017
   splendent_id: 110120019
   materials:
-  - id: 115030013
+  - id: 110130013
     count: 8
   - id: 610511013
-    count: 28
+    count: 14
   - id: 610511014
-    count: 48
+    count: 21
   - id: 610511015
-    count: 72
+    count: 33
   - id: 610511019
-    count: 30
+    count: 15
   - id: 610511023
-    count: 86
+    count: 52
   - id: 610511027
-    count: 55
+    count: 30
   - id: 610511028
-    count: 86
+    count: 52
   - id: 610530010
-    count: 100
+    count: 70
   - id: 610610016
-    count: 138
+    count: 96
   - id: 610620016
-    count: 238
+    count: 166
   - id: 610710016
-    count: 183
+    count: 127
   race: light
 - id: 110120018
   splendent_id: 110120020
   materials:
-  - id: 115030014
+  - id: 110130014
     count: 8
   - id: 610511013
-    count: 28
+    count: 14
   - id: 610511014
-    count: 48
+    count: 21
   - id: 610511015
-    count: 72
+    count: 33
   - id: 610511019
-    count: 30
+    count: 15
   - id: 610511023
-    count: 86
+    count: 52
   - id: 610511027
-    count: 55
+    count: 30
   - id: 610511028
-    count: 86
+    count: 52
   - id: 610530010
-    count: 100
+    count: 70
   - id: 610610016
-    count: 138
+    count: 96
   - id: 610620016
-    count: 238
+    count: 166
   - id: 610710016
-    count: 183
+    count: 127
   race: dark
 - id: 110320017
   splendent_id: 110320019
   materials:
-  - id: 115030013
+  - id: 110330013
     count: 8
   - id: 610511013
-    count: 28
+    count: 14
   - id: 610511014
-    count: 48
+    count: 21
   - id: 610511015
-    count: 72
+    count: 33
   - id: 610511019
-    count: 30
+    count: 15
   - id: 610511023
-    count: 86
+    count: 52
   - id: 610511027
-    count: 55
+    count: 30
   - id: 610511028
-    count: 86
+    count: 52
   - id: 610530010
-    count: 100
+    count: 70
   - id: 610610016
-    count: 138
+    count: 96
   - id: 610620016
-    count: 238
+    count: 166
   - id: 610710016
-    count: 183
+    count: 127
   race: light
 - id: 110320018
   splendent_id: 110320020
   materials:
-  - id: 115030014
+  - id: 110330014
     count: 8
   - id: 610511013
-    count: 28
+    count: 14
   - id: 610511014
-    count: 48
+    count: 21
   - id: 610511015
-    count: 72
+    count: 33
   - id: 610511019
-    count: 30
+    count: 15
   - id: 610511023
-    count: 86
+    count: 52
   - id: 610511027
-    count: 55
+    count: 30
   - id: 610511028
-    count: 86
+    count: 52
   - id: 610530010
-    count: 100
+    count: 70
   - id: 610610016
-    count: 138
+    count: 96
   - id: 610620016
-    count: 238
+    count: 166
   - id: 610710016
-    count: 183
+    count: 127
   race: dark
 - id: 110720017
   splendent_id: 110720019
   materials:
-  - id: 115030013
+  - id: 110730013
     count: 8
   - id: 610511013
-    count: 28
+    count: 14
   - id: 610511014
-    count: 48
+    count: 21
   - id: 610511015
-    count: 72
+    count: 33
   - id: 610511019
-    count: 30
+    count: 15
   - id: 610511023
-    count: 86
+    count: 52
   - id: 610511027
-    count: 55
+    count: 30
   - id: 610511028
-    count: 86
+    count: 52
   - id: 610530010
-    count: 100
+    count: 70
   - id: 610610016
-    count: 138
+    count: 96
   - id: 610620016
-    count: 238
+    count: 166
   - id: 610710016
-    count: 183
+    count: 127
   race: light
 - id: 110720018
   splendent_id: 110720020
   materials:
-  - id: 115030014
+  - id: 110730014
     count: 8
   - id: 610511013
-    count: 28
+    count: 14
   - id: 610511014
-    count: 48
+    count: 21
   - id: 610511015
-    count: 72
+    count: 33
   - id: 610511019
-    count: 30
+    count: 15
   - id: 610511023
-    count: 86
+    count: 52
   - id: 610511027
-    count: 55
+    count: 30
   - id: 610511028
-    count: 86
+    count: 52
   - id: 610530010
-    count: 100
+    count: 70
   - id: 610610016
-    count: 138
+    count: 96
   - id: 610620016
-    count: 238
+    count: 166
   - id: 610710016
-    count: 183
+    count: 127
   race: dark
 - id: 115020017
   splendent_id: 115020019
@@ -1618,27 +1618,27 @@ crafting:
   - id: 115030013
     count: 8
   - id: 610511013
-    count: 28
+    count: 14
   - id: 610511014
-    count: 48
+    count: 21
   - id: 610511015
-    count: 72
+    count: 33
   - id: 610511019
-    count: 30
+    count: 15
   - id: 610511023
-    count: 86
+    count: 52
   - id: 610511027
-    count: 55
+    count: 30
   - id: 610511028
-    count: 86
+    count: 52
   - id: 610530010
-    count: 100
+    count: 70
   - id: 610610016
-    count: 138
+    count: 96
   - id: 610620016
-    count: 238
+    count: 166
   - id: 610710016
-    count: 183
+    count: 127
   race: light
 - id: 115020018
   splendent_id: 115020020
@@ -1646,27 +1646,27 @@ crafting:
   - id: 115030014
     count: 8
   - id: 610511013
-    count: 28
+    count: 14
   - id: 610511014
-    count: 48
+    count: 21
   - id: 610511015
-    count: 72
+    count: 33
   - id: 610511019
-    count: 30
+    count: 15
   - id: 610511023
-    count: 86
+    count: 52
   - id: 610511027
-    count: 55
+    count: 30
   - id: 610511028
-    count: 86
+    count: 52
   - id: 610530010
-    count: 100
+    count: 70
   - id: 610610016
-    count: 138
+    count: 96
   - id: 610620016
-    count: 238
+    count: 166
   - id: 610710016
-    count: 183
+    count: 127
   race: dark
 - id: 610710001
   splendent_id:
@@ -3300,19 +3300,19 @@ crafting:
   - id: 610511014
     count: 5
   - id: 610511015
-    count: 11
+    count: 9
   - id: 610511023
-    count: 12
+    count: 10
   - id: 610511028
-    count: 12
+    count: 10
   - id: 610530010
-    count: 17
+    count: 14
   - id: 610610016
-    count: 24
+    count: 19
   - id: 610620016
-    count: 41
+    count: 33
   - id: 610710015
-    count: 46
+    count: 37
   race: light
 - id: 210130096
   splendent_id: 210130098
@@ -3324,19 +3324,19 @@ crafting:
   - id: 610511014
     count: 5
   - id: 610511015
-    count: 11
+    count: 9
   - id: 610511023
-    count: 12
+    count: 10
   - id: 610511028
-    count: 12
+    count: 10
   - id: 610530010
-    count: 17
+    count: 14
   - id: 610610016
-    count: 24
+    count: 19
   - id: 610620016
-    count: 41
+    count: 33
   - id: 610710015
-    count: 46
+    count: 37
   race: dark
 - id: 210230094
   splendent_id: 210230096
@@ -3348,19 +3348,19 @@ crafting:
   - id: 610511014
     count: 4
   - id: 610511015
-    count: 8
+    count: 7
   - id: 610511023
-    count: 9
+    count: 8
   - id: 610511028
-    count: 9
+    count: 8
   - id: 610530010
-    count: 13
+    count: 11
   - id: 610610016
-    count: 18
+    count: 14
   - id: 610620016
-    count: 31
+    count: 25
   - id: 610710015
-    count: 36
+    count: 28
   race: light
 - id: 210230095
   splendent_id: 210230097
@@ -3372,19 +3372,19 @@ crafting:
   - id: 610511014
     count: 4
   - id: 610511015
-    count: 8
+    count: 7
   - id: 610511023
-    count: 9
+    count: 8
   - id: 610511028
-    count: 9
+    count: 8
   - id: 610530010
-    count: 13
+    count: 11
   - id: 610610016
-    count: 18
+    count: 14
   - id: 610620016
-    count: 31
+    count: 25
   - id: 610710015
-    count: 36
+    count: 28
   race: dark
 - id: 210330094
   splendent_id: 210330096
@@ -3396,19 +3396,19 @@ crafting:
   - id: 610511014
     count: 3
   - id: 610511015
-    count: 7
+    count: 6
   - id: 610511023
     count: 7
   - id: 610511028
     count: 7
   - id: 610530010
-    count: 11
+    count: 9
   - id: 610610016
-    count: 15
+    count: 12
   - id: 610620016
-    count: 26
+    count: 21
   - id: 610710015
-    count: 29
+    count: 23
   race: light
 - id: 210330095
   splendent_id: 210330097
@@ -3420,19 +3420,19 @@ crafting:
   - id: 610511014
     count: 3
   - id: 610511015
-    count: 7
+    count: 6
   - id: 610511023
     count: 7
   - id: 610511028
     count: 7
   - id: 610530010
-    count: 11
+    count: 9
   - id: 610610016
-    count: 15
+    count: 12
   - id: 610620016
-    count: 26
+    count: 21
   - id: 610710015
-    count: 29
+    count: 23
   race: dark
 - id: 210430094
   splendent_id: 210430096
@@ -3444,19 +3444,19 @@ crafting:
   - id: 610511014
     count: 3
   - id: 610511015
-    count: 7
+    count: 6
   - id: 610511023
     count: 7
   - id: 610511028
     count: 7
   - id: 610530010
-    count: 11
+    count: 9
   - id: 610610016
-    count: 15
+    count: 12
   - id: 610620016
-    count: 26
+    count: 21
   - id: 610710015
-    count: 29
+    count: 23
   race: light
 - id: 210430095
   splendent_id: 210430097
@@ -3468,19 +3468,19 @@ crafting:
   - id: 610511014
     count: 3
   - id: 610511015
-    count: 7
+    count: 6
   - id: 610511023
     count: 7
   - id: 610511028
     count: 7
   - id: 610530010
-    count: 11
+    count: 9
   - id: 610610016
-    count: 15
+    count: 12
   - id: 610620016
-    count: 26
+    count: 21
   - id: 610710015
-    count: 29
+    count: 23
   race: dark
 - id: 210530094
   splendent_id: 210530096
@@ -3492,19 +3492,19 @@ crafting:
   - id: 610511014
     count: 2
   - id: 610511015
-    count: 6
+    count: 5
   - id: 610511023
     count: 6
   - id: 610511028
     count: 6
   - id: 610530010
-    count: 9
+    count: 7
   - id: 610610016
-    count: 12
+    count: 10
   - id: 610620016
-    count: 21
+    count: 17
   - id: 610710015
-    count: 23
+    count: 18
   race: light
 - id: 210530095
   splendent_id: 210530097
@@ -3516,19 +3516,19 @@ crafting:
   - id: 610511014
     count: 2
   - id: 610511015
-    count: 6
+    count: 5
   - id: 610511023
     count: 6
   - id: 610511028
     count: 6
   - id: 610530010
-    count: 9
+    count: 7
   - id: 610610016
-    count: 12
+    count: 10
   - id: 610620016
-    count: 21
+    count: 17
   - id: 610710015
-    count: 23
+    count: 18
   race: dark
 - id: 210630094
   splendent_id: 210630096
@@ -3540,19 +3540,19 @@ crafting:
   - id: 610511014
     count: 2
   - id: 610511015
-    count: 7
+    count: 6
   - id: 610511023
     count: 7
   - id: 610511028
     count: 7
   - id: 610530010
-    count: 11
+    count: 9
   - id: 610610016
-    count: 15
+    count: 12
   - id: 610620016
-    count: 26
+    count: 21
   - id: 610710015
-    count: 29
+    count: 22
   race: light
 - id: 210630095
   splendent_id: 210630097
@@ -3564,19 +3564,19 @@ crafting:
   - id: 610511014
     count: 2
   - id: 610511015
-    count: 7
+    count: 6
   - id: 610511023
     count: 7
   - id: 610511028
     count: 7
   - id: 610530010
-    count: 11
+    count: 9
   - id: 610610016
-    count: 15
+    count: 12
   - id: 610620016
-    count: 26
+    count: 21
   - id: 610710015
-    count: 29
+    count: 22
   race: dark
 - id: 210730094
   splendent_id: 210730096
@@ -3588,19 +3588,19 @@ crafting:
   - id: 610511014
     count: 2
   - id: 610511015
-    count: 6
+    count: 5
   - id: 610511023
     count: 6
   - id: 610511028
     count: 6
   - id: 610530010
-    count: 9
+    count: 7
   - id: 610610016
-    count: 12
+    count: 10
   - id: 610620016
-    count: 21
+    count: 17
   - id: 610710015
-    count: 23
+    count: 18
   race: light
 - id: 210730095
   splendent_id: 210730097
@@ -3612,19 +3612,19 @@ crafting:
   - id: 610511014
     count: 2
   - id: 610511015
-    count: 6
+    count: 5
   - id: 610511023
     count: 6
   - id: 610511028
     count: 6
   - id: 610530010
-    count: 9
+    count: 7
   - id: 610610016
-    count: 12
+    count: 10
   - id: 610620016
-    count: 21
+    count: 17
   - id: 610710015
-    count: 23
+    count: 18
   race: dark
 - id: 210120017
   splendent_id: 210120019
@@ -3632,27 +3632,27 @@ crafting:
   - id: 210130013
     count: 8
   - id: 610511013
-    count: 19
+    count: 9
   - id: 610511014
-    count: 32
+    count: 14
   - id: 610511015
-    count: 48
+    count: 22
   - id: 610511019
-    count: 20
+    count: 10
   - id: 610511023
-    count: 57
+    count: 35
   - id: 610511027
-    count: 37
+    count: 20
   - id: 610511028
-    count: 57
+    count: 35
   - id: 610530010
-    count: 67
+    count: 47
   - id: 610610016
-    count: 92
+    count: 64
   - id: 610620016
-    count: 159
+    count: 111
   - id: 610710017
-    count: 122
+    count: 85
   race: light
 - id: 210120018
   splendent_id: 210120020
@@ -3660,27 +3660,27 @@ crafting:
   - id: 210130014
     count: 8
   - id: 610511013
-    count: 19
+    count: 9
   - id: 610511014
-    count: 32
+    count: 14
   - id: 610511015
-    count: 48
+    count: 22
   - id: 610511019
-    count: 20
+    count: 10
   - id: 610511023
-    count: 57
+    count: 35
   - id: 610511027
-    count: 37
+    count: 20
   - id: 610511028
-    count: 57
+    count: 35
   - id: 610530010
-    count: 67
+    count: 47
   - id: 610610016
-    count: 92
+    count: 64
   - id: 610620016
-    count: 159
+    count: 111
   - id: 610710017
-    count: 122
+    count: 85
   race: dark
 - id: 210220017
   splendent_id: 210220019
@@ -3688,27 +3688,27 @@ crafting:
   - id: 210230013
     count: 8
   - id: 610511013
-    count: 14
+    count: 7
   - id: 610511014
-    count: 24
+    count: 10
   - id: 610511015
-    count: 36
+    count: 16
   - id: 610511019
-    count: 15
+    count: 7
   - id: 610511023
-    count: 43
+    count: 26
   - id: 610511027
-    count: 28
+    count: 15
   - id: 610511028
-    count: 43
+    count: 26
   - id: 610530010
-    count: 50
+    count: 35
   - id: 610610016
-    count: 69
+    count: 48
   - id: 610620016
-    count: 119
+    count: 83
   - id: 610710017
-    count: 91
+    count: 64
   race: light
 - id: 210220018
   splendent_id: 210220020
@@ -3716,27 +3716,27 @@ crafting:
   - id: 210230014
     count: 8
   - id: 610511013
-    count: 14
+    count: 7
   - id: 610511014
-    count: 24
+    count: 10
   - id: 610511015
-    count: 36
+    count: 16
   - id: 610511019
-    count: 15
+    count: 7
   - id: 610511023
-    count: 43
+    count: 26
   - id: 610511027
-    count: 28
+    count: 15
   - id: 610511028
-    count: 43
+    count: 26
   - id: 610530010
-    count: 50
+    count: 35
   - id: 610610016
-    count: 69
+    count: 48
   - id: 610620016
-    count: 119
+    count: 83
   - id: 610710017
-    count: 91
+    count: 64
   race: dark
 - id: 210320017
   splendent_id: 210320019
@@ -3744,27 +3744,27 @@ crafting:
   - id: 210330013
     count: 8
   - id: 610511013
-    count: 12
+    count: 6
   - id: 610511014
-    count: 20
+    count: 9
   - id: 610511015
-    count: 30
+    count: 14
   - id: 610511019
-    count: 13
+    count: 6
   - id: 610511023
-    count: 36
-  - id: 610511027
     count: 23
+  - id: 610511027
+    count: 14
   - id: 610511028
-    count: 36
+    count: 23
   - id: 610530010
-    count: 42
+    count: 32
   - id: 610610016
-    count: 58
+    count: 43
   - id: 610620016
-    count: 99
+    count: 75
   - id: 610710017
-    count: 76
+    count: 58
   race: light
 - id: 210320018
   splendent_id: 210320020
@@ -3772,27 +3772,27 @@ crafting:
   - id: 210330014
     count: 8
   - id: 610511013
-    count: 12
+    count: 6
   - id: 610511014
-    count: 20
+    count: 9
   - id: 610511015
-    count: 30
+    count: 14
   - id: 610511019
-    count: 13
+    count: 6
   - id: 610511023
-    count: 36
-  - id: 610511027
     count: 23
+  - id: 610511027
+    count: 14
   - id: 610511028
-    count: 36
+    count: 23
   - id: 610530010
-    count: 42
+    count: 32
   - id: 610610016
-    count: 58
+    count: 43
   - id: 610620016
-    count: 99
+    count: 75
   - id: 610710017
-    count: 76
+    count: 58
   race: dark
 - id: 210420017
   splendent_id: 210420019
@@ -3800,27 +3800,27 @@ crafting:
   - id: 210430013
     count: 8
   - id: 610511013
-    count: 12
+    count: 6
   - id: 610511014
-    count: 20
+    count: 9
   - id: 610511015
-    count: 30
+    count: 14
   - id: 610511019
-    count: 13
+    count: 6
   - id: 610511023
-    count: 36
-  - id: 610511027
     count: 23
+  - id: 610511027
+    count: 14
   - id: 610511028
-    count: 36
+    count: 23
   - id: 610530010
-    count: 42
+    count: 32
   - id: 610610016
-    count: 58
+    count: 43
   - id: 610620016
-    count: 99
+    count: 75
   - id: 610710017
-    count: 76
+    count: 58
   race: light
 - id: 210420018
   splendent_id: 210420020
@@ -3828,27 +3828,27 @@ crafting:
   - id: 210430014
     count: 8
   - id: 610511013
-    count: 12
+    count: 6
   - id: 610511014
-    count: 20
+    count: 9
   - id: 610511015
-    count: 30
+    count: 14
   - id: 610511019
-    count: 13
+    count: 6
   - id: 610511023
-    count: 36
-  - id: 610511027
     count: 23
+  - id: 610511027
+    count: 14
   - id: 610511028
-    count: 36
+    count: 23
   - id: 610530010
-    count: 42
+    count: 32
   - id: 610610016
-    count: 58
+    count: 43
   - id: 610620016
-    count: 99
+    count: 75
   - id: 610710017
-    count: 76
+    count: 58
   race: dark
 - id: 210520017
   splendent_id: 210520019
@@ -3856,27 +3856,27 @@ crafting:
   - id: 210530013
     count: 8
   - id: 610511013
-    count: 10
+    count: 5
   - id: 610511014
-    count: 16
+    count: 7
   - id: 610511015
-    count: 24
+    count: 11
   - id: 610511019
-    count: 10
+    count: 5
   - id: 610511023
-    count: 29
-  - id: 610511027
     count: 18
+  - id: 610511027
+    count: 11
   - id: 610511028
-    count: 29
+    count: 18
   - id: 610530010
-    count: 34
+    count: 26
   - id: 610610016
-    count: 46
+    count: 34
   - id: 610620016
-    count: 79
+    count: 60
   - id: 610710017
-    count: 61
+    count: 46
   race: light
 - id: 210520018
   splendent_id: 210520020
@@ -3884,27 +3884,27 @@ crafting:
   - id: 210530014
     count: 8
   - id: 610511013
-    count: 10
+    count: 5
   - id: 610511014
-    count: 16
+    count: 7
   - id: 610511015
-    count: 24
+    count: 11
   - id: 610511019
-    count: 10
+    count: 5
   - id: 610511023
-    count: 29
-  - id: 610511027
     count: 18
+  - id: 610511027
+    count: 11
   - id: 610511028
-    count: 29
+    count: 18
   - id: 610530010
-    count: 34
+    count: 26
   - id: 610610016
-    count: 46
+    count: 34
   - id: 610620016
-    count: 79
+    count: 60
   - id: 610710017
-    count: 61
+    count: 46
   race: dark
 - id: 210620017
   splendent_id: 210620019
@@ -3912,27 +3912,27 @@ crafting:
   - id: 210630013
     count: 8
   - id: 610511013
-    count: 12
+    count: 6
   - id: 610511014
-    count: 20
+    count: 9
   - id: 610511015
-    count: 30
+    count: 14
   - id: 610511019
-    count: 12
+    count: 6
   - id: 610511023
-    count: 36
-  - id: 610511027
     count: 22
+  - id: 610511027
+    count: 14
   - id: 610511028
-    count: 36
+    count: 22
   - id: 610530010
-    count: 42
+    count: 32
   - id: 610610016
-    count: 57
+    count: 42
   - id: 610620016
-    count: 99
+    count: 75
   - id: 610710017
-    count: 76
+    count: 57
   race: light
 - id: 210620018
   splendent_id: 210620020
@@ -3940,27 +3940,27 @@ crafting:
   - id: 210630014
     count: 8
   - id: 610511013
-    count: 12
+    count: 6
   - id: 610511014
-    count: 20
+    count: 9
   - id: 610511015
-    count: 30
+    count: 14
   - id: 610511019
-    count: 12
+    count: 6
   - id: 610511023
-    count: 36
-  - id: 610511027
     count: 22
+  - id: 610511027
+    count: 14
   - id: 610511028
-    count: 36
+    count: 22
   - id: 610530010
-    count: 42
+    count: 32
   - id: 610610016
-    count: 57
+    count: 42
   - id: 610620016
-    count: 99
+    count: 75
   - id: 610710017
-    count: 76
+    count: 57
   race: dark
 - id: 210720017
   splendent_id: 210720019
@@ -3968,27 +3968,27 @@ crafting:
   - id: 210730013
     count: 8
   - id: 610511013
-    count: 10
+    count: 5
   - id: 610511014
-    count: 16
+    count: 7
   - id: 610511015
-    count: 24
+    count: 11
   - id: 610511019
-    count: 10
+    count: 5
   - id: 610511023
-    count: 29
-  - id: 610511027
     count: 18
+  - id: 610511027
+    count: 11
   - id: 610511028
-    count: 29
+    count: 18
   - id: 610530010
-    count: 34
+    count: 26
   - id: 610610016
-    count: 46
+    count: 34
   - id: 610620016
-    count: 79
+    count: 60
   - id: 610710017
-    count: 61
+    count: 46
   race: light
 - id: 210720018
   splendent_id: 210720020
@@ -3996,27 +3996,27 @@ crafting:
   - id: 210730014
     count: 8
   - id: 610511013
-    count: 10
+    count: 5
   - id: 610511014
-    count: 16
+    count: 7
   - id: 610511015
-    count: 24
+    count: 11
   - id: 610511019
-    count: 10
+    count: 5
   - id: 610511023
-    count: 29
-  - id: 610511027
     count: 18
+  - id: 610511027
+    count: 11
   - id: 610511028
-    count: 29
+    count: 18
   - id: 610530010
-    count: 34
+    count: 26
   - id: 610610016
-    count: 46
+    count: 34
   - id: 610620016
-    count: 79
+    count: 60
   - id: 610710017
-    count: 61
+    count: 46
   race: dark
 - id: 610530001
   splendent_id:
@@ -4652,19 +4652,19 @@ crafting:
   - id: 610511014
     count: 8
   - id: 610511015
-    count: 16
+    count: 13
   - id: 610511023
-    count: 18
+    count: 15
   - id: 610511028
-    count: 18
+    count: 15
   - id: 610530010
-    count: 26
+    count: 21
   - id: 610610016
-    count: 36
+    count: 29
   - id: 610660036
-    count: 62
+    count: 49
   - id: 610730026
-    count: 69
+    count: 88
   race: light
 - id: 110530088
   splendent_id: 110530090
@@ -4676,19 +4676,19 @@ crafting:
   - id: 610511014
     count: 8
   - id: 610511015
-    count: 16
+    count: 13
   - id: 610511023
-    count: 18
+    count: 15
   - id: 610511028
-    count: 18
+    count: 15
   - id: 610530010
-    count: 26
+    count: 21
   - id: 610610016
-    count: 36
+    count: 29
   - id: 610660036
-    count: 62
+    count: 49
   - id: 610730026
-    count: 69
+    count: 88
   race: dark
 - id: 110630087
   splendent_id: 110630089
@@ -4700,19 +4700,19 @@ crafting:
   - id: 610511014
     count: 8
   - id: 610511015
-    count: 16
+    count: 13
   - id: 610511023
-    count: 18
+    count: 15
   - id: 610511028
-    count: 18
+    count: 15
   - id: 610530010
-    count: 26
+    count: 21
   - id: 610610016
-    count: 36
+    count: 29
   - id: 610660034
-    count: 62
+    count: 49
   - id: 610730026
-    count: 69
+    count: 88
   race: light
 - id: 110630088
   splendent_id: 110630090
@@ -4724,19 +4724,19 @@ crafting:
   - id: 610511014
     count: 8
   - id: 610511015
-    count: 16
+    count: 13
   - id: 610511023
-    count: 18
+    count: 15
   - id: 610511028
-    count: 18
+    count: 15
   - id: 610530010
-    count: 26
+    count: 21
   - id: 610610016
-    count: 36
+    count: 29
   - id: 610660034
-    count: 62
+    count: 49
   - id: 610730026
-    count: 69
+    count: 88
   race: dark
 - id: 110520017
   splendent_id: 110520019
@@ -4744,27 +4744,27 @@ crafting:
   - id: 110530013
     count: 8
   - id: 610511013
-    count: 28
+    count: 14
   - id: 610511014
-    count: 48
+    count: 21
   - id: 610511015
-    count: 72
+    count: 33
   - id: 610511019
-    count: 30
+    count: 15
   - id: 610511023
-    count: 86
+    count: 52
   - id: 610511027
-    count: 55
+    count: 30
   - id: 610511028
-    count: 86
+    count: 52
   - id: 610530010
-    count: 100
+    count: 70
   - id: 610610016
-    count: 138
+    count: 96
   - id: 610660036
-    count: 238
+    count: 166
   - id: 610730027
-    count: 183
+    count: 127
   race: light
 - id: 110520018
   splendent_id: 110520020
@@ -4772,27 +4772,27 @@ crafting:
   - id: 110530013
     count: 8
   - id: 610511013
-    count: 28
+    count: 14
   - id: 610511014
-    count: 48
+    count: 21
   - id: 610511015
-    count: 72
+    count: 33
   - id: 610511019
-    count: 30
+    count: 15
   - id: 610511023
-    count: 86
+    count: 52
   - id: 610511027
-    count: 55
+    count: 30
   - id: 610511028
-    count: 86
+    count: 52
   - id: 610530010
-    count: 100
+    count: 70
   - id: 610610016
-    count: 138
+    count: 96
   - id: 610660036
-    count: 238
+    count: 166
   - id: 610730027
-    count: 183
+    count: 127
   race: dark
 - id: 110620017
   splendent_id: 110620019
@@ -4800,27 +4800,27 @@ crafting:
   - id: 110630013
     count: 8
   - id: 610511013
-    count: 28
+    count: 14
   - id: 610511014
-    count: 48
+    count: 21
   - id: 610511015
-    count: 72
+    count: 33
   - id: 610511019
-    count: 30
+    count: 15
   - id: 610511023
-    count: 86
+    count: 52
   - id: 610511027
-    count: 55
+    count: 30
   - id: 610511028
-    count: 86
+    count: 52
   - id: 610530010
-    count: 100
+    count: 70
   - id: 610610016
-    count: 138
+    count: 96
   - id: 610660034
-    count: 238
+    count: 166
   - id: 610730027
-    count: 183
+    count: 127
   race: light
 - id: 110620018
   splendent_id: 110620020
@@ -4828,27 +4828,27 @@ crafting:
   - id: 110630013
     count: 8
   - id: 610511013
-    count: 28
+    count: 14
   - id: 610511014
-    count: 48
+    count: 21
   - id: 610511015
-    count: 72
+    count: 33
   - id: 610511019
-    count: 30
+    count: 15
   - id: 610511023
-    count: 86
+    count: 52
   - id: 610511027
-    count: 55
+    count: 30
   - id: 610511028
-    count: 86
+    count: 52
   - id: 610530010
-    count: 100
+    count: 70
   - id: 610610016
-    count: 138
+    count: 96
   - id: 610660034
-    count: 238
+    count: 166
   - id: 610730027
-    count: 183
+    count: 127
   race: dark
 - id: 610730016
   splendent_id:
@@ -5215,19 +5215,19 @@ crafting:
   - id: 610511014
     count: 8
   - id: 610511015
-    count: 16
+    count: 13
   - id: 610511023
-    count: 18
+    count: 15
   - id: 610511028
-    count: 18
+    count: 15
   - id: 610530010
-    count: 26
+    count: 21
   - id: 610610016
-    count: 36
+    count: 29
   - id: 610650017
-    count: 62
+    count: 49
   - id: 610730026
-    count: 69
+    count: 55
   race: light
 - id: 110430088
   splendent_id: 110430090
@@ -5239,19 +5239,19 @@ crafting:
   - id: 610511014
     count: 8
   - id: 610511015
-    count: 16
+    count: 13
   - id: 610511023
-    count: 18
+    count: 15
   - id: 610511028
-    count: 18
+    count: 15
   - id: 610530010
-    count: 26
+    count: 21
   - id: 610610016
-    count: 36
+    count: 29
   - id: 610650018
-    count: 62
+    count: 49
   - id: 610730026
-    count: 69
+    count: 55
   race: dark
 - id: 110830087
   splendent_id: 110830089
@@ -5263,19 +5263,19 @@ crafting:
   - id: 610511014
     count: 8
   - id: 610511015
-    count: 16
+    count: 13
   - id: 610511023
-    count: 18
+    count: 15
   - id: 610511028
-    count: 18
+    count: 15
   - id: 610530010
-    count: 26
+    count: 21
   - id: 610610016
-    count: 36
+    count: 29
   - id: 610650017
-    count: 62
+    count: 49
   - id: 610730026
-    count: 69
+    count: 55
   race: light
 - id: 110830088
   splendent_id: 110830090
@@ -5287,19 +5287,19 @@ crafting:
   - id: 610511014
     count: 8
   - id: 610511015
-    count: 16
+    count: 13
   - id: 610511023
-    count: 18
+    count: 15
   - id: 610511028
-    count: 18
+    count: 15
   - id: 610530010
-    count: 26
+    count: 21
   - id: 610610016
-    count: 36
+    count: 29
   - id: 610650018
-    count: 62
+    count: 49
   - id: 610730026
-    count: 69
+    count: 55
   race: dark
 - id: 110420001
   splendent_id: 110420006
@@ -5351,27 +5351,27 @@ crafting:
   - id: 110430013
     count: 8
   - id: 610511013
-    count: 28
+    count: 14
   - id: 610511014
-    count: 48
+    count: 21
   - id: 610511015
-    count: 72
+    count: 33
   - id: 610511019
-    count: 30
+    count: 15
   - id: 610511023
-    count: 86
+    count: 52
   - id: 610511027
-    count: 55
+    count: 30
   - id: 610511028
-    count: 86
+    count: 52
   - id: 610530010
-    count: 100
+    count: 70
   - id: 610610016
-    count: 138
+    count: 96
   - id: 610650017
-    count: 238
+    count: 166
   - id: 610730027
-    count: 183
+    count: 127
   race: light
 - id: 110420018
   splendent_id: 110420020
@@ -5379,27 +5379,27 @@ crafting:
   - id: 110430014
     count: 8
   - id: 610511013
-    count: 28
+    count: 14
   - id: 610511014
-    count: 48
+    count: 21
   - id: 610511015
-    count: 72
+    count: 33
   - id: 610511019
-    count: 30
+    count: 15
   - id: 610511023
-    count: 86
+    count: 52
   - id: 610511027
-    count: 55
+    count: 30
   - id: 610511028
-    count: 86
+    count: 52
   - id: 610530010
-    count: 100
+    count: 70
   - id: 610610016
-    count: 138
+    count: 96
   - id: 610650018
-    count: 238
+    count: 166
   - id: 610730027
-    count: 183
+    count: 127
   race: dark
 - id: 110820001
   splendent_id: 110820006
@@ -5451,27 +5451,27 @@ crafting:
   - id: 110830013
     count: 8
   - id: 610511013
-    count: 28
+    count: 14
   - id: 610511014
-    count: 48
+    count: 21
   - id: 610511015
-    count: 72
+    count: 33
   - id: 610511019
-    count: 30
+    count: 15
   - id: 610511023
-    count: 86
+    count: 52
   - id: 610511027
-    count: 55
+    count: 30
   - id: 610511028
-    count: 86
+    count: 52
   - id: 610530010
-    count: 100
+    count: 70
   - id: 610610016
-    count: 138
+    count: 96
   - id: 610650017
-    count: 238
+    count: 166
   - id: 610730027
-    count: 183
+    count: 127
   race: light
 - id: 110820018
   splendent_id: 110820020
@@ -5479,27 +5479,27 @@ crafting:
   - id: 110830014
     count: 8
   - id: 610511013
-    count: 28
+    count: 14
   - id: 610511014
-    count: 48
+    count: 21
   - id: 610511015
-    count: 72
+    count: 33
   - id: 610511019
-    count: 30
+    count: 15
   - id: 610511023
-    count: 86
+    count: 52
   - id: 610511027
-    count: 55
+    count: 30
   - id: 610511028
-    count: 86
+    count: 52
   - id: 610530010
-    count: 100
+    count: 70
   - id: 610610016
-    count: 138
+    count: 96
   - id: 610650018
-    count: 238
+    count: 166
   - id: 610730027
-    count: 183
+    count: 127
   race: dark
 - id: 310360017
   splendent_id: 310350010
@@ -6085,19 +6085,19 @@ crafting:
   - id: 610511014
     count: 5
   - id: 610511015
-    count: 10
+    count: 9
   - id: 610511023
-    count: 11
+    count: 10
   - id: 610511028
-    count: 11
+    count: 10
   - id: 610530010
-    count: 16
+    count: 14
   - id: 610610016
-    count: 22
+    count: 19
   - id: 610660036
-    count: 39
+    count: 31
   - id: 610730026
-    count: 44
+    count: 35
   race: light
 - id: 310130097
   splendent_id: 310130099
@@ -6109,19 +6109,19 @@ crafting:
   - id: 610511014
     count: 5
   - id: 610511015
-    count: 10
+    count: 9
   - id: 610511023
-    count: 11
+    count: 10
   - id: 610511028
-    count: 11
+    count: 10
   - id: 610530010
-    count: 16
+    count: 14
   - id: 610610016
-    count: 22
+    count: 19
   - id: 610660036
-    count: 39
+    count: 31
   - id: 610730026
-    count: 44
+    count: 35
   race: dark
 - id: 310120019
   splendent_id: 310120021
@@ -6129,27 +6129,27 @@ crafting:
   - id: 310130013
     count: 8
   - id: 610511013
-    count: 17
+    count: 9
   - id: 610511014
-    count: 30
+    count: 14
   - id: 610511015
-    count: 45
+    count: 21
   - id: 610511019
-    count: 19
+    count: 10
   - id: 610511023
-    count: 54
+    count: 32
   - id: 610511027
-    count: 35
+    count: 19
   - id: 610511028
-    count: 54
+    count: 32
   - id: 610530010
-    count: 62
+    count: 44
   - id: 610610016
-    count: 86
+    count: 60
   - id: 610660036
-    count: 149
+    count: 104
   - id: 610730027
-    count: 115
+    count: 80
   race: light
 - id: 310120020
   splendent_id: 310120022
@@ -6157,27 +6157,27 @@ crafting:
   - id: 310130013
     count: 8
   - id: 610511013
-    count: 17
+    count: 9
   - id: 610511014
-    count: 30
+    count: 14
   - id: 610511015
-    count: 45
+    count: 21
   - id: 610511019
-    count: 19
+    count: 10
   - id: 610511023
-    count: 54
+    count: 32
   - id: 610511027
-    count: 35
+    count: 19
   - id: 610511028
-    count: 54
+    count: 32
   - id: 610530010
-    count: 62
+    count: 44
   - id: 610610016
-    count: 86
+    count: 60
   - id: 610660036
-    count: 149
+    count: 104
   - id: 610730027
-    count: 115
+    count: 80
   race: dark
 - id: 310330098
   splendent_id: 310330100
@@ -6189,19 +6189,19 @@ crafting:
   - id: 610511014
     count: 3
   - id: 610511015
-    count: 6
+    count: 5
   - id: 610511023
-    count: 7
+    count: 6
   - id: 610511028
-    count: 7
+    count: 6
   - id: 610530010
-    count: 10
+    count: 8
   - id: 610610016
-    count: 13
+    count: 11
   - id: 610660034
-    count: 23
+    count: 19
   - id: 610730026
-    count: 26
+    count: 21
   race: light
 - id: 310330099
   splendent_id: 310330101
@@ -6213,19 +6213,19 @@ crafting:
   - id: 610511014
     count: 3
   - id: 610511015
-    count: 6
+    count: 5
   - id: 610511023
-    count: 7
+    count: 6
   - id: 610511028
-    count: 7
+    count: 6
   - id: 610530010
-    count: 10
+    count: 8
   - id: 610610016
-    count: 13
+    count: 11
   - id: 610660034
-    count: 23
+    count: 19
   - id: 610730026
-    count: 26
+    count: 21
   race: dark
 - id: 310320019
   splendent_id: 310320021
@@ -6233,27 +6233,27 @@ crafting:
   - id: 310330013
     count: 8
   - id: 610511013
-    count: 10
+    count: 5
   - id: 610511014
-    count: 18
+    count: 8
   - id: 610511015
-    count: 27
+    count: 13
   - id: 610511019
-    count: 11
+    count: 6
   - id: 610511023
-    count: 32
+    count: 19
   - id: 610511027
-    count: 21
+    count: 11
   - id: 610511028
-    count: 32
+    count: 19
   - id: 610530010
-    count: 37
+    count: 26
   - id: 610610016
-    count: 52
+    count: 36
   - id: 610660034
-    count: 89
+    count: 62
   - id: 610730027
-    count: 69
+    count: 48
   race: light
 - id: 310320020
   splendent_id: 310320022
@@ -6261,27 +6261,27 @@ crafting:
   - id: 310330013
     count: 8
   - id: 610511013
-    count: 10
+    count: 5
   - id: 610511014
-    count: 18
+    count: 8
   - id: 610511015
-    count: 27
+    count: 13
   - id: 610511019
-    count: 11
+    count: 6
   - id: 610511023
-    count: 32
+    count: 19
   - id: 610511027
-    count: 21
+    count: 11
   - id: 610511028
-    count: 32
+    count: 19
   - id: 610530010
-    count: 37
+    count: 26
   - id: 610610016
-    count: 52
+    count: 36
   - id: 610660034
-    count: 89
+    count: 62
   - id: 610730027
-    count: 69
+    count: 48
   race: dark
 - id: 310230098
   splendent_id: 310230100
@@ -6293,19 +6293,19 @@ crafting:
   - id: 610511014
     count: 4
   - id: 610511015
-    count: 8
+    count: 7
   - id: 610511023
-    count: 9
+    count: 8
   - id: 610511028
-    count: 9
+    count: 8
   - id: 610530010
-    count: 13
+    count: 11
   - id: 610610016
-    count: 18
+    count: 15
   - id: 610660035
-    count: 31
+    count: 25
   - id: 610730026
-    count: 35
+    count: 28
   race: light
 - id: 310230099
   splendent_id: 310230101
@@ -6317,19 +6317,19 @@ crafting:
   - id: 610511014
     count: 4
   - id: 610511015
-    count: 8
+    count: 7
   - id: 610511023
-    count: 9
+    count: 8
   - id: 610511028
-    count: 9
+    count: 8
   - id: 610530010
-    count: 13
+    count: 11
   - id: 610610016
-    count: 18
+    count: 15
   - id: 610660035
-    count: 31
+    count: 25
   - id: 610730026
-    count: 35
+    count: 28
   race: dark
 - id: 310220019
   splendent_id: 310220021
@@ -6337,27 +6337,27 @@ crafting:
   - id: 310230013
     count: 8
   - id: 610511013
-    count: 14
+    count: 7
   - id: 610511014
-    count: 24
+    count: 11
   - id: 610511015
-    count: 36
+    count: 17
   - id: 610511019
-    count: 15
+    count: 8
   - id: 610511023
-    count: 43
+    count: 26
   - id: 610511027
-    count: 28
+    count: 15
   - id: 610511028
-    count: 43
+    count: 26
   - id: 610530010
-    count: 50
+    count: 35
   - id: 610610016
-    count: 69
+    count: 48
   - id: 610660035
-    count: 119
+    count: 83
   - id: 610730027
-    count: 92
+    count: 64
   race: light
 - id: 310220020
   splendent_id: 310220022
@@ -6365,25 +6365,25 @@ crafting:
   - id: 310230013
     count: 8
   - id: 610511013
-    count: 14
+    count: 7
   - id: 610511014
-    count: 24
+    count: 11
   - id: 610511015
-    count: 36
+    count: 17
   - id: 610511019
-    count: 15
+    count: 8
   - id: 610511023
-    count: 43
+    count: 26
   - id: 610511027
-    count: 28
+    count: 15
   - id: 610511028
-    count: 43
+    count: 26
   - id: 610530010
-    count: 50
+    count: 35
   - id: 610610016
-    count: 69
+    count: 48
   - id: 610660035
-    count: 119
+    count: 83
   - id: 610730027
-    count: 92
+    count: 64
   race: dark
