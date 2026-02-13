@@ -19,9 +19,11 @@ ui:
 leaderboard:
   refreshedAgo: "{{time}}前重新整理"
   artifactState:
+    recordTime: "佔領日期"
     isVerified: "已驗證"
     contributors: "貢獻者"
     verify: "驗證"
+    timeFixedNote: "時間固定為 {{time}} (當地時間)"
     validationError: "創建/編輯失敗，兩條數據至少間隔48小時"
   providedBy: "資訊由 <emph>{{username}}</emph> 提供"
   artifactAdmins: "神器管理員"

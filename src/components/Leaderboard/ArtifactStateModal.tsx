@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useMemo} from "react";
+import React, {useState, useEffect, useMemo, useCallback} from "react";
 import {
   Modal,
   ModalContent,
@@ -6,21 +6,16 @@ import {
   ModalBody,
   ModalFooter,
   Button,
-  Input,
   Select,
   SelectItem,
   DatePicker,
-  Switch,
   Alert,
 } from "@heroui/react";
-import {now, getLocalTimeZone, parseAbsoluteToLocal} from "@internationalized/date";
+import {now, getLocalTimeZone, parseAbsoluteToLocal, toCalendarDate} from "@internationalized/date";
 import {useTranslation} from "react-i18next";
 import {I18nProvider} from "@react-aria/i18n";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faRotateRight} from "@fortawesome/free-solid-svg-icons";
 import {useLeaderboard} from "@/context/LeaderboardContext";
 import type {Artifact, ArtifactState, ServerMatching} from "@/types/leaderboard";
-import {AdaptiveTooltip} from "@/components/AdaptiveTooltip";
 
 interface ArtifactStateModalProps {
   isOpen: boolean;
@@ -47,27 +42,38 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
     return (artifactsByMap[mapName] || []).sort((a, b) => a.order - b.order);
   }, [artifactsByMap, mapName]);
 
-  const [uploadTime, setUploadTime] = useState(now(getLocalTimeZone()));
-  const [countdown, setCountdown] = useState("48:00:00");
   const [artifactStates, setArtifactStates] = useState<Record<string, number>>({});
-  const [isCountdownMode, setIsCountdownMode] = useState(false);
-  const [manualRecordTime, setManualRecordTime] = useState(now(getLocalTimeZone()));
+  const [manualRecordTime, setManualRecordTime] = useState<any>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const calculateFormattedCountdown = (recordTimeStr: string) => {
-    const recordTime = new Date(recordTimeStr).getTime();
-    const fortyEightHours = 48 * 60 * 60 * 1000;
-    const now = Date.now();
-    const diff = recordTime + fortyEightHours - now;
+  const isDateUnavailable = useCallback((date: any) => {
+    // We want to allow Tuesday (2), Thursday (4), and Saturday (6) in UTC
+    // Since we are setting the time to 13:00 UTC, we should check the day in UTC
+    // for that specific time.
+    // CalendarDate represents a date without a time or timezone.
+    // 13:00 UTC on a given CalendarDate is always the same day of the week in UTC
+    // as the date itself if we treat it as a UTC date.
+    
+    // Create a date object at 13:00 UTC on the given calendar date
+    const utcDate = new Date(Date.UTC(date.year, date.month - 1, date.day, 13, 0, 0));
+    const day = utcDate.getUTCDay();
+    return day !== 2 && day !== 4 && day !== 6;
+  }, []);
 
-    if (diff <= 0) return "48:00:00";
-
-    const hours = Math.floor(diff / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-    return `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
-  };
+  const getNearestAvailableDate = useCallback(() => {
+    const znow = now(getLocalTimeZone());
+    let date = toCalendarDate(znow);
+    
+    // Try current date and then go backwards until we find an available date
+    // We limit to 7 days just in case, though 3 should be enough
+    for (let i = 0; i < 7; i++) {
+        if (!isDateUnavailable(date)) {
+            return date;
+        }
+        date = date.subtract({ days: 1 });
+    }
+    return toCalendarDate(znow);
+  }, [isDateUnavailable]);
 
   useEffect(() => {
     if (isOpen) {
@@ -75,10 +81,7 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
       if (initialState) {
         if (initialState.id) {
           // Update mode
-          setUploadTime(parseAbsoluteToLocal(initialState.recordTime));
-          setCountdown(calculateFormattedCountdown(initialState.recordTime));
-          setManualRecordTime(parseAbsoluteToLocal(initialState.recordTime));
-          setIsCountdownMode(false);
+          setManualRecordTime(toCalendarDate(parseAbsoluteToLocal(initialState.recordTime)));
           
           const states: Record<string, number> = {};
           initialState.states.forEach(s => {
@@ -87,10 +90,7 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
           setArtifactStates(states);
         } else {
           // Create mode (initialState exists but has no id, it's a template)
-          setUploadTime(now(getLocalTimeZone()));
-          setCountdown("48:00:00");
-          setManualRecordTime(now(getLocalTimeZone()));
-          setIsCountdownMode(true);
+          setManualRecordTime(getNearestAvailableDate());
           
           const states: Record<string, number> = {};
           if (initialState.states) {
@@ -106,10 +106,7 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
         }
       } else {
         // Create mode
-        setUploadTime(now(getLocalTimeZone()));
-        setCountdown("48:00:00");
-        setManualRecordTime(now(getLocalTimeZone()));
-        setIsCountdownMode(true);
+        setManualRecordTime(getNearestAvailableDate());
         
         const states: Record<string, number> = {};
         mapArtifacts.forEach(a => {
@@ -118,47 +115,29 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
         setArtifactStates(states);
       }
     }
-  }, [isOpen, initialState, mapArtifacts]);
+  }, [isOpen]); // Only run when modal opens
 
   const isUpdateMode = useMemo(() => {
     return !!(initialState && initialState.id);
   }, [initialState]);
 
-  const disabledTimeValue = useMemo(() => {
-    if (!isCountdownMode) {
-      return manualRecordTime;
-    }
-    if (!uploadTime || !countdown) return null;
-    try {
-      const uploadDate = uploadTime.toDate();
-      const [h, m, s] = countdown.split(":").map(Number);
-      const countdownMs = ((h || 0) * 3600 + (m || 0) * 60 + (s || 0)) * 1000;
-      const fortyEightHoursMs = 48 * 3600 * 1000;
-
-      const recordDateMs = uploadDate.getTime() + countdownMs - fortyEightHoursMs;
-      return parseAbsoluteToLocal(new Date(recordDateMs).toISOString());
-    } catch (e) {
-      return null;
-    }
-  }, [uploadTime, countdown, isCountdownMode, manualRecordTime]);
-
   const recordTimeForApi = useMemo(() => {
-    if (!isCountdownMode) {
-      return manualRecordTime ? new Date(manualRecordTime.toDate()).toISOString() : "";
-    }
-    if (!uploadTime || !countdown) return "";
-    try {
-      const uploadDate = uploadTime.toDate();
-      const [h, m, s] = countdown.split(":").map(Number);
-      const countdownMs = ((h || 0) * 3600 + (m || 0) * 60 + (s || 0)) * 1000;
-      const fortyEightHoursMs = 48 * 3600 * 1000;
+    if (!manualRecordTime) return "";
+    // manualRecordTime is a CalendarDate.
+    // We want to force it to 13:00 UTC on that specific date.
+    const date = new Date(Date.UTC(manualRecordTime.year, manualRecordTime.month - 1, manualRecordTime.day, 13, 0, 0));
+    return date.toISOString();
+  }, [manualRecordTime]);
 
-      const recordDateMs = uploadDate.getTime() + countdownMs - fortyEightHoursMs;
-      return new Date(recordDateMs).toISOString();
-    } catch (e) {
-      return "";
-    }
-  }, [uploadTime, countdown, isCountdownMode, manualRecordTime]);
+  const localTimeDisplay = useMemo(() => {
+    const date = new Date();
+    date.setUTCHours(13, 0, 0, 0);
+    return date.toLocaleTimeString(i18n.language, {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+    });
+  }, [i18n.language]);
 
   const handleSave = async () => {
     const statesData = Object.entries(artifactStates).map(([id, state]) => ({
@@ -206,7 +185,12 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
           size="sm"
           className="w-[100px]"
           selectedKeys={[String(artifactStates[artifact.id] || 1)]}
-          onSelectionChange={(keys) => handleStateChange(artifact.id, Number(Array.from(keys)[0]))}
+          onSelectionChange={(keys) => {
+            const selectedValue = Array.from(keys)[0];
+            if (selectedValue !== undefined) {
+              handleStateChange(artifact.id, Number(selectedValue));
+            }
+          }}
           disallowEmptySelection
           classNames={inputClassNames}
           popoverProps={{
@@ -252,84 +236,22 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
                   {errorMessage}
                 </Alert>
               )}
-              <div className="flex items-center gap-2 mb-2">
-                <Switch 
-                  isSelected={isCountdownMode} 
-                  onValueChange={setIsCountdownMode}
-                  size="sm"
-                >
-                  {t("leaderboard.artifactState.countdownMode")}
-                </Switch>
-              </div>
               <I18nProvider locale={i18n.language}>
-                {isCountdownMode ? (
-                  <>
-                    <div className="relative group/picker">
-                      <DatePicker
-                        label={t("leaderboard.artifactState.uploadTime")}
-                        hideTimeZone
-                        showMonthAndYearPickers
-                        value={uploadTime}
-                        onChange={(value) => {
-                          if (value) {
-                            setUploadTime(value);
-                          }
-                        }}
-                        classNames={inputClassNames}
-                        granularity="second"
-                      />
-                      <AdaptiveTooltip content={t("common:leaderboard.resetToNow", "重置到当前时间")}>
-                        <Button
-                          size="sm"
-                          variant="flat"
-                          isIconOnly
-                          className="absolute right-10 bottom-2 z-20 h-6 w-6 min-w-0 bg-transparent"
-                          onClick={() => {
-                            setUploadTime(now(getLocalTimeZone()));
-                          }}
-                        >
-                          <FontAwesomeIcon icon={faRotateRight} className="text-[12px]"/>
-                        </Button>
-                      </AdaptiveTooltip>
-                    </div>
-                    <Input
-                      label={t("leaderboard.artifactState.countdown")}
-                      placeholder="hh:mm:ss"
-                      value={countdown}
-                      onChange={(e) => setCountdown(e.target.value)}
-                      classNames={inputClassNames}
-                    />
-                  </>
-                ) : (
-                  <DatePicker
-                    label={t("leaderboard.artifactState.recordTime")}
-                    hideTimeZone
-                    showMonthAndYearPickers
-                    value={manualRecordTime}
-                    onChange={(value) => {
-                      if (value) {
-                        setManualRecordTime(value);
-                      }
-                    }}
-                    classNames={inputClassNames}
-                    granularity="second"
-                  />
-                )}
+                <DatePicker
+                  label={t("leaderboard.artifactState.recordTime")}
+                  hideTimeZone
+                  showMonthAndYearPickers
+                  value={manualRecordTime}
+                  onChange={(value) => {
+                    if (value) {
+                      setManualRecordTime(value);
+                    }
+                  }}
+                  isDateUnavailable={isDateUnavailable}
+                  classNames={inputClassNames}
+                  description={t("leaderboard.artifactState.timeFixedNote", {time: localTimeDisplay})}
+                />
               </I18nProvider>
-              
-              {isCountdownMode && (
-                <I18nProvider locale={i18n.language}>
-                  <DatePicker
-                    label={t("leaderboard.artifactState.recordTime")}
-                    hideTimeZone
-                    showMonthAndYearPickers
-                    value={disabledTimeValue}
-                    isDisabled
-                    classNames={inputClassNames}
-                    granularity="second"
-                  />
-                </I18nProvider>
-              )}
               
               <div className="flex flex-col gap-2 mt-2">
                 <p className="font-bold">{t(`maps:${mapName}.description`)}</p>

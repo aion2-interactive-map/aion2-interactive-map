@@ -263,26 +263,6 @@ function ArtifactDetailsPage() {
     }
   };
 
-  const formatTimeDiff = (time1: string, time2: string) => {
-    const t1 = new Date(time1).getTime();
-    const t2 = new Date(time2).getTime();
-    const diffMs = Math.abs(t1 - t2);
-    const fortyEightHoursMs = 48 * 60 * 60 * 1000;
-    const targetDiffMs = diffMs - fortyEightHoursMs;
-
-    const isNegative = targetDiffMs < 0;
-    const absDiff = Math.abs(targetDiffMs);
-
-    const hours = Math.floor(absDiff / (1000 * 60 * 60));
-    const minutes = Math.floor((absDiff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((absDiff % (1000 * 60)) / 1000);
-
-    const formatted = `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
-    if (isNegative) {
-      return t("common:leaderboard.refreshedAgo", { time: formatted });
-    }
-    return formatted;
-  };
 
   const neutralIcon = getStaticUrl("UI/Resource/Texture/Icon/UT_Marker_AbyssArtifact_Neutral.webp");
   const lightIcon = getStaticUrl("UI/Resource/Texture/Icon/UT_Marker_AbyssArtifact_Light.webp");
@@ -413,47 +393,17 @@ function ArtifactDetailsPage() {
                     </TableHeader>
                     <TableBody 
                       emptyContent={t("common:ui.noData")}
-                      items={states.flatMap((state, index) => {
-                        const rowItems = [];
-                        rowItems.push({
-                          type: "data",
-                          id: state.id,
-                          state,
-                          mapName,
-                          arts
-                        });
-                        
-                        if (index < states.length - 1) {
-                          const nextState = states[index + 1];
-                          rowItems.push({
-                            type: "diff",
-                            id: `diff-${state.id}-${nextState.id}`,
-                            state,
-                            nextState,
-                            arts
-                          });
-                        }
-                        return rowItems;
-                      })}
-                    >
-                      {(item: any) => {
-                        if (item.type === "diff") {
-                          const timeDiff = formatTimeDiff(item.state.recordTime, item.nextState.recordTime);
-                          return (
-                            <TableRow key={item.id} className="bg-default-50/30">
-                              <TableCell colSpan={arts.length + 4}>
-                                <div className="flex justify-center items-center px-4 py-1">
-                                  <span className="text-sm text-default-800 italic text-center">
-                                    {t("common:leaderboard.timeDiffToNext")}: {timeDiff}
-                                  </span>
-                                </div>
-                              </TableCell>
-                            </TableRow>
-                          );
-                        }
-
-                        return (
-                          <TableRow key={item.id}>
+                      items={states.map((state) => ({
+                      type: "data",
+                      id: state.id,
+                      state,
+                      mapName,
+                      arts
+                    }))}
+                  >
+                    {(item: any) => {
+                      return (
+                        <TableRow key={item.id}>
                             <TableCell key="recordTime">
                               <div className="flex flex-col">
                                 <span className="font-medium">{new Date(item.state.recordTime).toLocaleString()}</span>
