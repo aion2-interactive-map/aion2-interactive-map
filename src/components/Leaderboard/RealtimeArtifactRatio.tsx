@@ -57,17 +57,17 @@ const RealtimeArtifactRatio: React.FC = () => {
   useEffect(() => {
     const updateGlobalCountdown = () => {
       const now = new Date();
-      // Next Tuesday (2), Thursday (4), Saturday (6) at 11:00 UTC
+      // Next Tuesday (2), Thursday (4), Saturday (6) at 13:00 UTC
       const targets = [2, 4, 6];
       let minDiff = Infinity;
       let nextTarget = null;
 
       for (const day of targets) {
         const target = new Date(now);
-        target.setUTCHours(11, 0, 0, 0);
+        target.setUTCHours(13, 0, 0, 0);
         let daysUntil = (day - now.getUTCDay() + 7) % 7;
         
-        // If it's the target day but past 11:00 UTC, go to next week
+        // If it's the target day but past 13:00 UTC, go to next week
         if (daysUntil === 0 && now.getTime() >= target.getTime()) {
           daysUntil = 7;
         }
@@ -234,7 +234,7 @@ const RealtimeArtifactRatio: React.FC = () => {
             <div className="flex items-center gap-2">
               <p className="text-[22px] text-default-800">{t("common:leaderboard.realtimeArtifactRatio")}</p>
               {globalCountdown && (
-                <span className="text-[16px] font-mono font-bold text-danger">
+                <span className="text-[16px] font-mono font-bold text-primary">
                   {globalCountdown}
                 </span>
               )}

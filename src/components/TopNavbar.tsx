@@ -1,10 +1,9 @@
 // src/components/TopNavbar.tsx
 import React from "react";
 import {
-  Button, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger,
   Navbar,
   NavbarBrand,
-  NavbarContent, NavbarItem, Tooltip,
+  NavbarContent, NavbarItem,
   NavbarMenu, NavbarMenuItem, NavbarMenuToggle,
 } from "@heroui/react";
 // import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -13,16 +12,13 @@ import {useTranslation} from "react-i18next";
 // import Marquee from "react-fast-marquee";
 
 import {useTheme} from "@/context/ThemeContext";
-import {useUser} from "@/context/UserContext";
 
 import LanguageSwitcher from "./LanguageSwitcher";
 // import {useDataMode} from "../hooks/useDataMode.tsx";
 import {getStaticUrl} from "../utils/url.ts";
 import ThemeDropdown from "@/components/ThemeDropdown.tsx";
-import AuthModal from "@/components/AuthModal.tsx";
+import UserDropdown from "@/components/UserDropdown.tsx";
 import {Link, useLocation} from "@tanstack/react-router";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faUser} from "@fortawesome/free-solid-svg-icons";
 import ContactUs from "@/components/ContactUs.tsx";
 import Donate from "@/components/Donate.tsx";
 import ReactMarkdown from "react-markdown";
@@ -34,7 +30,6 @@ const TopNavbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const {t} = useTranslation(); // we use fully-qualified keys like common:siteTitle
   const {theme} = useTheme();
-  const {user, logout, userModalOpen: authOpen, setUserModalOpen: setAuthOpen} = useUser();
 
   const isDark = theme === "dark";
   // const {dataMode, toggleDataMode} = useDataMode();
@@ -108,37 +103,7 @@ const TopNavbar: React.FC = () => {
         <ThemeDropdown />
         <ContactUs />
         <Donate />
-
-        {!user ? (
-          <>
-            <Tooltip
-              content={t("common:auth.login", "Login") + " / " + t("common:auth.register", "Register")}
-              placement="bottom"
-              delay={300}
-            >
-              <Button isIconOnly variant="light" onPress={() => setAuthOpen(true)}>
-                <FontAwesomeIcon icon={faUser} className="text-lg" />
-              </Button>
-            </Tooltip>
-            <AuthModal isOpen={authOpen} onClose={() => setAuthOpen(false)} />
-          </>
-        ) : (
-          <>
-            <Dropdown placement="bottom-end">
-              <DropdownTrigger>
-                <Button variant="light" className="px-2 text-sm font-normal">
-                  {user.name ?? user.email}
-                </Button>
-              </DropdownTrigger>
-
-              <DropdownMenu aria-label="User menu">
-                <DropdownItem key="logout" color="danger" onPress={logout}>
-                  {t("common:auth.logout", "Logout")}
-                </DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
-          </>
-        )}
+        <UserDropdown />
       </NavbarContent>
 
       <NavbarMenu>

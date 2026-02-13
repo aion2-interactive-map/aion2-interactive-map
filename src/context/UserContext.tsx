@@ -139,6 +139,9 @@ export function UserProvider({children}: { children: ReactNode }) {
       if (!res.ok) throw new Error("Failed retrieving session");
 
       const data = await res.json();
+      if (!data.id) {
+        throw new Error("Invalid user data: missing id");
+      }
       setUser(data);
 
     } catch (err) {
