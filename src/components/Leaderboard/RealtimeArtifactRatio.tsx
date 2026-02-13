@@ -52,6 +52,49 @@ const RealtimeArtifactRatio: React.FC = () => {
     });
   }, []);
 
+  const [globalCountdown, setGlobalCountdown] = useState("");
+
+  useEffect(() => {
+    const updateGlobalCountdown = () => {
+      const now = new Date();
+      // Next Tuesday (2), Thursday (4), Saturday (6) at 11:00 UTC
+      const targets = [2, 4, 6];
+      let minDiff = Infinity;
+      let nextTarget = null;
+
+      for (const day of targets) {
+        const target = new Date(now);
+        target.setUTCHours(11, 0, 0, 0);
+        let daysUntil = (day - now.getUTCDay() + 7) % 7;
+        
+        // If it's the target day but past 11:00 UTC, go to next week
+        if (daysUntil === 0 && now.getTime() >= target.getTime()) {
+          daysUntil = 7;
+        }
+        
+        target.setUTCDate(now.getUTCDate() + daysUntil);
+        const diff = target.getTime() - now.getTime();
+        if (diff < minDiff) {
+          minDiff = diff;
+          nextTarget = target;
+        }
+      }
+
+      if (nextTarget) {
+        const diff = nextTarget.getTime() - now.getTime();
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        const formatted = `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+        setGlobalCountdown(t("common:leaderboard.refreshIn", { time: formatted }));
+      }
+    };
+
+    updateGlobalCountdown();
+    const timer = setInterval(updateGlobalCountdown, 1000);
+    return () => clearInterval(timer);
+  }, [t]);
+
   const sortedMatchings = useMemo(() => {
     return [...serverMatchings].sort((a, b) => {
       const aStarred = starredServerIds.includes(a.server1.serverId) || starredServerIds.includes(a.server2.serverId);
@@ -188,7 +231,14 @@ const RealtimeArtifactRatio: React.FC = () => {
       <Card className="bg-transparent shadow-none">
         <CardHeader className="flex flex-col items-start gap-3 px-0">
           <div className="flex flex-col w-full gap-3 pb-4">
-            <p className="text-[22px] text-default-800">{t("common:leaderboard.realtimeArtifactRatio")}</p>
+            <div className="flex items-center gap-2">
+              <p className="text-[22px] text-default-800">{t("common:leaderboard.realtimeArtifactRatio")}</p>
+              {globalCountdown && (
+                <span className="text-[16px] font-mono font-bold text-danger">
+                  {globalCountdown}
+                </span>
+              )}
+            </div>
             <div className="flex gap-2 w-full">
               <Select
                 size="sm"

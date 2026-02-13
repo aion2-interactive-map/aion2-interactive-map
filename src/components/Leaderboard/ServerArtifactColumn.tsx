@@ -4,8 +4,6 @@ import {Button} from "@heroui/react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {
   faStar as faStarSolid,
-  faThumbsUp,
-  faThumbsDown
 } from "@fortawesome/free-solid-svg-icons";
 import {faStar as faStarRegular} from "@fortawesome/free-regular-svg-icons";
 import {AdaptiveTooltip} from "@/components/AdaptiveTooltip";
@@ -43,7 +41,6 @@ const ServerArtifactColumn: React.FC<ServerArtifactColumnProps> = ({
   selectedDate,
   starredServerIds,
   toggleStar,
-  formatCountdown,
   t,
   icons
 }) => {
@@ -120,17 +117,6 @@ const ServerArtifactColumn: React.FC<ServerArtifactColumnProps> = ({
             })}
           </div>
         </div>
-        {/* Third Line: Countdown */}
-        <div
-          className="text-[20px] text-default-800 font-mono text-center"
-        >
-          {(() => {
-            const state = artifactStates[0];
-            const hasContributors = !!(state?.contributors && state.contributors.length > 0);
-            return formatCountdown(state?.recordTime, hasContributors);
-          })()}
-        </div>
-
         {/* Contributor Line */}
         <div className="w-full mt-1 min-h-[18px]">
           {(() => {
@@ -170,10 +156,6 @@ const ServerArtifactColumn: React.FC<ServerArtifactColumnProps> = ({
                       }}
                     />
                   </span>
-                  <div className="flex gap-2 text-default-400">
-                    <FontAwesomeIcon icon={faThumbsUp} className="cursor-pointer hover:text-primary transition-colors"/>
-                    <FontAwesomeIcon icon={faThumbsDown} className="cursor-pointer hover:text-danger transition-colors"/>
-                  </div>
                 </div>
               );
             }
