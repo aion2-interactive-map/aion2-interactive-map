@@ -29,6 +29,7 @@ leaderboard:
   artifactAdmins: "神器管理員"
   addArtifactAdmin: "添加神器管理員"
   submitData: "點擊提交數據"
+  share: "分享"
 
 menu:
   home: "首頁"
@@ -54,3 +55,7 @@ errors:
 markerActions:
   markCompleted: "標記為已完成"
   markNotCompleted: "已完成"
+
+race:
+  light: "天族"
+  dark: "魔族"

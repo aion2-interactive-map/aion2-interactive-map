@@ -115,6 +115,7 @@ leaderboard:
   addArtifactAdmin: "添加神器管理员"
   providedBy: "信息由 <emph>{{username}}</emph> 提供"
   submitData: "点击提交数据"
+  share: "分享"
 
 wip:
   title: "此页面正在建设中！"
@@ -233,6 +234,10 @@ server:
   starred: "收藏角色"
   searching: "搜索角色中..."
   noResults: "未查询到和 \"{{keyword}}\" 有关的角色"
+
+race:
+  light: "天族"
+  dark: "魔族"
 
 skills:
   category:

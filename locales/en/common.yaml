@@ -74,6 +74,7 @@ leaderboard:
   artifactAdmins: "Artifact Admins"
   addArtifactAdmin: "Add Artifact Admin"
   submitData: "Click to submit data"
+  share: "Share"
 
 buttons:
   apply: "Apply"
@@ -133,3 +134,7 @@ rightSidebar:
       2. **Bug reports & marker sharing**: please contact via Discord
       3. **Advertisement inquiries**: please contact via Discord
       4. For the latest Aion 2 news and active discussions, check out the Aion 2 Global Discord – **the biggest Aion 2's community** we’re happy to collaborate with: https://discord.gg/aion2global
+
+race:
+  light: "Elyos"
+  dark: "Asmodian"
