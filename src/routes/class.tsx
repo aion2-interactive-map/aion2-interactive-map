@@ -56,7 +56,7 @@ function Page() {
                 key={key}
                 title={
                   <div className="flex items-center gap-1 sm:gap-3">
-                    <div className="w-[40px] h-[40px] sm:w-[60px] sm:h-[60px] overflow-hidden shrink-0">
+                    <div className="w-10 h-10 sm:w-[60px] sm:h-[60px] overflow-hidden shrink-0">
                       <img
                         src={iconUrl}
                         alt={`${cls.name} icon`}
@@ -66,7 +66,7 @@ function Page() {
                     </div>
 
                     <div className="flex flex-col items-start leading-tight">
-                      <div className="text-[14px] sm:text-[18px] font-semibold">{t(`classes:${cls.name}.name`)}</div>
+                      <div className="text-sm sm:text-lg font-semibold">{t(`classes:${cls.name}.name`)}</div>
                     </div>
                   </div>
                 }

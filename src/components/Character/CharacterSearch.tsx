@@ -238,7 +238,7 @@ export default function CharacterSearch() {
             <img
               src={`https://profileimg.plaync.com${item.profileImageUrl}`}
               alt={item.name}
-              className="w-[48px] h-[48px] object-cover rounded-md shrink-0"
+              className="w-12 h-12 object-cover rounded-md shrink-0"
               draggable={false}
             />
             <div className="min-w-0 flex-1">
@@ -259,8 +259,8 @@ export default function CharacterSearch() {
     return (
       <div className="flex flex-col w-full space-y-8 pt-10 min-h-[600px]">
         <div className="flex flex-col">
-          <h1 className="text-[22px] font-bold text-foreground">搜寻AION2角色</h1>
-          <p className="text-[14px] text-default-800 mt-2">查詢角色詳細資訊</p>
+          <h1 className="text-xl font-bold text-foreground">搜寻AION2角色</h1>
+          <p className="text-sm text-default-800 mt-2">查詢角色詳細資訊</p>
         </div>
 
         <div className="flex flex-col items-center w-full space-y-4 max-w-2xl mx-auto">
@@ -375,7 +375,7 @@ export default function CharacterSearch() {
 
         {starredItems.length > 0 && (
           <div className="flex flex-col space-y-4">
-            <h2 className="text-[18px] font-bold text-foreground">
+            <h2 className="text-lg font-bold text-foreground">
               {t("common:server.starred", "Favorites")}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 w-full">
@@ -386,7 +386,7 @@ export default function CharacterSearch() {
 
         {historyItems.length > 0 && (
           <div className="flex flex-col space-y-4">
-            <h2 className="text-[18px] font-bold text-foreground">
+            <h2 className="text-lg font-bold text-foreground">
               {t("common:server.history", "Search History")}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 w-full">
@@ -502,7 +502,7 @@ export default function CharacterSearch() {
               <img
                 src={`https://profileimg.plaync.com${item.profileImageUrl}`}
                 alt={item.name}
-                className="w-[40px] h-[40px] object-cover rounded-md shrink-0"
+                className="w-10 h-10 object-cover rounded-md shrink-0"
                 draggable={false}
               />
               <div className="min-w-0 flex-1">

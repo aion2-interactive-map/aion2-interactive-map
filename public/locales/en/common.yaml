@@ -74,6 +74,7 @@ leaderboard:
   artifactAdmins: "Artifact Admins"
   addArtifactAdmin: "Add Artifact Admin"
   submitData: "Click to submit data"
+  share: "Share"
 
 buttons:
   apply: "Apply"

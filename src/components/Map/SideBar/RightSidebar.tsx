@@ -45,7 +45,7 @@ const RightSidebar: React.FC = () => {
         itemClasses={{
           base: "!bg-transparent !shadow-none !backdrop-filter-none !backdrop-blur-none",
           trigger: "py-4 min-h-0 px-2",
-          title: "text-[16px] leading-[16px] font-bold",
+          title: "text-base leading-[16px] font-bold",
           content: "py-0",
         }}
         className="bg-transparent shadow-none"

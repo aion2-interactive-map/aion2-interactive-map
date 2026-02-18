@@ -22,7 +22,7 @@ const CharacterSkills: React.FC = () => {
         <div
           className="w-[38px] shrink-0 flex items-center justify-center border-r-1 border-crafting-border">
           <div
-            className="w-[18px] text-center text-[18px] font-semibold text-default-700 break-words"
+            className="w-[18px] text-center text-lg font-semibold text-default-700 break-words"
           >
             {t(`common:skills.category.${category.toLowerCase()}`, category)}
           </div>
@@ -52,7 +52,7 @@ const CharacterSkills: React.FC = () => {
                 closeDelay={0}
               >
                 <div
-                  className="relative h-[48px] w-[48px] overflow-hidden rounded-md cursor-help outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                  className="relative h-12 w-12 overflow-hidden rounded-md cursor-help outline-none focus-visible:ring-2 focus-visible:ring-primary"
                   tabIndex={0}
                 >
                   {icon ? (
@@ -72,7 +72,7 @@ const CharacterSkills: React.FC = () => {
                     </div>
                   ) : (
                     /* Skill level badge */
-                    <div className="absolute bottom-0 right-0 bg-black/60 text-white text-[14px] px-1 rounded-tl-md">
+                    <div className="absolute bottom-0 right-0 bg-black/60 text-white text-sm px-1 rounded-tl-md">
                       LV{s.skillLevel}
                     </div>
                   )}

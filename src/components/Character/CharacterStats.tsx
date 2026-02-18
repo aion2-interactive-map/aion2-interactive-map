@@ -65,10 +65,10 @@ const CharacterStats: React.FC = () => {
                     draggable={false}
                   />
                 </div>
-                <div className="text-[12px] sm:text-[18px] text-default-800 truncate">
+                <div className="text-xs sm:text-lg text-default-800 truncate">
                   {t(`stats:${stat.type}.name`)}
                 </div>
-                <div className="text-[12px] sm:text-[18px] text-default-800 font-semibold">
+                <div className="text-xs sm:text-lg text-default-800 font-semibold">
                   {infoStatsDict[stat.type]?.value ?? "-"}
                 </div>
               </div>

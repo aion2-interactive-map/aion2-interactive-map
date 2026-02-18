@@ -22,16 +22,16 @@ const CharacterRankings: React.FC = () => {
           <CardBody className="p-2 flex flex-row items-center gap-3">
             <div className="flex flex-col flex-1 min-w-0 justify-between h-full">
               <div className="flex items-center gap-1">
-                <span className="text-[18px] text-primary">
+                <span className="text-lg text-primary">
                   第 {ranking.rank ?? "-"} 名
                 </span>
                 {ranking.rankChange !== null && ranking.rankChange !== 0 && !isNaN(ranking.rankChange) && (
-                  <span className={`text-[14px] ${ranking.rankChange > 0 ? 'text-danger' : 'text-success'}`}>
+                  <span className={`text-sm ${ranking.rankChange > 0 ? 'text-danger' : 'text-success'}`}>
                     {ranking.rankChange > 0 ? `↓ ${ranking.rankChange}` : `↑ ${Math.abs(ranking.rankChange)}`}
                   </span>
                 )}
               </div>
-              <div className="text-[14px] text-default-800">
+              <div className="text-sm text-default-800">
                 {ranking.rankingContentsName}
               </div>
             </div>
@@ -44,7 +44,7 @@ const CharacterRankings: React.FC = () => {
                 />
               )}
               {ranking.point !== null && (
-                <div className="text-[12px] text-default-800 font-medium">
+                <div className="text-xs text-default-800 font-medium">
                   {ranking.point}
                 </div>
               )}

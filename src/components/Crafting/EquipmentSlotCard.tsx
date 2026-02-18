@@ -52,7 +52,7 @@ export const EquipmentSlotCard: React.FC<EquipmentSlotCardProps> = ({
           }}
           disabled={!selectedId || count <= 0}
           className={[
-            "flex h-[16px] w-[16px] items-center justify-center rounded-sm",
+            "flex h-4 w-4 items-center justify-center rounded-sm",
             !selectedId || count <= 0 ? "opacity-40" : "hover:bg-black/30",
           ].join(" ")}
           title={t("common:crafting.minus", "Minus")}
@@ -60,7 +60,7 @@ export const EquipmentSlotCard: React.FC<EquipmentSlotCardProps> = ({
           <FontAwesomeIcon icon={faMinus} className="text-[10px] text-white" />
         </button>
 
-        <div className="min-w-[18px] text-center text-[12px] font-bold leading-[12px] text-white">
+        <div className="min-w-[18px] text-center text-xs font-bold leading-[12px] text-white">
           {selectedId ? String(Math.max(0, count)) : "0"}
         </div>
 
@@ -73,7 +73,7 @@ export const EquipmentSlotCard: React.FC<EquipmentSlotCardProps> = ({
           }}
           disabled={!selectedId}
           className={[
-            "flex h-[16px] w-[16px] items-center justify-center rounded-sm",
+            "flex h-4 w-4 items-center justify-center rounded-sm",
             !selectedId ? "opacity-40" : "hover:bg-black/30",
           ].join(" ")}
           title={t("common:crafting.plus", "Plus")}
@@ -110,7 +110,7 @@ export const EquipmentSlotCard: React.FC<EquipmentSlotCardProps> = ({
 
         {/* Top: slot name */}
         <div className="pointer-events-none absolute inset-x-1 top-[2px] z-20">
-          <div className="truncate text-center text-[12px] font-bold leading-[12px] text-white [text-shadow:0px_2px_4px_rgba(0,0,0,0.35)]">
+          <div className="truncate text-center text-xs font-bold leading-[12px] text-white [text-shadow:0px_2px_4px_rgba(0,0,0,0.35)]">
             {slotName}
           </div>
         </div>
@@ -134,7 +134,7 @@ export const EquipmentSlotCard: React.FC<EquipmentSlotCardProps> = ({
     <button
       type="button"
       onClick={onSlotClick}
-      className="relative h-[56px] w-[188px] rounded-sm bg-contain bg-center bg-no-repeat"
+      className="relative h-14 w-[188px] rounded-sm bg-contain bg-center bg-no-repeat"
       style={{
         backgroundImage: `url(${gradeBackground})`,
         backgroundSize: "100% 100%",
@@ -150,7 +150,7 @@ export const EquipmentSlotCard: React.FC<EquipmentSlotCardProps> = ({
         <img src={imgSrc} alt={slot.name} className="h-12 w-12 shrink-0 object-contain" />
 
         {/* Right: item name (top) + count (bottom) */}
-        <div className="ml-2 flex h-[48px] min-w-0 flex-1 flex-col justify-center">
+        <div className="ml-2 flex h-12 min-w-0 flex-1 flex-col justify-center">
           <div className="truncate text-left text-[13px] font-bold leading-[13px] text-white [text-shadow:0px_2px_4px_rgba(0,0,0,0.35)]">
             {itemName}
           </div>

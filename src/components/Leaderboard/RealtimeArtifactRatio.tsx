@@ -1,10 +1,11 @@
 import React, {useMemo, useState, useEffect, useCallback} from "react";
 import {useTranslation} from "react-i18next";
-import {Card, CardHeader, CardBody, Divider, Button, DatePicker, Select, SelectItem} from "@heroui/react";
+import {Card, CardBody, Button, DatePicker, Select, SelectItem, Modal, ModalContent, ModalBody, useDisclosure} from "@heroui/react";
 import {now, getLocalTimeZone} from "@internationalized/date";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {
-  faRotateRight
+  faRotateRight,
+  faShare
 } from "@fortawesome/free-solid-svg-icons";
 import {useLeaderboard} from "@/context/LeaderboardContext";
 import {MAP_NAMES} from "@/types/game";
@@ -13,7 +14,9 @@ import {AdaptiveTooltip} from "@/components/AdaptiveTooltip";
 import {I18nProvider} from "@react-aria/i18n";
 
 import { useNavigate } from "@tanstack/react-router";
-import ServerArtifactColumn from "./ServerArtifactColumn";
+import ArtifactMatchupRow from "./ArtifactMatchupRow.tsx";
+import ArtifactRatioShareCard from "./ArtifactRatioShareCard";
+import ArtifactRatioShareCardWrapper from "./ArtifactRatioShareCardWrapper";
 
 const RealtimeArtifactRatio: React.FC = () => {
   const navigate = useNavigate();
@@ -208,6 +211,8 @@ const RealtimeArtifactRatio: React.FC = () => {
     return {artifactsA: a, artifactsB: b};
   }, [artifactsByMap]);
 
+  const {isOpen, onOpen, onOpenChange} = useDisclosure();
+
   const selectClassNames = {
     trigger: "!bg-character-card hover:!bg-character-card focus:!bg-character-card !transition-none border-crafting-border border-1 shadow-none rounded-sm group-data-[hover=true]:!bg-character-card group-data-[focus=true]:!bg-character-card group-data-[focus-visible=true]:!bg-character-card h-[36px] min-h-[36px]",
     innerWrapper: "h-[36px] py-0",
@@ -227,131 +232,148 @@ const RealtimeArtifactRatio: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col gap-4">
-      <Card className="bg-transparent shadow-none">
-        <CardHeader className="flex flex-col items-start gap-3 px-0">
-          <div className="flex flex-col w-full gap-3 pb-4">
+    <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-5 w-full">
+        <div className="flex flex-col items-start gap-3 px-5 h-[62px] justify-center artifact-ratio-card-header shadow-[0px_3px_8px_0px_rgba(0,0,0,0.05)] rounded-[8px] border-1 border-solid">
+          <div className="flex items-center gap-2 justify-between w-full">
             <div className="flex items-center gap-2">
-              <p className="text-[22px] text-default-800">{t("common:leaderboard.realtimeArtifactRatio")}</p>
+              <p className="text-xl font-normal text-default-900">{t("common:leaderboard.realtimeArtifactRatio")}</p>
               {globalCountdown && (
-                <span className="text-[16px] font-mono font-bold text-primary">
+                <span className="text-base font-mono font-normal text-primary">
                   {globalCountdown}
                 </span>
               )}
             </div>
-            <div className="flex gap-2 w-full">
-              <Select
-                size="sm"
-                selectedKeys={[region]}
-                onSelectionChange={(keys) => setRegion(Array.from(keys)[0] as string)}
-                className="min-w-[100px] flex-1 sm:flex-none sm:w-[120px]"
-                disallowEmptySelection
-                classNames={selectClassNames}
-                popoverProps={{
-                  radius: "none",
-                }}
-                listboxProps={commonListboxProps}
+            <AdaptiveTooltip content={t("common:leaderboard.share", "分享")}>
+              <Button
+                isIconOnly
+                size="lg"
+                variant="light"
+                onPress={onOpen}
+                className="text-primary"
               >
-                <SelectItem key="tw">{t("common:server.tw")}</SelectItem>
-                <SelectItem key="kr">{t("common:server.kr")}</SelectItem>
-              </Select>
-              <I18nProvider locale={i18n.language}>
-                <div className="relative flex-[2] sm:flex-none sm:w-[280px]">
-                  <DatePicker
-                    className="w-full"
-                    hideTimeZone
-                    showMonthAndYearPickers
-                    value={selectedDate}
-                    onChange={(value) => {
-                      if (value) {
-                        setSelectedDate(value);
-                        setIsAutoUpdate(false);
-                      }
-                    }}
-                    classNames={datePickerClassNames}
-                    granularity="second"
-                  />
-                  {!isAutoUpdate && (
-                    <AdaptiveTooltip content={t("common:leaderboard.resetToNow", "重置到当前时间")}>
-                      <Button
-                        size="sm"
-                        variant="flat"
-                        isIconOnly
-                        className="absolute right-10 top-1/2 -translate-y-1/2 z-20 h-6 w-6 min-w-0 bg-transparent"
-                        onClick={() => {
-                          setIsAutoUpdate(true);
-                          setSelectedDate(now(getLocalTimeZone()));
-                        }}
-                      >
-                        <FontAwesomeIcon icon={faRotateRight} className="text-[12px]"/>
-                      </Button>
-                    </AdaptiveTooltip>
-                  )}
-                </div>
-              </I18nProvider>
-            </div>
+                <FontAwesomeIcon icon={faShare} />
+              </Button>
+            </AdaptiveTooltip>
           </div>
-        </CardHeader>
-      </Card>
+        </div>
+        <div className="flex gap-2 w-full">
+          <Select
+            size="sm"
+            selectedKeys={[region]}
+            onSelectionChange={(keys) => setRegion(Array.from(keys)[0] as string)}
+            className="min-w-[100px] flex-1 sm:flex-none sm:w-[120px]"
+            disallowEmptySelection
+            classNames={selectClassNames}
+            popoverProps={{
+              radius: "none",
+            }}
+            listboxProps={commonListboxProps}
+          >
+            <SelectItem key="tw">{t("common:server.tw")}</SelectItem>
+            <SelectItem key="kr">{t("common:server.kr")}</SelectItem>
+          </Select>
+          <I18nProvider locale={i18n.language}>
+            <div className="relative flex-[2] sm:flex-none sm:w-[280px]">
+              <DatePicker
+                className="w-full"
+                hideTimeZone
+                showMonthAndYearPickers
+                value={selectedDate}
+                onChange={(value) => {
+                  if (value) {
+                    setSelectedDate(value);
+                    setIsAutoUpdate(false);
+                  }
+                }}
+                classNames={datePickerClassNames}
+                granularity="second"
+              />
+              {!isAutoUpdate && (
+                <AdaptiveTooltip content={t("common:leaderboard.resetToNow", "重置到当前时间")}>
+                  <Button
+                    size="sm"
+                    variant="flat"
+                    isIconOnly
+                    className="absolute right-10 top-1/2 -translate-y-1/2 z-20 h-6 w-6 min-w-0 bg-transparent"
+                    onClick={() => {
+                      setIsAutoUpdate(true);
+                      setSelectedDate(now(getLocalTimeZone()));
+                    }}
+                  >
+                    <FontAwesomeIcon icon={faRotateRight} className="text-xs"/>
+                  </Button>
+                </AdaptiveTooltip>
+              )}
+            </div>
+          </I18nProvider>
+        </div>
+      </div>
 
       {loadingMatchings || loadingArtifacts ? (
         <p className="text-center py-4">{t("common:ui.loading")}</p>
       ) : (
-        sortedMatchings.map((matching) => (
-          <Card key={matching.id}
-                isPressable
-                onClick={() => navigate({ to: `/leaderboard/artifacts/${matching.id}` })}
-                className="bg-character-equipment shadow-none border-1 border-crafting-border p-4 relative group">
-            <CardBody className="p-0">
-              <div className="flex items-stretch justify-between">
-                <ServerArtifactColumn
-                  matching={matching}
-                  server={matching.server1}
-                  isServer1={true}
-                  artifacts={artifactsA}
-                  mapName={MAP_NAMES.ABYSS_A}
-                  artifactStates={artifactStates.filter(s => s.serverMatchingId === matching.id && s.mapName === MAP_NAMES.ABYSS_A)}
-                  artifactStateMap={artifactStateMap}
-                  isAutoUpdate={isAutoUpdate}
-                  selectedDate={selectedDate}
-                  starredServerIds={starredServerIds}
-                  toggleStar={toggleStar}
-                  formatCountdown={formatCountdown}
-                  t={t}
-                  icons={{neutral: neutralIcon, light: lightIcon, dark: darkIcon}}
-                />
-
-                {/* Middle: VS */}
-                <div className="flex flex-col items-center px-2 h-full">
-                  <div className="h-[38px] flex items-center">
-                    <img src={vsImage} alt="VS" className="w-10 h-10 object-contain"/>
-                  </div>
-                  <div className="flex-1 flex items-center mt-2">
-                    <Divider orientation="vertical" className="h-[60px] sm:h-[80px] bg-default-500"/>
-                  </div>
-                </div>
-
-                <ServerArtifactColumn
-                  matching={matching}
-                  server={matching.server2}
-                  isServer1={false}
-                  artifacts={artifactsB}
-                  mapName={MAP_NAMES.ABYSS_B}
-                  artifactStates={artifactStates.filter(s => s.serverMatchingId === matching.id && s.mapName === MAP_NAMES.ABYSS_B)}
-                  artifactStateMap={artifactStateMap}
-                  isAutoUpdate={isAutoUpdate}
-                  selectedDate={selectedDate}
-                  starredServerIds={starredServerIds}
-                  toggleStar={toggleStar}
-                  formatCountdown={formatCountdown}
-                  t={t}
-                  icons={{neutral: neutralIcon, light: lightIcon, dark: darkIcon}}
-                />
-              </div>
-            </CardBody>
-          </Card>
-        ))
+        <div className="flex flex-col gap-2.5">
+          <div className="flex items-center justify-between h-9">
+            <div className="flex-1 flex justify-center">
+              <span className="font-normal text-default-900">{t("common:race.elyos", "天族")}</span>
+            </div>
+            <div className="flex-1 flex justify-center">
+              <span className="font-normal text-default-900">{t("common:race.asmodian", "魔族")}</span>
+            </div>
+          </div>
+          {sortedMatchings.map((matching) => {
+            const isStarred = starredServerIds.includes(matching.server1.serverId) || starredServerIds.includes(matching.server2.serverId);
+            return (
+              <Card key={matching.id}
+                    isPressable
+                    onClick={() => navigate({ to: `/leaderboard/artifacts/${matching.id}` })}
+                    className={`bg-character-equipment shadow-none border-1 ${isStarred ? "border-primary" : "border-crafting-border"} p-2.5 relative group`}>
+                <CardBody className="p-0">
+                  <ArtifactMatchupRow
+                    matching={matching}
+                    artifactsA={artifactsA}
+                    artifactsB={artifactsB}
+                    mapNames={{A: MAP_NAMES.ABYSS_A, B: MAP_NAMES.ABYSS_B}}
+                    artifactStates={artifactStates.filter(s => s.serverMatchingId === matching.id)}
+                    artifactStateMap={artifactStateMap}
+                    isAutoUpdate={isAutoUpdate}
+                    selectedDate={selectedDate}
+                    starredServerIds={starredServerIds}
+                    toggleStar={toggleStar}
+                    formatCountdown={formatCountdown}
+                    t={t}
+                    icons={{neutral: neutralIcon, light: lightIcon, dark: darkIcon}}
+                    vsImage={vsImage}
+                  />
+                </CardBody>
+              </Card>
+            );
+          })}
+        </div>
       )}
+
+      <Modal isOpen={isOpen} onOpenChange={onOpenChange} size="full" scrollBehavior="inside" hideCloseButton>
+        <ModalContent className="bg-transparent shadow-none">
+          {(onClose) => (
+            <ModalBody className="p-0 flex items-center justify-center" onClick={onClose}>
+              <ArtifactRatioShareCardWrapper>
+                <ArtifactRatioShareCard 
+                  server={t(`common:server.${region}`)} 
+                  time={selectedDate.toDate().toLocaleString()}
+                  matchings={sortedMatchings}
+                  artifactsA={artifactsA}
+                  artifactsB={artifactsB}
+                  artifactStateMap={artifactStateMap}
+                  isAutoUpdate={isAutoUpdate}
+                  selectedDate={selectedDate}
+                  icons={{neutral: neutralIcon, light: lightIcon, dark: darkIcon}}
+                />
+              </ArtifactRatioShareCardWrapper>
+            </ModalBody>
+          )}
+        </ModalContent>
+      </Modal>
     </div>
   );
 };

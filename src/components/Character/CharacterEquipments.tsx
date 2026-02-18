@@ -22,13 +22,13 @@ const CharacterEquipments: React.FC = () => {
   const skinBySlotName = keyBy(equipments?.skins ?? [], "slotPosName");
 
   const renderExceedLevel = (exceedLevel: number) => {
-    if (exceedLevel === 0) return <div className="h-[16px] w-[16px] shrink-0"/>;
+    if (exceedLevel === 0) return <div className="h-4 w-4 shrink-0"/>;
     return (
       <div className="mt-2 flex items-center justify-start gap-0">
         {Array.from({length: 5}).map((_, i) => (
           <div
             key={i}
-            className="h-[16px] w-[16px] overflow-hidden rounded-sm flex justify-center items-center"
+            className="h-4 w-4 overflow-hidden rounded-sm flex justify-center items-center"
           >
             {i < exceedLevel && (
               <img
@@ -67,23 +67,23 @@ const CharacterEquipments: React.FC = () => {
     const itemName = t(`items/items:${item?.id || eq?.id}.name`, String(item?.id || eq?.id || ""));
 
     const tooltipContent = detail ? (
-      <div className="space-y-2 w-full text-[14px]">
-        <div className="font-bold text-[18px] text-center pb-1">装备详情</div>
+      <div className="space-y-2 w-full text-sm">
+        <div className="font-bold text-lg text-center pb-1">装备详情</div>
         <div
           className="p-2 rounded flex justify-between items-center bg-contain bg-center bg-no-repeat"
           style={{backgroundImage: `url(${gradeBackground})`, backgroundSize: "100% 100%"}}
         >
           <div className="flex flex-col justify-between h-full">
-            <div className={`mb-1 text-[18px] font-bold text-stroke text-grade-${lowerCase(item?.grade || "Common")}`}>
+            <div className={`mb-1 text-lg font-bold text-stroke text-grade-${lowerCase(item?.grade || "Common")}`}>
               {eq?.enchantLevel ? `+${eq.enchantLevel} ` : ""}{itemName}
             </div>
-            <div className="text-[14px]">
+            <div className="text-sm">
               <span
                 className={`font-bold text-stroke text-grade-${lowerCase(item?.grade || "Common")}`}>{t(`items/grades:${item?.grade}.name`)}</span>
               <span className="font-bold text-background">{t(`items/types:subtypes.${item?.subtype}.name`)}</span>
             </div>
-            <div className="text-[14px] font-bold text-background">道具等级</div>
-            <div className="text-[14px] font-bold text-background">
+            <div className="text-sm font-bold text-background">道具等级</div>
+            <div className="text-sm font-bold text-background">
               {detail.level} (+{detail.levelValue})
             </div>
           </div>
@@ -125,8 +125,8 @@ const CharacterEquipments: React.FC = () => {
               valueLabel={`${detail.soulBindRate}%`}
               showValueLabel={true}
               classNames={{
-                label: "text-[14px] text-default-800 font-[700]",
-                value: "text-[14px] text-foreground font-[700]",
+                label: "text-sm text-default-800 font-[700]",
+                value: "text-sm text-foreground font-[700]",
                 base: "gap-0.5"
               }}
               size="sm"
@@ -167,7 +167,7 @@ const CharacterEquipments: React.FC = () => {
                     <span className={`text-grade-${lowerCase(s.grade)} font-[700]`}>{s.name}</span>
                     {/*<span className={`text-foreground font-[700] text-grade-${lowerCase(s.grade)}`}>{t(`common:grades.${s.grade}`, s.grade)}</span>*/}
                   </div>
-                  <div className="text-default-800 text-[12px] mt-1">{s.desc}</div>
+                  <div className="text-default-800 text-xs mt-1">{s.desc}</div>
                 </div>
               ))}
             </div>
@@ -211,7 +211,7 @@ const CharacterEquipments: React.FC = () => {
               )}
             </div>
 
-            <div className="ml-2 flex h-[48px] min-w-0 flex-1 flex-col justify-center">
+            <div className="ml-2 flex h-12 min-w-0 flex-1 flex-col justify-center">
               <div
                 className="truncate text-left text-[13px] font-bold leading-[13px] text-white [text-shadow:0px_2px_4px_rgba(0,0,0,0.35)]">
                 {(eq || detail) ?
@@ -263,10 +263,10 @@ const CharacterEquipments: React.FC = () => {
               draggable={false}
             />
             <div className="ml-2 flex flex-col justify-center min-w-0">
-              <div className="truncate text-[14px] font-bold text-default-800">
+              <div className="truncate text-sm font-bold text-default-800">
                 {equipments.pet.name}
               </div>
-              <div className="text-[12px] text-default-600">
+              <div className="text-xs text-default-600">
                 Lv.{equipments.pet.level}
               </div>
             </div>
@@ -283,10 +283,10 @@ const CharacterEquipments: React.FC = () => {
               draggable={false}
             />
             <div className="ml-2 flex flex-col justify-center min-w-0">
-              <div className={`truncate text-[14px] font-bold text-grade-${lowerCase(equipments.wing.grade)}`}>
+              <div className={`truncate text-sm font-bold text-grade-${lowerCase(equipments.wing.grade)}`}>
                 {equipments.wing.name}
               </div>
-              <div className="text-[12px] text-default-600">
+              <div className="text-xs text-default-600">
                 {t(`items/grades:${equipments.wing.grade}.name`, equipments.wing.grade)}
               </div>
             </div>

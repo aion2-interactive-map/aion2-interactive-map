@@ -57,7 +57,7 @@ function highlightText(text: string, terms: string[]): React.ReactNode {
     return (
       <mark
         key={i}
-        className="bg-yellow-300/70 text-inherit px-0.5 rounded-[2px]"
+        className="bg-yellow-300/70 text-inherit px-0.5 rounded-sm"
       >
         {part}
       </mark>
@@ -128,7 +128,7 @@ const MarkerSearch: React.FC<MarkerSearchProps> = ({onSelectMarker, onSelectPosi
         color="default"
         classNames={{
           inputWrapper: `h-9`,
-          input: "text-[14px]",
+          input: "text-sm",
         }}
         startContent={
           query ? (
@@ -164,7 +164,7 @@ const MarkerSearch: React.FC<MarkerSearchProps> = ({onSelectMarker, onSelectPosi
       {query.trim() && (
         <>
           {/* Header with count */}
-          <div className="text-[12px] text-default-700 text-center">
+          <div className="text-xs text-default-700 text-center">
             {t("markerActions.searchCount", "{{count}} search results", {
               count: results.length,
             })}
@@ -200,15 +200,15 @@ const MarkerSearch: React.FC<MarkerSearchProps> = ({onSelectMarker, onSelectPosi
                   }}
                 >
                   {resultType === "position" ? (<>
-                    <div className="font-semibold text-[16px]">
+                    <div className="font-semibold text-base">
                       {t("markerActions.inputPosition", "Jump to input position")}
                     </div>
-                    <div className="text-[14px] text-default-700">
+                    <div className="text-sm text-default-700">
                       {t("markerActions.position", "Position")}: ({Math.round(res.x)}, {Math.round(res.y)})
                     </div>
                   </>) : (<>
                     {/* Title */}
-                    <div className="font-semibold text-[16px]">
+                    <div className="font-semibold text-base">
                       {doc.localizedName
                         ? highlightText(doc.localizedName, terms)
                         : t("markerSearch.unnamed", "Unnamed marker")}
@@ -216,14 +216,14 @@ const MarkerSearch: React.FC<MarkerSearchProps> = ({onSelectMarker, onSelectPosi
 
                     {/* Optional description */}
                     {doc.localizedDescription && (
-                      <div className="text-[14px] text-default-700 line-clamp-2">
+                      <div className="text-sm text-default-700 line-clamp-2">
                         {t("markerActions.description", "Description")}: {highlightText(doc.localizedDescription, terms)}
                       </div>
                     )}
 
                     {/* Optional coords */}
 
-                    <div className="text-[14px] text-default-700">
+                    <div className="text-sm text-default-700">
                       {t("markerActions.position", "Position")}: ({Math.round(doc.x)}, {Math.round(doc.y)})
                     </div>
                   </>)}

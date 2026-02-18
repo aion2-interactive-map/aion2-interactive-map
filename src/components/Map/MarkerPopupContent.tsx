@@ -1,5 +1,6 @@
 // src/components/MarkerPopupContent.tsx
 import React, {useState} from "react";
+import moment from "moment";
 import {Trans, useTranslation} from "react-i18next";
 import {Button, Card, Modal, ModalContent, ModalBody, Divider, Input} from "@heroui/react";
 import EmblaCarouselThumbs from "./EmblaCarousel/EmblaCarouselThumbs.tsx";
@@ -295,7 +296,7 @@ const MarkerPopupContent: React.FC<Props> = ({
 
                   {/* Created time */}
                   <div className="text-xs text-default-700 mt-1">
-                    {new Date(c.createdAt).toLocaleString()}
+                    {moment(c.createdAt).format("YYYY/M/D HH:mm:ss")}
                   </div>
 
                 </div>

@@ -34,7 +34,7 @@ const MarkerTypes: React.FC = () => {
     const props = {
       radius: "sm" as const,
       fullWidth: true,
-      className: "text-[14px] leading-[14px] font-normal h-[30px] gap-2 px-2",
+      className: "text-sm leading-[14px] font-normal h-[30px] gap-2 px-2",
       variant: variant,
       color: color,
     }
@@ -97,7 +97,7 @@ const MarkerTypes: React.FC = () => {
           itemClasses={{
             base: "!bg-transparent !shadow-none !backdrop-filter-none !backdrop-blur-none",
             trigger: "pt-3 pb-0 min-h-0 px-0",
-            title: "text-[16px] leading-[16px] font-bold",
+            title: "text-base leading-[16px] font-bold",
             content: "py-0",
           }}
           className="bg-transparent shadow-none px-0"
@@ -142,7 +142,7 @@ const MarkerTypes: React.FC = () => {
                       </span>
 
                     {/* Right side: count */}
-                    <span className="text-[12px] shrink-0 ml-2">
+                    <span className="text-xs shrink-0 ml-2">
                         {canComplete ? `${completed}/${total}` : total}
                       </span>
                   </div>
@@ -187,7 +187,7 @@ const MarkerTypes: React.FC = () => {
 
                     return (
                       <div className="my-2 px-1 flex items-center justify-between gap-2">
-                        <div className="text-[14px] leading-[14px] font-medium">
+                        <div className="text-sm leading-[14px] font-medium">
                           {t(`types:categories.${category.name}.name`, category.name)}
                         </div>
 

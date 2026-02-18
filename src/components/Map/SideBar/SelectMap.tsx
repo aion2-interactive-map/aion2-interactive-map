@@ -50,7 +50,7 @@ const SelectMap: React.FC = () => {
               "active:bg-transparent",
               "focus:bg-transparent",
             ].join(" "),
-            value: "text-sm font-medium text-center text-[18px] leading-[18px] ",
+            value: "text-sm font-medium text-center text-lg leading-[18px] ",
             innerWrapper: "static flex items-center justify-center",
             selectorIcon: [
               // "!relative !static order-2 ml-1",

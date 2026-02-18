@@ -82,7 +82,7 @@ const TopNavbar: React.FC = () => {
               </NavbarItem>
             );
           })}
-          <div className="hidden sm:block text-[14px] leading-[14px] prose prose-xs max-w-none dark:prose-invert">
+          <div className="hidden sm:block text-sm leading-[14px] prose prose-xs max-w-none dark:prose-invert">
             <ReactMarkdown remarkPlugins={[remarkGfm]}>
               {t("introModal.alert")}
             </ReactMarkdown>

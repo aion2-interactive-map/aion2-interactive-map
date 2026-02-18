@@ -339,7 +339,7 @@ export function MaterialsView({ selectedBySlotKey }: MaterialsViewProps) {
                       <div className="absolute top-[calc(50%+24px)] bottom-0 w-px bg-crafting-border" />
 
                       <div className="z-10 flex h-6 w-6 items-center justify-center rounded-full bg-primary dark:bg-secondary">
-                        <FontAwesomeIcon icon={faPlus} className="text-[14px] text-white" />
+                        <FontAwesomeIcon icon={faPlus} className="text-sm text-white" />
                       </div>
                     </div>
                   )}
@@ -354,7 +354,7 @@ export function MaterialsView({ selectedBySlotKey }: MaterialsViewProps) {
       <div className="flex w-full items-center">
         <div className="flex-1 h-px bg-crafting-border" />
         <div className="mx-1 flex h-6 w-6 items-center justify-center rounded-full bg-primary dark:bg-secondary">
-          <FontAwesomeIcon icon={faEquals} className="text-[16px] text-white" />
+          <FontAwesomeIcon icon={faEquals} className="text-base text-white" />
         </div>
         <div className="flex-1 h-px bg-crafting-border" />
       </div>

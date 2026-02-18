@@ -48,7 +48,7 @@ export const MaterialColumn: React.FC<MaterialColumnProps> = ({
     <div className="flex h-full min-h-0 flex-col rounded-lg border border-crafting-border bg-transparent">
       {/* Header */}
       <div className="m-2 flex h-[38px] items-center justify-center border-b border-crafting-border px-3 py-2">
-        <div className="text-[16px] font-bold leading-[16px] text-default-900">
+        <div className="text-base font-bold leading-[16px] text-default-900">
           {typeName}
         </div>
       </div>

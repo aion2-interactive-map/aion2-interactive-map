@@ -1,45 +1,27 @@
-import {createFileRoute, useNavigate} from "@tanstack/react-router";
+import {createFileRoute} from "@tanstack/react-router";
 import {useMemo, useState, useEffect} from "react";
 import {useTranslation} from "react-i18next";
 import {
-  Table,
-  TableHeader,
-  TableColumn,
-  TableBody,
-  TableRow,
-  TableCell,
   Button,
   Card,
   CardHeader,
   CardBody,
   Divider,
-  Tooltip,
-  Chip,
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  Autocomplete,
-  AutocompleteItem,
 } from "@heroui/react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {
-  faEdit,
-  faTrash,
   faPlus,
-  faArrowLeft,
-  faCheckCircle,
-  faTimesCircle
 } from "@fortawesome/free-solid-svg-icons";
 import {useLeaderboard} from "@/context/LeaderboardContext.tsx";
 import {MAP_NAMES} from "@/types/game.ts";
 import {useUser} from "@/context/UserContext.tsx";
 import ArtifactStateModal from "@/components/Leaderboard/ArtifactStateModal.tsx";
-import PopConfirm from "@/components/PopConfirm";
+import ArtifactAdminChip from "@/components/Leaderboard/ArtifactAdminChip.tsx";
+import ArtifactAdminModal from "@/components/Leaderboard/ArtifactAdminModal.tsx";
+import ArtifactStatesTable from "@/components/Leaderboard/ArtifactStatesTable.tsx";
+import ArtifactDetailsHeader from "@/components/Leaderboard/ArtifactDetailsHeader.tsx";
 import Footer from "@/components/Footer.tsx";
 import {getStaticUrl, getApiUrl} from "@/utils/url.ts";
-import {useDebounce} from "@/hooks/useDebounce";
 import type {ArtifactState} from "@/types/leaderboard.ts";
 
 interface ArtifactAdmin {
@@ -51,22 +33,12 @@ interface ArtifactAdmin {
   };
 }
 
-interface UserSearchItem {
-  id: string;
-  email: string;
-  isActive: boolean;
-  isSuperuser: boolean;
-  isVerified: boolean;
-  name: string;
-}
-
 export const Route = createFileRoute("/leaderboard/artifacts/$matchingId")({
   component: ArtifactDetailsPage,
 });
 
 function ArtifactDetailsPage() {
   const {matchingId} = Route.useParams();
-  const navigate = useNavigate();
   const ABYSS_MAPS = [MAP_NAMES.ABYSS_A, MAP_NAMES.ABYSS_B];
   const markerNs = ABYSS_MAPS.map((x) => `markers/${x}`);
   const {t} = useTranslation([...markerNs, "common"]);
@@ -87,19 +59,6 @@ function ArtifactDetailsPage() {
   const [matchingArtifactStates, setMatchingArtifactStates] = useState<ArtifactState[]>([]);
   const [admins, setAdmins] = useState<ArtifactAdmin[]>([]);
   const [isAdminModalOpen, setIsAdminModalOpen] = useState(false);
-  const [newAdminUserId, setNewAdminUserId] = useState("");
-  const [userSearchKeyword, setUserSearchKeyword] = useState("");
-  const debouncedUserSearchKeyword = useDebounce(userSearchKeyword, 500);
-  const [userSearchResults, setUserSearchResults] = useState<UserSearchItem[]>([]);
-  const [isUserSearchLoading, setIsUserSearchLoading] = useState(false);
-
-  useEffect(() => {
-    if (!isAdminModalOpen) {
-      setNewAdminUserId("");
-      setUserSearchKeyword("");
-      setUserSearchResults([]);
-    }
-  }, [isAdminModalOpen]);
 
   const matching = useMemo(
     () => serverMatchings.find((m) => m.id === matchingId),
@@ -130,34 +89,7 @@ function ArtifactDetailsPage() {
     }
   };
 
-  useEffect(() => {
-    const searchUsers = async () => {
-      const keyword = debouncedUserSearchKeyword.trim();
-      if (!keyword) {
-        setUserSearchResults([]);
-        return;
-      }
-
-      setIsUserSearchLoading(true);
-      try {
-        const res = await fetchWithAuth(`/users/search?name=${encodeURIComponent(keyword)}`);
-        if (res.ok) {
-          const json = await res.json();
-          if (json.errorCode === "Success") {
-            setUserSearchResults(json.data.results);
-          }
-        }
-      } catch (e) {
-        console.error("Failed to search users", e);
-      } finally {
-        setIsUserSearchLoading(false);
-      }
-    };
-
-    searchUsers();
-  }, [debouncedUserSearchKeyword]);
-
-  const handleAddAdmin = async () => {
+  const handleAddAdmin = async (newAdminUserId: string) => {
     if (!targetSeasonId || !matchingId || !newAdminUserId) return;
     try {
       const res = await fetchWithAuth(`/seasons/${targetSeasonId}/server_matchings/${matchingId}/abyss_artifact_admins/${newAdminUserId}`, {
@@ -276,39 +208,21 @@ function ArtifactDetailsPage() {
     <div className="min-h-full flex flex-col">
       <div className="flex-1 flex flex-col items-center p-4">
         <div className="w-full max-w-[1400px] flex flex-col gap-6">
-          <div className="flex items-center gap-4">
-            <Button
-              isIconOnly
-              variant="flat"
-              className="bg-character-card border-1 border-crafting-border"
-              onClick={() => navigate({to: "/leaderboard"})}
-            >
-              <FontAwesomeIcon icon={faArrowLeft}/>
-            </Button>
-            <h1 className="text-2xl font-bold">
-              {matching ? `${matching.server1.serverName} VS ${matching.server2.serverName}` : t("common:leaderboard.artifactDetails")}
-            </h1>
-          </div>
+          <ArtifactDetailsHeader matching={matching} t={t} />
 
-          <Card className="bg-character-equipment shadow-none border-1 border-crafting-border">
+          <Card className="bg-transparent shadow-none border-1 border-crafting-border backdrop-blur-sm">
             <CardHeader className="flex justify-between items-center px-6 py-3">
               <div className="flex items-center gap-2">
                 <span className="font-bold">{t("common:leaderboard.artifactAdmins")}</span>
                 <div className="flex flex-wrap gap-2">
                   {admins.map((admin) => (
-                    <PopConfirm
+                    <ArtifactAdminChip
                       key={admin.id}
-                      title={t("common:ui.confirmDelete")}
-                      onConfirm={() => handleDeleteAdmin(admin.user.id)}
-                    >
-                      <Chip
-                        variant="flat"
-                        color="primary"
-                        onClose={isSuperUser ? () => {} : undefined}
-                      >
-                        {admin.user.name || admin.user.email}
-                      </Chip>
-                    </PopConfirm>
+                      admin={admin}
+                      isSuperUser={isSuperUser}
+                      onDelete={handleDeleteAdmin}
+                      t={t}
+                    />
                   ))}
                   {admins.length === 0 && (
                     <span className="text-sm text-default-400">{t("common:ui.noData")}</span>
@@ -334,8 +248,8 @@ function ArtifactDetailsPage() {
             const arts = mapArtifacts[mapName] || [];
 
             return (
-              <Card key={mapName} className="bg-character-equipment shadow-none border-1 border-crafting-border">
-                <CardHeader className="flex justify-between items-center px-6 py-4">
+              <Card key={mapName} className="bg-transparent shadow-none border-1 border-crafting-border backdrop-blur-sm">
+                <CardHeader className="flex justify-between items-center px-6 py-4 bg-character-equipment">
                   <h2 className="text-xl font-bold">{t(`maps:${mapName}.description`)}</h2>
                   {user && (
                     <Button
@@ -351,161 +265,24 @@ function ArtifactDetailsPage() {
                 </CardHeader>
                 <Divider/>
                 <CardBody className="p-0 overflow-x-auto">
-                  <Table
-                    aria-label={`Artifact states for ${mapName}`}
-                    className="min-w-full"
-                    removeWrapper
-                    classNames={{
-                      th: "bg-character-card text-foreground border-b border-crafting-border first:rounded-none last:rounded-none",
-                      td: "py-3 px-4 border-b border-crafting-border/50",
-                    }}
-                  >
-                    <TableHeader
-                      columns={[
-                        {id: "recordTime", label: t("common:leaderboard.artifactState.recordTime"), width: 200},
-                        ...arts.map((art: any) => ({
-                          id: art.id,
-                          label: t(`markers/${mapName}:${art.markerId}.name`, {defaultValue: art.marker.name}),
-                          isArtifact: true
-                        })),
-                        {id: "is_verified", label: t("common:leaderboard.artifactState.isVerified"), width: 100},
-                        {id: "contributors", label: t("common:leaderboard.artifactState.contributors"), width: 200},
-                        {id: "options", label: t("common:leaderboard.options"), width: 100}
-                      ]}
-                    >
-                      {(column: any) => (
-                        <TableColumn 
-                          key={column.id} 
-                          width={column.width} 
-                          align="center"
-                        >
-                          {column.isArtifact ? (
-                            <div className="flex flex-col items-center gap-1 min-w-[120px]">
-                              <span className="text-[12px] whitespace-nowrap overflow-hidden text-ellipsis max-w-[120px]">
-                                {column.label}
-                              </span>
-                            </div>
-                          ) : (
-                            column.label
-                          )}
-                        </TableColumn>
-                      )}
-                    </TableHeader>
-                    <TableBody 
-                      emptyContent={t("common:ui.noData")}
-                      items={states.map((state) => ({
-                      type: "data",
-                      id: state.id,
-                      state,
-                      mapName,
-                      arts
-                    }))}
-                  >
-                    {(item: any) => {
-                      return (
-                        <TableRow key={item.id}>
-                            <TableCell key="recordTime">
-                              <div className="flex flex-col">
-                                <span className="font-medium">{new Date(item.state.recordTime).toLocaleString()}</span>
-                              </div>
-                            </TableCell>
-                            {item.arts.map((art: any) => {
-                              const s = item.state.states.find((as: any) => as.abyssArtifactId === art.id);
-                              const icon = s?.state === 1 ? lightIcon : s?.state === 2 ? darkIcon : neutralIcon;
-                              return (
-                                <TableCell key={art.id}>
-                                  <div className="flex justify-center">
-                                    <img src={icon} alt="state" className="w-10 h-10"/>
-                                  </div>
-                                </TableCell>
-                              );
-                            })}
-                            <TableCell key="is_verified">
-                              <div className="flex justify-center">
-                                <FontAwesomeIcon
-                                  icon={item.state.isVerified ? faCheckCircle : faTimesCircle}
-                                  className={item.state.isVerified ? "text-success" : "text-default-400"}
-                                />
-                              </div>
-                            </TableCell>
-                            <TableCell key="contributors">
-                              <div className="flex flex-col items-center gap-1">
-                                {item.state.contributors && item.state.contributors.length > 0 ? (
-                                  item.state.contributors.map((c: any) => (
-                                    <span key={c.id} className="text-xs text-primary bg-primary/10 px-2 py-0.5 rounded-full">
-                                      {c.user.name}
-                                    </span>
-                                  ))
-                                ) : (
-                                  <span className="text-xs text-default-400">-</span>
-                                )}
-                              </div>
-                            </TableCell>
-                            <TableCell key="options">
-                              <div className="flex justify-center gap-2">
-                                {(() => {
-                                  const isContributor = item.state.contributors?.some((c: any) => c.userId === user?.id);
-                                  const isAdmin = admins.some(a => a.user.id === user?.id);
-                                  const canEdit = isSuperUser || isAdmin || isContributor;
-                                  const canDelete = isSuperUser || isAdmin;
-                                  const canVerify = (isSuperUser || isAdmin) && !item.state.isVerified;
-                                  
-                                  return (
-                                    <>
-                                      {canVerify && (
-                                        <Tooltip content={t("common:leaderboard.artifactState.verify")}>
-                                          <Button
-                                            isIconOnly
-                                            size="sm"
-                                            variant="light"
-                                            onClick={() => handleVerify(item.state)}
-                                          >
-                                            <FontAwesomeIcon icon={faCheckCircle} className="text-success"/>
-                                          </Button>
-                                        </Tooltip>
-                                      )}
-                                      {canEdit && (
-                                        <Tooltip content={t("common:ui.edit")}>
-                                          <Button
-                                            isIconOnly
-                                            size="sm"
-                                            variant="light"
-                                            onClick={() => handleEdit(item.state, item.mapName)}
-                                          >
-                                            <FontAwesomeIcon icon={faEdit} className="text-primary"/>
-                                          </Button>
-                                        </Tooltip>
-                                      )}
-                                      {canDelete && (
-                                        <PopConfirm
-                                          title={t("common:leaderboard.deleteConfirm", "Are you sure you want to delete this record?")}
-                                          onConfirm={() => handleDelete(item.state)}
-                                        >
-                                          <Button
-                                            isIconOnly
-                                            size="sm"
-                                            variant="light"
-                                          >
-                                            <FontAwesomeIcon icon={faTrash} className="text-danger"/>
-                                          </Button>
-                                        </PopConfirm>
-                                      )}
-                                    </>
-                                  );
-                                })()}
-                              </div>
-                            </TableCell>
-                          </TableRow>
-                        );
-                      }}
-                    </TableBody>
-                  </Table>
+                  <ArtifactStatesTable
+                    states={states}
+                    arts={arts}
+                    mapName={mapName}
+                    admins={admins}
+                    user={user}
+                    isSuperUser={isSuperUser}
+                    onVerify={handleVerify}
+                    onEdit={handleEdit}
+                    onDelete={handleDelete}
+                    icons={{neutral: neutralIcon, light: lightIcon, dark: darkIcon}}
+                    t={t}
+                  />
                 </CardBody>
               </Card>
             );
           })}
         </div>
-
 
         {matching && editingMapName && (
           <ArtifactStateModal
@@ -528,47 +305,13 @@ function ArtifactDetailsPage() {
           />
         )}
 
-        <Modal isOpen={isAdminModalOpen} onOpenChange={setIsAdminModalOpen}>
-          <ModalContent className="bg-character-card">
-            {(onClose) => (
-              <>
-                <ModalHeader className="flex flex-col gap-1">
-                  {t("common:leaderboard.addArtifactAdmin")}
-                </ModalHeader>
-                <ModalBody>
-                  <Autocomplete
-                    autoFocus
-                    label={t("common:auth.username")}
-                    placeholder={t("common:ui.search")}
-                    variant="bordered"
-                    items={userSearchResults}
-                    isLoading={isUserSearchLoading}
-                    inputValue={userSearchKeyword}
-                    onInputChange={setUserSearchKeyword}
-                    onSelectionChange={(key) => setNewAdminUserId(String(key))}
-                  >
-                    {(item) => (
-                      <AutocompleteItem key={item.id} textValue={item.name || item.email}>
-                        <div className="flex flex-col">
-                          <span className="text-sm font-medium">{item.name || "No Name"}</span>
-                          <span className="text-xs text-default-800">{item.email}</span>
-                        </div>
-                      </AutocompleteItem>
-                    )}
-                  </Autocomplete>
-                </ModalBody>
-                <ModalFooter>
-                  <Button color="danger" variant="flat" onPress={onClose}>
-                    {t("common:ui.cancel")}
-                  </Button>
-                  <Button color="primary" onPress={handleAddAdmin}>
-                    {t("common:ui.add")}
-                  </Button>
-                </ModalFooter>
-              </>
-            )}
-          </ModalContent>
-        </Modal>
+        <ArtifactAdminModal
+          isOpen={isAdminModalOpen}
+          onOpenChange={setIsAdminModalOpen}
+          onAddAdmin={handleAddAdmin}
+          fetchWithAuth={fetchWithAuth}
+          t={t}
+        />
       </div>
       <Footer/>
     </div>

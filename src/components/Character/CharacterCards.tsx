@@ -32,24 +32,24 @@ const CharacterCards: React.FC = () => {
         );
 
         const tooltipContent = detail ? (
-          <div className="space-y-2 w-full text-[14px]">
-            <div className="font-bold text-[18px] text-center pb-1">装备详情</div>
+          <div className="space-y-2 w-full text-sm">
+            <div className="font-bold text-lg text-center pb-1">装备详情</div>
             <div
               className="p-2 rounded flex justify-between items-center bg-contain bg-center bg-no-repeat"
               style={{backgroundImage: `url(${gradeBackground})`, backgroundSize: "100% 100%"}}
             >
               <div className="flex flex-col justify-between h-full">
                 <div
-                  className={`mb-1 text-[18px] font-bold text-stroke text-grade-${lowerCase(item?.grade || "Common")}`}>
+                  className={`mb-1 text-lg font-bold text-stroke text-grade-${lowerCase(item?.grade || "Common")}`}>
                   {eq?.enchantLevel ? `+${eq.enchantLevel} ` : ""}{itemName}
                 </div>
-                <div className="text-[14px]">
+                <div className="text-sm">
                   <span
                     className={`font-bold text-stroke text-grade-${lowerCase(item?.grade || "Common")}`}>{t(`items/grades:${item?.grade}.name`)}</span>
                   {/*<span className="font-bold text-background">{t(`items/types:subtypes.${item?.subtype}.name`)}</span>*/}
                 </div>
-                <div className="text-[14px] font-bold text-background">道具等级</div>
-                <div className="text-[14px] font-bold text-background">
+                <div className="text-sm font-bold text-background">道具等级</div>
+                <div className="text-sm font-bold text-background">
                   {detail.level} (+{detail.levelValue})
                 </div>
               </div>

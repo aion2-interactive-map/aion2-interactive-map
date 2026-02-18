@@ -158,7 +158,7 @@ export function EquipmentsView({
   return (
     <div className="flex h-full w-full flex-col">
       {/* Title */}
-      <div className="my-3 h-[38px] text-center text-[22px] font-bold text-default-900">
+      <div className="my-3 h-[38px] text-center text-xl font-bold text-default-900">
         {t("common:crafting.selectClick", "Click to select equipment")}
       </div>
 
@@ -196,7 +196,7 @@ export function EquipmentsView({
           onPress={clearAllSlots}
           className="h-[34px] w-full rounded-sm border-1 border-crafting-border bg-crafting-sum"
         >
-          <span className="flex w-full items-center justify-center gap-2 text-[14px] text-default-800">
+          <span className="flex w-full items-center justify-center gap-2 text-sm text-default-800">
             <FontAwesomeIcon icon={faTrash}/>
             {t("common:crafting.clearAll", "Clear all slots")}
           </span>

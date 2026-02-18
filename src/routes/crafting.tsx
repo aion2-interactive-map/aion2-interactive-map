@@ -272,7 +272,7 @@ function Page() {
                 variant="bordered"
                 className="w-full bg-transparent"
                 classNames={{
-                  tabList: "flex w-full rounded-[15px] border-1 border-crafting-border ",
+                  tabList: "flex w-full rounded-[15px] border-px border-crafting-border ",
                   tab: "h-[34px] flex-1 justify-center " +
                     "data-[selected=true]:bg-primary " +
                     "dark:data-[selected=true]:bg-default-800",
@@ -307,7 +307,7 @@ function Page() {
           <div className="flex flex-col md:flex-row gap-4 mb-8">
             {/* Left panel */}
             <Card
-              className="h-auto md:h-[726px] w-full md:w-[220px] shrink-0 rounded-lg border-x-1 border-primary bg-crafting-equipment-view"
+              className="h-auto md:h-[726px] w-full md:w-[220px] shrink-0 rounded-lg border-x-px border-primary bg-crafting-equipment-view"
               shadow="none"
             >
               <CardBody className="h-full overflow-y-auto py-4 md:py-2">
