@@ -12,6 +12,7 @@ import {toJpeg} from "html-to-image";
 import {useLeaderboard} from "@/context/LeaderboardContext";
 import {MAP_NAMES} from "@/types/game";
 import {getStaticUrl} from "@/utils/url";
+import {getNextScheduledTime, getLastScheduledTime} from "@/utils/artifactTime";
 import {AdaptiveTooltip} from "@/components/AdaptiveTooltip";
 import {I18nProvider} from "@react-aria/i18n";
 
@@ -62,28 +63,8 @@ const RealtimeArtifactRatio: React.FC = () => {
   useEffect(() => {
     const updateGlobalCountdown = () => {
       const now = new Date();
-      // Next Tuesday (2), Thursday (4), Saturday (6) at 13:00 UTC
-      const targets = [2, 4, 6];
-      let minDiff = Infinity;
-      let nextTarget = null;
-
-      for (const day of targets) {
-        const target = new Date(now);
-        target.setUTCHours(13, 0, 0, 0);
-        let daysUntil = (day - now.getUTCDay() + 7) % 7;
-        
-        // If it's the target day but past 13:00 UTC, go to next week
-        if (daysUntil === 0 && now.getTime() >= target.getTime()) {
-          daysUntil = 7;
-        }
-        
-        target.setUTCDate(now.getUTCDate() + daysUntil);
-        const diff = target.getTime() - now.getTime();
-        if (diff < minDiff) {
-          minDiff = diff;
-          nextTarget = target;
-        }
-      }
+      const nextTargetTime = getNextScheduledTime(now.getTime());
+      const nextTarget = new Date(nextTargetTime);
 
       if (nextTarget) {
         const diff = nextTarget.getTime() - now.getTime();
@@ -187,18 +168,15 @@ const RealtimeArtifactRatio: React.FC = () => {
   const formatCountdown = (recordTimeStr: string | undefined, hasContributors: boolean) => {
     if (!recordTimeStr || !hasContributors) return t("common:leaderboard.inContention");
     const recordTime = new Date(recordTimeStr).getTime();
-    const fortyEightHours = 48 * 60 * 60 * 1000;
     const compareTime = isAutoUpdate ? Date.now() : selectedDate.toDate().getTime();
-    const diff = recordTime + fortyEightHours - compareTime;
+    const lastRefresh = getLastScheduledTime(compareTime);
 
-    if (diff <= 0) {
-      const timeDiff = Math.abs(diff);
-      const hours = Math.floor(timeDiff / (1000 * 60 * 60));
-      const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
-      const formatted = `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
-      return t("common:leaderboard.refreshedAgo", { time: formatted });
+    if (recordTime < lastRefresh) {
+      return t("common:leaderboard.inContention");
     }
+
+    const nextRefresh = getNextScheduledTime(compareTime);
+    const diff = nextRefresh - compareTime;
 
     const hours = Math.floor(diff / (1000 * 60 * 60));
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));

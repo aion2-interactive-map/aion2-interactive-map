@@ -2,6 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { getStaticUrl } from "@/utils/url";
 import { MAP_NAMES } from "@/types/game";
+import { getLastScheduledTime } from "@/utils/artifactTime";
 
 interface ArtifactRatioShareCardProps {
   server?: string;
@@ -21,7 +22,6 @@ interface ArtifactRatioShareCardProps {
 
 const ArtifactRatioShareCard: React.FC<ArtifactRatioShareCardProps> = ({ 
   server = "Unknown Server", 
-  time = new Date().toLocaleString(),
   matchings = [],
   artifactsA = [],
   artifactsB = [],
@@ -44,10 +44,9 @@ const ArtifactRatioShareCard: React.FC<ArtifactRatioShareCardProps> = ({
     let isContention = false;
     if (stateData?.recordTime && hasContributors) {
       const recordTime = new Date(stateData.recordTime).getTime();
-      const fortyEightHours = 48 * 60 * 60 * 1000;
       const compareTime = isAutoUpdate ? Date.now() : (selectedDate?.toDate?.().getTime() || Date.now());
-      const diff = recordTime + fortyEightHours - compareTime;
-      if (diff <= 0) isContention = true;
+      const lastRefresh = getLastScheduledTime(compareTime);
+      if (recordTime < lastRefresh) isContention = true;
     } else {
       isContention = true;
     }
@@ -115,6 +114,17 @@ const ArtifactRatioShareCard: React.FC<ArtifactRatioShareCardProps> = ({
     </div>
   );
 
+  const formatDate = (date: Date) => {
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const hours = String(date.getHours()).padStart(2, "0");
+    const minutes = String(date.getMinutes()).padStart(2, "0");
+    return `${year}年${month}月${day}日${hours}:${minutes} GMT+8`;
+  };
+
+  const displayTime = selectedDate ? formatDate(selectedDate.toDate()) : formatDate(new Date());
+
   return (
     <div 
       className="relative flex flex-col overflow-hidden w-[1680px] h-fit bg-[#4C2C7E] p-5 gap-2.5"
@@ -145,7 +155,7 @@ const ArtifactRatioShareCard: React.FC<ArtifactRatioShareCardProps> = ({
             实时神器占比
           </div>
           <div className="text-sm text-white/80 leading-tight bg-black/20 rounded-lg px-2 py-0.5 w-fit">
-            {server} | {time}
+            {server} | {displayTime}
           </div>
         </div>
       </div>
@@ -219,11 +229,9 @@ const ArtifactRatioShareCard: React.FC<ArtifactRatioShareCardProps> = ({
 
       {/* Footer */}
       <div className="relative z-10 mt-2.5 flex justify-center items-center gap-5 text-white text-sm">
-        <span>2026-02-18 19:51</span>
-        <div className="w-px h-4 bg-white" />
         <span>https://tc-imba.com</span>
         <div className="w-px h-4 bg-white" />
-        <span>星狐攻略组</span>
+        <span>© 2025-2026 星狐攻略组</span>
         <div className="w-px h-4 bg-white" />
         <span>神器交流群：1073046733</span>
       </div>

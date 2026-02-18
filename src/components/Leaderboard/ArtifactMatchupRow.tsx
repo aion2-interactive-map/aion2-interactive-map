@@ -7,6 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import {faStar as faStarRegular} from "@fortawesome/free-regular-svg-icons";
 import {AdaptiveTooltip} from "@/components/AdaptiveTooltip";
+import {getLastScheduledTime} from "@/utils/artifactTime";
 
 interface ArtifactMatchupRowProps {
   matching: any;
@@ -98,10 +99,9 @@ const ArtifactMatchupRow: React.FC<ArtifactMatchupRowProps> = ({
             let isContention = false;
             if (stateData?.recordTime && hasContributors) {
               const recordTime = new Date(stateData.recordTime).getTime();
-              const fortyEightHours = 48 * 60 * 60 * 1000;
               const compareTime = isAutoUpdate ? Date.now() : selectedDate.toDate().getTime();
-              const diff = recordTime + fortyEightHours - compareTime;
-              if (diff <= 0) isContention = true;
+              const lastRefresh = getLastScheduledTime(compareTime);
+              if (recordTime < lastRefresh) isContention = true;
             } else {
               isContention = true;
             }
@@ -137,17 +137,16 @@ const ArtifactMatchupRow: React.FC<ArtifactMatchupRowProps> = ({
           let isContention = false;
           if (state?.recordTime && hasContributors) {
             const recordTime = new Date(state.recordTime).getTime();
-            const fortyEightHours = 48 * 60 * 60 * 1000;
             const compareTime = isAutoUpdate ? Date.now() : selectedDate.toDate().getTime();
-            const diff = recordTime + fortyEightHours - compareTime;
-            if (diff <= 0) isContention = true;
+            const lastRefresh = getLastScheduledTime(compareTime);
+            if (recordTime < lastRefresh) isContention = true;
           } else {
             isContention = true;
           }
 
           if (isContention) {
             return (
-              <div className="flex justify-start px-2 w-full">
+              <div className="flex justify-center px-2 w-full">
                 <span className="text-primary hover:underline text-sm font-bold cursor-pointer">
                   {t("common:leaderboard.submitData")}
                 </span>
