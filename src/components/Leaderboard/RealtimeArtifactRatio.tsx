@@ -8,7 +8,7 @@ import {
   faShare,
   faDownload
 } from "@fortawesome/free-solid-svg-icons";
-import {toPng} from "html-to-image";
+import {toJpeg} from "html-to-image";
 import {useLeaderboard} from "@/context/LeaderboardContext";
 import {MAP_NAMES} from "@/types/game";
 import {getStaticUrl} from "@/utils/url";
@@ -239,9 +239,9 @@ const RealtimeArtifactRatio: React.FC = () => {
       
       const formattedDate = `${year}_${month}_${day}_${hours}_${minutes}_${seconds}_${gmtOffset}`;
 
-      const dataUrl = await toPng(shareCardRef.current, { cacheBust: true, pixelRatio: 2 });
+      const dataUrl = await toJpeg(shareCardRef.current, { cacheBust: true, pixelRatio: 2, quality: 0.95 });
       const link = document.createElement("a");
-      link.download = `artifact-${region}-${formattedDate}.png`;
+      link.download = `artifact-${region}-${formattedDate}.jpg`;
       link.href = dataUrl;
       link.click();
     } catch (err) {

@@ -224,6 +224,8 @@ const ArtifactRatioShareCard: React.FC<ArtifactRatioShareCardProps> = ({
         <span>https://tc-imba.com</span>
         <div className="w-px h-4 bg-white" />
         <span>星狐攻略组</span>
+        <div className="w-px h-4 bg-white" />
+        <span>神器交流群：1073046733</span>
       </div>
     </div>
   );
