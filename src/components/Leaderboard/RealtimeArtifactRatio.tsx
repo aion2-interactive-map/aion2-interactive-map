@@ -239,7 +239,21 @@ const RealtimeArtifactRatio: React.FC = () => {
       
       const formattedDate = `${year}_${month}_${day}_${hours}_${minutes}_${seconds}_${gmtOffset}`;
 
-      const dataUrl = await toJpeg(shareCardRef.current, { cacheBust: true, pixelRatio: 2, quality: 0.95 });
+      const dataUrl = await toJpeg(shareCardRef.current, {
+        cacheBust: true,
+        pixelRatio: 2,
+        quality: 0.95,
+        filter: (node: HTMLElement) => {
+          // Skip any style/link tags that might cause SecurityError
+          if (node.tagName === 'LINK' && (node as HTMLLinkElement).rel === 'stylesheet') {
+            const href = (node as HTMLLinkElement).href;
+            if (href.includes('fonts.googleapis.cn')) {
+              return false;
+            }
+          }
+          return true;
+        }
+      });
       const link = document.createElement("a");
       link.download = `artifact-${region}-${formattedDate}.jpg`;
       link.href = dataUrl;
