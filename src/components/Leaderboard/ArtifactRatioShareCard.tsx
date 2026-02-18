@@ -80,7 +80,7 @@ const ArtifactRatioShareCard: React.FC<ArtifactRatioShareCardProps> = ({
               >
                 {serverData.serverName}
               </span>
-              <span className="text-sm font-normal text-default-700 whitespace-nowrap">（{serverAbbr}{serverData.serverId % 1000}）</span>
+              <span className="text-sm font-normal text-white whitespace-nowrap">（{serverAbbr}{serverData.serverId % 1000}）</span>
             </div>
           </div>
         </div>
@@ -107,17 +107,17 @@ const ArtifactRatioShareCard: React.FC<ArtifactRatioShareCardProps> = ({
   const FactionHeader = () => (
     <div className="h-9 flex items-center shrink-0">
       <div className="flex-1 flex items-center justify-center">
-        <span className="text-base font-normal text-white">天族</span>
+        <span className="text-base font-normal text-white">{t("common:race.light")}</span>
       </div>
       <div className="flex-1 flex items-center justify-center">
-        <span className="text-base font-normal text-white">魔族</span>
+        <span className="text-base font-normal text-white">{t("common:race.dark")}</span>
       </div>
     </div>
   );
 
   return (
     <div 
-      className="relative flex flex-col overflow-hidden w-[1680px] h-[986px] bg-[#4C2C7E] p-5 gap-2.5"
+      className="relative flex flex-col overflow-hidden w-[1680px] h-fit bg-[#4C2C7E] p-5 gap-2.5"
     >
       {/* Background Image */}
       <img 
@@ -187,7 +187,7 @@ const ArtifactRatioShareCard: React.FC<ArtifactRatioShareCardProps> = ({
       </div>
 
       {/* Dynamic Content Area: Grid of 3 columns */}
-      <div className="relative z-10 w-full h-fit max-h-[760px] bg-black/40 p-2.5 rounded-2xl overflow-y-auto custom-scrollbar">
+      <div className="relative z-10 w-full h-fit bg-black/40 p-2.5 rounded-2xl">
         <div className="grid grid-cols-3 gap-2.5">
           {/* Faction Headers for each column */}
           <div className="flex flex-col gap-2.5">
@@ -215,6 +215,15 @@ const ArtifactRatioShareCard: React.FC<ArtifactRatioShareCardProps> = ({
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Footer */}
+      <div className="relative z-10 mt-2.5 flex justify-center items-center gap-5 text-white text-sm">
+        <span>2026-02-18 19:51</span>
+        <div className="w-px h-4 bg-white" />
+        <span>https://tc-imba.com</span>
+        <div className="w-px h-4 bg-white" />
+        <span>星狐攻略组</span>
       </div>
     </div>
   );

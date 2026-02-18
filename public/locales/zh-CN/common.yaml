@@ -235,6 +235,10 @@ server:
   searching: "搜索角色中..."
   noResults: "未查询到和 \"{{keyword}}\" 有关的角色"
 
+race:
+  light: "天族"
+  dark: "魔族"
+
 skills:
   category:
     active: 主动

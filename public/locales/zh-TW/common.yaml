@@ -55,3 +55,7 @@ errors:
 markerActions:
   markCompleted: "標記為已完成"
   markNotCompleted: "已完成"
+
+race:
+  light: "天族"
+  dark: "魔族"

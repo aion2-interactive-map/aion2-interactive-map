@@ -1,12 +1,14 @@
-import React, {useMemo, useState, useEffect, useCallback} from "react";
+import React, {useMemo, useState, useEffect, useCallback, useRef} from "react";
 import {useTranslation} from "react-i18next";
-import {Card, CardBody, Button, DatePicker, Select, SelectItem, Modal, ModalContent, ModalBody, useDisclosure} from "@heroui/react";
+import {Card, CardBody, Button, DatePicker, Select, SelectItem, Modal, ModalContent, ModalBody, useDisclosure, CircularProgress} from "@heroui/react";
 import {now, getLocalTimeZone} from "@internationalized/date";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {
   faRotateRight,
-  faShare
+  faShare,
+  faDownload
 } from "@fortawesome/free-solid-svg-icons";
+import {toPng} from "html-to-image";
 import {useLeaderboard} from "@/context/LeaderboardContext";
 import {MAP_NAMES} from "@/types/game";
 import {getStaticUrl} from "@/utils/url";
@@ -212,6 +214,42 @@ const RealtimeArtifactRatio: React.FC = () => {
   }, [artifactsByMap]);
 
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
+  const shareCardRef = useRef<HTMLDivElement>(null);
+  const [isDownloading, setIsDownloading] = useState(false);
+
+  const handleDownload = useCallback(async () => {
+    if (shareCardRef.current === null) {
+      return;
+    }
+
+    setIsDownloading(true);
+    try {
+      const date = selectedDate.toDate();
+      const offset = -date.getTimezoneOffset();
+      const offsetHours = Math.floor(Math.abs(offset) / 60);
+      const offsetSign = offset >= 0 ? "+" : "-";
+      const gmtOffset = `GMT${offsetSign}${offsetHours}`;
+      
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, "0");
+      const day = String(date.getDate()).padStart(2, "0");
+      const hours = String(date.getHours()).padStart(2, "0");
+      const minutes = String(date.getMinutes()).padStart(2, "0");
+      const seconds = String(date.getSeconds()).padStart(2, "0");
+      
+      const formattedDate = `${year}_${month}_${day}_${hours}_${minutes}_${seconds}_${gmtOffset}`;
+
+      const dataUrl = await toPng(shareCardRef.current, { cacheBust: true, pixelRatio: 2 });
+      const link = document.createElement("a");
+      link.download = `artifact-${region}-${formattedDate}.png`;
+      link.href = dataUrl;
+      link.click();
+    } catch (err) {
+      console.error("Failed to download image", err);
+    } finally {
+      setIsDownloading(false);
+    }
+  }, [region, selectedDate]);
 
   const selectClassNames = {
     trigger: "!bg-character-card hover:!bg-character-card focus:!bg-character-card !transition-none border-crafting-border border-1 shadow-none rounded-sm group-data-[hover=true]:!bg-character-card group-data-[focus=true]:!bg-character-card group-data-[focus-visible=true]:!bg-character-card h-[36px] min-h-[36px]",
@@ -316,10 +354,10 @@ const RealtimeArtifactRatio: React.FC = () => {
         <div className="flex flex-col gap-2.5">
           <div className="flex items-center justify-between h-9">
             <div className="flex-1 flex justify-center">
-              <span className="font-normal text-default-900">{t("common:race.elyos", "天族")}</span>
+              <span className="font-normal text-default-900">{t("common:race.light", "天族")}</span>
             </div>
             <div className="flex-1 flex justify-center">
-              <span className="font-normal text-default-900">{t("common:race.asmodian", "魔族")}</span>
+              <span className="font-normal text-default-900">{t("common:race.dark", "魔族")}</span>
             </div>
           </div>
           {sortedMatchings.map((matching) => {
@@ -353,11 +391,46 @@ const RealtimeArtifactRatio: React.FC = () => {
         </div>
       )}
 
-      <Modal isOpen={isOpen} onOpenChange={onOpenChange} size="full" scrollBehavior="inside" hideCloseButton>
+      <Modal isOpen={isOpen} onOpenChange={onOpenChange} size="full" scrollBehavior="inside" hideCloseButton isDismissable={false}>
         <ModalContent className="bg-transparent shadow-none">
           {(onClose) => (
-            <ModalBody className="p-0 flex items-center justify-center" onClick={onClose}>
-              <ArtifactRatioShareCardWrapper>
+            <ModalBody className="p-0 flex items-center justify-center relative">
+              <div className="absolute top-5 right-5 z-50 flex gap-2">
+                <div className="relative flex items-center justify-center">
+                  {isDownloading && (
+                    <CircularProgress
+                      size="lg"
+                      aria-label="Downloading..."
+                      classNames={{
+                      base: "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0",
+                      svg: "w-14 h-14 block",
+                      indicator: "stroke-primary",
+                      track: "stroke-white/10",
+                    }}
+                    />
+                  )}
+                  <Button
+                    isIconOnly
+                    variant="flat"
+                    className="bg-black/50 hover:bg-black/70 text-white min-w-0 w-12 h-12 rounded-full z-10"
+                    onPress={() => {
+                      handleDownload();
+                    }}
+                    isLoading={isDownloading}
+                  >
+                    {!isDownloading && <FontAwesomeIcon icon={faDownload} className="text-xl" />}
+                  </Button>
+                </div>
+                <Button
+                  isIconOnly
+                  variant="flat"
+                  className="bg-black/50 hover:bg-black/70 text-white min-w-0 w-12 h-12 rounded-full"
+                  onPress={onClose}
+                >
+                  <span className="text-2xl">&times;</span>
+                </Button>
+              </div>
+              <ArtifactRatioShareCardWrapper ref={shareCardRef}>
                 <ArtifactRatioShareCard 
                   server={t(`common:server.${region}`)} 
                   time={selectedDate.toDate().toLocaleString()}

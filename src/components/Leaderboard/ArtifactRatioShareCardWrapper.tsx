@@ -7,12 +7,12 @@ interface ArtifactRatioShareCardWrapperProps {
   padding?: number;
 }
 
-const ArtifactRatioShareCardWrapper: React.FC<ArtifactRatioShareCardWrapperProps> = ({ 
+const ArtifactRatioShareCardWrapper = React.forwardRef<HTMLDivElement, ArtifactRatioShareCardWrapperProps>(({ 
   children, 
   baseWidth = 1680, 
   baseHeight = 986,
   padding = 40
-}) => {
+}, ref) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(1);
 
@@ -42,6 +42,7 @@ const ArtifactRatioShareCardWrapper: React.FC<ArtifactRatioShareCardWrapperProps
       className="w-full h-full flex items-center justify-center overflow-hidden"
     >
       <div 
+        ref={ref}
         style={{ 
           width: `${baseWidth}px`, 
           height: `${baseHeight}px`,
@@ -54,6 +55,6 @@ const ArtifactRatioShareCardWrapper: React.FC<ArtifactRatioShareCardWrapperProps
       </div>
     </div>
   );
-};
+});
 
 export default ArtifactRatioShareCardWrapper;
