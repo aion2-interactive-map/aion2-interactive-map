@@ -5,13 +5,15 @@ interface ArtifactRatioShareCardWrapperProps {
   baseWidth?: number;
   baseHeight?: number;
   padding?: number;
+  isMobile?: boolean;
 }
 
 const ArtifactRatioShareCardWrapper = React.forwardRef<HTMLDivElement, ArtifactRatioShareCardWrapperProps>(({ 
   children, 
   baseWidth = 1680, 
   baseHeight = 986,
-  padding = 40
+  padding = 40,
+  isMobile = false
 }, ref) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(1);
@@ -25,8 +27,14 @@ const ArtifactRatioShareCardWrapper = React.forwardRef<HTMLDivElement, ArtifactR
         const scaleW = availableWidth / baseWidth;
         const scaleH = availableHeight / baseHeight;
         
-        // Use fit both width and height, but allow scaling up (zoom)
-        const newScale = Math.min(scaleW, scaleH);
+        let newScale;
+        if (isMobile && availableWidth < baseWidth) {
+          // On mobile, if screen is smaller than baseWidth (750px), scale to fit width
+          newScale = scaleW;
+        } else {
+          // Use fit both width and height, but allow scaling up (zoom)
+          newScale = Math.min(scaleW, scaleH);
+        }
         setScale(newScale);
       }
     };
@@ -34,12 +42,12 @@ const ArtifactRatioShareCardWrapper = React.forwardRef<HTMLDivElement, ArtifactR
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [baseWidth, baseHeight, padding]);
+  }, [baseWidth, baseHeight, padding, isMobile]);
 
   return (
     <div 
       ref={containerRef} 
-      className="w-full h-full flex items-center justify-center overflow-hidden"
+      className={`w-full h-full overflow-x-auto overflow-y-auto no-scrollbar ${!isMobile ? "flex items-center justify-center overflow-hidden" : "flex flex-col items-center"}`}
     >
       <div 
         ref={ref}
@@ -47,8 +55,10 @@ const ArtifactRatioShareCardWrapper = React.forwardRef<HTMLDivElement, ArtifactR
           width: `${baseWidth}px`, 
           height: `${baseHeight}px`,
           transform: `scale(${scale})`,
-          transformOrigin: "center center",
-          flexShrink: 0
+          transformOrigin: isMobile ? "top center" : "center center",
+          flexShrink: 0,
+          marginTop: isMobile ? `${padding}px` : undefined,
+          marginBottom: isMobile ? `${padding}px` : undefined,
         }}
       >
         {children}

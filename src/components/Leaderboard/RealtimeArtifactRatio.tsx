@@ -1,6 +1,6 @@
 import React, {useMemo, useState, useEffect, useCallback, useRef} from "react";
 import {useTranslation} from "react-i18next";
-import {Card, CardBody, Button, DatePicker, Select, SelectItem, Modal, ModalContent, ModalBody, useDisclosure, CircularProgress} from "@heroui/react";
+import {Card, CardBody, Button, DatePicker, Select, SelectItem, Modal, ModalContent, ModalBody, useDisclosure, CircularProgress, Switch} from "@heroui/react";
 import {now, getLocalTimeZone} from "@internationalized/date";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {
@@ -42,6 +42,7 @@ const RealtimeArtifactRatio: React.FC = () => {
   } = useLeaderboard();
   const [selectedDate, setSelectedDate] = useState(now(getLocalTimeZone()));
   const [isAutoUpdate, setIsAutoUpdate] = useState(true);
+  const [isMobileVersion, setIsMobileVersion] = useState(true);
 
   const [starredServerIds, setStarredServerIds] = useState<number[]>(() => {
     const saved = localStorage.getItem(STARRED_SERVERS_KEY);
@@ -192,6 +193,7 @@ const RealtimeArtifactRatio: React.FC = () => {
   }, [artifactsByMap]);
 
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
+  const shareCardWrapperRef = useRef<HTMLDivElement>(null);
   const shareCardRef = useRef<HTMLDivElement>(null);
   const [isDownloading, setIsDownloading] = useState(false);
 
@@ -388,6 +390,18 @@ const RealtimeArtifactRatio: React.FC = () => {
           {(onClose) => (
             <ModalBody className="p-0 flex items-center justify-center relative">
               <div className="absolute top-5 right-5 z-50 flex gap-2">
+                <div className="flex items-center bg-black/50 hover:bg-black/70 rounded-full px-4 h-12 transition-colors">
+                  <Switch
+                    size="sm"
+                    isSelected={isMobileVersion}
+                    onValueChange={setIsMobileVersion}
+                    classNames={{
+                      label: "text-white text-sm font-medium ml-2",
+                    }}
+                  >
+                    {isMobileVersion ? "竖版" : "横版"}
+                  </Switch>
+                </div>
                 <div className="relative flex items-center justify-center">
                   {isDownloading && (
                     <CircularProgress
@@ -422,8 +436,13 @@ const RealtimeArtifactRatio: React.FC = () => {
                   <span className="text-2xl">&times;</span>
                 </Button>
               </div>
-              <ArtifactRatioShareCardWrapper ref={shareCardRef}>
+              <ArtifactRatioShareCardWrapper 
+                ref={shareCardWrapperRef}
+                baseWidth={isMobileVersion ? 750 : 1680}
+                isMobile={isMobileVersion}
+              >
                 <ArtifactRatioShareCard 
+                  ref={shareCardRef}
                   server={t(`common:server.${region}`)} 
                   time={selectedDate.toDate().toLocaleString()}
                   matchings={sortedMatchings}
@@ -433,6 +452,7 @@ const RealtimeArtifactRatio: React.FC = () => {
                   isAutoUpdate={isAutoUpdate}
                   selectedDate={selectedDate}
                   icons={{neutral: neutralIcon, light: lightIcon, dark: darkIcon}}
+                  isMobile={isMobileVersion}
                 />
               </ArtifactRatioShareCardWrapper>
             </ModalBody>
