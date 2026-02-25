@@ -53,6 +53,8 @@ leaderboard:
   rank: "Rank"
   artifactCount: "Artifacts"
   totalArtifacts: "Total"
+  seasonN: "Season {{n}}"
+  matchingN: "Matching {{n}}"
   artifactState:
     title: "Artifact Data"
     uploadTime: "Upload Time"
@@ -74,6 +76,7 @@ leaderboard:
   artifactAdmins: "Artifact Admins"
   addArtifactAdmin: "Add Artifact Admin"
   submitData: "Click to submit data"
+  pin: "Pin"
   share: "Share"
 
 buttons:

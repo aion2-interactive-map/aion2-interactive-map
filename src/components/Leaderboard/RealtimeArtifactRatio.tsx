@@ -38,7 +38,13 @@ const RealtimeArtifactRatio: React.FC = () => {
     fetchServerMatchings,
     fetchArtifactStates,
     region,
-    setRegion
+    setRegion,
+    selectedSeasonId,
+    setSelectedSeasonId,
+    selectedSeasonNumber,
+    setSelectedSeasonNumber,
+    selectedMatchingNumber,
+    setSelectedMatchingNumber
   } = useLeaderboard();
   const [selectedDate, setSelectedDate] = useState(now(getLocalTimeZone()));
   const [isAutoUpdate, setIsAutoUpdate] = useState(true);
@@ -105,14 +111,25 @@ const RealtimeArtifactRatio: React.FC = () => {
   const darkIcon = getStaticUrl("UI/Resource/Texture/Icon/UT_Marker_AbyssArtifact_Dark.webp");
   const vsImage = getStaticUrl("images/Leaderboards/VS.webp");
 
-  // Find the season ID for the selected region and its latest season number
-  const targetSeasonId = useMemo(() => {
-    const regionSeasons = seasons.filter(s => s.serverRegion.toLowerCase() === region.toLowerCase());
-    if (regionSeasons.length === 0) return null;
-    const maxNumber = Math.max(...regionSeasons.map(s => s.number));
-    const season = regionSeasons.find(s => s.number === maxNumber);
-    return season?.id || null;
-  }, [region, seasons]);
+  const regionSeasons = useMemo(() => {
+    return seasons
+      .filter(s => s.serverRegion.toLowerCase() === region.toLowerCase());
+  }, [seasons, region]);
+
+  const uniqueSeasonNumbers = useMemo(() => {
+    const numbers = Array.from(new Set(regionSeasons.map(s => s.number)));
+    return numbers.sort((a, b) => b - a);
+  }, [regionSeasons]);
+
+  const matchingNumbersForSeason = useMemo(() => {
+    if (selectedSeasonNumber === null) return [];
+    const matchingNumbers = Array.from(new Set(
+      regionSeasons
+        .filter(s => s.number === selectedSeasonNumber)
+        .map(s => s.matchingNumber)
+    ));
+    return matchingNumbers.sort((a, b) => b - a);
+  }, [regionSeasons, selectedSeasonNumber]);
 
   // Create a memoized debounced version of fetchArtifactStates
   const debouncedFetchArtifactStates = useMemo(
@@ -135,19 +152,19 @@ const RealtimeArtifactRatio: React.FC = () => {
   );
 
   useEffect(() => {
-    if (targetSeasonId) {
-      fetchServerMatchings(targetSeasonId);
+    if (selectedSeasonId) {
+      fetchServerMatchings(selectedSeasonId);
       if (isAutoUpdate) {
-        debouncedFetchArtifactStates(targetSeasonId);
+        debouncedFetchArtifactStates(selectedSeasonId);
       } else {
         const date = selectedDate.toDate();
-        fetchArtifactStates(targetSeasonId, date);
+        fetchArtifactStates(selectedSeasonId, date);
       }
       // Also fetch artifact counts here as it's needed by ArtifactRegionRanking
       // Doing it here centralizes the fetch for this season
-      // fetchArtifactCounts(targetSeasonId, ALL_MAPS_KEY); // Actually ArtifactRegionRanking might have different mapName
+      // fetchArtifactCounts(selectedSeasonId, ALL_MAPS_KEY); // Actually ArtifactRegionRanking might have different mapName
     }
-  }, [targetSeasonId, isAutoUpdate, isAutoUpdate ? null : selectedDate, fetchServerMatchings, debouncedFetchArtifactStates, fetchArtifactStates]);
+  }, [selectedSeasonId, isAutoUpdate, isAutoUpdate ? null : selectedDate, fetchServerMatchings, debouncedFetchArtifactStates, fetchArtifactStates]);
 
   const artifactStateMap = useMemo(() => {
     const map: Record<string, Record<string, { state: number; recordTime: string; contributors: any[] }>> = {};
@@ -294,7 +311,7 @@ const RealtimeArtifactRatio: React.FC = () => {
             size="sm"
             selectedKeys={[region]}
             onSelectionChange={(keys) => setRegion(Array.from(keys)[0] as string)}
-            className="min-w-[100px] flex-1 sm:flex-none sm:w-[120px]"
+            className="min-w-[80px] w-[80px]"
             disallowEmptySelection
             classNames={selectClassNames}
             popoverProps={{
@@ -305,8 +322,52 @@ const RealtimeArtifactRatio: React.FC = () => {
             <SelectItem key="tw">{t("common:server.tw")}</SelectItem>
             <SelectItem key="kr">{t("common:server.kr")}</SelectItem>
           </Select>
+          <Select
+            size="sm"
+            selectedKeys={selectedSeasonNumber !== null ? [selectedSeasonNumber.toString()] : []}
+            onSelectionChange={(keys) => {
+              const val = Array.from(keys)[0] as string;
+              if (val) setSelectedSeasonNumber(parseInt(val));
+            }}
+            className="min-w-[105px] w-[105px]"
+            disallowEmptySelection
+            classNames={selectClassNames}
+            popoverProps={{
+              radius: "none",
+            }}
+            listboxProps={commonListboxProps}
+            isDisabled={uniqueSeasonNumbers.length === 0}
+          >
+            {uniqueSeasonNumbers.map((num) => (
+              <SelectItem key={num.toString()}>
+                {t("common:leaderboard.seasonN", { n: num })}
+              </SelectItem>
+            ))}
+          </Select>
+          <Select
+            size="sm"
+            selectedKeys={selectedMatchingNumber !== null ? [selectedMatchingNumber.toString()] : []}
+            onSelectionChange={(keys) => {
+              const val = Array.from(keys)[0] as string;
+              if (val) setSelectedMatchingNumber(parseInt(val));
+            }}
+            className="min-w-[120px] w-[120px]"
+            disallowEmptySelection
+            classNames={selectClassNames}
+            popoverProps={{
+              radius: "none",
+            }}
+            listboxProps={commonListboxProps}
+            isDisabled={matchingNumbersForSeason.length === 0}
+          >
+            {matchingNumbersForSeason.map((num) => (
+              <SelectItem key={num.toString()}>
+                {t("common:leaderboard.matchingN", { n: num })}
+              </SelectItem>
+            ))}
+          </Select>
           <I18nProvider locale={i18n.language}>
-            <div className="relative flex-[2] sm:flex-none sm:w-[280px]">
+            <div className="relative flex-1">
               <DatePicker
                 className="w-full"
                 hideTimeZone

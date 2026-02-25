@@ -53,6 +53,13 @@ const ArtifactRatioShareCard = React.forwardRef<HTMLDivElement, ArtifactRatioSha
       isContention = true;
     }
 
+    const compareTime = isAutoUpdate ? Date.now() : (selectedDate?.toDate?.().getTime() || Date.now());
+    const startDate = new Date(matching.season.startDate).getTime();
+    const endDate = new Date(matching.season.endDate).getTime();
+    const isInRange = compareTime >= startDate && compareTime <= endDate;
+
+    if (!isInRange) isContention = false;
+
     if (!isContention) {
       if (state === 1) return icons.light;
       if (state === 2) return icons.dark;

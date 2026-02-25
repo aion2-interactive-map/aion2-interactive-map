@@ -61,22 +61,24 @@ const ArtifactMatchupRow: React.FC<ArtifactMatchupRowProps> = ({
         className="flex-1 h-[38px] flex items-center justify-center rounded-md relative"
         style={{background: bgGradient}}
       >
-        <Button
-          isIconOnly
-          size="sm"
-          variant="light"
-          className={`absolute ${isServer1 ? "left-1" : "right-1"} z-10 text-default-400 hover:text-star data-[starred=true]:text-star`}
-          data-starred={isStarred}
-          onClick={(e) => {
-            e.stopPropagation();
-            toggleStar(server.serverId);
-          }}
-        >
-          <FontAwesomeIcon
-            icon={isStarred ? faStarSolid : faStarRegular}
-            className="text-base"
-          />
-        </Button>
+        <AdaptiveTooltip content={t("common:leaderboard.pin")}>
+          <Button
+            isIconOnly
+            size="sm"
+            variant="light"
+            className={`absolute ${isServer1 ? "left-1" : "right-1"} z-10 text-default-400 hover:text-star data-[starred=true]:text-star`}
+            data-starred={isStarred}
+            onClick={(e) => {
+              e.stopPropagation();
+              toggleStar(server.serverId);
+            }}
+          >
+            <FontAwesomeIcon
+              icon={isStarred ? faStarSolid : faStarRegular}
+              className="text-base"
+            />
+          </Button>
+        </AdaptiveTooltip>
         <span className={`text-lg font-bold ${textColor}`}>{server.serverName}</span>
         <span className="text-sm font-normal text-default-800">（{serverAbbr}{server.serverId % 1000}）</span>
       </div>
@@ -105,6 +107,14 @@ const ArtifactMatchupRow: React.FC<ArtifactMatchupRowProps> = ({
             } else {
               isContention = true;
             }
+
+            const compareTimeDate = isAutoUpdate ? new Date() : selectedDate.toDate();
+            const compareTime = compareTimeDate.getTime();
+            const startDate = new Date(matching.season.startDate).getTime();
+            const endDate = new Date(matching.season.endDate).getTime();
+            const isInRange = compareTime >= startDate && compareTime <= endDate;
+
+            if (!isInRange) isContention = false;
 
             let icon = icons.neutral;
             if (!isContention) {
@@ -144,7 +154,13 @@ const ArtifactMatchupRow: React.FC<ArtifactMatchupRowProps> = ({
             isContention = true;
           }
 
-          if (isContention) {
+          const compareTimeDate = isAutoUpdate ? new Date() : selectedDate.toDate();
+          const compareTime = compareTimeDate.getTime();
+          const startDate = new Date(matching.season.startDate).getTime();
+          const endDate = new Date(matching.season.endDate).getTime();
+          const isInRange = compareTime >= startDate && compareTime <= endDate;
+
+          if (isContention && isInRange) {
             return (
               <div className="flex justify-center px-2 w-full">
                 <span className="text-primary hover:underline text-sm font-bold cursor-pointer">

@@ -30,7 +30,13 @@ const ArtifactRegionRanking: React.FC<ArtifactRegionRankingProps> = ({ mapName, 
     serverMatchings,
     loadingMatchings,
     region,
-    setRegion
+    setRegion,
+    selectedSeasonId,
+    setSelectedSeasonId,
+    selectedSeasonNumber,
+    setSelectedSeasonNumber,
+    selectedMatchingNumber,
+    setSelectedMatchingNumber
   } = useLeaderboard();
 
   const selectClassNames = {
@@ -45,19 +51,31 @@ const ArtifactRegionRanking: React.FC<ArtifactRegionRankingProps> = ({ mapName, 
     },
   };
 
-  const regionSeasonId = useMemo(() => {
-    const regionSeasons = seasons.filter(s => s.serverRegion.toLowerCase() === region.toLowerCase());
-    if (regionSeasons.length === 0) return null;
-    const maxNumber = Math.max(...regionSeasons.map(s => s.number));
-    const season = regionSeasons.find(s => s.number === maxNumber);
-    return season?.id || null;
+  const regionSeasons = useMemo(() => {
+    return seasons
+      .filter(s => s.serverRegion.toLowerCase() === region.toLowerCase());
   }, [seasons, region]);
 
+  const uniqueSeasonNumbers = useMemo(() => {
+    const numbers = Array.from(new Set(regionSeasons.map(s => s.number)));
+    return numbers.sort((a, b) => b - a);
+  }, [regionSeasons]);
+
+  const matchingNumbersForSeason = useMemo(() => {
+    if (selectedSeasonNumber === null) return [];
+    const matchingNumbers = Array.from(new Set(
+      regionSeasons
+        .filter(s => s.number === selectedSeasonNumber)
+        .map(s => s.matchingNumber)
+    ));
+    return matchingNumbers.sort((a, b) => b - a);
+  }, [regionSeasons, selectedSeasonNumber]);
+
   useEffect(() => {
-    if (regionSeasonId) {
-      fetchArtifactCounts(regionSeasonId, mapName);
+    if (selectedSeasonId) {
+      fetchArtifactCounts(selectedSeasonId, mapName);
     }
-  }, [regionSeasonId, mapName, fetchArtifactCounts]);
+  }, [selectedSeasonId, mapName, fetchArtifactCounts]);
 
   const sortedData = useMemo(() => {
     const sorted = [...artifactCounts]
@@ -108,7 +126,7 @@ const ArtifactRegionRanking: React.FC<ArtifactRegionRankingProps> = ({ mapName, 
             size="sm"
             selectedKeys={[region]}
             onSelectionChange={(keys) => setRegion(Array.from(keys)[0] as string)}
-            className="min-w-[100px] flex-1 sm:flex-none sm:w-[120px]"
+            className="min-w-[80px] w-[80px]"
             disallowEmptySelection
             classNames={selectClassNames}
             popoverProps={{
@@ -121,9 +139,53 @@ const ArtifactRegionRanking: React.FC<ArtifactRegionRankingProps> = ({ mapName, 
           </Select>
           <Select
             size="sm"
+            selectedKeys={selectedSeasonNumber !== null ? [selectedSeasonNumber.toString()] : []}
+            onSelectionChange={(keys) => {
+              const val = Array.from(keys)[0] as string;
+              if (val) setSelectedSeasonNumber(parseInt(val));
+            }}
+            className="min-w-[105px] w-[105px]"
+            disallowEmptySelection
+            classNames={selectClassNames}
+            popoverProps={{
+              radius: "none",
+            }}
+            listboxProps={commonListboxProps}
+            isDisabled={uniqueSeasonNumbers.length === 0}
+          >
+            {uniqueSeasonNumbers.map((num) => (
+              <SelectItem key={num.toString()}>
+                {t("common:leaderboard.seasonN", { n: num })}
+              </SelectItem>
+            ))}
+          </Select>
+          <Select
+            size="sm"
+            selectedKeys={selectedMatchingNumber !== null ? [selectedMatchingNumber.toString()] : []}
+            onSelectionChange={(keys) => {
+              const val = Array.from(keys)[0] as string;
+              if (val) setSelectedMatchingNumber(parseInt(val));
+            }}
+            className="min-w-[120px] w-[120px]"
+            disallowEmptySelection
+            classNames={selectClassNames}
+            popoverProps={{
+              radius: "none",
+            }}
+            listboxProps={commonListboxProps}
+            isDisabled={matchingNumbersForSeason.length === 0}
+          >
+            {matchingNumbersForSeason.map((num) => (
+              <SelectItem key={num.toString()}>
+                {t("common:leaderboard.matchingN", { n: num })}
+              </SelectItem>
+            ))}
+          </Select>
+          <Select
+            size="sm"
             selectedKeys={[mapName]}
             onSelectionChange={(keys) => setMapName(Array.from(keys)[0] as string)}
-            className="min-w-[150px] flex-[2] sm:flex-none sm:w-[200px]"
+            className="min-w-[100px] flex-1"
             disallowEmptySelection
             classNames={selectClassNames}
             popoverProps={{

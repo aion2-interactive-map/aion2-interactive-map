@@ -11,6 +11,7 @@ export interface ApiResponse<T> {
 export interface Season {
   id: string;
   number: number;
+  matchingNumber: number;
   serverRegion: string;
   startDate: string;
   endDate: string;

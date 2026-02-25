@@ -20,6 +20,12 @@ export interface LeaderboardContextValue {
   error: string | null;
   region: string;
   setRegion: (region: string) => void;
+  selectedSeasonId: string | null;
+  setSelectedSeasonId: (seasonId: string | null) => void;
+  selectedSeasonNumber: number | null;
+  setSelectedSeasonNumber: (n: number | null) => void;
+  selectedMatchingNumber: number | null;
+  setSelectedMatchingNumber: (n: number | null) => void;
   fetchSeasons: () => Promise<void>;
   fetchServerMatchings: (seasonId: string) => Promise<void>;
   fetchServerMatching: (seasonId: string, matchingId: string) => Promise<void>;
@@ -48,6 +54,9 @@ export const LeaderboardProvider: React.FC<{ children: React.ReactNode }> = ({ c
   const [artifactCountsByMap, setArtifactCountsByMap] = useState<Record<string, Record<string, ArtifactCount[]>>>({});
   const [artifactCounts, setArtifactCounts] = useState<ArtifactCount[]>([]);
   const [region, setRegion] = useState<string>("tw");
+  const [selectedSeasonId, setSelectedSeasonId] = useState<string | null>(null);
+  const [selectedSeasonNumber, setSelectedSeasonNumber] = useState<number | null>(null);
+  const [selectedMatchingNumber, setSelectedMatchingNumber] = useState<number | null>(null);
   
   const [loadingSeasons, setLoadingSeasons] = useState(false);
   const [loadingMatchings, setLoadingMatchings] = useState(false);
@@ -179,6 +188,62 @@ export const LeaderboardProvider: React.FC<{ children: React.ReactNode }> = ({ c
     fetchSeasons();
     fetchArtifacts();
   }, [fetchSeasons, fetchArtifacts]);
+
+  useEffect(() => {
+    if (seasons.length > 0) {
+      const regionSeasons = seasons.filter(s => s.serverRegion.toLowerCase() === region.toLowerCase());
+      if (regionSeasons.length > 0) {
+        // Find latest season number and latest matching number for it
+        const maxNumber = Math.max(...regionSeasons.map(s => s.number));
+        const maxMatchingNumber = Math.max(...regionSeasons.filter(s => s.number === maxNumber).map(s => s.matchingNumber));
+        
+        const latestSeason = regionSeasons.find(s => s.number === maxNumber && s.matchingNumber === maxMatchingNumber);
+        if (latestSeason) {
+          setSelectedSeasonId(latestSeason.id);
+          setSelectedSeasonNumber(latestSeason.number);
+          setSelectedMatchingNumber(latestSeason.matchingNumber);
+        }
+      } else {
+        setSelectedSeasonId(null);
+        setSelectedSeasonNumber(null);
+        setSelectedMatchingNumber(null);
+      }
+    }
+  }, [seasons, region]);
+
+  useEffect(() => {
+    if (seasons.length > 0 && selectedSeasonNumber !== null) {
+      const regionSeasons = seasons.filter(s => s.serverRegion.toLowerCase() === region.toLowerCase());
+      const seasonMatchings = regionSeasons.filter(s => s.number === selectedSeasonNumber);
+      
+      if (seasonMatchings.length > 0) {
+        const maxMatchingNumber = Math.max(...seasonMatchings.map(s => s.matchingNumber));
+        // If the current selected matching number is not in the new season's available matchings,
+        // or if we want to ALWAYS switch to the largest one when the season changes:
+        // The requirement says "When switching season, automatically choose the largest matching number."
+        setSelectedMatchingNumber(maxMatchingNumber);
+      }
+    }
+  }, [selectedSeasonNumber, seasons, region]);
+
+  useEffect(() => {
+    if (seasons.length > 0 && selectedSeasonNumber !== null && selectedMatchingNumber !== null) {
+      const season = seasons.find(s => 
+        s.serverRegion.toLowerCase() === region.toLowerCase() && 
+        s.number === selectedSeasonNumber && 
+        s.matchingNumber === selectedMatchingNumber
+      );
+      if (season) {
+        setSelectedSeasonId(season.id);
+      } else {
+        // If not found (shouldn't happen with proper UI logic, but for safety), reset
+        const regionSeasons = seasons.filter(s => s.serverRegion.toLowerCase() === region.toLowerCase());
+        if (regionSeasons.length > 0) {
+           // Maybe it's a new region or something, the first useEffect should handle it but we check here too
+        }
+      }
+    }
+  }, [seasons, region, selectedSeasonNumber, selectedMatchingNumber]);
 
   const fetchArtifactStates = useCallback(async (seasonId: string, currentTime?: Date, serverMatchingId?: string) => {
     // We only cache the "current" view (no currentTime, no serverMatchingId filter)
@@ -389,6 +454,12 @@ export const LeaderboardProvider: React.FC<{ children: React.ReactNode }> = ({ c
         error,
         region,
         setRegion,
+        selectedSeasonId,
+        setSelectedSeasonId,
+        selectedSeasonNumber,
+        setSelectedSeasonNumber,
+        selectedMatchingNumber,
+        setSelectedMatchingNumber,
         fetchSeasons,
         fetchServerMatchings,
         fetchArtifacts,
