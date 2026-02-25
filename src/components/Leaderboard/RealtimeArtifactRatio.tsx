@@ -291,7 +291,7 @@ const RealtimeArtifactRatio: React.FC = () => {
         <div className="flex flex-col items-start gap-3 px-5 h-[62px] justify-center artifact-ratio-card-header shadow-[0px_3px_8px_0px_rgba(0,0,0,0.05)] rounded-[8px] border-1 border-solid">
           <div className="flex items-center gap-2 justify-between w-full">
             <div className="flex items-center gap-2">
-              <p className="text-xl font-normal text-default-900">{t("common:leaderboard.realtimeArtifactRatio")}</p>
+              <p className="text-xl font-bold text-default-900">{t("common:leaderboard.realtimeArtifactRatio")}</p>
               {globalCountdown && (
                 <span className="text-base font-mono font-normal text-primary">
                   {globalCountdown}
@@ -414,10 +414,10 @@ const RealtimeArtifactRatio: React.FC = () => {
         <div className="flex flex-col gap-2.5">
           <div className="flex items-center justify-between h-9">
             <div className="flex-1 flex justify-center">
-              <span className="font-normal text-default-900">{t("common:race.light", "天族")}</span>
+              <span className="font-normal text-default-900">{t(`maps:${MAP_NAMES.ABYSS_A}.description`)}</span>
             </div>
             <div className="flex-1 flex justify-center">
-              <span className="font-normal text-default-900">{t("common:race.dark", "魔族")}</span>
+              <span className="font-normal text-default-900">{t(`maps:${MAP_NAMES.ABYSS_B}.description`)}</span>
             </div>
           </div>
           {sortedMatchings.map((matching) => {

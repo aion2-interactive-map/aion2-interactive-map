@@ -109,6 +109,7 @@ leaderboard:
     save: "保存"
     cancel: "取消"
     verify: "验证"
+    loginToSubmit: "登录以提交数据"
     timeFixedNote: "时间固定为 {{time}} (当地时间)"
     validationError: "创建/编辑失败，两条数据至少间隔48小时"
   options: "选项"

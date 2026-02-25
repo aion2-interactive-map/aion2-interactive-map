@@ -172,7 +172,7 @@ const ArtifactRegionRanking: React.FC<ArtifactRegionRankingProps> = ({ mapName, 
       <div className="flex flex-col gap-5 w-full">
         <div className="flex flex-col items-start gap-3 px-5 h-[62px] justify-center artifact-ratio-card-header shadow-[0px_3px_8px_0px_rgba(0,0,0,0.05)] rounded-[8px] border-1 border-solid w-full">
           <div className="flex items-center justify-between w-full">
-            <p className="text-xl font-normal text-default-900">{t("common:leaderboard.artifactRegionRanking")}</p>
+            <p className="text-xl font-bold text-default-900">{t("common:leaderboard.artifactRegionRanking")}</p>
             <AdaptiveTooltip content={t("common:leaderboard.share", "分享")}>
               <Button
                 isIconOnly

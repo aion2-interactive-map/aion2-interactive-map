@@ -4,6 +4,7 @@ import Footer from "@/components/Footer.tsx";
 import ArtifactRegionRanking from "@/components/Leaderboard/ArtifactRegionRanking";
 import RealtimeArtifactRatio from "@/components/Leaderboard/RealtimeArtifactRatio";
 import { ALL_MAPS_KEY } from "@/context/LeaderboardContext";
+import { getStaticUrl } from "@/utils/url.ts";
 
 export const Route = createFileRoute("/leaderboard")({
   component: Page,
@@ -16,7 +17,13 @@ function Page() {
   const isDetailPath = location.pathname.includes("/artifacts/");
 
   return (
-    <div className="h-full overflow-y-auto flex flex-col bg-leaderboard-page">
+    <div 
+      className="h-full overflow-y-auto flex flex-col bg-leaderboard-page"
+      style={{
+        backgroundImage: `url(${getStaticUrl("images/Leaderboards/BackgroundGrid.webp")})`,
+        backgroundRepeat: "repeat",
+      }}
+    >
       {isDetailPath ? (
         <Outlet />
       ) : (

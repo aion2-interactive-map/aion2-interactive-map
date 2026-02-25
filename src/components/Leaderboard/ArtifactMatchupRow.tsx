@@ -88,9 +88,6 @@ const ArtifactMatchupRow: React.FC<ArtifactMatchupRowProps> = ({
   const renderArtifactIcons = (artifacts: any[], mapName: string) => {
     return (
       <div className="flex-1 flex items-center justify-center gap-2">
-        <span className="text-sm text-foreground max-w-[40px] sm:max-w-none whitespace-normal">
-          {t(`maps:${mapName}.description`)}
-        </span>
         <div className="flex gap-1">
           {artifacts.map((artifact) => {
             const artifactName = t(`markers/${mapName}:${artifact.markerId}.name`, artifact.marker.name);

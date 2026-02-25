@@ -42,7 +42,7 @@ function ArtifactDetailsPage() {
   const ABYSS_MAPS = [MAP_NAMES.ABYSS_A, MAP_NAMES.ABYSS_B];
   const markerNs = ABYSS_MAPS.map((x) => `markers/${x}`);
   const {t} = useTranslation([...markerNs, "common"]);
-  const {user, isSuperUser, fetchWithAuth} = useUser();
+  const {user, isSuperUser, fetchWithAuth, setUserModalOpen} = useUser();
   const {
     seasons,
     serverMatchings,
@@ -67,10 +67,14 @@ function ArtifactDetailsPage() {
 
   const targetSeasonId = useMemo(() => {
     if (matching) return matching.seasonId;
+    // When matching is not loaded (e.g. on refresh), we still need the seasonId to fetch it.
+    // However, we might not have seasons loaded yet either.
     const regionSeasons = seasons.filter((s) => s.serverRegion.toLowerCase() === region.toLowerCase());
     if (regionSeasons.length === 0) return null;
     const maxNumber = Math.max(...regionSeasons.map((s) => s.number));
-    const season = regionSeasons.find((s) => s.number === maxNumber);
+    const regionSeasonsInMaxNumber = regionSeasons.filter((s) => s.number === maxNumber);
+    const maxMatchingNumber = Math.max(...regionSeasonsInMaxNumber.map((s) => s.matchingNumber));
+    const season = regionSeasonsInMaxNumber.find((s) => s.matchingNumber === maxMatchingNumber);
     return season?.id || null;
   }, [region, seasons, matching]);
 
@@ -120,15 +124,13 @@ function ArtifactDetailsPage() {
 
   useEffect(() => {
     if (targetSeasonId) {
-      if (!matching) {
-        fetchServerMatching(targetSeasonId, matchingId);
-      }
+      fetchServerMatching(targetSeasonId, matchingId);
       fetchArtifactStates(targetSeasonId, undefined, matchingId).then((states) => {
         setMatchingArtifactStates(states);
       });
       fetchAdmins();
     }
-  }, [targetSeasonId, matchingId, matching, fetchServerMatching, fetchArtifactStates]);
+  }, [targetSeasonId, matchingId, fetchServerMatching, fetchArtifactStates]);
 
   const statesByMap = useMemo(() => {
     const map: Record<string, ArtifactState[]> = {};
@@ -251,17 +253,21 @@ function ArtifactDetailsPage() {
               <Card key={mapName} className="bg-transparent shadow-none border-1 border-crafting-border backdrop-blur-sm">
                 <CardHeader className="flex justify-between items-center px-6 py-4 bg-character-equipment">
                   <h2 className="text-xl font-bold">{t(`maps:${mapName}.description`)}</h2>
-                  {user && (
-                    <Button
-                      size="sm"
-                      color="default"
-                      variant="flat"
-                      startContent={<FontAwesomeIcon icon={faPlus}/>}
-                      onClick={() => handleCreate(mapName)}
-                    >
-                      {t("common:leaderboard.artifactState.create")}
-                    </Button>
-                  )}
+                  <Button
+                    size="sm"
+                    color="primary"
+                    variant="flat"
+                    startContent={<FontAwesomeIcon icon={faPlus}/>}
+                    onClick={() => {
+                      if (user) {
+                        handleCreate(mapName);
+                      } else {
+                        setUserModalOpen(true);
+                      }
+                    }}
+                  >
+                    {user ? t("common:leaderboard.artifactState.create") : t("common:leaderboard.artifactState.loginToSubmit")}
+                  </Button>
                 </CardHeader>
                 <Divider/>
                 <CardBody className="p-0 overflow-x-auto">

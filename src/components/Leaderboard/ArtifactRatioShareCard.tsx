@@ -94,9 +94,6 @@ const ArtifactRatioShareCard = React.forwardRef<HTMLDivElement, ArtifactRatioSha
   const renderArtifactRow = (matching: any, artifacts: any[], mapName: string) => {
     return (
       <div className={`flex items-center justify-center ${isMobile ? "h-12" : "h-9"} gap-1 w-full`}>
-        <span className={`${isMobile ? "text-[28px]" : "text-sm"} text-white/80 whitespace-nowrap leading-none`}>
-          {t(`maps:${mapName}.description`) as string}
-        </span>
         <div className="flex gap-0.5">
           {artifacts.map((artifact) => (
             <img

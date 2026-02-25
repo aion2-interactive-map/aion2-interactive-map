@@ -123,15 +123,14 @@ export const LeaderboardProvider: React.FC<{ children: React.ReactNode }> = ({ c
     setLoadingMatchings(true);
     setError(null);
     try {
-      const response = await fetch(getApiUrl(`/api/v1/seasons/${seasonId}/server_matchings/${matchingId}`));
-      const result: ApiResponse<ServerMatching> = await response.json();
+      const response = await fetch(getApiUrl(`/api/v1/seasons/${seasonId}/server_matchings/${matchingId}/`));
+      const result: any = await response.json();
       if (result.errorCode === "Success") {
-        // Note: ApiResponse<T> says result.data.results is T[]. 
-        // If the API returns a single object in 'data', we need to handle it.
-        // Assuming consistency with ApiResponse<T>
-        const fetchedMatching = Array.isArray(result.data.results) ? result.data.results[0] : (result.data as any);
+        // If the API returns a single object in 'data'
+        const fetchedMatching = result.data.results ? (Array.isArray(result.data.results) ? result.data.results[0] : result.data.results) : result.data;
         
         if (fetchedMatching) {
+          console.log("Fetched server matching:", fetchedMatching);
           setServerMatchings(prev => {
             if (prev.some(m => m.id === matchingId)) return prev;
             return [...prev, fetchedMatching];
