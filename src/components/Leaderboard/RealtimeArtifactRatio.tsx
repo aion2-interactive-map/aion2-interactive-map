@@ -40,7 +40,6 @@ const RealtimeArtifactRatio: React.FC = () => {
     region,
     setRegion,
     selectedSeasonId,
-    setSelectedSeasonId,
     selectedSeasonNumber,
     setSelectedSeasonNumber,
     selectedMatchingNumber,
@@ -208,6 +207,12 @@ const RealtimeArtifactRatio: React.FC = () => {
     const b = (artifactsByMap[MAP_NAMES.ABYSS_B] || []).sort((a, b) => a.order - b.order);
     return {artifactsA: a, artifactsB: b};
   }, [artifactsByMap]);
+
+  const seasonInfo = useMemo(() => {
+    const seasonStr = selectedSeasonNumber !== null ? t("common:leaderboard.seasonN", { n: selectedSeasonNumber }) : "";
+    const matchingStr = selectedMatchingNumber !== null ? t("common:leaderboard.matchingN", { n: selectedMatchingNumber }) : "";
+    return `${seasonStr} ${matchingStr}`.trim();
+  }, [selectedSeasonNumber, selectedMatchingNumber, t]);
 
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
   const shareCardWrapperRef = useRef<HTMLDivElement>(null);
@@ -500,11 +505,13 @@ const RealtimeArtifactRatio: React.FC = () => {
               <ArtifactRatioShareCardWrapper 
                 ref={shareCardWrapperRef}
                 baseWidth={isMobileVersion ? 750 : 1680}
+                baseHeight={isMobileVersion ? 1300 : 986}
                 isMobile={isMobileVersion}
               >
                 <ArtifactRatioShareCard 
                   ref={shareCardRef}
                   server={t(`common:server.${region}`)} 
+                  seasonInfo={seasonInfo}
                   time={selectedDate.toDate().toLocaleString()}
                   matchings={sortedMatchings}
                   artifactsA={artifactsA}

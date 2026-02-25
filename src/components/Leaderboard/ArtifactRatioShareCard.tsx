@@ -1,11 +1,13 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { getStaticUrl } from "@/utils/url";
 import { MAP_NAMES } from "@/types/game";
+import { getStaticUrl } from "@/utils/url";
 import { getLastScheduledTime } from "@/utils/artifactTime";
+import ShareCardLayout from "./ShareCardLayout";
 
 interface ArtifactRatioShareCardProps {
   server?: string;
+  seasonInfo?: string;
   time?: string;
   matchings?: any[];
   artifactsA?: any[];
@@ -23,6 +25,7 @@ interface ArtifactRatioShareCardProps {
 
 const ArtifactRatioShareCard = React.forwardRef<HTMLDivElement, ArtifactRatioShareCardProps>(({ 
   server = "Unknown Server", 
+  seasonInfo = "",
   matchings = [],
   artifactsA = [],
   artifactsB = [],
@@ -130,81 +133,41 @@ const ArtifactRatioShareCard = React.forwardRef<HTMLDivElement, ArtifactRatioSha
 
   const displayTime = selectedDate ? formatDate(selectedDate.toDate()) : formatDate(new Date());
 
-  const cardWidth = isMobile ? "w-[750px]" : "w-[1680px]";
+  const columns = 3;
+  const displayMatchings = React.useMemo(() => {
+    if (isMobile) return matchings;
+    
+    const reordered: any[] = [];
+    const rows = Math.ceil(matchings.length / columns);
+    
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < columns; c++) {
+        const index = c * rows + r;
+        if (index < matchings.length) {
+          reordered.push(matchings[index]);
+        } else {
+          reordered.push(null);
+        }
+      }
+    }
+    return reordered;
+  }, [matchings, isMobile, columns]);
 
   return (
-    <div 
+    <ShareCardLayout
       ref={ref}
-      className={`relative flex flex-col overflow-hidden ${cardWidth} h-fit bg-[#4C2C7E] ${isMobile ? "p-[25px]" : "p-5"} gap-2.5`}
+      isMobile={isMobile}
+      title="实时神器占比"
+      subtitle={`${server}${seasonInfo ? ` | ${seasonInfo}` : ""} | ${displayTime}`}
     >
-      {/* Background Image */}
-      <img 
-        src={getStaticUrl(isMobile ? "/images/Leaderboards/ExportBackgroundMobile.webp" : "/images/Leaderboards/ExportBackground.webp")} 
-        alt="Background" 
-        className="absolute inset-x-0 top-0 w-full h-auto object-contain pointer-events-none"
-      />
-
-      {/* Top Header */}
-      <div 
-        className={`relative z-10 flex ${isMobile ? "flex-col gap-10 h-auto pb-2.5" : "items-center gap-6 h-[110px] px-2.5 pb-1"} shrink-0`}
-      >
-        {isMobile ? (
-          <>
-            {/* First line: Logos */}
-            <div className="flex items-center gap-4 h-[120px]">
-              <img 
-                src={getStaticUrl("/images/Logo.webp")} 
-                alt="Logo" 
-                className="h-[120px] w-auto object-contain"
-              />
-              <img 
-                src={getStaticUrl("/images/GroupLogoDark.webp")} 
-                alt="Group Logo" 
-                className="h-[76px] w-auto object-contain"
-              />
-            </div>
-            {/* Second line: Title and Info */}
-            <div className="flex flex-col gap-[20px]">
-              <div className="text-[36px] font-bold text-white leading-none">
-                实时神器占比
-              </div>
-              <div className="text-[28px] text-white/80 leading-tight bg-black/20 rounded-lg px-2 h-[48px] flex items-center w-fit">
-                {server} | {displayTime}
-              </div>
-            </div>
-          </>
-        ) : (
-          <>
-            <img 
-              src={getStaticUrl("/images/Logo.webp")} 
-              alt="Logo" 
-              className="h-full w-auto object-contain"
-            />
-            <img 
-              src={getStaticUrl("/images/GroupLogoDark.webp")} 
-              alt="Group Logo" 
-              className="h-[69px] w-auto object-contain"
-            />
-            <div className="flex flex-col justify-center gap-1.5">
-              <div className="text-3xl font-bold text-white leading-tight">
-                实时神器占比
-              </div>
-              <div className="text-sm text-white/80 leading-tight bg-black/20 rounded-lg px-2 py-0.5 w-fit">
-                {server} | {displayTime}
-              </div>
-            </div>
-          </>
-        )}
-      </div>
-
       {/* Legend Area */}
-      <div className="relative z-10 w-full h-fit bg-black/40 p-2.5 rounded-2xl">
+      <div className="relative z-10 w-full h-fit bg-black/40 p-2.5 rounded-2xl mb-2.5">
         <div className="flex flex-row gap-2.5">
           <div className="flex-1 min-h-[56px] bg-white/10 border border-white/20 rounded-lg p-2.5 flex flex-col items-center justify-center gap-2">
             <span className={`${isMobile ? "text-[32px]" : "text-lg"} font-bold text-white/90`}>
               {t(`maps:${MAP_NAMES.ABYSS_A}.description`) as string}
             </span>
-            <div className={`flex ${isMobile ? "flex-col gap-0" : "flex-row gap-4 flex-wrap"} justify-center`}>
+            <div className={`flex ${isMobile ? "flex-col gap-0" : "flex-row gap-x-4 gap-y-1 flex-wrap"} justify-center`}>
               {artifactsA.map((artifact) => (
                 <div key={artifact.id} className={`flex items-center gap-2 ${isMobile ? "h-12" : ""}`}>
                   <img src={icons.neutral} alt="" className={`${isMobile ? "w-12 h-12" : "w-9 h-9"} object-contain`} />
@@ -219,7 +182,7 @@ const ArtifactRatioShareCard = React.forwardRef<HTMLDivElement, ArtifactRatioSha
             <span className={`${isMobile ? "text-[32px]" : "text-lg"} font-bold text-white/90`}>
               {t(`maps:${MAP_NAMES.ABYSS_B}.description`) as string}
             </span>
-            <div className={`flex ${isMobile ? "flex-col gap-0" : "flex-row gap-4 flex-wrap"} justify-center`}>
+            <div className={`flex ${isMobile ? "flex-col gap-0" : "flex-row gap-x-4 gap-y-1 flex-wrap"} justify-center`}>
               {artifactsB.map((artifact) => (
                 <div key={artifact.id} className={`flex items-center gap-2 ${isMobile ? "h-12" : ""}`}>
                   <img src={icons.neutral} alt="" className={`${isMobile ? "w-12 h-12" : "w-9 h-9"} object-contain`} />
@@ -239,7 +202,7 @@ const ArtifactRatioShareCard = React.forwardRef<HTMLDivElement, ArtifactRatioSha
           {isMobile ? (
             <div className="flex flex-col gap-2.5">
               <FactionHeader />
-              {matchings.map((matching) => (
+              {displayMatchings.map((matching) => (
                 <div key={matching.id} className="bg-white/10 border border-white/20 p-2.5 rounded-lg flex flex-col items-stretch h-fit gap-2.5">
                   {/* First Row: Server Names and VS */}
                   <div className="flex items-center justify-between h-12">
@@ -284,64 +247,46 @@ const ArtifactRatioShareCard = React.forwardRef<HTMLDivElement, ArtifactRatioSha
                 <FactionHeader />
               </div>
 
-              {matchings.map((matching) => (
-                <div key={matching.id} className="flex flex-col">
-                  <div className="bg-white/10 border border-white/20 px-2.5 py-1 rounded-lg flex flex-col items-stretch h-fit">
-                    {/* First Row: Server Names and VS */}
-                    <div className="flex items-center justify-between h-12">
-                      <div className="flex-1">
-                        {renderServerNameRow(matching.server1, true)}
+              {displayMatchings.map((matching, index) => (
+                <div key={matching?.id || index} className={`flex flex-col ${!matching ? "opacity-0 pointer-events-none" : ""}`}>
+                  {matching && (
+                    <div className="bg-white/10 border border-white/20 px-2.5 py-1 rounded-lg flex flex-col items-stretch h-fit">
+                      {/* First Row: Server Names and VS */}
+                      <div className="flex items-center justify-between h-12">
+                        <div className="flex-1">
+                          {renderServerNameRow(matching.server1, true)}
+                        </div>
+                        {/* Middle: VS */}
+                        <div className="flex items-center px-2">
+                          <img src={getStaticUrl("/images/Leaderboards/VS.webp")} alt="VS" className="w-12 h-12 object-contain"/>
+                        </div>
+                        <div className="flex-1">
+                          {renderServerNameRow(matching.server2, false)}
+                        </div>
                       </div>
-                      {/* Middle: VS */}
-                      <div className="flex items-center px-2">
-                        <img src={getStaticUrl("/images/Leaderboards/VS.webp")} alt="VS" className="w-12 h-12 object-contain"/>
-                      </div>
-                      <div className="flex-1">
-                        {renderServerNameRow(matching.server2, false)}
-                      </div>
-                    </div>
 
-                    {/* Second Row: Maps and Artifacts with Divider */}
-                    <div className="flex items-center justify-between">
-                      <div className="flex-1">
-                        {renderArtifactRow(matching, artifactsA, MAP_NAMES.ABYSS_A)}
-                      </div>
-                      {/* Vertical Divider */}
-                      <div className="flex flex-col items-center px-2">
-                        <div className="w-px h-5 bg-white/20" />
-                      </div>
-                      <div className="flex-1">
-                        {renderArtifactRow(matching, artifactsB, MAP_NAMES.ABYSS_B)}
+                      {/* Second Row: Maps and Artifacts with Divider */}
+                      <div className="flex items-center justify-between">
+                        <div className="flex-1">
+                          {renderArtifactRow(matching, artifactsA, MAP_NAMES.ABYSS_A)}
+                        </div>
+                        {/* Vertical Divider */}
+                        <div className="flex flex-col items-center px-2">
+                          <div className="w-px h-5 bg-white/20" />
+                        </div>
+                        <div className="flex-1">
+                          {renderArtifactRow(matching, artifactsB, MAP_NAMES.ABYSS_B)}
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  )}
                 </div>
               ))}
             </>
           )}
         </div>
       </div>
-
-      {/* Footer */}
-      {isMobile ? (
-        <div className="relative z-10 mt-2.5 flex flex-col items-center gap-2.5 text-white text-[28px]">
-          <span>神器交流群：1073046733</span>
-          <div className="flex items-center gap-5">
-            <span>https://tc-imba.com</span>
-            <div className="w-px h-[28px] bg-white" />
-            <span>© 2025-2026 星狐攻略组</span>
-          </div>
-        </div>
-      ) : (
-        <div className="relative z-10 mt-2.5 flex justify-center items-center gap-5 text-white text-sm">
-          <span>https://tc-imba.com</span>
-          <div className="w-px h-4 bg-white" />
-          <span>© 2025-2026 星狐攻略组</span>
-          <div className="w-px h-4 bg-white" />
-          <span>神器交流群：1073046733</span>
-        </div>
-      )}
-    </div>
+    </ShareCardLayout>
   );
 });
 

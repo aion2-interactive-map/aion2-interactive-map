@@ -11,7 +11,7 @@ interface ArtifactRatioShareCardWrapperProps {
 const ArtifactRatioShareCardWrapper = React.forwardRef<HTMLDivElement, ArtifactRatioShareCardWrapperProps>(({ 
   children, 
   baseWidth = 1680, 
-  baseHeight = 986,
+  baseHeight = 1100,
   padding = 40,
   isMobile = false
 }, ref) => {
