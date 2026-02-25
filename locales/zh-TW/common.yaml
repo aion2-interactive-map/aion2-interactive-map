@@ -17,7 +17,16 @@ ui:
   add: "添加"
 
 leaderboard:
+  artifactRegionRanking: "神器占比大區排名"
+  realtimeArtifactRatio: "實時神器占比"
   refreshedAgo: "{{time}}前重新整理"
+  refreshIn: "{{time}}後重新整理"
+  inContention: "數據待上傳"
+  rank: "排名"
+  artifactCount: "神器數量"
+  totalArtifacts: "總計神器"
+  seasonN: "第{{n}}賽季"
+  matchingN: "第{{n}}次匹配"
   artifactState:
     recordTime: "佔領日期"
     isVerified: "已驗證"
@@ -29,6 +38,7 @@ leaderboard:
   artifactAdmins: "神器管理員"
   addArtifactAdmin: "添加神器管理員"
   submitData: "點擊提交數據"
+  pin: "置頂"
   share: "分享"
 
 menu:

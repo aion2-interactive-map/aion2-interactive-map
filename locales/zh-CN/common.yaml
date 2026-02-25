@@ -79,7 +79,7 @@ routes:
   crafting: "装备制作"
   enhancement: "装备强化"
   character: "角色数据"
-  leaderboard: "🎉排行榜"
+  leaderboard: "🎉神器排行榜"
   forum: "论坛"
 
 leaderboard:
@@ -91,6 +91,8 @@ leaderboard:
   rank: "排名"
   artifactCount: "神器数量"
   totalArtifacts: "总计神器"
+  seasonN: "第{{n}}赛季"
+  matchingN: "第{{n}}次匹配"
   artifactState:
     title: "神器数据"
     uploadTime: "上传时间"
@@ -115,6 +117,7 @@ leaderboard:
   addArtifactAdmin: "添加神器管理员"
   providedBy: "信息由 <emph>{{username}}</emph> 提供"
   submitData: "点击提交数据"
+  pin: "置顶"
   share: "分享"
 
 wip:
