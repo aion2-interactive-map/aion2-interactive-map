@@ -12,7 +12,12 @@ const THEME_ICON_MAP: Record<Theme, IconDefinition> = {
   abyss: faFire
 } as const;
 
-const ThemeDropdown: React.FC = () => {
+interface ThemeDropdownProps {
+  isOpen?: boolean;
+  onOpenChange?: (open: boolean) => void;
+}
+
+const ThemeDropdown: React.FC<ThemeDropdownProps> = ({isOpen, onOpenChange}) => {
   const {t} = useTranslation();
   const {theme, setTheme} = useTheme();
 
@@ -20,7 +25,7 @@ const ThemeDropdown: React.FC = () => {
   const activeIcon = THEME_ICON_MAP[theme];
 
   return (
-    <Dropdown placement="bottom-end">
+    <Dropdown placement="bottom-end" isOpen={isOpen} onOpenChange={onOpenChange}>
       <Tooltip
         content={t("common:menu.switchTheme", "Switch Theme")}
         placement="bottom"

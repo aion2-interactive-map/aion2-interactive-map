@@ -12,11 +12,16 @@ import {faLanguage} from "@fortawesome/free-solid-svg-icons";
 import {useTranslation} from "react-i18next";
 import {SUPPORTED_LANGUAGES} from "../i18n";
 
-const LanguageSwitcher: React.FC = () => {
+interface LanguageSwitcherProps {
+  isOpen?: boolean;
+  onOpenChange?: (open: boolean) => void;
+}
+
+const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({isOpen, onOpenChange}) => {
   const {t, i18n} = useTranslation("common");
 
   return (
-    <Dropdown>
+    <Dropdown isOpen={isOpen} onOpenChange={onOpenChange}>
       <Tooltip
         content={t("common:menu.switchLanguage", "Switch Language")}
         placement="bottom"

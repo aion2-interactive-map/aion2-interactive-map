@@ -28,6 +28,7 @@ import remarkGfm from "remark-gfm";
 
 const TopNavbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [openMenu, setOpenMenu] = React.useState<string | null>(null);
   const {t} = useTranslation(); // we use fully-qualified keys like common:siteTitle
   const {theme} = useTheme();
 
@@ -99,11 +100,26 @@ const TopNavbar: React.FC = () => {
         />
 
         {/* Language switcher (owns its own button & dropdown) */}
-        <LanguageSwitcher />
-        <ThemeDropdown />
-        <ContactUs />
-        <Donate />
-        <UserDropdown />
+        <LanguageSwitcher
+          isOpen={openMenu === "language"}
+          onOpenChange={(open) => setOpenMenu(open ? "language" : null)}
+        />
+        <ThemeDropdown
+          isOpen={openMenu === "theme"}
+          onOpenChange={(open) => setOpenMenu(open ? "theme" : null)}
+        />
+        <ContactUs
+          isOpen={openMenu === "contact"}
+          onOpenChange={(open) => setOpenMenu(open ? "contact" : null)}
+        />
+        <Donate
+          isOpen={openMenu === "donate"}
+          onOpenChange={(open) => setOpenMenu(open ? "donate" : null)}
+        />
+        <UserDropdown
+          isOpen={openMenu === "user"}
+          onOpenChange={(open) => setOpenMenu(open ? "user" : null)}
+        />
       </NavbarContent>
 
       <NavbarMenu>

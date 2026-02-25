@@ -12,7 +12,12 @@ import {getStaticUrl} from "@/utils/url.ts";
 import {makeAccordionTitle} from "@/components/Map/SideBar/makeAccordionTitle.tsx";
 
 
-const Donate: React.FC = () => {
+interface DonateProps {
+  isOpen?: boolean;
+  onOpenChange?: (open: boolean) => void;
+}
+
+const Donate: React.FC<DonateProps> = ({isOpen, onOpenChange}) => {
   const {t} = useTranslation("common");
   const alipayUrl = getStaticUrl("images/alipay.webp");
 
@@ -21,7 +26,7 @@ const Donate: React.FC = () => {
     <Popover placement="bottom" radius="sm" classNames={{
       base: "pt-1",
       content: "bg-sidebar"
-    }}>
+    }} isOpen={isOpen} onOpenChange={onOpenChange}>
       <Tooltip
         content={t("common:menu.donate", "Donate")}
         placement="bottom"

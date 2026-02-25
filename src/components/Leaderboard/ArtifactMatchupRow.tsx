@@ -137,60 +137,66 @@ const ArtifactMatchupRow: React.FC<ArtifactMatchupRowProps> = ({
     );
   };
 
-  const renderContributorLine = (mapName: string) => {
-    const states = artifactStates.filter(s => s.mapName === mapName);
-    return (
-      <div className="flex-1 flex items-center h-full bg-[rgba(82,82,82,0.04)]">
-        {(() => {
-          const state = states[0];
-          const hasContributors = !!(state?.contributors && state.contributors.length > 0);
-          let isContention = false;
-          if (state?.recordTime && hasContributors) {
-            const recordTime = new Date(state.recordTime).getTime();
-            const compareTime = isAutoUpdate ? Date.now() : selectedDate.toDate().getTime();
-            const lastRefresh = getLastScheduledTime(compareTime);
-            if (recordTime < lastRefresh) isContention = true;
-          } else {
-            isContention = true;
-          }
+  const renderContributorLine = () => {
+    const allStatesInContention = artifactStates.every(state => {
+      const hasContributors = !!(state?.contributors && state.contributors.length > 0);
+      let isContention = false;
+      if (state?.recordTime && hasContributors) {
+        const recordTime = new Date(state.recordTime).getTime();
+        const compareTime = isAutoUpdate ? Date.now() : selectedDate.toDate().getTime();
+        const lastRefresh = getLastScheduledTime(compareTime);
+        if (recordTime < lastRefresh) isContention = true;
+      } else {
+        isContention = true;
+      }
+      return isContention;
+    });
 
-          const compareTimeDate = isAutoUpdate ? new Date() : selectedDate.toDate();
-          const compareTime = compareTimeDate.getTime();
-          const startDate = new Date(matching.season.startDate).getTime();
-          const endDate = new Date(matching.season.endDate).getTime();
-          const isInRange = compareTime >= startDate && compareTime <= endDate;
+    const compareTimeDate = isAutoUpdate ? new Date() : selectedDate.toDate();
+    const compareTime = compareTimeDate.getTime();
+    const startDate = new Date(matching.season.startDate).getTime();
+    const endDate = new Date(matching.season.endDate).getTime();
+    const isInRange = compareTime >= startDate && compareTime <= endDate;
 
-          if (isContention && isInRange) {
-            return (
-              <div className="flex justify-center px-2 w-full">
-                <span className="text-primary hover:underline text-sm font-bold cursor-pointer">
-                  {t("common:leaderboard.submitData")}
-                </span>
-              </div>
-            );
-          }
+    if (allStatesInContention && isInRange) {
+      return (
+        <div className="flex-1 flex items-center h-full bg-[rgba(82,82,82,0.04)]">
+          <div className="flex justify-center px-2 w-full">
+            <span className="text-primary hover:underline text-sm font-bold cursor-pointer">
+              {t("common:leaderboard.submitData")}
+            </span>
+          </div>
+        </div>
+      );
+    }
 
-          if (hasContributors) {
-            return (
-              <div className="flex items-center justify-start px-2 w-full" onClick={(e) => e.stopPropagation()}>
-                <span className="text-xs text-default-800">
-                  <Trans
-                    t={t}
-                    i18nKey="common:leaderboard.providedBy"
-                    values={{username: state.contributors[0].user.name}}
-                    components={{
-                      emph: <span className="text-primary font-medium"/>
-                    }}
-                  />
-                </span>
-              </div>
-            );
-          }
+    const contributorNames = Array.from(new Set(
+      artifactStates
+        .flatMap(s => s.contributors || [])
+        .map(c => c.user.name)
+        .filter(Boolean)
+    ));
 
-          return null;
-        })()}
-      </div>
-    );
+    if (contributorNames.length > 0) {
+      return (
+        <div className="flex-1 flex items-center h-full bg-[rgba(82,82,82,0.04)]" onClick={(e) => e.stopPropagation()}>
+          <div className="flex items-center justify-center px-2 w-full">
+            <span className="text-xs text-default-800">
+              <Trans
+                t={t}
+                i18nKey="common:leaderboard.providedBy"
+                values={{username: contributorNames.join(", ")}}
+                components={{
+                  emph: <span className="text-primary font-medium"/>
+                }}
+              />
+            </span>
+          </div>
+        </div>
+      );
+    }
+
+    return null;
   };
 
   return (
@@ -215,8 +221,7 @@ const ArtifactMatchupRow: React.FC<ArtifactMatchupRowProps> = ({
 
       {/* Contributor Row */}
       <div className="flex items-center justify-between w-full h-[28px] gap-1">
-        {renderContributorLine(mapNames.A)}
-        {renderContributorLine(mapNames.B)}
+        {renderContributorLine()}
       </div>
     </div>
   );

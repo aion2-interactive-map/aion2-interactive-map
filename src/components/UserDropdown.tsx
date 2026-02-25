@@ -13,7 +13,12 @@ import {useTranslation} from "react-i18next";
 import {useUser} from "@/context/UserContext";
 import AuthModal from "@/components/AuthModal.tsx";
 
-const UserDropdown: React.FC = () => {
+interface UserDropdownProps {
+  isOpen?: boolean;
+  onOpenChange?: (open: boolean) => void;
+}
+
+const UserDropdown: React.FC<UserDropdownProps> = ({isOpen, onOpenChange}) => {
   const {t} = useTranslation();
   const {user, logout, userModalOpen: authOpen, setUserModalOpen: setAuthOpen} = useUser();
 
@@ -26,7 +31,10 @@ const UserDropdown: React.FC = () => {
           delay={300}
         >
           <div>
-            <Button isIconOnly variant="light" onPress={() => setAuthOpen(true)}>
+            <Button isIconOnly variant="light" onPress={() => {
+              setAuthOpen(true);
+              onOpenChange?.(false);
+            }}>
               <FontAwesomeIcon icon={faRightToBracket} className="text-lg" />
             </Button>
           </div>
@@ -37,7 +45,7 @@ const UserDropdown: React.FC = () => {
   }
 
   return (
-    <Dropdown placement="bottom-end">
+    <Dropdown placement="bottom-end" isOpen={isOpen} onOpenChange={onOpenChange}>
       <Tooltip
         content={user.name ?? user.email}
         placement="bottom"

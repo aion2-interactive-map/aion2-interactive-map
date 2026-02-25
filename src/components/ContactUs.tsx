@@ -12,7 +12,12 @@ import {faEnvelope} from "@fortawesome/free-solid-svg-icons";
 import {makeAccordionTitle} from "@/components/Map/SideBar/makeAccordionTitle.tsx";
 
 
-const ContactUs: React.FC = () => {
+interface ContactUsProps {
+  isOpen?: boolean;
+  onOpenChange?: (open: boolean) => void;
+}
+
+const ContactUs: React.FC<ContactUsProps> = ({isOpen, onOpenChange}) => {
   const {t} = useTranslation("common");
 
   const buildTime = moment(Number(__BUILD_TIME__)).format("YYYY-MM-DD HH:mm:ss")
@@ -22,7 +27,7 @@ const ContactUs: React.FC = () => {
     <Popover placement="bottom" radius="sm" classNames={{
       base: "pt-1",
       content: "bg-sidebar"
-    }}>
+    }} isOpen={isOpen} onOpenChange={onOpenChange}>
       <Tooltip
         content={t("common:menu.contact", "Contact us")}
         placement="bottom"

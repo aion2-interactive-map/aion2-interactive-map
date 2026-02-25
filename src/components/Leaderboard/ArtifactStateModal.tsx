@@ -62,9 +62,17 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
 
   const getNearestAvailableDate = useCallback(() => {
     const znow = now(getLocalTimeZone());
+    const utcHour = new Date().getUTCHours();
     let date = toCalendarDate(znow);
     
-    // Try current date and then go backwards until we find an available date
+    // If today is an artifact day, but before 13:00 UTC, we should start looking from yesterday
+    if (!isDateUnavailable(date)) {
+        if (utcHour < 13) {
+            date = date.subtract({ days: 1 });
+        }
+    }
+
+    // Try current date (or yesterday) and then go backwards until we find an available date
     // We limit to 7 days just in case, though 3 should be enough
     for (let i = 0; i < 7; i++) {
         if (!isDateUnavailable(date)) {
