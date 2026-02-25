@@ -70,6 +70,7 @@ leaderboard:
     save: "Save"
     cancel: "Cancel"
     verify: "Verify"
+    loginToSubmit: "Login to submit"
     timeFixedNote: "Time is fixed to {{time}} (local time)"
     validationError: "Create/Edit failed, at least 48 hours between two records."
   providedBy: "Provided by <emph>{{username}}</emph>"
