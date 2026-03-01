@@ -47,6 +47,38 @@ items:
   grade: Epic
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_GS_0117_T05.webp
   subtype: Greatsword
+- id: 110120021
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_GS_0110_T05.webp
+  subtype: Greatsword
+- id: 110120022
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_GS_0110_T05.webp
+  subtype: Greatsword
+- id: 110120023
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_GS_0110_T05.webp
+  subtype: Greatsword
+- id: 110120024
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_GS_0110_T05.webp
+  subtype: Greatsword
+- id: 110120025
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_GS_0117_T05.webp
+  subtype: Greatsword
+- id: 110120026
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_GS_0117_T05.webp
+  subtype: Greatsword
+- id: 110120027
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_GS_0117_T05.webp
+  subtype: Greatsword
+- id: 110120028
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_GS_0117_T05.webp
+  subtype: Greatsword
 - id: 110220001
   grade: Epic
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_SW_0110_T05.webp
@@ -92,6 +124,38 @@ items:
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_SW_0117_T05.webp
   subtype: Sword
 - id: 110220020
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_SW_0117_T05.webp
+  subtype: Sword
+- id: 110220021
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_SW_0110_T05.webp
+  subtype: Sword
+- id: 110220022
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_SW_0110_T05.webp
+  subtype: Sword
+- id: 110220023
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_SW_0110_T05.webp
+  subtype: Sword
+- id: 110220024
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_SW_0110_T05.webp
+  subtype: Sword
+- id: 110220025
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_SW_0117_T05.webp
+  subtype: Sword
+- id: 110220026
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_SW_0117_T05.webp
+  subtype: Sword
+- id: 110220027
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_SW_0117_T05.webp
+  subtype: Sword
+- id: 110220028
   grade: Epic
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_SW_0117_T05.webp
   subtype: Sword
@@ -143,6 +207,38 @@ items:
   grade: Epic
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_DA_0117_T05.webp
   subtype: Dagger
+- id: 110320021
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_DA_0110_T05.webp
+  subtype: Dagger
+- id: 110320022
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_DA_0110_T05.webp
+  subtype: Dagger
+- id: 110320023
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_DA_0110_T05.webp
+  subtype: Dagger
+- id: 110320024
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_DA_0110_T05.webp
+  subtype: Dagger
+- id: 110320025
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_DA_0117_T05.webp
+  subtype: Dagger
+- id: 110320026
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_DA_0117_T05.webp
+  subtype: Dagger
+- id: 110320027
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_DA_0117_T05.webp
+  subtype: Dagger
+- id: 110320028
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_DA_0117_T05.webp
+  subtype: Dagger
 - id: 110420001
   grade: Epic
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_BW_0110_T05.webp
@@ -188,6 +284,38 @@ items:
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_BW_0117_T05.webp
   subtype: Bow
 - id: 110420020
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_BW_0117_T05.webp
+  subtype: Bow
+- id: 110420021
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_BW_0110_T05.webp
+  subtype: Bow
+- id: 110420022
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_BW_0110_T05.webp
+  subtype: Bow
+- id: 110420023
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_BW_0110_T05.webp
+  subtype: Bow
+- id: 110420024
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_BW_0110_T05.webp
+  subtype: Bow
+- id: 110420025
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_BW_0117_T05.webp
+  subtype: Bow
+- id: 110420026
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_BW_0117_T05.webp
+  subtype: Bow
+- id: 110420027
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_BW_0117_T05.webp
+  subtype: Bow
+- id: 110420028
   grade: Epic
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_BW_0117_T05.webp
   subtype: Bow
@@ -239,6 +367,38 @@ items:
   grade: Epic
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MB_0117_T05.webp
   subtype: Magicbook
+- id: 110520021
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MB_0110_T05.webp
+  subtype: Magicbook
+- id: 110520022
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MB_0110_T05.webp
+  subtype: Magicbook
+- id: 110520023
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MB_0110_T05.webp
+  subtype: Magicbook
+- id: 110520024
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MB_0110_T05.webp
+  subtype: Magicbook
+- id: 110520025
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MB_0117_T05.webp
+  subtype: Magicbook
+- id: 110520026
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MB_0117_T05.webp
+  subtype: Magicbook
+- id: 110520027
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MB_0117_T05.webp
+  subtype: Magicbook
+- id: 110520028
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MB_0117_T05.webp
+  subtype: Magicbook
 - id: 110620001
   grade: Epic
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_OR_0110_T05.webp
@@ -284,6 +444,38 @@ items:
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_OR_0117_T05.webp
   subtype: Orb
 - id: 110620020
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_OR_0117_T05.webp
+  subtype: Orb
+- id: 110620021
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_OR_0110_T05.webp
+  subtype: Orb
+- id: 110620022
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_OR_0110_T05.webp
+  subtype: Orb
+- id: 110620023
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_OR_0110_T05.webp
+  subtype: Orb
+- id: 110620024
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_OR_0110_T05.webp
+  subtype: Orb
+- id: 110620025
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_OR_0117_T05.webp
+  subtype: Orb
+- id: 110620026
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_OR_0117_T05.webp
+  subtype: Orb
+- id: 110620027
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_OR_0117_T05.webp
+  subtype: Orb
+- id: 110620028
   grade: Epic
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_OR_0117_T05.webp
   subtype: Orb
@@ -335,6 +527,38 @@ items:
   grade: Epic
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MA_0117_T05.webp
   subtype: Mace
+- id: 110720021
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MA_0110_T05.webp
+  subtype: Mace
+- id: 110720022
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MA_0110_T05.webp
+  subtype: Mace
+- id: 110720023
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MA_0110_T05.webp
+  subtype: Mace
+- id: 110720024
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MA_0110_T05.webp
+  subtype: Mace
+- id: 110720025
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MA_0117_T05.webp
+  subtype: Mace
+- id: 110720026
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MA_0117_T05.webp
+  subtype: Mace
+- id: 110720027
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MA_0117_T05.webp
+  subtype: Mace
+- id: 110720028
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MA_0117_T05.webp
+  subtype: Mace
 - id: 110820001
   grade: Epic
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_ST_0110_T05.webp
@@ -383,6 +607,38 @@ items:
   grade: Epic
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_ST_0117_T05.webp
   subtype: Staff
+- id: 110820021
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_ST_0110_T05.webp
+  subtype: Staff
+- id: 110820022
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_ST_0110_T05.webp
+  subtype: Staff
+- id: 110820023
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_ST_0110_T05.webp
+  subtype: Staff
+- id: 110820024
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_ST_0110_T05.webp
+  subtype: Staff
+- id: 110820025
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_ST_0117_T05.webp
+  subtype: Staff
+- id: 110820026
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_ST_0117_T05.webp
+  subtype: Staff
+- id: 110820027
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_ST_0117_T05.webp
+  subtype: Staff
+- id: 110820028
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_ST_0117_T05.webp
+  subtype: Staff
 - id: 115020001
   grade: Epic
   icon: UI/Resource/Texture/Item/Accessory/Icon_Weapon_Guarder_U_011.webp
@@ -428,6 +684,38 @@ items:
   icon: UI/Resource/Texture/Item/Accessory/Icon_Weapon_Guarder_0117_T05.webp
   subtype: Guarder
 - id: 115020020
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Accessory/Icon_Weapon_Guarder_0117_T05.webp
+  subtype: Guarder
+- id: 115020021
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Accessory/Icon_Weapon_Guarder_U_011.webp
+  subtype: Guarder
+- id: 115020022
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Accessory/Icon_Weapon_Guarder_U_011.webp
+  subtype: Guarder
+- id: 115020023
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Accessory/Icon_Weapon_Guarder_U_011.webp
+  subtype: Guarder
+- id: 115020024
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Accessory/Icon_Weapon_Guarder_U_011.webp
+  subtype: Guarder
+- id: 115020025
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Accessory/Icon_Weapon_Guarder_0117_T05.webp
+  subtype: Guarder
+- id: 115020026
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Accessory/Icon_Weapon_Guarder_0117_T05.webp
+  subtype: Guarder
+- id: 115020027
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Accessory/Icon_Weapon_Guarder_0117_T05.webp
+  subtype: Guarder
+- id: 115020028
   grade: Epic
   icon: UI/Resource/Texture/Item/Accessory/Icon_Weapon_Guarder_0117_T05.webp
   subtype: Guarder
@@ -487,6 +775,38 @@ items:
   grade: Epic
   icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Torso.webp
   subtype: Torso
+- id: 210120021
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0071_T06_Torso.webp
+  subtype: Torso
+- id: 210120022
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0071_T06_Torso.webp
+  subtype: Torso
+- id: 210120023
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0071_T06_Torso.webp
+  subtype: Torso
+- id: 210120024
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0071_T06_Torso.webp
+  subtype: Torso
+- id: 210120025
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Torso.webp
+  subtype: Torso
+- id: 210120026
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Torso.webp
+  subtype: Torso
+- id: 210120027
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Torso.webp
+  subtype: Torso
+- id: 210120028
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Torso.webp
+  subtype: Torso
 - id: 210220001
   grade: Epic
   icon: UI/Resource/Texture/Item/Armor/Icon_GM_0071_T06_Pants.webp
@@ -540,6 +860,38 @@ items:
   icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Pants.webp
   subtype: Pants
 - id: 210220020
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Pants.webp
+  subtype: Pants
+- id: 210220021
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0071_T06_Pants.webp
+  subtype: Pants
+- id: 210220022
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0071_T06_Pants.webp
+  subtype: Pants
+- id: 210220023
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0071_T06_Pants.webp
+  subtype: Pants
+- id: 210220024
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0071_T06_Pants.webp
+  subtype: Pants
+- id: 210220025
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Pants.webp
+  subtype: Pants
+- id: 210220026
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Pants.webp
+  subtype: Pants
+- id: 210220027
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Pants.webp
+  subtype: Pants
+- id: 210220028
   grade: Epic
   icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Pants.webp
   subtype: Pants
@@ -599,6 +951,38 @@ items:
   grade: Epic
   icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Helmet.webp
   subtype: Helmet
+- id: 210320021
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0071_T06_Helmet.webp
+  subtype: Helmet
+- id: 210320022
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0071_T06_Helmet.webp
+  subtype: Helmet
+- id: 210320023
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0071_T06_Helmet.webp
+  subtype: Helmet
+- id: 210320024
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0071_T06_Helmet.webp
+  subtype: Helmet
+- id: 210320025
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Helmet.webp
+  subtype: Helmet
+- id: 210320026
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Helmet.webp
+  subtype: Helmet
+- id: 210320027
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Helmet.webp
+  subtype: Helmet
+- id: 210320028
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Helmet.webp
+  subtype: Helmet
 - id: 210420001
   grade: Epic
   icon: UI/Resource/Texture/Item/Armor/Icon_GM_0071_T06_Shoulder.webp
@@ -652,6 +1036,38 @@ items:
   icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Shoulder.webp
   subtype: Shoulder
 - id: 210420020
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Shoulder.webp
+  subtype: Shoulder
+- id: 210420021
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0071_T06_Shoulder.webp
+  subtype: Shoulder
+- id: 210420022
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0071_T06_Shoulder.webp
+  subtype: Shoulder
+- id: 210420023
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0071_T06_Shoulder.webp
+  subtype: Shoulder
+- id: 210420024
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0071_T06_Shoulder.webp
+  subtype: Shoulder
+- id: 210420025
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Shoulder.webp
+  subtype: Shoulder
+- id: 210420026
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Shoulder.webp
+  subtype: Shoulder
+- id: 210420027
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Shoulder.webp
+  subtype: Shoulder
+- id: 210420028
   grade: Epic
   icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Shoulder.webp
   subtype: Shoulder
@@ -711,6 +1127,38 @@ items:
   grade: Epic
   icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Gloves.webp
   subtype: Gloves
+- id: 210520021
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0071_T06_Gloves.webp
+  subtype: Gloves
+- id: 210520022
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0071_T06_Gloves.webp
+  subtype: Gloves
+- id: 210520023
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0071_T06_Gloves.webp
+  subtype: Gloves
+- id: 210520024
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0071_T06_Gloves.webp
+  subtype: Gloves
+- id: 210520025
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Gloves.webp
+  subtype: Gloves
+- id: 210520026
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Gloves.webp
+  subtype: Gloves
+- id: 210520027
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Gloves.webp
+  subtype: Gloves
+- id: 210520028
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Gloves.webp
+  subtype: Gloves
 - id: 210620001
   grade: Epic
   icon: UI/Resource/Texture/Item/Armor/Icon_GM_0071_T06_Boots.webp
@@ -764,6 +1212,38 @@ items:
   icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Boots.webp
   subtype: Boots
 - id: 210620020
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Boots.webp
+  subtype: Boots
+- id: 210620021
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0071_T06_Boots.webp
+  subtype: Boots
+- id: 210620022
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0071_T06_Boots.webp
+  subtype: Boots
+- id: 210620023
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0071_T06_Boots.webp
+  subtype: Boots
+- id: 210620024
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0071_T06_Boots.webp
+  subtype: Boots
+- id: 210620025
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Boots.webp
+  subtype: Boots
+- id: 210620026
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Boots.webp
+  subtype: Boots
+- id: 210620027
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Boots.webp
+  subtype: Boots
+- id: 210620028
   grade: Epic
   icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Boots.webp
   subtype: Boots
@@ -823,6 +1303,38 @@ items:
   grade: Epic
   icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Cape.webp
   subtype: Cape
+- id: 210720021
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0071_T06_Cape.webp
+  subtype: Cape
+- id: 210720022
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0071_T06_Cape.webp
+  subtype: Cape
+- id: 210720023
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0071_T06_Cape.webp
+  subtype: Cape
+- id: 210720024
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0071_T06_Cape.webp
+  subtype: Cape
+- id: 210720025
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Cape.webp
+  subtype: Cape
+- id: 210720026
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Cape.webp
+  subtype: Cape
+- id: 210720027
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Cape.webp
+  subtype: Cape
+- id: 210720028
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0079_T06_Cape.webp
+  subtype: Cape
 - id: 310120001
   grade: Epic
   icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0025.webp
@@ -868,6 +1380,38 @@ items:
   icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_Beads_06.webp
   subtype: Necklace
 - id: 310120022
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_Beads_06.webp
+  subtype: Necklace
+- id: 310120023
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0025.webp
+  subtype: Necklace
+- id: 310120024
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0025.webp
+  subtype: Necklace
+- id: 310120025
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0025.webp
+  subtype: Necklace
+- id: 310120026
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0025.webp
+  subtype: Necklace
+- id: 310120027
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_Beads_06.webp
+  subtype: Necklace
+- id: 310120028
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_Beads_06.webp
+  subtype: Necklace
+- id: 310120029
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_Beads_06.webp
+  subtype: Necklace
+- id: 310120030
   grade: Epic
   icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_Beads_06.webp
   subtype: Necklace
@@ -919,6 +1463,38 @@ items:
   grade: Epic
   icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_Beads_06.webp
   subtype: Earring
+- id: 310220023
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0025.webp
+  subtype: Earring
+- id: 310220024
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0025.webp
+  subtype: Earring
+- id: 310220025
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0025.webp
+  subtype: Earring
+- id: 310220026
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0025.webp
+  subtype: Earring
+- id: 310220027
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_Beads_06.webp
+  subtype: Earring
+- id: 310220028
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_Beads_06.webp
+  subtype: Earring
+- id: 310220029
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_Beads_06.webp
+  subtype: Earring
+- id: 310220030
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_Beads_06.webp
+  subtype: Earring
 - id: 310320001
   grade: Epic
   icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_0025.webp
@@ -964,6 +1540,38 @@ items:
   icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_Beads_06.webp
   subtype: Ring
 - id: 310320022
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_Beads_06.webp
+  subtype: Ring
+- id: 310320023
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_0025.webp
+  subtype: Ring
+- id: 310320024
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_0025.webp
+  subtype: Ring
+- id: 310320025
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_0025.webp
+  subtype: Ring
+- id: 310320026
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_0025.webp
+  subtype: Ring
+- id: 310320027
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_Beads_06.webp
+  subtype: Ring
+- id: 310320028
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_Beads_06.webp
+  subtype: Ring
+- id: 310320029
+  grade: Epic
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_Beads_06.webp
+  subtype: Ring
+- id: 310320030
   grade: Epic
   icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_Beads_06.webp
   subtype: Ring
@@ -1371,6 +1979,10 @@ items:
   grade: Epic
   icon: UI/Resource/Texture/Item/ETC/icon_AD_pic_A_u_MOB_Durbati_01_V01.webp
   subtype: Other
+- id: 534310123
+  grade: Epic
+  icon: UI/Resource/Texture/Item/ETC/icon_AD_pic_A_MOB_Kaisinel_01.webp
+  subtype: Other
 - id: 534320041
   grade: Epic
   icon: UI/Resource/Texture/Item/ETC/icon_AD_statueS_A_s1_MOB_Atiel_01.webp
@@ -1384,6 +1996,18 @@ items:
   icon: UI/Resource/Texture/Item/ETC/icon_AD_statueS_L_s1_abyss_01.webp
   subtype: Other
 - id: 534320050
+  grade: Epic
+  icon: UI/Resource/Texture/Item/ETC/icon_AD_statueS_D_s1_abyss_01.webp
+  subtype: Other
+- id: 534320059
+  grade: Epic
+  icon: UI/Resource/Texture/Item/ETC/icon_AD_statueS_A_MOB_Gauss_01_V01.webp
+  subtype: Other
+- id: 534320062
+  grade: Epic
+  icon: UI/Resource/Texture/Item/ETC/icon_AD_statueS_L_s1_abyss_01.webp
+  subtype: Other
+- id: 534320063
   grade: Epic
   icon: UI/Resource/Texture/Item/ETC/icon_AD_statueS_D_s1_abyss_01.webp
   subtype: Other
@@ -1971,6 +2595,14 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/Weapon/Icon_Equip_WP_L_GS_0086_T06.webp
   subtype: Greatsword
+- id: 110130085
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_GS_0106_T06.webp
+  subtype: Greatsword
+- id: 110130086
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_GS_0106_T06.webp
+  subtype: Greatsword
 - id: 110130087
   grade: Unique
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_GS_Meteor_01.webp
@@ -1987,9 +2619,77 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_GS_Meteor_01.webp
   subtype: Greatsword
-- id: 110130091
+- id: 110130092
   grade: Unique
-  icon: UI/Resource/Texture/Item/Weapon/Icon_Equip_WP_L_GS_0035_T06.webp
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_GS_0064_T05.webp
+  subtype: Greatsword
+- id: 110130093
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_GS_0064_T05.webp
+  subtype: Greatsword
+- id: 110130094
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_Equip_WP_L_GS_0036_T05.webp
+  subtype: Greatsword
+- id: 110130095
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_GS_0068_T05.webp
+  subtype: Greatsword
+- id: 110130096
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_Equip_WP_L_GS_0036_T05.webp
+  subtype: Greatsword
+- id: 110130097
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_GS_0068_T05.webp
+  subtype: Greatsword
+- id: 110130098
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_Equip_WP_L_GS_0036_T05.webp
+  subtype: Greatsword
+- id: 110130099
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_GS_0068_T05.webp
+  subtype: Greatsword
+- id: 110130100
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_Equip_WP_L_GS_0036_T05.webp
+  subtype: Greatsword
+- id: 110130101
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_GS_0068_T05.webp
+  subtype: Greatsword
+- id: 110130102
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_GS_0100_T06.webp
+  subtype: Greatsword
+- id: 110130103
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_GS_0100_T06.webp
+  subtype: Greatsword
+- id: 110130104
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_GS_0100_T06.webp
+  subtype: Greatsword
+- id: 110130105
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_GS_0100_T06.webp
+  subtype: Greatsword
+- id: 110130106
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_GS_Meteor_01.webp
+  subtype: Greatsword
+- id: 110130107
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_GS_Meteor_01.webp
+  subtype: Greatsword
+- id: 110130108
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_GS_Meteor_01.webp
+  subtype: Greatsword
+- id: 110130109
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_GS_Meteor_01.webp
   subtype: Greatsword
 - id: 110230002
   grade: Unique
@@ -2183,6 +2883,14 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_SW_0086_T06.webp
   subtype: Sword
+- id: 110230085
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_SW_0106_T06.webp
+  subtype: Sword
+- id: 110230086
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_SW_0106_T06.webp
+  subtype: Sword
 - id: 110230087
   grade: Unique
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_SW_Meteor_01.webp
@@ -2199,9 +2907,77 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_SW_Meteor_01.webp
   subtype: Sword
-- id: 110230091
+- id: 110230092
   grade: Unique
-  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_SW_0035_T06.webp
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_SW_0064_T05.webp
+  subtype: Sword
+- id: 110230093
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_SW_0064_T05.webp
+  subtype: Sword
+- id: 110230094
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_SW_0036_T05.webp
+  subtype: Sword
+- id: 110230095
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_SW_0068_T05.webp
+  subtype: Sword
+- id: 110230096
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_SW_0036_T05.webp
+  subtype: Sword
+- id: 110230097
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_SW_0068_T05.webp
+  subtype: Sword
+- id: 110230098
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_SW_0036_T05.webp
+  subtype: Sword
+- id: 110230099
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_SW_0068_T05.webp
+  subtype: Sword
+- id: 110230100
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_SW_0036_T05.webp
+  subtype: Sword
+- id: 110230101
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_SW_0068_T05.webp
+  subtype: Sword
+- id: 110230102
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_SW_0100_T06.webp
+  subtype: Sword
+- id: 110230103
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_SW_0100_T06.webp
+  subtype: Sword
+- id: 110230104
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_SW_0100_T06.webp
+  subtype: Sword
+- id: 110230105
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_SW_0100_T06.webp
+  subtype: Sword
+- id: 110230106
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_SW_Meteor_01.webp
+  subtype: Sword
+- id: 110230107
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_SW_Meteor_01.webp
+  subtype: Sword
+- id: 110230108
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_SW_Meteor_01.webp
+  subtype: Sword
+- id: 110230109
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_SW_Meteor_01.webp
   subtype: Sword
 - id: 110330002
   grade: Unique
@@ -2395,6 +3171,14 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/Weapon/Icon_Equip_WP_L_DA_0086_T06.webp
   subtype: Dagger
+- id: 110330085
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_DA_0106_T06.webp
+  subtype: Dagger
+- id: 110330086
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_DA_0106_T06.webp
+  subtype: Dagger
 - id: 110330087
   grade: Unique
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_DA_Meteor_01.webp
@@ -2411,9 +3195,77 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_DA_Meteor_01.webp
   subtype: Dagger
-- id: 110330091
+- id: 110330092
   grade: Unique
-  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_DA_0035_T05.webp
+  icon: UI/Resource/Texture/Item/Weapon/Icon_Equip_WP_L_DA_0064_T05.webp
+  subtype: Dagger
+- id: 110330093
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_Equip_WP_L_DA_0064_T05.webp
+  subtype: Dagger
+- id: 110330094
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_DA_0036_T05.webp
+  subtype: Dagger
+- id: 110330095
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_DA_0068_T05.webp
+  subtype: Dagger
+- id: 110330096
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_DA_0036_T05.webp
+  subtype: Dagger
+- id: 110330097
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_DA_0068_T05.webp
+  subtype: Dagger
+- id: 110330098
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_DA_0036_T05.webp
+  subtype: Dagger
+- id: 110330099
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_DA_0068_T05.webp
+  subtype: Dagger
+- id: 110330100
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_DA_0036_T05.webp
+  subtype: Dagger
+- id: 110330101
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_DA_0068_T05.webp
+  subtype: Dagger
+- id: 110330102
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_DA_0100_T06.webp
+  subtype: Dagger
+- id: 110330103
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_DA_0100_T06.webp
+  subtype: Dagger
+- id: 110330104
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_DA_0100_T06.webp
+  subtype: Dagger
+- id: 110330105
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_DA_0100_T06.webp
+  subtype: Dagger
+- id: 110330106
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_DA_Meteor_01.webp
+  subtype: Dagger
+- id: 110330107
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_DA_Meteor_01.webp
+  subtype: Dagger
+- id: 110330108
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_DA_Meteor_01.webp
+  subtype: Dagger
+- id: 110330109
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_DA_Meteor_01.webp
   subtype: Dagger
 - id: 110430002
   grade: Unique
@@ -2607,6 +3459,14 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_BW_0086_T06.webp
   subtype: Bow
+- id: 110430085
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_BW_0106_T06.webp
+  subtype: Bow
+- id: 110430086
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_BW_0106_T06.webp
+  subtype: Bow
 - id: 110430087
   grade: Unique
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_BW_Meteor_01.webp
@@ -2623,9 +3483,77 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_BW_Meteor_01.webp
   subtype: Bow
-- id: 110430091
+- id: 110430092
   grade: Unique
-  icon: UI/Resource/Texture/Item/Weapon/Icon_Equip_WP_L_BW_0035_T06.webp
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_BW_0064_T05.webp
+  subtype: Bow
+- id: 110430093
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_BW_0064_T05.webp
+  subtype: Bow
+- id: 110430094
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_BW_0036_T05.webp
+  subtype: Bow
+- id: 110430095
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_BW_0068_T05.webp
+  subtype: Bow
+- id: 110430096
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_BW_0036_T05.webp
+  subtype: Bow
+- id: 110430097
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_BW_0068_T05.webp
+  subtype: Bow
+- id: 110430098
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_BW_0036_T05.webp
+  subtype: Bow
+- id: 110430099
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_BW_0068_T05.webp
+  subtype: Bow
+- id: 110430100
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_BW_0036_T05.webp
+  subtype: Bow
+- id: 110430101
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_BW_0068_T05.webp
+  subtype: Bow
+- id: 110430102
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_BW_0100_T06.webp
+  subtype: Bow
+- id: 110430103
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_BW_0100_T06.webp
+  subtype: Bow
+- id: 110430104
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_BW_0100_T06.webp
+  subtype: Bow
+- id: 110430105
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_BW_0100_T06.webp
+  subtype: Bow
+- id: 110430106
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_BW_Meteor_01.webp
+  subtype: Bow
+- id: 110430107
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_BW_Meteor_01.webp
+  subtype: Bow
+- id: 110430108
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_BW_Meteor_01.webp
+  subtype: Bow
+- id: 110430109
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_BW_Meteor_01.webp
   subtype: Bow
 - id: 110530002
   grade: Unique
@@ -2819,6 +3747,14 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MB_0086_T06.webp
   subtype: Magicbook
+- id: 110530085
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MB_0106_T06.webp
+  subtype: Magicbook
+- id: 110530086
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MB_0106_T06.webp
+  subtype: Magicbook
 - id: 110530087
   grade: Unique
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MB_Meteor_01.webp
@@ -2835,9 +3771,77 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MB_Meteor_01.webp
   subtype: Magicbook
-- id: 110530091
+- id: 110530092
   grade: Unique
-  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MB_0035_T06.webp
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MB_0064_T05.webp
+  subtype: Magicbook
+- id: 110530093
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MB_0064_T05.webp
+  subtype: Magicbook
+- id: 110530094
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MB_0036_T05.webp
+  subtype: Magicbook
+- id: 110530095
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MB_0068_T05.webp
+  subtype: Magicbook
+- id: 110530096
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MB_0036_T05.webp
+  subtype: Magicbook
+- id: 110530097
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MB_0068_T05.webp
+  subtype: Magicbook
+- id: 110530098
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MB_0036_T05.webp
+  subtype: Magicbook
+- id: 110530099
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MB_0068_T05.webp
+  subtype: Magicbook
+- id: 110530100
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MB_0036_T05.webp
+  subtype: Magicbook
+- id: 110530101
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MB_0068_T05.webp
+  subtype: Magicbook
+- id: 110530102
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MB_0100_T06.webp
+  subtype: Magicbook
+- id: 110530103
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MB_0100_T06.webp
+  subtype: Magicbook
+- id: 110530104
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MB_0100_T06.webp
+  subtype: Magicbook
+- id: 110530105
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MB_0100_T06.webp
+  subtype: Magicbook
+- id: 110530106
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MB_Meteor_01.webp
+  subtype: Magicbook
+- id: 110530107
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MB_Meteor_01.webp
+  subtype: Magicbook
+- id: 110530108
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MB_Meteor_01.webp
+  subtype: Magicbook
+- id: 110530109
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MB_Meteor_01.webp
   subtype: Magicbook
 - id: 110630002
   grade: Unique
@@ -3031,6 +4035,14 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_OR_0086_T06.webp
   subtype: Orb
+- id: 110630085
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_OR_0106_T06.webp
+  subtype: Orb
+- id: 110630086
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_OR_0106_T06.webp
+  subtype: Orb
 - id: 110630087
   grade: Unique
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_OR_Meteor_01.webp
@@ -3047,9 +4059,77 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_OR_Meteor_01.webp
   subtype: Orb
-- id: 110630091
+- id: 110630092
   grade: Unique
-  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_OR_0035_T06.webp
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_OR_0064_T05.webp
+  subtype: Orb
+- id: 110630093
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_OR_0064_T05.webp
+  subtype: Orb
+- id: 110630094
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_OR_0036_T05.webp
+  subtype: Orb
+- id: 110630095
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_OR_0068_T05.webp
+  subtype: Orb
+- id: 110630096
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_OR_0036_T05.webp
+  subtype: Orb
+- id: 110630097
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_OR_0068_T05.webp
+  subtype: Orb
+- id: 110630098
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_OR_0036_T05.webp
+  subtype: Orb
+- id: 110630099
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_OR_0068_T05.webp
+  subtype: Orb
+- id: 110630100
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_OR_0036_T05.webp
+  subtype: Orb
+- id: 110630101
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_OR_0068_T05.webp
+  subtype: Orb
+- id: 110630102
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_OR_0100_T06.webp
+  subtype: Orb
+- id: 110630103
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_OR_0100_T06.webp
+  subtype: Orb
+- id: 110630104
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_OR_0100_T06.webp
+  subtype: Orb
+- id: 110630105
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_OR_0100_T06.webp
+  subtype: Orb
+- id: 110630106
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_OR_Meteor_01.webp
+  subtype: Orb
+- id: 110630107
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_OR_Meteor_01.webp
+  subtype: Orb
+- id: 110630108
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_OR_Meteor_01.webp
+  subtype: Orb
+- id: 110630109
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_OR_Meteor_01.webp
   subtype: Orb
 - id: 110730002
   grade: Unique
@@ -3243,6 +4323,14 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MA_0086_T06.webp
   subtype: Mace
+- id: 110730085
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MA_0106_T06.webp
+  subtype: Mace
+- id: 110730086
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MA_0106_T06.webp
+  subtype: Mace
 - id: 110730087
   grade: Unique
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MA_Meteor_01.webp
@@ -3259,9 +4347,77 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MA_Meteor_01.webp
   subtype: Mace
-- id: 110730091
+- id: 110730092
   grade: Unique
-  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MA_0035_T06.webp
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MA_0064_T05.webp
+  subtype: Mace
+- id: 110730093
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MA_0064_T05.webp
+  subtype: Mace
+- id: 110730094
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MA_0036_T05.webp
+  subtype: Mace
+- id: 110730095
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MA_0068_T05.webp
+  subtype: Mace
+- id: 110730096
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MA_0036_T05.webp
+  subtype: Mace
+- id: 110730097
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MA_0068_T05.webp
+  subtype: Mace
+- id: 110730098
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MA_0036_T05.webp
+  subtype: Mace
+- id: 110730099
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MA_0068_T05.webp
+  subtype: Mace
+- id: 110730100
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MA_0036_T05.webp
+  subtype: Mace
+- id: 110730101
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MA_0068_T05.webp
+  subtype: Mace
+- id: 110730102
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MA_0100_T06.webp
+  subtype: Mace
+- id: 110730103
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MA_0100_T06.webp
+  subtype: Mace
+- id: 110730104
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MA_0100_T06.webp
+  subtype: Mace
+- id: 110730105
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MA_0100_T06.webp
+  subtype: Mace
+- id: 110730106
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MA_Meteor_01.webp
+  subtype: Mace
+- id: 110730107
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MA_Meteor_01.webp
+  subtype: Mace
+- id: 110730108
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MA_Meteor_01.webp
+  subtype: Mace
+- id: 110730109
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MA_Meteor_01.webp
   subtype: Mace
 - id: 110830002
   grade: Unique
@@ -3455,6 +4611,14 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_ST_0086_T06.webp
   subtype: Staff
+- id: 110830085
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_ST_0106_T06.webp
+  subtype: Staff
+- id: 110830086
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_ST_0106_T06.webp
+  subtype: Staff
 - id: 110830087
   grade: Unique
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_ST_Meteor_01.webp
@@ -3471,9 +4635,77 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_ST_Meteor_01.webp
   subtype: Staff
-- id: 110830091
+- id: 110830092
   grade: Unique
-  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_ST_0035_T06.webp
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_ST_0064_T05.webp
+  subtype: Staff
+- id: 110830093
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_ST_0064_T05.webp
+  subtype: Staff
+- id: 110830094
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_ST_0036_T05.webp
+  subtype: Staff
+- id: 110830095
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_ST_0068_T05.webp
+  subtype: Staff
+- id: 110830096
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_ST_0036_T05.webp
+  subtype: Staff
+- id: 110830097
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_ST_0068_T05.webp
+  subtype: Staff
+- id: 110830098
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_ST_0036_T05.webp
+  subtype: Staff
+- id: 110830099
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_ST_0068_T05.webp
+  subtype: Staff
+- id: 110830100
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_ST_0036_T05.webp
+  subtype: Staff
+- id: 110830101
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_ST_0068_T05.webp
+  subtype: Staff
+- id: 110830102
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_ST_0100_T06.webp
+  subtype: Staff
+- id: 110830103
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_ST_0100_T06.webp
+  subtype: Staff
+- id: 110830104
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_ST_0100_T06.webp
+  subtype: Staff
+- id: 110830105
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_ST_0100_T06.webp
+  subtype: Staff
+- id: 110830106
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_ST_Meteor_01.webp
+  subtype: Staff
+- id: 110830107
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_ST_Meteor_01.webp
+  subtype: Staff
+- id: 110830108
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_ST_Meteor_01.webp
+  subtype: Staff
+- id: 110830109
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_ST_Meteor_01.webp
   subtype: Staff
 - id: 115030002
   grade: Unique
@@ -3687,9 +4919,77 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/Accessory/Icon_Weapon_Guarder_Meteor_01.webp
   subtype: Guarder
-- id: 115030089
+- id: 115030090
   grade: Unique
-  icon: UI/Resource/Texture/Item/Accessory/Icon_Weapon_Guarder_R_010.webp
+  icon: UI/Resource/Texture/Item/Accessory/Icon_Weapon_Guarder_R_036.webp
+  subtype: Guarder
+- id: 115030091
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_Weapon_Guarder_R_036.webp
+  subtype: Guarder
+- id: 115030092
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_Weapon_Guarder_R_032.webp
+  subtype: Guarder
+- id: 115030093
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_Weapon_Guarder_U_005.webp
+  subtype: Guarder
+- id: 115030094
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_Weapon_Guarder_R_032.webp
+  subtype: Guarder
+- id: 115030095
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_Weapon_Guarder_U_005.webp
+  subtype: Guarder
+- id: 115030096
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_Weapon_Guarder_R_032.webp
+  subtype: Guarder
+- id: 115030097
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_Weapon_Guarder_U_005.webp
+  subtype: Guarder
+- id: 115030098
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_Weapon_Guarder_R_032.webp
+  subtype: Guarder
+- id: 115030099
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_Weapon_Guarder_U_005.webp
+  subtype: Guarder
+- id: 115030100
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_Weapon_Guarder_U_013.webp
+  subtype: Guarder
+- id: 115030101
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_Weapon_Guarder_U_013.webp
+  subtype: Guarder
+- id: 115030102
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_Weapon_Guarder_U_013.webp
+  subtype: Guarder
+- id: 115030103
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_Weapon_Guarder_U_013.webp
+  subtype: Guarder
+- id: 115030104
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_Weapon_Guarder_Meteor_01.webp
+  subtype: Guarder
+- id: 115030105
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_Weapon_Guarder_Meteor_01.webp
+  subtype: Guarder
+- id: 115030106
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_Weapon_Guarder_Meteor_01.webp
+  subtype: Guarder
+- id: 115030107
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_Weapon_Guarder_Meteor_01.webp
   subtype: Guarder
 - id: 210130001
   grade: Unique
@@ -3927,33 +5227,77 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/Armor/Icon_GM_Ateron_01_Torso.webp
   subtype: Torso
-- id: 210130099
+- id: 210130106
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0045_T05_Torso.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0148_T03_Torso.webp
   subtype: Torso
-- id: 210130100
+- id: 210130107
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0041_T04_Torso.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0148_T03_Torso.webp
   subtype: Torso
-- id: 210130101
+- id: 210130108
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0007_T05_Torso.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0061_T05_Torso.webp
   subtype: Torso
-- id: 210130102
+- id: 210130109
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0012_T04_Torso.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0060_T06_Torso.webp
   subtype: Torso
-- id: 210130103
+- id: 210130110
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0044_T06_Torso.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0061_T05_Torso.webp
   subtype: Torso
-- id: 210130104
+- id: 210130111
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0068_T05_Torso.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0060_T06_Torso.webp
   subtype: Torso
-- id: 210130105
+- id: 210130112
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0062_T06_Torso.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0061_T05_Torso.webp
+  subtype: Torso
+- id: 210130113
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0060_T06_Torso.webp
+  subtype: Torso
+- id: 210130114
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0061_T05_Torso.webp
+  subtype: Torso
+- id: 210130115
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0060_T06_Torso.webp
+  subtype: Torso
+- id: 210130116
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0005_T05_Torso.webp
+  subtype: Torso
+- id: 210130117
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0005_T05_Torso.webp
+  subtype: Torso
+- id: 210130118
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0005_T05_Torso.webp
+  subtype: Torso
+- id: 210130119
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0005_T05_Torso.webp
+  subtype: Torso
+- id: 210130120
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_Ateron_01_Torso.webp
+  subtype: Torso
+- id: 210130121
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_Ateron_01_Torso.webp
+  subtype: Torso
+- id: 210130122
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_Ateron_01_Torso.webp
+  subtype: Torso
+- id: 210130123
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_Ateron_01_Torso.webp
   subtype: Torso
 - id: 210230001
   grade: Unique
@@ -4191,33 +5535,77 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/Armor/Icon_GM_Ateron_01_Pants.webp
   subtype: Pants
-- id: 210230098
+- id: 210230105
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0045_T05_Pants.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0148_T03_Pants.webp
   subtype: Pants
-- id: 210230099
+- id: 210230106
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0041_T04_Pants.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0148_T03_Pants.webp
   subtype: Pants
-- id: 210230100
+- id: 210230107
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0007_T05_Pants.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0061_T05_Pants.webp
   subtype: Pants
-- id: 210230101
+- id: 210230108
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0012_T04_Pants.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0060_T06_Pants.webp
   subtype: Pants
-- id: 210230102
+- id: 210230109
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0044_T06_Pants.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0061_T05_Pants.webp
   subtype: Pants
-- id: 210230103
+- id: 210230110
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0068_T05_Pants.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0060_T06_Pants.webp
   subtype: Pants
-- id: 210230104
+- id: 210230111
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0062_T06_Pants.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0061_T05_Pants.webp
+  subtype: Pants
+- id: 210230112
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0060_T06_Pants.webp
+  subtype: Pants
+- id: 210230113
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0061_T05_Pants.webp
+  subtype: Pants
+- id: 210230114
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0060_T06_Pants.webp
+  subtype: Pants
+- id: 210230115
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0005_T05_Pants.webp
+  subtype: Pants
+- id: 210230116
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0005_T05_Pants.webp
+  subtype: Pants
+- id: 210230117
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0005_T05_Pants.webp
+  subtype: Pants
+- id: 210230118
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0005_T05_Pants.webp
+  subtype: Pants
+- id: 210230119
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_Ateron_01_Pants.webp
+  subtype: Pants
+- id: 210230120
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_Ateron_01_Pants.webp
+  subtype: Pants
+- id: 210230121
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_Ateron_01_Pants.webp
+  subtype: Pants
+- id: 210230122
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_Ateron_01_Pants.webp
   subtype: Pants
 - id: 210330001
   grade: Unique
@@ -4455,33 +5843,77 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/Armor/Icon_GM_Ateron_01_Helmet.webp
   subtype: Helmet
-- id: 210330098
+- id: 210330105
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0045_T05_Helmet.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0148_T03_Helmet.webp
   subtype: Helmet
-- id: 210330099
+- id: 210330106
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0041_T04_Helmet.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0148_T03_Helmet.webp
   subtype: Helmet
-- id: 210330100
+- id: 210330107
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0007_T05_Helmet.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0061_T05_Helmet.webp
   subtype: Helmet
-- id: 210330101
+- id: 210330108
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0012_T04_Helmet.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0060_T06_Helmet.webp
   subtype: Helmet
-- id: 210330102
+- id: 210330109
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0044_T06_Helmet.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0061_T05_Helmet.webp
   subtype: Helmet
-- id: 210330103
+- id: 210330110
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0068_T05_Helmet.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0060_T06_Helmet.webp
   subtype: Helmet
-- id: 210330104
+- id: 210330111
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0062_T06_Helmet.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0061_T05_Helmet.webp
+  subtype: Helmet
+- id: 210330112
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0060_T06_Helmet.webp
+  subtype: Helmet
+- id: 210330113
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0061_T05_Helmet.webp
+  subtype: Helmet
+- id: 210330114
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0060_T06_Helmet.webp
+  subtype: Helmet
+- id: 210330115
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0005_T05_Helmet.webp
+  subtype: Helmet
+- id: 210330116
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0005_T05_Helmet.webp
+  subtype: Helmet
+- id: 210330117
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0005_T05_Helmet.webp
+  subtype: Helmet
+- id: 210330118
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0005_T05_Helmet.webp
+  subtype: Helmet
+- id: 210330119
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_Ateron_01_Helmet.webp
+  subtype: Helmet
+- id: 210330120
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_Ateron_01_Helmet.webp
+  subtype: Helmet
+- id: 210330121
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_Ateron_01_Helmet.webp
+  subtype: Helmet
+- id: 210330122
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_Ateron_01_Helmet.webp
   subtype: Helmet
 - id: 210430001
   grade: Unique
@@ -4719,33 +6151,77 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/Armor/Icon_GM_Ateron_01_Shoulder.webp
   subtype: Shoulder
-- id: 210430098
+- id: 210430105
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0045_T05_Shoulder.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0148_T03_Shoulder.webp
   subtype: Shoulder
-- id: 210430099
+- id: 210430106
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0041_T04_Shoulder.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0148_T03_Shoulder.webp
   subtype: Shoulder
-- id: 210430100
+- id: 210430107
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0007_T05_Shoulder.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0061_T05_Shoulder.webp
   subtype: Shoulder
-- id: 210430101
+- id: 210430108
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0012_T04_Shoulder.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0060_T06_Shoulder.webp
   subtype: Shoulder
-- id: 210430102
+- id: 210430109
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0044_T06_Shoulder.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0061_T05_Shoulder.webp
   subtype: Shoulder
-- id: 210430103
+- id: 210430110
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0068_T05_Shoulder.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0060_T06_Shoulder.webp
   subtype: Shoulder
-- id: 210430104
+- id: 210430111
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0062_T06_Shoulder.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0061_T05_Shoulder.webp
+  subtype: Shoulder
+- id: 210430112
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0060_T06_Shoulder.webp
+  subtype: Shoulder
+- id: 210430113
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0061_T05_Shoulder.webp
+  subtype: Shoulder
+- id: 210430114
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0060_T06_Shoulder.webp
+  subtype: Shoulder
+- id: 210430115
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0005_T05_Shoulder.webp
+  subtype: Shoulder
+- id: 210430116
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0005_T05_Shoulder.webp
+  subtype: Shoulder
+- id: 210430117
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0005_T05_Shoulder.webp
+  subtype: Shoulder
+- id: 210430118
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0005_T05_Shoulder.webp
+  subtype: Shoulder
+- id: 210430119
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_Ateron_01_Shoulder.webp
+  subtype: Shoulder
+- id: 210430120
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_Ateron_01_Shoulder.webp
+  subtype: Shoulder
+- id: 210430121
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_Ateron_01_Shoulder.webp
+  subtype: Shoulder
+- id: 210430122
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_Ateron_01_Shoulder.webp
   subtype: Shoulder
 - id: 210530001
   grade: Unique
@@ -4983,33 +6459,77 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/Armor/Icon_GM_Ateron_01_Gloves.webp
   subtype: Gloves
-- id: 210530098
+- id: 210530105
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0045_T05_Gloves.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0148_T03_Gloves.webp
   subtype: Gloves
-- id: 210530099
+- id: 210530106
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0041_T04_Gloves.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0148_T03_Gloves.webp
   subtype: Gloves
-- id: 210530100
+- id: 210530107
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0007_T05_Gloves.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0061_T05_Gloves.webp
   subtype: Gloves
-- id: 210530101
+- id: 210530108
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0012_T04_Gloves.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0060_T06_Gloves.webp
   subtype: Gloves
-- id: 210530102
+- id: 210530109
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0044_T06_Gloves.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0061_T05_Gloves.webp
   subtype: Gloves
-- id: 210530103
+- id: 210530110
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0068_T05_Gloves.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0060_T06_Gloves.webp
   subtype: Gloves
-- id: 210530104
+- id: 210530111
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0062_T06_Gloves.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0061_T05_Gloves.webp
+  subtype: Gloves
+- id: 210530112
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0060_T06_Gloves.webp
+  subtype: Gloves
+- id: 210530113
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0061_T05_Gloves.webp
+  subtype: Gloves
+- id: 210530114
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0060_T06_Gloves.webp
+  subtype: Gloves
+- id: 210530115
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0005_T05_Gloves.webp
+  subtype: Gloves
+- id: 210530116
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0005_T05_Gloves.webp
+  subtype: Gloves
+- id: 210530117
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0005_T05_Gloves.webp
+  subtype: Gloves
+- id: 210530118
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0005_T05_Gloves.webp
+  subtype: Gloves
+- id: 210530119
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_Ateron_01_Gloves.webp
+  subtype: Gloves
+- id: 210530120
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_Ateron_01_Gloves.webp
+  subtype: Gloves
+- id: 210530121
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_Ateron_01_Gloves.webp
+  subtype: Gloves
+- id: 210530122
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_Ateron_01_Gloves.webp
   subtype: Gloves
 - id: 210630001
   grade: Unique
@@ -5247,33 +6767,77 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/Armor/Icon_GM_Ateron_01_Boots.webp
   subtype: Boots
-- id: 210630098
+- id: 210630105
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0045_T05_Boots.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0148_T03_Boots.webp
   subtype: Boots
-- id: 210630099
+- id: 210630106
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0041_T04_Boots.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0148_T03_Boots.webp
   subtype: Boots
-- id: 210630100
+- id: 210630107
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0007_T05_Boots.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0061_T05_Boots.webp
   subtype: Boots
-- id: 210630101
+- id: 210630108
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0012_T04_Boots.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0060_T06_Boots.webp
   subtype: Boots
-- id: 210630102
+- id: 210630109
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0044_T06_Boots.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0061_T05_Boots.webp
   subtype: Boots
-- id: 210630103
+- id: 210630110
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0068_T05_Boots.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0060_T06_Boots.webp
   subtype: Boots
-- id: 210630104
+- id: 210630111
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0062_T06_Boots.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0061_T05_Boots.webp
+  subtype: Boots
+- id: 210630112
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0060_T06_Boots.webp
+  subtype: Boots
+- id: 210630113
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0061_T05_Boots.webp
+  subtype: Boots
+- id: 210630114
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0060_T06_Boots.webp
+  subtype: Boots
+- id: 210630115
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0005_T05_Boots.webp
+  subtype: Boots
+- id: 210630116
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0005_T05_Boots.webp
+  subtype: Boots
+- id: 210630117
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0005_T05_Boots.webp
+  subtype: Boots
+- id: 210630118
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0005_T05_Boots.webp
+  subtype: Boots
+- id: 210630119
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_Ateron_01_Boots.webp
+  subtype: Boots
+- id: 210630120
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_Ateron_01_Boots.webp
+  subtype: Boots
+- id: 210630121
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_Ateron_01_Boots.webp
+  subtype: Boots
+- id: 210630122
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_Ateron_01_Boots.webp
   subtype: Boots
 - id: 210730001
   grade: Unique
@@ -5511,33 +7075,77 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/Armor/Icon_GM_Ateron_01_Cape.webp
   subtype: Cape
-- id: 210730098
+- id: 210730105
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0045_T05_Cape.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0148_T03_Cape.webp
   subtype: Cape
-- id: 210730099
+- id: 210730106
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0041_T04_Cape.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0148_T03_Cape.webp
   subtype: Cape
-- id: 210730100
+- id: 210730107
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0007_T05_Cape.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0061_T05_Cape.webp
   subtype: Cape
-- id: 210730101
+- id: 210730108
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0012_T04_Cape.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0060_T06_Cape.webp
   subtype: Cape
-- id: 210730102
+- id: 210730109
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0044_T06_Cape.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0061_T05_Cape.webp
   subtype: Cape
-- id: 210730103
+- id: 210730110
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0068_T05_Cape.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0060_T06_Cape.webp
   subtype: Cape
-- id: 210730104
+- id: 210730111
   grade: Unique
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0062_T06_Cape.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0061_T05_Cape.webp
+  subtype: Cape
+- id: 210730112
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0060_T06_Cape.webp
+  subtype: Cape
+- id: 210730113
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0061_T05_Cape.webp
+  subtype: Cape
+- id: 210730114
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0060_T06_Cape.webp
+  subtype: Cape
+- id: 210730115
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0005_T05_Cape.webp
+  subtype: Cape
+- id: 210730116
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0005_T05_Cape.webp
+  subtype: Cape
+- id: 210730117
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0005_T05_Cape.webp
+  subtype: Cape
+- id: 210730118
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0005_T05_Cape.webp
+  subtype: Cape
+- id: 210730119
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_Ateron_01_Cape.webp
+  subtype: Cape
+- id: 210730120
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_Ateron_01_Cape.webp
+  subtype: Cape
+- id: 210730121
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_Ateron_01_Cape.webp
+  subtype: Cape
+- id: 210730122
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_Ateron_01_Cape.webp
   subtype: Cape
 - id: 215230001
   grade: Unique
@@ -5715,6 +7323,14 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_Sun_02.webp
   subtype: Necklace
+- id: 310130094
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_Sun_09.webp
+  subtype: Necklace
+- id: 310130095
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_Sun_09.webp
+  subtype: Necklace
 - id: 310130096
   grade: Unique
   icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0038.webp
@@ -5731,33 +7347,77 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0038.webp
   subtype: Necklace
-- id: 310130100
+- id: 310130107
   grade: Unique
-  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0067.webp
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0012.webp
   subtype: Necklace
-- id: 310130101
+- id: 310130108
   grade: Unique
-  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0058.webp
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0012.webp
   subtype: Necklace
-- id: 310130102
+- id: 310130109
   grade: Unique
-  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0064.webp
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0036.webp
   subtype: Necklace
-- id: 310130103
+- id: 310130110
   grade: Unique
-  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0032.webp
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0035.webp
   subtype: Necklace
-- id: 310130104
+- id: 310130111
   grade: Unique
-  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0031.webp
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0036.webp
   subtype: Necklace
-- id: 310130105
+- id: 310130112
   grade: Unique
-  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0081.webp
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0035.webp
   subtype: Necklace
-- id: 310130106
+- id: 310130113
   grade: Unique
-  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0077.webp
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0036.webp
+  subtype: Necklace
+- id: 310130114
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0035.webp
+  subtype: Necklace
+- id: 310130115
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0036.webp
+  subtype: Necklace
+- id: 310130116
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0035.webp
+  subtype: Necklace
+- id: 310130117
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0047.webp
+  subtype: Necklace
+- id: 310130118
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0047.webp
+  subtype: Necklace
+- id: 310130119
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0047.webp
+  subtype: Necklace
+- id: 310130120
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0047.webp
+  subtype: Necklace
+- id: 310130121
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0038.webp
+  subtype: Necklace
+- id: 310130122
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0038.webp
+  subtype: Necklace
+- id: 310130123
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0038.webp
+  subtype: Necklace
+- id: 310130124
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0038.webp
   subtype: Necklace
 - id: 310230010
   grade: Unique
@@ -5931,6 +7591,14 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_Sun_02.webp
   subtype: Earring
+- id: 310230096
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_Sun_09.webp
+  subtype: Earring
+- id: 310230097
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_Sun_09.webp
+  subtype: Earring
 - id: 310230098
   grade: Unique
   icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0038.webp
@@ -5947,33 +7615,77 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0038.webp
   subtype: Earring
-- id: 310230102
+- id: 310230109
   grade: Unique
-  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0067.webp
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0012.webp
   subtype: Earring
-- id: 310230103
+- id: 310230110
   grade: Unique
-  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0058.webp
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0012.webp
   subtype: Earring
-- id: 310230104
+- id: 310230111
   grade: Unique
-  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0064.webp
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0036.webp
   subtype: Earring
-- id: 310230105
+- id: 310230112
   grade: Unique
-  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0032.webp
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0035.webp
   subtype: Earring
-- id: 310230106
+- id: 310230113
   grade: Unique
-  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0031.webp
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0036.webp
   subtype: Earring
-- id: 310230107
+- id: 310230114
   grade: Unique
-  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0081.webp
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0035.webp
   subtype: Earring
-- id: 310230108
+- id: 310230115
   grade: Unique
-  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0077.webp
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0036.webp
+  subtype: Earring
+- id: 310230116
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0035.webp
+  subtype: Earring
+- id: 310230117
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0036.webp
+  subtype: Earring
+- id: 310230118
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0035.webp
+  subtype: Earring
+- id: 310230119
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0047.webp
+  subtype: Earring
+- id: 310230120
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0047.webp
+  subtype: Earring
+- id: 310230121
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0047.webp
+  subtype: Earring
+- id: 310230122
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0047.webp
+  subtype: Earring
+- id: 310230123
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0038.webp
+  subtype: Earring
+- id: 310230124
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0038.webp
+  subtype: Earring
+- id: 310230125
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0038.webp
+  subtype: Earring
+- id: 310230126
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0038.webp
   subtype: Earring
 - id: 310330010
   grade: Unique
@@ -6147,6 +7859,14 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_n_02.webp
   subtype: Ring
+- id: 310330096
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_Sun_09.webp
+  subtype: Ring
+- id: 310330097
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_Sun_09.webp
+  subtype: Ring
 - id: 310330098
   grade: Unique
   icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_0038.webp
@@ -6163,33 +7883,77 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_0038.webp
   subtype: Ring
-- id: 310330102
+- id: 310330109
   grade: Unique
-  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_ring.webp
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_0012.webp
   subtype: Ring
-- id: 310330103
+- id: 310330110
   grade: Unique
-  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_0058.webp
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_0012.webp
   subtype: Ring
-- id: 310330104
+- id: 310330111
   grade: Unique
-  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_0064.webp
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_0036.webp
   subtype: Ring
-- id: 310330105
+- id: 310330112
   grade: Unique
-  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_0032.webp
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_0035.webp
   subtype: Ring
-- id: 310330106
+- id: 310330113
   grade: Unique
-  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_0031.webp
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_0036.webp
   subtype: Ring
-- id: 310330107
+- id: 310330114
   grade: Unique
-  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_0081.webp
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_0035.webp
   subtype: Ring
-- id: 310330108
+- id: 310330115
   grade: Unique
-  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_0077.webp
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_0036.webp
+  subtype: Ring
+- id: 310330116
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_0035.webp
+  subtype: Ring
+- id: 310330117
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_0036.webp
+  subtype: Ring
+- id: 310330118
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_0035.webp
+  subtype: Ring
+- id: 310330119
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_0047.webp
+  subtype: Ring
+- id: 310330120
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_0047.webp
+  subtype: Ring
+- id: 310330121
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_0047.webp
+  subtype: Ring
+- id: 310330122
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_0047.webp
+  subtype: Ring
+- id: 310330123
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_0038.webp
+  subtype: Ring
+- id: 310330124
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_0038.webp
+  subtype: Ring
+- id: 310330125
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_0038.webp
+  subtype: Ring
+- id: 310330126
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_0038.webp
   subtype: Ring
 - id: 310430041
   grade: Unique
@@ -6286,6 +8050,14 @@ items:
 - id: 512400026
   grade: Unique
   icon: UI/Resource/Texture/Item/Wing/Icon_WingB_007A.webp
+  subtype: Wing
+- id: 512400027
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Wing/Icon_WingB_020.webp
+  subtype: Wing
+- id: 512400028
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Wing/Icon_WingB_020.webp
   subtype: Wing
 - id: 513830001
   grade: Unique
@@ -6466,6 +8238,10 @@ items:
 - id: 514310121
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/icon_AD_pic_A_MOB_Undead_01.webp
+  subtype: Deco
+- id: 514310122
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/icon_AD_pic_A_CradleNihility.webp
   subtype: Deco
 - id: 515910009
   grade: Unique
@@ -7011,6 +8787,14 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Currency_Get_Title_04_001.webp
   subtype: Other
+- id: 532530110
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Currency_Get_Title_04_001.webp
+  subtype: Other
+- id: 532530111
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Currency_Get_Title_04_001.webp
+  subtype: Other
 - id: 533700140
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Currency_Box_Field_Event_unc_Equip_003.webp
@@ -7074,6 +8858,10 @@ items:
 - id: 533700218
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Currency_Box_Field_Event_unc_Equip_003.webp
+  subtype: Other
+- id: 533700224
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Currency_Box_Normal_Unique_03.webp
   subtype: Other
 - id: 533830001
   grade: Unique
@@ -7151,6 +8939,14 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/icon_AD_pic_A_s1_MOB_Gerod_01.webp
   subtype: Other
+- id: 534310124
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/icon_AD_pic_A_MOB_DarkLeda_02.webp
+  subtype: Other
+- id: 534310125
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/icon_AD_pic_A_MOB_Santras_01.webp
+  subtype: Other
 - id: 534320001
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/icon_AD_statueS_A_u_MOB_Bakarma_02.webp
@@ -7168,6 +8964,18 @@ items:
   icon: UI/Resource/Texture/Item/ETC/icon_AD_statueS_L_s1_abyss_02.webp
   subtype: Other
 - id: 534320052
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/icon_AD_statueS_D_s1_abyss_02.webp
+  subtype: Other
+- id: 534320060
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/icon_AD_statueS_A_MOB_Kalgolem_03_CV02.webp
+  subtype: Other
+- id: 534320064
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/icon_AD_statueS_L_s1_abyss_02.webp
+  subtype: Other
+- id: 534320065
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/icon_AD_statueS_D_s1_abyss_02.webp
   subtype: Other
@@ -7191,6 +8999,14 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Grail_u_DefenceSet2.webp
   subtype: Other
+- id: 535113003
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Grail_u_OffenseSet2.webp
+  subtype: Other
+- id: 535113004
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Grail_u_DefenceSet1.webp
+  subtype: Other
 - id: 535123001
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Parchment_u_PveSet2.webp
@@ -7198,6 +9014,14 @@ items:
 - id: 535123002
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Parchment_u_DefenceSet2.webp
+  subtype: Other
+- id: 535123003
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Parchment_u_OffenseSet2.webp
+  subtype: Other
+- id: 535123004
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Parchment_u_DefenceSet1.webp
   subtype: Other
 - id: 535133001
   grade: Unique
@@ -7207,6 +9031,14 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Compass_u_DefenceSet2.webp
   subtype: Other
+- id: 535133003
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Compass_u_OffenseSet2.webp
+  subtype: Other
+- id: 535133004
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Compass_u_DefenceSet1.webp
+  subtype: Other
 - id: 535143001
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Bell_u_PveSet2.webp
@@ -7215,6 +9047,14 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Bell_u_DefenceSet2.webp
   subtype: Other
+- id: 535143003
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Bell_u_OffenseSet2.webp
+  subtype: Other
+- id: 535143004
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Bell_u_DefenceSet1.webp
+  subtype: Other
 - id: 535153001
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Mirror_u_PveSet2.webp
@@ -7222,6 +9062,22 @@ items:
 - id: 535153002
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Mirror_u_DefenceSet2.webp
+  subtype: Other
+- id: 535153003
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Mirror_u_OffenseSet2.webp
+  subtype: Other
+- id: 535153004
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Mirror_u_DefenceSet1.webp
+  subtype: Other
+- id: 535163003
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Libra_u_OffenseSet2.webp
+  subtype: Other
+- id: 535163004
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Libra_u_DefenceSet1.webp
   subtype: Other
 - id: 535510005
   grade: Unique
@@ -7918,6 +9774,38 @@ items:
 - id: 535710800
   grade: Unique
   icon: UI/Resource/Texture/Item/Weapon/Icon_WP_ST_0100_T06.webp
+  subtype: Other
+- id: 535710841
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_GS_0106_T06.webp
+  subtype: Other
+- id: 535710842
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_SW_0106_T06.webp
+  subtype: Other
+- id: 535710843
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_DA_0106_T06.webp
+  subtype: Other
+- id: 535710844
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_BW_0106_T06.webp
+  subtype: Other
+- id: 535710845
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MB_0106_T06.webp
+  subtype: Other
+- id: 535710846
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_OR_0106_T06.webp
+  subtype: Other
+- id: 535710847
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_MA_0106_T06.webp
+  subtype: Other
+- id: 535710848
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Weapon/Icon_WP_ST_0106_T06.webp
   subtype: Other
 - id: 535710889
   grade: Unique
@@ -8939,6 +10827,10 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_Sun_02.webp
   subtype: Other
+- id: 535910109
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_Sun_09.webp
+  subtype: Other
 - id: 535910146
   grade: Unique
   icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0009.webp
@@ -9062,6 +10954,10 @@ items:
 - id: 535910239
   grade: Unique
   icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_Sun_02.webp
+  subtype: Other
+- id: 535910246
+  grade: Unique
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_Sun_09.webp
   subtype: Other
 - id: 536010024
   grade: Unique
@@ -9335,6 +11231,10 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Craft_Craft_Draconic_L_lv3_03.webp
   subtype: CraftResource
+- id: 630511034
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Item_Craft_Drop_Draconic_Soul_A_l_005a.webp
+  subtype: CraftResource
 - id: 630530004
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Craft_SmeltStone_Equip_A_e_002.webp
@@ -9415,98 +11315,206 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Usable_Scroll_Exp_Boost_002.webp
   subtype: Other
+- id: 632510024
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Usable_Scroll_Exp_Boost_002.webp
+  subtype: Other
+- id: 632510026
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Equip_EB_EmblemD_MI_abyssshop_L_u_001.webp
+  subtype: Other
+- id: 632510027
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Equip_EB_EmblemG_MI_abyssshop_L_u_001.webp
+  subtype: Other
+- id: 632510028
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Equip_EB_EmblemH_MI_abyssshop_L_u_001.webp
+  subtype: Other
+- id: 632510029
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Equip_EB_EmblemD_MI_abyssshop_L_u_002.webp
+  subtype: Other
+- id: 632510030
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Equip_EB_EmblemG_MI_abyssshop_L_u_002.webp
+  subtype: Other
+- id: 632510031
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Equip_EB_EmblemH_MI_abyssshop_L_u_002.webp
+  subtype: Other
+- id: 632510032
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Equip_EB_EmblemD_MI_abyssshop_L_u_003.webp
+  subtype: Other
+- id: 632510033
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Equip_EB_EmblemG_MI_abyssshop_L_u_003.webp
+  subtype: Other
+- id: 632510034
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Equip_EB_EmblemH_MI_abyssshop_L_u_003.webp
+  subtype: Other
+- id: 632510035
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Equip_EB_EmblemD_MI_nightmare_L_l_001.webp
+  subtype: Other
+- id: 632510036
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Equip_EB_EmblemG_MI_nightmare_L_l_001.webp
+  subtype: Other
+- id: 632510037
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Equip_EB_EmblemH_MI_nightmare_L_l_001.webp
+  subtype: Other
+- id: 632510038
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Equip_EB_EmblemD_MI_abyssshop_L_u_001.webp
+  subtype: Other
+- id: 632510039
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Equip_EB_EmblemG_MI_abyssshop_L_u_001.webp
+  subtype: Other
+- id: 632510040
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Equip_EB_EmblemH_MI_abyssshop_L_u_001.webp
+  subtype: Other
+- id: 632510041
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Equip_EB_EmblemD_MI_abyssshop_L_u_002.webp
+  subtype: Other
+- id: 632510042
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Equip_EB_EmblemG_MI_abyssshop_L_u_002.webp
+  subtype: Other
+- id: 632510043
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Equip_EB_EmblemH_MI_abyssshop_L_u_002.webp
+  subtype: Other
+- id: 632510044
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Equip_EB_EmblemD_MI_abyssshop_L_u_003.webp
+  subtype: Other
+- id: 632510045
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Equip_EB_EmblemG_MI_abyssshop_L_u_003.webp
+  subtype: Other
+- id: 632510046
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Equip_EB_EmblemH_MI_abyssshop_L_u_003.webp
+  subtype: Other
+- id: 632510047
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Equip_EB_EmblemD_MI_nightmare_L_l_001.webp
+  subtype: Other
+- id: 632510048
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Equip_EB_EmblemG_MI_nightmare_L_l_001.webp
+  subtype: Other
+- id: 632510049
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Equip_EB_EmblemH_MI_nightmare_L_l_001.webp
+  subtype: Other
 - id: 632520064
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_AD_Pic_A_u_002.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632520065
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_AD_Pic_A_u_002.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632520066
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_AD_Pic_A_u_002.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632520067
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_AD_Pic_A_u_002.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632520068
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_AD_Pic_A_u_002.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632520069
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_AD_Pic_A_u_002.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632520070
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_AD_Pic_A_u_002.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632520071
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_AD_Pic_A_u_002.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632520072
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_AD_Pic_A_u_002.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632520073
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_AD_Pic_A_u_002.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632520074
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_AD_Pic_A_u_002.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632520075
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_AD_Pic_A_u_002.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632520076
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_AD_Pic_A_u_002.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632520089
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_AD_Pic_A_u_002.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632520091
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_AD_Pic_A_u_002.webp
-  subtype: Other
+  subtype: ConversionResource
+- id: 632520092
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Item_AD_Pic_A_u_002.webp
+  subtype: ConversionResource
 - id: 632540002
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Craft_Wing_A_l_002.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632540003
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Craft_Wing_A_l_002.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632540004
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Craft_Wing_A_l_002.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632540005
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Craft_Wing_A_l_002.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632540006
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Craft_Wing_A_l_002.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632540007
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Craft_Wing_A_l_002.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632540008
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Craft_Wing_A_l_002.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632540027
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Craft_Wing_A_l_002.webp
-  subtype: Other
+  subtype: ConversionResource
+- id: 632540028
+  grade: Unique
+  icon: UI/Resource/Texture/Item/ETC/Icon_Item_Craft_Wing_A_l_002.webp
+  subtype: ConversionResource
 - id: 632600002
   grade: Unique
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Enchant_Accession_piece_A_001.webp
@@ -9543,6 +11551,14 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Grail_u_DefenceSet2.webp
   subtype: Other
+- id: 810130003
+  grade: Unique
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Grail_u_OffenseSet2.webp
+  subtype: Other
+- id: 810130004
+  grade: Unique
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Grail_u_DefenceSet1.webp
+  subtype: Other
 - id: 810230001
   grade: Unique
   icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Parchment_u_PveSet2.webp
@@ -9550,6 +11566,14 @@ items:
 - id: 810230002
   grade: Unique
   icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Parchment_u_DefenceSet2.webp
+  subtype: Other
+- id: 810230003
+  grade: Unique
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Parchment_u_OffenseSet2.webp
+  subtype: Other
+- id: 810230004
+  grade: Unique
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Parchment_u_DefenceSet1.webp
   subtype: Other
 - id: 810330001
   grade: Unique
@@ -9559,6 +11583,14 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Compass_u_DefenceSet2.webp
   subtype: Other
+- id: 810330003
+  grade: Unique
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Compass_u_OffenseSet2.webp
+  subtype: Other
+- id: 810330004
+  grade: Unique
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Compass_u_DefenceSet1.webp
+  subtype: Other
 - id: 810430001
   grade: Unique
   icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Bell_u_PveSet2.webp
@@ -9567,6 +11599,14 @@ items:
   grade: Unique
   icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Bell_u_DefenceSet2.webp
   subtype: Other
+- id: 810430003
+  grade: Unique
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Bell_u_OffenseSet2.webp
+  subtype: Other
+- id: 810430004
+  grade: Unique
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Bell_u_DefenceSet1.webp
+  subtype: Other
 - id: 810530001
   grade: Unique
   icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Mirror_u_PveSet2.webp
@@ -9574,6 +11614,22 @@ items:
 - id: 810530002
   grade: Unique
   icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Mirror_u_DefenceSet2.webp
+  subtype: Other
+- id: 810530003
+  grade: Unique
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Mirror_u_OffenseSet2.webp
+  subtype: Other
+- id: 810530004
+  grade: Unique
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Mirror_u_DefenceSet1.webp
+  subtype: Other
+- id: 810630003
+  grade: Unique
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Libra_u_OffenseSet2.webp
+  subtype: Other
+- id: 810630004
+  grade: Unique
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Libra_u_DefenceSet1.webp
   subtype: Other
 - id: 110140002
   grade: Legend
@@ -11703,129 +13759,17 @@ items:
   grade: Legend
   icon: UI/Resource/Texture/Item/Armor/Icon_GM_0048_T04_Torso.webp
   subtype: Torso
+- id: 210140108
+  grade: Legend
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0161_T03_Torso.webp
+  subtype: Torso
 - id: 210140109
   grade: Legend
   icon: UI/Resource/Texture/Item/Armor/Icon_GM_0048_T04_Torso.webp
   subtype: Torso
-- id: 210140111
+- id: 210140110
   grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0122_T01_Torso.webp
-  subtype: Torso
-- id: 210140112
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_DebGuard_03_Torso.webp
-  subtype: Torso
-- id: 210140113
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0094_T03_Torso.webp
-  subtype: Torso
-- id: 210140114
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0098_T02_Torso.webp
-  subtype: Torso
-- id: 210140115
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0164_T03_Torso.webp
-  subtype: Torso
-- id: 210140116
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0106_T04_Torso.webp
-  subtype: Torso
-- id: 210140117
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0095_T02_Torso.webp
-  subtype: Torso
-- id: 210140118
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0097_T03_Torso.webp
-  subtype: Torso
-- id: 210140119
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0036_T04_Torso.webp
-  subtype: Torso
-- id: 210140120
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0146_T03_Torso.webp
-  subtype: Torso
-- id: 210140121
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0014_T03_Torso.webp
-  subtype: Torso
-- id: 210140122
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0054_T03_Torso.webp
-  subtype: Torso
-- id: 210140123
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0023_T04_Torso.webp
-  subtype: Torso
-- id: 210140124
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_Ulgorn_01_Torso.webp
-  subtype: Torso
-- id: 210140125
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0021_T03_Torso.webp
-  subtype: Torso
-- id: 210140126
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0093_T04_Torso.webp
-  subtype: Torso
-- id: 210140127
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0017_T02_Torso.webp
-  subtype: Torso
-- id: 210140128
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_DebGuard_02_Torso.webp
-  subtype: Torso
-- id: 210140129
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0013_T03_Torso.webp
-  subtype: Torso
-- id: 210140130
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0109_T04_Torso.webp
-  subtype: Torso
-- id: 210140131
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0056_T03_Torso.webp
-  subtype: Torso
-- id: 210140132
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0002_T04_Torso.webp
-  subtype: Torso
-- id: 210140133
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0015_T03_Torso.webp
-  subtype: Torso
-- id: 210140134
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0016_T05_Torso.webp
-  subtype: Torso
-- id: 210140135
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_DebGuard_01_Torso.webp
-  subtype: Torso
-- id: 210140136
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0137_T03_Torso.webp
-  subtype: Torso
-- id: 210140137
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0031_T05_Torso.webp
-  subtype: Torso
-- id: 210140138
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0035_T05_Torso.webp
-  subtype: Torso
-- id: 210140139
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0006_T05_Torso.webp
-  subtype: Torso
-- id: 210140140
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0113_T04_Torso.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0161_T03_Torso.webp
   subtype: Torso
 - id: 210240002
   grade: Legend
@@ -12155,129 +14099,17 @@ items:
   grade: Legend
   icon: UI/Resource/Texture/Item/Armor/Icon_GM_0048_T04_Pants.webp
   subtype: Pants
+- id: 210240108
+  grade: Legend
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0161_T03_Pants.webp
+  subtype: Pants
 - id: 210240109
   grade: Legend
   icon: UI/Resource/Texture/Item/Armor/Icon_GM_0048_T04_Pants.webp
   subtype: Pants
-- id: 210240111
+- id: 210240110
   grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0122_T01_Pants.webp
-  subtype: Pants
-- id: 210240112
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_DebGuard_03_Pants.webp
-  subtype: Pants
-- id: 210240113
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0094_T03_Pants.webp
-  subtype: Pants
-- id: 210240114
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0098_T02_Pants.webp
-  subtype: Pants
-- id: 210240115
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0164_T03_Pants.webp
-  subtype: Pants
-- id: 210240116
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0106_T04_Pants.webp
-  subtype: Pants
-- id: 210240117
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0095_T02_Pants.webp
-  subtype: Pants
-- id: 210240118
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0097_T03_Pants.webp
-  subtype: Pants
-- id: 210240119
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0036_T04_Pants.webp
-  subtype: Pants
-- id: 210240120
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0146_T03_Pants.webp
-  subtype: Pants
-- id: 210240121
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0014_T03_Pants.webp
-  subtype: Pants
-- id: 210240122
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0054_T03_Pants.webp
-  subtype: Pants
-- id: 210240123
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0023_T04_Pants.webp
-  subtype: Pants
-- id: 210240124
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_Ulgorn_01_Pants.webp
-  subtype: Pants
-- id: 210240125
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0021_T03_Pants.webp
-  subtype: Pants
-- id: 210240126
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0093_T04_Pants.webp
-  subtype: Pants
-- id: 210240127
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0017_T02_Pants.webp
-  subtype: Pants
-- id: 210240128
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_DebGuard_02_Pants.webp
-  subtype: Pants
-- id: 210240129
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0013_T03_Pants.webp
-  subtype: Pants
-- id: 210240130
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0109_T04_Pants.webp
-  subtype: Pants
-- id: 210240131
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0056_T03_Pants.webp
-  subtype: Pants
-- id: 210240132
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0002_T04_Pants.webp
-  subtype: Pants
-- id: 210240133
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0015_T03_Pants.webp
-  subtype: Pants
-- id: 210240134
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0016_T05_Pants.webp
-  subtype: Pants
-- id: 210240135
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_DebGuard_01_Pants.webp
-  subtype: Pants
-- id: 210240136
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0137_T03_Pants.webp
-  subtype: Pants
-- id: 210240137
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0031_T05_Pants.webp
-  subtype: Pants
-- id: 210240138
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0035_T05_Pants.webp
-  subtype: Pants
-- id: 210240139
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0006_T05_Pants.webp
-  subtype: Pants
-- id: 210240140
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0113_T04_Pants.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0161_T03_Pants.webp
   subtype: Pants
 - id: 210340002
   grade: Legend
@@ -12607,129 +14439,17 @@ items:
   grade: Legend
   icon: UI/Resource/Texture/Item/Armor/Icon_GM_0048_T04_Helmet.webp
   subtype: Helmet
+- id: 210340108
+  grade: Legend
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0161_T03_Helmet.webp
+  subtype: Helmet
 - id: 210340109
   grade: Legend
   icon: UI/Resource/Texture/Item/Armor/Icon_GM_0048_T04_Helmet.webp
   subtype: Helmet
-- id: 210340111
+- id: 210340110
   grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0122_T01_Helmet.webp
-  subtype: Helmet
-- id: 210340112
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_DebGuard_03_Helmet.webp
-  subtype: Helmet
-- id: 210340113
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0094_T03_Helmet.webp
-  subtype: Helmet
-- id: 210340114
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0098_T02_Helmet.webp
-  subtype: Helmet
-- id: 210340115
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0164_T03_Helmet.webp
-  subtype: Helmet
-- id: 210340116
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0106_T04_Helmet.webp
-  subtype: Helmet
-- id: 210340117
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0095_T02_Helmet.webp
-  subtype: Helmet
-- id: 210340118
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0097_T03_Helmet.webp
-  subtype: Helmet
-- id: 210340119
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0036_T04_Helmet.webp
-  subtype: Helmet
-- id: 210340120
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0146_T03_Helmet.webp
-  subtype: Helmet
-- id: 210340121
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0014_T03_Helmet.webp
-  subtype: Helmet
-- id: 210340122
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0054_T03_Helmet.webp
-  subtype: Helmet
-- id: 210340123
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0023_T04_Helmet.webp
-  subtype: Helmet
-- id: 210340124
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_Ulgorn_01_Helmet.webp
-  subtype: Helmet
-- id: 210340125
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0021_T03_Helmet.webp
-  subtype: Helmet
-- id: 210340126
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0093_T04_Helmet.webp
-  subtype: Helmet
-- id: 210340127
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0017_T02_Helmet.webp
-  subtype: Helmet
-- id: 210340128
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_DebGuard_02_Helmet.webp
-  subtype: Helmet
-- id: 210340129
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0013_T03_Helmet.webp
-  subtype: Helmet
-- id: 210340130
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0109_T04_Helmet.webp
-  subtype: Helmet
-- id: 210340131
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0056_T03_Helmet.webp
-  subtype: Helmet
-- id: 210340132
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0002_T04_Helmet.webp
-  subtype: Helmet
-- id: 210340133
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0015_T03_Helmet.webp
-  subtype: Helmet
-- id: 210340134
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0016_T05_Helmet.webp
-  subtype: Helmet
-- id: 210340135
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_DebGuard_01_Helmet.webp
-  subtype: Helmet
-- id: 210340136
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0137_T03_Helmet.webp
-  subtype: Helmet
-- id: 210340137
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0031_T05_Helmet.webp
-  subtype: Helmet
-- id: 210340138
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0035_T05_Helmet.webp
-  subtype: Helmet
-- id: 210340139
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0006_T05_Helmet.webp
-  subtype: Helmet
-- id: 210340140
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0113_T04_Helmet.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0161_T03_Helmet.webp
   subtype: Helmet
 - id: 210440002
   grade: Legend
@@ -13059,129 +14779,17 @@ items:
   grade: Legend
   icon: UI/Resource/Texture/Item/Armor/Icon_GM_0048_T04_Shoulder.webp
   subtype: Shoulder
+- id: 210440108
+  grade: Legend
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0161_T03_Shoulder.webp
+  subtype: Shoulder
 - id: 210440109
   grade: Legend
   icon: UI/Resource/Texture/Item/Armor/Icon_GM_0048_T04_Shoulder.webp
   subtype: Shoulder
-- id: 210440111
+- id: 210440110
   grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0122_T01_Shoulder.webp
-  subtype: Shoulder
-- id: 210440112
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_DebGuard_03_Shoulder.webp
-  subtype: Shoulder
-- id: 210440113
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0094_T03_Shoulder.webp
-  subtype: Shoulder
-- id: 210440114
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0098_T02_Shoulder.webp
-  subtype: Shoulder
-- id: 210440115
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0164_T03_Shoulder.webp
-  subtype: Shoulder
-- id: 210440116
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0106_T04_Shoulder.webp
-  subtype: Shoulder
-- id: 210440117
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0095_T02_Shoulder.webp
-  subtype: Shoulder
-- id: 210440118
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0097_T03_Shoulder.webp
-  subtype: Shoulder
-- id: 210440119
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0036_T04_Shoulder.webp
-  subtype: Shoulder
-- id: 210440120
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0146_T03_Shoulder.webp
-  subtype: Shoulder
-- id: 210440121
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0014_T03_Shoulder.webp
-  subtype: Shoulder
-- id: 210440122
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0054_T03_Shoulder.webp
-  subtype: Shoulder
-- id: 210440123
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0023_T04_Shoulder.webp
-  subtype: Shoulder
-- id: 210440124
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_Ulgorn_01_Shoulder.webp
-  subtype: Shoulder
-- id: 210440125
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0021_T03_Shoulder.webp
-  subtype: Shoulder
-- id: 210440126
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0093_T04_Shoulder.webp
-  subtype: Shoulder
-- id: 210440127
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0017_T02_Shoulder.webp
-  subtype: Shoulder
-- id: 210440128
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_DebGuard_02_Shoulder.webp
-  subtype: Shoulder
-- id: 210440129
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0013_T03_Shoulder.webp
-  subtype: Shoulder
-- id: 210440130
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0109_T04_Shoulder.webp
-  subtype: Shoulder
-- id: 210440131
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0056_T03_Shoulder.webp
-  subtype: Shoulder
-- id: 210440132
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0002_T04_Shoulder.webp
-  subtype: Shoulder
-- id: 210440133
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0015_T03_Shoulder.webp
-  subtype: Shoulder
-- id: 210440134
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0016_T05_Shoulder.webp
-  subtype: Shoulder
-- id: 210440135
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_DebGuard_01_Shoulder.webp
-  subtype: Shoulder
-- id: 210440136
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0137_T03_Shoulder.webp
-  subtype: Shoulder
-- id: 210440137
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0031_T05_Shoulder.webp
-  subtype: Shoulder
-- id: 210440138
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0035_T05_Shoulder.webp
-  subtype: Shoulder
-- id: 210440139
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0006_T05_Shoulder.webp
-  subtype: Shoulder
-- id: 210440140
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0113_T04_Shoulder.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0161_T03_Shoulder.webp
   subtype: Shoulder
 - id: 210540002
   grade: Legend
@@ -13511,129 +15119,17 @@ items:
   grade: Legend
   icon: UI/Resource/Texture/Item/Armor/Icon_GM_0048_T04_Gloves.webp
   subtype: Gloves
+- id: 210540108
+  grade: Legend
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0161_T03_Gloves.webp
+  subtype: Gloves
 - id: 210540109
   grade: Legend
   icon: UI/Resource/Texture/Item/Armor/Icon_GM_0048_T04_Gloves.webp
   subtype: Gloves
-- id: 210540111
+- id: 210540110
   grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0122_T01_Gloves.webp
-  subtype: Gloves
-- id: 210540112
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_DebGuard_03_Gloves.webp
-  subtype: Gloves
-- id: 210540113
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0094_T03_Gloves.webp
-  subtype: Gloves
-- id: 210540114
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0098_T02_Gloves.webp
-  subtype: Gloves
-- id: 210540115
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0164_T03_Gloves.webp
-  subtype: Gloves
-- id: 210540116
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0106_T04_Gloves.webp
-  subtype: Gloves
-- id: 210540117
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0095_T02_Gloves.webp
-  subtype: Gloves
-- id: 210540118
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0097_T03_Gloves.webp
-  subtype: Gloves
-- id: 210540119
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0036_T04_Gloves.webp
-  subtype: Gloves
-- id: 210540120
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0146_T03_Gloves.webp
-  subtype: Gloves
-- id: 210540121
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0014_T03_Gloves.webp
-  subtype: Gloves
-- id: 210540122
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0054_T03_Gloves.webp
-  subtype: Gloves
-- id: 210540123
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0023_T04_Gloves.webp
-  subtype: Gloves
-- id: 210540124
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_Ulgorn_01_Gloves.webp
-  subtype: Gloves
-- id: 210540125
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0021_T03_Gloves.webp
-  subtype: Gloves
-- id: 210540126
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0093_T04_Gloves.webp
-  subtype: Gloves
-- id: 210540127
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0017_T02_Gloves.webp
-  subtype: Gloves
-- id: 210540128
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_DebGuard_02_Gloves.webp
-  subtype: Gloves
-- id: 210540129
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0013_T03_Gloves.webp
-  subtype: Gloves
-- id: 210540130
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0109_T04_Gloves.webp
-  subtype: Gloves
-- id: 210540131
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0056_T03_Gloves.webp
-  subtype: Gloves
-- id: 210540132
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0002_T04_Gloves.webp
-  subtype: Gloves
-- id: 210540133
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0015_T03_Gloves.webp
-  subtype: Gloves
-- id: 210540134
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0016_T05_Gloves.webp
-  subtype: Gloves
-- id: 210540135
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_DebGuard_01_Gloves.webp
-  subtype: Gloves
-- id: 210540136
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0137_T03_Gloves.webp
-  subtype: Gloves
-- id: 210540137
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0031_T05_Gloves.webp
-  subtype: Gloves
-- id: 210540138
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0035_T05_Gloves.webp
-  subtype: Gloves
-- id: 210540139
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0006_T05_Gloves.webp
-  subtype: Gloves
-- id: 210540140
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0113_T04_Gloves.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0161_T03_Gloves.webp
   subtype: Gloves
 - id: 210640002
   grade: Legend
@@ -13963,129 +15459,17 @@ items:
   grade: Legend
   icon: UI/Resource/Texture/Item/Armor/Icon_GM_0048_T04_Boots.webp
   subtype: Boots
+- id: 210640108
+  grade: Legend
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0161_T03_Boots.webp
+  subtype: Boots
 - id: 210640109
   grade: Legend
   icon: UI/Resource/Texture/Item/Armor/Icon_GM_0048_T04_Boots.webp
   subtype: Boots
-- id: 210640111
+- id: 210640110
   grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0122_T01_Boots.webp
-  subtype: Boots
-- id: 210640112
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_DebGuard_03_Boots.webp
-  subtype: Boots
-- id: 210640113
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0094_T03_Boots.webp
-  subtype: Boots
-- id: 210640114
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0098_T02_Boots.webp
-  subtype: Boots
-- id: 210640115
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0164_T03_Boots.webp
-  subtype: Boots
-- id: 210640116
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0106_T04_Boots.webp
-  subtype: Boots
-- id: 210640117
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0095_T02_Boots.webp
-  subtype: Boots
-- id: 210640118
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0097_T03_Boots.webp
-  subtype: Boots
-- id: 210640119
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0036_T04_Boots.webp
-  subtype: Boots
-- id: 210640120
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0146_T03_Boots.webp
-  subtype: Boots
-- id: 210640121
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0014_T03_Boots.webp
-  subtype: Boots
-- id: 210640122
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0054_T03_Boots.webp
-  subtype: Boots
-- id: 210640123
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0023_T04_Boots.webp
-  subtype: Boots
-- id: 210640124
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_Ulgorn_01_Boots.webp
-  subtype: Boots
-- id: 210640125
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0021_T03_Boots.webp
-  subtype: Boots
-- id: 210640126
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0093_T04_Boots.webp
-  subtype: Boots
-- id: 210640127
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0017_T02_Boots.webp
-  subtype: Boots
-- id: 210640128
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_DebGuard_02_Boots.webp
-  subtype: Boots
-- id: 210640129
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0013_T03_Boots.webp
-  subtype: Boots
-- id: 210640130
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0109_T04_Boots.webp
-  subtype: Boots
-- id: 210640131
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0056_T03_Boots.webp
-  subtype: Boots
-- id: 210640132
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0002_T04_Boots.webp
-  subtype: Boots
-- id: 210640133
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0015_T03_Boots.webp
-  subtype: Boots
-- id: 210640134
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0016_T05_Boots.webp
-  subtype: Boots
-- id: 210640135
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_DebGuard_01_Boots.webp
-  subtype: Boots
-- id: 210640136
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0137_T03_Boots.webp
-  subtype: Boots
-- id: 210640137
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0031_T05_Boots.webp
-  subtype: Boots
-- id: 210640138
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0035_T05_Boots.webp
-  subtype: Boots
-- id: 210640139
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0006_T05_Boots.webp
-  subtype: Boots
-- id: 210640140
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0113_T04_Boots.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0161_T03_Boots.webp
   subtype: Boots
 - id: 210740002
   grade: Legend
@@ -14415,129 +15799,17 @@ items:
   grade: Legend
   icon: UI/Resource/Texture/Item/Armor/Icon_GM_0048_T04_Cape.webp
   subtype: Cape
+- id: 210740108
+  grade: Legend
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0161_T03_Cape.webp
+  subtype: Cape
 - id: 210740109
   grade: Legend
   icon: UI/Resource/Texture/Item/Armor/Icon_GM_0048_T04_Cape.webp
   subtype: Cape
-- id: 210740111
+- id: 210740110
   grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0122_T01_Cape.webp
-  subtype: Cape
-- id: 210740112
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_DebGuard_03_Cape.webp
-  subtype: Cape
-- id: 210740113
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0094_T03_Cape.webp
-  subtype: Cape
-- id: 210740114
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0098_T02_Cape.webp
-  subtype: Cape
-- id: 210740115
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0164_T03_Cape.webp
-  subtype: Cape
-- id: 210740116
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0106_T04_Cape.webp
-  subtype: Cape
-- id: 210740117
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0095_T02_Cape.webp
-  subtype: Cape
-- id: 210740118
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0097_T03_Cape.webp
-  subtype: Cape
-- id: 210740119
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0036_T04_Cape.webp
-  subtype: Cape
-- id: 210740120
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0146_T03_Cape.webp
-  subtype: Cape
-- id: 210740121
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0014_T03_Cape.webp
-  subtype: Cape
-- id: 210740122
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0054_T03_Cape.webp
-  subtype: Cape
-- id: 210740123
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0023_T04_Cape.webp
-  subtype: Cape
-- id: 210740124
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_Ulgorn_01_Cape.webp
-  subtype: Cape
-- id: 210740125
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0021_T03_Cape.webp
-  subtype: Cape
-- id: 210740126
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0093_T04_Cape.webp
-  subtype: Cape
-- id: 210740127
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0017_T02_Cape.webp
-  subtype: Cape
-- id: 210740128
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_DebGuard_02_Cape.webp
-  subtype: Cape
-- id: 210740129
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0013_T03_Cape.webp
-  subtype: Cape
-- id: 210740130
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0109_T04_Cape.webp
-  subtype: Cape
-- id: 210740131
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0056_T03_Cape.webp
-  subtype: Cape
-- id: 210740132
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0002_T04_Cape.webp
-  subtype: Cape
-- id: 210740133
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0015_T03_Cape.webp
-  subtype: Cape
-- id: 210740134
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0016_T05_Cape.webp
-  subtype: Cape
-- id: 210740135
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_DebGuard_01_Cape.webp
-  subtype: Cape
-- id: 210740136
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0137_T03_Cape.webp
-  subtype: Cape
-- id: 210740137
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0031_T05_Cape.webp
-  subtype: Cape
-- id: 210740138
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0035_T05_Cape.webp
-  subtype: Cape
-- id: 210740139
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0006_T05_Cape.webp
-  subtype: Cape
-- id: 210740140
-  grade: Legend
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0113_T04_Cape.webp
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0161_T03_Cape.webp
   subtype: Cape
 - id: 215240001
   grade: Legend
@@ -14671,9 +15943,17 @@ items:
   grade: Legend
   icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0041.webp
   subtype: Necklace
+- id: 310140086
+  grade: Legend
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0090.webp
+  subtype: Necklace
 - id: 310140087
   grade: Legend
   icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0041.webp
+  subtype: Necklace
+- id: 310140088
+  grade: Legend
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0090.webp
   subtype: Necklace
 - id: 310240009
   grade: Legend
@@ -14807,9 +16087,17 @@ items:
   grade: Legend
   icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0041.webp
   subtype: Earring
+- id: 310240088
+  grade: Legend
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0090.webp
+  subtype: Earring
 - id: 310240089
   grade: Legend
   icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0041.webp
+  subtype: Earring
+- id: 310240090
+  grade: Legend
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0090.webp
   subtype: Earring
 - id: 310340009
   grade: Legend
@@ -14943,9 +16231,17 @@ items:
   grade: Legend
   icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_0041.webp
   subtype: Ring
+- id: 310340088
+  grade: Legend
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_0090.webp
+  subtype: Ring
 - id: 310340089
   grade: Legend
   icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_0041.webp
+  subtype: Ring
+- id: 310340090
+  grade: Legend
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_Ring_0090.webp
   subtype: Ring
 - id: 310440015
   grade: Legend
@@ -16283,6 +17579,22 @@ items:
   grade: Legend
   icon: UI/Resource/Texture/Item/ETC/Icon_Currency_Get_Title_03_001.webp
   subtype: Other
+- id: 532540392
+  grade: Legend
+  icon: UI/Resource/Texture/Item/ETC/Icon_Currency_Get_Title_03_001.webp
+  subtype: Other
+- id: 532540393
+  grade: Legend
+  icon: UI/Resource/Texture/Item/ETC/Icon_Currency_Get_Title_03_001.webp
+  subtype: Other
+- id: 532540394
+  grade: Legend
+  icon: UI/Resource/Texture/Item/ETC/Icon_Currency_Get_Title_03_001.webp
+  subtype: Other
+- id: 532540395
+  grade: Legend
+  icon: UI/Resource/Texture/Item/ETC/Icon_Currency_Get_Title_03_001.webp
+  subtype: Other
 - id: 532550058
   grade: Legend
   icon: UI/Resource/Texture/Item/ETC/Icon_Currency_Get_Title_03_001.webp
@@ -16439,6 +17751,14 @@ items:
   grade: Legend
   icon: UI/Resource/Texture/Item/ETC/icon_AD_pic_A_s1_MOB_Giselle_01.webp
   subtype: Other
+- id: 534310126
+  grade: Legend
+  icon: UI/Resource/Texture/Item/ETC/icon_AD_pic_A_MOB_Ulgorn_01.webp
+  subtype: Other
+- id: 534310127
+  grade: Legend
+  icon: UI/Resource/Texture/Item/ETC/icon_AD_pic_A_MOB_Rathman_01.webp
+  subtype: Other
 - id: 534320002
   grade: Legend
   icon: UI/Resource/Texture/Item/ETC/icon_AD_statueS_L_c_TeleportArtifact_L_01.webp
@@ -16503,6 +17823,18 @@ items:
   grade: Legend
   icon: UI/Resource/Texture/Item/ETC/icon_AD_statueS_A_MOB_Santras_01.webp
   subtype: Other
+- id: 534320061
+  grade: Legend
+  icon: UI/Resource/Texture/Item/ETC/icon_AD_statueS_A_MOB_WaterEle_04_V02.webp
+  subtype: Other
+- id: 534320066
+  grade: Legend
+  icon: UI/Resource/Texture/Item/ETC/icon_AD_statueS_L_s1_abyss_03.webp
+  subtype: Other
+- id: 534320067
+  grade: Legend
+  icon: UI/Resource/Texture/Item/ETC/icon_AD_statueS_D_s1_abyss_03.webp
+  subtype: Other
 - id: 535114001
   grade: Legend
   icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Grail_u_PveSet2.webp
@@ -16510,6 +17842,14 @@ items:
 - id: 535114002
   grade: Legend
   icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Grail_u_DefenceSet2.webp
+  subtype: Other
+- id: 535114003
+  grade: Legend
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Grail_u_OffenseSet2.webp
+  subtype: Other
+- id: 535114004
+  grade: Legend
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Grail_u_DefenceSet1.webp
   subtype: Other
 - id: 535124001
   grade: Legend
@@ -16519,6 +17859,14 @@ items:
   grade: Legend
   icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Parchment_u_DefenceSet2.webp
   subtype: Other
+- id: 535124003
+  grade: Legend
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Parchment_u_OffenseSet2.webp
+  subtype: Other
+- id: 535124004
+  grade: Legend
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Parchment_u_DefenceSet1.webp
+  subtype: Other
 - id: 535134001
   grade: Legend
   icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Compass_u_PveSet2.webp
@@ -16526,6 +17874,14 @@ items:
 - id: 535134002
   grade: Legend
   icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Compass_u_DefenceSet2.webp
+  subtype: Other
+- id: 535134003
+  grade: Legend
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Compass_u_OffenseSet2.webp
+  subtype: Other
+- id: 535134004
+  grade: Legend
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Compass_u_DefenceSet1.webp
   subtype: Other
 - id: 535144001
   grade: Legend
@@ -16535,6 +17891,14 @@ items:
   grade: Legend
   icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Bell_u_DefenceSet2.webp
   subtype: Other
+- id: 535144003
+  grade: Legend
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Bell_u_OffenseSet2.webp
+  subtype: Other
+- id: 535144004
+  grade: Legend
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Bell_u_DefenceSet1.webp
+  subtype: Other
 - id: 535154001
   grade: Legend
   icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Mirror_u_PveSet2.webp
@@ -16542,6 +17906,22 @@ items:
 - id: 535154002
   grade: Legend
   icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Mirror_u_DefenceSet2.webp
+  subtype: Other
+- id: 535154003
+  grade: Legend
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Mirror_u_OffenseSet2.webp
+  subtype: Other
+- id: 535154004
+  grade: Legend
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Mirror_u_DefenceSet1.webp
+  subtype: Other
+- id: 535164003
+  grade: Legend
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Libra_u_OffenseSet2.webp
+  subtype: Other
+- id: 535164004
+  grade: Legend
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Libra_u_DefenceSet1.webp
   subtype: Other
 - id: 535510002
   grade: Legend
@@ -16774,6 +18154,10 @@ items:
 - id: 535510162
   grade: Legend
   icon: UI/Resource/Texture/Item/Armor/Icon_GM_0048_T04_Torso.webp
+  subtype: Other
+- id: 535510163
+  grade: Legend
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0161_T03_Torso.webp
   subtype: Other
 - id: 535710081
   grade: Legend
@@ -19063,6 +20447,34 @@ items:
   grade: Legend
   icon: UI/Resource/Texture/Item/Armor/Icon_GM_0048_T04_Cape.webp
   subtype: Other
+- id: 535811142
+  grade: Legend
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0161_T03_Torso.webp
+  subtype: Other
+- id: 535811143
+  grade: Legend
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0161_T03_Pants.webp
+  subtype: Other
+- id: 535811144
+  grade: Legend
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0161_T03_Helmet.webp
+  subtype: Other
+- id: 535811145
+  grade: Legend
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0161_T03_Shoulder.webp
+  subtype: Other
+- id: 535811146
+  grade: Legend
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0161_T03_Gloves.webp
+  subtype: Other
+- id: 535811147
+  grade: Legend
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0161_T03_Boots.webp
+  subtype: Other
+- id: 535811148
+  grade: Legend
+  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0161_T03_Cape.webp
+  subtype: Other
 - id: 535910005
   grade: Legend
   icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0005.webp
@@ -19142,6 +20554,10 @@ items:
 - id: 535910082
   grade: Legend
   icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0082.webp
+  subtype: Other
+- id: 535910090
+  grade: Legend
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_ER_0090.webp
   subtype: Other
 - id: 535910091
   grade: Legend
@@ -19227,6 +20643,10 @@ items:
   grade: Legend
   icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0082.webp
   subtype: Other
+- id: 535910227
+  grade: Legend
+  icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0090.webp
+  subtype: Other
 - id: 535910228
   grade: Legend
   icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0091.webp
@@ -19234,6 +20654,10 @@ items:
 - id: 535910237
   grade: Legend
   icon: UI/Resource/Texture/Item/Accessory/Icon_ACC_NL_0100.webp
+  subtype: Other
+- id: 536010056
+  grade: Legend
+  icon: UI/Resource/Texture/Item/Armor/Icon_AR_Part_GM_BakarmaS2_01.webp
   subtype: Other
 - id: 560615001
   grade: Legend
@@ -19610,55 +21034,55 @@ items:
 - id: 632520077
   grade: Legend
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_AD_Pic_A_l_002.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632520078
   grade: Legend
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_AD_Pic_A_l_002.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632520079
   grade: Legend
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_AD_Pic_A_l_002.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632520080
   grade: Legend
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_AD_Pic_A_l_002.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632520081
   grade: Legend
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_AD_Pic_A_l_002.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632520082
   grade: Legend
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_AD_Pic_A_l_002.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632520083
   grade: Legend
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_AD_Pic_A_l_002.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632520084
   grade: Legend
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_AD_Pic_A_l_002.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632520085
   grade: Legend
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_AD_Pic_A_l_002.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632520086
   grade: Legend
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_AD_Pic_A_l_002.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632520090
   grade: Legend
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_AD_Pic_A_l_002.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632540011
   grade: Legend
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Craft_Wing_A_l_001.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632540023
   grade: Legend
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Craft_Wing_A_l_001.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 650590007
   grade: Legend
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Craft_Jewel_Beginner.webp
@@ -19675,6 +21099,14 @@ items:
   grade: Legend
   icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Grail_u_DefenceSet2.webp
   subtype: Other
+- id: 810140003
+  grade: Legend
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Grail_u_OffenseSet2.webp
+  subtype: Other
+- id: 810140004
+  grade: Legend
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Grail_u_DefenceSet1.webp
+  subtype: Other
 - id: 810240001
   grade: Legend
   icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Parchment_u_PveSet2.webp
@@ -19682,6 +21114,14 @@ items:
 - id: 810240002
   grade: Legend
   icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Parchment_u_DefenceSet2.webp
+  subtype: Other
+- id: 810240003
+  grade: Legend
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Parchment_u_OffenseSet2.webp
+  subtype: Other
+- id: 810240004
+  grade: Legend
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Parchment_u_DefenceSet1.webp
   subtype: Other
 - id: 810340001
   grade: Legend
@@ -19691,6 +21131,14 @@ items:
   grade: Legend
   icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Compass_u_DefenceSet2.webp
   subtype: Other
+- id: 810340003
+  grade: Legend
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Compass_u_OffenseSet2.webp
+  subtype: Other
+- id: 810340004
+  grade: Legend
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Compass_u_DefenceSet1.webp
+  subtype: Other
 - id: 810440001
   grade: Legend
   icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Bell_u_PveSet2.webp
@@ -19699,6 +21147,14 @@ items:
   grade: Legend
   icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Bell_u_DefenceSet2.webp
   subtype: Other
+- id: 810440003
+  grade: Legend
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Bell_u_OffenseSet2.webp
+  subtype: Other
+- id: 810440004
+  grade: Legend
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Bell_u_DefenceSet1.webp
+  subtype: Other
 - id: 810540001
   grade: Legend
   icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Mirror_u_PveSet2.webp
@@ -19706,6 +21162,22 @@ items:
 - id: 810540002
   grade: Legend
   icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Mirror_u_DefenceSet2.webp
+  subtype: Other
+- id: 810540003
+  grade: Legend
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Mirror_u_OffenseSet2.webp
+  subtype: Other
+- id: 810540004
+  grade: Legend
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Mirror_u_DefenceSet1.webp
+  subtype: Other
+- id: 810640003
+  grade: Legend
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Libra_u_OffenseSet2.webp
+  subtype: Other
+- id: 810640004
+  grade: Legend
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Libra_u_DefenceSet1.webp
   subtype: Other
 - id: 110150003
   grade: Rare
@@ -20883,46 +22355,6 @@ items:
   grade: Rare
   icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0001_T04_Torso.webp
   subtype: Torso
-- id: 210150091
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0100_T02_Torso.webp
-  subtype: Torso
-- id: 210150092
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0101_T01_Torso.webp
-  subtype: Torso
-- id: 210150093
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0107_T03_Torso.webp
-  subtype: Torso
-- id: 210150094
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0088_T03_Torso.webp
-  subtype: Torso
-- id: 210150095
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0092_T01_Torso.webp
-  subtype: Torso
-- id: 210150096
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0089_T02_Torso.webp
-  subtype: Torso
-- id: 210150097
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0110_T01_Torso.webp
-  subtype: Torso
-- id: 210150098
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0105_T03_Torso.webp
-  subtype: Torso
-- id: 210150099
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0156_T02_Torso.webp
-  subtype: Torso
-- id: 210150100
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0065_T03_Torso.webp
-  subtype: Torso
 - id: 210250003
   grade: Rare
   icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0026_T03_Pants.webp
@@ -21058,46 +22490,6 @@ items:
 - id: 210250090
   grade: Rare
   icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0001_T04_Pants.webp
-  subtype: Pants
-- id: 210250091
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0100_T02_Pants.webp
-  subtype: Pants
-- id: 210250092
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0101_T01_Pants.webp
-  subtype: Pants
-- id: 210250093
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0107_T03_Pants.webp
-  subtype: Pants
-- id: 210250094
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0088_T03_Pants.webp
-  subtype: Pants
-- id: 210250095
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0092_T01_Pants.webp
-  subtype: Pants
-- id: 210250096
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0089_T02_Pants.webp
-  subtype: Pants
-- id: 210250097
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0110_T01_Pants.webp
-  subtype: Pants
-- id: 210250098
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0105_T03_Pants.webp
-  subtype: Pants
-- id: 210250099
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0156_T02_Pants.webp
-  subtype: Pants
-- id: 210250100
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0065_T03_Pants.webp
   subtype: Pants
 - id: 210350003
   grade: Rare
@@ -21235,46 +22627,6 @@ items:
   grade: Rare
   icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0001_T04_Helmet.webp
   subtype: Helmet
-- id: 210350091
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0100_T02_Helmet.webp
-  subtype: Helmet
-- id: 210350092
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0101_T01_Helmet.webp
-  subtype: Helmet
-- id: 210350093
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0107_T03_Helmet.webp
-  subtype: Helmet
-- id: 210350094
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0088_T03_Helmet.webp
-  subtype: Helmet
-- id: 210350095
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0092_T01_Helmet.webp
-  subtype: Helmet
-- id: 210350096
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0089_T02_Helmet.webp
-  subtype: Helmet
-- id: 210350097
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0110_T01_Helmet.webp
-  subtype: Helmet
-- id: 210350098
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0105_T03_Helmet.webp
-  subtype: Helmet
-- id: 210350099
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0156_T02_Helmet.webp
-  subtype: Helmet
-- id: 210350100
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0065_T03_Helmet.webp
-  subtype: Helmet
 - id: 210450003
   grade: Rare
   icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0026_T03_Shoulder.webp
@@ -21410,46 +22762,6 @@ items:
 - id: 210450090
   grade: Rare
   icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0001_T04_Shoulder.webp
-  subtype: Shoulder
-- id: 210450091
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0100_T02_Shoulder.webp
-  subtype: Shoulder
-- id: 210450092
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0101_T01_Shoulder.webp
-  subtype: Shoulder
-- id: 210450093
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0107_T03_Shoulder.webp
-  subtype: Shoulder
-- id: 210450094
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0088_T03_Shoulder.webp
-  subtype: Shoulder
-- id: 210450095
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0092_T01_Shoulder.webp
-  subtype: Shoulder
-- id: 210450096
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0089_T02_Shoulder.webp
-  subtype: Shoulder
-- id: 210450097
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0110_T01_Shoulder.webp
-  subtype: Shoulder
-- id: 210450098
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0105_T03_Shoulder.webp
-  subtype: Shoulder
-- id: 210450099
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0156_T02_Shoulder.webp
-  subtype: Shoulder
-- id: 210450100
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0065_T03_Shoulder.webp
   subtype: Shoulder
 - id: 210550003
   grade: Rare
@@ -21587,46 +22899,6 @@ items:
   grade: Rare
   icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0001_T04_Gloves.webp
   subtype: Gloves
-- id: 210550091
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0100_T02_Gloves.webp
-  subtype: Gloves
-- id: 210550092
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0101_T01_Gloves.webp
-  subtype: Gloves
-- id: 210550093
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0107_T03_Gloves.webp
-  subtype: Gloves
-- id: 210550094
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0088_T03_Gloves.webp
-  subtype: Gloves
-- id: 210550095
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0092_T01_Gloves.webp
-  subtype: Gloves
-- id: 210550096
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0089_T02_Gloves.webp
-  subtype: Gloves
-- id: 210550097
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0110_T01_Gloves.webp
-  subtype: Gloves
-- id: 210550098
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0105_T03_Gloves.webp
-  subtype: Gloves
-- id: 210550099
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0156_T02_Gloves.webp
-  subtype: Gloves
-- id: 210550100
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0065_T03_Gloves.webp
-  subtype: Gloves
 - id: 210650003
   grade: Rare
   icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0026_T03_Boots.webp
@@ -21763,46 +23035,6 @@ items:
   grade: Rare
   icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0001_T04_Boots.webp
   subtype: Boots
-- id: 210650091
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0100_T02_Boots.webp
-  subtype: Boots
-- id: 210650092
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0101_T01_Boots.webp
-  subtype: Boots
-- id: 210650093
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0107_T03_Boots.webp
-  subtype: Boots
-- id: 210650094
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0088_T03_Boots.webp
-  subtype: Boots
-- id: 210650095
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0092_T01_Boots.webp
-  subtype: Boots
-- id: 210650096
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0089_T02_Boots.webp
-  subtype: Boots
-- id: 210650097
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0110_T01_Boots.webp
-  subtype: Boots
-- id: 210650098
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0105_T03_Boots.webp
-  subtype: Boots
-- id: 210650099
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0156_T02_Boots.webp
-  subtype: Boots
-- id: 210650100
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0065_T03_Boots.webp
-  subtype: Boots
 - id: 210750003
   grade: Rare
   icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0026_T03_Cape.webp
@@ -21938,46 +23170,6 @@ items:
 - id: 210750090
   grade: Rare
   icon: UI/Resource/Texture/Item/Armor/Icon_Equip_AR_L_0001_T04_Cape.webp
-  subtype: Cape
-- id: 210750091
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0100_T02_Cape.webp
-  subtype: Cape
-- id: 210750092
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0101_T01_Cape.webp
-  subtype: Cape
-- id: 210750093
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0107_T03_Cape.webp
-  subtype: Cape
-- id: 210750094
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0088_T03_Cape.webp
-  subtype: Cape
-- id: 210750095
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0092_T01_Cape.webp
-  subtype: Cape
-- id: 210750096
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0089_T02_Cape.webp
-  subtype: Cape
-- id: 210750097
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0110_T01_Cape.webp
-  subtype: Cape
-- id: 210750098
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0105_T03_Cape.webp
-  subtype: Cape
-- id: 210750099
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0156_T02_Cape.webp
-  subtype: Cape
-- id: 210750100
-  grade: Rare
-  icon: UI/Resource/Texture/Item/Armor/Icon_GM_0065_T03_Cape.webp
   subtype: Cape
 - id: 215250001
   grade: Rare
@@ -22491,6 +23683,18 @@ items:
   grade: Rare
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Usable_Food_Event_A_r_007.webp
   subtype: Other
+- id: 530716063
+  grade: Rare
+  icon: UI/Resource/Texture/Item/ETC/Icon_Item_Usable_Food_Event_A_r_003.webp
+  subtype: Other
+- id: 530716064
+  grade: Rare
+  icon: UI/Resource/Texture/Item/ETC/Icon_Item_Usable_Food_Event_A_r_001.webp
+  subtype: Other
+- id: 530716065
+  grade: Rare
+  icon: UI/Resource/Texture/Item/ETC/Icon_Item_SUL_Event_Food_01.webp
+  subtype: Other
 - id: 530736005
   grade: Rare
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Usable_Food_A_002.webp
@@ -22524,6 +23728,14 @@ items:
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_QuestScroll_A_001.webp
   subtype: Other
 - id: 532350011
+  grade: Rare
+  icon: UI/Resource/Texture/Item/ETC/Icon_Item_QuestScroll_A_001.webp
+  subtype: Other
+- id: 532350012
+  grade: Rare
+  icon: UI/Resource/Texture/Item/ETC/Icon_Item_QuestScroll_A_001.webp
+  subtype: Other
+- id: 532350013
   grade: Rare
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_QuestScroll_A_001.webp
   subtype: Other
@@ -23987,6 +25199,10 @@ items:
   grade: Rare
   icon: UI/Resource/Texture/Item/ETC/Icon_Currency_Get_Title_02_001.webp
   subtype: Other
+- id: 532550484
+  grade: Rare
+  icon: UI/Resource/Texture/Item/ETC/Icon_Currency_Get_Title_02_001.webp
+  subtype: Other
 - id: 532550485
   grade: Rare
   icon: UI/Resource/Texture/Item/ETC/Icon_Currency_Get_Title_02_001.webp
@@ -23996,6 +25212,34 @@ items:
   icon: UI/Resource/Texture/Item/ETC/Icon_Currency_Get_Title_02_001.webp
   subtype: Other
 - id: 532550487
+  grade: Rare
+  icon: UI/Resource/Texture/Item/ETC/Icon_Currency_Get_Title_02_001.webp
+  subtype: Other
+- id: 532550488
+  grade: Rare
+  icon: UI/Resource/Texture/Item/ETC/Icon_Currency_Get_Title_02_001.webp
+  subtype: Other
+- id: 532550489
+  grade: Rare
+  icon: UI/Resource/Texture/Item/ETC/Icon_Currency_Get_Title_02_001.webp
+  subtype: Other
+- id: 532550490
+  grade: Rare
+  icon: UI/Resource/Texture/Item/ETC/Icon_Currency_Get_Title_02_001.webp
+  subtype: Other
+- id: 532550491
+  grade: Rare
+  icon: UI/Resource/Texture/Item/ETC/Icon_Currency_Get_Title_02_001.webp
+  subtype: Other
+- id: 532550492
+  grade: Rare
+  icon: UI/Resource/Texture/Item/ETC/Icon_Currency_Get_Title_02_001.webp
+  subtype: Other
+- id: 532550493
+  grade: Rare
+  icon: UI/Resource/Texture/Item/ETC/Icon_Currency_Get_Title_02_001.webp
+  subtype: Other
+- id: 532550494
   grade: Rare
   icon: UI/Resource/Texture/Item/ETC/Icon_Currency_Get_Title_02_001.webp
   subtype: Other
@@ -24203,6 +25447,14 @@ items:
   grade: Rare
   icon: UI/Resource/Texture/Item/ETC/icon_AD_pic_A_s1_MOB_FafBlood_01.webp
   subtype: Other
+- id: 534310128
+  grade: Rare
+  icon: UI/Resource/Texture/Item/ETC/icon_AD_pic_A_MOB_Owlac_01.webp
+  subtype: Other
+- id: 534310129
+  grade: Rare
+  icon: UI/Resource/Texture/Item/ETC/icon_AD_pic_A_MOB_Perion_01.webp
+  subtype: Other
 - id: 534320003
   grade: Rare
   icon: UI/Resource/Texture/Item/ETC/icon_AD_statueS_L_r_WingE_001.webp
@@ -24279,6 +25531,14 @@ items:
   grade: Rare
   icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Grail_u_DefenceSet2.webp
   subtype: Other
+- id: 535115003
+  grade: Rare
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Grail_u_OffenseSet2.webp
+  subtype: Other
+- id: 535115004
+  grade: Rare
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Grail_u_DefenceSet1.webp
+  subtype: Other
 - id: 535125001
   grade: Rare
   icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Parchment_u_PveSet2.webp
@@ -24286,6 +25546,14 @@ items:
 - id: 535125002
   grade: Rare
   icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Parchment_u_DefenceSet2.webp
+  subtype: Other
+- id: 535125003
+  grade: Rare
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Parchment_u_OffenseSet2.webp
+  subtype: Other
+- id: 535125004
+  grade: Rare
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Parchment_u_DefenceSet1.webp
   subtype: Other
 - id: 535135001
   grade: Rare
@@ -24295,6 +25563,14 @@ items:
   grade: Rare
   icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Compass_u_DefenceSet2.webp
   subtype: Other
+- id: 535135003
+  grade: Rare
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Compass_u_OffenseSet2.webp
+  subtype: Other
+- id: 535135004
+  grade: Rare
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Compass_u_DefenceSet1.webp
+  subtype: Other
 - id: 535145001
   grade: Rare
   icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Bell_u_PveSet2.webp
@@ -24303,6 +25579,14 @@ items:
   grade: Rare
   icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Bell_u_DefenceSet2.webp
   subtype: Other
+- id: 535145003
+  grade: Rare
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Bell_u_OffenseSet2.webp
+  subtype: Other
+- id: 535145004
+  grade: Rare
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Bell_u_DefenceSet1.webp
+  subtype: Other
 - id: 535155001
   grade: Rare
   icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Mirror_u_PveSet2.webp
@@ -24310,6 +25594,22 @@ items:
 - id: 535155002
   grade: Rare
   icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Mirror_u_DefenceSet2.webp
+  subtype: Other
+- id: 535155003
+  grade: Rare
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Mirror_u_OffenseSet2.webp
+  subtype: Other
+- id: 535155004
+  grade: Rare
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Mirror_u_DefenceSet1.webp
+  subtype: Other
+- id: 535165003
+  grade: Rare
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Libra_u_OffenseSet2.webp
+  subtype: Other
+- id: 535165004
+  grade: Rare
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Libra_u_DefenceSet1.webp
   subtype: Other
 - id: 535510001
   grade: Rare
@@ -25299,6 +26599,10 @@ items:
   grade: Rare
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Usable_Drink_Event_A_r_001.webp
   subtype: Other
+- id: 560616006
+  grade: Rare
+  icon: UI/Resource/Texture/Item/ETC/Icon_Item_Usable_Drink_Event_A_r_001.webp
+  subtype: Other
 - id: 560716007
   grade: Rare
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Usable_Food_A_002.webp
@@ -25320,6 +26624,10 @@ items:
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Usable_Food_Craft_A_c_022.webp
   subtype: Other
 - id: 560716012
+  grade: Rare
+  icon: UI/Resource/Texture/Item/ETC/Icon_Item_Usable_Food_Craft_A_c_001.webp
+  subtype: Other
+- id: 560716013
   grade: Rare
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Usable_Food_Craft_A_c_001.webp
   subtype: Other
@@ -25546,15 +26854,15 @@ items:
 - id: 632520087
   grade: Rare
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_AD_Statue_A_r_002.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632520088
   grade: Rare
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_AD_Statue_A_r_002.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632540026
   grade: Rare
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Craft_Wing_A_l_001.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 660530002
   grade: Rare
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Craft_SmeltStone_Equip_A_u_001.webp
@@ -25567,6 +26875,14 @@ items:
   grade: Rare
   icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Grail_u_DefenceSet2.webp
   subtype: Other
+- id: 810150003
+  grade: Rare
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Grail_u_OffenseSet2.webp
+  subtype: Other
+- id: 810150004
+  grade: Rare
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Grail_u_DefenceSet1.webp
+  subtype: Other
 - id: 810250001
   grade: Rare
   icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Parchment_u_PveSet2.webp
@@ -25574,6 +26890,14 @@ items:
 - id: 810250002
   grade: Rare
   icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Parchment_u_DefenceSet2.webp
+  subtype: Other
+- id: 810250003
+  grade: Rare
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Parchment_u_OffenseSet2.webp
+  subtype: Other
+- id: 810250004
+  grade: Rare
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Parchment_u_DefenceSet1.webp
   subtype: Other
 - id: 810350001
   grade: Rare
@@ -25583,6 +26907,14 @@ items:
   grade: Rare
   icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Compass_u_DefenceSet2.webp
   subtype: Other
+- id: 810350003
+  grade: Rare
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Compass_u_OffenseSet2.webp
+  subtype: Other
+- id: 810350004
+  grade: Rare
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Compass_u_DefenceSet1.webp
+  subtype: Other
 - id: 810450001
   grade: Rare
   icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Bell_u_PveSet2.webp
@@ -25591,6 +26923,14 @@ items:
   grade: Rare
   icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Bell_u_DefenceSet2.webp
   subtype: Other
+- id: 810450003
+  grade: Rare
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Bell_u_OffenseSet2.webp
+  subtype: Other
+- id: 810450004
+  grade: Rare
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Bell_u_DefenceSet1.webp
+  subtype: Other
 - id: 810550001
   grade: Rare
   icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Mirror_u_PveSet2.webp
@@ -25598,6 +26938,22 @@ items:
 - id: 810550002
   grade: Rare
   icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Mirror_u_DefenceSet2.webp
+  subtype: Other
+- id: 810550003
+  grade: Rare
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Mirror_u_OffenseSet2.webp
+  subtype: Other
+- id: 810550004
+  grade: Rare
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Mirror_u_DefenceSet1.webp
+  subtype: Other
+- id: 810650003
+  grade: Rare
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Libra_u_OffenseSet2.webp
+  subtype: Other
+- id: 810650004
+  grade: Rare
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Libra_u_DefenceSet1.webp
   subtype: Other
 - id: 110160001
   grade: Common
@@ -27822,6 +29178,14 @@ items:
 - id: 531860006
   grade: Common
   icon: UI/Resource/Texture/Item/ETC/Icon_Kisk_Setup_Legion_D_02.webp
+  subtype: Other
+- id: 531860007
+  grade: Common
+  icon: UI/Resource/Texture/Item/ETC/Icon_Item_Currency_Kisk_Setup_Force_L_01.webp
+  subtype: Other
+- id: 531860008
+  grade: Common
+  icon: UI/Resource/Texture/Item/ETC/Icon_Item_Currency_Kisk_Setup_Force_D_01.webp
   subtype: Other
 - id: 532360062
   grade: Common
@@ -30487,6 +31851,14 @@ items:
   grade: Common
   icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Exp_A_003.webp
   subtype: Other
+- id: 535106004
+  grade: Common
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Exp_A_004.webp
+  subtype: Other
+- id: 535106005
+  grade: Common
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Exp_A_005.webp
+  subtype: Other
 - id: 535116001
   grade: Common
   icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Grail_u_PveSet2.webp
@@ -30494,6 +31866,14 @@ items:
 - id: 535116002
   grade: Common
   icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Grail_u_DefenceSet2.webp
+  subtype: Other
+- id: 535116003
+  grade: Common
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Grail_u_OffenseSet2.webp
+  subtype: Other
+- id: 535116004
+  grade: Common
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Grail_u_DefenceSet1.webp
   subtype: Other
 - id: 535126001
   grade: Common
@@ -30503,6 +31883,14 @@ items:
   grade: Common
   icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Parchment_u_DefenceSet2.webp
   subtype: Other
+- id: 535126003
+  grade: Common
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Parchment_u_OffenseSet2.webp
+  subtype: Other
+- id: 535126004
+  grade: Common
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Parchment_u_DefenceSet1.webp
+  subtype: Other
 - id: 535136001
   grade: Common
   icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Compass_u_PveSet2.webp
@@ -30510,6 +31898,14 @@ items:
 - id: 535136002
   grade: Common
   icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Compass_u_DefenceSet2.webp
+  subtype: Other
+- id: 535136003
+  grade: Common
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Compass_u_OffenseSet2.webp
+  subtype: Other
+- id: 535136004
+  grade: Common
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Compass_u_DefenceSet1.webp
   subtype: Other
 - id: 535146001
   grade: Common
@@ -30519,6 +31915,14 @@ items:
   grade: Common
   icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Bell_u_DefenceSet2.webp
   subtype: Other
+- id: 535146003
+  grade: Common
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Bell_u_OffenseSet2.webp
+  subtype: Other
+- id: 535146004
+  grade: Common
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Bell_u_DefenceSet1.webp
+  subtype: Other
 - id: 535156001
   grade: Common
   icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Mirror_u_PveSet2.webp
@@ -30526,6 +31930,22 @@ items:
 - id: 535156002
   grade: Common
   icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Mirror_u_DefenceSet2.webp
+  subtype: Other
+- id: 535156003
+  grade: Common
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Mirror_u_OffenseSet2.webp
+  subtype: Other
+- id: 535156004
+  grade: Common
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Mirror_u_DefenceSet1.webp
+  subtype: Other
+- id: 535166003
+  grade: Common
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Libra_u_OffenseSet2.webp
+  subtype: Other
+- id: 535166004
+  grade: Common
+  icon: UI/Resource/Texture/Item/ETC/Icon_Arcana_Libra_u_DefenceSet1.webp
   subtype: Other
 - id: 535510003
   grade: Common
@@ -30947,6 +32367,14 @@ items:
   grade: Common
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Currency_Extension_Storage_002.webp
   subtype: Other
+- id: 536700003
+  grade: Common
+  icon: UI/Resource/Texture/Item/ETC/Icon_Item_character_storage_001.webp
+  subtype: Other
+- id: 536700004
+  grade: Common
+  icon: UI/Resource/Texture/Item/ETC/Icon_Item_character_storage_002.webp
+  subtype: Other
 - id: 560116001
   grade: Common
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Usable_Potion_hp_once_03_001.webp
@@ -30982,6 +32410,10 @@ items:
 - id: 560116009
   grade: Common
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Usable_Potion_HP_Dot_A_001.webp
+  subtype: Other
+- id: 560116010
+  grade: Common
+  icon: UI/Resource/Texture/Item/ETC/Icon_Item_Usable_Potion_hp_once_03_001.webp
   subtype: Other
 - id: 560560001
   grade: Common
@@ -31094,6 +32526,18 @@ items:
 - id: 561060017
   grade: Common
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Usable_Scroll_MaxHPMPRatio_A_003.webp
+  subtype: Scroll
+- id: 561060018
+  grade: Common
+  icon: UI/Resource/Texture/Item/ETC/Icon_Item_Usable_Scroll_Event_A_r_002.webp
+  subtype: Scroll
+- id: 561060019
+  grade: Common
+  icon: UI/Resource/Texture/Item/ETC/Icon_Item_Usable_Scroll_Event_A_r_005.webp
+  subtype: Scroll
+- id: 561060020
+  grade: Common
+  icon: UI/Resource/Texture/Item/ETC/Icon_Item_Usable_Scroll_SkillDamage_A_001.webp
   subtype: Scroll
 - id: 561360001
   grade: Common
@@ -31839,26 +33283,38 @@ items:
   grade: Common
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Currency_Drop_Junk_A_r_042.webp
   subtype: Other
+- id: 632510051
+  grade: Common
+  icon: UI/Resource/Texture/Item/ETC/Icon_Item_Usable_Potion_Skillpoint_011.webp
+  subtype: Other
+- id: 632510052
+  grade: Common
+  icon: UI/Resource/Texture/Item/ETC/Icon_Item_Arcana_CreateMaterial_Piece_A_s_01.webp
+  subtype: Other
+- id: 632510053
+  grade: Common
+  icon: UI/Resource/Texture/Item/ETC/Icon_Item_Arcana_CreateMaterial_Piece_A_s_02.webp
+  subtype: Other
 - id: 632530001
   grade: Common
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Material_Craft_Draconic_L_lv3_07.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632530002
   grade: Common
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Material_Craft_Draconic_L_lv2_07.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632530003
   grade: Common
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Material_Craft_Draconic_L_lv3_07.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632530004
   grade: Common
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Material_Craft_Draconic_L_lv1_07.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 632530005
   grade: Common
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Material_Craft_Draconic_L_lv1_07.webp
-  subtype: Other
+  subtype: ConversionResource
 - id: 660530001
   grade: Common
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Craft_SmeltStone_Equip_A_l_001.webp
@@ -31879,6 +33335,30 @@ items:
   grade: Common
   icon: UI/Resource/Texture/Item/ETC/Icon_Item_Misc_Christmas_Event_A_c_003.webp
   subtype: Other
+- id: 662560005
+  grade: Common
+  icon: UI/Resource/Texture/Item/ETC/Icon_Item_Currency_Drop_Junk_A_r_081.webp
+  subtype: Other
+- id: 662560006
+  grade: Common
+  icon: UI/Resource/Texture/Item/ETC/Icon_Item_Currency_Drop_Junk_A_r_001.webp
+  subtype: Other
+- id: 662560007
+  grade: Common
+  icon: UI/Resource/Texture/Item/ETC/Icon_Item_SUL_Event_coin_01.webp
+  subtype: Other
+- id: 662560008
+  grade: Common
+  icon: UI/Resource/Texture/Item/ETC/Icon_Item_SUL_Event_key_01.webp
+  subtype: Other
+- id: 662560009
+  grade: Common
+  icon: UI/Resource/Texture/Item/ETC/Icon_Item_SUL_Event_key_02.webp
+  subtype: Other
+- id: 662560010
+  grade: Common
+  icon: UI/Resource/Texture/Item/ETC/Icon_Item_SUL_Event_key_03.webp
+  subtype: Other
 - id: 810160001
   grade: Common
   icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Grail_u_PveSet2.webp
@@ -31886,6 +33366,14 @@ items:
 - id: 810160002
   grade: Common
   icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Grail_u_DefenceSet2.webp
+  subtype: Other
+- id: 810160003
+  grade: Common
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Grail_u_OffenseSet2.webp
+  subtype: Other
+- id: 810160004
+  grade: Common
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Grail_u_DefenceSet1.webp
   subtype: Other
 - id: 810260001
   grade: Common
@@ -31895,6 +33383,14 @@ items:
   grade: Common
   icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Parchment_u_DefenceSet2.webp
   subtype: Other
+- id: 810260003
+  grade: Common
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Parchment_u_OffenseSet2.webp
+  subtype: Other
+- id: 810260004
+  grade: Common
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Parchment_u_DefenceSet1.webp
+  subtype: Other
 - id: 810360001
   grade: Common
   icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Compass_u_PveSet2.webp
@@ -31902,6 +33398,14 @@ items:
 - id: 810360002
   grade: Common
   icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Compass_u_DefenceSet2.webp
+  subtype: Other
+- id: 810360003
+  grade: Common
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Compass_u_OffenseSet2.webp
+  subtype: Other
+- id: 810360004
+  grade: Common
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Compass_u_DefenceSet1.webp
   subtype: Other
 - id: 810460001
   grade: Common
@@ -31911,6 +33415,14 @@ items:
   grade: Common
   icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Bell_u_DefenceSet2.webp
   subtype: Other
+- id: 810460003
+  grade: Common
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Bell_u_OffenseSet2.webp
+  subtype: Other
+- id: 810460004
+  grade: Common
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Bell_u_DefenceSet1.webp
+  subtype: Other
 - id: 810560001
   grade: Common
   icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Mirror_u_PveSet2.webp
@@ -31918,6 +33430,22 @@ items:
 - id: 810560002
   grade: Common
   icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Mirror_u_DefenceSet2.webp
+  subtype: Other
+- id: 810560003
+  grade: Common
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Mirror_u_OffenseSet2.webp
+  subtype: Other
+- id: 810560004
+  grade: Common
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Mirror_u_DefenceSet1.webp
+  subtype: Other
+- id: 810660003
+  grade: Common
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Libra_u_OffenseSet2.webp
+  subtype: Other
+- id: 810660004
+  grade: Common
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Libra_u_DefenceSet1.webp
   subtype: Other
 - id: 830060001
   grade: Common
@@ -31930,6 +33458,14 @@ items:
 - id: 830060003
   grade: Common
   icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Exp_A_003.webp
+  subtype: Other
+- id: 830060004
+  grade: Common
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Exp_A_004.webp
+  subtype: Other
+- id: 830060005
+  grade: Common
+  icon: UI/Resource/Texture/Icon_Arcana/Icon_Arcana_Card_Exp_A_005.webp
   subtype: Other
 - id: 310900001
   grade: Special

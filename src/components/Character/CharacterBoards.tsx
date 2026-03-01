@@ -246,7 +246,7 @@ const CharacterBoards: React.FC = () => {
 
   return (
     <div className="flex flex-col gap-3">
-      <div className="grid grid-cols-3 sm:grid-cols-6 gap-2 sm:gap-3">
+      <div className="grid grid-cols-4 sm:grid-cols-7 gap-2 sm:gap-3">
         {info.boards.map((board, index) => (
           <AdaptiveTooltip
             key={board.id}

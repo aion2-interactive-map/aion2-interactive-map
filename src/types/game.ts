@@ -62,7 +62,7 @@ export interface MarkerTypeCategory {
  */
 export interface MarkerInstance {
   id: string;
-  // categoryId: string;
+  category?: string;
   subtype: string;
   region?: string;
   x: number;

@@ -15,10 +15,10 @@ const CharacterCards: React.FC = () => {
   const {t} = useTranslation();
 
   const equipmentBySlotPos = keyBy(equipments?.equipments ?? [], "slotPos");
-  const cardSlots = [41, 42, 43, 44, 45] as const;
+  const cardSlots = [41, 42, 43, 44, 45, 46] as const;
 
   return (
-    <div className="grid grid-cols-5 w-full gap-2 sm:gap-4 justify-items-center">
+    <div className="grid grid-cols-6 w-full gap-2 sm:gap-4 justify-items-center">
       {cardSlots.map((slotPos) => {
         const eq = equipmentBySlotPos[slotPos];
         const detail = equipmentDetails?.[`equipments:${slotPos}`];

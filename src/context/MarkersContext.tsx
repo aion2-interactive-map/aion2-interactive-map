@@ -73,9 +73,19 @@ export const MarkersProvider = ({children}: MarkersProviderProps) => {
   const [showLabels, setShowLabels] = useState<boolean>(false);
   const loadYaml = useYamlLoader();
 
-  const { selectedMap } = useGameMap();
+  const { selectedMap, types } = useGameMap();
   const markerNs = `markers/${selectedMap?.name}`;
   const {t, i18n} = useTranslation([markerNs]);
+
+  const subtypeToCategory = useMemo(() => {
+    const map: Record<string, string> = {};
+    for (const cat of types) {
+      for (const sub of cat.subtypes) {
+        map[sub.name] = cat.name;
+      }
+    }
+    return map;
+  }, [types]);
 
   // Set of completed marker keys for the *current map*.
   // Keys are "categoryId::subtypeId::markerId".
@@ -100,13 +110,15 @@ export const MarkersProvider = ({children}: MarkersProviderProps) => {
     return baseMarkers.map((m) => {
       const localizedName = t(`${markerNs}:${m.id}.name`, m.name ?? "");
       const localizedDescription = t(`${markerNs}:${m.id}.description`, "");
+      const category = m.category || subtypeToCategory[m.subtype] || "unknown";
       return {
         ...m,
+        category,
         localizedName,
         localizedDescription,
       };
     });
-  }, [baseMarkers, selectedMap, t, i18n.language]);
+  }, [baseMarkers, selectedMap, t, i18n.language, subtypeToCategory]);
 
   const markersById: Record<string, MarkerWithTranslations> = useMemo(() => {
     const dict: Record<string, MarkerWithTranslations> = {};

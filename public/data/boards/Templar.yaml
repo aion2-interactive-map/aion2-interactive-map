@@ -2719,3 +2719,635 @@ boards:
     grade: Common
     stats:
     - PvPAttack
+- id: 27
+  nodes:
+  - id: 270007
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 270001
+    grade: Unique
+    stats:
+    - WeaponDamageBoost
+  - id: 270002
+    grade: Common
+    stats:
+    - Defense
+  - id: 270003
+    grade: Legend
+    stats:
+    - Endurance
+  - id: 270012
+    grade: Rare
+    stats:
+    - Attack
+    - Block
+  - id: 270013
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 270014
+    grade: Common
+    stats:
+    - Block
+  - id: 270015
+    grade: Unique
+    stats:
+    - WeaponDamageTolerance
+  - id: 270008
+    grade: Unique
+    stats:
+    - WeaponDamageBoost
+  - id: 270009
+    grade: Common
+    stats:
+    - Attack
+  - id: 270011
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 270021
+    grade: Legend
+    stats:
+    - EndurancePenetration
+  - id: 270022
+    grade: Common
+    stats:
+    - Attack
+  - id: 270016
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 270018
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 270019
+    grade: Common
+    stats:
+    - Attack
+  - id: 270028
+    grade: Common
+    stats:
+    - Attack
+  - id: 270030
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 270031
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 270024
+    grade: Common
+    stats:
+    - Defense
+  - id: 270025
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 270026
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 270036
+    grade: Common
+    stats:
+    - Defense
+  - id: 270038
+    grade: Common
+    stats:
+    - Block
+  - id: 270039
+    grade: Rare
+    stats:
+    - Attack
+    - CriticalHitResist
+  - id: 270032
+    grade: Rare
+    stats:
+    - Defense
+    - CriticalHit
+  - id: 270034
+    grade: Rare
+    stats:
+    - Defense
+    - Accuracy
+  - id: 270035
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 270044
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 270045
+    grade: Legend
+    stats:
+    - RegenerationPenetration
+  - id: 270047
+    grade: Common
+    stats:
+    - Block
+  - id: 270041
+    grade: Legend
+    stats:
+    - EndurancePenetration
+  - id: 270042
+    grade: Common
+    stats:
+    - Defense
+  - id: 270043
+    grade: Rare
+    stats:
+    - Block
+    - CriticalHit
+  - id: 270052
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 270053
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 270048
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 270049
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 270051
+    grade: Rare
+    stats:
+    - Attack
+    - CriticalHitResist
+  - id: 270062
+    grade: Common
+    stats:
+    - Defense
+  - id: 270057
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 270059
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 270068
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 270069
+    grade: Legend
+    stats:
+    - Endurance
+  - id: 270070
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 270071
+    grade: Common
+    stats:
+    - Attack
+  - id: 270064
+    grade: Rare
+    stats:
+    - IncreasesMaxHP
+  - id: 270065
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 270066
+    grade: Common
+    stats:
+    - Block
+  - id: 270076
+    grade: Legend
+    stats:
+    - Regeneration
+  - id: 270077
+    grade: Common
+    stats:
+    - Attack
+  - id: 270078
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 270072
+    grade: Rare
+    stats:
+    - IncreasesMaxHP
+  - id: 270074
+    grade: Common
+    stats:
+    - Block
+  - id: 270084
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 270086
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 270080
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 270093
+    grade: Rare
+    stats:
+    - Attack
+    - Block
+  - id: 270094
+    grade: Common
+    stats:
+    - Block
+  - id: 270095
+    grade: Legend
+    stats:
+    - RegenerationPenetration
+  - id: 270088
+    grade: Common
+    stats:
+    - Defense
+  - id: 270089
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 270090
+    grade: Rare
+    stats:
+    - Defense
+    - CriticalHit
+  - id: 270091
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 270100
+    grade: Rare
+    stats:
+    - Defense
+    - Accuracy
+  - id: 270101
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 270102
+    grade: Common
+    stats:
+    - Block
+  - id: 270103
+    grade: Legend
+    stats:
+    - Regeneration
+  - id: 270096
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 270097
+    grade: Rare
+    stats:
+    - Accuracy
+    - CriticalHitResist
+  - id: 270098
+    grade: Common
+    stats:
+    - Attack
+  - id: 270099
+    grade: Common
+    stats:
+    - Block
+  - id: 270109
+    grade: Common
+    stats:
+    - Defense
+  - id: 270111
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 270105
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 270106
+    grade: Unique
+    stats:
+    - WeaponDamageTolerance
+  - id: 270117
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 270113
+    grade: None
+  - id: 270115
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 270124
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 270125
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 270126
+    grade: Rare
+    stats:
+    - Defense
+    - CriticalHit
+  - id: 270127
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 270120
+    grade: Unique
+    stats:
+    - WeaponDamageTolerance
+  - id: 270121
+    grade: Common
+    stats:
+    - Block
+  - id: 270123
+    grade: Legend
+    stats:
+    - Endurance
+  - id: 270132
+    grade: Common
+    stats:
+    - Attack
+  - id: 270133
+    grade: Rare
+    stats:
+    - Defense
+    - Accuracy
+  - id: 270135
+    grade: Common
+    stats:
+    - Block
+  - id: 270128
+    grade: Common
+    stats:
+    - Defense
+  - id: 270129
+    grade: Rare
+    stats:
+    - Attack
+    - CriticalHitResist
+  - id: 270130
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 270131
+    grade: Legend
+    stats:
+    - EndurancePenetration
+  - id: 270140
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 270142
+    grade: Common
+    stats:
+    - Block
+  - id: 270136
+    grade: Rare
+    stats:
+    - Attack
+    - CriticalHitResist
+  - id: 270137
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 270138
+    grade: Common
+    stats:
+    - Attack
+  - id: 270148
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 270149
+    grade: Common
+    stats:
+    - Defense
+  - id: 270150
+    grade: Legend
+    stats:
+    - Endurance
+  - id: 270146
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 270156
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 270157
+    grade: Legend
+    stats:
+    - Regeneration
+  - id: 270158
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 270152
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 270154
+    grade: Rare
+    stats:
+    - Attack
+    - Block
+  - id: 270155
+    grade: Common
+    stats:
+    - Defense
+  - id: 270164
+    grade: Common
+    stats:
+    - Attack
+  - id: 270167
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 270160
+    grade: Common
+    stats:
+    - Block
+  - id: 270161
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 270162
+    grade: Rare
+    stats:
+    - IncreasesMaxHP
+  - id: 270173
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 270174
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 270175
+    grade: Rare
+    stats:
+    - Accuracy
+    - CriticalHitResist
+  - id: 270169
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 270181
+    grade: Legend
+    stats:
+    - EndurancePenetration
+  - id: 270182
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 270183
+    grade: Rare
+    stats:
+    - Block
+    - CriticalHit
+  - id: 270177
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 270178
+    grade: Common
+    stats:
+    - Block
+  - id: 270179
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 270188
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 270190
+    grade: Common
+    stats:
+    - Attack
+  - id: 270191
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 270184
+    grade: Common
+    stats:
+    - Attack
+  - id: 270185
+    grade: Legend
+    stats:
+    - RegenerationPenetration
+  - id: 270187
+    grade: Rare
+    stats:
+    - IncreasesMaxHP
+  - id: 270196
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 270198
+    grade: Common
+    stats:
+    - Defense
+  - id: 270192
+    grade: Rare
+    stats:
+    - Defense
+    - CriticalHit
+  - id: 270194
+    grade: Rare
+    stats:
+    - Attack
+    - Block
+  - id: 270195
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 270204
+    grade: Common
+    stats:
+    - Defense
+  - id: 270205
+    grade: Legend
+    stats:
+    - RegenerationPenetration
+  - id: 270207
+    grade: Common
+    stats:
+    - Defense
+  - id: 270200
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 270201
+    grade: Common
+    stats:
+    - Block
+  - id: 270202
+    grade: Common
+    stats:
+    - Attack
+  - id: 270212
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 270213
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 270214
+    grade: Rare
+    stats:
+    - Defense
+    - Accuracy
+  - id: 270215
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 270208
+    grade: Common
+    stats:
+    - Block
+  - id: 270210
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 270211
+    grade: Unique
+    stats:
+    - WeaponDamageTolerance
+  - id: 270223
+    grade: Legend
+    stats:
+    - Regeneration
+  - id: 270217
+    grade: Common
+    stats:
+    - Defense
+  - id: 270218
+    grade: Unique
+    stats:
+    - WeaponDamageBoost
+  - id: 270219
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 270224
+    grade: Common
+    stats:
+    - Attack
+  - id: 270225
+    grade: Unique
+    stats:
+    - WeaponDamageBoost

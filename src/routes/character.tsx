@@ -13,15 +13,17 @@ import Footer from "@/components/Footer.tsx";
 import {ClassDataProvider} from "@/context/ClassDataContext.tsx";
 
 
+import PageBackground from "@/components/PageBackground";
+
 function Page() {
   return (
-    <div className="h-full overflow-y-auto bg-chacracter-page flex flex-col">
+    <PageBackground>
       <div className="max-w-6xl mx-auto px-4 py-6 space-y-4 flex-1 w-full">
         <CharacterSearch/>
         <CharacterDetail/>
       </div>
       <Footer/>
-    </div>
+    </PageBackground>
   );
 }
 

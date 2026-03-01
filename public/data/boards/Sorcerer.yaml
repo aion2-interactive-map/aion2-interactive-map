@@ -2719,3 +2719,635 @@ boards:
     grade: Unique
     stats:
     - PvPDamageTolerance
+- id: 67
+  nodes:
+  - id: 670218
+    grade: Unique
+    stats:
+    - WeaponDamageBoost
+  - id: 670219
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 670217
+    grade: Common
+    stats:
+    - Defense
+  - id: 670223
+    grade: Legend
+    stats:
+    - Regeneration
+  - id: 670210
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 670211
+    grade: Unique
+    stats:
+    - WeaponDamageTolerance
+  - id: 670208
+    grade: Common
+    stats:
+    - Block
+  - id: 670214
+    grade: Rare
+    stats:
+    - Defense
+    - Accuracy
+  - id: 670215
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 670212
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 670213
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 670224
+    grade: Common
+    stats:
+    - Attack
+  - id: 670225
+    grade: Unique
+    stats:
+    - WeaponDamageBoost
+  - id: 670011
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 670008
+    grade: Unique
+    stats:
+    - WeaponDamageBoost
+  - id: 670009
+    grade: Common
+    stats:
+    - Attack
+  - id: 670014
+    grade: Common
+    stats:
+    - Block
+  - id: 670015
+    grade: Unique
+    stats:
+    - WeaponDamageTolerance
+  - id: 670012
+    grade: Rare
+    stats:
+    - Attack
+    - Block
+  - id: 670013
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 670002
+    grade: Common
+    stats:
+    - Defense
+  - id: 670003
+    grade: Legend
+    stats:
+    - Endurance
+  - id: 670001
+    grade: Unique
+    stats:
+    - WeaponDamageBoost
+  - id: 670007
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 670026
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 670024
+    grade: Common
+    stats:
+    - Defense
+  - id: 670025
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 670030
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 670031
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 670028
+    grade: Common
+    stats:
+    - Attack
+  - id: 670018
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 670019
+    grade: Common
+    stats:
+    - Attack
+  - id: 670016
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 670022
+    grade: Common
+    stats:
+    - Attack
+  - id: 670021
+    grade: Legend
+    stats:
+    - EndurancePenetration
+  - id: 670042
+    grade: Common
+    stats:
+    - Defense
+  - id: 670043
+    grade: Rare
+    stats:
+    - Block
+    - CriticalHit
+  - id: 670041
+    grade: Legend
+    stats:
+    - EndurancePenetration
+  - id: 670047
+    grade: Common
+    stats:
+    - Block
+  - id: 670044
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 670045
+    grade: Legend
+    stats:
+    - RegenerationPenetration
+  - id: 670034
+    grade: Rare
+    stats:
+    - Defense
+    - Accuracy
+  - id: 670035
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 670032
+    grade: Rare
+    stats:
+    - Defense
+    - CriticalHit
+  - id: 670038
+    grade: Common
+    stats:
+    - Block
+  - id: 670039
+    grade: Rare
+    stats:
+    - Attack
+    - CriticalHitResist
+  - id: 670036
+    grade: Common
+    stats:
+    - Defense
+  - id: 670059
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 670057
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 670062
+    grade: Common
+    stats:
+    - Defense
+  - id: 670051
+    grade: Rare
+    stats:
+    - Attack
+    - CriticalHitResist
+  - id: 670048
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 670049
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 670052
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 670053
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 670074
+    grade: Common
+    stats:
+    - Block
+  - id: 670072
+    grade: Rare
+    stats:
+    - IncreasesMaxHP
+  - id: 670078
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 670076
+    grade: Legend
+    stats:
+    - Regeneration
+  - id: 670077
+    grade: Common
+    stats:
+    - Attack
+  - id: 670066
+    grade: Common
+    stats:
+    - Block
+  - id: 670064
+    grade: Rare
+    stats:
+    - IncreasesMaxHP
+  - id: 670065
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 670070
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 670071
+    grade: Common
+    stats:
+    - Attack
+  - id: 670068
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 670069
+    grade: Legend
+    stats:
+    - Endurance
+  - id: 670090
+    grade: Rare
+    stats:
+    - Defense
+    - CriticalHit
+  - id: 670091
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 670088
+    grade: Common
+    stats:
+    - Defense
+  - id: 670089
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 670094
+    grade: Common
+    stats:
+    - Block
+  - id: 670095
+    grade: Legend
+    stats:
+    - RegenerationPenetration
+  - id: 670093
+    grade: Rare
+    stats:
+    - Attack
+    - Block
+  - id: 670080
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 670086
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 670084
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 670106
+    grade: Unique
+    stats:
+    - WeaponDamageTolerance
+  - id: 670105
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 670111
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 670109
+    grade: Common
+    stats:
+    - Defense
+  - id: 670098
+    grade: Common
+    stats:
+    - Attack
+  - id: 670099
+    grade: Common
+    stats:
+    - Block
+  - id: 670096
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 670097
+    grade: Rare
+    stats:
+    - Accuracy
+    - CriticalHitResist
+  - id: 670102
+    grade: Common
+    stats:
+    - Block
+  - id: 670103
+    grade: Legend
+    stats:
+    - Regeneration
+  - id: 670100
+    grade: Rare
+    stats:
+    - Defense
+    - Accuracy
+  - id: 670101
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 670123
+    grade: Legend
+    stats:
+    - Endurance
+  - id: 670120
+    grade: Unique
+    stats:
+    - WeaponDamageTolerance
+  - id: 670121
+    grade: Common
+    stats:
+    - Block
+  - id: 670126
+    grade: Rare
+    stats:
+    - Defense
+    - CriticalHit
+  - id: 670127
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 670124
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 670125
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 670115
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 670113
+    grade: None
+  - id: 670117
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 670138
+    grade: Common
+    stats:
+    - Attack
+  - id: 670136
+    grade: Rare
+    stats:
+    - Attack
+    - CriticalHitResist
+  - id: 670137
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 670142
+    grade: Common
+    stats:
+    - Block
+  - id: 670140
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 670130
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 670131
+    grade: Legend
+    stats:
+    - EndurancePenetration
+  - id: 670128
+    grade: Common
+    stats:
+    - Defense
+  - id: 670129
+    grade: Rare
+    stats:
+    - Attack
+    - CriticalHitResist
+  - id: 670135
+    grade: Common
+    stats:
+    - Block
+  - id: 670132
+    grade: Common
+    stats:
+    - Attack
+  - id: 670133
+    grade: Rare
+    stats:
+    - Defense
+    - Accuracy
+  - id: 670154
+    grade: Rare
+    stats:
+    - Attack
+    - Block
+  - id: 670155
+    grade: Common
+    stats:
+    - Defense
+  - id: 670152
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 670158
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 670156
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 670157
+    grade: Legend
+    stats:
+    - Regeneration
+  - id: 670146
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 670150
+    grade: Legend
+    stats:
+    - Endurance
+  - id: 670148
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 670149
+    grade: Common
+    stats:
+    - Defense
+  - id: 670169
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 670174
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 670175
+    grade: Rare
+    stats:
+    - Accuracy
+    - CriticalHitResist
+  - id: 670173
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 670162
+    grade: Rare
+    stats:
+    - IncreasesMaxHP
+  - id: 670160
+    grade: Common
+    stats:
+    - Block
+  - id: 670161
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 670167
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 670164
+    grade: Common
+    stats:
+    - Attack
+  - id: 670187
+    grade: Rare
+    stats:
+    - IncreasesMaxHP
+  - id: 670184
+    grade: Common
+    stats:
+    - Attack
+  - id: 670185
+    grade: Legend
+    stats:
+    - RegenerationPenetration
+  - id: 670190
+    grade: Common
+    stats:
+    - Attack
+  - id: 670191
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 670188
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 670178
+    grade: Common
+    stats:
+    - Block
+  - id: 670179
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 670177
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 670182
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 670183
+    grade: Rare
+    stats:
+    - Block
+    - CriticalHit
+  - id: 670181
+    grade: Legend
+    stats:
+    - EndurancePenetration
+  - id: 670202
+    grade: Common
+    stats:
+    - Attack
+  - id: 670200
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 670201
+    grade: Common
+    stats:
+    - Block
+  - id: 670207
+    grade: Common
+    stats:
+    - Defense
+  - id: 670204
+    grade: Common
+    stats:
+    - Defense
+  - id: 670205
+    grade: Legend
+    stats:
+    - RegenerationPenetration
+  - id: 670194
+    grade: Rare
+    stats:
+    - Attack
+    - Block
+  - id: 670195
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 670192
+    grade: Rare
+    stats:
+    - Defense
+    - CriticalHit
+  - id: 670198
+    grade: Common
+    stats:
+    - Defense
+  - id: 670196
+    grade: Common
+    stats:
+    - CriticalHitResist

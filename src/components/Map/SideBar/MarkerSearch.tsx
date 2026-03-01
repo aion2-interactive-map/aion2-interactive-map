@@ -67,23 +67,23 @@ function highlightText(text: string, terms: string[]): React.ReactNode {
 
 const MarkerSearch: React.FC<MarkerSearchProps> = ({onSelectMarker, onSelectPosition}) => {
   const {markers} = useMarkers();
-  const {t} = useTranslation("common");
+  const {t} = useTranslation(["common", "types"]);
   const [query, setQuery] = useState("");
 
   const miniSearch = useMemo(() => {
     const ms = new MiniSearch<MarkerWithTranslations>({
       fields: ["localizedName", "localizedDescription"],
-      storeFields: ["x", "y", "localizedName", "localizedDescription"],
+      storeFields: ["x", "y", "localizedName", "localizedDescription", "category", "subtype"],
       searchOptions: {
         prefix: true,
         fuzzy: 0.2,
       },
       tokenize: (string) => [...string],
     });
-    const filteredMarkers: MarkerWithTranslations[] = markers.filter((marker) =>
-      marker.subtype.startsWith("creature")
-    );
-    ms.addAll(filteredMarkers);
+    // const filteredMarkers: MarkerWithTranslations[] = markers.filter((marker) =>
+    //   marker.subtype.startsWith("creature")
+    // );
+    ms.addAll(markers);
     return ms;
   }, [markers]);
 
@@ -212,6 +212,10 @@ const MarkerSearch: React.FC<MarkerSearchProps> = ({onSelectMarker, onSelectPosi
                       {doc.localizedName
                         ? highlightText(doc.localizedName, terms)
                         : t("markerSearch.unnamed", "Unnamed marker")}
+                    </div>
+
+                    <div className="text-xs text-default-500">
+                      {t(`types:categories.${doc.category}.name`)} - {t(`types:subtypes.${doc.subtype}.name`)}
                     </div>
 
                     {/* Optional description */}

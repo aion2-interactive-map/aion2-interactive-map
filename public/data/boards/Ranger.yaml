@@ -2719,3 +2719,635 @@ boards:
     grade: Common
     stats:
     - PvPAttack
+- id: 37
+  nodes:
+  - id: 370181
+    grade: Legend
+    stats:
+    - EndurancePenetration
+  - id: 370183
+    grade: Rare
+    stats:
+    - Block
+    - CriticalHit
+  - id: 370182
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 370177
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 370179
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 370178
+    grade: Common
+    stats:
+    - Block
+  - id: 370188
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 370191
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 370190
+    grade: Common
+    stats:
+    - Attack
+  - id: 370185
+    grade: Legend
+    stats:
+    - RegenerationPenetration
+  - id: 370184
+    grade: Common
+    stats:
+    - Attack
+  - id: 370187
+    grade: Rare
+    stats:
+    - IncreasesMaxHP
+  - id: 370196
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 370198
+    grade: Common
+    stats:
+    - Defense
+  - id: 370192
+    grade: Rare
+    stats:
+    - Defense
+    - CriticalHit
+  - id: 370195
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 370194
+    grade: Rare
+    stats:
+    - Attack
+    - Block
+  - id: 370205
+    grade: Legend
+    stats:
+    - RegenerationPenetration
+  - id: 370204
+    grade: Common
+    stats:
+    - Defense
+  - id: 370207
+    grade: Common
+    stats:
+    - Defense
+  - id: 370201
+    grade: Common
+    stats:
+    - Block
+  - id: 370200
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 370202
+    grade: Common
+    stats:
+    - Attack
+  - id: 370213
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 370212
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 370215
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 370214
+    grade: Rare
+    stats:
+    - Defense
+    - Accuracy
+  - id: 370208
+    grade: Common
+    stats:
+    - Block
+  - id: 370211
+    grade: Unique
+    stats:
+    - WeaponDamageTolerance
+  - id: 370210
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 370223
+    grade: Legend
+    stats:
+    - Regeneration
+  - id: 370217
+    grade: Common
+    stats:
+    - Defense
+  - id: 370219
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 370218
+    grade: Unique
+    stats:
+    - WeaponDamageBoost
+  - id: 370225
+    grade: Unique
+    stats:
+    - WeaponDamageBoost
+  - id: 370224
+    grade: Common
+    stats:
+    - Attack
+  - id: 370007
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 370001
+    grade: Unique
+    stats:
+    - WeaponDamageBoost
+  - id: 370003
+    grade: Legend
+    stats:
+    - Endurance
+  - id: 370002
+    grade: Common
+    stats:
+    - Defense
+  - id: 370013
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 370012
+    grade: Rare
+    stats:
+    - Attack
+    - Block
+  - id: 370015
+    grade: Unique
+    stats:
+    - WeaponDamageTolerance
+  - id: 370014
+    grade: Common
+    stats:
+    - Block
+  - id: 370009
+    grade: Common
+    stats:
+    - Attack
+  - id: 370008
+    grade: Unique
+    stats:
+    - WeaponDamageBoost
+  - id: 370011
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 370021
+    grade: Legend
+    stats:
+    - EndurancePenetration
+  - id: 370022
+    grade: Common
+    stats:
+    - Attack
+  - id: 370016
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 370019
+    grade: Common
+    stats:
+    - Attack
+  - id: 370018
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 370028
+    grade: Common
+    stats:
+    - Attack
+  - id: 370031
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 370030
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 370025
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 370024
+    grade: Common
+    stats:
+    - Defense
+  - id: 370026
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 370036
+    grade: Common
+    stats:
+    - Defense
+  - id: 370039
+    grade: Rare
+    stats:
+    - Attack
+    - CriticalHitResist
+  - id: 370038
+    grade: Common
+    stats:
+    - Block
+  - id: 370032
+    grade: Rare
+    stats:
+    - Defense
+    - CriticalHit
+  - id: 370035
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 370034
+    grade: Rare
+    stats:
+    - Defense
+    - Accuracy
+  - id: 370045
+    grade: Legend
+    stats:
+    - RegenerationPenetration
+  - id: 370044
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 370047
+    grade: Common
+    stats:
+    - Block
+  - id: 370041
+    grade: Legend
+    stats:
+    - EndurancePenetration
+  - id: 370043
+    grade: Rare
+    stats:
+    - Block
+    - CriticalHit
+  - id: 370042
+    grade: Common
+    stats:
+    - Defense
+  - id: 370053
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 370052
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 370049
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 370048
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 370051
+    grade: Rare
+    stats:
+    - Attack
+    - CriticalHitResist
+  - id: 370062
+    grade: Common
+    stats:
+    - Defense
+  - id: 370057
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 370059
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 370069
+    grade: Legend
+    stats:
+    - Endurance
+  - id: 370068
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 370071
+    grade: Common
+    stats:
+    - Attack
+  - id: 370070
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 370065
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 370064
+    grade: Rare
+    stats:
+    - IncreasesMaxHP
+  - id: 370066
+    grade: Common
+    stats:
+    - Block
+  - id: 370077
+    grade: Common
+    stats:
+    - Attack
+  - id: 370076
+    grade: Legend
+    stats:
+    - Regeneration
+  - id: 370078
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 370072
+    grade: Rare
+    stats:
+    - IncreasesMaxHP
+  - id: 370074
+    grade: Common
+    stats:
+    - Block
+  - id: 370084
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 370086
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 370080
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 370093
+    grade: Rare
+    stats:
+    - Attack
+    - Block
+  - id: 370095
+    grade: Legend
+    stats:
+    - RegenerationPenetration
+  - id: 370094
+    grade: Common
+    stats:
+    - Block
+  - id: 370089
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 370088
+    grade: Common
+    stats:
+    - Defense
+  - id: 370091
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 370090
+    grade: Rare
+    stats:
+    - Defense
+    - CriticalHit
+  - id: 370101
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 370100
+    grade: Rare
+    stats:
+    - Defense
+    - Accuracy
+  - id: 370103
+    grade: Legend
+    stats:
+    - Regeneration
+  - id: 370102
+    grade: Common
+    stats:
+    - Block
+  - id: 370097
+    grade: Rare
+    stats:
+    - Accuracy
+    - CriticalHitResist
+  - id: 370096
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 370099
+    grade: Common
+    stats:
+    - Block
+  - id: 370098
+    grade: Common
+    stats:
+    - Attack
+  - id: 370109
+    grade: Common
+    stats:
+    - Defense
+  - id: 370111
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 370105
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 370106
+    grade: Unique
+    stats:
+    - WeaponDamageTolerance
+  - id: 370117
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 370113
+    grade: None
+  - id: 370115
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 370125
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 370124
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 370127
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 370126
+    grade: Rare
+    stats:
+    - Defense
+    - CriticalHit
+  - id: 370121
+    grade: Common
+    stats:
+    - Block
+  - id: 370120
+    grade: Unique
+    stats:
+    - WeaponDamageTolerance
+  - id: 370123
+    grade: Legend
+    stats:
+    - Endurance
+  - id: 370133
+    grade: Rare
+    stats:
+    - Defense
+    - Accuracy
+  - id: 370132
+    grade: Common
+    stats:
+    - Attack
+  - id: 370135
+    grade: Common
+    stats:
+    - Block
+  - id: 370129
+    grade: Rare
+    stats:
+    - Attack
+    - CriticalHitResist
+  - id: 370128
+    grade: Common
+    stats:
+    - Defense
+  - id: 370131
+    grade: Legend
+    stats:
+    - EndurancePenetration
+  - id: 370130
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 370140
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 370142
+    grade: Common
+    stats:
+    - Block
+  - id: 370137
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 370136
+    grade: Rare
+    stats:
+    - Attack
+    - CriticalHitResist
+  - id: 370138
+    grade: Common
+    stats:
+    - Attack
+  - id: 370149
+    grade: Common
+    stats:
+    - Defense
+  - id: 370148
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 370150
+    grade: Legend
+    stats:
+    - Endurance
+  - id: 370146
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 370157
+    grade: Legend
+    stats:
+    - Regeneration
+  - id: 370156
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 370158
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 370152
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 370155
+    grade: Common
+    stats:
+    - Defense
+  - id: 370154
+    grade: Rare
+    stats:
+    - Attack
+    - Block
+  - id: 370164
+    grade: Common
+    stats:
+    - Attack
+  - id: 370167
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 370161
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 370160
+    grade: Common
+    stats:
+    - Block
+  - id: 370162
+    grade: Rare
+    stats:
+    - IncreasesMaxHP
+  - id: 370173
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 370175
+    grade: Rare
+    stats:
+    - Accuracy
+    - CriticalHitResist
+  - id: 370174
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 370169
+    grade: Common
+    stats:
+    - CriticalHitResist

@@ -2719,3 +2719,635 @@ boards:
     grade: Unique
     stats:
     - PvPDamageTolerance
+- id: 17
+  nodes:
+  - id: 170002
+    grade: Common
+    stats:
+    - Defense
+  - id: 170003
+    grade: Legend
+    stats:
+    - Endurance
+  - id: 170001
+    grade: Unique
+    stats:
+    - WeaponDamageBoost
+  - id: 170007
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 170011
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 170008
+    grade: Unique
+    stats:
+    - WeaponDamageBoost
+  - id: 170009
+    grade: Common
+    stats:
+    - Attack
+  - id: 170014
+    grade: Common
+    stats:
+    - Block
+  - id: 170015
+    grade: Unique
+    stats:
+    - WeaponDamageTolerance
+  - id: 170012
+    grade: Rare
+    stats:
+    - Attack
+    - Block
+  - id: 170013
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 170018
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 170019
+    grade: Common
+    stats:
+    - Attack
+  - id: 170016
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 170022
+    grade: Common
+    stats:
+    - Attack
+  - id: 170021
+    grade: Legend
+    stats:
+    - EndurancePenetration
+  - id: 170026
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 170024
+    grade: Common
+    stats:
+    - Defense
+  - id: 170025
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 170030
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 170031
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 170028
+    grade: Common
+    stats:
+    - Attack
+  - id: 170034
+    grade: Rare
+    stats:
+    - Defense
+    - Accuracy
+  - id: 170035
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 170032
+    grade: Rare
+    stats:
+    - Defense
+    - CriticalHit
+  - id: 170038
+    grade: Common
+    stats:
+    - Block
+  - id: 170039
+    grade: Rare
+    stats:
+    - Attack
+    - CriticalHitResist
+  - id: 170036
+    grade: Common
+    stats:
+    - Defense
+  - id: 170042
+    grade: Common
+    stats:
+    - Defense
+  - id: 170043
+    grade: Rare
+    stats:
+    - Block
+    - CriticalHit
+  - id: 170041
+    grade: Legend
+    stats:
+    - EndurancePenetration
+  - id: 170047
+    grade: Common
+    stats:
+    - Block
+  - id: 170044
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 170045
+    grade: Legend
+    stats:
+    - RegenerationPenetration
+  - id: 170051
+    grade: Rare
+    stats:
+    - Attack
+    - CriticalHitResist
+  - id: 170048
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 170049
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 170052
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 170053
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 170059
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 170057
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 170062
+    grade: Common
+    stats:
+    - Defense
+  - id: 170066
+    grade: Common
+    stats:
+    - Block
+  - id: 170064
+    grade: Rare
+    stats:
+    - IncreasesMaxHP
+  - id: 170065
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 170070
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 170071
+    grade: Common
+    stats:
+    - Attack
+  - id: 170068
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 170069
+    grade: Legend
+    stats:
+    - Endurance
+  - id: 170074
+    grade: Common
+    stats:
+    - Block
+  - id: 170072
+    grade: Rare
+    stats:
+    - IncreasesMaxHP
+  - id: 170078
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 170076
+    grade: Legend
+    stats:
+    - Regeneration
+  - id: 170077
+    grade: Common
+    stats:
+    - Attack
+  - id: 170080
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 170086
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 170084
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 170090
+    grade: Rare
+    stats:
+    - Defense
+    - CriticalHit
+  - id: 170091
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 170088
+    grade: Common
+    stats:
+    - Defense
+  - id: 170089
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 170094
+    grade: Common
+    stats:
+    - Block
+  - id: 170095
+    grade: Legend
+    stats:
+    - RegenerationPenetration
+  - id: 170093
+    grade: Rare
+    stats:
+    - Attack
+    - Block
+  - id: 170098
+    grade: Common
+    stats:
+    - Attack
+  - id: 170099
+    grade: Common
+    stats:
+    - Block
+  - id: 170096
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 170097
+    grade: Rare
+    stats:
+    - Accuracy
+    - CriticalHitResist
+  - id: 170102
+    grade: Common
+    stats:
+    - Block
+  - id: 170103
+    grade: Legend
+    stats:
+    - Regeneration
+  - id: 170100
+    grade: Rare
+    stats:
+    - Defense
+    - Accuracy
+  - id: 170101
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 170106
+    grade: Unique
+    stats:
+    - WeaponDamageTolerance
+  - id: 170105
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 170111
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 170109
+    grade: Common
+    stats:
+    - Defense
+  - id: 170115
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 170113
+    grade: None
+  - id: 170117
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 170123
+    grade: Legend
+    stats:
+    - Endurance
+  - id: 170120
+    grade: Unique
+    stats:
+    - WeaponDamageTolerance
+  - id: 170121
+    grade: Common
+    stats:
+    - Block
+  - id: 170126
+    grade: Rare
+    stats:
+    - Defense
+    - CriticalHit
+  - id: 170127
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 170124
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 170125
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 170130
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 170131
+    grade: Legend
+    stats:
+    - EndurancePenetration
+  - id: 170128
+    grade: Common
+    stats:
+    - Defense
+  - id: 170129
+    grade: Rare
+    stats:
+    - Attack
+    - CriticalHitResist
+  - id: 170135
+    grade: Common
+    stats:
+    - Block
+  - id: 170132
+    grade: Common
+    stats:
+    - Attack
+  - id: 170133
+    grade: Rare
+    stats:
+    - Defense
+    - Accuracy
+  - id: 170138
+    grade: Common
+    stats:
+    - Attack
+  - id: 170136
+    grade: Rare
+    stats:
+    - Attack
+    - CriticalHitResist
+  - id: 170137
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 170142
+    grade: Common
+    stats:
+    - Block
+  - id: 170140
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 170146
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 170150
+    grade: Legend
+    stats:
+    - Endurance
+  - id: 170148
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 170149
+    grade: Common
+    stats:
+    - Defense
+  - id: 170154
+    grade: Rare
+    stats:
+    - Attack
+    - Block
+  - id: 170155
+    grade: Common
+    stats:
+    - Defense
+  - id: 170152
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 170158
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 170156
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 170157
+    grade: Legend
+    stats:
+    - Regeneration
+  - id: 170162
+    grade: Rare
+    stats:
+    - IncreasesMaxHP
+  - id: 170160
+    grade: Common
+    stats:
+    - Block
+  - id: 170161
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 170167
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 170164
+    grade: Common
+    stats:
+    - Attack
+  - id: 170169
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 170174
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 170175
+    grade: Rare
+    stats:
+    - Accuracy
+    - CriticalHitResist
+  - id: 170173
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 170178
+    grade: Common
+    stats:
+    - Block
+  - id: 170179
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 170177
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 170182
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 170183
+    grade: Rare
+    stats:
+    - Block
+    - CriticalHit
+  - id: 170181
+    grade: Legend
+    stats:
+    - EndurancePenetration
+  - id: 170187
+    grade: Rare
+    stats:
+    - IncreasesMaxHP
+  - id: 170184
+    grade: Common
+    stats:
+    - Attack
+  - id: 170185
+    grade: Legend
+    stats:
+    - RegenerationPenetration
+  - id: 170190
+    grade: Common
+    stats:
+    - Attack
+  - id: 170191
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 170188
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 170194
+    grade: Rare
+    stats:
+    - Attack
+    - Block
+  - id: 170195
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 170192
+    grade: Rare
+    stats:
+    - Defense
+    - CriticalHit
+  - id: 170198
+    grade: Common
+    stats:
+    - Defense
+  - id: 170196
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 170202
+    grade: Common
+    stats:
+    - Attack
+  - id: 170200
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 170201
+    grade: Common
+    stats:
+    - Block
+  - id: 170207
+    grade: Common
+    stats:
+    - Defense
+  - id: 170204
+    grade: Common
+    stats:
+    - Defense
+  - id: 170205
+    grade: Legend
+    stats:
+    - RegenerationPenetration
+  - id: 170210
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 170211
+    grade: Unique
+    stats:
+    - WeaponDamageTolerance
+  - id: 170208
+    grade: Common
+    stats:
+    - Block
+  - id: 170214
+    grade: Rare
+    stats:
+    - Defense
+    - Accuracy
+  - id: 170215
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 170212
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 170213
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 170218
+    grade: Unique
+    stats:
+    - WeaponDamageBoost
+  - id: 170219
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 170217
+    grade: Common
+    stats:
+    - Defense
+  - id: 170223
+    grade: Legend
+    stats:
+    - Regeneration
+  - id: 170224
+    grade: Common
+    stats:
+    - Attack
+  - id: 170225
+    grade: Unique
+    stats:
+    - WeaponDamageBoost

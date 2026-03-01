@@ -170,3 +170,21 @@ boardStats:
     value: "1%"
   - type: StatusEffectResist
     value: "1%"
+  - type: WeaponDamageBoost
+    value: "2.5%"
+  - type: WeaponDamageTolerance
+    value: "2.5%"
+  - type: Accuracy
+    value: "10"
+  - type: Block
+    value: "10"
+  - type: IncreasesMaxHP
+    value: "1%"
+  - type: Endurance
+    value: "1%"
+  - type: EndurancePenetration
+    value: "1%"
+  - type: Regeneration
+    value: "1%"
+  - type: RegenerationPenetration
+    value: "1%"
