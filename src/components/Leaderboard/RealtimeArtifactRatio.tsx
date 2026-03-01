@@ -48,6 +48,7 @@ const RealtimeArtifactRatio: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState(now(getLocalTimeZone()));
   const [isAutoUpdate, setIsAutoUpdate] = useState(true);
   const [isMobileVersion, setIsMobileVersion] = useState(true);
+  const [sortOrder, setSortOrder] = useState<"official" | "elyos" | "asmo">("official");
 
   const [starredServerIds, setStarredServerIds] = useState<number[]>(() => {
     const saved = localStorage.getItem(STARRED_SERVERS_KEY);
@@ -89,13 +90,24 @@ const RealtimeArtifactRatio: React.FC = () => {
 
   const sortedMatchings = useMemo(() => {
     return [...serverMatchings].sort((a, b) => {
+      // Starred servers always come first
       const aStarred = starredServerIds.includes(a.server1.serverId) || starredServerIds.includes(a.server2.serverId);
       const bStarred = starredServerIds.includes(b.server1.serverId) || starredServerIds.includes(b.server2.serverId);
       if (aStarred && !bStarred) return -1;
       if (!aStarred && bStarred) return 1;
+
+      // Apply specific sort order
+      if (sortOrder === "elyos") {
+        return a.server1.serverId - b.server1.serverId;
+      }
+      if (sortOrder === "asmo") {
+        return a.server2.serverId - b.server2.serverId;
+      }
+
+      // Default/Official order: no additional sorting needed (already handled by server response or stars)
       return 0;
     });
-  }, [serverMatchings, starredServerIds]);
+  }, [serverMatchings, starredServerIds, sortOrder]);
 
   useEffect(() => {
     if (!isAutoUpdate) return;
@@ -316,7 +328,7 @@ const RealtimeArtifactRatio: React.FC = () => {
             size="sm"
             selectedKeys={[region]}
             onSelectionChange={(keys) => setRegion(Array.from(keys)[0] as string)}
-            className="min-w-[80px] w-[80px]"
+            className="min-w-[80px] w-[80px] md:hidden"
             disallowEmptySelection
             classNames={selectClassNames}
             popoverProps={{
@@ -334,7 +346,7 @@ const RealtimeArtifactRatio: React.FC = () => {
               const val = Array.from(keys)[0] as string;
               if (val) setSelectedSeasonNumber(parseInt(val));
             }}
-            className="min-w-[105px] w-[105px]"
+            className="min-w-[105px] w-[105px] md:hidden"
             disallowEmptySelection
             classNames={selectClassNames}
             popoverProps={{
@@ -356,7 +368,7 @@ const RealtimeArtifactRatio: React.FC = () => {
               const val = Array.from(keys)[0] as string;
               if (val) setSelectedMatchingNumber(parseInt(val));
             }}
-            className="min-w-[120px] w-[120px]"
+            className="min-w-[120px] w-[120px] md:hidden"
             disallowEmptySelection
             classNames={selectClassNames}
             popoverProps={{
@@ -372,9 +384,9 @@ const RealtimeArtifactRatio: React.FC = () => {
             ))}
           </Select>
           <I18nProvider locale={i18n.language}>
-            <div className="relative flex-1">
+            <div className="relative">
               <DatePicker
-                className="w-full"
+                className="w-[260px]"
                 hideTimeZone
                 showMonthAndYearPickers
                 value={selectedDate}
@@ -405,6 +417,22 @@ const RealtimeArtifactRatio: React.FC = () => {
               )}
             </div>
           </I18nProvider>
+          <Select
+            size="sm"
+            selectedKeys={[sortOrder]}
+            onSelectionChange={(keys) => setSortOrder(Array.from(keys)[0] as any)}
+            className="min-w-[105px] w-[105px] ml-auto"
+            disallowEmptySelection
+            classNames={selectClassNames}
+            popoverProps={{
+              radius: "none",
+            }}
+            listboxProps={commonListboxProps}
+          >
+            <SelectItem key="official">官方顺序</SelectItem>
+            <SelectItem key="elyos">天族顺序</SelectItem>
+            <SelectItem key="asmo">魔族顺序</SelectItem>
+          </Select>
         </div>
       </div>
 
