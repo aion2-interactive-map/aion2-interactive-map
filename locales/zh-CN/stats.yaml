@@ -165,6 +165,8 @@ EnduranceIncrease:
   name: 鐵壁
 MoveSpeedIncrease:
   name: 移動速度
+HardHit:
+  name: 強擊
 
 # Board
 MaxHP:
@@ -233,3 +235,17 @@ StatusEffectChance:
   name: 異常狀態擊中
 StatusEffectResist:
   name: 異常狀態抵抗
+WeaponDamageBoost:
+  name: 武器傷害增幅
+WeaponDamageTolerance:
+  name: 武器傷害耐性
+IncreasesMaxHP:
+  name: 生命力增加
+Endurance:
+  name: 鐵壁
+EndurancePenetration:
+  name: 鐵壁貫穿
+Regeneration:
+  name: 再生
+RegenerationPenetration:
+  name: 再生貫穿

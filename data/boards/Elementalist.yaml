@@ -2719,3 +2719,635 @@ boards:
     grade: Common
     stats:
     - PvPAttack
+- id: 57
+  nodes:
+  - id: 570008
+    grade: Unique
+    stats:
+    - WeaponDamageBoost
+  - id: 570009
+    grade: Common
+    stats:
+    - Attack
+  - id: 570011
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 570012
+    grade: Rare
+    stats:
+    - Attack
+    - Block
+  - id: 570013
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 570014
+    grade: Common
+    stats:
+    - Block
+  - id: 570015
+    grade: Unique
+    stats:
+    - WeaponDamageTolerance
+  - id: 570001
+    grade: Unique
+    stats:
+    - WeaponDamageBoost
+  - id: 570002
+    grade: Common
+    stats:
+    - Defense
+  - id: 570003
+    grade: Legend
+    stats:
+    - Endurance
+  - id: 570007
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 570024
+    grade: Common
+    stats:
+    - Defense
+  - id: 570025
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 570026
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 570028
+    grade: Common
+    stats:
+    - Attack
+  - id: 570030
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 570031
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 570016
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 570018
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 570019
+    grade: Common
+    stats:
+    - Attack
+  - id: 570021
+    grade: Legend
+    stats:
+    - EndurancePenetration
+  - id: 570022
+    grade: Common
+    stats:
+    - Attack
+  - id: 570041
+    grade: Legend
+    stats:
+    - EndurancePenetration
+  - id: 570042
+    grade: Common
+    stats:
+    - Defense
+  - id: 570043
+    grade: Rare
+    stats:
+    - Block
+    - CriticalHit
+  - id: 570044
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 570045
+    grade: Legend
+    stats:
+    - RegenerationPenetration
+  - id: 570047
+    grade: Common
+    stats:
+    - Block
+  - id: 570032
+    grade: Rare
+    stats:
+    - Defense
+    - CriticalHit
+  - id: 570034
+    grade: Rare
+    stats:
+    - Defense
+    - Accuracy
+  - id: 570035
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 570036
+    grade: Common
+    stats:
+    - Defense
+  - id: 570038
+    grade: Common
+    stats:
+    - Block
+  - id: 570039
+    grade: Rare
+    stats:
+    - Attack
+    - CriticalHitResist
+  - id: 570057
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 570059
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 570062
+    grade: Common
+    stats:
+    - Defense
+  - id: 570048
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 570049
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 570051
+    grade: Rare
+    stats:
+    - Attack
+    - CriticalHitResist
+  - id: 570052
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 570053
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 570072
+    grade: Rare
+    stats:
+    - IncreasesMaxHP
+  - id: 570074
+    grade: Common
+    stats:
+    - Block
+  - id: 570076
+    grade: Legend
+    stats:
+    - Regeneration
+  - id: 570077
+    grade: Common
+    stats:
+    - Attack
+  - id: 570078
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 570064
+    grade: Rare
+    stats:
+    - IncreasesMaxHP
+  - id: 570065
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 570066
+    grade: Common
+    stats:
+    - Block
+  - id: 570068
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 570069
+    grade: Legend
+    stats:
+    - Endurance
+  - id: 570070
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 570071
+    grade: Common
+    stats:
+    - Attack
+  - id: 570088
+    grade: Common
+    stats:
+    - Defense
+  - id: 570089
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 570090
+    grade: Rare
+    stats:
+    - Defense
+    - CriticalHit
+  - id: 570091
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 570093
+    grade: Rare
+    stats:
+    - Attack
+    - Block
+  - id: 570094
+    grade: Common
+    stats:
+    - Block
+  - id: 570095
+    grade: Legend
+    stats:
+    - RegenerationPenetration
+  - id: 570080
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 570084
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 570086
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 570105
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 570106
+    grade: Unique
+    stats:
+    - WeaponDamageTolerance
+  - id: 570109
+    grade: Common
+    stats:
+    - Defense
+  - id: 570111
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 570096
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 570097
+    grade: Rare
+    stats:
+    - Accuracy
+    - CriticalHitResist
+  - id: 570098
+    grade: Common
+    stats:
+    - Attack
+  - id: 570099
+    grade: Common
+    stats:
+    - Block
+  - id: 570100
+    grade: Rare
+    stats:
+    - Defense
+    - Accuracy
+  - id: 570101
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 570102
+    grade: Common
+    stats:
+    - Block
+  - id: 570103
+    grade: Legend
+    stats:
+    - Regeneration
+  - id: 570120
+    grade: Unique
+    stats:
+    - WeaponDamageTolerance
+  - id: 570121
+    grade: Common
+    stats:
+    - Block
+  - id: 570123
+    grade: Legend
+    stats:
+    - Endurance
+  - id: 570124
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 570125
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 570126
+    grade: Rare
+    stats:
+    - Defense
+    - CriticalHit
+  - id: 570127
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 570113
+    grade: None
+  - id: 570115
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 570117
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 570136
+    grade: Rare
+    stats:
+    - Attack
+    - CriticalHitResist
+  - id: 570137
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 570138
+    grade: Common
+    stats:
+    - Attack
+  - id: 570140
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 570142
+    grade: Common
+    stats:
+    - Block
+  - id: 570128
+    grade: Common
+    stats:
+    - Defense
+  - id: 570129
+    grade: Rare
+    stats:
+    - Attack
+    - CriticalHitResist
+  - id: 570130
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 570131
+    grade: Legend
+    stats:
+    - EndurancePenetration
+  - id: 570132
+    grade: Common
+    stats:
+    - Attack
+  - id: 570133
+    grade: Rare
+    stats:
+    - Defense
+    - Accuracy
+  - id: 570135
+    grade: Common
+    stats:
+    - Block
+  - id: 570152
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 570154
+    grade: Rare
+    stats:
+    - Attack
+    - Block
+  - id: 570155
+    grade: Common
+    stats:
+    - Defense
+  - id: 570156
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 570157
+    grade: Legend
+    stats:
+    - Regeneration
+  - id: 570158
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 570146
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 570148
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 570149
+    grade: Common
+    stats:
+    - Defense
+  - id: 570150
+    grade: Legend
+    stats:
+    - Endurance
+  - id: 570169
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 570173
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 570174
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 570175
+    grade: Rare
+    stats:
+    - Accuracy
+    - CriticalHitResist
+  - id: 570160
+    grade: Common
+    stats:
+    - Block
+  - id: 570161
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 570162
+    grade: Rare
+    stats:
+    - IncreasesMaxHP
+  - id: 570164
+    grade: Common
+    stats:
+    - Attack
+  - id: 570167
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 570184
+    grade: Common
+    stats:
+    - Attack
+  - id: 570185
+    grade: Legend
+    stats:
+    - RegenerationPenetration
+  - id: 570187
+    grade: Rare
+    stats:
+    - IncreasesMaxHP
+  - id: 570188
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 570190
+    grade: Common
+    stats:
+    - Attack
+  - id: 570191
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 570177
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 570178
+    grade: Common
+    stats:
+    - Block
+  - id: 570179
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 570181
+    grade: Legend
+    stats:
+    - EndurancePenetration
+  - id: 570182
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 570183
+    grade: Rare
+    stats:
+    - Block
+    - CriticalHit
+  - id: 570200
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 570201
+    grade: Common
+    stats:
+    - Block
+  - id: 570202
+    grade: Common
+    stats:
+    - Attack
+  - id: 570204
+    grade: Common
+    stats:
+    - Defense
+  - id: 570205
+    grade: Legend
+    stats:
+    - RegenerationPenetration
+  - id: 570207
+    grade: Common
+    stats:
+    - Defense
+  - id: 570192
+    grade: Rare
+    stats:
+    - Defense
+    - CriticalHit
+  - id: 570194
+    grade: Rare
+    stats:
+    - Attack
+    - Block
+  - id: 570195
+    grade: Common
+    stats:
+    - MaxHP
+  - id: 570196
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 570198
+    grade: Common
+    stats:
+    - Defense
+  - id: 570217
+    grade: Common
+    stats:
+    - Defense
+  - id: 570218
+    grade: Unique
+    stats:
+    - WeaponDamageBoost
+  - id: 570219
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 570223
+    grade: Legend
+    stats:
+    - Regeneration
+  - id: 570208
+    grade: Common
+    stats:
+    - Block
+  - id: 570210
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 570211
+    grade: Unique
+    stats:
+    - WeaponDamageTolerance
+  - id: 570212
+    grade: Common
+    stats:
+    - Accuracy
+  - id: 570213
+    grade: Common
+    stats:
+    - CriticalHit
+  - id: 570214
+    grade: Rare
+    stats:
+    - Defense
+    - Accuracy
+  - id: 570215
+    grade: Common
+    stats:
+    - CriticalHitResist
+  - id: 570224
+    grade: Common
+    stats:
+    - Attack
+  - id: 570225
+    grade: Unique
+    stats:
+    - WeaponDamageBoost
