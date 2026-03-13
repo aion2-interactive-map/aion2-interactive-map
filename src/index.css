@@ -33,7 +33,11 @@
     --background-image-character-page: linear-gradient( 180deg, #B7D4FF 0%, #DFECFF 100%);
     --color-crafting-border: rgba(137, 137, 137, 0.30);
     --color-leaderboard-page: #E7F1FF;
+    --background-image-page: linear-gradient(180deg, #F3FBFF 0%, #F3FBFF 100%);
     --color-star: #EAC120;
+    --color-artifact-contributor-bg: rgba(82, 82, 82, 0.04);
+    --background-image-artifact-server-1: linear-gradient(135deg, #DBEDFF 0%, #F3FBFF 100%);
+    --background-image-artifact-server-2: linear-gradient(225deg, #EFE5FF 0%, #F3FBFF 100%);
 
     --color-grade-common: rgba(0, 0, 0, .68);
     --color-grade-rare: #00870b;
@@ -56,8 +60,9 @@
     --background-image-crafting-equipment-view: linear-gradient(180deg, rgba(205, 231, 255, 0) 0%, rgba(21, 110, 194, 0.3) 66%, rgba(201, 229, 255, 0) 100%);
     --background-image-crafting-tab: linear-gradient(180deg, rgba(244, 244, 244, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
     --color-crafting-border: rgba(255, 255, 255, 0.30);
-    --background-image-page-dark: linear-gradient( 180deg, #2C2249 0%, #7561B2 100%, #413661 100%);
+    --background-image-page: linear-gradient( 180deg, #2C2249 0%, #7561B2 100%, #413661 100%);
     --color-character-card: rgba(255, 255, 255, 0.1);
+    --color-character-equipment: rgba(0, 0, 0, 0.2);
     --color-grade-common: rgba(255, 255, 255, .93);
     --color-grade-rare: #52b35c;
     --color-grade-legend: #3d94d8;
@@ -65,6 +70,10 @@
     --color-grade-epic: #ee6c2a;
     --color-grade-mythic: #d33939;
     --color-grade-special: #34b798;
+
+    --background-image-artifact-server-1: linear-gradient( 90deg, rgba(32,76,152,0) 0%, #204C98 100%);
+    --background-image-artifact-server-2: linear-gradient( 90deg, rgba(154,39,255,0.3) 0%, rgba(154,39,255,0) 100%);
+    --color-artifact-contributor-bg: rgba(0, 0, 0, 0.2);
 }
 
 .abyss {

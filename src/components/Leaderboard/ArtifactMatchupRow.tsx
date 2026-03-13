@@ -51,15 +51,12 @@ const ArtifactMatchupRow: React.FC<ArtifactMatchupRowProps> = ({
   const renderServerHeader = (server: any, isServer1: boolean) => {
     const isStarred = starredServerIds.includes(server.serverId);
     const serverAbbr = isServer1 ? t("common:server.lightAbbr") : t("common:server.darkAbbr");
-    const bgGradient = isServer1
-      ? "linear-gradient(135deg, #DBEDFF 0%, #F3FBFF 100%)"
-      : "linear-gradient(225deg, #EFE5FF 0%, #F3FBFF 100%)";
+    const bgClass = isServer1 ? "bg-artifact-server-1" : "bg-artifact-server-2";
     const textColor = isServer1 ? "text-primary" : "text-secondary";
 
     return (
       <div
-        className="flex-1 h-[38px] flex items-center justify-center rounded-md relative"
-        style={{background: bgGradient}}
+        className={`flex-1 h-[38px] flex items-center justify-center rounded-md relative ${bgClass}`}
       >
         <AdaptiveTooltip content={t("common:leaderboard.pin")}>
           <Button
@@ -157,7 +154,7 @@ const ArtifactMatchupRow: React.FC<ArtifactMatchupRowProps> = ({
 
     if (allStatesInContention && isInRange) {
       return (
-        <div className="flex-1 flex items-center h-full bg-[rgba(82,82,82,0.04)]">
+        <div className="flex-1 flex items-center h-full bg-(--color-artifact-contributor-bg)">
           <div className="flex justify-center px-2 w-full">
             <span className="text-primary hover:underline text-sm font-bold cursor-pointer">
               {t("common:leaderboard.submitData")}
@@ -176,7 +173,7 @@ const ArtifactMatchupRow: React.FC<ArtifactMatchupRowProps> = ({
 
     if (contributorNames.length > 0) {
       return (
-        <div className="flex-1 flex items-center h-full bg-[rgba(82,82,82,0.04)]" onClick={(e) => e.stopPropagation()}>
+        <div className="flex-1 flex items-center h-full bg-(--color-artifact-contributor-bg)" onClick={(e) => e.stopPropagation()}>
           <div className="flex items-center justify-center px-2 w-full">
             <span className="text-xs text-default-800">
               <Trans
