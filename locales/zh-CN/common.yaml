@@ -242,6 +242,8 @@ server:
 race:
   light: "天族"
   dark: "魔族"
+  lightShare: "西部阵营"
+  darkShare: "东部阵营"
 
 skills:
   category:
