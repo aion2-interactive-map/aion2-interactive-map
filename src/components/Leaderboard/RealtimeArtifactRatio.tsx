@@ -98,10 +98,48 @@ const RealtimeArtifactRatio: React.FC = () => {
 
       // Apply specific sort order
       if (sortOrder === "elyos") {
-        return a.server1.serverId - b.server1.serverId;
+        const isALight1 = a.server1.serverId < 2000;
+        const isALight2 = a.server2.serverId < 2000;
+        const isBLight1 = b.server1.serverId < 2000;
+        const isBLight2 = b.server2.serverId < 2000;
+
+        const aHasLight = isALight1 || isALight2;
+        const bHasLight = isBLight1 || isBLight2;
+
+        if (aHasLight && !bHasLight) return -1;
+        if (!aHasLight && bHasLight) return 1;
+
+        const aSortId = isALight1 && isALight2 ? Math.min(a.server1.serverId, a.server2.serverId) : 
+                        isALight1 ? a.server1.serverId : 
+                        isALight2 ? a.server2.serverId : 
+                        Math.min(a.server1.serverId, a.server2.serverId);
+        const bSortId = isBLight1 && isBLight2 ? Math.min(b.server1.serverId, b.server2.serverId) : 
+                        isBLight1 ? b.server1.serverId : 
+                        isBLight2 ? b.server2.serverId : 
+                        Math.min(b.server1.serverId, b.server2.serverId);
+        return aSortId - bSortId;
       }
       if (sortOrder === "asmo") {
-        return a.server2.serverId - b.server2.serverId;
+        const isADark1 = a.server1.serverId >= 2000;
+        const isADark2 = a.server2.serverId >= 2000;
+        const isBDark1 = b.server1.serverId >= 2000;
+        const isBDark2 = b.server2.serverId >= 2000;
+
+        const aHasDark = isADark1 || isADark2;
+        const bHasDark = isBDark1 || isBDark2;
+
+        if (aHasDark && !bHasDark) return -1;
+        if (!aHasDark && bHasDark) return 1;
+
+        const aSortId = isADark1 && isADark2 ? Math.min(a.server1.serverId, a.server2.serverId) : 
+                        isADark1 ? a.server1.serverId : 
+                        isADark2 ? a.server2.serverId : 
+                        Math.min(a.server1.serverId, a.server2.serverId);
+        const bSortId = isBDark1 && isBDark2 ? Math.min(b.server1.serverId, b.server2.serverId) : 
+                        isBDark1 ? b.server1.serverId : 
+                        isBDark2 ? b.server2.serverId : 
+                        Math.min(b.server1.serverId, b.server2.serverId);
+        return aSortId - bSortId;
       }
 
       // Default/Official order: no additional sorting needed (already handled by server response or stars)

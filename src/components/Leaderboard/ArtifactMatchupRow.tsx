@@ -50,34 +50,39 @@ const ArtifactMatchupRow: React.FC<ArtifactMatchupRowProps> = ({
 }) => {
   const renderServerHeader = (server: any, isServer1: boolean) => {
     const isStarred = starredServerIds.includes(server.serverId);
-    const serverAbbr = isServer1 ? t("common:server.lightAbbr") : t("common:server.darkAbbr");
-    const bgClass = isServer1 ? "bg-artifact-server-1" : "bg-artifact-server-2";
-    const textColor = isServer1 ? "text-primary" : "text-secondary";
+    const isLightServer = server.serverId < 2000;
+    const serverAbbr = isLightServer ? t("common:server.lightAbbr") : t("common:server.darkAbbr");
+    const bgClass = isLightServer ? "bg-artifact-server-1" : "bg-artifact-server-2";
+    const textColor = isLightServer ? "text-primary" : "text-secondary";
+
+    const reverseGradient = (isLightServer && !isServer1) || (!isLightServer && isServer1);
 
     return (
       <div
-        className={`flex-1 h-[38px] flex items-center justify-center rounded-md relative ${bgClass}`}
+        className={`flex-1 h-[38px] flex items-center justify-center rounded-md relative ${bgClass} ${reverseGradient ? "rotate-180" : ""}`}
       >
-        <AdaptiveTooltip content={t("common:leaderboard.pin")}>
-          <Button
-            isIconOnly
-            size="sm"
-            variant="light"
-            className={`absolute ${isServer1 ? "left-1" : "right-1"} z-10 text-default-400 hover:text-star data-[starred=true]:text-star`}
-            data-starred={isStarred}
-            onClick={(e) => {
-              e.stopPropagation();
-              toggleStar(server.serverId);
-            }}
-          >
-            <FontAwesomeIcon
-              icon={isStarred ? faStarSolid : faStarRegular}
-              className="text-base"
-            />
-          </Button>
-        </AdaptiveTooltip>
-        <span className={`text-lg font-bold ${textColor}`}>{server.serverName}</span>
-        <span className="text-sm font-normal text-default-800">（{serverAbbr}{server.serverId % 1000}）</span>
+        <div className={`flex items-center justify-center w-full h-full ${reverseGradient ? "rotate-180" : ""}`}>
+          <AdaptiveTooltip content={t("common:leaderboard.pin")}>
+            <Button
+              isIconOnly
+              size="sm"
+              variant="light"
+              className={`absolute ${isServer1 ? "left-1" : "right-1"} z-10 text-default-400 hover:text-star data-[starred=true]:text-star`}
+              data-starred={isStarred}
+              onClick={(e) => {
+                e.stopPropagation();
+                toggleStar(server.serverId);
+              }}
+            >
+              <FontAwesomeIcon
+                icon={isStarred ? faStarSolid : faStarRegular}
+                className="text-base"
+              />
+            </Button>
+          </AdaptiveTooltip>
+          <span className={`text-lg font-bold ${textColor}`}>{server.serverName}</span>
+          <span className="text-sm font-normal text-default-800">（{serverAbbr}{server.serverId % 1000}）</span>
+        </div>
       </div>
     );
   };

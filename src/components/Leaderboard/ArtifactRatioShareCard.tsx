@@ -71,10 +71,19 @@ const ArtifactRatioShareCard = React.forwardRef<HTMLDivElement, ArtifactRatioSha
   };
 
   const renderServerNameRow = (serverData: any, isServer1: boolean) => {
-    const serverAbbr = isServer1 ? t("common:server.lightAbbr") : t("common:server.darkAbbr");
-    const bgGradient = isServer1
-      ? "linear-gradient(90deg, #F9FCFF 0%, #58ACFF 100%)"
-      : "linear-gradient(90deg, #FFFFFF 0%, #A468FF 100%)";
+    const isLightServer = serverData.serverId < 2000;
+    const serverAbbr = isLightServer ? t("common:server.lightAbbr") : t("common:server.darkAbbr");
+    
+    let bgGradient = "";
+    if (isLightServer) {
+      bgGradient = isServer1 
+        ? "linear-gradient(90deg, #F9FCFF 0%, #58ACFF 100%)"
+        : "linear-gradient(270deg, #F9FCFF 0%, #58ACFF 100%)";
+    } else {
+      bgGradient = isServer1
+        ? "linear-gradient(270deg, #FFFFFF 0%, #A468FF 100%)"
+        : "linear-gradient(90deg, #FFFFFF 0%, #A468FF 100%)";
+    }
 
     return (
       <div className={`w-full ${isMobile ? "h-12" : "h-[42px]"} flex items-center justify-center rounded-lg border border-white/20 relative bg-white/10`}>
@@ -111,10 +120,10 @@ const ArtifactRatioShareCard = React.forwardRef<HTMLDivElement, ArtifactRatioSha
   const FactionHeader = () => (
     <div className={`${isMobile ? "h-12" : "h-9"} flex items-center shrink-0 ${isMobile ? "rounded-t-lg" : ""}`}>
       <div className="flex-1 flex items-center justify-center">
-        <span className={`${isMobile ? "text-[36px]" : "text-base"} font-normal text-white`}>{t("common:race.light")}</span>
+        <span className={`${isMobile ? "text-[36px]" : "text-base"} font-normal text-white`}>{t("common:race.lightShare")}</span>
       </div>
       <div className="flex-1 flex items-center justify-center">
-        <span className={`${isMobile ? "text-[36px]" : "text-base"} font-normal text-white`}>{t("common:race.dark")}</span>
+        <span className={`${isMobile ? "text-[36px]" : "text-base"} font-normal text-white`}>{t("common:race.darkShare")}</span>
       </div>
     </div>
   );
