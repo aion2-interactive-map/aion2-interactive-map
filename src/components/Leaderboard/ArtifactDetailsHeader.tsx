@@ -25,9 +25,9 @@ const ArtifactDetailsHeader: React.FC<ArtifactDetailsHeaderProps> = ({ matching,
       <h1 className="text-2xl font-bold">
         {matching ? (
           <>
-            <span className="text-primary">{matching.server1.serverName}</span>
+            <span className={matching.server1.serverId < 2000 ? "text-primary" : "text-secondary"}>{matching.server1.serverName}</span>
             <span className="mx-2">VS</span>
-            <span className="text-secondary">{matching.server2.serverName}</span>
+            <span className={matching.server2.serverId < 2000 ? "text-primary" : "text-secondary"}>{matching.server2.serverName}</span>
           </>
         ) : t("common:leaderboard.artifactDetails")}
       </h1>

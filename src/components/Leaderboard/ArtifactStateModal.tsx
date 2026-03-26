@@ -129,6 +129,12 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
     return !!(initialState && initialState.id);
   }, [initialState]);
 
+  const isSameFaction = useMemo(() => {
+    const s1Light = matching.server1.serverId < 2000;
+    const s2Light = matching.server2.serverId < 2000;
+    return s1Light === s2Light;
+  }, [matching]);
+
   const recordTimeForApi = useMemo(() => {
     if (!manualRecordTime) return "";
     // manualRecordTime is a CalendarDate.
@@ -186,6 +192,9 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
 
   const renderArtifactSelect = (artifact: Artifact) => {
     const artifactName = t(`markers/${artifact.marker.mapId}:${artifact.markerId}.name`, artifact.marker.name);
+    const lightLabel = isSameFaction ? t("race.lightAlt") : t("leaderboard.artifactState.light");
+    const darkLabel = isSameFaction ? t("race.darkAlt") : t("leaderboard.artifactState.dark");
+    
     return (
       <div key={artifact.id} className="flex items-center justify-between gap-4">
         <span className="text-sm flex-1">{artifactName}</span>
@@ -206,8 +215,8 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
           }}
           listboxProps={commonListboxProps}
         >
-          <SelectItem key="1" textValue={t("leaderboard.artifactState.light")}>{t("leaderboard.artifactState.light")}</SelectItem>
-          <SelectItem key="2" textValue={t("leaderboard.artifactState.dark")}>{t("leaderboard.artifactState.dark")}</SelectItem>
+          <SelectItem key="1" textValue={lightLabel}>{lightLabel}</SelectItem>
+          <SelectItem key="2" textValue={darkLabel}>{darkLabel}</SelectItem>
         </Select>
       </div>
     );
