@@ -71,3 +71,12 @@ maps:
   tilesCountX: 2
   tilesCountY: 2
   type: abyss
+- id: 8251e62c-851f-494b-9721-a5f97217521e
+  isVisible: true
+  name: Abyss_Reshanta_C
+  order: 8
+  tileHeight: 1024
+  tileWidth: 1024
+  tilesCountX: 1
+  tilesCountY: 1
+  type: abyss
