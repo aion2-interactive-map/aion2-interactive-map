@@ -35,10 +35,10 @@ interface ArtifactRegionRankingProps {
 
 const ArtifactRegionRanking: React.FC<ArtifactRegionRankingProps> = ({ mapName, setMapName }) => {
   const { t } = useTranslation();
-  const { 
+  const {
     seasons,
-    artifactCounts, 
-    fetchArtifactCounts, 
+    artifactCounts,
+    fetchArtifactCounts,
     loadingArtifactCounts,
     serverMatchings,
     loadingMatchings,
@@ -50,6 +50,9 @@ const ArtifactRegionRanking: React.FC<ArtifactRegionRankingProps> = ({ mapName, 
     selectedMatchingNumber,
     setSelectedMatchingNumber
   } = useLeaderboard();
+
+  const isSeason3OrLater = selectedSeasonNumber !== null && selectedSeasonNumber >= 3;
+  const abyssBOrC = isSeason3OrLater ? MAP_NAMES.ABYSS_C : MAP_NAMES.ABYSS_B;
 
   const selectClassNames = {
     trigger: "!bg-character-card hover:!bg-character-card focus:!bg-character-card !transition-none border-crafting-border border-1 shadow-none rounded-sm group-data-[hover=true]:!bg-character-card group-data-[focus=true]:!bg-character-card group-data-[focus-visible=true]:!bg-character-card h-[36px] min-h-[36px]",
@@ -264,8 +267,8 @@ const ArtifactRegionRanking: React.FC<ArtifactRegionRankingProps> = ({ mapName, 
             <SelectItem key={MAP_NAMES.ABYSS_A}>
               {t(`maps:${MAP_NAMES.ABYSS_A}.description`)}
             </SelectItem>
-            <SelectItem key={MAP_NAMES.ABYSS_B}>
-              {t(`maps:${MAP_NAMES.ABYSS_B}.description`)}
+            <SelectItem key={abyssBOrC}>
+              {t(`maps:${abyssBOrC}.description`)}
             </SelectItem>
           </Select>
         </div>
@@ -393,6 +396,7 @@ const ArtifactRegionRanking: React.FC<ArtifactRegionRankingProps> = ({ mapName, 
                   isMobile={isMobileVersion}
                   region={region}
                   seasonInfo={seasonInfo}
+                  selectedSeasonNumber={selectedSeasonNumber}
                 />
               </ArtifactRatioShareCardWrapper>
             </ModalBody>

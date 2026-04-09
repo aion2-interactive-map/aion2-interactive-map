@@ -39,9 +39,6 @@ export const Route = createFileRoute("/leaderboard/artifacts/$matchingId")({
 
 function ArtifactDetailsPage() {
   const {matchingId} = Route.useParams();
-  const ABYSS_MAPS = [MAP_NAMES.ABYSS_A, MAP_NAMES.ABYSS_B];
-  const markerNs = ABYSS_MAPS.map((x) => `markers/${x}`);
-  const {t} = useTranslation([...markerNs, "common"]);
   const {user, isSuperUser, fetchWithAuth, setUserModalOpen} = useUser();
   const {
     seasons,
@@ -53,17 +50,23 @@ function ArtifactDetailsPage() {
     deleteArtifactState,
   } = useLeaderboard();
 
+  const matching = useMemo(
+    () => serverMatchings.find((m) => m.id === matchingId),
+    [serverMatchings, matchingId]
+  );
+
+  const isSeason3OrLater = matching?.season?.number !== undefined ? (matching.season.number >= 3) : false;
+  const abyssBOrC = isSeason3OrLater ? MAP_NAMES.ABYSS_C : MAP_NAMES.ABYSS_B;
+  const ABYSS_MAPS = [MAP_NAMES.ABYSS_A, abyssBOrC];
+  const markerNs = ABYSS_MAPS.map((x) => `markers/${x}`);
+  const {t} = useTranslation([...markerNs, "common"]);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingMapName, setEditingMapName] = useState<string | null>(null);
   const [editingInitialState, setEditingInitialState] = useState<ArtifactState | null>(null);
   const [matchingArtifactStates, setMatchingArtifactStates] = useState<ArtifactState[]>([]);
   const [admins, setAdmins] = useState<ArtifactAdmin[]>([]);
   const [isAdminModalOpen, setIsAdminModalOpen] = useState(false);
-
-  const matching = useMemo(
-    () => serverMatchings.find((m) => m.id === matchingId),
-    [serverMatchings, matchingId]
-  );
 
   const targetSeasonId = useMemo(() => {
     if (matching) return matching.seasonId;

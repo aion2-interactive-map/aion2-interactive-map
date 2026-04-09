@@ -152,7 +152,7 @@ export const LeaderboardProvider: React.FC<{ children: React.ReactNode }> = ({ c
     setLoadingArtifacts(true);
     setError(null);
     try {
-      const mapIds = [MAP_NAMES.ABYSS_A, MAP_NAMES.ABYSS_B];
+      const mapIds = [MAP_NAMES.ABYSS_A, MAP_NAMES.ABYSS_B, MAP_NAMES.ABYSS_C];
       const newArtifactsByMap: Record<string, Artifact[]> = {};
       const promises = mapIds.map(async (mapId) => {
         try {
@@ -255,7 +255,9 @@ export const LeaderboardProvider: React.FC<{ children: React.ReactNode }> = ({ c
     setLoadingArtifactStates(true);
     setError(null);
     try {
-      const mapNames = [MAP_NAMES.ABYSS_A, MAP_NAMES.ABYSS_B];
+      const isSeason3OrLater = selectedSeasonNumber !== null && selectedSeasonNumber >= 3;
+      const abyssBOrC = isSeason3OrLater ? MAP_NAMES.ABYSS_C : MAP_NAMES.ABYSS_B;
+      const mapNames = [MAP_NAMES.ABYSS_A, abyssBOrC];
       const promises = mapNames.map(async (mapName) => {
         try {
           let url = getApiUrl(`/api/v1/seasons/${seasonId}/maps/${mapName}/artifacts/states`);
@@ -305,7 +307,7 @@ export const LeaderboardProvider: React.FC<{ children: React.ReactNode }> = ({ c
     } finally {
       setLoadingArtifactStates(false);
     }
-  }, [artifactStatesBySeason]);
+  }, [artifactStatesBySeason, selectedSeasonNumber]);
 
   const fetchArtifactCounts = useCallback(async (seasonId: string, mapName: string) => {
     if (artifactCountsByMap[seasonId]?.[mapName]) {
@@ -318,7 +320,9 @@ export const LeaderboardProvider: React.FC<{ children: React.ReactNode }> = ({ c
     try {
       let resultsToSet: ArtifactCount[] = [];
       if (mapName === ALL_MAPS_KEY) {
-        const mapNames = [MAP_NAMES.ABYSS_A, MAP_NAMES.ABYSS_B];
+        const isSeason3OrLater = selectedSeasonNumber !== null && selectedSeasonNumber >= 3;
+        const abyssBOrC = isSeason3OrLater ? MAP_NAMES.ABYSS_C : MAP_NAMES.ABYSS_B;
+        const mapNames = [MAP_NAMES.ABYSS_A, abyssBOrC];
         const promises = mapNames.map(async (name) => {
           const response = await fetch(getApiUrl(`/api/v1/seasons/${seasonId}/maps/${name}/artifacts/count`));
           const result: ApiResponse<ArtifactCount> = await response.json();
@@ -363,7 +367,7 @@ export const LeaderboardProvider: React.FC<{ children: React.ReactNode }> = ({ c
     } finally {
       setLoadingArtifactCounts(false);
     }
-  }, [artifactCountsByMap]);
+  }, [artifactCountsByMap, selectedSeasonNumber]);
 
   const createArtifactState = useCallback(async (seasonId: string, mapName: string, data: any) => {
     try {

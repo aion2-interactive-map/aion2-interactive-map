@@ -18,6 +18,7 @@ export interface GameMapMeta {
 export const MAP_NAMES = {
   ABYSS_A: "Abyss_Reshanta_A",
   ABYSS_B: "Abyss_Reshanta_B",
+  ABYSS_C: "Abyss_Reshanta_C",
 } as const;
 
 /**

@@ -4,6 +4,9 @@ Abyss_Reshanta_A:
 Abyss_Reshanta_B:
   description: 深渊B
   name: 深渊艾雷修蓝塔中层
+Abyss_Reshanta_C:
+  description: 深渊C
+  name: 深渊艾雷修蓝塔上层
 World_D_A:
   description: 魔族大地图
   name: 亚尔特盖德（魔）

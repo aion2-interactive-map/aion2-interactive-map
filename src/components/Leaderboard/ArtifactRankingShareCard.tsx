@@ -9,6 +9,7 @@ interface ArtifactRankingShareCardProps {
   region: string;
   seasonInfo: string;
   serverMatchings: any[];
+  selectedSeasonNumber?: number | null;
 }
 
 const ArtifactRankingShareCard = React.forwardRef<HTMLDivElement, ArtifactRankingShareCardProps>(({
@@ -17,8 +18,14 @@ const ArtifactRankingShareCard = React.forwardRef<HTMLDivElement, ArtifactRankin
   region,
   seasonInfo,
   serverMatchings,
+  selectedSeasonNumber,
 }, ref) => {
-  const { t } = useTranslation(["common"]);
+  const isSeason3OrLater = selectedSeasonNumber !== undefined && selectedSeasonNumber !== null 
+    ? selectedSeasonNumber >= 3 
+    : (seasonInfo.includes("Season 3") || seasonInfo.includes("S3"));
+  const abyssBOrC = isSeason3OrLater ? "Abyss_Reshanta_C" : "Abyss_Reshanta_B";
+  const markerNs = region === "ALL" ? ["markers/Abyss_Reshanta_A", `markers/${abyssBOrC}`] : [`markers/${region}`];
+  const { t } = useTranslation(["common", ...markerNs]);
 
   const getServerRaceInfo = (serverId: number) => {
     const matching = serverMatchings.find(

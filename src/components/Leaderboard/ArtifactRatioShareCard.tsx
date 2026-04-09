@@ -39,7 +39,9 @@ const ArtifactRatioShareCard = React.forwardRef<HTMLDivElement, ArtifactRatioSha
   },
   isMobile = false
 }, ref) => {
-  const { t } = useTranslation(["common", "markers/AbyssA", "markers/AbyssB", "maps"]);
+  const { t } = useTranslation(["common", "markers/AbyssA", "markers/AbyssB", "markers/AbyssC", "maps"]);
+
+  const isSeason3OrLater = matchings.length > 0 && matchings[0]?.season?.number !== undefined ? (matchings[0].season.number >= 3) : false;
 
   const getArtifactIcon = (matching: any, artifact: any) => {
     const stateData = artifactStateMap[matching.id]?.[artifact.id];
@@ -100,7 +102,10 @@ const ArtifactRatioShareCard = React.forwardRef<HTMLDivElement, ArtifactRatioSha
     );
   };
 
-  const renderArtifactRow = (matching: any, artifacts: any[], mapName: string) => {
+  const renderArtifactRow = (matching: any, artifacts: any[], isAbyssA: boolean) => {
+    const isSeason3OrLater = matching?.season?.number !== undefined ? (matching.season.number >= 3) : false;
+    const markerNs = isAbyssA ? "markers/AbyssA" : (isSeason3OrLater ? "markers/AbyssC" : "markers/AbyssB");
+
     return (
       <div className={`flex items-center justify-center ${isMobile ? "h-12" : "h-9"} gap-1 w-full`}>
         <div className="flex gap-0.5">
@@ -108,7 +113,7 @@ const ArtifactRatioShareCard = React.forwardRef<HTMLDivElement, ArtifactRatioSha
             <img
               key={artifact.id}
               src={getArtifactIcon(matching, artifact)}
-              alt={t(`markers/${mapName}:${artifact.markerId}.name`, artifact.marker.name) as string}
+              alt={t(`${markerNs}:${artifact.markerId}.name`, artifact.marker.name) as string}
               className={`${isMobile ? "w-12 h-12" : "w-9 h-9"} object-contain`}
             />
           ))}
@@ -186,14 +191,14 @@ const ArtifactRatioShareCard = React.forwardRef<HTMLDivElement, ArtifactRatioSha
           </div>
           <div className="flex-1 min-h-[56px] bg-white/10 border border-white/20 rounded-lg p-2.5 flex flex-col items-center justify-center gap-2">
             <span className={`${isMobile ? "text-[32px]" : "text-lg"} font-bold text-white/90`}>
-              {t(`maps:${MAP_NAMES.ABYSS_B}.description`) as string}
+              {t(`maps:${isSeason3OrLater ? MAP_NAMES.ABYSS_C : MAP_NAMES.ABYSS_B}.description`) as string}
             </span>
             <div className={`flex ${isMobile ? "flex-col gap-0" : "flex-row gap-x-4 gap-y-1 flex-wrap"} justify-center`}>
               {artifactsB.map((artifact) => (
                 <div key={artifact.id} className={`flex items-center gap-2 ${isMobile ? "h-12" : ""}`}>
                   <img src={icons.neutral} alt="" className={`${isMobile ? "w-12 h-12" : "w-9 h-9"} object-contain`} />
                   <span className={`${isMobile ? "text-2xl" : "text-sm"} font-normal text-white/90`}>
-                    {t(`markers/AbyssB:${artifact.markerId}.name`, artifact.marker.name) as string}
+                    {t(`${isSeason3OrLater ? "markers/AbyssC" : "markers/AbyssB"}:${artifact.markerId}.name`, artifact.marker.name) as string}
                   </span>
                 </div>
               ))}
@@ -227,14 +232,14 @@ const ArtifactRatioShareCard = React.forwardRef<HTMLDivElement, ArtifactRatioSha
                   {/* Second Row: Maps and Artifacts with Divider */}
                   <div className="flex items-center justify-between">
                     <div className="flex-1">
-                      {renderArtifactRow(matching, artifactsA, MAP_NAMES.ABYSS_A)}
+                      {renderArtifactRow(matching, artifactsA, true)}
                     </div>
                     {/* Vertical Divider */}
                     <div className="flex flex-col items-center px-2">
                       <div className={`w-px ${isMobile ? "h-12" : "h-5"} bg-white/20`} />
                     </div>
                     <div className="flex-1">
-                      {renderArtifactRow(matching, artifactsB, MAP_NAMES.ABYSS_B)}
+                      {renderArtifactRow(matching, artifactsB, false)}
                     </div>
                   </div>
                 </div>
@@ -274,14 +279,14 @@ const ArtifactRatioShareCard = React.forwardRef<HTMLDivElement, ArtifactRatioSha
                       {/* Second Row: Maps and Artifacts with Divider */}
                       <div className="flex items-center justify-between">
                         <div className="flex-1">
-                          {renderArtifactRow(matching, artifactsA, MAP_NAMES.ABYSS_A)}
+                          {renderArtifactRow(matching, artifactsA, true)}
                         </div>
                         {/* Vertical Divider */}
                         <div className="flex flex-col items-center px-2">
                           <div className="w-px h-5 bg-white/20" />
                         </div>
                         <div className="flex-1">
-                          {renderArtifactRow(matching, artifactsB, MAP_NAMES.ABYSS_B)}
+                          {renderArtifactRow(matching, artifactsB, false)}
                         </div>
                       </div>
                     </div>

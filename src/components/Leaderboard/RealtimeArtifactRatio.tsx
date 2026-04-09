@@ -23,11 +23,6 @@ import ArtifactRatioShareCardWrapper from "./ArtifactRatioShareCardWrapper";
 
 const RealtimeArtifactRatio: React.FC = () => {
   const navigate = useNavigate();
-  const ABYSS_MAPS = [MAP_NAMES.ABYSS_A, MAP_NAMES.ABYSS_B];
-  const STARRED_SERVERS_KEY = "starred_artifact_servers";
-
-  const markerNs = ABYSS_MAPS.map(x => `markers/${x}`);
-  const {t, i18n} = useTranslation([...markerNs, "common"]);
   const {
     seasons,
     serverMatchings,
@@ -45,6 +40,13 @@ const RealtimeArtifactRatio: React.FC = () => {
     selectedMatchingNumber,
     setSelectedMatchingNumber
   } = useLeaderboard();
+
+  const isSeason3OrLater = selectedSeasonNumber !== null && selectedSeasonNumber >= 3;
+  const abyssBOrC = isSeason3OrLater ? MAP_NAMES.ABYSS_C : MAP_NAMES.ABYSS_B;
+  const ABYSS_MAPS = [MAP_NAMES.ABYSS_A, abyssBOrC];
+  const markerNs = ABYSS_MAPS.map(x => `markers/${x}`);
+  const {t, i18n} = useTranslation([...markerNs, "common"]);
+  const STARRED_SERVERS_KEY = "starred_artifact_servers";
   const [selectedDate, setSelectedDate] = useState(now(getLocalTimeZone()));
   const [isAutoUpdate, setIsAutoUpdate] = useState(true);
   const [isMobileVersion, setIsMobileVersion] = useState(true);
@@ -254,7 +256,7 @@ const RealtimeArtifactRatio: React.FC = () => {
 
   const {artifactsA, artifactsB} = useMemo(() => {
     const a = (artifactsByMap[MAP_NAMES.ABYSS_A] || []).sort((a, b) => a.order - b.order);
-    const b = (artifactsByMap[MAP_NAMES.ABYSS_B] || []).sort((a, b) => a.order - b.order);
+    const b = (artifactsByMap[abyssBOrC] || []).sort((a, b) => a.order - b.order);
     return {artifactsA: a, artifactsB: b};
   }, [artifactsByMap]);
 
@@ -483,7 +485,7 @@ const RealtimeArtifactRatio: React.FC = () => {
               <span className="font-normal text-default-900">{t(`maps:${MAP_NAMES.ABYSS_A}.description`)}</span>
             </div>
             <div className="flex-1 flex justify-center">
-              <span className="font-normal text-default-900">{t(`maps:${MAP_NAMES.ABYSS_B}.description`)}</span>
+              <span className="font-normal text-default-900">{t(`maps:${abyssBOrC}.description`)}</span>
             </div>
           </div>
           {sortedMatchings.map((matching) => {
@@ -498,7 +500,7 @@ const RealtimeArtifactRatio: React.FC = () => {
                     matching={matching}
                     artifactsA={artifactsA}
                     artifactsB={artifactsB}
-                    mapNames={{A: MAP_NAMES.ABYSS_A, B: MAP_NAMES.ABYSS_B}}
+                    mapNames={{A: MAP_NAMES.ABYSS_A, B: abyssBOrC}}
                     artifactStates={artifactStates.filter(s => s.serverMatchingId === matching.id)}
                     artifactStateMap={artifactStateMap}
                     isAutoUpdate={isAutoUpdate}
