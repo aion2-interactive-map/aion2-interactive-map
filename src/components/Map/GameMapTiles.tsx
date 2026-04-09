@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import L from "leaflet";
 import { useMap } from "react-leaflet";
 import type {GameMapMeta} from "../../types/game.ts";
-import {MAP_NAMES} from "../../types/game.ts";
 import {getStaticUrl} from "../../utils/url.ts";
 
 type GameTilesProps = {
@@ -45,12 +44,7 @@ class GameTileLayer extends L.TileLayer {
     const yStr = String(y).padStart(2, "0");
 
     // console.log(coords, xStr, yStr)
-    let relPath;
-    if (selectedMap.name === MAP_NAMES.ABYSS_B) {
-      relPath = `UI/Map/WorldMap/${selectedMap.name}_New/Res/${selectedMap.name}_${xStr}_${yStr}.webp`;
-    } else {
-      relPath = `UI/Map/WorldMap/${selectedMap.name}/Res/${selectedMap.name}_${xStr}_${yStr}.webp`;
-    }
+    const relPath = `UI/Map/WorldMap/${selectedMap.name}/Res/${selectedMap.name}_${xStr}_${yStr}.webp`;
     return getStaticUrl(relPath);
   }
 
