@@ -214,11 +214,11 @@ const GameMapView: React.FC<Props> = ({
 
       {import.meta.env.VITE_REGION === "CHINA" &&
         <DismissibleBanner
-          imageUrl={getStaticUrl("images/PangXieMiddle.webp")}
+          imageUrl={getStaticUrl("images/ShunWang.webp")}
           width={800}
           height={150}
           position="bottom-center"
-          href="https://m1.pxb7.com/pages-active/assemble/index?activityId=199578373226565"
+          href="http://cpc.icloud.cn/cloudstatic/template?launchPageId=19"
         />
       }
     </div>

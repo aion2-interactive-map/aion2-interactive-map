@@ -9,12 +9,12 @@ import type {MapRef} from "@/types/game";
 // import ReactMarkdown from "react-markdown";
 // import remarkGfm from "remark-gfm";
 import {useGameMap} from "@/context/GameMapContext.tsx";
-import {getStaticUrl} from "@/utils/url.ts";
+// import {getStaticUrl} from "@/utils/url.ts";
 import {MarkersProvider, useMarkers} from "@/context/MarkersContext.tsx";
 import {GameDataProvider} from "@/context/GameDataContext.tsx";
 import {UserMarkersProvider} from "@/context/UserMarkersContext.tsx";
 import {ThemeMapBridge} from "@/context/ThemeMapBridge.tsx";
-import DismissibleEmblaBanner from "@/components/Map/DismissibleEmblaBanner.tsx";
+// import DismissibleEmblaBanner from "@/components/Map/DismissibleEmblaBanner.tsx";
 
 
 const HomePage: React.FC = () => {
@@ -71,13 +71,10 @@ const HomePage: React.FC = () => {
     );
   }
 
-  const slides = [{
-    image: getStaticUrl("images/PangXieRight.webp"),
-    url: "https://m1.pxb7.com/pages-active/assemble/index?activityId=199578373226565",
-  // }, {
-  //   image: getStaticUrl("images/QiyouRight.webp"),
-  //   url: "https://www.qiyou.cn",
-  }];
+  // const slides = [{
+  //   image: getStaticUrl("images/PangXieRight.webp"),
+  //   url: "https://m1.pxb7.com/pages-active/assemble/index?activityId=199578373226565",
+  // }];
 
 
   return (
@@ -102,13 +99,13 @@ const HomePage: React.FC = () => {
         </div>
       )}*/}
 
-      {import.meta.env.VITE_REGION === "CHINA" && <>
-        <DismissibleEmblaBanner
-          slides={slides}
-          position="bottom-right"
-          closeButtonPosition="top-right"
-        />
-      </>}
+      {/*{import.meta.env.VITE_REGION === "CHINA" && <>*/}
+      {/*  <DismissibleEmblaBanner*/}
+      {/*    slides={slides}*/}
+      {/*    position="bottom-right"*/}
+      {/*    closeButtonPosition="top-right"*/}
+      {/*  />*/}
+      {/*</>}*/}
 
       <div className="flex flex-1 overflow-hidden">
         <LeftSidebar onSelectMarker={handleSelectMarker} onSelectPosition={handleSelectPosition}/>

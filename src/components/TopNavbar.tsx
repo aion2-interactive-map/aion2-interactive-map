@@ -93,11 +93,11 @@ const TopNavbar: React.FC = () => {
 
       {/* RIGHT: Language switcher + theme toggle */}
       <NavbarContent justify="end" className="flex items-center gap-1">
-        <img
-          src={getStaticUrl("images/Adv.webp")}
-          alt="Banner"
-          className="hidden md:block w-[300px] object-contain select-none pointer-events-none"
-        />
+        {/*<img*/}
+        {/*  src={getStaticUrl("images/Adv.webp")}*/}
+        {/*  alt="Banner"*/}
+        {/*  className="hidden md:block w-[300px] object-contain select-none pointer-events-none"*/}
+        {/*/>*/}
 
         {/* Language switcher (owns its own button & dropdown) */}
         <LanguageSwitcher
