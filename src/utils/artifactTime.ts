@@ -1,7 +1,7 @@
 /**
- * Artifact scheduled refresh times: Tue, Thu, Sat at 13:00 UTC
+ * Artifact scheduled refresh times: Wed, Sat at 13:00 UTC
  */
-const SCHEDULED_DAYS = [2, 4, 6]; // Tue, Thu, Sat
+const SCHEDULED_DAYS = [3, 6]; // Wed, Sat
 const REFRESH_HOUR = 13;
 
 /**

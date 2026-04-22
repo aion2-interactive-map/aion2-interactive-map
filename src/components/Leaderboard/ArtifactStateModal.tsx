@@ -47,7 +47,7 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const isDateUnavailable = useCallback((date: any) => {
-    // We want to allow Tuesday (2), Thursday (4), and Saturday (6) in UTC
+    // We want to allow Wednesday (3) and Saturday (6) in UTC
     // Since we are setting the time to 13:00 UTC, we should check the day in UTC
     // for that specific time.
     // CalendarDate represents a date without a time or timezone.
@@ -57,7 +57,7 @@ const ArtifactStateModal: React.FC<ArtifactStateModalProps> = ({
     // Create a date object at 13:00 UTC on the given calendar date
     const utcDate = new Date(Date.UTC(date.year, date.month - 1, date.day, 13, 0, 0));
     const day = utcDate.getUTCDay();
-    return day !== 2 && day !== 4 && day !== 6;
+    return day !== 3 && day !== 6;
   }, []);
 
   const getNearestAvailableDate = useCallback(() => {
