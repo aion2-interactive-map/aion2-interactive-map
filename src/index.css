@@ -3,10 +3,6 @@
 @import 'tailwindcss';
 
 @plugin "@tailwindcss/typography";
-@plugin './hero.ts';
-
-/* Make Tailwind scan HeroUI theme files for class names */
-@source '../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
 
 /* Dark mode variant so `.dark` on <html> or <body> works */
 @custom-variant dark (&:is(.dark *));
@@ -49,12 +45,9 @@
 }
 
 /* ===== shadcn/ui token layer (Phase 2A) =====
-   Semantic design tokens for shadcn primitives, derived from the canonical
-   brand palette in hero.ts (which matches the Lanhu design system).
-   Additive + non-destructive: HeroUI keeps its own theme via hero.ts.
+   Semantic design tokens for shadcn primitives, matching the Lanhu design system.
    NOTE: `--input` is defined but intentionally NOT exposed as the `--color-input`
-   utility — the app already uses `bg-input` as a field fill. The shadcn input
-   border token is wired up in 2B when those HeroUI inputs are migrated. */
+   utility — the app already uses `bg-input` as a field fill. */
 :root {
     --radius: 0.625rem;
     --background: #ffffff;
@@ -231,7 +224,7 @@ body {
 }
 
 .dark .leaflet-container {
-    background: hsl(var(--heroui-content1)); /* slate-950 / very dark */
+    background: var(--card); /* slate-950 / very dark */
 }
 
 .leaflet-tooltip {
@@ -239,7 +232,7 @@ body {
 }
 
 .leaflet-tooltip::before {
-    border-top-color: hsl(var(--heroui-content1)) !important;
+    border-top-color: var(--card) !important;
 }
 
 /* Remove the white frame and padding around popup */
@@ -257,9 +250,9 @@ body {
 
 /* Theme-aware tooltip for markers */
 .leaflet-tooltip.game-marker-tooltip {
-    background: hsl(var(--heroui-content1));
-    color: hsl(var(--heroui-foreground));
-    border: 1px solid hsl(var(--heroui-default-200));
+    background: var(--card);
+    color: var(--foreground);
+    border: 1px solid var(--border);
     padding: 2px 6px;
     font-size: 11px;
     border-radius: 4px;
@@ -268,8 +261,8 @@ body {
 
 /* Match tip (arrow) color to the tooltip background */
 .leaflet-tooltip.game-marker-tooltip .leaflet-tooltip-tip {
-    background: hsl(var(--heroui-content1));
-    border: 1px solid hsl(var(--heroui-default-200));
+    background: var(--card);
+    border: 1px solid var(--border);
 }
 
 .altcha {

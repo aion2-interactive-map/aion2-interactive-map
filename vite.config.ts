@@ -43,10 +43,10 @@ export default defineConfig({
               test: /node_modules\/react(\/|$)|node_modules\/react-dom(\/|$)/,
             },
 
-            // --- 2. UI & Helpers (HeroUI, FontAwesome, Embla, Markdown, YAML) ---
+            // --- 2. UI & Helpers (FontAwesome, Embla, Markdown, YAML) ---
             {
               name: "vendor-ui",
-              test: /node_modules\/(@heroui|@nextui-org|@fortawesome|embla-carousel|react-markdown|remark|rehype|yaml)(\/|$)/,
+              test: /node_modules\/(@fortawesome|embla-carousel|react-markdown|remark|rehype|yaml)(\/|$)/,
             },
 
             // --- 3. Map engine bundle ---
