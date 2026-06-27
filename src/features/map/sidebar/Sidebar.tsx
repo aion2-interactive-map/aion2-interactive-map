@@ -1,72 +1,60 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { cn } from "@/lib/utils";
+import { useTheme } from "@/context/ThemeContext";
+import { useGameMap } from "@/context/GameMapContext";
+import { getStaticUrl } from "@/lib/url";
+import Logo from "./Logo";
 import SelectMap from "./SelectMap";
 import MarkerTypes from "./MarkerTypes";
-import ControlCluster from "./ControlCluster";
 
-const SIDEBAR_WIDTH = 346;
+const SIDEBAR_WIDTH = 370;
 
 export default function Sidebar() {
   const [collapsed, setCollapsed] = useState(false);
-  const [typesOpen, setTypesOpen] = useState(true);
   const { t } = useTranslation(["common"]);
+  const { realTheme } = useTheme();
+  const { selectedMap } = useGameMap();
+
+  const isLight = realTheme === "light";
+  const bgUrl = getStaticUrl(
+    isLight ? "images/Sidebar_Light.webp" : "images/Sidebar_Dark.webp",
+  );
 
   return (
     <aside
-      className="relative flex h-full shrink-0 flex-col border-r border-[rgba(0,0,0,0.06)] bg-background text-foreground transition-[width] duration-300"
-      style={{ width: collapsed ? 0 : SIDEBAR_WIDTH }}
+      className="relative flex h-full shrink-0 flex-col text-foreground transition-all duration-300"
+      style={{
+        width: collapsed ? 0 : SIDEBAR_WIDTH,
+        maxWidth: SIDEBAR_WIDTH,
+        backgroundImage: "var(--background-image-sidebar)",
+      }}
     >
-      {!collapsed && (
-        <ScrollArea className="h-full" style={{ width: SIDEBAR_WIDTH }}>
-          <div className="flex flex-col gap-4 px-4 py-4">
-            {/* Title */}
-            <div className="flex items-baseline gap-1.5">
-              <span className="text-base font-bold tracking-tight text-[#2E97FF]">
-                AION2
-              </span>
-              <span className="text-sm font-medium text-[#3D3D3D]">
-                {t("common:mapSubtitle", "Interactive Map")}
-              </span>
-            </div>
+      {/* Theme-aware background image overlay (top-left). */}
+      <div
+        className="pointer-events-none absolute inset-0 bg-no-repeat opacity-70"
+        style={{
+          backgroundImage: `url(${bgUrl})`,
+          backgroundSize: "370px auto",
+          backgroundPosition: "top left",
+        }}
+      />
 
-            {/* Race + Map dual selector */}
-            <div className="rounded-lg border border-[rgba(46,151,255,0.25)] bg-white px-1">
-              <SelectMap />
-            </div>
-
-            {/* Marker types section header with collapse chevron */}
-            <button
-              type="button"
-              onClick={() => setTypesOpen((o) => !o)}
-              className="flex items-center justify-between text-[13px] font-semibold text-[#3D3D3D]"
-            >
-              <span>{t("common:menu.markerTypes", "Marker Types")}</span>
-              <ChevronDown
-                className={cn(
-                  "size-4 text-[rgba(0,0,0,0.45)] transition-transform",
-                  !typesOpen && "-rotate-90",
-                )}
-              />
-            </button>
-
-            {typesOpen && (
-              <>
-                <ControlCluster />
-                <div className="h-px bg-[rgba(0,0,0,0.06)]" />
-                <MarkerTypes />
-              </>
-            )}
+      {/* CONTENT */}
+      <ScrollArea className="h-full flex-1">
+        {!collapsed && (
+          <div className="flex flex-col px-2 pb-4">
+            <Logo />
+            <SelectMap />
+            {selectedMap && <MarkerTypes />}
           </div>
-        </ScrollArea>
-      )}
+        )}
+      </ScrollArea>
 
-      <Button
-        variant="secondary"
-        size="icon"
+      {/* WHOLE-SIDEBAR COLLAPSE BUTTON (right edge) */}
+      <button
+        type="button"
         data-testid="sidebar-toggle"
         onClick={() => setCollapsed((c) => !c)}
         aria-label={
@@ -74,14 +62,20 @@ export default function Sidebar() {
             ? t("common:menu.expand", "Expand")
             : t("common:menu.collapse", "Collapse")
         }
-        className="absolute top-4 left-full z-[1000] -translate-x-px rounded-l-none border border-l-0 border-border"
+        className="absolute top-[100px] right-0 z-[20000] flex h-12 w-8 translate-x-full select-none flex-col items-center justify-center rounded-r-md rounded-l-none text-[#3D3D3D]"
+        style={{ background: "var(--color-sidebar-collapse)" }}
       >
         {collapsed ? (
-          <ChevronRight className="size-4" />
+          <ChevronRight className="h-4 w-4" />
         ) : (
-          <ChevronLeft className="size-4" />
+          <ChevronLeft className="h-4 w-4" />
         )}
-      </Button>
+        <span className="mt-0.5 whitespace-normal px-0.5 text-center text-[10px] leading-tight">
+          {collapsed
+            ? t("common:menu.expand", "Expand")
+            : t("common:menu.collapse", "Collapse")}
+        </span>
+      </button>
     </aside>
   );
 }

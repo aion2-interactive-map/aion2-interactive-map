@@ -10,7 +10,7 @@ test("cursor movement does not churn the region overlay (no flicker)", async ({
   await page.locator(".leaflet-marker-icon").first().waitFor({ timeout: 20_000 });
 
   // Labels on (permanent tooltips present) to mirror the reported scenario.
-  await page.getByRole("switch").first().click();
+  await page.getByTestId("show-names-toggle").click();
   await page.waitForTimeout(600);
 
   await page.evaluate(() => {
