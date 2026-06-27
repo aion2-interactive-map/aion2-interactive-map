@@ -50,9 +50,16 @@ test("clicking a marker opens a local popup", async ({ page }) => {
       box.x + box.width <= viewport.width &&
       box.y + box.height <= viewport.height
     ) {
-      await icons.nth(i).click({ timeout: 15_000 });
-      clicked = true;
-      break;
+      // With dense data, marker icons can overlap and intercept pointer
+      // events, so a given icon may not be the topmost element at its centre.
+      // Try this one; if its click is intercepted, move on to the next.
+      try {
+        await icons.nth(i).click({ timeout: 3_000 });
+        clicked = true;
+        break;
+      } catch {
+        continue;
+      }
     }
   }
   expect(clicked, "no clickable in-viewport marker found").toBe(true);
