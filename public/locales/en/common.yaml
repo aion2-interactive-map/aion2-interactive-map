@@ -34,6 +34,10 @@ menu:
   hideAllMarkers: "Hide all"
   clearMarkerCompleted: "Clear completed"
   clearMarkerCompletedBody: "Do you want to clear all completed marker in this map?"
+  selectMap: "Select a map"
+  showBorders: "Show region borders"
+  expand: "Expand"
+  collapse: "Collapse"
 
 routes:
   map: "Map"
@@ -94,6 +98,9 @@ errors:
 markerActions:
   markCompleted: "Mark as completed"
   markNotCompleted: "Completed"
+
+markerSearch:
+  unnamed: "Unnamed marker"
 
 introModal:
   version: "Version"

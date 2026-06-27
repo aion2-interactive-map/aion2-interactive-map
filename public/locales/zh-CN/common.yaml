@@ -62,6 +62,7 @@ menu:
   hideAllMarkers: "全部隐藏"
   clearMarkerCompleted: "清除已完成标记"
   clearMarkerCompletedBody: "你确定要清除这张地图所有的已完成标记吗？"
+  selectMap: "选择地图"
   expand: "展开"
   collapse: "收起"
   showBorders: "显示地区边界"
@@ -137,6 +138,9 @@ errors:
   notFound: "资源未找到。"
   uploadFailed: "上传失败，请重试。"
 
+
+markerSearch:
+  unnamed: "未命名标记"
 
 markerActions:
   markCompleted: "标记为已完成"

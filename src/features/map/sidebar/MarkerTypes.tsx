@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useGameMap } from "@/context/GameMapContext";
 import { useGameData } from "@/context/GameDataContext";
@@ -34,16 +34,21 @@ export default function MarkerTypes() {
   const { subtypeCounts, completedCounts, clearMarkerCompleted } = useMarkers();
   const { t } = useTranslation(["types", "common"]);
 
-  const categories = types.filter((c) => c.subtypes.length > 0);
-  const allCategoryNames = categories.map((c) => c.name);
+  const categories = useMemo(
+    () => types.filter((c) => c.subtypes.length > 0),
+    [types],
+  );
+  const allCategoryNames = useMemo(
+    () => categories.map((c) => c.name),
+    [categories],
+  );
 
   // Controlled so sections open once categories load (avoids uncontrolled
   // defaultValue race where types arrive after first render).
   const [openValues, setOpenValues] = useState<string[]>(allCategoryNames);
   useEffect(() => {
     setOpenValues(allCategoryNames);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [allCategoryNames.join("|")]);
+  }, [allCategoryNames]);
 
   return (
     <div className="flex flex-col gap-3">
@@ -69,17 +74,17 @@ export default function MarkerTypes() {
             </AlertDialogTitle>
             <AlertDialogDescription>
               {t(
-                "common:menu.clearMarkerCompletedConfirm",
-                "This will clear all completed markers. This cannot be undone.",
+                "common:menu.clearMarkerCompletedBody",
+                "Do you want to clear all completed marker in this map?",
               )}
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>
-              {t("common:menu.cancel", "Cancel")}
+              {t("common:ui.cancel", "Cancel")}
             </AlertDialogCancel>
             <AlertDialogAction onClick={() => clearMarkerCompleted()}>
-              {t("common:menu.confirm", "Confirm")}
+              {t("common:ui.confirm", "Confirm")}
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>

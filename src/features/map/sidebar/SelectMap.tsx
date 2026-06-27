@@ -10,7 +10,7 @@ import {
 
 export default function SelectMap() {
   const { maps, selectedMap, setSelectedMap } = useGameMap();
-  const { t } = useTranslation(["maps"]);
+  const { t } = useTranslation(["maps", "common"]);
 
   return (
     <Select
@@ -18,7 +18,7 @@ export default function SelectMap() {
       onValueChange={(v) => setSelectedMap(maps.find((m) => m.name === v))}
     >
       <SelectTrigger data-testid="map-select" className="w-full">
-        <SelectValue placeholder={t("maps:placeholder", "Select a map")} />
+        <SelectValue placeholder={t("common:menu.selectMap", "Select a map")} />
       </SelectTrigger>
       <SelectContent>
         {maps.map((m) => (

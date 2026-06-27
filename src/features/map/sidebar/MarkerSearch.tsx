@@ -52,7 +52,7 @@ export default function MarkerSearch({ onSelectMarker, onFlyTo }: Props) {
         data-testid="marker-search"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        placeholder={t("common:markerActions.search", "Search markers…")}
+        placeholder={t("common:ui.search", "Search")}
       />
       {debounced.trim() && (
         <ul

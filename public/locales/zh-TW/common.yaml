@@ -50,6 +50,12 @@ menu:
   showNamesOnPins: "在標記上顯示名稱"
   showAllMarkers: "全部顯示"
   hideAllMarkers: "全部隱藏"
+  clearMarkerCompleted: "清除已完成標記"
+  clearMarkerCompletedBody: "你確定要清除這張地圖所有的已完成標記嗎？"
+  selectMap: "選擇地圖"
+  expand: "展開"
+  collapse: "收起"
+  showBorders: "顯示地區邊界"
 
 buttons:
   apply: "套用"
@@ -61,6 +67,9 @@ errors:
   unknown: "發生未知錯誤。"
   network: "網路連線錯誤。"
   notFound: "找不到資源。"
+
+markerSearch:
+  unnamed: "未命名標記"
 
 markerActions:
   markCompleted: "標記為已完成"
