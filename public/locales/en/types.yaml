@@ -3,8 +3,12 @@ categories:
     name: Collectables
   creature:
     name: Pet
+  gathering:
+    name: Gathering Points
   location:
     name: Location
+  quest:
+    name: Quests
 subtypes:
   battlefield:
     description: Battlefield
