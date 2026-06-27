@@ -21,6 +21,7 @@ import MarkerFocusController from "@/features/map/canvas/MarkerFocusController";
 import MapContextMenu, {
   type ContextMenuState,
 } from "@/features/map/canvas/MapContextMenu";
+import MapStatusBar from "@/features/map/canvas/MapStatusBar";
 import SelectedMarkerPopup from "@/features/map/popup/SelectedMarkerPopup";
 
 type Props = {
@@ -36,9 +37,6 @@ const GameMapView: React.FC<Props> = ({
   selectedMarkerId,
   selectedPosition,
 }) => {
-  const [cursorPos, setCursorPos] = useState<{ x: number; y: number } | null>(
-    null,
-  );
   const [contextMenu, setContextMenu] = useState<ContextMenuState | null>(null);
   const [hoveredRegion, setHoveredRegion] = useState<RegionInstance | undefined>(
     undefined,
@@ -108,7 +106,7 @@ const GameMapView: React.FC<Props> = ({
         ref={mapRef}
       >
         <MapZoomControl />
-        <CursorTracker onUpdate={(x, y) => setCursorPos({ x, y })} />
+        <CursorTracker />
         <MapCursorController />
         <MapClickPicker createMarker={createMarker} />
 
@@ -148,19 +146,9 @@ const GameMapView: React.FC<Props> = ({
         />
       </MapContainer>
 
-      {/* Bottom status bar (Lanhu): grey band, white text — live cursor
-          coords + hovered region name on the left, ICP record on the right. */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1000] flex items-center justify-between gap-4 px-4 py-1.5 text-[13px] text-white bg-[rgba(216,216,216,1)]/90">
-        <div className="flex items-center gap-3 truncate">
-          <span className="tabular-nums">
-            {cursorPos
-              ? `x:${Math.round(cursorPos.x)},y:${Math.round(cursorPos.y)}`
-              : "x:--,y:--"}
-          </span>
-          {regionLabel && <span className="truncate">{regionLabel}</span>}
-        </div>
-        <span className="shrink-0 text-white/90">沪ICP备2025152827号-1</span>
-      </div>
+      {/* Bottom status bar (Lanhu): subscribes to the cursor store itself so
+          mousemove re-renders ONLY the bar, not the map layers. */}
+      <MapStatusBar regionLabel={regionLabel} />
 
       {/* Context menu overlay */}
       {contextMenu && (

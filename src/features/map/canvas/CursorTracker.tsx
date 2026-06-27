@@ -1,16 +1,20 @@
 import React from "react";
 import { useMapEvents } from "react-leaflet";
+import { cursorStore } from "@/features/map/canvas/cursorStore";
 
-type CursorTrackerProps = {
-  onUpdate: (x: number, y: number) => void;
-};
-
-const CursorTracker: React.FC<CursorTrackerProps> = ({ onUpdate }) => {
+/**
+ * Writes the live cursor map-coordinates into an external store (NOT React
+ * state) so high-frequency mousemove never re-renders the map layer tree.
+ * The bottom status bar subscribes to the store independently.
+ */
+const CursorTracker: React.FC = () => {
   useMapEvents({
     mousemove(e) {
-      const { lat, lng } = e.latlng;
       // CRS.Simple: lat = y, lng = x
-      onUpdate(lng, lat);
+      cursorStore.set(e.latlng.lng, e.latlng.lat);
+    },
+    mouseout() {
+      cursorStore.clear();
     },
   });
 
