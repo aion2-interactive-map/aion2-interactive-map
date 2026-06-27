@@ -1,0 +1,288 @@
+/* ==========================================================
+   Embla Carousel – Shared Theme Tokens
+   ========================================================== */
+
+:root {
+    --embla-arrow-bg-light: rgba(255, 255, 255, 0.9);
+    --embla-arrow-bg-light-hover: rgba(255, 255, 255, 1);
+    --embla-arrow-fg-light: #111827;
+
+    --embla-arrow-bg-dark: rgba(0, 0, 0, 0.85);
+    --embla-arrow-bg-dark-hover: rgba(255, 255, 255, 0.9);
+    --embla-arrow-fg-dark: #ffffff;
+
+    --embla-dot-bg: rgba(255, 255, 255, 0.4);
+    --embla-dot-bg-selected: #ffffff;
+}
+
+/* ==========================================================
+   Gallery – Wrapper + Slides
+   ========================================================== */
+
+/* Outer wrapper: arrows left/right, gallery center */
+.embla-frame-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;     /* vertically center arrows */
+    justify-content: center;
+    gap: 0.75rem;            /* gap between arrow and image */
+    padding: 0 1rem;          /* horizontal spacing */
+}
+
+.embla {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.embla__viewport {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 0.5rem;
+}
+
+.embla__container {
+    display: flex;
+    height: 100%;
+}
+
+.embla__slide {
+    flex: 0 0 100%;
+    min-width: 0;
+    height: 100%;
+}
+
+.embla__slide__inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background: transparent;
+}
+
+.embla__slide__img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    object-fit: contain;
+}
+
+/* ==========================================================
+   Gallery – Arrows overlayed inside image
+   ========================================================== */
+
+.embla__buttons {
+    position: absolute;
+    inset: 0;               /* cover the embla area */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.75rem;
+    pointer-events: none;   /* only buttons handle events */
+}
+
+/* Make sure the individual buttons are clickable */
+.embla__buttons .embla__button {
+    pointer-events: auto;
+}
+
+.embla__button {
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+
+    width: 2rem;
+    height: 2rem;
+    border-radius: 9999px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #111827;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+
+    transition: background-color 0.15s ease, transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.dark .embla__button {
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #ffffff;
+}
+
+.embla__button:hover:not(:disabled) {
+    background-color: #ffffff;
+    transform: scale(1.1);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.45);
+}
+
+.dark .embla__button:hover:not(:disabled) {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #111827;
+}
+
+.embla__button:disabled {
+    opacity: 0.4;
+    cursor: default;
+    transform: none;
+    box-shadow: none;
+}
+
+.embla__button__svg {
+    width: 60%;
+    height: 60%;
+}
+
+.embla-nav-button__prev,
+.embla-nav-button__next {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #111;
+
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+
+    transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.dark .embla-nav-button__prev,
+.dark .embla-nav-button__next {
+    background-color: rgba(0,0,0,0.85);
+    color: white;
+}
+
+.embla-nav-button__prev:hover:not(:disabled),
+.embla-nav-button__next:hover:not(:disabled) {
+    background-color: #fff;
+    transform: scale(1.1);
+}
+
+.dark .embla-nav-button__prev:hover:not(:disabled),
+.dark .embla-nav-button__next:hover:not(:disabled) {
+    background-color: rgba(255,255,255,0.9);
+    color: #000;
+}
+
+.embla-nav-button__prev {
+    margin-right: 0.25rem;
+}
+
+.embla-nav-button__next {
+    margin-left: 0.25rem;
+}
+
+/* ==========================================================
+   Gallery – Dots overlayed at bottom of image
+   ========================================================== */
+
+.embla__dots {
+    position: absolute;
+    bottom: 2.5rem;              /* ⬅ moved up compared to before */
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+
+    pointer-events: auto;
+    z-index: 10;                  /* make sure they’re above the image */
+}
+
+
+.embla__dot {
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 9999px;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.4);
+    transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.embla__dot:hover {
+    transform: scale(1.1);
+}
+
+.embla__dot--selected {
+    background-color: #ffffff;
+}
+
+/* ==========================================================
+   Thumbnail Carousel – Slides Per View
+   ========================================================== */
+
+.embla-thumbs {
+    --thumb-slide-size: 40%;
+    --thumb-slide-spacing: 0.5rem;
+
+    width: 100%;
+    height: 100%;
+}
+
+.embla-thumbs__viewport {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.embla-thumbs__container {
+    display: flex;
+    height: 100%;
+    /*margin-left: var(--thumb-slide-spacing);*/
+}
+
+.embla-thumbs__slide {
+    position: relative;
+    flex: 0 0 var(--thumb-slide-size);
+    min-width: 0;
+    height: 100%;
+    margin-right: var(--thumb-slide-spacing);
+
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+
+    transition: transform 0.15s ease, border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.dark .embla-thumbs__slide {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.embla-thumbs__slide:hover {
+    transform: scale(1.03);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+/*.embla-thumbs__slide--selected {
+    border-color: #fbbf24 !important; !* amber-400 *!
+    box-shadow: 0 0 6px rgba(251, 191, 36, 0.95);
+    transform: scale(1.05);
+}*/
+
+.embla-thumbs__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    overflow: hidden;
+}

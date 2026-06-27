@@ -1,0 +1,145 @@
+import {createFileRoute} from "@tanstack/react-router";
+import React, {useCallback, useRef, useState} from "react";
+import GameMapView from "@/components/Map/GameMapView";
+import LeftSidebar from "@/components/Map/SideBar/LeftSidebar";
+import {Spinner} from "@heroui/react";
+import type {MapRef} from "@/types/game";
+// import DismissableAlert from "@/components/Map/DismissableAlert.tsx";
+// import {useTranslation} from "react-i18next";
+// import ReactMarkdown from "react-markdown";
+// import remarkGfm from "remark-gfm";
+import {useGameMap} from "@/context/GameMapContext.tsx";
+// import {getStaticUrl} from "@/utils/url.ts";
+import {MarkersProvider, useMarkers} from "@/context/MarkersContext.tsx";
+import {GameDataProvider} from "@/context/GameDataContext.tsx";
+import {UserMarkersProvider} from "@/context/UserMarkersContext.tsx";
+import {ThemeMapBridge} from "@/context/ThemeMapBridge.tsx";
+// import DismissibleEmblaBanner from "@/components/Map/DismissibleEmblaBanner.tsx";
+
+
+const HomePage: React.FC = () => {
+
+  // const {t} = useTranslation();
+  const {loading, selectedMap} = useGameMap();
+
+  const mapRef = useRef<MapRef>(null);
+  const {markersById} = useMarkers();
+
+  // const handleMapChange = (mapId: string) => {
+  //   setSelectedMapId(mapId);
+  //   const map = mapRef.current;
+  //   const meta = maps.find((m) => m.name === mapId);
+  //   if (map && meta) {
+  //     const height = meta.tileWidth * meta?.tilesCountY;
+  //     const width = meta.tileWidth * meta?.tilesCountX;
+  //       map.setView(
+  //       [height / 2, width / 2],
+  //       map.getZoom(),
+  //     );
+  //   }
+  // };
+
+  // const [isIntroOpen, setIsIntroOpen] = useState<boolean>(true);
+  // const [isAlertOpen, setIsAlertOpen] = useState(true);
+  const [selectedMarkerId, setSelectedMarkerId] = useState<string | null>(null);
+  const [selectedPosition, setSelectedPosition] = useState<{x: number, y: number} | null>(null);
+
+  const handleSelectMarker = useCallback(
+    (markerId: string | null) => {
+      if (!markerId) {
+        setSelectedMarkerId(null);
+        return;
+      }
+      const m = markersById[markerId];
+      if (!m) return;
+      setSelectedMarkerId(markerId);
+      setSelectedPosition(null);
+    }, [markersById],
+  );
+
+  const handleSelectPosition = useCallback((x: number, y : number)=> {
+    setSelectedPosition({x, y});
+    setSelectedMarkerId(null);
+    }, []
+  )
+
+  if (loading && !selectedMap) {
+    return (
+      <div className="h-screen w-screen flex items-center justify-center">
+        <Spinner label="Loading maps..."/>
+      </div>
+    );
+  }
+
+  // const slides = [{
+  //   image: getStaticUrl("images/PangXieRight.webp"),
+  //   url: "https://m1.pxb7.com/pages-active/assemble/index?activityId=199578373226565",
+  // }];
+
+
+  return (
+    <>
+      {/*<IntroModal
+        isOpen={isIntroOpen}
+        onClose={() => setIsIntroOpen(false)}
+      />*/}
+
+
+      {/*{isAlertOpen && (
+        <div className="fixed top-[72px] right-4 z-[9999] h-[52px] ">
+          <DismissableAlert
+            onClose={() => setIsAlertOpen(false)}
+          >
+            <div className="text-xs prose prose-xs max-w-none dark:prose-invert ">
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                {t("introModal.alert")}
+              </ReactMarkdown>
+            </div>
+          </DismissableAlert>
+        </div>
+      )}*/}
+
+      {/*{import.meta.env.VITE_REGION === "CHINA" && <>*/}
+      {/*  <DismissibleEmblaBanner*/}
+      {/*    slides={slides}*/}
+      {/*    position="bottom-right"*/}
+      {/*    closeButtonPosition="top-right"*/}
+      {/*  />*/}
+      {/*</>}*/}
+
+      <div className="flex flex-1 overflow-hidden">
+        <LeftSidebar onSelectMarker={handleSelectMarker} onSelectPosition={handleSelectPosition}/>
+
+        <GameMapView
+          mapRef={mapRef}
+          onSelectMarker={handleSelectMarker}
+          selectedMarkerId={selectedMarkerId}
+          selectedPosition={selectedPosition}
+        />
+
+      </div>
+    </>
+
+  );
+};
+
+const HomePageWrapper: React.FC = () => {
+  return (
+    <>
+      <ThemeMapBridge />
+      <MarkersProvider>
+        <UserMarkersProvider>
+          <GameDataProvider>
+            <HomePage />
+          </GameDataProvider>
+        </UserMarkersProvider>
+      </MarkersProvider>
+    </>
+  );
+};
+
+
+
+export const Route = createFileRoute("/")({
+  component: HomePageWrapper,
+});

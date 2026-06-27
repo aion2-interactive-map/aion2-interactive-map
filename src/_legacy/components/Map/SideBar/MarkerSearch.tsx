@@ -1,0 +1,244 @@
+// src/components/Sidebar/MarkerSearch.tsx
+import React, {useMemo, useState} from "react";
+import {Input} from "@heroui/react";
+import MiniSearch, {type SearchResult} from "minisearch";
+import {useMarkers} from "@/context/MarkersContext.tsx";
+import {useTranslation} from "react-i18next";
+import type {MarkerWithTranslations} from "@/types/game.ts";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faSearch, faClose} from "@fortawesome/free-solid-svg-icons";
+
+type MarkerSearchProps = {
+  onSelectMarker?: (markerId: string) => void;
+  onSelectPosition?: (x: number, y: number) => void;
+};
+
+type PositionHit = {
+  kind: "position";
+  x: number;
+  y: number;
+};
+
+function parseXYQuery(input: string): { x: number; y: number } | null {
+  // supports: "4708,3924" | "4708 3924" | "(4708, 3924)" | "x:4708 y:3924"
+  const s = input.trim();
+
+  // Try common "(x, y)" or "x,y" or "x y"
+  const m1 = s.match(/^\(?\s*(-?\d+(?:\.\d+)?)\s*[, ]\s*(-?\d+(?:\.\d+)?)\s*\)?$/);
+  if (m1) return {x: Number(m1[1]), y: Number(m1[2])};
+
+  // Try "x: 4708 y: 3924"
+  const m2 = s.match(/x\s*[:=]\s*(-?\d+(?:\.\d+)?)\s*y\s*[:=]\s*(-?\d+(?:\.\d+)?)$/i);
+  if (m2) return {x: Number(m2[1]), y: Number(m2[2])};
+
+  return null;
+}
+
+function escapeRegExp(str: string) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function highlightText(text: string, terms: string[]): React.ReactNode {
+  if (!text) return null;
+  const cleanTerms = terms.map((t) => t.trim()).filter(Boolean);
+  if (!cleanTerms.length) return text;
+
+  const pattern = new RegExp(
+    `(${cleanTerms.map(escapeRegExp).join("|")})`,
+    "ig"
+  );
+  const parts = text.split(pattern);
+
+  return parts.map((part, i) => {
+    const isMatch = cleanTerms.some(
+      (t) => part.toLowerCase() === t.toLowerCase()
+    );
+    if (!isMatch) return <span key={i}>{part}</span>;
+    return (
+      <mark
+        key={i}
+        className="bg-yellow-300/70 text-inherit px-0.5 rounded-sm"
+      >
+        {part}
+      </mark>
+    );
+  });
+}
+
+const MarkerSearch: React.FC<MarkerSearchProps> = ({onSelectMarker, onSelectPosition}) => {
+  const {markers} = useMarkers();
+  const {t} = useTranslation(["common", "types"]);
+  const [query, setQuery] = useState("");
+
+  const miniSearch = useMemo(() => {
+    const ms = new MiniSearch<MarkerWithTranslations>({
+      fields: ["localizedName", "localizedDescription"],
+      storeFields: ["x", "y", "localizedName", "localizedDescription", "category", "subtype"],
+      searchOptions: {
+        prefix: true,
+        fuzzy: 0.2,
+      },
+      tokenize: (string) => [...string],
+    });
+    // const filteredMarkers: MarkerWithTranslations[] = markers.filter((marker) =>
+    //   marker.subtype.startsWith("creature")
+    // );
+    ms.addAll(markers);
+    return ms;
+  }, [markers]);
+
+  const positionHit = useMemo<PositionHit | null>(() => {
+    const parsed = parseXYQuery(query);
+    if (!parsed) return null;
+    if (!Number.isFinite(parsed.x) || !Number.isFinite(parsed.y)) return null;
+    return {kind: "position", x: parsed.x, y: parsed.y};
+  }, [query]);
+
+  const results: (PositionHit | SearchResult)[] = useMemo(() => {
+    const q = query.trim();
+    if (!q) return [];
+
+    const msResults = miniSearch.search(q);
+    if (positionHit) {
+      return [positionHit, ...msResults];
+    }
+    return msResults;
+  }, [query, miniSearch, positionHit]);
+
+
+  const terms = useMemo(
+    () =>
+      query
+        .trim()
+        .split(/\s+/)
+        .filter(Boolean),
+    [query]
+  );
+
+  return (
+    <div className="w-full flex flex-col gap-2.5 px-6 mt-2.5">
+      {/* Search box */}
+      <Input
+        size="sm"
+        radius="sm"
+        variant="flat"
+        placeholder={t("markerActions.search", "Search markers…")}
+        value={query}
+        onValueChange={setQuery}
+        color="default"
+        classNames={{
+          inputWrapper: `h-9`,
+          input: "text-sm",
+        }}
+        startContent={
+          query ? (
+            <button
+              type="button"
+              onClick={() => setQuery("")}
+              className="
+                inline-flex
+                items-center
+                justify-center
+                h-4 w-4
+                leading-none
+                text-default-700
+                hover:text-foreground
+              "
+              aria-label="Clear search"
+            >
+              <FontAwesomeIcon
+                icon={faClose}
+                className="text-default-700 text-sm hover:text-foreground"
+              />
+            </button>
+          ) : (
+            <FontAwesomeIcon
+              icon={faSearch}
+              className="text-default-700 text-sm opacity-70"
+            />
+          )
+        }
+      />
+
+      {/* Result list as cards */}
+      {query.trim() && (
+        <>
+          {/* Header with count */}
+          <div className="text-xs text-default-700 text-center">
+            {t("markerActions.searchCount", "{{count}} search results", {
+              count: results.length,
+            })}
+          </div>
+
+          {results.slice(0, 50).map((res) => {
+            let resultType;
+            if ((res as PositionHit).kind === "position") {
+              resultType = "position";
+            } else {
+              resultType = "marker";
+            }
+            const doc = res as SearchResult & MarkerWithTranslations;
+            return (
+              <div key={doc.id} className="">
+                <button
+                  type="button"
+                  className="
+                    w-full text-left
+                    rounded-lg
+                    bg-transparent
+                    hover:bg-search-item
+                    px-3 py-2
+                    text-xs
+                    flex flex-col gap-1
+                  "
+                  onClick={() => {
+                    if (resultType === "position") {
+                      onSelectPosition?.(res.x, res.y);
+                    } else {
+                      onSelectMarker?.(doc.id);
+                    }
+                  }}
+                >
+                  {resultType === "position" ? (<>
+                    <div className="font-semibold text-base">
+                      {t("markerActions.inputPosition", "Jump to input position")}
+                    </div>
+                    <div className="text-sm text-default-700">
+                      {t("markerActions.position", "Position")}: ({Math.round(res.x)}, {Math.round(res.y)})
+                    </div>
+                  </>) : (<>
+                    {/* Title */}
+                    <div className="font-semibold text-base">
+                      {doc.localizedName
+                        ? highlightText(doc.localizedName, terms)
+                        : t("markerSearch.unnamed", "Unnamed marker")}
+                    </div>
+
+                    <div className="text-xs text-default-500">
+                      {t(`types:categories.${doc.category}.name`)} - {t(`types:subtypes.${doc.subtype}.name`)}
+                    </div>
+
+                    {/* Optional description */}
+                    {doc.localizedDescription && (
+                      <div className="text-sm text-default-700 line-clamp-2">
+                        {t("markerActions.description", "Description")}: {highlightText(doc.localizedDescription, terms)}
+                      </div>
+                    )}
+
+                    {/* Optional coords */}
+
+                    <div className="text-sm text-default-700">
+                      {t("markerActions.position", "Position")}: ({Math.round(doc.x)}, {Math.round(doc.y)})
+                    </div>
+                  </>)}
+                </button>
+              </div>
+            );
+          })}
+        </>
+      )}
+    </div>
+  );
+};
+
+export default MarkerSearch;
