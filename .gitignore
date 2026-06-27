@@ -30,3 +30,4 @@ public/UI/
 /test-results/
 /playwright-report/
 /.playwright/
+/.screenshots/
