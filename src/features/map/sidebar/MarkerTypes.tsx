@@ -78,7 +78,7 @@ export default function MarkerTypes() {
                     aria-pressed={checked}
                     onClick={() => handleToggleSubtype(sub.name)}
                     className={cn(
-                      "flex h-7 items-center justify-between gap-1 rounded-md px-2.5 text-[12px] transition-colors",
+                      "flex h-8 items-center justify-between gap-1.5 rounded-md px-3 text-[13px] transition-colors",
                       checked
                         ? "bg-[#2E97FF] font-medium text-white"
                         : "bg-[#E5F0FF] text-[rgba(0,0,0,0.6)] hover:bg-[#d6e8ff]",
@@ -87,7 +87,14 @@ export default function MarkerTypes() {
                     <span className="truncate">
                       {t(`types:subtypes.${sub.name}.name`, sub.name)}
                     </span>
-                    <span className="shrink-0 tabular-nums">{total}</span>
+                    <span
+                      className={cn(
+                        "shrink-0 text-[13px] font-bold tabular-nums",
+                        checked ? "text-white" : "text-[#2E97FF]",
+                      )}
+                    >
+                      {total}
+                    </span>
                   </button>
                 );
               })}

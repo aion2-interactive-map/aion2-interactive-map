@@ -7,9 +7,8 @@ import { cn } from "@/lib/utils";
 import SelectMap from "./SelectMap";
 import MarkerTypes from "./MarkerTypes";
 import ControlCluster from "./ControlCluster";
-import RegionFilter from "./RegionFilter";
 
-const SIDEBAR_WIDTH = 280;
+const SIDEBAR_WIDTH = 346;
 
 export default function Sidebar() {
   const [collapsed, setCollapsed] = useState(false);
@@ -59,7 +58,6 @@ export default function Sidebar() {
                 <ControlCluster />
                 <div className="h-px bg-[rgba(0,0,0,0.06)]" />
                 <MarkerTypes />
-                <RegionFilter />
               </>
             )}
           </div>
