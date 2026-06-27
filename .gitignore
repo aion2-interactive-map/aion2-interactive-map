@@ -25,3 +25,8 @@ dist-ssr
 .env
 .tanstack
 public/UI/
+
+# Playwright
+/test-results/
+/playwright-report/
+/.playwright/
