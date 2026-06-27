@@ -9,7 +9,7 @@ for (const map of MAPS) {
     for (const lng of LANGS) {
       test(`shot ${map} ${theme} ${lng}`, async ({ page }) => {
         await page.addInitScript((t) => localStorage.setItem("aion2.theme", t), theme);
-        await page.setViewportSize({ width: 1440, height: 900 });
+        await page.setViewportSize({ width: 1920, height: 1080 });
         await page.goto(`/?map=${map}&lng=${lng}`);
         await page.locator(".leaflet-container").waitFor({ state: "visible", timeout: 20_000 });
         await page.locator(".leaflet-tile-loaded").first().waitFor({ timeout: 20_000 }).catch(() => {});
