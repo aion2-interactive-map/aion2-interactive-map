@@ -20,6 +20,7 @@ import MarkerFocusController from "@/features/map/canvas/MarkerFocusController";
 import MapContextMenu, {
   type ContextMenuState,
 } from "@/features/map/canvas/MapContextMenu";
+import SelectedMarkerPopup from "@/features/map/popup/SelectedMarkerPopup";
 
 type Props = {
   mapRef: React.RefObject<MapRef>;
@@ -136,6 +137,11 @@ const GameMapView: React.FC<Props> = ({
         <MarkerFocusController
           selectedMarkerId={selectedMarkerId}
           selectedPosition={selectedPosition}
+        />
+
+        <SelectedMarkerPopup
+          selectedMarkerId={selectedMarkerId}
+          onSelectMarker={onSelectMarker}
         />
       </MapContainer>
 

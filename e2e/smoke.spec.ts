@@ -27,3 +27,35 @@ test("search returns hits", async ({ page }) => {
     page.getByTestId("search-results").locator("li, button").first(),
   ).toBeVisible({ timeout: 10_000 });
 });
+
+test("clicking a marker opens a local popup", async ({ page }) => {
+  await page.goto("/?map=World_L_A&lng=en");
+  await page.locator(".leaflet-marker-icon").first().waitFor({ timeout: 15_000 });
+  // Markers are scattered across the map; many sit outside the initial
+  // viewport or behind the sidebar. Click the first icon that is fully
+  // within the map container and clear of the (overlaying) sidebar.
+  const icons = page.locator(".leaflet-marker-icon");
+  const count = await icons.count();
+  const viewport = page.viewportSize();
+  const sidebarBox = await page.locator("aside").first().boundingBox();
+  const minX = sidebarBox ? sidebarBox.x + sidebarBox.width : 0;
+  let clicked = false;
+  for (let i = 0; i < count; i++) {
+    const box = await icons.nth(i).boundingBox();
+    if (
+      box &&
+      viewport &&
+      box.x >= minX &&
+      box.y >= 0 &&
+      box.x + box.width <= viewport.width &&
+      box.y + box.height <= viewport.height
+    ) {
+      await icons.nth(i).click({ timeout: 15_000 });
+      clicked = true;
+      break;
+    }
+  }
+  expect(clicked, "no clickable in-viewport marker found").toBe(true);
+  await expect(page.locator(".leaflet-popup")).toBeVisible();
+  await expect(page.getByTestId("marker-popup-card")).toBeVisible();
+});
