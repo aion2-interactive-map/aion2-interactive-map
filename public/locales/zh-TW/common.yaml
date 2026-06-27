@@ -2,6 +2,13 @@ lang: "zh-TW"
 appName: "AION2 地圖"
 siteTitle: "AION2 互動地圖"
 
+nav:
+  home: "首頁"
+  classBd: "職業BD"
+  crafting: "裝備製作"
+  enhancement: "裝備強化"
+  forum: "論壇"
+
 language:
   label: "語言"
   en: "English"

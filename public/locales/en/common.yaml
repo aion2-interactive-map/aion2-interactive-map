@@ -3,6 +3,13 @@ appName: "AION2 Map"
 siteTitle: "AION2\nInteractive Map"
 announcement: "200 monolith positions for in Abyss updated, screenshots will be added later."
 
+nav:
+  home: "Home"
+  classBd: "Class BD"
+  crafting: "Equip Crafting"
+  enhancement: "Equip Enhancement"
+  forum: "Forum"
+
 language:
   label: "Language"
   en: "English"

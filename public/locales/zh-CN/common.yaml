@@ -3,6 +3,13 @@ appName: "AION2 地图"
 siteTitle: "AION2\n互动地图"
 announcement: ""
 
+nav:
+  home: "首页"
+  classBd: "职业BD"
+  crafting: "装备制作"
+  enhancement: "装备强化"
+  forum: "论坛"
+
 language:
   label: "语言"
   en: "English"
