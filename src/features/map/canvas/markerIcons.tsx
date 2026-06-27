@@ -1,6 +1,5 @@
 import L from "leaflet";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
+import { CheckCircle } from "lucide-react";
 import { renderToString } from "react-dom/server";
 import type { UserMarkerInstance, UserMarkerLocalType } from "@/types/game";
 
@@ -120,11 +119,10 @@ export function createPinIcon(
       {content}
 
       {completed && (
-        <FontAwesomeIcon
-          icon={faCheckCircle}
+        <CheckCircle
+          size={12}
           style={{
             position: "absolute",
-            fontSize: "12px",
             right: "-2px",
             bottom: "-2px",
             color: "#22c55e",

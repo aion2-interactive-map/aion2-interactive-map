@@ -2,8 +2,7 @@ import React, { useEffect } from "react";
 import { Marker, useMap } from "react-leaflet";
 import L from "leaflet";
 import { renderToString } from "react-dom/server";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMapPin } from "@fortawesome/free-solid-svg-icons";
+import { MapPin } from "lucide-react";
 import { useMarkers } from "@/context/MarkersContext";
 import { MAP_FLY_TO_DURATION } from "@/lib/constants";
 
@@ -12,12 +11,11 @@ function createFocusIcon(): L.DivIcon {
     <div
       style={{
         color: "#df1414",
-        fontSize: "32px",
         transform: "translate(-50%, -100%)",
         filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.6))",
       }}
     >
-      <FontAwesomeIcon icon={faMapPin} />
+      <MapPin size={32} fill="currentColor" />
     </div>,
   );
 

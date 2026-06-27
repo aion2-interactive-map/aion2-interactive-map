@@ -30,7 +30,7 @@ export interface MarkerTypeSubtype {
   id: string;
   name: string;
   category: string;
-  /** Font Awesome icon name, e.g. "faMapPin", "faTree". */
+  /** Icon image resource path, e.g. "UI/Resource/Texture/Icon/UT_Marker_*.webp". */
   icon?: string;
   /** Hex color string for the pin body, e.g. "#FFAA00". */
   iconScale?: number;
@@ -150,7 +150,7 @@ export interface MapsFile {
  * version: 1
  * categories:
  *   - id: "locations"
- *     icon: "faMapPin"
+ *     icon: "UI/Resource/Texture/Icon/UT_Marker_Location.webp"
  *     subtypes: [...]
  */
 export interface TypesFile {
