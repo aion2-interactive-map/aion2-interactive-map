@@ -1,133 +1,100 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
+import { Eye, EyeOff } from "lucide-react";
 import { useGameMap } from "@/context/GameMapContext";
 import { useGameData } from "@/context/GameDataContext";
 import { useMarkers } from "@/context/MarkersContext";
-import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
+import { cn } from "@/lib/utils";
 
+/**
+ * Category list: one block per marker category.
+ * Each block: a header row (label + eye-toggle that shows/hides ALL subtypes
+ * in the category) and a 2-column grid of count pills bound to visibleSubtypes.
+ */
 export default function MarkerTypes() {
   const { types } = useGameMap();
-  const {
-    visibleSubtypes,
-    handleToggleSubtype,
-    handleShowAllSubtypes,
-    handleHideAllSubtypes,
-  } = useGameData();
-  const { subtypeCounts, completedCounts, clearMarkerCompleted } = useMarkers();
+  const { visibleSubtypes, setVisibleSubtypes, handleToggleSubtype } =
+    useGameData();
+  const { subtypeCounts } = useMarkers();
   const { t } = useTranslation(["types", "common"]);
 
   const categories = useMemo(
     () => types.filter((c) => c.subtypes.length > 0),
     [types],
   );
-  const allCategoryNames = useMemo(
-    () => categories.map((c) => c.name),
-    [categories],
-  );
 
-  // Controlled so sections open once categories load (avoids uncontrolled
-  // defaultValue race where types arrive after first render).
-  const [openValues, setOpenValues] = useState<string[]>(allCategoryNames);
-  useEffect(() => {
-    setOpenValues(allCategoryNames);
-  }, [allCategoryNames]);
+  const setManySubtypes = (names: string[], visible: boolean) => {
+    const next = new Set(visibleSubtypes);
+    for (const n of names) {
+      if (visible) next.add(n);
+      else next.delete(n);
+    }
+    setVisibleSubtypes(next);
+  };
 
   return (
     <div className="flex flex-col gap-3">
-      <div className="grid grid-cols-2 gap-2">
-        <Button variant="outline" size="sm" onClick={handleShowAllSubtypes}>
-          {t("common:menu.showAllMarkers", "Show all")}
-        </Button>
-        <Button variant="outline" size="sm" onClick={handleHideAllSubtypes}>
-          {t("common:menu.hideAllMarkers", "Hide all")}
-        </Button>
-      </div>
+      {categories.map((category) => {
+        const subNames = category.subtypes.map((s) => s.name);
+        const allVisible = subNames.every(
+          (n) => visibleSubtypes?.has(n) ?? false,
+        );
+        return (
+          <div key={category.name} className="flex flex-col gap-1.5">
+            {/* Category header: label + eye toggle (all subtypes at once) */}
+            <div className="flex items-center justify-between">
+              <span className="text-[13px] font-medium text-[#3D3D3D]">
+                {t(`types:categories.${category.name}.name`, category.name)}
+              </span>
+              <button
+                type="button"
+                aria-label={
+                  allVisible
+                    ? t("common:menu.hideAllMarkers", "Hide all")
+                    : t("common:menu.showAllMarkers", "Show all")
+                }
+                aria-pressed={allVisible}
+                onClick={() => setManySubtypes(subNames, !allVisible)}
+                className="flex size-5 items-center justify-center rounded text-[rgba(0,0,0,0.45)] transition-colors hover:text-[#2E97FF]"
+              >
+                {allVisible ? (
+                  <Eye className="size-4" />
+                ) : (
+                  <EyeOff className="size-4" />
+                )}
+              </button>
+            </div>
 
-      <AlertDialog>
-        <AlertDialogTrigger asChild>
-          <Button variant="ghost" size="sm" className="w-full">
-            {t("common:menu.clearMarkerCompleted", "Clear completed")}
-          </Button>
-        </AlertDialogTrigger>
-        <AlertDialogContent>
-          <AlertDialogHeader>
-            <AlertDialogTitle>
-              {t("common:menu.clearMarkerCompleted", "Clear completed")}
-            </AlertDialogTitle>
-            <AlertDialogDescription>
-              {t(
-                "common:menu.clearMarkerCompletedBody",
-                "Do you want to clear all completed marker in this map?",
-              )}
-            </AlertDialogDescription>
-          </AlertDialogHeader>
-          <AlertDialogFooter>
-            <AlertDialogCancel>
-              {t("common:ui.cancel", "Cancel")}
-            </AlertDialogCancel>
-            <AlertDialogAction onClick={() => clearMarkerCompleted()}>
-              {t("common:ui.confirm", "Confirm")}
-            </AlertDialogAction>
-          </AlertDialogFooter>
-        </AlertDialogContent>
-      </AlertDialog>
-
-      <Accordion type="multiple" value={openValues} onValueChange={setOpenValues}>
-        {categories.map((category) => (
-          <AccordionItem key={category.name} value={category.name}>
-            <AccordionTrigger className="text-sm font-semibold">
-              {t(`types:categories.${category.name}.name`, category.name)}
-            </AccordionTrigger>
-            <AccordionContent>
-              <ul className="flex flex-col gap-1">
-                {category.subtypes.map((sub) => {
-                  const total = subtypeCounts[sub.name] ?? 0;
-                  const completed = completedCounts[sub.name] ?? 0;
-                  const checked = visibleSubtypes?.has(sub.name) ?? false;
-                  return (
-                    <li
-                      key={sub.name}
-                      data-testid={`subtype-toggle-${sub.name}`}
-                      className="flex items-center gap-2 rounded-md px-1 py-1 hover:bg-accent/50 cursor-pointer"
-                      onClick={() => handleToggleSubtype(sub.name)}
-                    >
-                      <Checkbox
-                        checked={checked}
-                        onCheckedChange={() => handleToggleSubtype(sub.name)}
-                        onClick={(e) => e.stopPropagation()}
-                      />
-                      <span className="flex-1 truncate text-sm">
-                        {t(`types:subtypes.${sub.name}.name`, sub.name)}
-                      </span>
-                      <span className="shrink-0 text-xs text-muted-foreground tabular-nums">
-                        {completed}/{total}
-                      </span>
-                    </li>
-                  );
-                })}
-              </ul>
-            </AccordionContent>
-          </AccordionItem>
-        ))}
-      </Accordion>
+            {/* Subtype count pills (2-column grid) */}
+            <div className="grid grid-cols-2 gap-1.5">
+              {category.subtypes.map((sub) => {
+                const total = subtypeCounts[sub.name] ?? 0;
+                const checked = visibleSubtypes?.has(sub.name) ?? false;
+                return (
+                  <button
+                    type="button"
+                    key={sub.name}
+                    data-testid={`subtype-toggle-${sub.name}`}
+                    aria-pressed={checked}
+                    onClick={() => handleToggleSubtype(sub.name)}
+                    className={cn(
+                      "flex h-7 items-center justify-between gap-1 rounded-md px-2.5 text-[12px] transition-colors",
+                      checked
+                        ? "bg-[#2E97FF] font-medium text-white"
+                        : "bg-[#E5F0FF] text-[rgba(0,0,0,0.6)] hover:bg-[#d6e8ff]",
+                    )}
+                  >
+                    <span className="truncate">
+                      {t(`types:subtypes.${sub.name}.name`, sub.name)}
+                    </span>
+                    <span className="shrink-0 tabular-nums">{total}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }

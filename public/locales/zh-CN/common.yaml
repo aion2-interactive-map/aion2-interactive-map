@@ -74,6 +74,8 @@ menu:
   expand: "展开"
   collapse: "收起"
   showBorders: "显示地区边界"
+  showMarkerNames: "显示标记名字"
+  showCustomMarkers: "显示自定义标点"
   hideUserMarkers: "隐藏自定义标点"
   switchLanguage: "切换语言"
   switchTheme: "切换主题"
@@ -254,6 +256,7 @@ server:
 race:
   light: "天族"
   dark: "魔族"
+  abyss: "深渊"
   lightAlt: "西部"
   darkAlt: "东部"
   lightShare: "西部阵营"

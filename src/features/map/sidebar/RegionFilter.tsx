@@ -2,47 +2,51 @@ import { useTranslation } from "react-i18next";
 import { useGameMap } from "@/context/GameMapContext";
 import { useGameData } from "@/context/GameDataContext";
 import { useMarkers } from "@/context/MarkersContext";
-import { Checkbox } from "@/components/ui/checkbox";
+import { cn } from "@/lib/utils";
 
+/**
+ * Per-region visibility toggles (visibleRegions). The "Show region borders"
+ * master toggle lives in the ControlCluster; this lists individual regions as
+ * count-pill style toggles to match the Lanhu category blocks.
+ */
 export default function RegionFilter() {
   const { selectedMap } = useGameMap();
-  const { visibleRegions, handleToggleRegion, showBorders, handleToggleBorders } =
-    useGameData();
+  const { visibleRegions, handleToggleRegion } = useGameData();
   const { regions } = useMarkers();
 
   const regionNs = `regions/${selectedMap?.name}`;
   const { t } = useTranslation(["common", regionNs]);
 
-  return (
-    <div className="flex flex-col gap-2">
-      <label className="flex items-center gap-2 rounded-md px-1 py-1 hover:bg-accent/50 cursor-pointer">
-        <Checkbox
-          checked={showBorders}
-          onCheckedChange={() => handleToggleBorders()}
-        />
-        <span className="text-sm font-medium">
-          {t("common:menu.showBorders", "Show borders")}
-        </span>
-      </label>
+  if (regions.length === 0) return null;
 
-      <ul className="flex flex-col gap-1">
+  return (
+    <div className="flex flex-col gap-1.5">
+      <span className="text-[13px] font-medium text-[#3D3D3D]">
+        {t("common:menu.regions", "Regions")}
+      </span>
+      <div className="grid grid-cols-2 gap-1.5">
         {regions.map((r) => {
           const checked = visibleRegions?.has(r.name) ?? false;
           return (
-            <li key={r.id}>
-              <label className="flex items-center gap-2 rounded-md px-1 py-1 hover:bg-accent/50 cursor-pointer">
-                <Checkbox
-                  checked={checked}
-                  onCheckedChange={() => handleToggleRegion(r.name)}
-                />
-                <span className="flex-1 truncate text-sm">
-                  {t(`${regionNs}:${r.name}.name`, r.name)}
-                </span>
-              </label>
-            </li>
+            <button
+              type="button"
+              key={r.id}
+              aria-pressed={checked}
+              onClick={() => handleToggleRegion(r.name)}
+              className={cn(
+                "flex h-7 items-center rounded-md px-2.5 text-[12px] transition-colors",
+                checked
+                  ? "bg-[#2E97FF] font-medium text-white"
+                  : "bg-[#E5F0FF] text-[rgba(0,0,0,0.6)] hover:bg-[#d6e8ff]",
+              )}
+            >
+              <span className="truncate">
+                {t(`${regionNs}:${r.name}.name`, r.name)}
+              </span>
+            </button>
           );
         })}
-      </ul>
+      </div>
     </div>
   );
 }
