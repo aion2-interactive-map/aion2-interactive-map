@@ -37,15 +37,20 @@ const GameMarkerInner: React.FC<Props> = ({ marker, onSelectMarker }) => {
     isCompleted = completedSet.has(marker.indexInSubtype);
   }
 
-  // Resolve icon
-  const innerIcon = parseIconUrl(marker.icon || sub?.icon || "", selectedMap);
+  // Resolve icon. Subtypes carry a distinct game-icon image; render that as
+  // the marker (the "image" variant) for every category that has one,
+  // including `location`. Only when a subtype has no icon do we fall back to
+  // the circular Lanhu dot ("pin"), tinted with the subtype color or the
+  // default blue.
+  const rawIcon = marker.icon || sub?.icon || "";
+  const innerIcon = parseIconUrl(rawIcon, selectedMap);
   let icon: L.DivIcon;
   if (cat?.name === "creature") {
     icon = createPinIcon(innerIcon, 0.9, isCompleted, "circular");
-  } else if (cat?.name === "location") {
-    // Lanhu-style circular location pin (dark disc + white hairline + dot).
-    // Use the subtype color as the inner dot when provided (non-black);
-    // otherwise the default Lanhu blue is used.
+  } else if (!rawIcon) {
+    // No game icon for this subtype: fall back to the circular dot. Use the
+    // subtype color as the inner dot when provided (non-black); otherwise the
+    // default Lanhu blue is used.
     const dot =
       sub?.color && sub.color !== "#000000" ? sub.color : undefined;
     icon = createPinIcon(innerIcon, iconScale, isCompleted, "pin", dot);

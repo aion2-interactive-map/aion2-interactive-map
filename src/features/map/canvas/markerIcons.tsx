@@ -17,8 +17,9 @@ export type PinVariant = "image" | "circular" | "pin";
  * - `image`    — the subtype icon drawn as a ~40px image (categories / POI).
  * - `circular` — the inner icon cropped into a bordered circle (creatures).
  * - `pin`      — the Lanhu-style location pin: a dark translucent disc with a
- *                white hairline border around a colored inner dot. Used for the
- *                `location` category. `innerColor` overrides the dot color.
+ *                white hairline border around a colored inner dot. Fallback for
+ *                subtypes that have no game-icon image. `innerColor` overrides
+ *                the dot color (default blue #2E97FF).
  */
 export function createPinIcon(
   innerIcon: string,
