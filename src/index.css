@@ -50,25 +50,25 @@
    utility — the app already uses `bg-input` as a field fill. */
 :root {
     --radius: 0.625rem;
-    --background: #ffffff;
-    --foreground: #000000;
-    --card: #ffffff;
-    --card-foreground: #000000;
-    --popover: #ffffff;
-    --popover-foreground: #000000;
-    --primary: #2e97ff;
-    --primary-foreground: #ffffff;
+    --background: #F3FBFF;
+    --foreground: #3D3D3D;
+    --card: #FFFFFF;
+    --card-foreground: #3D3D3D;
+    --popover: #FFFFFF;
+    --popover-foreground: #3D3D3D;
+    --primary: #2E97FF;
+    --primary-foreground: #FFFFFF;
     --secondary: #7828c8;
     --secondary-foreground: #ffffff;
-    --muted: #f4f4f5;
-    --muted-foreground: #71717a;
-    --accent: #e4e4e7;
-    --accent-foreground: #000000;
+    --muted: #E5F0FF;
+    --muted-foreground: rgba(0,0,0,0.6);
+    --accent: #E5F0FF;
+    --accent-foreground: #3D3D3D;
     --destructive: #f31260;
     --destructive-foreground: #ffffff;
-    --border: #ebebec;
+    --border: rgba(0,0,0,0.1);
     --input: #ebebec;
-    --ring: #2e97ff;
+    --ring: #2E97FF;
 }
 
 .dark {
