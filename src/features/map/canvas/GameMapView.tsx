@@ -16,6 +16,7 @@ import UserMarker from "@/features/map/canvas/UserMarker";
 import CursorTracker from "@/features/map/canvas/CursorTracker";
 import MapCursorController from "@/features/map/canvas/MapCursorController";
 import MapClickPicker from "@/features/map/canvas/MapClickPicker";
+import MapZoomControl from "@/features/map/canvas/MapZoomControl";
 import MarkerFocusController from "@/features/map/canvas/MarkerFocusController";
 import MapContextMenu, {
   type ContextMenuState,
@@ -103,8 +104,10 @@ const GameMapView: React.FC<Props> = ({
         crs={L.CRS.Simple}
         className="w-full h-full"
         attributionControl={false}
+        zoomControl={false}
         ref={mapRef}
       >
+        <MapZoomControl />
         <CursorTracker onUpdate={(x, y) => setCursorPos({ x, y })} />
         <MapCursorController />
         <MapClickPicker createMarker={createMarker} />
@@ -145,16 +148,19 @@ const GameMapView: React.FC<Props> = ({
         />
       </MapContainer>
 
-      {/* ICP legal record */}
-      <span className="absolute bottom-14 left-3 z-[1000] text-xs text-white/80 drop-shadow">
-        沪ICP备2025152827号-1
-      </span>
-
-      {cursorPos && (
-        <div className="absolute bottom-3 left-3 z-[1000] pointer-events-none rounded-md border border-border bg-popover/90 text-popover-foreground text-sm px-3 py-1.5 shadow-md">
-          x: {cursorPos.x.toFixed(0)}, y: {cursorPos.y.toFixed(0)} {regionLabel}
+      {/* Bottom status bar (Lanhu): grey band, white text — live cursor
+          coords + hovered region name on the left, ICP record on the right. */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1000] flex items-center justify-between gap-4 px-4 py-1.5 text-[13px] text-white bg-[rgba(216,216,216,1)]/90">
+        <div className="flex items-center gap-3 truncate">
+          <span className="tabular-nums">
+            {cursorPos
+              ? `x:${Math.round(cursorPos.x)},y:${Math.round(cursorPos.y)}`
+              : "x:--,y:--"}
+          </span>
+          {regionLabel && <span className="truncate">{regionLabel}</span>}
         </div>
-      )}
+        <span className="shrink-0 text-white/90">沪ICP备2025152827号-1</span>
+      </div>
 
       {/* Context menu overlay */}
       {contextMenu && (

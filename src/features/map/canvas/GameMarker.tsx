@@ -41,9 +41,16 @@ const GameMarkerInner: React.FC<Props> = ({ marker, onSelectMarker }) => {
   const innerIcon = parseIconUrl(marker.icon || sub?.icon || "", selectedMap);
   let icon: L.DivIcon;
   if (cat?.name === "creature") {
-    icon = createPinIcon(innerIcon, 0.9, isCompleted, true);
+    icon = createPinIcon(innerIcon, 0.9, isCompleted, "circular");
+  } else if (cat?.name === "location") {
+    // Lanhu-style circular location pin (dark disc + white hairline + dot).
+    // Use the subtype color as the inner dot when provided (non-black);
+    // otherwise the default Lanhu blue is used.
+    const dot =
+      sub?.color && sub.color !== "#000000" ? sub.color : undefined;
+    icon = createPinIcon(innerIcon, iconScale, isCompleted, "pin", dot);
   } else {
-    icon = createPinIcon(innerIcon, iconScale, isCompleted);
+    icon = createPinIcon(innerIcon, iconScale, isCompleted, "image");
   }
 
   const localizedName = marker.localizedName || marker.name || subtypeLabel;
