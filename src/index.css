@@ -48,6 +48,108 @@
     --color-grade-special: #09ce9f;
 }
 
+/* ===== shadcn/ui token layer (Phase 2A) =====
+   Semantic design tokens for shadcn primitives, derived from the canonical
+   brand palette in hero.ts (which matches the Lanhu design system).
+   Additive + non-destructive: HeroUI keeps its own theme via hero.ts.
+   NOTE: `--input` is defined but intentionally NOT exposed as the `--color-input`
+   utility — the app already uses `bg-input` as a field fill. The shadcn input
+   border token is wired up in 2B when those HeroUI inputs are migrated. */
+:root {
+    --radius: 0.625rem;
+    --background: #ffffff;
+    --foreground: #000000;
+    --card: #ffffff;
+    --card-foreground: #000000;
+    --popover: #ffffff;
+    --popover-foreground: #000000;
+    --primary: #2e97ff;
+    --primary-foreground: #ffffff;
+    --secondary: #7828c8;
+    --secondary-foreground: #ffffff;
+    --muted: #f4f4f5;
+    --muted-foreground: #71717a;
+    --accent: #e4e4e7;
+    --accent-foreground: #000000;
+    --destructive: #f31260;
+    --destructive-foreground: #ffffff;
+    --border: #ebebec;
+    --input: #ebebec;
+    --ring: #2e97ff;
+}
+
+.dark {
+    --background: #000000;
+    --foreground: #ffffff;
+    --card: #18181b;
+    --card-foreground: #ffffff;
+    --popover: #18181b;
+    --popover-foreground: #ffffff;
+    --primary: #2e97ff;
+    --primary-foreground: #ffffff;
+    --secondary: #7828c8;
+    --secondary-foreground: #ffffff;
+    --muted: #27272a;
+    --muted-foreground: #a1a1aa;
+    --accent: #3f3f46;
+    --accent-foreground: #ffffff;
+    --destructive: #f31260;
+    --destructive-foreground: #ffffff;
+    --border: #26262a;
+    --input: #26262a;
+    --ring: #2e97ff;
+}
+
+/* Abyss shares the dark core palette (same as hero.ts); only chrome accents differ. */
+.abyss {
+    --background: #000000;
+    --foreground: #ffffff;
+    --card: #18181b;
+    --card-foreground: #ffffff;
+    --popover: #18181b;
+    --popover-foreground: #ffffff;
+    --primary: #2e97ff;
+    --primary-foreground: #ffffff;
+    --secondary: #7828c8;
+    --secondary-foreground: #ffffff;
+    --muted: #27272a;
+    --muted-foreground: #a1a1aa;
+    --accent: #3f3f46;
+    --accent-foreground: #ffffff;
+    --destructive: #f31260;
+    --destructive-foreground: #ffffff;
+    --border: #26262a;
+    --input: #26262a;
+    --ring: #2e97ff;
+}
+
+/* Bridge raw tokens to Tailwind v4 color/radius utilities used by shadcn primitives. */
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-border: var(--border);
+    --color-ring: var(--ring);
+
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+}
+
 .dark {
     --color-topnavbar: #393047;
     --background-image-sidebar: linear-gradient(180deg, #2C293A 0%, #2C293A 100%);
