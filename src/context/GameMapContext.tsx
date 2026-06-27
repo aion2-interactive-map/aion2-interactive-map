@@ -1,6 +1,6 @@
 import type {GameMapMeta, MapsFile, MarkerTypeCategory, TypesFile} from "@/types/game";
 import React, {createContext, useContext, useEffect, useState} from "react";
-import {loadGameData} from "@/lib/yaml";
+import {loadGameData} from "@/lib/data";
 import {getQueryParam, setQueryParam} from "@/lib/url";
 
 type GameMapContextValue = {
@@ -29,8 +29,8 @@ export const GameMapProvider: React.FC<GameMapProviderProps> = ({children}: Game
     async function load() {
       try {
         const [mapsData, typesData] = await Promise.all([
-          loadGameData<MapsFile>("data/maps.yaml"),
-          loadGameData<TypesFile>("data/types.yaml"),
+          loadGameData<MapsFile>("data/maps.json"),
+          loadGameData<TypesFile>("data/types.json"),
         ]);
 
         if (cancelled) return;

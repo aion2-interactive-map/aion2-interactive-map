@@ -12,9 +12,10 @@ const base = getStaticBaseUrl();
 const dataBase = getDataBaseUrl();
 
 /**
- * Game-data namespaces are served from the `data/` repo
- * (`data/locales/<lng>/<ns>.yaml`); app-UI namespaces (`common`, …) stay in
- * the app's own `public/locales`. `<ns>` may be nested, e.g. `markers/World_L_A`.
+ * GENERATED game-data namespaces are served as JSON from the `data/` repo
+ * (`data/locales/<lng>/<ns>.json`); HAND-AUTHORED app-UI namespaces (`common`,
+ * `items/*`, …) stay as `.yaml` in the app's own `public/locales`.
+ * `<ns>` may be nested, e.g. `markers/World_L_A`.
  */
 const GAME_DATA_NS = ["maps", "types"];
 function isGameDataNs(ns: string): boolean {
@@ -29,10 +30,12 @@ function localeLoadPath(lngs: string[], nss: string[]): string {
   const lng = lngs[0];
   const ns = nss[0];
   const q = `build=${__BUILD_GIT_COMMIT__}`;
+  // Generated game data → JSON from the data repo.
   if (isGameDataNs(ns)) {
     const root = dataBase ? `${dataBase}/locales` : `/data/locales`;
-    return `${root}/${lng}/${ns}.yaml?${q}`;
+    return `${root}/${lng}/${ns}.json?${q}`;
   }
+  // Hand-authored app-UI strings → YAML in public/locales.
   return `${base}/locales/${lng}/${ns}.yaml?${q}`;
 }
 
@@ -48,6 +51,8 @@ i18n
     detection: { order: ["querystring", "localStorage", "navigator", "htmlTag"], caches: ["localStorage"] },
     backend: {
       loadPath: localeLoadPath,
+      // YAML is a superset of JSON, so `yaml.parse` safely handles both the
+      // `.json` game-data namespaces and the `.yaml` app-UI namespaces.
       parse: (data: string) => parse(data),
     },
     interpolation: { escapeValue: false },

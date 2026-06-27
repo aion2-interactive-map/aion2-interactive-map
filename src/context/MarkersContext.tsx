@@ -1,6 +1,6 @@
 import React, {createContext, useCallback, useContext, useEffect, useMemo, useState} from "react";
 import type {MarkerInstance, MarkerWithTranslations, RawMarkersFile, RawRegionsFile, RegionInstance} from "@/types/game";
-import {loadGameData} from "@/lib/yaml";
+import {loadGameData} from "@/lib/data";
 import {useGameMap} from "@/context/GameMapContext";
 import {useTranslation} from "react-i18next";
 import { COMPLETED_MARKERS_V1_PREFIX, COMPLETED_MARKERS_V2_PREFIX } from "@/lib/constants";
@@ -142,11 +142,11 @@ export const MarkersProvider = ({children}: MarkersProviderProps) => {
       setLoading(true);
       try {
         const raw = await loadGameData<RawMarkersFile>(
-          `data/markers/${selectedMap?.name}.yaml`,
+          `data/markers/${selectedMap?.name}.json`,
         );
         if (cancelled) return;
         const rawRegion = await loadGameData<RawRegionsFile>(
-          `data/regions/${selectedMap?.name}.yaml`,
+          `data/regions/${selectedMap?.name}.json`,
         )
         setBaseMarkers(raw.markers || []);
         setRegions(rawRegion.regions || []);
