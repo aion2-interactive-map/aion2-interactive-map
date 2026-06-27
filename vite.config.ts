@@ -50,6 +50,36 @@ function resourceUiProxy(): Plugin {
   };
 }
 
+// Serve the sibling `data/` repo (parsed game dataset + game-data locales) at
+// `/data` in dev. Mirrors the `/UI` resource proxy above. In prod the frontend
+// reads from VITE_DATA_BASE_URL instead. Override the dir with DATA_DIR.
+function dataRepoProxy(): Plugin {
+  const dataDir = path.resolve(__dirname, process.env.DATA_DIR ?? "../data");
+  return {
+    name: "data-repo-static",
+    configureServer(server) {
+      server.middlewares.use((req, res, next) => {
+        if (!req.url || !req.url.startsWith("/data/")) return next();
+        const rel = decodeURIComponent(req.url.split("?")[0]).replace(/^\/data\//, "");
+        const filePath = path.join(dataDir, rel);
+        if (!filePath.startsWith(dataDir)) return next();
+        fs.stat(filePath, (err, stat) => {
+          if (err || !stat.isFile()) return next();
+          const ext = path.extname(filePath).toLowerCase();
+          res.setHeader(
+            "Content-Type",
+            MIME[ext] ?? (ext === ".yaml" || ext === ".yml"
+              ? "text/yaml; charset=utf-8"
+              : "application/octet-stream"),
+          );
+          res.setHeader("Cache-Control", "no-cache");
+          fs.createReadStream(filePath).pipe(res);
+        });
+      });
+    },
+  };
+}
+
 const buildTime = process.env.BUILD_TIME ?? Date.now().toString();
 
 // https://vite.dev/config/
@@ -57,6 +87,7 @@ export default defineConfig({
   base: process.env.VITE_PUBLIC_BASE || '/',
   plugins: [
     resourceUiProxy(),
+    dataRepoProxy(),
     tailwindcss(),
     tanstackRouter({
       target: 'react',

@@ -12,6 +12,17 @@ export function getResourceBaseUrl() {
   return (import.meta.env.VITE_RESOURCE_BASE_URL ?? "").replace(/\/+$/, "");
 }
 
+/**
+ * Base URL for the `data` repo (parsed game dataset: maps/types/markers/
+ * regions + game-data locales).
+ * - Prod: set `VITE_DATA_BASE_URL` (e.g. a CDN host serving the data repo).
+ * - Dev: leave empty; Vite serves the sibling `data/` repo at `/data`
+ *   (see `vite.config.ts`).
+ */
+export function getDataBaseUrl() {
+  return (import.meta.env.VITE_DATA_BASE_URL ?? "").replace(/\/+$/, "");
+}
+
 export function getStaticUrl(relPath: string) {
   const clean = relPath.replace(/^\/+/, "");
   // Game resource assets live in the `resource` repo under `UI/`.
