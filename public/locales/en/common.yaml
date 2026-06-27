@@ -1,4 +1,5 @@
 lang: "en"
+appName: "AION2 Map"
 siteTitle: "AION2\nInteractive Map"
 announcement: "200 monolith positions for in Abyss updated, screenshots will be added later."
 
@@ -38,6 +39,8 @@ menu:
   showBorders: "Show region borders"
   expand: "Expand"
   collapse: "Collapse"
+  switchTheme: "Switch theme"
+  switchLanguage: "Switch language"
 
 routes:
   map: "Map"

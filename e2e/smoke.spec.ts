@@ -59,3 +59,19 @@ test("clicking a marker opens a local popup", async ({ page }) => {
   await expect(page.locator(".leaflet-popup")).toBeVisible();
   await expect(page.getByTestId("marker-popup-card")).toBeVisible();
 });
+
+test("theme switch applies the theme class", async ({ page }) => {
+  await page.goto("/?map=World_L_A&lng=en");
+  await page.getByTestId("theme-menu").click();
+  await page.getByTestId("theme-dark").click();
+  await expect(page.locator("html")).toHaveClass(/dark/);
+});
+
+test("language switch changes labels", async ({ page }) => {
+  await page.goto("/?map=World_L_A&lng=en");
+  const sel = page.getByTestId("map-select");
+  const enText = (await sel.textContent())?.trim() ?? "";
+  await page.getByTestId("lang-menu").click();
+  await page.getByTestId("lang-zh-CN").click();
+  await expect(sel).not.toHaveText(enText, { timeout: 10_000 });
+});

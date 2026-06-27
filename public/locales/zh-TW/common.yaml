@@ -1,4 +1,5 @@
 lang: "zh-TW"
+appName: "AION2 地圖"
 siteTitle: "AION2 互動地圖"
 
 language:
@@ -6,6 +7,12 @@ language:
   en: "English"
   zh-CN: "簡體中文"
   zh-TW: "繁體中文"
+
+theme:
+  auto: "自動（隨地圖切換）"
+  light: "白天模式（天族）"
+  dark: "夜晚模式（魔族）"
+  abyss: "黃昏模式（深淵）"
 
 ui:
   confirm: "確認"
@@ -53,6 +60,8 @@ menu:
   clearMarkerCompleted: "清除已完成標記"
   clearMarkerCompletedBody: "你確定要清除這張地圖所有的已完成標記嗎？"
   selectMap: "選擇地圖"
+  switchTheme: "切換主題"
+  switchLanguage: "切換語言"
   expand: "展開"
   collapse: "收起"
   showBorders: "顯示地區邊界"
