@@ -114,6 +114,13 @@ markerActions:
 markerSearch:
   unnamed: "Unnamed marker"
 
+search:
+  resultsCount: "{{count}} results"
+  coords: "Coords: {{x}}, {{y}}"
+  scopeBoth: "All"
+  scopeName: "Name"
+  scopeToggle: "Toggle search scope"
+
 introModal:
   version: "Version"
   title: "Welcome to AION2 Interactive Map"

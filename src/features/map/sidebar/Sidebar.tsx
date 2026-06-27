@@ -5,19 +5,13 @@ import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
 import SelectMap from "./SelectMap";
-import MarkerSearch from "./MarkerSearch";
 import MarkerTypes from "./MarkerTypes";
 import ControlCluster from "./ControlCluster";
 import RegionFilter from "./RegionFilter";
 
-type Props = {
-  onSelectMarker: (id: string | null) => void;
-  onFlyTo: (pos: { x: number; y: number }) => void;
-};
-
 const SIDEBAR_WIDTH = 280;
 
-export default function Sidebar({ onSelectMarker, onFlyTo }: Props) {
+export default function Sidebar() {
   const [collapsed, setCollapsed] = useState(false);
   const [typesOpen, setTypesOpen] = useState(true);
   const { t } = useTranslation(["common"]);
@@ -44,9 +38,6 @@ export default function Sidebar({ onSelectMarker, onFlyTo }: Props) {
             <div className="rounded-lg border border-[rgba(46,151,255,0.25)] bg-white px-1">
               <SelectMap />
             </div>
-
-            {/* Search (kept here for now; moves to a right panel later) */}
-            <MarkerSearch onSelectMarker={onSelectMarker} onFlyTo={onFlyTo} />
 
             {/* Marker types section header with collapse chevron */}
             <button

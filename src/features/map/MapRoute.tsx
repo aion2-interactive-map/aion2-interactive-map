@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import type { MapRef } from "@/types/game";
 import GameMapView from "@/features/map/canvas/GameMapView";
 import Sidebar from "@/features/map/sidebar/Sidebar";
+import SearchPanel from "@/features/map/search/SearchPanel";
 import TopNavbar from "@/components/TopNavbar";
 
 export default function MapRoute() {
@@ -15,16 +16,19 @@ export default function MapRoute() {
     <div className="flex h-screen w-screen flex-col overflow-hidden bg-background text-foreground">
       <TopNavbar />
       <div className="flex flex-1 overflow-hidden">
-        <Sidebar
-          onSelectMarker={setSelectedMarkerId}
-          onFlyTo={setSelectedPosition}
-        />
-        <GameMapView
-          mapRef={mapRef}
-          onSelectMarker={setSelectedMarkerId}
-          selectedMarkerId={selectedMarkerId}
-          selectedPosition={selectedPosition}
-        />
+        <Sidebar />
+        <div className="relative flex flex-1 overflow-hidden">
+          <GameMapView
+            mapRef={mapRef}
+            onSelectMarker={setSelectedMarkerId}
+            selectedMarkerId={selectedMarkerId}
+            selectedPosition={selectedPosition}
+          />
+          <SearchPanel
+            onSelectMarker={setSelectedMarkerId}
+            onFlyTo={setSelectedPosition}
+          />
+        </div>
       </div>
     </div>
   );

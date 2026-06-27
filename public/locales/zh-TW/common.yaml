@@ -89,6 +89,13 @@ errors:
 markerSearch:
   unnamed: "未命名標記"
 
+search:
+  resultsCount: "{{count}}個搜尋結果"
+  coords: "座標：{{x}}，{{y}}"
+  scopeBoth: "全部"
+  scopeName: "名"
+  scopeToggle: "切換搜尋範圍"
+
 markerActions:
   markCompleted: "標記為已完成"
   markNotCompleted: "已完成"
