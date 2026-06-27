@@ -1,6 +1,7 @@
 lang: "zh-TW"
 appName: "AION2 地圖"
 siteTitle: "AION2 互動地圖"
+mapSubtitle: "互動地圖"
 
 nav:
   home: "首頁"

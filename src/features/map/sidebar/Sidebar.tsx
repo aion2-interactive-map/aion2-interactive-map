@@ -29,7 +29,7 @@ export default function Sidebar() {
                 AION2
               </span>
               <span className="text-sm font-medium text-[#3D3D3D]">
-                {t("common:appName", "AION2 Map")}
+                {t("common:mapSubtitle", "Interactive Map")}
               </span>
             </div>
 
