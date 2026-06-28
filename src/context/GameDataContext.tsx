@@ -18,6 +18,9 @@ type GameDataContextValue = {
   handleToggleBorders: () => void;
   handleShowAllSubtypes: () => void;
   handleHideAllSubtypes: () => void;
+  /** When true, gate rank-2 markers behind a minimum zoom (game-like LOD). */
+  lodEnabled: boolean;
+  setLodEnabled: (lodEnabled: boolean) => void;
 };
 
 const GameDataContext = createContext<GameDataContextValue | null>(null);
@@ -66,6 +69,7 @@ export const GameDataProvider: React.FC<GameDataProviderProps> = ({
   const [visibleRegions, setVisibleRegions] = useState<Set<string> | undefined>(undefined);
   const [allSubtypes, setAllSubtypes] = useState<Map<string, MarkerTypeSubtype>>(new Map());
   const [showBorders, setShowBorders] = useState<boolean>(false);
+  const [lodEnabled, setLodEnabled] = useState<boolean>(true);
 
   // const { regions } = useMarkers(selectedMap?.name);
 
@@ -166,6 +170,8 @@ export const GameDataProvider: React.FC<GameDataProviderProps> = ({
       handleHideAllSubtypes,
       showBorders,
       handleToggleBorders,
+      lodEnabled,
+      setLodEnabled,
     }}>
       {children}
     </GameDataContext.Provider>

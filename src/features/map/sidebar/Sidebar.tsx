@@ -2,8 +2,10 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { Switch } from "@/components/ui/switch";
 import { useTheme } from "@/context/ThemeContext";
 import { useGameMap } from "@/context/GameMapContext";
+import { useGameData } from "@/context/GameDataContext";
 import { getStaticUrl } from "@/lib/url";
 import Logo from "./Logo";
 import SelectMap from "./SelectMap";
@@ -16,6 +18,7 @@ export default function Sidebar() {
   const { t } = useTranslation(["common"]);
   const { realTheme } = useTheme();
   const { selectedMap } = useGameMap();
+  const { lodEnabled, setLodEnabled } = useGameData();
 
   const isLight = realTheme === "light";
   const bgUrl = getStaticUrl(
@@ -44,7 +47,18 @@ export default function Sidebar() {
       {/* CONTENT */}
       <ScrollArea className="h-full flex-1">
         {!collapsed && (
-          <div className="flex flex-col px-2 pb-4">
+          <div className="flex flex-col px-0 pb-4">
+            {/* LOD (auto-detail-by-zoom) toggle — top of the sidebar */}
+            <label className="flex items-center justify-between gap-2 px-2 pt-3 text-sm text-[#3D3D3D]">
+              <span className="leading-[14px]">
+                {t("common:menu.lodToggle", "Auto detail by zoom")}
+              </span>
+              <Switch
+                data-testid="lod-toggle"
+                checked={lodEnabled}
+                onCheckedChange={setLodEnabled}
+              />
+            </label>
             <Logo />
             <SelectMap />
             {selectedMap && <MarkerTypes />}

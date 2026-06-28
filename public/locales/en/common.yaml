@@ -47,6 +47,7 @@ menu:
   showBorders: "Show region borders"
   showMarkerNames: "Show marker names"
   showCustomMarkers: "Show custom markers"
+  lodToggle: "Auto detail by zoom"
   expand: "Expand"
   collapse: "Collapse"
   switchTheme: "Switch theme"

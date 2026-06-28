@@ -77,6 +77,7 @@ menu:
   showBorders: "显示地区边界"
   showMarkerNames: "显示标记名字"
   showCustomMarkers: "显示自定义标点"
+  lodToggle: "按缩放显示层级"
   hideUserMarkers: "隐藏自定义标点"
   switchLanguage: "切换语言"
   switchTheme: "切换主题"

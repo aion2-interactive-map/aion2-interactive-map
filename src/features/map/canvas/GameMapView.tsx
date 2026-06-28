@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from "react";
-import { MapContainer } from "react-leaflet";
+import { MapContainer, useMapEvents } from "react-leaflet";
 import L from "leaflet";
 
 import type { MapRef, RegionInstance } from "@/types/game";
@@ -31,6 +31,26 @@ type Props = {
   selectedPosition: { x: number; y: number } | null;
 };
 
+/**
+ * Minimum Leaflet zoom at which rank-2 markers become visible (LOD).
+ * The map zoom range is -3..2 with default 0, so at the default full-map view
+ * only rank-1 markers show; zooming in past the default reveals rank-2.
+ */
+const RANK2_MIN_ZOOM = 1;
+
+/**
+ * Tracks the current Leaflet zoom level into React state. Zoom changes are
+ * infrequent, so re-rendering GameMapView on `zoomend` is acceptable.
+ */
+const ZoomWatcher: React.FC<{ onZoom: (zoom: number) => void }> = ({
+  onZoom,
+}) => {
+  useMapEvents({
+    zoomend: (e) => onZoom(e.target.getZoom()),
+  });
+  return null;
+};
+
 const GameMapView: React.FC<Props> = ({
   mapRef,
   onSelectMarker,
@@ -41,9 +61,11 @@ const GameMapView: React.FC<Props> = ({
   const [hoveredRegion, setHoveredRegion] = useState<RegionInstance | undefined>(
     undefined,
   );
+  // Initialized to the MapContainer default zoom (0); updated on `zoomend`.
+  const [zoom, setZoom] = useState(0);
 
   const { selectedMap } = useGameMap();
-  const { visibleSubtypes } = useGameData();
+  const { visibleSubtypes, lodEnabled } = useGameData();
   const { markers } = useMarkers();
   const { pickMode, createMarker, userMarkers, hideUserMarkers } =
     useUserMarkers();
@@ -106,6 +128,7 @@ const GameMapView: React.FC<Props> = ({
         ref={mapRef}
       >
         <MapZoomControl />
+        <ZoomWatcher onZoom={setZoom} />
         <CursorTracker />
         <MapCursorController />
         <MapClickPicker createMarker={createMarker} />
@@ -122,9 +145,19 @@ const GameMapView: React.FC<Props> = ({
         />
 
         {markers
-          .filter(
-            (m) => selectedMarkerId === m.id || visibleSubtypes?.has(m.subtype),
-          )
+          .filter((m) => {
+            // Selection always overrides both subtype filter and LOD.
+            if (selectedMarkerId === m.id) return true;
+            // Subtype filter (as today).
+            if (!visibleSubtypes?.has(m.subtype)) return false;
+            // Rank-based level-of-detail gate.
+            if (lodEnabled) {
+              if (m.rank == null) return false;
+              if (m.rank <= 1) return true;
+              return zoom >= RANK2_MIN_ZOOM;
+            }
+            return true;
+          })
           .map((m) => (
             <GameMarker key={m.id} marker={m} onSelectMarker={onSelectMarker} />
           ))}

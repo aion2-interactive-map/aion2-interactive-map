@@ -73,6 +73,8 @@ export interface MarkerInstance {
   icon?: string;
   name?: string;
   indexInSubtype: number;
+  /** Level-of-detail rank (1 = always shown, 2 = shown when zoomed in). */
+  rank?: number;
 }
 
 export type MarkerWithTranslations = MarkerInstance & {
