@@ -13,11 +13,11 @@ test("map renders tiles and markers from local data, no console errors", async (
 test("type filter toggles marker visibility", async ({ page }) => {
   await page.goto("/?map=World_L_A&lng=en");
   await page.locator(".leaflet-marker-icon").first().waitFor({ timeout: 15_000 });
-  // monolithMaterial markers are rank 2, hidden at the default zoom under LOD.
+  // fragments markers are tier 3, hidden at the default zoom under LOD.
   // Disable LOD so the subtype toggle alone governs visibility.
   await page.getByTestId("lod-toggle").click();
   const before = await page.locator(".leaflet-marker-icon").count();
-  await page.getByTestId("subtype-toggle-monolithMaterial").click();
+  await page.getByTestId("subtype-toggle-fragments").click();
   await expect
     .poll(() => page.locator(".leaflet-marker-icon").count(), { timeout: 10_000 })
     .not.toBe(before);
@@ -34,7 +34,7 @@ test("search returns hits", async ({ page }) => {
 test("clicking a marker opens a local popup", async ({ page }) => {
   await page.goto("/?map=World_L_A&lng=en");
   await page.locator(".leaflet-marker-icon").first().waitFor({ timeout: 15_000 });
-  // Disable LOD so rank-2 markers also render at the default zoom, giving the
+  // Disable LOD so higher-tier markers also render at the default zoom, giving the
   // in-viewport / clear-of-sidebar search plenty of clickable candidates.
   await page.getByTestId("lod-toggle").click();
   await page.locator(".leaflet-marker-icon").first().waitFor({ timeout: 15_000 });

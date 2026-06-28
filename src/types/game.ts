@@ -73,8 +73,12 @@ export interface MarkerInstance {
   icon?: string;
   name?: string;
   indexInSubtype: number;
-  /** Level-of-detail rank (1 = always shown, 2 = shown when zoomed in). */
-  rank?: number;
+  /**
+   * Level-of-detail tier (1 = always shown; 2 = shown at default zoom;
+   * 3 = shown only when zoomed in). Lower tiers stay visible at all zooms
+   * at/above the tier's threshold.
+   */
+  tier?: number;
 }
 
 export type MarkerWithTranslations = MarkerInstance & {

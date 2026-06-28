@@ -18,7 +18,7 @@ type GameDataContextValue = {
   handleToggleBorders: () => void;
   handleShowAllSubtypes: () => void;
   handleHideAllSubtypes: () => void;
-  /** When true, gate rank-2 markers behind a minimum zoom (game-like LOD). */
+  /** When true, gate higher-tier markers behind a minimum zoom (game-like LOD). */
   lodEnabled: boolean;
   setLodEnabled: (lodEnabled: boolean) => void;
 };
@@ -95,7 +95,7 @@ export const GameDataProvider: React.FC<GameDataProviderProps> = ({
       // DEFAULT: only "location" subtypes
       const defaultKeys = new Set<string>();
       all.forEach((sub, name) => {
-        if (sub.category === "location" || (sub.name === "monolithMaterial" && selectedMap.type === "abyss")) {
+        if (sub.category === "location" || (sub.name === "fragments" && selectedMap.type === "abyss")) {
           defaultKeys.add(name);
         }
       });

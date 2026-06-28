@@ -32,13 +32,27 @@ type Props = {
 };
 
 /**
- * Minimum Leaflet zoom at which rank-2 markers become visible (LOD).
- * The map opens at the default zoom 0 (measured: the MapContainer is not
- * bounds-fitted, it mounts at zoom 0), range -3..2. We want rank-2 markers
- * visible already at the default view, collapsing to rank-1 only when the user
- * zooms further OUT — so the threshold sits at the default zoom.
+ * 3-tier level-of-detail thresholds (Leaflet zoom). The map opens at the
+ * default zoom 0 (the MapContainer is not bounds-fitted, it mounts at zoom 0),
+ * range -3..2.
+ *
+ * - tier 1 markers are always shown.
+ * - tier 2 markers appear at/above TIER2_MIN_ZOOM.
+ * - tier 3 markers appear at/above TIER3_MIN_ZOOM.
+ *
+ * With the defaults below the default view (zoom 0) shows tier 1+2; zooming in
+ * past TIER3_MIN_ZOOM reveals tier 3; zooming out below TIER2_MIN_ZOOM leaves
+ * only tier 1.
  */
-const RANK2_MIN_ZOOM = 0;
+const TIER2_MIN_ZOOM = -1; // at/above this zoom, tier-2 markers appear
+const TIER3_MIN_ZOOM = 1; // at/above this zoom, tier-3 markers appear
+
+/** Compute the highest marker tier visible at the given Leaflet zoom. */
+function visibleTierForZoom(zoom: number): number {
+  if (zoom >= TIER3_MIN_ZOOM) return 3;
+  if (zoom >= TIER2_MIN_ZOOM) return 2;
+  return 1;
+}
 
 /**
  * Tracks the current Leaflet zoom level into React state. Zoom changes are
@@ -152,11 +166,10 @@ const GameMapView: React.FC<Props> = ({
             if (selectedMarkerId === m.id) return true;
             // Subtype filter (as today).
             if (!visibleSubtypes?.has(m.subtype)) return false;
-            // Rank-based level-of-detail gate.
+            // Tier-based level-of-detail gate.
             if (lodEnabled) {
-              if (m.rank == null) return false;
-              if (m.rank <= 1) return true;
-              return zoom >= RANK2_MIN_ZOOM;
+              if (m.tier == null) return false;
+              return m.tier <= visibleTierForZoom(zoom);
             }
             return true;
           })
