@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import {
   Accordion,
@@ -63,7 +63,7 @@ export default function Sidebar() {
                   <AccordionTrigger className="px-2 py-4 hover:no-underline">
                     <div className="flex items-center gap-2">
                       <span className="flex h-4 w-4 items-center justify-center">
-                        <Star className="h-3.5 w-3.5 fill-primary text-primary" />
+                        <Sparkles className="h-3.5 w-3.5 fill-primary text-primary" />
                       </span>
                       <span className="truncate text-base font-bold leading-[16px]">
                         {t("common:menu.markerTypes", "Marker Types")}
