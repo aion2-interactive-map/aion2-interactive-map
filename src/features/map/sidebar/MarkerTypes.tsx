@@ -55,6 +55,8 @@ export default function MarkerTypes() {
     handleToggleSubtype,
     showBorders,
     handleToggleBorders,
+    lodEnabled,
+    setLodEnabled,
   } = useGameData();
   const { clearMarkerCompleted, showLabels, setShowLabels, subtypeCounts, completedCounts } =
     useMarkers();
@@ -136,6 +138,16 @@ export default function MarkerTypes() {
           onClick={() => setHideUserMarkers(!hideUserMarkers)}
         >
           {t("common:menu.showCustomMarkers", "Show custom markers")}
+        </button>
+        <button
+          type="button"
+          data-testid="lod-toggle"
+          aria-pressed={lodEnabled}
+          className={buttonClasses(lodEnabled)}
+          style={lodEnabled ? undefined : inactiveStyle}
+          onClick={() => setLodEnabled(!lodEnabled)}
+        >
+          {t("common:menu.lodToggle", "Auto detail by zoom")}
         </button>
       </div>
 

@@ -1,11 +1,15 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Diamond } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Switch } from "@/components/ui/switch";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { useTheme } from "@/context/ThemeContext";
 import { useGameMap } from "@/context/GameMapContext";
-import { useGameData } from "@/context/GameDataContext";
 import { getStaticUrl } from "@/lib/url";
 import Logo from "./Logo";
 import SelectMap from "./SelectMap";
@@ -18,7 +22,6 @@ export default function Sidebar() {
   const { t } = useTranslation(["common"]);
   const { realTheme } = useTheme();
   const { selectedMap } = useGameMap();
-  const { lodEnabled, setLodEnabled } = useGameData();
 
   const isLight = realTheme === "light";
   const bgUrl = getStaticUrl(
@@ -48,20 +51,31 @@ export default function Sidebar() {
       <ScrollArea className="h-full flex-1">
         {!collapsed && (
           <div className="flex flex-col px-0 pb-4">
-            {/* LOD (auto-detail-by-zoom) toggle — top of the sidebar */}
-            <label className="flex items-center justify-between gap-2 px-2 pt-3 text-sm text-[#3D3D3D]">
-              <span className="leading-[14px]">
-                {t("common:menu.lodToggle", "Auto detail by zoom")}
-              </span>
-              <Switch
-                data-testid="lod-toggle"
-                checked={lodEnabled}
-                onCheckedChange={setLodEnabled}
-              />
-            </label>
             <Logo />
             <SelectMap />
-            {selectedMap && <MarkerTypes />}
+            {selectedMap && (
+              <Accordion
+                type="multiple"
+                defaultValue={["types"]}
+                className="w-full"
+              >
+                <AccordionItem value="types" className="border-b-0">
+                  <AccordionTrigger className="px-2 py-4 hover:no-underline">
+                    <div className="flex items-center gap-2">
+                      <span className="flex h-4 w-4 items-center justify-center">
+                        <Diamond className="h-3.5 w-3.5 text-primary" />
+                      </span>
+                      <span className="truncate text-base font-bold leading-[16px]">
+                        {t("common:menu.markerTypes", "Marker Types")}
+                      </span>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="pt-0 pb-0">
+                    <MarkerTypes />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            )}
           </div>
         )}
       </ScrollArea>

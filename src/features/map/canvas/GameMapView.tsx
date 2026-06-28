@@ -33,10 +33,12 @@ type Props = {
 
 /**
  * Minimum Leaflet zoom at which rank-2 markers become visible (LOD).
- * The map zoom range is -3..2 with default 0, so at the default full-map view
- * only rank-1 markers show; zooming in past the default reveals rank-2.
+ * The map opens at the default zoom 0 (measured: the MapContainer is not
+ * bounds-fitted, it mounts at zoom 0), range -3..2. We want rank-2 markers
+ * visible already at the default view, collapsing to rank-1 only when the user
+ * zooms further OUT — so the threshold sits at the default zoom.
  */
-const RANK2_MIN_ZOOM = 1;
+const RANK2_MIN_ZOOM = 0;
 
 /**
  * Tracks the current Leaflet zoom level into React state. Zoom changes are
