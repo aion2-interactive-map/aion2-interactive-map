@@ -9,6 +9,7 @@ import { useGameMap } from "@/context/GameMapContext";
 import { useGameData } from "@/context/GameDataContext";
 import { createPinIcon } from "@/features/map/canvas/markerIcons";
 import { parseIconUrl } from "@/lib/url";
+import { dataToLatLng } from "@/lib/coords";
 
 type Props = {
   marker: MarkerWithTranslations;
@@ -65,7 +66,7 @@ const GameMarkerInner: React.FC<Props> = ({ marker, onSelectMarker }) => {
 
   return (
     <Marker
-      position={new L.LatLng(marker.y, marker.x)}
+      position={dataToLatLng(selectedMap, marker.x, marker.y)}
       icon={icon}
       eventHandlers={{
         click: () => {

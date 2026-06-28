@@ -8,6 +8,7 @@ import { useGameMap } from "@/context/GameMapContext";
 
 import { getUserMarkerLocalIcon } from "@/features/map/canvas/markerIcons";
 import { getStaticUrl } from "@/lib/url";
+import { dataToLatLngTuple } from "@/lib/coords";
 import { useTranslation } from "react-i18next";
 
 const LOCAL_ICON_WRAPPER_CLASS = [
@@ -53,7 +54,7 @@ const UserMarkerInner: React.FC<{ marker: UserMarkerInstance }> = ({
   });
 
   return (
-    <Marker position={[marker.y, marker.x]} icon={icon}>
+    <Marker position={dataToLatLngTuple(selectedMap, marker.x, marker.y)} icon={icon}>
       <Popup>
         <button
           type="button"

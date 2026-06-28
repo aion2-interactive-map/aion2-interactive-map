@@ -1,6 +1,8 @@
 import React from "react";
 import { useMapEvents } from "react-leaflet";
 import { useUserMarkers } from "@/context/UserMarkersContext";
+import { useGameMap } from "@/context/GameMapContext";
+import { latLngToData } from "@/lib/coords";
 
 export type ContextMenuState = {
   x: number; // screen coords (relative to map container)
@@ -19,6 +21,7 @@ const MapContextMenu: React.FC<MapContextMenuProps> = ({
   onCloseMenu,
 }) => {
   const { setPickMode, pickMode } = useUserMarkers();
+  const { selectedMap } = useGameMap();
 
   const map = useMapEvents({
     contextmenu(e) {
@@ -27,10 +30,14 @@ const MapContextMenu: React.FC<MapContextMenuProps> = ({
         setPickMode(false);
         return;
       }
+      if (!selectedMap) return;
 
-      // CRS.Simple: lat = y, lng = x
-      const mapX = e.latlng.lng;
-      const mapY = e.latlng.lat;
+      // Leaflet (lat, lng) → DATA (image-space) with the inverse vertical flip.
+      const { x: mapX, y: mapY } = latLngToData(
+        selectedMap,
+        e.latlng.lat,
+        e.latlng.lng,
+      );
 
       const containerPoint = map.latLngToContainerPoint(e.latlng);
 

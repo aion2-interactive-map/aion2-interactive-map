@@ -1,5 +1,5 @@
-import React, { useCallback, useState } from "react";
-import { MapContainer, useMapEvents } from "react-leaflet";
+import React, { useCallback, useEffect, useState } from "react";
+import { MapContainer, useMap, useMapEvents } from "react-leaflet";
 import L from "leaflet";
 
 import type { MapRef, RegionInstance } from "@/types/game";
@@ -64,6 +64,23 @@ const ZoomWatcher: React.FC<{ onZoom: (zoom: number) => void }> = ({
   useMapEvents({
     zoomend: (e) => onZoom(e.target.getZoom()),
   });
+  return null;
+};
+
+/**
+ * Dev/test-only hook: publishes the Leaflet map instance on `window` so e2e
+ * tests can project DATA coords through the real map (verifying the vertical
+ * flip). No-op in production builds.
+ */
+const TestMapHandle: React.FC = () => {
+  const map = useMap();
+  useEffect(() => {
+    if (!import.meta.env.DEV) return;
+    (window as unknown as { __leafletMap?: unknown }).__leafletMap = map;
+    return () => {
+      delete (window as unknown as { __leafletMap?: unknown }).__leafletMap;
+    };
+  }, [map]);
   return null;
 };
 
@@ -145,6 +162,7 @@ const GameMapView: React.FC<Props> = ({
       >
         <MapZoomControl />
         <ZoomWatcher onZoom={setZoom} />
+        <TestMapHandle />
         <CursorTracker />
         <MapCursorController />
         <MapClickPicker createMarker={createMarker} />

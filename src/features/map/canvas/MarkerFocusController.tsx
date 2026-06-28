@@ -4,7 +4,9 @@ import L from "leaflet";
 import { renderToString } from "react-dom/server";
 import { MapPin } from "lucide-react";
 import { useMarkers } from "@/context/MarkersContext";
+import { useGameMap } from "@/context/GameMapContext";
 import { MAP_FLY_TO_DURATION } from "@/lib/constants";
+import { dataToLatLng } from "@/lib/coords";
 
 function createFocusIcon(): L.DivIcon {
   const html = renderToString(
@@ -38,29 +40,38 @@ const MarkerFocusController: React.FC<MarkerFocusControllerProps> = ({
 }) => {
   const map = useMap();
   const { markersById } = useMarkers();
+  const { selectedMap } = useGameMap();
 
   useEffect(() => {
-    if (!map || !selectedMarkerId) return;
+    if (!map || !selectedMarkerId || !selectedMap) return;
 
     const marker = markersById[selectedMarkerId];
     if (!marker) return;
 
-    // Leaflet uses [lat, lng]; y=lat, x=lng:
-    const latLng: [number, number] = [marker.y, marker.x];
+    // DATA (image-space) → Leaflet LatLng with the single vertical flip.
+    const latLng = dataToLatLng(selectedMap, marker.x, marker.y);
 
     map.flyTo(latLng, map.getZoom(), { duration: MAP_FLY_TO_DURATION });
-  }, [map, selectedMarkerId, markersById]);
+  }, [map, selectedMarkerId, markersById, selectedMap]);
 
   useEffect(() => {
-    if (!map || !selectedPosition) return;
-    const latLng: [number, number] = [selectedPosition.y, selectedPosition.x];
+    if (!map || !selectedPosition || !selectedMap) return;
+    const latLng = dataToLatLng(
+      selectedMap,
+      selectedPosition.x,
+      selectedPosition.y,
+    );
     map.flyTo(latLng, map.getZoom(), { duration: MAP_FLY_TO_DURATION });
-  }, [map, selectedPosition]);
+  }, [map, selectedPosition, selectedMap]);
 
-  if (selectedPosition) {
+  if (selectedPosition && selectedMap) {
     return (
       <Marker
-        position={new L.LatLng(selectedPosition.y, selectedPosition.x)}
+        position={dataToLatLng(
+          selectedMap,
+          selectedPosition.x,
+          selectedPosition.y,
+        )}
         icon={createFocusIcon()}
         interactive={false}
       />

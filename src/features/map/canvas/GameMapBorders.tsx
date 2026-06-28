@@ -3,13 +3,18 @@ import { LayerGroup, Polyline, Polygon } from "react-leaflet";
 import { useMarkers } from "@/context/MarkersContext";
 import type { RegionInstance } from "@/types/game";
 import { useGameData } from "@/context/GameDataContext";
+import { useGameMap } from "@/context/GameMapContext";
 
 type Props = {
   hoveredRegion?: RegionInstance;
   setHoveredRegion: (hoveredRegion?: RegionInstance) => void;
 };
 
-const xyToLatLng = ([x, y]: number[]): [number, number] => [y, x];
+// DATA (image-space) [x, y] → Leaflet [lat, lng] with the single vertical flip
+// (`lat = mapHeight - y`). `mapHeight` is the full tile-grid pixel height.
+const xyToLatLng =
+  (mapHeight: number) =>
+  ([x, y]: number[]): [number, number] => [mapHeight - y, x];
 
 function edgeKey(a: number[], b: number[]) {
   const A = `${a}`;
@@ -28,11 +33,14 @@ const BaseRegions = memo(function BaseRegions({
   regions,
   visibleRegions,
   setHoveredRegion,
+  mapHeight,
 }: {
   regions: RegionInstance[];
   visibleRegions?: Set<string>;
   setHoveredRegion: (region?: RegionInstance) => void;
+  mapHeight: number;
 }) {
+  const toLatLng = xyToLatLng(mapHeight);
   return (
     <LayerGroup>
       {regions
@@ -41,7 +49,7 @@ const BaseRegions = memo(function BaseRegions({
           region.borders.map((polygon, idx) => (
             <Polygon
               key={`${region.name}-base-${idx}`}
-              positions={polygon.map(xyToLatLng)}
+              positions={polygon.map(toLatLng)}
               pathOptions={{
                 color: "var(--primary)",
                 weight: 1,
@@ -61,16 +69,19 @@ const BaseRegions = memo(function BaseRegions({
 /** Hovered-region fill highlight, drawn on top, non-interactive. */
 const HoverHighlight = memo(function HoverHighlight({
   region,
+  mapHeight,
 }: {
   region?: RegionInstance;
+  mapHeight: number;
 }) {
   if (!region) return null;
+  const toLatLng = xyToLatLng(mapHeight);
   return (
     <LayerGroup>
       {region.borders.map((polygon, idx) => (
         <Polygon
           key={`${region.name}-hl-${idx}`}
-          positions={polygon.map(xyToLatLng)}
+          positions={polygon.map(toLatLng)}
           pathOptions={{
             color: "var(--primary)",
             weight: 1,
@@ -129,9 +140,14 @@ const GameMapBorders: React.FC<Props> = ({
 }) => {
   const { regions } = useMarkers();
   const { showBorders, visibleRegions } = useGameData();
+  const { selectedMap } = useGameMap();
+  const mapHeight = selectedMap
+    ? selectedMap.tileHeight * selectedMap.tilesCountY
+    : 0;
 
   // De-duplicate shared edges so a border drawn between two regions renders once.
   const segments = useMemo(() => {
+    const toLatLng = xyToLatLng(mapHeight);
     const edgeMap = new Map<
       string,
       { positions: [number, number][]; regions: string[] }
@@ -143,7 +159,7 @@ const GameMapBorders: React.FC<Props> = ({
           const a = poly[i];
           const b = poly[i + 1];
           const key = edgeKey(a, b);
-          const pos: [number, number][] = [xyToLatLng(a), xyToLatLng(b)];
+          const pos: [number, number][] = [toLatLng(a), toLatLng(b)];
 
           if (!edgeMap.has(key)) {
             edgeMap.set(key, { positions: pos, regions: [region.name] });
@@ -159,7 +175,7 @@ const GameMapBorders: React.FC<Props> = ({
       positions: val.positions,
       regions: val.regions,
     }));
-  }, [regions]);
+  }, [regions, mapHeight]);
 
   return (
     <LayerGroup>
@@ -167,8 +183,9 @@ const GameMapBorders: React.FC<Props> = ({
         regions={regions}
         visibleRegions={visibleRegions}
         setHoveredRegion={setHoveredRegion}
+        mapHeight={mapHeight}
       />
-      <HoverHighlight region={hoveredRegion} />
+      <HoverHighlight region={hoveredRegion} mapHeight={mapHeight} />
       {showBorders ? (
         <BorderSegments
           segments={segments}

@@ -1,6 +1,8 @@
 import React from "react";
 import { useMapEvents } from "react-leaflet";
 import { useUserMarkers } from "@/context/UserMarkersContext";
+import { useGameMap } from "@/context/GameMapContext";
+import { latLngToData } from "@/lib/coords";
 
 type MapClickPickerProps = {
   createMarker: (x: number, y: number) => void;
@@ -8,14 +10,14 @@ type MapClickPickerProps = {
 
 const MapClickPicker: React.FC<MapClickPickerProps> = ({ createMarker }) => {
   const { pickMode } = useUserMarkers();
+  const { selectedMap } = useGameMap();
 
   useMapEvents({
     click(e) {
-      if (!pickMode) return;
+      if (!pickMode || !selectedMap) return;
 
-      // CRS.Simple: lat = y, lng = x
-      const x = e.latlng.lng;
-      const y = e.latlng.lat;
+      // Leaflet (lat, lng) → DATA (image-space) with the inverse vertical flip.
+      const { x, y } = latLngToData(selectedMap, e.latlng.lat, e.latlng.lng);
 
       createMarker(x, y);
     },

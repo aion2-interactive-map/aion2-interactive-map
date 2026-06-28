@@ -58,8 +58,10 @@ export interface MarkerTypeCategory {
 /**
  * A concrete marker instance on a map.
  *
- * IMPORTANT: position is [x, y] in our app.
- * When passing to Leaflet (CRS.Simple), we convert to [y, x].
+ * IMPORTANT: position is [x, y] in DATA / image space (y increases DOWNWARD,
+ * matching the tiles). When passing to Leaflet (CRS.Simple, y increases UP) we
+ * flip vertically once: `lat = mapHeight - y`, `lng = x`. Use the helpers in
+ * `@/lib/coords` (`dataToLatLng` / `latLngToData`) for every conversion.
  */
 export interface MarkerInstance {
   id: string;
