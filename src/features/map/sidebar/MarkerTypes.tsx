@@ -219,7 +219,8 @@ export default function MarkerTypes() {
                 <div className="my-2 flex w-full items-center justify-between gap-2 px-1">
                   <div className="flex items-center gap-2">
                     <span className="flex h-4 w-4 items-center justify-center">
-                      <CatIcon className="h-3.5 w-3.5 text-primary" />
+                      {/* Inherit the category title's text color (currentColor). */}
+                      <CatIcon className="h-3.5 w-3.5" />
                     </span>
                     <span className="text-sm font-medium leading-[14px]">
                       {t(`types:categories.${category.name}.name`, category.name)}
