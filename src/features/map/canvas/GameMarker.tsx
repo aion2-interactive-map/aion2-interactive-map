@@ -55,7 +55,10 @@ const GameMarkerInner: React.FC<Props> = ({ marker, onSelectMarker }) => {
       sub?.color && sub.color !== "#000000" ? sub.color : undefined;
     icon = createPinIcon(innerIcon, iconScale, isCompleted, "pin", dot);
   } else {
-    icon = createPinIcon(innerIcon, iconScale, isCompleted, "image");
+    // Gathering nodes are numerous and dense; render them smaller than the
+    // POI/location markers so the map stays readable.
+    const imageScale = cat?.name === "gathering" ? 0.65 : iconScale;
+    icon = createPinIcon(innerIcon, imageScale, isCompleted, "image");
   }
 
   const localizedName = marker.localizedName || marker.name || subtypeLabel;

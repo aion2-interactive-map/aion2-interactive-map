@@ -44,8 +44,8 @@ type Props = {
  * past TIER3_MIN_ZOOM reveals tier 3; zooming out below TIER2_MIN_ZOOM leaves
  * only tier 1.
  */
-const TIER2_MIN_ZOOM = -1; // at/above this zoom, tier-2 markers appear
-const TIER3_MIN_ZOOM = 1; // at/above this zoom, tier-3 markers appear
+const TIER2_MIN_ZOOM = -2.5; // at/above this zoom, tier-2 markers appear
+const TIER3_MIN_ZOOM = -0.5; // at/above this zoom, tier-3 markers appear
 
 /** Compute the highest marker tier visible at the given Leaflet zoom. */
 function visibleTierForZoom(zoom: number): number {
