@@ -8,6 +8,7 @@ import { useMarkers } from "@/context/MarkersContext";
 import { useGameData } from "@/context/GameDataContext";
 import { useUserMarkers } from "@/context/UserMarkersContext";
 import { useTranslation } from "react-i18next";
+import { dataToLatLng } from "@/lib/coords";
 
 import GameMapTiles from "@/features/map/canvas/GameMapTiles";
 import GameMapBorders from "@/features/map/canvas/GameMapBorders";
@@ -32,20 +33,28 @@ type Props = {
 };
 
 /**
- * 3-tier level-of-detail thresholds (Leaflet zoom). The map opens at the
- * default zoom 0 (the MapContainer is not bounds-fitted, it mounts at zoom 0),
- * range -3..2.
+ * 3-tier level-of-detail thresholds (Leaflet zoom). The map opens fully zoomed
+ * out at the default zoom -3 (range -3..2; the MapContainer is not
+ * bounds-fitted, it mounts at the `zoom` prop).
  *
- * - tier 1 markers are always shown.
+ * - tier 1 markers are always shown (subject to subtype filter + culling).
  * - tier 2 markers appear at/above TIER2_MIN_ZOOM.
  * - tier 3 markers appear at/above TIER3_MIN_ZOOM.
  *
- * With the defaults below the default view (zoom 0) shows tier 1+2; zooming in
- * past TIER3_MIN_ZOOM reveals tier 3; zooming out below TIER2_MIN_ZOOM leaves
- * only tier 1.
+ * With the values below the default view (zoom -3) shows only tier 1; zooming
+ * in past TIER2_MIN_ZOOM adds tier 2, and past TIER3_MIN_ZOOM adds tier 3.
  */
-const TIER2_MIN_ZOOM = -2.5; // at/above this zoom, tier-2 markers appear
-const TIER3_MIN_ZOOM = -0.5; // at/above this zoom, tier-3 markers appear
+const TIER2_MIN_ZOOM = -1; // at/above this zoom, tier-2 markers appear
+const TIER3_MIN_ZOOM = 0; // at/above this zoom, tier-3 markers appear
+
+/**
+ * Viewport culling: only markers whose position falls inside the current map
+ * bounds (expanded by this fraction on each side) are mounted. The padding
+ * keeps a ring of off-screen markers ready so panning doesn't pop them in at
+ * the edge. This is the main perf lever for the ~3.6k-marker maps: without it,
+ * crossing a tier threshold bulk-mounts thousands of DOM markers in one frame.
+ */
+const VIEWPORT_PAD = 0.5;
 
 /** Compute the highest marker tier visible at the given Leaflet zoom. */
 function visibleTierForZoom(zoom: number): number {
@@ -55,14 +64,23 @@ function visibleTierForZoom(zoom: number): number {
 }
 
 /**
- * Tracks the current Leaflet zoom level into React state. Zoom changes are
- * infrequent, so re-rendering GameMapView on `zoomend` is acceptable.
+ * Tracks the current Leaflet zoom level AND padded viewport bounds into React
+ * state. Fires only on `moveend`/`zoomend` (end of gesture, not continuously),
+ * so re-rendering GameMapView is infrequent. Seeds an initial value on mount so
+ * markers cull correctly before the first gesture.
  */
-const ZoomWatcher: React.FC<{ onZoom: (zoom: number) => void }> = ({
-  onZoom,
-}) => {
+const ViewportWatcher: React.FC<{
+  onChange: (zoom: number, bounds: L.LatLngBounds) => void;
+}> = ({ onChange }) => {
+  const map = useMap();
+  useEffect(() => {
+    onChange(map.getZoom(), map.getBounds());
+    // Run once per map instance; `onChange` is a stable useCallback.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [map]);
   useMapEvents({
-    zoomend: (e) => onZoom(e.target.getZoom()),
+    moveend: (e) => onChange(e.target.getZoom(), e.target.getBounds()),
+    zoomend: (e) => onChange(e.target.getZoom(), e.target.getBounds()),
   });
   return null;
 };
@@ -94,8 +112,19 @@ const GameMapView: React.FC<Props> = ({
   const [hoveredRegion, setHoveredRegion] = useState<RegionInstance | undefined>(
     undefined,
   );
-  // Initialized to the MapContainer default zoom (0); updated on `zoomend`.
-  const [zoom, setZoom] = useState(0);
+  // Initialized to the MapContainer default zoom (-3); updated on `zoomend`.
+  const [zoom, setZoom] = useState(-3);
+  // Padded visible bounds for viewport culling; null until the map is ready
+  // (during which culling is skipped — only the few default-zoom markers show).
+  const [viewBounds, setViewBounds] = useState<L.LatLngBounds | null>(null);
+
+  const handleViewport = useCallback(
+    (z: number, bounds: L.LatLngBounds) => {
+      setZoom(z);
+      setViewBounds(bounds.pad(VIEWPORT_PAD));
+    },
+    [],
+  );
 
   const { selectedMap } = useGameMap();
   const { visibleSubtypes, lodEnabled } = useGameData();
@@ -149,7 +178,7 @@ const GameMapView: React.FC<Props> = ({
         key={selectedMap.id}
         center={center}
         bounds={bounds}
-        zoom={0}
+        zoom={-3}
         minZoom={-3}
         maxZoom={2}
         zoomSnap={0.25}
@@ -161,7 +190,7 @@ const GameMapView: React.FC<Props> = ({
         ref={mapRef}
       >
         <MapZoomControl />
-        <ZoomWatcher onZoom={setZoom} />
+        <ViewportWatcher onChange={handleViewport} />
         <TestMapHandle />
         <CursorTracker />
         <MapCursorController />
@@ -180,14 +209,22 @@ const GameMapView: React.FC<Props> = ({
 
         {markers
           .filter((m) => {
-            // Selection always overrides both subtype filter and LOD.
+            // Selection always overrides subtype filter, LOD and culling so the
+            // focused marker (and its popup) render even when off-screen.
             if (selectedMarkerId === m.id) return true;
             // Subtype filter (as today).
             if (!visibleSubtypes?.has(m.subtype)) return false;
             // Tier-based level-of-detail gate.
             if (lodEnabled) {
               if (m.tier == null) return false;
-              return m.tier <= visibleTierForZoom(zoom);
+              if (m.tier > visibleTierForZoom(zoom)) return false;
+            }
+            // Viewport culling: skip markers outside the padded visible bounds.
+            // Computed last (after the cheap subtype/tier checks) and only once
+            // `viewBounds` is known. Keeps the mounted DOM-marker count to the
+            // on-screen subset, which is the main fix for zoom/pan stutter.
+            if (viewBounds && !viewBounds.contains(dataToLatLng(selectedMap, m.x, m.y))) {
+              return false;
             }
             return true;
           })
