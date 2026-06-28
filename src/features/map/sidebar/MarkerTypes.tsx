@@ -1,6 +1,16 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Diamond, Eye, EyeOff } from "lucide-react";
+import {
+  Diamond,
+  Eye,
+  EyeOff,
+  Gem,
+  Leaf,
+  MapPin,
+  PawPrint,
+  ScrollText,
+  type LucideIcon,
+} from "lucide-react";
 import { useGameMap } from "@/context/GameMapContext";
 import { useGameData } from "@/context/GameDataContext";
 import { useMarkers } from "@/context/MarkersContext";
@@ -44,6 +54,18 @@ function buttonClasses(active: boolean) {
 
 const inactiveStyle: React.CSSProperties = {
   background: "var(--color-sidebar-button)",
+};
+
+/**
+ * Per-category section icon (UI icon, NOT from game data). One distinct lucide
+ * glyph per marker category, in the spirit of the old code / Lanhu.
+ */
+const CATEGORY_ICONS: Record<string, LucideIcon> = {
+  location: MapPin,
+  collection: Gem,
+  gathering: Leaf,
+  quest: ScrollText,
+  creature: PawPrint,
 };
 
 export default function MarkerTypes() {
@@ -185,6 +207,8 @@ export default function MarkerTypes() {
             }
           };
 
+          const CatIcon = CATEGORY_ICONS[category.name] ?? Diamond;
+
           return (
             <AccordionItem
               key={category.name}
@@ -195,7 +219,7 @@ export default function MarkerTypes() {
                 <div className="my-2 flex w-full items-center justify-between gap-2 px-1">
                   <div className="flex items-center gap-2">
                     <span className="flex h-4 w-4 items-center justify-center">
-                      <Diamond className="h-3.5 w-3.5 text-primary" />
+                      <CatIcon className="h-3.5 w-3.5 text-primary" />
                     </span>
                     <span className="text-sm font-medium leading-[14px]">
                       {t(`types:categories.${category.name}.name`, category.name)}
