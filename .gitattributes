@@ -1,0 +1,26 @@
+# Normalize all text files to LF in the repository AND in the working tree.
+# This is committed, so it overrides every contributor's local core.autocrlf /
+# core.eol settings — the canonical, machine-independent fix for CRLF churn.
+* text=auto eol=lf
+
+# Windows-only scripts must keep CRLF to run correctly.
+*.bat   text eol=crlf
+*.cmd   text eol=crlf
+*.ps1   text eol=crlf
+
+# Binary assets: never apply EOL conversion or diff as text.
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.webp  binary
+*.avif  binary
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+*.otf   binary
+*.eot   binary
+*.pdf   binary
+*.zip   binary
+*.gz    binary
