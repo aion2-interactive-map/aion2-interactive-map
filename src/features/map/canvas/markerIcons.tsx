@@ -1,7 +1,6 @@
 import L from "leaflet";
 import { CheckCircle } from "lucide-react";
 import { renderToString } from "react-dom/server";
-import type { UserMarkerInstance, UserMarkerLocalType } from "@/types/game";
 
 /** Lanhu marker-pin colors (design "1天族"). */
 const LANHU_PIN_DISC_BG = "rgba(0,0,0,0.6)"; // 圆形 17 background
@@ -159,21 +158,4 @@ export function createPinIcon(
   });
   iconCache.set(cacheKey, icon);
   return icon;
-}
-
-const USER_MARKER_LOCAL_ICON_MAP: Record<UserMarkerLocalType, string> = {
-  completed: "images/Markers/Completed.svg",
-  location: "images/Markers/Location.svg",
-  fox: "images/Markers/Fox.svg",
-  favorite: "images/Markers/Favorite.svg",
-  gathering: "images/Markers/Gathering.svg",
-  creature: "images/Markers/Creature.svg",
-};
-
-export function getUserMarkerLocalIcon(
-  marker: UserMarkerInstance,
-): string | null {
-  if (marker.type !== "local") return null;
-  if (!marker.localType) return null;
-  return USER_MARKER_LOCAL_ICON_MAP[marker.localType] ?? null;
 }

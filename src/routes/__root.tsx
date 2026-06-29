@@ -3,7 +3,6 @@ import { ThemeProvider } from "@/context/ThemeContext";
 import { GameMapProvider } from "@/context/GameMapContext";
 import { MarkersProvider } from "@/context/MarkersContext";
 import { GameDataProvider } from "@/context/GameDataContext";
-import { UserMarkersProvider } from "@/context/UserMarkersContext";
 
 export const Route = createRootRoute({
   component: () => (
@@ -11,9 +10,7 @@ export const Route = createRootRoute({
       <GameMapProvider>
         <MarkersProvider>
           <GameDataProvider>
-            <UserMarkersProvider>
-              <Outlet />
-            </UserMarkersProvider>
+            <Outlet />
           </GameDataProvider>
         </MarkersProvider>
       </GameMapProvider>

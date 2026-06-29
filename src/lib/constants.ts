@@ -3,6 +3,5 @@ export const COMPLETED_MARKERS_V1_PREFIX = `${STORAGE_PREFIX}.completedMarkers.v
 export const COMPLETED_MARKERS_V2_PREFIX = `${STORAGE_PREFIX}.completedMarkers.v2`;
 export const VISIBLE_SUBTYPES_STORAGE_PREFIX = `${STORAGE_PREFIX}.visibleSubtypes.v1.`;
 export const VISIBLE_REGIONS_STORAGE_PREFIX = `${STORAGE_PREFIX}.visibleRegions.v1.`;
-export const USER_MARKERS_STORAGE_PREFIX = `${STORAGE_PREFIX}.userMarkers.v1.`;
 export const SEARCH_DEBOUNCE_MS = 300;
 export const MAP_FLY_TO_DURATION = 0.5;

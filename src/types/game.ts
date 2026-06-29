@@ -88,31 +88,6 @@ export type MarkerWithTranslations = MarkerInstance & {
   localizedDescription?: string;
 };
 
-export type UserMarkerLocalType =
-  | "completed"
-  | "location"
-  | "fox"
-  | "favorite"
-  | "gathering"
-  | "creature";
-
-export interface UserMarkerInstance {
-  id: string;
-  markerId: string;
-  subtype: string;
-  mapId: string;
-  x: number;
-  y: number;
-  name: string;
-  description: string;
-  image: string;
-  type: "local" | "feedback" | "uploaded";
-  localType?: UserMarkerLocalType;
-  status?: "pending" | "accepted" | "rejected" | "revision" | "deleted";
-  reply?: string;
-}
-
-
 export interface CommentInstance {
   id: string;
   content: string;

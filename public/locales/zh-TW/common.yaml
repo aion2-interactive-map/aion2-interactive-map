@@ -74,7 +74,6 @@ menu:
   collapse: "收起"
   showBorders: "顯示地區邊界"
   showMarkerNames: "顯示標記名字"
-  showCustomMarkers: "顯示自訂標點"
   lodToggle: "按縮放顯示層級"
 
 buttons:

@@ -1,6 +1,5 @@
 import React from "react";
 import { useMapEvents } from "react-leaflet";
-import { useUserMarkers } from "@/context/UserMarkersContext";
 import { useGameMap } from "@/context/GameMapContext";
 import { latLngToData } from "@/lib/coords";
 
@@ -20,16 +19,11 @@ const MapContextMenu: React.FC<MapContextMenuProps> = ({
   onOpenMenu,
   onCloseMenu,
 }) => {
-  const { setPickMode, pickMode } = useUserMarkers();
   const { selectedMap } = useGameMap();
 
   const map = useMapEvents({
     contextmenu(e) {
       e.originalEvent.preventDefault();
-      if (pickMode) {
-        setPickMode(false);
-        return;
-      }
       if (!selectedMap) return;
 
       // Leaflet (lat, lng) → DATA (image-space) with the inverse vertical flip.

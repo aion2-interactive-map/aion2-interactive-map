@@ -14,7 +14,6 @@ import {
 import { useGameMap } from "@/context/GameMapContext";
 import { useGameData } from "@/context/GameDataContext";
 import { useMarkers } from "@/context/MarkersContext";
-import { useUserMarkers } from "@/context/UserMarkersContext";
 import { parseIconUrl } from "@/lib/url";
 import { cn } from "@/lib/utils";
 import {
@@ -82,7 +81,6 @@ export default function MarkerTypes() {
   } = useGameData();
   const { clearMarkerCompleted, showLabels, setShowLabels, subtypeCounts, completedCounts } =
     useMarkers();
-  const { hideUserMarkers, setHideUserMarkers } = useUserMarkers();
   const { t } = useTranslation(["common", "types"]);
   const [confirmOpen, setConfirmOpen] = useState(false);
 
@@ -108,9 +106,9 @@ export default function MarkerTypes() {
   }, [renderableCategories.map((c) => c.name).join("|")]);
 
   return (
-    <div className="flex w-full flex-col px-2 pb-4">
+    <div className="flex w-full flex-col px-4 pb-4">
       {/* --- Control cluster: two-per-row button grid --- */}
-      <div className="grid grid-cols-2 gap-2">
+      <div className="grid grid-cols-2 gap-x-2.5 gap-y-2">
         <button
           type="button"
           className={buttonClasses(false)}
@@ -152,14 +150,6 @@ export default function MarkerTypes() {
           onClick={handleToggleBorders}
         >
           {t("common:menu.showBorders", "Show region borders")}
-        </button>
-        <button
-          type="button"
-          className={buttonClasses(!hideUserMarkers)}
-          style={!hideUserMarkers ? undefined : inactiveStyle}
-          onClick={() => setHideUserMarkers(!hideUserMarkers)}
-        >
-          {t("common:menu.showCustomMarkers", "Show custom markers")}
         </button>
         <button
           type="button"
@@ -216,7 +206,7 @@ export default function MarkerTypes() {
               className="border-b-0"
             >
               <AccordionTrigger className="px-0 pt-3 pb-0 hover:no-underline">
-                <div className="my-2 flex w-full items-center justify-between gap-2 px-1">
+                <div className="my-2 flex w-full items-center justify-between gap-2 px-0">
                   <div className="flex items-center gap-2">
                     <span className="flex h-4 w-4 items-center justify-center">
                       {/* Inherit the category title's text color (currentColor). */}
@@ -254,7 +244,7 @@ export default function MarkerTypes() {
               </AccordionTrigger>
 
               <AccordionContent className="pt-0 pb-0">
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-2 gap-x-2.5 gap-y-2">
                   {category.subtypes.map((sub) => {
                     const total = subtypeCounts[sub.name] ?? 0;
                     if (total === 0) return null;

@@ -10,18 +10,13 @@ import type {
 import { useGameMap } from "@/context/GameMapContext";
 import { useMarkers } from "@/context/MarkersContext";
 import { useGameData } from "@/context/GameDataContext";
-import { useUserMarkers } from "@/context/UserMarkersContext";
-import { useTranslation } from "react-i18next";
 import { dataToLatLng } from "@/lib/coords";
 import "@/lib/leaflet-smooth-wheel-zoom"; // registers the smooth wheel-zoom handler
 
 import GameMapTiles from "@/features/map/canvas/GameMapTiles";
 import GameMapBorders from "@/features/map/canvas/GameMapBorders";
 import GameMarker from "@/features/map/canvas/GameMarker";
-import UserMarker from "@/features/map/canvas/UserMarker";
 import CursorTracker from "@/features/map/canvas/CursorTracker";
-import MapCursorController from "@/features/map/canvas/MapCursorController";
-import MapClickPicker from "@/features/map/canvas/MapClickPicker";
 import MapZoomControl from "@/features/map/canvas/MapZoomControl";
 import MarkerFocusController from "@/features/map/canvas/MarkerFocusController";
 import MapContextMenu, {
@@ -146,14 +141,6 @@ const GameMapView: React.FC<Props> = ({
   const { selectedMap } = useGameMap();
   const { visibleSubtypes, lodEnabled } = useGameData();
   const { markers } = useMarkers();
-  const { pickMode, createMarker, userMarkers, hideUserMarkers } =
-    useUserMarkers();
-
-  const regionNs = `regions/${selectedMap?.name}`;
-  const { t } = useTranslation([regionNs]);
-  const regionLabel = hoveredRegion
-    ? t(`${regionNs}:${hoveredRegion.name}.name`)
-    : "";
 
   const handleCopyPosition = useCallback((x: number, y: number) => {
     const text = `${Math.round(x)}, ${Math.round(y)}`;
@@ -310,7 +297,7 @@ const GameMapView: React.FC<Props> = ({
     <div
       className="flex-1 relative"
       onClick={() => setContextMenu(null)}
-      style={{ cursor: pickMode ? "crosshair" : "default" }}
+      style={{ cursor: "default" }}
     >
       <MapContainer
         key={selectedMap.id}
@@ -344,8 +331,6 @@ const GameMapView: React.FC<Props> = ({
         <ViewportWatcher onChange={handleViewport} />
         <TestMapHandle />
         <CursorTracker />
-        <MapCursorController />
-        <MapClickPicker createMarker={createMarker} />
 
         <MapContextMenu
           onOpenMenu={(state) => setContextMenu(state)}
@@ -367,12 +352,6 @@ const GameMapView: React.FC<Props> = ({
           />
         ))}
 
-        {!hideUserMarkers
-          ? userMarkers
-              .filter((m) => m.type === "local")
-              .map((m) => <UserMarker key={m.id} marker={m} />)
-          : null}
-
         <MarkerFocusController
           selectedMarkerId={selectedMarkerId}
           selectedPosition={selectedPosition}
@@ -386,7 +365,7 @@ const GameMapView: React.FC<Props> = ({
 
       {/* Bottom status bar (Lanhu): subscribes to the cursor store itself so
           mousemove re-renders ONLY the bar, not the map layers. */}
-      <MapStatusBar regionLabel={regionLabel} />
+      <MapStatusBar />
 
       {/* Context menu overlay */}
       {contextMenu && (
