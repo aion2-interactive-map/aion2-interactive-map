@@ -15,7 +15,8 @@ import Logo from "./Logo";
 import SelectMap from "./SelectMap";
 import MarkerTypes from "./MarkerTypes";
 
-const SIDEBAR_WIDTH = 370;
+// Lanhu "1天族" board: sidebar container (容器 112) is 173 logical px wide → 346px @2x.
+const SIDEBAR_WIDTH = 346;
 
 export default function Sidebar() {
   const [collapsed, setCollapsed] = useState(false);
@@ -42,7 +43,7 @@ export default function Sidebar() {
         className="pointer-events-none absolute inset-0 bg-no-repeat opacity-70"
         style={{
           backgroundImage: `url(${bgUrl})`,
-          backgroundSize: "370px auto",
+          backgroundSize: "346px auto",
           backgroundPosition: "top left",
         }}
       />
@@ -60,7 +61,7 @@ export default function Sidebar() {
                 className="w-full"
               >
                 <AccordionItem value="types" className="border-b-0">
-                  <AccordionTrigger className="px-2 py-4 hover:no-underline">
+                  <AccordionTrigger className="px-4 py-4 hover:no-underline">
                     <div className="flex items-center gap-2">
                       <span className="flex h-4 w-4 items-center justify-center">
                         <Sparkles className="h-3.5 w-3.5 fill-primary text-primary" />

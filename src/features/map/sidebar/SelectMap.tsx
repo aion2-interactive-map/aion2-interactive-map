@@ -25,7 +25,7 @@ export default function SelectMap() {
     <div className="w-full flex justify-center mt-5">
       {/* Outer styled gradient bar */}
       <div
-        className="w-[323px] h-[38px] flex items-center justify-center border border-transparent rounded-none"
+        className="w-[314px] h-[38px] flex items-center justify-center border border-transparent rounded-none"
         style={{
           background:
             "linear-gradient(90deg, rgba(190,211,222,0) 0%, rgba(190,211,222,0.5) 54%, rgba(190,211,222,0) 100%)",
