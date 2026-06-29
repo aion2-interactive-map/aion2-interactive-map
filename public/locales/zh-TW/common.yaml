@@ -22,6 +22,11 @@ theme:
   dark: "夜晚模式（魔族）"
   abyss: "黃昏模式（深淵）"
 
+fragmentType:
+  ground: "地面"
+  air: "空中"
+  water: "水中"
+
 ui:
   confirm: "確認"
   cancel: "取消"

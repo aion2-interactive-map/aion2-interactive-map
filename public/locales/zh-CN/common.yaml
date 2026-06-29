@@ -60,6 +60,11 @@ theme:
   dark: "夜晚模式（魔族）"
   abyss: "黄昏模式（深渊）"
 
+fragmentType:
+  ground: "地面"
+  air: "空中"
+  water: "水中"
+
 menu:
   home: "首页"
   settings: "设置"

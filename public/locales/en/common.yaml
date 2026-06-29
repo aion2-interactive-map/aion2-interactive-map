@@ -32,6 +32,11 @@ theme:
   dark: "Night Mode (Asmodian)"
   abyss: "Dawn Mode (Abyss)"
 
+fragmentType:
+  ground: "Ground"
+  air: "Air"
+  water: "Water"
+
 menu:
   home: "Home"
   settings: "Settings"
