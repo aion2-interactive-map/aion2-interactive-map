@@ -10,6 +10,14 @@ import { useGameData } from "@/context/GameDataContext";
 import { createPinIcon } from "@/features/map/canvas/markerIcons";
 import { parseIconUrl } from "@/lib/url";
 
+/**
+ * Subtypes (beyond the whole `gathering` category) that are numerous/dense and
+ * read better rendered a touch smaller than the POI/location markers.
+ */
+const COMPACT_SUBTYPES = new Set(["fragments", "hiddenCube"]);
+/** Scale applied to gathering nodes and the compact subtypes above. */
+const COMPACT_SCALE = 0.9;
+
 type Props = {
   marker: MarkerWithTranslations;
   /**
@@ -19,12 +27,14 @@ type Props = {
    */
   position: L.LatLng;
   onSelectMarker?: (markerId: string) => void;
+  selected?: boolean;
 };
 
 const GameMarkerInner: React.FC<Props> = ({
   marker,
   position,
   onSelectMarker,
+  selected = false,
 }) => {
   const { selectedMap } = useGameMap();
   const { allSubtypes } = useGameData();
@@ -56,19 +66,22 @@ const GameMarkerInner: React.FC<Props> = ({
   const innerIcon = parseIconUrl(rawIcon, selectedMap);
   let icon: L.DivIcon;
   if (category === "creature") {
-    icon = createPinIcon(innerIcon, 0.9, isCompleted, "circular");
+    icon = createPinIcon(innerIcon, 0.9, isCompleted, "circular", undefined, selected);
   } else if (!rawIcon) {
     // No game icon for this subtype: fall back to the circular dot. Use the
     // subtype color as the inner dot when provided (non-black); otherwise the
     // default Lanhu blue is used.
     const dot =
       sub?.color && sub.color !== "#000000" ? sub.color : undefined;
-    icon = createPinIcon(innerIcon, iconScale, isCompleted, "pin", dot);
+    icon = createPinIcon(innerIcon, iconScale, isCompleted, "pin", dot, selected);
   } else {
-    // Gathering nodes are numerous and dense; render them smaller than the
-    // POI/location markers so the map stays readable.
-    const imageScale = category === "gathering" ? 0.65 : iconScale;
-    icon = createPinIcon(innerIcon, imageScale, isCompleted, "image");
+    // Gathering nodes plus a few dense collection subtypes (fragments,
+    // hiddenCube) render a touch smaller so dense clusters stay readable.
+    const compact =
+      category === "gathering" ||
+      (!!sub?.name && COMPACT_SUBTYPES.has(sub.name));
+    const imageScale = compact ? COMPACT_SCALE : iconScale;
+    icon = createPinIcon(innerIcon, imageScale, isCompleted, "image", undefined, selected);
   }
 
   const localizedName = marker.localizedName || marker.name || subtypeLabel;
@@ -77,6 +90,9 @@ const GameMarkerInner: React.FC<Props> = ({
     <Marker
       position={position}
       icon={icon}
+      // Lift the selected marker above its neighbors so the larger,
+      // shadowed icon isn't clipped by overlapping markers.
+      zIndexOffset={selected ? 1000 : 0}
       eventHandlers={{
         click: () => {
           onSelectMarker?.(marker.id);

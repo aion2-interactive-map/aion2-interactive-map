@@ -19,6 +19,13 @@ export type PinVariant = "image" | "circular" | "pin";
  *                subtypes that have no game-icon image. `innerColor` overrides
  *                the dot color (default blue #2E97FF).
  */
+/** Selected-marker emphasis: how much the icon grows and its lifted shadow. */
+const SELECTED_SCALE = 1.2;
+// Two chained drop-shadows: a soft lifted shadow below, plus a tight dark ring
+// hugging the icon's outline so the emphasis stays apparent on busy/dark map
+// tiles (a single low-opacity shadow washes out).
+const SELECTED_SHADOW =
+  "drop-shadow(0 3px 5px rgba(0,0,0,0.85)) drop-shadow(0 0 3px rgba(0,0,0,0.9))";
 
 /**
  * Icon cache keyed by the visual signature of a pin. Building a `DivIcon`
@@ -40,8 +47,9 @@ export function createPinIcon(
   completed: boolean,
   variant: PinVariant = "image",
   innerColor: string = LANHU_PIN_DOT,
+  selected: boolean = false,
 ): L.DivIcon {
-  const cacheKey = `${variant}|${innerIcon}|${iconScale}|${completed ? 1 : 0}|${innerColor}`;
+  const cacheKey = `${variant}|${innerIcon}|${iconScale}|${completed ? 1 : 0}|${innerColor}|${selected ? 1 : 0}`;
   const cached = iconCache.get(cacheKey);
   if (cached) return cached;
   const iconBaseSize = 40;
@@ -131,6 +139,16 @@ export function createPinIcon(
         alignItems: "center",
         justifyContent: "center",
         opacity: completed ? 0.4 : 1,
+        // Selected emphasis: grow from center (anchor stays at the 40px
+        // center, so the marker doesn't shift) and add a lifted drop shadow
+        // that follows the icon's actual alpha shape.
+        ...(selected
+          ? {
+              transform: `scale(${SELECTED_SCALE})`,
+              transformOrigin: "center",
+              filter: SELECTED_SHADOW,
+            }
+          : null),
       }}
     >
       {content}

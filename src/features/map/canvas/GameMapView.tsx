@@ -349,6 +349,7 @@ const GameMapView: React.FC<Props> = ({
             marker={marker}
             position={position}
             onSelectMarker={onSelectMarker}
+            selected={selectedMarkerId === marker.id}
           />
         ))}
 
