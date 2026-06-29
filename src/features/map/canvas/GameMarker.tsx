@@ -65,6 +65,9 @@ const GameMarkerInner: React.FC<Props> = ({
   // Icon-swap completion: subtypes that define `iconComplete` (fragments) show
   // a dedicated "done" icon instead of the generic dim + green check. When we
   // swap, we pass `renderCompleted=false` so the icon itself conveys completion.
+  // NOTE: `iconComplete` must be a non-empty path — an empty string would make
+  // `rawIcon` empty and route the marker into the `!rawIcon` pin fallback
+  // (losing both the swapped icon and the air/water badge).
   const useIconSwap = isCompleted && !!sub?.iconComplete;
   const rawIcon =
     (useIconSwap ? sub?.iconComplete : marker.icon || sub?.icon) || "";
