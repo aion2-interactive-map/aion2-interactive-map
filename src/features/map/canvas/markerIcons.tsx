@@ -20,6 +20,21 @@ export type PinVariant = "image" | "circular" | "pin";
  *                subtypes that have no game-icon image. `innerColor` overrides
  *                the dot color (default blue #2E97FF).
  */
+
+/**
+ * Icon cache keyed by the visual signature of a pin. Building a `DivIcon`
+ * runs `renderToString` (full React SSR) — at ~3.6k markers, doing that once
+ * per marker froze the map whenever a large set mounted (zoom-out / "show
+ * all"). Markers with the same appearance (same subtype icon, scale, variant,
+ * completed/selected flags) produce byte-identical HTML, so we build each
+ * distinct icon ONCE and share the `DivIcon` object across every marker that
+ * needs it. Leaflet clones the HTML per marker via `icon.createIcon()`, so a
+ * shared icon instance is safe. This collapses thousands of SSR renders into a
+ * few dozen. The set of distinct signatures is bounded (subtypes × a few
+ * flags), so the cache never needs eviction.
+ */
+const iconCache = new Map<string, L.DivIcon>();
+
 export function createPinIcon(
   innerIcon: string,
   iconScale: number,
@@ -27,6 +42,9 @@ export function createPinIcon(
   variant: PinVariant = "image",
   innerColor: string = LANHU_PIN_DOT,
 ): L.DivIcon {
+  const cacheKey = `${variant}|${innerIcon}|${iconScale}|${completed ? 1 : 0}|${innerColor}`;
+  const cached = iconCache.get(cacheKey);
+  if (cached) return cached;
   const iconBaseSize = 40;
   const iconSize = iconBaseSize * iconScale;
 
@@ -132,13 +150,15 @@ export function createPinIcon(
     </div>,
   );
 
-  return L.divIcon({
+  const icon = L.divIcon({
     html,
     className: "",
     iconSize: [iconBaseSize, iconBaseSize],
     iconAnchor: [iconBaseSize / 2, iconBaseSize / 2],
     popupAnchor: [0, -10],
   });
+  iconCache.set(cacheKey, icon);
+  return icon;
 }
 
 const USER_MARKER_LOCAL_ICON_MAP: Record<UserMarkerLocalType, string> = {

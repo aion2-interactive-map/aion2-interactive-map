@@ -9,24 +9,33 @@ import { useGameMap } from "@/context/GameMapContext";
 import { useGameData } from "@/context/GameDataContext";
 import { createPinIcon } from "@/features/map/canvas/markerIcons";
 import { parseIconUrl } from "@/lib/url";
-import { dataToLatLng } from "@/lib/coords";
 
 type Props = {
   marker: MarkerWithTranslations;
+  /**
+   * Precomputed Leaflet position. GameMapView already projects every marker
+   * through `dataToLatLng` for viewport culling, so it passes the result down
+   * rather than have each marker recompute the same conversion.
+   */
+  position: L.LatLng;
   onSelectMarker?: (markerId: string) => void;
 };
 
-const GameMarkerInner: React.FC<Props> = ({ marker, onSelectMarker }) => {
-  const { selectedMap, types } = useGameMap();
+const GameMarkerInner: React.FC<Props> = ({
+  marker,
+  position,
+  onSelectMarker,
+}) => {
+  const { selectedMap } = useGameMap();
   const { allSubtypes } = useGameData();
   const { showLabels, completedBySubtype } = useMarkers();
   const { t } = useTranslation();
 
   if (!selectedMap) return null;
 
-  // Find subtype and category definition
+  // Subtype definition (carries its category name, assigned in GameDataContext).
   const sub = allSubtypes.get(marker.subtype);
-  const cat = types.find((c) => c.name === sub?.category);
+  const category = sub?.category;
 
   const subtypeLabel = t(`types:subtypes.${sub?.name}.name`);
   const iconScale = sub?.iconScale || 1.25;
@@ -46,7 +55,7 @@ const GameMarkerInner: React.FC<Props> = ({ marker, onSelectMarker }) => {
   const rawIcon = marker.icon || sub?.icon || "";
   const innerIcon = parseIconUrl(rawIcon, selectedMap);
   let icon: L.DivIcon;
-  if (cat?.name === "creature") {
+  if (category === "creature") {
     icon = createPinIcon(innerIcon, 0.9, isCompleted, "circular");
   } else if (!rawIcon) {
     // No game icon for this subtype: fall back to the circular dot. Use the
@@ -58,7 +67,7 @@ const GameMarkerInner: React.FC<Props> = ({ marker, onSelectMarker }) => {
   } else {
     // Gathering nodes are numerous and dense; render them smaller than the
     // POI/location markers so the map stays readable.
-    const imageScale = cat?.name === "gathering" ? 0.65 : iconScale;
+    const imageScale = category === "gathering" ? 0.65 : iconScale;
     icon = createPinIcon(innerIcon, imageScale, isCompleted, "image");
   }
 
@@ -66,7 +75,7 @@ const GameMarkerInner: React.FC<Props> = ({ marker, onSelectMarker }) => {
 
   return (
     <Marker
-      position={dataToLatLng(selectedMap, marker.x, marker.y)}
+      position={position}
       icon={icon}
       eventHandlers={{
         click: () => {

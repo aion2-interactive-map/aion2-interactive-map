@@ -1,14 +1,19 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { MapContainer, useMap, useMapEvents } from "react-leaflet";
 import L from "leaflet";
 
-import type { MapRef, RegionInstance } from "@/types/game";
+import type {
+  MapRef,
+  MarkerWithTranslations,
+  RegionInstance,
+} from "@/types/game";
 import { useGameMap } from "@/context/GameMapContext";
 import { useMarkers } from "@/context/MarkersContext";
 import { useGameData } from "@/context/GameDataContext";
 import { useUserMarkers } from "@/context/UserMarkersContext";
 import { useTranslation } from "react-i18next";
 import { dataToLatLng } from "@/lib/coords";
+import "@/lib/leaflet-smooth-wheel-zoom"; // registers the smooth wheel-zoom handler
 
 import GameMapTiles from "@/features/map/canvas/GameMapTiles";
 import GameMapBorders from "@/features/map/canvas/GameMapBorders";
@@ -44,7 +49,7 @@ type Props = {
  * With the values below the default view (zoom -3) shows only tier 1; zooming
  * in past TIER2_MIN_ZOOM adds tier 2, and past TIER3_MIN_ZOOM adds tier 3.
  */
-const TIER2_MIN_ZOOM = -1; // at/above this zoom, tier-2 markers appear
+const TIER2_MIN_ZOOM = -1.25; // at/above this zoom, tier-2 markers appear
 const TIER3_MIN_ZOOM = 0; // at/above this zoom, tier-3 markers appear
 
 /**
@@ -55,6 +60,18 @@ const TIER3_MIN_ZOOM = 0; // at/above this zoom, tier-3 markers appear
  * crossing a tier threshold bulk-mounts thousands of DOM markers in one frame.
  */
 const VIEWPORT_PAD = 0.5;
+
+/**
+ * Progressive (chunked) mounting: how many *new* markers to mount per animation
+ * frame. When a large set becomes visible at once — zooming all the way out, or
+ * enabling every subtype while zoomed out — mounting all ~3.6k Leaflet markers
+ * in a single React commit blocks the main thread for one long frame (the
+ * freeze). Instead we mount at most this many per frame and yield, so the map
+ * stays interactive and markers stream in over a few frames. Higher = fills in
+ * faster but with bigger per-frame hitches; lower = smoother but slower to
+ * fully populate. ~250/frame fully populates 3.6k in ~15 frames (~0.25s).
+ */
+const MOUNT_CHUNK = 250;
 
 /** Compute the highest marker tier visible at the given Leaflet zoom. */
 function visibleTierForZoom(zoom: number): number {
@@ -149,6 +166,127 @@ const GameMapView: React.FC<Props> = ({
     }
   }, []);
 
+  /**
+   * Stable `id → Leaflet position` map, projected once per marker. Recomputed
+   * only when the marker set or map changes — NOT on pan/zoom. Reusing the same
+   * `LatLng` object for a given marker across renders keeps `GameMarker`'s
+   * `position` prop reference-stable, so `React.memo` still skips re-rendering
+   * markers that didn't move when the viewport changes.
+   */
+  const positionById = useMemo(() => {
+    const map = new Map<string, L.LatLng>();
+    if (!selectedMap) return map;
+    for (const m of markers) {
+      map.set(m.id, dataToLatLng(selectedMap, m.x, m.y));
+    }
+    return map;
+  }, [selectedMap, markers]);
+
+  /**
+   * The set of markers eligible to show, each paired with its (stable)
+   * projected position. Recomputed only when an input that affects visibility
+   * changes (markers, subtype filter, LOD, zoom tier, viewport bounds,
+   * selection) — NOT on unrelated re-renders.
+   */
+  const visibleMarkers = useMemo<
+    { marker: MarkerWithTranslations; position: L.LatLng }[]
+  >(() => {
+    if (!selectedMap) return [];
+    const visibleTier = visibleTierForZoom(zoom);
+    const out: { marker: MarkerWithTranslations; position: L.LatLng }[] = [];
+    for (const m of markers) {
+      // Selection always overrides subtype filter, LOD and culling so the
+      // focused marker (and its popup) render even when off-screen.
+      const isSelected = selectedMarkerId === m.id;
+      if (!isSelected) {
+        if (!visibleSubtypes?.has(m.subtype)) continue;
+        if (lodEnabled) {
+          if (m.tier == null) continue;
+          if (m.tier > visibleTier) continue;
+        }
+      }
+      const position = positionById.get(m.id)!;
+      // Viewport culling: skip markers outside the padded visible bounds (until
+      // `viewBounds` is known). Keeps the mounted DOM-marker count to the
+      // on-screen subset — the main fix for zoom/pan stutter.
+      if (!isSelected && viewBounds && !viewBounds.contains(position)) continue;
+      out.push({ marker: m, position });
+    }
+    return out;
+  }, [
+    selectedMap,
+    markers,
+    positionById,
+    visibleSubtypes,
+    lodEnabled,
+    zoom,
+    viewBounds,
+    selectedMarkerId,
+  ]);
+
+  /**
+   * Ids of markers currently allowed to mount. Driven by the progressive
+   * ramp below: when `visibleMarkers` changes we prune ids that left the
+   * target set, then add the missing ones MOUNT_CHUNK-at-a-time across
+   * animation frames. Tracking ids (not array indices) keeps already-mounted
+   * markers stable — they never unmount/flicker just because the set's
+   * composition changed (e.g. enabling another subtype).
+   */
+  const [mountedIds, setMountedIds] = useState<Set<string>>(() => new Set());
+
+  useEffect(() => {
+    const targetIds = new Set(visibleMarkers.map((v) => v.marker.id));
+
+    let raf = 0;
+    let cancelled = false;
+    // Each frame: prune ids that left the target set AND mount up to
+    // MOUNT_CHUNK new ones, both inside the rAF callback (no synchronous
+    // setState in the effect body). Pruning + adding together keeps `next` a
+    // subset of the target, so the `next.size === targetIds.size` check ends
+    // the ramp exactly when everything is mounted. Markers that left the set
+    // are already dropped from the screen by the `renderedMarkers` filter; the
+    // prune here just keeps the tracking Set bounded and the size check honest.
+    const step = () => {
+      if (cancelled) return;
+      setMountedIds((prev) => {
+        const next = new Set<string>();
+        for (const id of prev) {
+          if (targetIds.has(id)) next.add(id);
+        }
+        let added = 0;
+        for (const v of visibleMarkers) {
+          if (added >= MOUNT_CHUNK) break;
+          if (!next.has(v.marker.id)) {
+            next.add(v.marker.id);
+            added += 1;
+          }
+        }
+        if (next.size < targetIds.size) raf = requestAnimationFrame(step);
+        return next;
+      });
+    };
+    raf = requestAnimationFrame(step);
+
+    return () => {
+      cancelled = true;
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, [visibleMarkers]);
+
+  /**
+   * The markers handed to Leaflet this frame: the target set filtered to those
+   * the ramp has mounted so far. The selected marker is always included (even
+   * before the ramp reaches it) so search "fly to" / selection shows instantly.
+   */
+  const renderedMarkers = useMemo(
+    () =>
+      visibleMarkers.filter(
+        ({ marker }) =>
+          mountedIds.has(marker.id) || marker.id === selectedMarkerId,
+      ),
+    [visibleMarkers, mountedIds, selectedMarkerId],
+  );
+
   if (!selectedMap) {
     return (
       <div className="flex-1 flex items-center justify-center text-sm text-muted-foreground">
@@ -181,8 +319,21 @@ const GameMapView: React.FC<Props> = ({
         zoom={-3}
         minZoom={-3}
         maxZoom={2}
-        zoomSnap={0.25}
+        // Smooth, continuous zoom. zoomSnap=0 lets the map settle on any
+        // fractional zoom (no stepping to 0.25 boundaries). The built-in
+        // (discrete) wheel handler is disabled (scrollWheelZoom=false) in
+        // favour of the smooth per-frame handler registered via
+        // "@/lib/leaflet-smooth-wheel-zoom"; it's configured through the
+        // smoothWheelZoom/smoothSensitivity props below (react-leaflet forwards
+        // them into the Leaflet map options). Raise smoothSensitivity to zoom
+        // faster, lower it to zoom slower. Tiles are CSS-scaled (maxNativeZoom
+        // =0), so fractional zoom is a pure GPU transform. zoomDelta still
+        // drives the +/- buttons and keyboard.
+        zoomSnap={0}
         zoomDelta={0.25}
+        scrollWheelZoom={false}
+        smoothWheelZoom={true}
+        smoothSensitivity={4}
         crs={L.CRS.Simple}
         className="w-full h-full"
         attributionControl={false}
@@ -207,30 +358,14 @@ const GameMapView: React.FC<Props> = ({
           setHoveredRegion={setHoveredRegion}
         />
 
-        {markers
-          .filter((m) => {
-            // Selection always overrides subtype filter, LOD and culling so the
-            // focused marker (and its popup) render even when off-screen.
-            if (selectedMarkerId === m.id) return true;
-            // Subtype filter (as today).
-            if (!visibleSubtypes?.has(m.subtype)) return false;
-            // Tier-based level-of-detail gate.
-            if (lodEnabled) {
-              if (m.tier == null) return false;
-              if (m.tier > visibleTierForZoom(zoom)) return false;
-            }
-            // Viewport culling: skip markers outside the padded visible bounds.
-            // Computed last (after the cheap subtype/tier checks) and only once
-            // `viewBounds` is known. Keeps the mounted DOM-marker count to the
-            // on-screen subset, which is the main fix for zoom/pan stutter.
-            if (viewBounds && !viewBounds.contains(dataToLatLng(selectedMap, m.x, m.y))) {
-              return false;
-            }
-            return true;
-          })
-          .map((m) => (
-            <GameMarker key={m.id} marker={m} onSelectMarker={onSelectMarker} />
-          ))}
+        {renderedMarkers.map(({ marker, position }) => (
+          <GameMarker
+            key={marker.id}
+            marker={marker}
+            position={position}
+            onSelectMarker={onSelectMarker}
+          />
+        ))}
 
         {!hideUserMarkers
           ? userMarkers
