@@ -52,8 +52,8 @@ const BaseRegions = memo(function BaseRegions({
               positions={polygon.map(toLatLng)}
               pathOptions={{
                 color: "var(--primary)",
-                weight: 1,
-                fillOpacity: 0.05,
+                stroke: false,
+                fillOpacity: 0,
               }}
               eventHandlers={{
                 mouseover: () => setHoveredRegion(region),
@@ -84,8 +84,8 @@ const HoverHighlight = memo(function HoverHighlight({
           positions={polygon.map(toLatLng)}
           pathOptions={{
             color: "var(--primary)",
-            weight: 1,
-            fillOpacity: 0.2,
+            stroke: false,
+            fillOpacity: 0,
           }}
           interactive={false}
         />
