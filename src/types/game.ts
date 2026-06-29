@@ -38,6 +38,10 @@ export interface MarkerTypeSubtype {
   color?: string;
   /** Whether markers of this subtype can be marked as completed. */
   canComplete?: boolean;
+  /** Icon shown when a marker of this subtype is completed (icon-swap
+   *  completion, e.g. the game's MonolithFragment_Complete asset). When set,
+   *  the generic dim + green check are suppressed for completed markers. */
+  iconComplete?: string;
 }
 
 /**
@@ -81,6 +85,8 @@ export interface MarkerInstance {
    * at/above the tier's threshold.
    */
   tier?: number;
+  /** For fragment markers: which physical kind (drives dialog text + icon badge). */
+  fragmentType?: "ground" | "air" | "water";
 }
 
 export type MarkerWithTranslations = MarkerInstance & {
