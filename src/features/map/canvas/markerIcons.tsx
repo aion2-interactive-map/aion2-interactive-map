@@ -1,5 +1,5 @@
 import L from "leaflet";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, ChevronDown, ChevronUp } from "lucide-react";
 import { renderToString } from "react-dom/server";
 
 /** Lanhu marker-pin colors (design "1天族"). */
@@ -48,8 +48,9 @@ export function createPinIcon(
   variant: PinVariant = "image",
   innerColor: string = LANHU_PIN_DOT,
   selected: boolean = false,
+  fragmentType?: "ground" | "air" | "water",
 ): L.DivIcon {
-  const cacheKey = `${variant}|${innerIcon}|${iconScale}|${completed ? 1 : 0}|${innerColor}|${selected ? 1 : 0}`;
+  const cacheKey = `${variant}|${innerIcon}|${iconScale}|${completed ? 1 : 0}|${innerColor}|${selected ? 1 : 0}|${fragmentType ?? ""}`;
   const cached = iconCache.get(cacheKey);
   if (cached) return cached;
   const iconBaseSize = 40;
@@ -164,6 +165,32 @@ export function createPinIcon(
           }}
         />
       )}
+
+      {/* Air/water badge for fragments. Air = up, water = down; ground = none.
+          Fragments use icon-swap completion (no green check), so this never
+          collides with the CheckCircle above. */}
+      {(fragmentType === "air" || fragmentType === "water") &&
+        (fragmentType === "air" ? (
+          <ChevronUp
+            size={12}
+            style={{
+              position: "absolute",
+              right: "-2px",
+              bottom: "-2px",
+              color: "#22c55e",
+            }}
+          />
+        ) : (
+          <ChevronDown
+            size={12}
+            style={{
+              position: "absolute",
+              right: "-2px",
+              bottom: "-2px",
+              color: "#22c55e",
+            }}
+          />
+        ))}
     </div>,
   );
 
