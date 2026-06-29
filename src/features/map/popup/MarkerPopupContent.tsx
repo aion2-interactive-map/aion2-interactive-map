@@ -38,7 +38,17 @@ const MarkerPopupContent: React.FC<Props> = ({ marker }) => {
     : "";
   const subtypeLabel = t(`types:subtypes.${marker.subtype}.name`, marker.subtype);
   const coords = `(${Math.round(marker.x)}, ${Math.round(marker.y)})`;
-  const metaLine = [categoryLabel, subtypeLabel].filter(Boolean).join(" / ");
+  // Fragment kind (ground/air/water) appended after the subtype, e.g.
+  // "Collection / Monolith · Air".
+  const fragmentTypeLabel = marker.fragmentType
+    ? t(`common:fragmentType.${marker.fragmentType}`)
+    : "";
+  const metaLine = [
+    [categoryLabel, subtypeLabel].filter(Boolean).join(" / "),
+    fragmentTypeLabel,
+  ]
+    .filter(Boolean)
+    .join(" · ");
 
   const canComplete = sub?.canComplete !== false;
   const isCompleted =
