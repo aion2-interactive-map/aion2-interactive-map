@@ -62,18 +62,24 @@ const GameMarkerInner: React.FC<Props> = ({
   // including `location`. Only when a subtype has no icon do we fall back to
   // the circular Lanhu dot ("pin"), tinted with the subtype color or the
   // default blue.
-  const rawIcon = marker.icon || sub?.icon || "";
+  // Icon-swap completion: subtypes that define `iconComplete` (fragments) show
+  // a dedicated "done" icon instead of the generic dim + green check. When we
+  // swap, we pass `renderCompleted=false` so the icon itself conveys completion.
+  const useIconSwap = isCompleted && !!sub?.iconComplete;
+  const rawIcon =
+    (useIconSwap ? sub?.iconComplete : marker.icon || sub?.icon) || "";
   const innerIcon = parseIconUrl(rawIcon, selectedMap);
+  const renderCompleted = isCompleted && !useIconSwap;
   let icon: L.DivIcon;
   if (category === "creature") {
-    icon = createPinIcon(innerIcon, 0.9, isCompleted, "circular", undefined, selected);
+    icon = createPinIcon(innerIcon, 0.9, renderCompleted, "circular", undefined, selected);
   } else if (!rawIcon) {
     // No game icon for this subtype: fall back to the circular dot. Use the
     // subtype color as the inner dot when provided (non-black); otherwise the
     // default Lanhu blue is used.
     const dot =
       sub?.color && sub.color !== "#000000" ? sub.color : undefined;
-    icon = createPinIcon(innerIcon, iconScale, isCompleted, "pin", dot, selected);
+    icon = createPinIcon(innerIcon, iconScale, renderCompleted, "pin", dot, selected);
   } else {
     // Gathering nodes plus a few dense collection subtypes (fragments,
     // hiddenCube) render a touch smaller so dense clusters stay readable.
@@ -81,7 +87,15 @@ const GameMarkerInner: React.FC<Props> = ({
       category === "gathering" ||
       (!!sub?.name && COMPACT_SUBTYPES.has(sub.name));
     const imageScale = compact ? COMPACT_SCALE : iconScale;
-    icon = createPinIcon(innerIcon, imageScale, isCompleted, "image", undefined, selected);
+    icon = createPinIcon(
+      innerIcon,
+      imageScale,
+      renderCompleted,
+      "image",
+      undefined,
+      selected,
+      marker.fragmentType,
+    );
   }
 
   const localizedName = marker.localizedName || marker.name || subtypeLabel;
