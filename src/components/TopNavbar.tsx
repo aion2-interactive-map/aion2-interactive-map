@@ -23,21 +23,9 @@ import i18n, { SUPPORTED_LANGUAGES, type LanguageCode } from "@/i18n";
 // but not offered in the switcher.
 const THEME_OPTIONS: Theme[] = ["auto", "light", "dark"];
 
-type NavTab = {
-  key: string;
-  /** i18n label key under `nav.` */
-  labelKey: string;
-  /** route path; only `/` is built today */
-  to?: "/";
-};
-
-const NAV_TABS: NavTab[] = [
-  { key: "home", labelKey: "nav.home", to: "/" },
-  { key: "classBd", labelKey: "nav.classBd" },
-  { key: "crafting", labelKey: "nav.crafting" },
-  { key: "enhancement", labelKey: "nav.enhancement" },
-  { key: "forum", labelKey: "nav.forum" },
-];
+// Old-version archive entry, shown while the new version is being rebuilt
+// (the nav tabs 首页/职业BD/… are hidden until those pages are ported).
+const ARCHIVE_URL = "https://archive.tc-imba.com/";
 
 export default function TopNavbar() {
   const { t } = useTranslation();
@@ -54,34 +42,18 @@ export default function TopNavbar() {
         AION2
       </Link>
 
-      {/* Nav tabs */}
-      <nav className="flex items-center gap-6 text-sm">
-        {NAV_TABS.map((tab) => {
-          const label = t(`common:${tab.labelKey}`);
-          // Only the Home tab routes; it is the active tab on the map page.
-          if (tab.to) {
-            return (
-              <Link
-                key={tab.key}
-                to={tab.to}
-                activeOptions={{ exact: true }}
-                className="font-bold text-[#2E97FF] dark:text-white"
-              >
-                {label}
-              </Link>
-            );
-          }
-          return (
-            <span
-              key={tab.key}
-              aria-disabled="true"
-              className="cursor-default text-black/40 select-none dark:text-white/70"
-            >
-              {label}
-            </span>
-          );
-        })}
-      </nav>
+      {/* Rebuild notice (nav tabs hidden during the rewrite) */}
+      <div className="text-sm text-[#3D3D3D] dark:text-white/80">
+        全新版本重制中，旧版入口：
+        <a
+          href={ARCHIVE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#2E97FF] hover:underline"
+        >
+          {ARCHIVE_URL}
+        </a>
+      </div>
 
       {/* Right cluster: language + theme icon buttons */}
       <div className="ml-auto flex items-center gap-1 text-[#3D3D3D] dark:text-white/85">
