@@ -1,6 +1,8 @@
-import { CheckIcon, Languages, Settings } from "lucide-react";
+import { CheckIcon, Languages, Mail, Settings } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Link } from "@tanstack/react-router";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -9,10 +11,17 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { useTheme, type Theme } from "@/context/ThemeContext";
 import i18n, { SUPPORTED_LANGUAGES, type LanguageCode } from "@/i18n";
 
-const THEME_OPTIONS: Theme[] = ["auto", "light", "dark", "abyss"];
+// "abyss" is disabled for now — kept in the Theme type + CSS for easy re-enable,
+// but not offered in the switcher.
+const THEME_OPTIONS: Theme[] = ["auto", "light", "dark"];
 
 type NavTab = {
   key: string;
@@ -56,7 +65,7 @@ export default function TopNavbar() {
                 key={tab.key}
                 to={tab.to}
                 activeOptions={{ exact: true }}
-                className="font-bold text-[#2E97FF]"
+                className="font-bold text-[#2E97FF] dark:text-white"
               >
                 {label}
               </Link>
@@ -66,7 +75,7 @@ export default function TopNavbar() {
             <span
               key={tab.key}
               aria-disabled="true"
-              className="cursor-default text-black/40 select-none"
+              className="cursor-default text-black/40 select-none dark:text-white/70"
             >
               {label}
             </span>
@@ -75,7 +84,7 @@ export default function TopNavbar() {
       </nav>
 
       {/* Right cluster: language + theme icon buttons */}
-      <div className="ml-auto flex items-center gap-1 text-[#3D3D3D]">
+      <div className="ml-auto flex items-center gap-1 text-[#3D3D3D] dark:text-white/85">
         {/* Language menu */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -129,6 +138,35 @@ export default function TopNavbar() {
             ))}
           </DropdownMenuContent>
         </DropdownMenu>
+
+        {/* Contact / about */}
+        <Popover>
+          <PopoverTrigger asChild>
+            <Button
+              variant="ghost"
+              size="icon"
+              data-testid="contact-menu"
+              aria-label={t("common:menu.contact", "Contact us")}
+              title={t("common:menu.contact", "Contact us")}
+            >
+              <Mail className="size-5" />
+            </Button>
+          </PopoverTrigger>
+          <PopoverContent
+            align="end"
+            className="max-h-[70vh] w-[300px] overflow-y-auto"
+          >
+            <div className="mb-2 text-base font-semibold">
+              {t("common:rightSidebar.contact.title", "Communication & Contact")}
+            </div>
+            <div className="prose prose-sm dark:prose-invert max-w-none break-words text-sm [&_a]:text-primary">
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                {t("common:rightSidebar.contact.content")}
+              </ReactMarkdown>
+            </div>
+          </PopoverContent>
+        </Popover>
+
       </div>
     </header>
   );

@@ -33,7 +33,8 @@ function getSystemTheme(): Exclude<Theme, "auto"> {
 function loadInitialTheme(): Theme {
   if (typeof window === "undefined") return "auto";
   const stored = localStorage.getItem(STORAGE_KEY);
-  if (stored === "light" || stored === "dark" || stored === "abyss") return stored;
+  // "abyss" is disabled — a previously-persisted abyss selection falls back to auto.
+  if (stored === "light" || stored === "dark") return stored;
   return "auto";
 }
 

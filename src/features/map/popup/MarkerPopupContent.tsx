@@ -61,12 +61,12 @@ const MarkerPopupContent: React.FC<Props> = ({ marker }) => {
     >
       <CardContent className="flex flex-col px-4 py-4">
         {/* Title */}
-        <div className="text-[18px] font-bold leading-snug text-[#3D3D3D]">
+        <div className="text-[18px] font-bold leading-snug text-[#3D3D3D] dark:text-white">
           {name}
         </div>
 
         {/* Category / subtype + coords */}
-        <div className="mt-2 text-[14px] leading-tight text-[rgba(0,0,0,0.6)]">
+        <div className="mt-2 text-[14px] leading-tight text-[rgba(0,0,0,0.6)] dark:text-[rgba(255,255,255,0.6)]">
           {metaLine}
           {metaLine ? " " : ""}
           <span className="tabular-nums">{coords}</span>
@@ -76,7 +76,7 @@ const MarkerPopupContent: React.FC<Props> = ({ marker }) => {
         {description && (
           <>
             <hr className="my-3 border-0 border-t border-border" />
-            <div className="text-[14px] leading-relaxed text-[#3D3D3D]">
+            <div className="text-[14px] leading-relaxed text-[#3D3D3D] dark:text-white">
               {description}
             </div>
           </>

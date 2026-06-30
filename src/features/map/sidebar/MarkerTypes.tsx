@@ -47,7 +47,11 @@ import {
 function buttonClasses(active: boolean) {
   return cn(
     "flex h-[30px] w-full items-center gap-2 rounded-sm px-2 text-sm font-normal leading-[14px] transition-colors",
-    active ? "bg-primary text-background" : "text-[#3D3D3D]",
+    // Active = primary blue (light) / violet (dark 魔族 board); inactive text is
+    // #3D3D3D on light, #C2C2C2 on dark so it stays legible on the dark sidebar.
+    active
+      ? "bg-primary text-white dark:bg-[#7E52C1]"
+      : "text-[#3D3D3D] dark:text-[#C2C2C2]",
   );
 }
 
@@ -225,8 +229,10 @@ export default function MarkerTypes() {
                           tabIndex={0}
                           onClick={toggleCategory}
                           className={cn(
-                            "shrink-0 rounded-sm p-1 hover:bg-black/5",
-                            anyVisible ? "text-[#3D3D3D]" : "text-muted-foreground",
+                            "shrink-0 rounded-sm p-1 hover:bg-black/5 dark:hover:bg-white/10",
+                            anyVisible
+                              ? "text-[#3D3D3D] dark:text-[#C2C2C2]"
+                              : "text-muted-foreground",
                           )}
                           aria-label={tooltipText}
                         >
@@ -267,7 +273,9 @@ export default function MarkerTypes() {
                         <div
                           className={cn(
                             "flex w-full items-center justify-between",
-                            active ? "text-background" : "text-[#3D3D3D]",
+                            active
+                              ? "text-white"
+                              : "text-[#3D3D3D] dark:text-[#C2C2C2]",
                           )}
                         >
                           <span className="flex min-w-0 items-center gap-1">

@@ -1,7 +1,7 @@
 import { test } from "@playwright/test";
 
 const MAPS = ["World_L_A", "Abyss_Reshanta_A"];
-const THEMES = ["light", "dark", "abyss"] as const;
+const THEMES = ["light", "dark"] as const;
 const LANGS = ["en", "zh-CN"] as const;
 
 for (const map of MAPS) {

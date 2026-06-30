@@ -66,9 +66,9 @@ export default function SearchPanel({ onSelectMarker, onFlyTo }: Props) {
       data-testid="search-panel"
     >
       {/* Search bar */}
-      <div className="flex items-center gap-1.5 rounded-lg border border-[rgba(46,151,255,0.25)] bg-white/95 px-3 py-2 shadow-sm backdrop-blur">
+      <div className="flex items-center gap-1.5 rounded-lg border border-[rgba(46,151,255,0.25)] bg-white/95 px-3 py-2 shadow-sm backdrop-blur dark:border-[rgba(46,151,255,0.35)] dark:bg-[#2C293A]/95">
         <svg
-          className="size-4 shrink-0 text-[rgba(0,0,0,0.45)]"
+          className="size-4 shrink-0 text-[rgba(0,0,0,0.45)] dark:text-[rgba(255,255,255,0.5)]"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -83,19 +83,19 @@ export default function SearchPanel({ onSelectMarker, onFlyTo }: Props) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder={t("common:ui.search", "Search")}
-          className="min-w-0 flex-1 bg-transparent text-sm text-[#3D3D3D] outline-none placeholder:text-[rgba(0,0,0,0.4)]"
+          className="min-w-0 flex-1 bg-transparent text-sm text-[#3D3D3D] outline-none placeholder:text-[rgba(0,0,0,0.4)] dark:text-white dark:placeholder:text-[rgba(255,255,255,0.4)]"
         />
         <button
           type="button"
           onClick={() => setScope((s) => (s === "both" ? "name" : "both"))}
-          className="shrink-0 text-xs text-[rgba(0,0,0,0.6)] hover:text-[#3D3D3D]"
+          className="shrink-0 text-xs text-[rgba(0,0,0,0.6)] hover:text-[#3D3D3D] dark:text-[rgba(255,255,255,0.6)] dark:hover:text-white"
           title={t("common:search.scopeToggle", "Toggle search scope")}
         >
           {scope === "name"
             ? t("common:search.scopeName", "Name")
             : t("common:search.scopeBoth", "All")}
         </button>
-        <span className="text-[rgba(0,0,0,0.3)]">|</span>
+        <span className="text-[rgba(0,0,0,0.3)] dark:text-[rgba(255,255,255,0.3)]">|</span>
         <button
           type="button"
           onClick={() => setDebounced(query)}
@@ -107,8 +107,8 @@ export default function SearchPanel({ onSelectMarker, onFlyTo }: Props) {
 
       {/* Results panel */}
       {hasQuery && (
-        <div className="flex min-h-0 flex-1 flex-col rounded-lg border border-[rgba(46,151,255,0.18)] bg-[#F3FBFF]/95 shadow-sm backdrop-blur">
-          <div className="border-b border-[rgba(0,0,0,0.06)] px-3 py-2 text-center text-xs text-[rgba(0,0,0,0.6)]">
+        <div className="flex min-h-0 flex-1 flex-col rounded-lg border border-[rgba(46,151,255,0.18)] bg-[#F3FBFF]/95 shadow-sm backdrop-blur dark:border-[rgba(46,151,255,0.3)] dark:bg-[#2C293A]/95">
+          <div className="border-b border-[rgba(0,0,0,0.06)] px-3 py-2 text-center text-xs text-[rgba(0,0,0,0.6)] dark:border-[rgba(255,255,255,0.1)] dark:text-[rgba(255,255,255,0.6)]">
             {t("common:search.resultsCount", {
               count: results.length,
               defaultValue: "{{count}} results",
@@ -127,20 +127,20 @@ export default function SearchPanel({ onSelectMarker, onFlyTo }: Props) {
                     type="button"
                     onClick={() => handleSelect(res.id as string)}
                     className={cn(
-                      "w-full rounded-md border border-transparent bg-white px-3 py-2 text-left",
-                      "transition-colors hover:border-[rgba(46,151,255,0.3)] hover:bg-[#E5F0FF]",
+                      "w-full rounded-md border border-transparent bg-white px-3 py-2 text-left dark:bg-[rgba(255,255,255,0.04)]",
+                      "transition-colors hover:border-[rgba(46,151,255,0.3)] hover:bg-[#E5F0FF] dark:hover:bg-[rgba(255,255,255,0.08)]",
                     )}
                   >
-                    <span className="block truncate text-sm font-semibold text-[#3D3D3D]">
+                    <span className="block truncate text-sm font-semibold text-[#3D3D3D] dark:text-white">
                       {marker.localizedName ||
                         t("common:markerSearch.unnamed", "Unnamed marker")}
                     </span>
                     {marker.localizedDescription && (
-                      <span className="mt-0.5 block truncate text-xs text-[rgba(0,0,0,0.6)]">
+                      <span className="mt-0.5 block truncate text-xs text-[rgba(0,0,0,0.6)] dark:text-[rgba(255,255,255,0.6)]">
                         {marker.localizedDescription}
                       </span>
                     )}
-                    <span className="mt-0.5 block text-[11px] text-[rgba(0,0,0,0.45)]">
+                    <span className="mt-0.5 block text-[11px] text-[rgba(0,0,0,0.45)] dark:text-[rgba(255,255,255,0.45)]">
                       {t("common:search.coords", {
                         x: Math.round(marker.x),
                         y: Math.round(marker.y),

@@ -71,25 +71,27 @@
     --ring: #2E97FF;
 }
 
+/* Lanhu "2魔族" dark board: purple-navy surfaces (panels/popups #2C293A,
+   secondary surface/input #423F5A), white / #C2C2C2 text, blue #2E97FF accent. */
 .dark {
-    --background: #000000;
+    --background: #211E2D;
     --foreground: #ffffff;
-    --card: #18181b;
+    --card: #2C293A;
     --card-foreground: #ffffff;
-    --popover: #18181b;
+    --popover: #2C293A;
     --popover-foreground: #ffffff;
     --primary: #2e97ff;
     --primary-foreground: #ffffff;
     --secondary: #7828c8;
     --secondary-foreground: #ffffff;
-    --muted: #27272a;
-    --muted-foreground: #a1a1aa;
-    --accent: #3f3f46;
+    --muted: #423F5A;
+    --muted-foreground: #C2C2C2;
+    --accent: #423F5A;
     --accent-foreground: #ffffff;
     --destructive: #f31260;
     --destructive-foreground: #ffffff;
-    --border: #26262a;
-    --input: #26262a;
+    --border: rgba(255,255,255,0.12);
+    --input: #423F5A;
     --ring: #2e97ff;
 }
 
@@ -147,7 +149,7 @@
     --color-topnavbar: #393047;
     --background-image-sidebar: linear-gradient(180deg, #2C293A 0%, #2C293A 100%);
     --color-sidebar-collapse: #4C4A52;
-    /*--color-sidebar-button: rgba(122, 192, 225, 0.20);*/
+    --color-sidebar-button: rgba(255, 255, 255, 0.08);
     --color-crafting-item: rgba(255, 255, 255, 0.1);
     --color-crafting-sum: rgba(255, 255, 255, 0.2);
     --color-map-alert: rgba(0, 0, 0, 0.7);
