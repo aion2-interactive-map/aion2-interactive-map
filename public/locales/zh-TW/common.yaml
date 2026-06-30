@@ -34,6 +34,7 @@ ui:
   loading: "載入中..."
   search: "搜尋"
   noData: "暫無數據"
+  noDescription: "無描述"
   add: "添加"
 
 leaderboard:

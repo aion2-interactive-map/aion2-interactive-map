@@ -108,7 +108,11 @@ export const MarkersProvider = ({children}: MarkersProviderProps) => {
   const markers: MarkerWithTranslations[] = useMemo(() => {
     if (!selectedMap) return [];
 
-    const mapName = t(`maps:${selectedMap.name}.name`, selectedMap.name);
+    // Short map name (no faction suffix), e.g. "斐尔特朗" / "Verteron" — emitted
+    // by the tools into maps.json alongside the full `name`. Used to label
+    // per-marker ids like hidden cubes. Falls back to the full name.
+    const mapFullName = t(`maps:${selectedMap.name}.name`, selectedMap.name);
+    const shortMapName = t(`maps:${selectedMap.name}.shortName`, mapFullName);
 
     return baseMarkers.map((m) => {
       let localizedName = t(`${markerNs}:${m.id}.name`, m.name ?? "");
@@ -119,7 +123,7 @@ export const MarkersProvider = ({children}: MarkersProviderProps) => {
         // is the "#N" description. Show "<map> #N" (e.g. "斐尔特朗 #1") as the
         // name and drop the now-redundant description.
         const num = localizedDescription || `#${m.indexInSubtype + 1}`;
-        localizedName = `${mapName} ${num}`;
+        localizedName = `${shortMapName} ${num}`;
         localizedDescription = "";
       } else if (localizedDescription && localizedDescription === localizedName) {
         // description just repeats the name → treat as empty so the UI shows

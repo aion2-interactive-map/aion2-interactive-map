@@ -2,7 +2,10 @@ import { useEffect, useMemo, useState } from "react";
 import MiniSearch, { type SearchResult } from "minisearch";
 import { useTranslation } from "react-i18next";
 import { useMarkers } from "@/context/MarkersContext";
+import { useGameMap } from "@/context/GameMapContext";
 import type { MarkerWithTranslations } from "@/types/game";
+import { parseIconUrl } from "@/lib/url";
+import { useSubzoneLookup } from "@/features/map/useSubzoneLookup";
 import { SEARCH_DEBOUNCE_MS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
@@ -20,7 +23,24 @@ type Scope = "both" | "name";
  */
 export default function SearchPanel({ onSelectMarker, onFlyTo }: Props) {
   const { markers, markersById } = useMarkers();
-  const { t } = useTranslation(["common"]);
+  const { types, selectedMap } = useGameMap();
+  const { t } = useTranslation(["common", "types"]);
+  const subzoneAt = useSubzoneLookup();
+
+  // subtype name → { category id, game icon } for the per-result icon + label.
+  const subtypeMeta = useMemo(() => {
+    const m: Record<string, { categoryId: string; iconName: string }> = {};
+    for (const c of types) {
+      for (const s of c.subtypes) {
+        m[s.name] = {
+          categoryId: s.category ?? c.name,
+          iconName: s.icon || c.icon || "",
+        };
+      }
+    }
+    return m;
+  }, [types]);
+
   const [query, setQuery] = useState("");
   const [debounced, setDebounced] = useState("");
   const [scope, setScope] = useState<Scope>("both");
@@ -121,6 +141,23 @@ export default function SearchPanel({ onSelectMarker, onFlyTo }: Props) {
             {results.map((res) => {
               const marker = markersById[res.id as string];
               if (!marker) return null;
+              const meta = subtypeMeta[marker.subtype];
+              const categoryId = meta?.categoryId ?? marker.category;
+              const categoryLabel = categoryId
+                ? t(`types:categories.${categoryId}.name`, categoryId)
+                : "";
+              const subtypeLabel = t(
+                `types:subtypes.${marker.subtype}.name`,
+                marker.subtype,
+              );
+              const metaLabel = [subtypeLabel, categoryLabel]
+                .filter(Boolean)
+                .join(" / ");
+              const iconUrl =
+                meta?.iconName && selectedMap
+                  ? parseIconUrl(meta.iconName, selectedMap)
+                  : "";
+              const region = subzoneAt(marker.x, marker.y);
               return (
                 <li key={res.id}>
                   <button
@@ -131,22 +168,50 @@ export default function SearchPanel({ onSelectMarker, onFlyTo }: Props) {
                       "transition-colors hover:border-[rgba(46,151,255,0.3)] hover:bg-[#E5F0FF] dark:hover:bg-[rgba(255,255,255,0.08)]",
                     )}
                   >
-                    <span className="block truncate text-sm font-semibold text-[#3D3D3D] dark:text-white">
-                      {marker.localizedName ||
-                        t("common:markerSearch.unnamed", "Unnamed marker")}
-                    </span>
-                    {marker.localizedDescription && (
-                      <span className="mt-0.5 block truncate text-xs text-[rgba(0,0,0,0.6)] dark:text-[rgba(255,255,255,0.6)]">
-                        {marker.localizedDescription}
+                    {/* subtype icon · title */}
+                    <div className="flex items-center gap-1.5">
+                      {iconUrl && (
+                        <img
+                          src={iconUrl}
+                          alt=""
+                          className="size-[18px] shrink-0 object-contain"
+                        />
+                      )}
+                      <span className="min-w-0 flex-1 truncate text-sm font-semibold text-[#3D3D3D] dark:text-white">
+                        {marker.localizedName ||
+                          t("common:markerSearch.unnamed", "Unnamed marker")}
+                      </span>
+                    </div>
+                    {/* subtype / category */}
+                    {metaLabel && (
+                      <span className="mt-0.5 block truncate text-[11px] text-[rgba(0,0,0,0.5)] dark:text-[rgba(255,255,255,0.55)]">
+                        {metaLabel}
                       </span>
                     )}
-                    <span className="mt-0.5 block text-[11px] text-[rgba(0,0,0,0.45)] dark:text-[rgba(255,255,255,0.45)]">
-                      {t("common:search.coords", {
-                        x: Math.round(marker.x),
-                        y: Math.round(marker.y),
-                        defaultValue: "Coords: {{x}}, {{y}}",
-                      })}
+                    <span
+                      className={cn(
+                        "mt-0.5 block truncate text-xs",
+                        marker.localizedDescription
+                          ? "text-[rgba(0,0,0,0.6)] dark:text-[rgba(255,255,255,0.6)]"
+                          : "italic text-[rgba(0,0,0,0.35)] dark:text-[rgba(255,255,255,0.35)]",
+                      )}
+                    >
+                      {marker.localizedDescription ||
+                        t("common:ui.noDescription", "No description")}
                     </span>
+                    {/* coords · region */}
+                    <div className="mt-0.5 flex items-center justify-between gap-2 text-[11px] text-[rgba(0,0,0,0.45)] dark:text-[rgba(255,255,255,0.45)]">
+                      <span className="shrink-0 tabular-nums">
+                        {t("common:search.coords", {
+                          x: Math.round(marker.x),
+                          y: Math.round(marker.y),
+                          defaultValue: "Coords: {{x}}, {{y}}",
+                        })}
+                      </span>
+                      {region && (
+                        <span className="truncate text-right">{region}</span>
+                      )}
+                    </div>
                   </button>
                 </li>
               );

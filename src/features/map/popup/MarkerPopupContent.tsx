@@ -72,14 +72,16 @@ const MarkerPopupContent: React.FC<Props> = ({ marker }) => {
           <span className="tabular-nums">{coords}</span>
         </div>
 
-        {/* Description (with dividers above/below) */}
-        {description && (
-          <>
-            <hr className="my-3 border-0 border-t border-border" />
-            <div className="text-[14px] leading-relaxed text-[#3D3D3D] dark:text-white">
-              {description}
-            </div>
-          </>
+        {/* Description (with dividers above/below); grey placeholder if none */}
+        <hr className="my-3 border-0 border-t border-border" />
+        {description ? (
+          <div className="text-[14px] leading-relaxed text-[#3D3D3D] dark:text-white">
+            {description}
+          </div>
+        ) : (
+          <div className="text-[14px] leading-relaxed text-[rgba(0,0,0,0.35)] italic dark:text-[rgba(255,255,255,0.35)]">
+            {t("common:ui.noDescription", "No description")}
+          </div>
         )}
 
         {/* Image grid */}

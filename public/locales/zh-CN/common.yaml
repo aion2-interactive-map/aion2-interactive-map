@@ -32,6 +32,7 @@ ui:
   confirmDelete: "你确定要删除吗？"
   clear: "清除"
   noData: "暂无数据"
+  noDescription: "无描述"
   add: "添加"
 
 auth:

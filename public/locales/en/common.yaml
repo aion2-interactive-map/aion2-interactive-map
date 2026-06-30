@@ -24,6 +24,7 @@ ui:
   loading: "Loading..."
   search: "Search"
   noData: "No Data"
+  noDescription: "No description"
   add: "Add"
 
 theme:
