@@ -74,7 +74,9 @@ export const MarkersProvider = ({children}: MarkersProviderProps) => {
 
   const { selectedMap, types } = useGameMap();
   const markerNs = `markers/${selectedMap?.name}`;
-  const {t, i18n} = useTranslation([markerNs]);
+  // Only request the namespace once a map is selected; otherwise `markerNs` is
+  // "markers/undefined" and i18next would fetch a non-existent locale file (404).
+  const {t, i18n} = useTranslation(selectedMap ? [markerNs] : []);
 
   const subtypeToCategory = useMemo(() => {
     const map: Record<string, string> = {};
@@ -106,9 +108,25 @@ export const MarkersProvider = ({children}: MarkersProviderProps) => {
   const markers: MarkerWithTranslations[] = useMemo(() => {
     if (!selectedMap) return [];
 
+    const mapName = t(`maps:${selectedMap.name}.name`, selectedMap.name);
+
     return baseMarkers.map((m) => {
-      const localizedName = t(`${markerNs}:${m.id}.name`, m.name ?? "");
-      const localizedDescription = t(`${markerNs}:${m.id}.description`, "");
+      let localizedName = t(`${markerNs}:${m.id}.name`, m.name ?? "");
+      let localizedDescription = t(`${markerNs}:${m.id}.description`, "");
+
+      if (m.subtype === "hiddenCube") {
+        // Hidden-cube markers are generically named ("隐藏背包"); their real id
+        // is the "#N" description. Show "<map> #N" (e.g. "斐尔特朗 #1") as the
+        // name and drop the now-redundant description.
+        const num = localizedDescription || `#${m.indexInSubtype + 1}`;
+        localizedName = `${mapName} ${num}`;
+        localizedDescription = "";
+      } else if (localizedDescription && localizedDescription === localizedName) {
+        // description just repeats the name → treat as empty so the UI shows
+        // the "no description" placeholder instead of a duplicate line.
+        localizedDescription = "";
+      }
+
       const category = m.category || subtypeToCategory[m.subtype] || "unknown";
       return {
         ...m,
