@@ -12,12 +12,13 @@ type Props = {
 };
 
 // Lift the popup so its downward triangle (the card's ::after, ~9px tall,
-// hanging below the card bottom) clears the 40px, center-anchored marker icon
-// whose top edge is ~20px above the point. Leaflet places the popup's bottom
-// edge at `-offset.y` above the point, so card bottom sits 32px up and the
-// triangle tip lands ~23px up — just above the icon. Module-level so the
-// reference stays stable across re-renders (see the `position` memo note below).
-const POPUP_OFFSET: [number, number] = [0, -32];
+// hanging below the card bottom) sits just above the 40px, center-anchored
+// marker icon whose top edge is ~20px above the point. Leaflet places the
+// popup's bottom edge at `-offset.y` above the point, so the card bottom sits
+// 28px up and the triangle tip lands ~20px up — right at the icon's top.
+// Module-level so the reference stays stable across re-renders (see the
+// `position` memo note below).
+const POPUP_OFFSET: [number, number] = [0, -28];
 
 const SelectedMarkerPopup: React.FC<Props> = ({
   selectedMarkerId,

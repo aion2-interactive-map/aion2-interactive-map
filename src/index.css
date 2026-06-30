@@ -275,12 +275,18 @@ body {
     content: "";
     position: absolute;
     top: 100%;
+    /* Overlap the card by 1px so its flat top fuses with the card bottom — both
+       are var(--card), so there's no seam and no sub-pixel gap (the card height
+       is fractional, so a flush top: 100% leaves a 1px hairline). */
+    margin-top: -1px;
     left: 50%;
     transform: translateX(-50%);
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
     border-top: 9px solid var(--card);
-    filter: drop-shadow(0 2px 1.5px rgba(0, 0, 0, 0.12));
+    /* Shadow offset (3) ≥ blur (2), so it casts only downward — no halo line
+       above the triangle where it joins the card. */
+    filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.12));
 }
 
 /* Theme-aware tooltip for markers */
