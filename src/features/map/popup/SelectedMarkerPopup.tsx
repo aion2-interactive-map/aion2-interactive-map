@@ -11,6 +11,14 @@ type Props = {
   onSelectMarker: (id: string | null) => void;
 };
 
+// Lift the popup so its downward triangle (the card's ::after, ~9px tall,
+// hanging below the card bottom) clears the 40px, center-anchored marker icon
+// whose top edge is ~20px above the point. Leaflet places the popup's bottom
+// edge at `-offset.y` above the point, so card bottom sits 32px up and the
+// triangle tip lands ~23px up — just above the icon. Module-level so the
+// reference stays stable across re-renders (see the `position` memo note below).
+const POPUP_OFFSET: [number, number] = [0, -32];
+
 const SelectedMarkerPopup: React.FC<Props> = ({
   selectedMarkerId,
   onSelectMarker,
@@ -42,6 +50,13 @@ const SelectedMarkerPopup: React.FC<Props> = ({
   return (
     <Popup
       position={position}
+      offset={POPUP_OFFSET}
+      className="marker-popup"
+      // Match the 320px card. Leaflet's default maxWidth (300px) would clamp the
+      // wrapper narrower than the card, so the centered tip lands left of the
+      // card's true centre. Sizing the wrapper to the card re-centres the tip.
+      maxWidth={320}
+      minWidth={320}
       autoPan
       closeButton={false}
       eventHandlers={{ remove: () => onSelectMarker(null) }}

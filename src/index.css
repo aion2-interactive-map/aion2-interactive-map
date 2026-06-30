@@ -237,7 +237,9 @@ body {
     border-top-color: var(--card) !important;
 }
 
-/* Remove the white frame and padding around popup */
+/* The card supplies its own surface, so by default the Leaflet wrapper and tip
+   stay frameless. The marker popup re-skins its tip below to draw the design's
+   downward pointer in the card colour. */
 .leaflet-popup-content-wrapper,
 .leaflet-popup-tip {
     background: transparent !important;
@@ -248,6 +250,37 @@ body {
 .leaflet-popup-content {
     margin: 0 !important;
     padding: 0 !important;
+}
+
+/* Marker popup pointer. The triangle is drawn as the card's own ::after, so it
+   lives in the same React element as the card — the two then appear and vanish
+   together. Leaflet's separate tip is its own DOM node that lingers during the
+   popup's 200ms fade-out after the card has already unmounted (the card and the
+   triangle wouldn't disappear at the same time), so it's hidden here. */
+.marker-popup .leaflet-popup-tip-container {
+    display: none !important;
+}
+
+/* Borderless card (matches the Lanhu popup; the 1px border otherwise left a
+   seam line across the top of the triangle) and the offset parent for the
+   ::after pointer below. */
+.marker-popup [data-testid="marker-popup-card"] {
+    position: relative;
+    border-color: transparent !important;
+}
+
+/* Downward triangle pointer, in the card surface colour (theme-aware), centred
+   under the card with a soft drop shadow — the Lanhu point-popup pointer. */
+.marker-popup [data-testid="marker-popup-card"]::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 9px solid var(--card);
+    filter: drop-shadow(0 2px 1.5px rgba(0, 0, 0, 0.12));
 }
 
 /* Theme-aware tooltip for markers */
