@@ -44,7 +44,7 @@ export default function TopNavbar() {
 
       {/* Rebuild notice (nav tabs hidden during the rewrite) */}
       <div className="text-sm text-[#3D3D3D] dark:text-white/80">
-        全新版本重制中，旧版入口：
+        已更新第四赛季新地图，全新版本重制中，旧版入口：
         <a
           href={ARCHIVE_URL}
           target="_blank"
