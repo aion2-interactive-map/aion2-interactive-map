@@ -70,7 +70,7 @@ export const MarkersProvider = ({children}: MarkersProviderProps) => {
   const [baseMarkers, setBaseMarkers] = useState<MarkerInstance[]>([]);
   const [regions, setRegions] = useState<RegionInstance[]>([]);
   const [loading, setLoading] = useState(false);
-  const [showLabels, setShowLabels] = useState<boolean>(false);
+  const [showLabels, setShowLabels] = useState<boolean>(true);
 
   const { selectedMap, types } = useGameMap();
   const markerNs = `markers/${selectedMap?.name}`;
