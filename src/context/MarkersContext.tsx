@@ -74,9 +74,12 @@ export const MarkersProvider = ({children}: MarkersProviderProps) => {
 
   const { selectedMap, types } = useGameMap();
   const markerNs = `markers/${selectedMap?.name}`;
-  // Only request the namespace once a map is selected; otherwise `markerNs` is
-  // "markers/undefined" and i18next would fetch a non-existent locale file (404).
-  const {t, i18n} = useTranslation(selectedMap ? [markerNs] : []);
+  // react-i18next uses the ns list as a hook dependency array, so its LENGTH
+  // must stay constant across renders — swinging []↔[markerNs] breaks namespace
+  // loading outright (the marker locale is never fetched → every marker name is
+  // blank). Keep it length-1: fall back to the already-loaded "common" ns until
+  // a map is selected, which also avoids requesting the bogus "markers/undefined".
+  const {t, i18n} = useTranslation(selectedMap ? [markerNs] : ["common"]);
 
   const subtypeToCategory = useMemo(() => {
     const map: Record<string, string> = {};
