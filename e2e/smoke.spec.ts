@@ -13,9 +13,7 @@ test("map renders tiles and markers from local data, no console errors", async (
 test("type filter toggles marker visibility", async ({ page }) => {
   await page.goto("/?map=World_L_A&lng=en");
   await page.locator(".leaflet-marker-icon").first().waitFor({ timeout: 15_000 });
-  // fragments markers are tier 3, hidden at the default zoom under LOD.
-  // Disable LOD so the subtype toggle alone governs visibility.
-  await page.getByTestId("lod-toggle").click();
+  // LOD is off by default, so the subtype toggle alone governs visibility.
   const before = await page.locator(".leaflet-marker-icon").count();
   await page.getByTestId("subtype-toggle-fragments").click();
   await expect
@@ -34,10 +32,8 @@ test("search returns hits", async ({ page }) => {
 test("clicking a marker opens a local popup", async ({ page }) => {
   await page.goto("/?map=World_L_A&lng=en");
   await page.locator(".leaflet-marker-icon").first().waitFor({ timeout: 15_000 });
-  // Disable LOD so higher-tier markers also render at the default zoom, giving the
-  // in-viewport / clear-of-sidebar search plenty of clickable candidates.
-  await page.getByTestId("lod-toggle").click();
-  await page.locator(".leaflet-marker-icon").first().waitFor({ timeout: 15_000 });
+  // LOD is off by default, so higher-tier markers also render at the default zoom,
+  // giving the in-viewport / clear-of-sidebar search plenty of clickable candidates.
   // Markers are scattered across the map; many sit outside the initial
   // viewport or behind the sidebar. Click the first icon that is fully
   // within the map container and clear of the (overlaying) sidebar.

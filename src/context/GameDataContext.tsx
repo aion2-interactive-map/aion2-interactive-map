@@ -69,7 +69,7 @@ export const GameDataProvider: React.FC<GameDataProviderProps> = ({
   const [visibleRegions, setVisibleRegions] = useState<Set<string> | undefined>(undefined);
   const [allSubtypes, setAllSubtypes] = useState<Map<string, MarkerTypeSubtype>>(new Map());
   const [showBorders, setShowBorders] = useState<boolean>(false);
-  const [lodEnabled, setLodEnabled] = useState<boolean>(true);
+  const [lodEnabled, setLodEnabled] = useState<boolean>(false);
 
   // const { regions } = useMarkers(selectedMap?.name);
 
