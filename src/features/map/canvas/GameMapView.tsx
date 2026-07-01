@@ -295,7 +295,11 @@ const GameMapView: React.FC<Props> = ({
 
   return (
     <div
-      className="flex-1 relative"
+      // `isolate` gives the map its own stacking context so its internal high
+      // z-indexes (leaflet panes, z-[1000] controls, z-[5000] context menu) stay
+      // contained and don't paint over body-level Radix portals (dialogs,
+      // tooltips) which sit at z-50.
+      className="flex-1 relative isolate"
       onClick={() => setContextMenu(null)}
       style={{ cursor: "default" }}
     >
