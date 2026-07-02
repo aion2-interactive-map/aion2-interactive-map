@@ -1,4 +1,32 @@
-import { test, expect } from "@playwright/test";
+import { test, expect, type Page } from "@playwright/test";
+
+async function clickInViewportMarker(page: Page) {
+  const icons = page.locator(".leaflet-marker-icon");
+  const count = await icons.count();
+  const viewport = page.viewportSize();
+  const sidebarBox = await page.locator("aside").first().boundingBox();
+  const minX = sidebarBox ? sidebarBox.x + sidebarBox.width : 0;
+
+  for (let i = 0; i < count; i++) {
+    const box = await icons.nth(i).boundingBox();
+    if (
+      box &&
+      viewport &&
+      box.x >= minX &&
+      box.y >= 0 &&
+      box.x + box.width <= viewport.width &&
+      box.y + box.height <= viewport.height
+    ) {
+      try {
+        await icons.nth(i).click({ timeout: 3_000 });
+        return;
+      } catch {
+        continue;
+      }
+    }
+  }
+  throw new Error("no clickable in-viewport marker found");
+}
 
 // Regression: dragging the map must NOT remove + re-add the open marker popup.
 // The standalone <Popup> receives a freshly-allocated [lat,lng] array every
@@ -21,7 +49,7 @@ test("dragging the map does not blink the open marker popup", async ({
 
   // Open the marker popup by clicking a marker, then let the focus flyTo and
   // the popup autoPan fully settle so they don't pollute the observation.
-  await page.locator(".leaflet-marker-icon").first().click();
+  await clickInViewportMarker(page);
   await page.locator(".leaflet-popup").waitFor({ timeout: 10_000 });
   await page.waitForTimeout(1500);
 

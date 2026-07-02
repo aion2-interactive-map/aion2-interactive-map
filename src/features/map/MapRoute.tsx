@@ -26,10 +26,13 @@ export default function MapRoute() {
     const markerId = getQueryParam("marker");
     const pos = getQueryParam("pos");
     if (markerId && markersById[markerId]) {
-      setSelectedMarkerId(markerId);
-      setSelectedPosition({
-        x: markersById[markerId].x,
-        y: markersById[markerId].y,
+      const marker = markersById[markerId];
+      queueMicrotask(() => {
+        setSelectedMarkerId(markerId);
+        setSelectedPosition({
+          x: marker.x,
+          y: marker.y,
+        });
       });
       return;
     }
@@ -37,7 +40,7 @@ export default function MapRoute() {
     if (pos) {
       const [x, y] = pos.split(",").map(Number);
       if (Number.isFinite(x) && Number.isFinite(y)) {
-        setSelectedPosition({ x, y });
+        queueMicrotask(() => setSelectedPosition({ x, y }));
       }
     }
   }, [markersById]);

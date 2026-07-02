@@ -8,14 +8,28 @@ import type { QuestEntity } from "@/types/wiki";
 
 export default function QuestPage({ id }: { id: string }) {
   const { t, i18n } = useTranslation(["wiki", "wiki/quest"]);
-  const [q, setQ] = useState<QuestEntity | null>(null);
-  const [err, setErr] = useState(false);
+  const [loaded, setLoaded] = useState<{
+    id: string;
+    quest: QuestEntity;
+  } | null>(null);
+  const [errorId, setErrorId] = useState<string | null>(null);
 
   useEffect(() => {
-    setQ(null);
-    setErr(false);
-    loadQuest(id).then(setQ).catch(() => setErr(true));
+    let cancelled = false;
+    loadQuest(id)
+      .then((quest) => {
+        if (!cancelled) setLoaded({ id, quest });
+      })
+      .catch(() => {
+        if (!cancelled) setErrorId(id);
+      });
+    return () => {
+      cancelled = true;
+    };
   }, [id]);
+
+  const q = loaded?.id === id ? loaded.quest : null;
+  const err = errorId === id;
 
   useEffect(() => {
     if (q) document.title = `${lt(q.name, i18n.language)} - AION2 Wiki`;
@@ -110,6 +124,9 @@ export default function QuestPage({ id }: { id: string }) {
             {lt(it.name, lang)} x {it.count}
           </li>
         ))}
+        {q.rewards.exp <= 0 && q.rewards.items.length === 0 && (
+          <li className="text-muted-foreground">{t("wiki:list.empty")}</li>
+        )}
       </ul>
 
       <nav className="flex justify-between border-t border-border pt-3 text-sm">
