@@ -5,9 +5,13 @@ import { useTranslation } from "react-i18next";
 
 import { useGameMap } from "@/context/GameMapContext";
 import { aionAssets } from "@/features/map/aionAssets";
-import GameMapTiles from "@/features/map/canvas/GameMapTiles";
 // Importing the map-engine barrel also registers the smooth wheel-zoom handler.
-import { createPinIcon, dataToLatLng, dataToLatLngTuple } from "@gamemap/map-engine";
+import {
+  GameMapTiles,
+  createPinIcon,
+  dataToLatLng,
+  dataToLatLngTuple,
+} from "@gamemap/map-engine";
 import { loadGameData } from "@/lib/data";
 import type { WikiPoi } from "@/types/wiki";
 

@@ -3,8 +3,9 @@ import { Marker, Tooltip } from "react-leaflet";
 import L from "leaflet";
 
 import type { GameMapMeta } from "@gamemap/data-contract";
-import type { EngineMarker, MapAssets } from "@/features/map/engineTypes";
-import { createPinIcon, type PinTheme } from "@gamemap/map-engine";
+import type { EngineMarker, MapAssets } from "../engineTypes.ts";
+import { createPinIcon } from "../markerIcons.tsx";
+import type { PinTheme } from "../theme.ts";
 
 /**
  * Subtypes (beyond the whole `gathering` category) that are numerous/dense and

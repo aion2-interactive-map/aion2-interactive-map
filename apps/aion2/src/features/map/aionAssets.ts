@@ -2,7 +2,7 @@
 // URL helpers (`lib/url`). Module-level singleton: the object reference is
 // stable so it can be passed straight into memoized engine components.
 import type { GameMapMeta } from "@gamemap/data-contract";
-import type { MapAssets } from "@/features/map/engineTypes";
+import type { MapAssets } from "@gamemap/map-engine";
 import { getStaticUrl, parseIconUrl } from "@/lib/url";
 
 export const aionAssets: MapAssets = {

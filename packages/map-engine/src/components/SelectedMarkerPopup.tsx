@@ -2,8 +2,8 @@ import React, { type ReactNode, useMemo } from "react";
 import { Popup } from "react-leaflet";
 
 import type { GameMapMeta } from "@gamemap/data-contract";
-import type { EngineMarker } from "@/features/map/engineTypes";
-import { dataToLatLngTuple } from "@gamemap/map-engine";
+import type { EngineMarker } from "../engineTypes.ts";
+import { dataToLatLngTuple } from "../coords.ts";
 
 type Props = {
   map: GameMapMeta;

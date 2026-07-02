@@ -1,7 +1,8 @@
 import React from "react";
 import { useMapEvents } from "react-leaflet";
 import type { GameMapMeta } from "@gamemap/data-contract";
-import { cursorStore, latLngToData } from "@gamemap/map-engine";
+import { cursorStore } from "../cursorStore.ts";
+import { latLngToData } from "../coords.ts";
 
 type Props = {
   map: GameMapMeta;

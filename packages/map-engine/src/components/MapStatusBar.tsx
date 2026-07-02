@@ -1,5 +1,5 @@
 import React, { useSyncExternalStore } from "react";
-import { cursorStore } from "@gamemap/map-engine";
+import { cursorStore } from "../cursorStore.ts";
 
 type Props = {
   /** `(x, y)` DATA-space → localized subzone name (app-side lookup). */
@@ -22,11 +22,11 @@ const MapStatusBar: React.FC<Props> = ({ subzoneAt, footerText, pillBg }) => {
   const subzone = pos ? subzoneAt(pos.x, pos.y) : "";
 
   return (
-    <div className="pointer-events-none absolute inset-0 z-[1000] select-none">
-      <div className="absolute bottom-[22px] left-5 flex flex-col items-start gap-[18px] text-white">
+    <div className="gm-statusbar">
+      <div className="gm-statusbar-stack">
         {footerText && (
           <span
-            className="text-[11px] leading-none text-white/80"
+            className="gm-statusbar-footer"
             style={{ textShadow: TEXT_SHADOW }}
           >
             {footerText}
@@ -34,13 +34,13 @@ const MapStatusBar: React.FC<Props> = ({ subzoneAt, footerText, pillBg }) => {
         )}
         <div
           data-testid="map-coords"
-          className="flex items-baseline gap-2.5 rounded-[12px] px-3 py-1.5 text-sm leading-none"
+          className="gm-statusbar-pill"
           style={{ textShadow: TEXT_SHADOW, backgroundColor: pillBg }}
         >
-          <span className="tabular-nums">
+          <span className="gm-statusbar-coords">
             {pos ? `x:${Math.round(pos.x)},y:${Math.round(pos.y)}` : "x:--,y:--"}
           </span>
-          {subzone && <span className="truncate">{subzone}</span>}
+          {subzone && <span className="gm-statusbar-subzone">{subzone}</span>}
         </div>
       </div>
     </div>

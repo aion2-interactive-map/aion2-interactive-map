@@ -1,7 +1,7 @@
 import React from "react";
 import { useMapEvents } from "react-leaflet";
 import type { GameMapMeta } from "@gamemap/data-contract";
-import { latLngToData } from "@gamemap/map-engine";
+import { latLngToData } from "../coords.ts";
 
 export type ContextMenuState = {
   x: number; // screen coords (relative to map container)

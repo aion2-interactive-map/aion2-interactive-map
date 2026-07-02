@@ -1,17 +1,17 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import type { MapRef } from "@/types/game";
-import type {
-  EngineMarker,
-  GameMapViewLabels,
-} from "@/features/map/engineTypes";
+import {
+  GameMapView,
+  type EngineMarker,
+  type GameMapViewLabels,
+  type MapRef,
+} from "@gamemap/map-engine";
 import { useGameMap } from "@/context/GameMapContext";
 import { useMarkers } from "@/context/MarkersContext";
 import { useGameData } from "@/context/GameDataContext";
 import { useSubzoneLookup } from "@/features/map/useSubzoneLookup";
 import { aionAssets } from "@/features/map/aionAssets";
 import { aionTheme } from "@/features/map/aionTheme";
-import GameMapView from "@/features/map/canvas/GameMapView";
 import MarkerPopupContent from "@/features/map/popup/MarkerPopupContent";
 import Sidebar from "@/features/map/sidebar/Sidebar";
 import SearchPanel from "@/features/map/search/SearchPanel";
@@ -23,9 +23,9 @@ export default function MapRoute() {
   const mapRef = useRef<MapRef>(null);
   const appliedDeepLink = useRef(false);
 
-  // App contexts → engine props. MapRoute is the ADAPTER: the canvas/popup
-  // components under features/map/canvas (+ SelectedMarkerPopup) read no app
-  // context themselves; everything they need is derived here and passed down.
+  // App contexts → engine props. MapRoute is the ADAPTER: the engine
+  // components (@gamemap/map-engine) read no app context themselves;
+  // everything they need is derived here and passed down.
   const { selectedMap } = useGameMap();
   const { markers, markersById, regions, showLabels, completedBySubtype } =
     useMarkers();

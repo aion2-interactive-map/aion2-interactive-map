@@ -8,10 +8,12 @@
   },
   "sideEffects": [
     "./src/leaflet-smooth-wheel-zoom.ts",
-    "./src/index.ts"
+    "./src/index.ts",
+    "./src/engine.css"
   ],
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./engine.css": "./src/engine.css"
   },
   "scripts": {
     "check": "tsc --noEmit"

@@ -1,0 +1,172 @@
+/* @gamemap/map-engine static styles — the engine is Tailwind-free, so the
+ * chrome rendered by its components (map shell, zoom control, status bar,
+ * context menu) is styled here. The consuming app must import this file once:
+ *
+ *   import "@gamemap/map-engine/engine.css";
+ *
+ * Colors reference the host app's design-token CSS variables when present
+ * (shadcn-style: --popover, --accent, --border, ...) and fall back to the
+ * AION2 Lanhu light palette, so the engine renders sensibly on its own.
+ */
+
+/* ---- GameMapView shell ---------------------------------------------- */
+
+/* Map root. `isolation: isolate` gives the map its own stacking context so
+ * its internal high z-indexes (leaflet panes, z-1000 controls, z-5000 context
+ * menu) stay contained and don't paint over body-level portals. */
+.gm-map-root {
+  flex: 1 1 0%;
+  position: relative;
+  isolation: isolate;
+  cursor: default;
+}
+
+/* Empty state shown when no map is selected. */
+.gm-map-empty {
+  flex: 1 1 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--muted-foreground, rgba(0, 0, 0, 0.6));
+}
+
+/* The Leaflet MapContainer fills the root. */
+.gm-map-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- Context menu ---------------------------------------------------- */
+
+.gm-context-menu {
+  position: absolute;
+  z-index: 5000;
+  min-width: 190px;
+  padding: 0.25rem 0;
+  border: 1px solid var(--border, rgba(0, 0, 0, 0.1));
+  border-radius: 0.375rem;
+  background-color: var(--popover, #ffffff);
+  color: var(--popover-foreground, #3d3d3d);
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.gm-context-menu-item {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.gm-context-menu-item:hover {
+  background-color: var(--accent, #e5f0ff);
+  color: var(--accent-foreground, #3d3d3d);
+}
+
+/* ---- Zoom control (Lanhu-style +/− pill, top-left) -------------------- */
+
+.gm-zoom {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.75rem;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.gm-zoom-pill {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  /* shadow-md + ring-1 ring-black/5 */
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1),
+    0 0 0 1px rgb(0 0 0 / 0.05);
+}
+
+.gm-zoom-btn {
+  display: flex;
+  height: 2rem;
+  width: 2rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 1.125rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.gm-zoom-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.gm-zoom-divider {
+  height: 1px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* ---- Status bar (bottom-left footer + cursor pill) -------------------- */
+
+.gm-statusbar {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 1000;
+  user-select: none;
+}
+
+.gm-statusbar-stack {
+  position: absolute;
+  bottom: 22px;
+  left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  color: #ffffff;
+}
+
+.gm-statusbar-footer {
+  font-size: 11px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.gm-statusbar-pill {
+  display: flex;
+  align-items: baseline;
+  gap: 0.625rem;
+  border-radius: 12px;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1;
+}
+
+.gm-statusbar-coords {
+  font-variant-numeric: tabular-nums;
+}
+
+.gm-statusbar-subzone {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

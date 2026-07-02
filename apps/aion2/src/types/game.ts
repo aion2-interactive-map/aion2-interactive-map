@@ -2,7 +2,6 @@
 //
 // The data-format types (GameMapMeta, MarkerInstance, RegionInstance, the
 // *File shapes, ...) live in `@gamemap/data-contract`; import them from there.
-import type L from "leaflet";
 import type { MarkerInstance } from "@gamemap/data-contract";
 
 export const MAP_NAMES = {
@@ -24,8 +23,5 @@ export interface CommentInstance {
   createdAt: string;
 }
 
-/**
- * Reference to the Leaflet map instance.
- * Allow null so useRef<Map | null>(null) matches React.RefObject<MapRef>.
- */
-export type MapRef = L.Map | null;
+// `MapRef` (Leaflet map-instance ref) moved into `@gamemap/map-engine`
+// together with the engine components.

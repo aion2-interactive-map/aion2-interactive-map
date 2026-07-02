@@ -52,7 +52,7 @@ const BaseRegions = memo(function BaseRegions({
               key={`${region.name}-base-${idx}`}
               positions={polygon.map(toLatLng)}
               pathOptions={{
-                color: "var(--primary)",
+                color: "var(--primary, #2E97FF)",
                 stroke: false,
                 fillOpacity: 0,
               }}
@@ -84,7 +84,7 @@ const HoverHighlight = memo(function HoverHighlight({
           key={`${region.name}-hl-${idx}`}
           positions={polygon.map(toLatLng)}
           pathOptions={{
-            color: "var(--primary)",
+            color: "var(--primary, #2E97FF)",
             stroke: false,
             fillOpacity: 0,
           }}
@@ -115,13 +115,13 @@ const BorderSegments = memo(function BorderSegments({
             pathOptions={
               hovered
                 ? {
-                    color: "var(--primary)",
+                    color: "var(--primary, #2E97FF)",
                     weight: 3,
                     opacity: 1,
                     dashArray: "1 0",
                   }
                 : {
-                    color: "var(--primary)",
+                    color: "var(--primary, #2E97FF)",
                     weight: 3,
                     opacity: 0.5,
                     dashArray: "8 5",

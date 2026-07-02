@@ -23,24 +23,24 @@ const MapZoomControl: React.FC<Props> = ({
   const map = useMap();
 
   return (
-    <div className="absolute left-3 top-3 z-[1000] flex flex-col items-center gap-2">
+    <div className="gm-zoom">
       {/* + / − zoom pill */}
-      <div className="flex flex-col overflow-hidden rounded-lg bg-white/95 shadow-md ring-1 ring-black/5">
+      <div className="gm-zoom-pill">
         <button
           type="button"
           aria-label={zoomInLabel}
           onClick={() => map.zoomIn()}
-          className="flex h-8 w-8 items-center justify-center text-lg leading-none hover:bg-black/5"
+          className="gm-zoom-btn"
           style={{ color: glyphColor }}
         >
           +
         </button>
-        <div className="h-px w-full bg-black/10" />
+        <div className="gm-zoom-divider" />
         <button
           type="button"
           aria-label={zoomOutLabel}
           onClick={() => map.zoomOut()}
-          className="flex h-8 w-8 items-center justify-center text-lg leading-none hover:bg-black/5"
+          className="gm-zoom-btn"
           style={{ color: glyphColor }}
         >
           −

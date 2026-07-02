@@ -7,20 +7,22 @@ import type {
   EngineMarker,
   GameMapViewLabels,
   GameMapViewProps,
-} from "@/features/map/engineTypes";
-import { DEFAULT_MAP_THEME, dataToLatLng } from "@gamemap/map-engine"; // barrel also registers the smooth wheel-zoom handler
+} from "../engineTypes.ts";
+import { DEFAULT_MAP_THEME } from "../theme.ts";
+import { dataToLatLng } from "../coords.ts";
+// Side effect: registers the smooth wheel-zoom handler on L.Map (the
+// smoothWheelZoom/smoothSensitivity MapContainer props below need it).
+import "../leaflet-smooth-wheel-zoom.ts";
 
-import GameMapTiles from "@/features/map/canvas/GameMapTiles";
-import GameMapBorders from "@/features/map/canvas/GameMapBorders";
-import GameMarker from "@/features/map/canvas/GameMarker";
-import CursorTracker from "@/features/map/canvas/CursorTracker";
-import MapZoomControl from "@/features/map/canvas/MapZoomControl";
-import MarkerFocusController from "@/features/map/canvas/MarkerFocusController";
-import MapContextMenu, {
-  type ContextMenuState,
-} from "@/features/map/canvas/MapContextMenu";
-import MapStatusBar from "@/features/map/canvas/MapStatusBar";
-import SelectedMarkerPopup from "@/features/map/popup/SelectedMarkerPopup";
+import GameMapTiles from "./GameMapTiles.tsx";
+import GameMapBorders from "./GameMapBorders.tsx";
+import GameMarker from "./GameMarker.tsx";
+import CursorTracker from "./CursorTracker.tsx";
+import MapZoomControl from "./MapZoomControl.tsx";
+import MarkerFocusController from "./MarkerFocusController.tsx";
+import MapContextMenu, { type ContextMenuState } from "./MapContextMenu.tsx";
+import MapStatusBar from "./MapStatusBar.tsx";
+import SelectedMarkerPopup from "./SelectedMarkerPopup.tsx";
 
 /** Default UI strings; override via the `labels` prop (i18n stays app-side). */
 const DEFAULT_LABELS: GameMapViewLabels = {
@@ -315,9 +317,7 @@ const GameMapView: React.FC<GameMapViewProps> = ({
 
   if (!selectedMap) {
     return (
-      <div className="flex-1 flex items-center justify-center text-sm text-muted-foreground">
-        {labels.noMapSelected}
-      </div>
+      <div className="gm-map-empty">{labels.noMapSelected}</div>
     );
   }
 
@@ -334,13 +334,12 @@ const GameMapView: React.FC<GameMapViewProps> = ({
 
   return (
     <div
-      // `isolate` gives the map its own stacking context so its internal high
-      // z-indexes (leaflet panes, z-[1000] controls, z-[5000] context menu) stay
-      // contained and don't paint over body-level Radix portals (dialogs,
-      // tooltips) which sit at z-50.
-      className="flex-1 relative isolate"
+      // `.gm-map-root` (engine.css) isolates the map's stacking context so its
+      // internal high z-indexes (leaflet panes, z-1000 controls, z-5000 context
+      // menu) stay contained and don't paint over body-level portals (dialogs,
+      // tooltips).
+      className="gm-map-root"
       onClick={() => setContextMenu(null)}
-      style={{ cursor: "default" }}
     >
       <MapContainer
         key={selectedMap.id}
@@ -365,7 +364,7 @@ const GameMapView: React.FC<GameMapViewProps> = ({
         smoothWheelZoom={true}
         smoothSensitivity={4}
         crs={L.CRS.Simple}
-        className="w-full h-full"
+        className="gm-map-canvas"
         attributionControl={false}
         zoomControl={false}
         ref={mapRef}
@@ -437,13 +436,13 @@ const GameMapView: React.FC<GameMapViewProps> = ({
       {/* Context menu overlay */}
       {contextMenu && (
         <div
-          className="absolute z-[5000] min-w-[190px] rounded-md border border-border bg-popover text-popover-foreground shadow-md py-1"
+          className="gm-context-menu"
           style={{ left: contextMenu.x, top: contextMenu.y }}
           onClick={(e) => e.stopPropagation()}
         >
           <button
             type="button"
-            className="w-full px-3 py-1.5 text-left text-sm hover:bg-accent hover:text-accent-foreground"
+            className="gm-context-menu-item"
             onClick={(e) => {
               e.stopPropagation();
               handleCopyPosition(contextMenu.mapX, contextMenu.mapY);

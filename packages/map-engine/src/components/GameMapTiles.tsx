@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import L from "leaflet";
 import { useMap } from "react-leaflet";
 import type { GameMapMeta } from "@gamemap/data-contract";
-import type { MapAssets } from "@/features/map/engineTypes";
+import type { MapAssets } from "../engineTypes.ts";
 
 type GameTilesProps = {
   selectedMap: GameMapMeta;

@@ -1,10 +1,9 @@
-// engineTypes.ts — prop contracts for the (soon-to-be) game-agnostic map
-// engine components. Temporary home under the app: these interfaces move into
-// `@gamemap/map-engine` together with the components themselves in a later
-// step. Nothing in here may reference app contexts, i18n or app-only types.
+// engineTypes.ts — prop contracts for the game-agnostic map engine
+// components. Nothing in here may reference app contexts, i18n or app-only
+// types.
 import type { ReactNode, RefObject } from "react";
 import type L from "leaflet";
-import type { MapTheme } from "@gamemap/map-engine";
+import type { MapTheme } from "./theme.ts";
 import type {
   GameMapMeta,
   MarkerInstance,
@@ -12,7 +11,11 @@ import type {
   RegionInstance,
 } from "@gamemap/data-contract";
 
-export type { MapTheme } from "@gamemap/map-engine";
+/**
+ * Reference to the Leaflet map instance.
+ * Allow null so `useRef<L.Map | null>(null)` matches `RefObject<MapRef>`.
+ */
+export type MapRef = L.Map | null;
 
 /**
  * Marker as the engine consumes it: pre-localized and with the subtype meta
@@ -76,9 +79,9 @@ export interface GameMapViewLabels {
 }
 
 /**
- * Everything `GameMapView` needs, provided by the app adapter (`MapRoute`):
- * the components under `features/map/canvas` + the marker popup read NO app
- * context — all data and callbacks arrive through these props.
+ * Everything `GameMapView` needs, provided by the app adapter (e.g. AION2's
+ * `MapRoute`): the engine components read NO app context — all data and
+ * callbacks arrive through these props.
  */
 export interface GameMapViewProps {
   /** Map to render; when undefined the empty-state message is shown. */
@@ -113,7 +116,7 @@ export interface GameMapViewProps {
   /** Duration (seconds) of the fly-to animation on selection. */
   flyToDuration: number;
   /** Escape hatch to the Leaflet map instance. */
-  mapRef: RefObject<L.Map | null>;
+  mapRef: RefObject<MapRef>;
   /** Asset-URL resolver (tiles, marker icons, watermark). Required — no default. */
   assets: MapAssets;
   /** Color tokens for engine-rendered chrome; defaults to the AION2 Lanhu palette. */

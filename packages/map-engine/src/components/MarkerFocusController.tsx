@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useMap } from "react-leaflet";
 import type { GameMapMeta } from "@gamemap/data-contract";
-import type { EngineMarker } from "@/features/map/engineTypes";
-import { dataToLatLng } from "@gamemap/map-engine";
+import type { EngineMarker } from "../engineTypes.ts";
+import { dataToLatLng } from "../coords.ts";
 
 type MarkerFocusControllerProps = {
   map: GameMapMeta;
