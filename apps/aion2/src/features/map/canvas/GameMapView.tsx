@@ -3,10 +3,11 @@ import { MapContainer, useMap, useMapEvents } from "react-leaflet";
 import L from "leaflet";
 
 import type { RegionInstance } from "@gamemap/data-contract";
-import type { MapRef, MarkerWithTranslations } from "@/types/game";
-import { useGameMap } from "@/context/GameMapContext";
-import { useMarkers } from "@/context/MarkersContext";
-import { useGameData } from "@/context/GameDataContext";
+import type {
+  EngineMarker,
+  GameMapViewLabels,
+  GameMapViewProps,
+} from "@/features/map/engineTypes";
 import { dataToLatLng } from "@gamemap/map-engine"; // barrel also registers the smooth wheel-zoom handler
 
 import GameMapTiles from "@/features/map/canvas/GameMapTiles";
@@ -21,11 +22,10 @@ import MapContextMenu, {
 import MapStatusBar from "@/features/map/canvas/MapStatusBar";
 import SelectedMarkerPopup from "@/features/map/popup/SelectedMarkerPopup";
 
-type Props = {
-  mapRef: React.RefObject<MapRef>;
-  onSelectMarker: (markerId: string | null) => void;
-  selectedMarkerId: string | null;
-  selectedPosition: { x: number; y: number } | null;
+/** Default UI strings; override via the `labels` prop (i18n stays app-side). */
+const DEFAULT_LABELS: GameMapViewLabels = {
+  copyPosition: "Copy position",
+  noMapSelected: "No map selected.",
 };
 
 /**
@@ -125,11 +125,22 @@ const TestMapHandle: React.FC = () => {
   return null;
 };
 
-const GameMapView: React.FC<Props> = ({
-  mapRef,
-  onSelectMarker,
+const GameMapView: React.FC<GameMapViewProps> = ({
+  map: selectedMap,
+  markers,
+  regions,
+  visibleSubtypes,
+  visibleRegions,
+  showLabels,
+  showBorders,
+  lodEnabled,
   selectedMarkerId,
   selectedPosition,
+  onToggleMarker,
+  subzoneAt,
+  flyToDuration,
+  mapRef,
+  labels = DEFAULT_LABELS,
 }) => {
   const [contextMenu, setContextMenu] = useState<ContextMenuState | null>(null);
   const [hoveredRegion, setHoveredRegion] = useState<RegionInstance | undefined>(
@@ -148,10 +159,6 @@ const GameMapView: React.FC<Props> = ({
     },
     [],
   );
-
-  const { selectedMap } = useGameMap();
-  const { visibleSubtypes, lodEnabled } = useGameData();
-  const { markers } = useMarkers();
 
   const handleCopyPosition = useCallback((x: number, y: number) => {
     const text = `${Math.round(x)}, ${Math.round(y)}`;
@@ -181,17 +188,33 @@ const GameMapView: React.FC<Props> = ({
   }, [selectedMap, markers]);
 
   /**
+   * `id → marker` lookup, shared by the focus controller and the selected-
+   * marker popup. Same recompute cadence as `positionById`.
+   */
+  const markerById = useMemo(() => {
+    const map = new Map<string, EngineMarker>();
+    for (const m of markers) {
+      map.set(m.id, m);
+    }
+    return map;
+  }, [markers]);
+
+  const selectedMarker = selectedMarkerId
+    ? (markerById.get(selectedMarkerId) ?? null)
+    : null;
+
+  /**
    * The set of markers eligible to show, each paired with its (stable)
    * projected position. Recomputed only when an input that affects visibility
    * changes (markers, subtype filter, LOD, zoom tier, viewport bounds,
    * selection) — NOT on unrelated re-renders.
    */
   const visibleMarkers = useMemo<
-    { marker: MarkerWithTranslations; position: L.LatLng }[]
+    { marker: EngineMarker; position: L.LatLng }[]
   >(() => {
     if (!selectedMap) return [];
     const visibleTier = visibleTierForZoom(zoom);
-    const out: { marker: MarkerWithTranslations; position: L.LatLng }[] = [];
+    const out: { marker: EngineMarker; position: L.LatLng }[] = [];
     for (const m of markers) {
       // Selection always overrides subtype filter, LOD and culling so the
       // focused marker (and its popup) render even when off-screen.
@@ -288,7 +311,7 @@ const GameMapView: React.FC<Props> = ({
   if (!selectedMap) {
     return (
       <div className="flex-1 flex items-center justify-center text-sm text-muted-foreground">
-        No map selected.
+        {labels.noMapSelected}
       </div>
     );
   }
@@ -344,17 +367,22 @@ const GameMapView: React.FC<Props> = ({
       >
         <MapZoomControl />
         <ViewportWatcher onChange={handleViewport} />
-        <DeselectOnMapClick onDeselect={() => onSelectMarker(null)} />
+        <DeselectOnMapClick onDeselect={() => onToggleMarker(null)} />
         <TestMapHandle />
-        <CursorTracker />
+        <CursorTracker map={selectedMap} />
 
         <MapContextMenu
+          map={selectedMap}
           onOpenMenu={(state) => setContextMenu(state)}
           onCloseMenu={() => setContextMenu(null)}
         />
 
         <GameMapTiles selectedMap={selectedMap} />
         <GameMapBorders
+          map={selectedMap}
+          regions={regions}
+          visibleRegions={visibleRegions}
+          showBorders={showBorders}
           hoveredRegion={hoveredRegion}
           setHoveredRegion={setHoveredRegion}
         />
@@ -363,26 +391,32 @@ const GameMapView: React.FC<Props> = ({
           <GameMarker
             key={marker.id}
             marker={marker}
+            map={selectedMap}
             position={position}
-            onSelectMarker={onSelectMarker}
+            showLabels={showLabels}
+            onSelectMarker={onToggleMarker}
             selected={selectedMarkerId === marker.id}
           />
         ))}
 
         <MarkerFocusController
+          map={selectedMap}
+          markersById={markerById}
           selectedMarkerId={selectedMarkerId}
           selectedPosition={selectedPosition}
+          flyToDuration={flyToDuration}
         />
 
         <SelectedMarkerPopup
-          selectedMarkerId={selectedMarkerId}
-          onSelectMarker={onSelectMarker}
+          map={selectedMap}
+          marker={selectedMarker}
+          onSelectMarker={onToggleMarker}
         />
       </MapContainer>
 
       {/* Bottom status bar (Lanhu): subscribes to the cursor store itself so
           mousemove re-renders ONLY the bar, not the map layers. */}
-      <MapStatusBar />
+      <MapStatusBar subzoneAt={subzoneAt} />
 
       {/* Context menu overlay */}
       {contextMenu && (
@@ -400,7 +434,7 @@ const GameMapView: React.FC<Props> = ({
               setContextMenu(null);
             }}
           >
-            Copy position ({Math.round(contextMenu.mapX)},{" "}
+            {labels.copyPosition} ({Math.round(contextMenu.mapX)},{" "}
             {Math.round(contextMenu.mapY)})
           </button>
         </div>

@@ -1,8 +1,12 @@
 import React, { useSyncExternalStore } from "react";
 import { cursorStore } from "@gamemap/map-engine";
-import { useSubzoneLookup } from "@/features/map/useSubzoneLookup";
 
 const ICP = "沪ICP备2025152827号-1";
+
+type Props = {
+  /** `(x, y)` DATA-space → localized subzone name (app-side lookup). */
+  subzoneAt: (x: number, y: number) => string;
+};
 
 // Lanhu "1天族" footer: white text on the bottom-left of the map. The ICP record
 // floats directly on the map (with a dark text-shadow); below it, the live
@@ -11,12 +15,11 @@ const ICP = "沪ICP备2025152827号-1";
 // board (layout = logical px ×2).
 const TEXT_SHADOW = "0 1px 3px rgba(0,0,0,0.9), 0 0 6px rgba(0,0,0,0.6)";
 
-const MapStatusBar: React.FC = () => {
+const MapStatusBar: React.FC<Props> = ({ subzoneAt }) => {
   const pos = useSyncExternalStore(
     cursorStore.subscribe,
     cursorStore.getSnapshot,
   );
-  const subzoneAt = useSubzoneLookup();
   const subzone = pos ? subzoneAt(pos.x, pos.y) : "";
 
   return (

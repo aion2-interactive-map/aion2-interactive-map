@@ -1,11 +1,12 @@
 import React, { memo, useMemo } from "react";
 import { LayerGroup, Polyline, Polygon } from "react-leaflet";
-import { useMarkers } from "@/context/MarkersContext";
-import type { RegionInstance } from "@gamemap/data-contract";
-import { useGameData } from "@/context/GameDataContext";
-import { useGameMap } from "@/context/GameMapContext";
+import type { GameMapMeta, RegionInstance } from "@gamemap/data-contract";
 
 type Props = {
+  map: GameMapMeta;
+  regions: RegionInstance[];
+  visibleRegions?: Set<string>;
+  showBorders: boolean;
   hoveredRegion?: RegionInstance;
   setHoveredRegion: (hoveredRegion?: RegionInstance) => void;
 };
@@ -135,15 +136,14 @@ const BorderSegments = memo(function BorderSegments({
 });
 
 const GameMapBorders: React.FC<Props> = ({
+  map,
+  regions,
+  visibleRegions,
+  showBorders,
   hoveredRegion,
   setHoveredRegion,
 }) => {
-  const { regions } = useMarkers();
-  const { showBorders, visibleRegions } = useGameData();
-  const { selectedMap } = useGameMap();
-  const mapHeight = selectedMap
-    ? selectedMap.tileHeight * selectedMap.tilesCountY
-    : 0;
+  const mapHeight = map.tileHeight * map.tilesCountY;
 
   // De-duplicate shared edges so a border drawn between two regions renders once.
   const segments = useMemo(() => {

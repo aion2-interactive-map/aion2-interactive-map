@@ -1,13 +1,15 @@
 import React, { useMemo } from "react";
 import { Popup } from "react-leaflet";
 
-import { useMarkers } from "@/context/MarkersContext";
-import { useGameMap } from "@/context/GameMapContext";
+import type { GameMapMeta } from "@gamemap/data-contract";
+import type { EngineMarker } from "@/features/map/engineTypes";
 import MarkerPopupContent from "@/features/map/popup/MarkerPopupContent";
 import { dataToLatLngTuple } from "@gamemap/map-engine";
 
 type Props = {
-  selectedMarkerId: string | null;
+  map: GameMapMeta;
+  /** The selected marker (resolved by GameMapView), or null when none. */
+  marker: EngineMarker | null;
   onSelectMarker: (id: string | null) => void;
 };
 
@@ -24,29 +26,29 @@ type Props = {
 const POPUP_OFFSET: [number, number] = [0, -4];
 
 const SelectedMarkerPopup: React.FC<Props> = ({
-  selectedMarkerId,
+  map,
+  marker,
   onSelectMarker,
 }) => {
-  const { markersById } = useMarkers();
-  const { selectedMap } = useGameMap();
-
-  const marker = selectedMarkerId ? markersById[selectedMarkerId] : null;
-
   // DATA (image-space) → Leaflet [lat, lng] with the single vertical flip.
   // Memoize so the tuple keeps a STABLE reference across pan/zoom re-renders
   // (coords don't change). react-leaflet's popup lifecycle effect lists
   // `position` in its deps; a fresh array each render would tear the popup
   // layer down and re-open it (replaying the fade-in) — a visible blink after
   // every drag/zoom `moveend`.
-  // `marker` is referentially stable across pan/zoom re-renders (markersById is
-  // memoized on the loaded markers), so this tuple's reference only changes when
-  // the selection or map actually changes — not on every drag/zoom moveend.
+  // Keyed on the marker's COORDS (not the marker object): the `EngineMarker`
+  // objects are rebuilt whenever app-side state folded into them changes (e.g.
+  // marking the marker completed), and a fresh tuple then would tear the popup
+  // down — its `remove` handler fires `onSelectMarker(null)`, closing the popup
+  // the moment the user clicks "Mark as completed".
+  const markerX = marker?.x;
+  const markerY = marker?.y;
   const position = useMemo<[number, number] | null>(
     () =>
-      selectedMap && marker
-        ? dataToLatLngTuple(selectedMap, marker.x, marker.y)
+      markerX != null && markerY != null
+        ? dataToLatLngTuple(map, markerX, markerY)
         : null,
-    [selectedMap, marker],
+    [map, markerX, markerY],
   );
 
   if (!position || !marker) return null;

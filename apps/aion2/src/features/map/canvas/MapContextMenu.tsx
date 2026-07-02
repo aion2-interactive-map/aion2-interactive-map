@@ -1,6 +1,6 @@
 import React from "react";
 import { useMapEvents } from "react-leaflet";
-import { useGameMap } from "@/context/GameMapContext";
+import type { GameMapMeta } from "@gamemap/data-contract";
 import { latLngToData } from "@gamemap/map-engine";
 
 export type ContextMenuState = {
@@ -11,29 +11,24 @@ export type ContextMenuState = {
 };
 
 type MapContextMenuProps = {
+  map: GameMapMeta;
   onOpenMenu: (state: ContextMenuState) => void;
   onCloseMenu: () => void;
 };
 
 const MapContextMenu: React.FC<MapContextMenuProps> = ({
+  map,
   onOpenMenu,
   onCloseMenu,
 }) => {
-  const { selectedMap } = useGameMap();
-
-  const map = useMapEvents({
+  const leafletMap = useMapEvents({
     contextmenu(e) {
       e.originalEvent.preventDefault();
-      if (!selectedMap) return;
 
       // Leaflet (lat, lng) → DATA (image-space) with the inverse vertical flip.
-      const { x: mapX, y: mapY } = latLngToData(
-        selectedMap,
-        e.latlng.lat,
-        e.latlng.lng,
-      );
+      const { x: mapX, y: mapY } = latLngToData(map, e.latlng.lat, e.latlng.lng);
 
-      const containerPoint = map.latLngToContainerPoint(e.latlng);
+      const containerPoint = leafletMap.latLngToContainerPoint(e.latlng);
 
       onOpenMenu({
         x: containerPoint.x,

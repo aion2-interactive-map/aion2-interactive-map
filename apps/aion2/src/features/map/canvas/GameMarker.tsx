@@ -1,12 +1,9 @@
 import React, { memo } from "react";
 import { Marker, Tooltip } from "react-leaflet";
-import { useTranslation } from "react-i18next";
 import L from "leaflet";
 
-import type { MarkerWithTranslations } from "@/types/game";
-import { useMarkers } from "@/context/MarkersContext";
-import { useGameMap } from "@/context/GameMapContext";
-import { useGameData } from "@/context/GameDataContext";
+import type { GameMapMeta } from "@gamemap/data-contract";
+import type { EngineMarker } from "@/features/map/engineTypes";
 import { createPinIcon } from "@gamemap/map-engine";
 import { parseIconUrl } from "@/lib/url";
 
@@ -21,43 +18,36 @@ const COMPACT_SCALE = 0.9;
 const FRAGMENT_SCALE = 1.1;
 
 type Props = {
-  marker: MarkerWithTranslations;
+  marker: EngineMarker;
+  map: GameMapMeta;
   /**
    * Precomputed Leaflet position. GameMapView already projects every marker
    * through `dataToLatLng` for viewport culling, so it passes the result down
    * rather than have each marker recompute the same conversion.
    */
   position: L.LatLng;
+  /** Show the permanent marker-name tooltip. */
+  showLabels: boolean;
   onSelectMarker?: (markerId: string) => void;
   selected?: boolean;
 };
 
 const GameMarkerInner: React.FC<Props> = ({
   marker,
+  map,
   position,
+  showLabels,
   onSelectMarker,
   selected = false,
 }) => {
-  const { selectedMap } = useGameMap();
-  const { allSubtypes } = useGameData();
-  const { showLabels, completedBySubtype } = useMarkers();
-  const { t } = useTranslation();
-
-  if (!selectedMap) return null;
-
-  // Subtype definition (carries its category name, assigned in GameDataContext).
-  const sub = allSubtypes.get(marker.subtype);
+  // Subtype definition (resolved by the app adapter, carries its category name).
+  const sub = marker.subtypeMeta;
   const category = sub?.category;
 
-  const subtypeLabel = t(`types:subtypes.${sub?.name}.name`);
   const iconScale = sub?.iconScale || 1.25;
   const hideTooltip = !!sub?.hideTooltip;
 
-  let isCompleted = false;
-  if (sub?.name && completedBySubtype[sub.name]) {
-    const completedSet = completedBySubtype[sub.name];
-    isCompleted = completedSet.has(marker.indexInSubtype);
-  }
+  const isCompleted = !!marker.completed;
 
   // Resolve icon. Subtypes carry a distinct game-icon image; render that as
   // the marker (the "image" variant) for every category that has one,
@@ -73,7 +63,7 @@ const GameMarkerInner: React.FC<Props> = ({
   const useIconSwap = isCompleted && !!sub?.iconComplete;
   const rawIcon =
     (useIconSwap ? sub?.iconComplete : marker.icon || sub?.icon) || "";
-  const innerIcon = parseIconUrl(rawIcon, selectedMap);
+  const innerIcon = parseIconUrl(rawIcon, map);
   const renderCompleted = isCompleted && !useIconSwap;
   let icon: L.DivIcon;
   if (category === "creature") {
@@ -108,7 +98,8 @@ const GameMarkerInner: React.FC<Props> = ({
     );
   }
 
-  const localizedName = marker.localizedName || marker.name || subtypeLabel;
+  const localizedName =
+    marker.localizedName || marker.name || marker.subtypeLabel;
 
   return (
     <Marker
