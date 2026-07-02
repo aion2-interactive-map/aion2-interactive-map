@@ -1,3 +1,8 @@
+common:
+  loading: "Loading..."
+  notFound: "Not found: {{id}}"
+  open: "Open"
+  level: "Lv. {{n}}"
 nav: { wiki: "Wiki" }
 home:
   title: "AION2 Wiki"
@@ -31,3 +36,29 @@ list:
   light: "Elyos"
   dark: "Asmodian"
   both: "Both factions"
+npc:
+  info: "NPC info"
+  npcType: "Type"
+  grade: "Grade"
+  named: "Named"
+  spawns: "Spawn locations"
+  quests: "Related quests"
+  giver: "Quest giver"
+  target: "Quest target"
+  drops: "Drops"
+  noSpawns: "No known spawn locations"
+item:
+  info: "Item info"
+  category: "Category"
+  tier: "Tier"
+  itemLevel: "Item level"
+  sellPrice: "Sell price"
+  maxStack: "Max stack"
+  stats: "Stats"
+  sources: "How to obtain"
+  gather: "Gathering"
+  craft: "Crafting"
+  shop: "Shop"
+  questReward: "Quest reward"
+  droppedBy: "Dropped by"
+  rewardFrom: "Reward from quests"

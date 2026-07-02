@@ -1,3 +1,8 @@
+common:
+  loading: "加载中..."
+  notFound: "未找到：{{id}}"
+  open: "打开"
+  level: "{{n}} 级"
 nav: { wiki: "百科" }
 home:
   title: "AION2 百科"
@@ -31,3 +36,29 @@ list:
   light: "天族"
   dark: "魔族"
   both: "双阵营通用"
+npc:
+  info: "NPC信息"
+  npcType: "类型"
+  grade: "等级"
+  named: "精英"
+  spawns: "出没地点"
+  quests: "相关任务"
+  giver: "任务发布"
+  target: "任务目标"
+  drops: "掉落物品"
+  noSpawns: "未知出没地点"
+item:
+  info: "物品信息"
+  category: "分类"
+  tier: "阶级"
+  itemLevel: "物品等级"
+  sellPrice: "出售价格"
+  maxStack: "堆叠上限"
+  stats: "属性"
+  sources: "获取途径"
+  gather: "采集"
+  craft: "制作"
+  shop: "商店"
+  questReward: "任务奖励"
+  droppedBy: "掉落来源"
+  rewardFrom: "奖励自任务"
