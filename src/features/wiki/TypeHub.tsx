@@ -100,9 +100,10 @@ export default function TypeHub({ type }: { type: string }) {
                 to="/wiki/$type/$slug"
                 params={{ type, slug: groupSlug }}
                 hash={s.slug}
-                className="rounded bg-secondary px-2 py-0.5 hover:bg-accent"
+                className="rounded-md border border-border bg-card px-2 py-0.5 text-foreground/80 transition-colors hover:border-primary/50 hover:text-foreground"
               >
-                {t(`wiki/taxonomy:sections.${s.slug}.name`)} - {s.count}
+                {t(`wiki/taxonomy:sections.${s.slug}.name`)}{" "}
+                <span className="text-muted-foreground">{s.count}</span>
               </Link>
             ) : (
               <Link
@@ -110,9 +111,10 @@ export default function TypeHub({ type }: { type: string }) {
                 params={{ type, slug: groupSlug }}
                 search={{ faction: bucket }}
                 hash={s.slug}
-                className="rounded bg-secondary px-2 py-0.5 hover:bg-accent"
+                className="rounded-md border border-border bg-card px-2 py-0.5 text-foreground/80 transition-colors hover:border-primary/50 hover:text-foreground"
               >
-                {t(`wiki/taxonomy:sections.${s.slug}.name`)} - {s.count}
+                {t(`wiki/taxonomy:sections.${s.slug}.name`)}{" "}
+                <span className="text-muted-foreground">{s.count}</span>
               </Link>
             )}
           </li>
