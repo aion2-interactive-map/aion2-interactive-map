@@ -1,17 +1,23 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import type { MapRef } from "@/types/game";
-import type { EngineMarker } from "@/features/map/engineTypes";
+import type {
+  EngineMarker,
+  GameMapViewLabels,
+} from "@/features/map/engineTypes";
 import { useGameMap } from "@/context/GameMapContext";
 import { useMarkers } from "@/context/MarkersContext";
 import { useGameData } from "@/context/GameDataContext";
 import { useSubzoneLookup } from "@/features/map/useSubzoneLookup";
+import { aionAssets } from "@/features/map/aionAssets";
+import { aionTheme } from "@/features/map/aionTheme";
 import GameMapView from "@/features/map/canvas/GameMapView";
+import MarkerPopupContent from "@/features/map/popup/MarkerPopupContent";
 import Sidebar from "@/features/map/sidebar/Sidebar";
 import SearchPanel from "@/features/map/search/SearchPanel";
 import TopNavbar from "@/components/TopNavbar";
 import { getQueryParam } from "@/lib/url";
-import { MAP_FLY_TO_DURATION } from "@/lib/constants";
+import { ICP_RECORD, MAP_FLY_TO_DURATION } from "@/lib/constants";
 
 export default function MapRoute() {
   const mapRef = useRef<MapRef>(null);
@@ -27,6 +33,24 @@ export default function MapRoute() {
     useGameData();
   const subzoneAt = useSubzoneLookup();
   const { t } = useTranslation();
+
+  // Engine chrome strings, resolved app-side (the engine itself is i18n-free).
+  const labels = useMemo<GameMapViewLabels>(
+    () => ({
+      copyPosition: t("map.copyPosition"),
+      noMapSelected: t("map.noMapSelected"),
+      zoomIn: t("map.zoomIn"),
+      zoomOut: t("map.zoomOut"),
+      footerText: ICP_RECORD,
+    }),
+    [t],
+  );
+
+  // Stable render prop: popup content stays app code (router links, contexts).
+  const renderPopupContent = useCallback(
+    (m: EngineMarker) => <MarkerPopupContent marker={m} />,
+    [],
+  );
 
   const [selectedMarkerId, setSelectedMarkerId] = useState<string | null>(null);
   const [selectedPosition, setSelectedPosition] = useState<{
@@ -123,6 +147,11 @@ export default function MapRoute() {
             onToggleMarker={handleToggleMarker}
             subzoneAt={subzoneAt}
             flyToDuration={MAP_FLY_TO_DURATION}
+            assets={aionAssets}
+            theme={aionTheme}
+            labels={labels}
+            renderPopupContent={renderPopupContent}
+            exposeTestHandle={import.meta.env.DEV}
           />
           <SearchPanel
             onSelectMarker={setSelectedMarkerId}

@@ -3,9 +3,12 @@ import { Marker, Tooltip } from "react-leaflet";
 import L from "leaflet";
 
 import type { GameMapMeta } from "@gamemap/data-contract";
-import type { EngineMarker } from "@/features/map/engineTypes";
+import type {
+  EngineMarker,
+  MapAssets,
+  MapTheme,
+} from "@/features/map/engineTypes";
 import { createPinIcon } from "@gamemap/map-engine";
-import { parseIconUrl } from "@/lib/url";
 
 /**
  * Subtypes (beyond the whole `gathering` category) that are numerous/dense and
@@ -30,6 +33,9 @@ type Props = {
   showLabels: boolean;
   onSelectMarker?: (markerId: string) => void;
   selected?: boolean;
+  /** Reference-stable app adapters; this component is memoized. */
+  assets: MapAssets;
+  theme?: MapTheme;
 };
 
 const GameMarkerInner: React.FC<Props> = ({
@@ -39,6 +45,8 @@ const GameMarkerInner: React.FC<Props> = ({
   showLabels,
   onSelectMarker,
   selected = false,
+  assets,
+  theme,
 }) => {
   // Subtype definition (resolved by the app adapter, carries its category name).
   const sub = marker.subtypeMeta;
@@ -63,18 +71,36 @@ const GameMarkerInner: React.FC<Props> = ({
   const useIconSwap = isCompleted && !!sub?.iconComplete;
   const rawIcon =
     (useIconSwap ? sub?.iconComplete : marker.icon || sub?.icon) || "";
-  const innerIcon = parseIconUrl(rawIcon, map);
+  const innerIcon = assets.markerIconUrl(rawIcon, map);
   const renderCompleted = isCompleted && !useIconSwap;
   let icon: L.DivIcon;
   if (category === "creature") {
-    icon = createPinIcon(innerIcon, 0.9, renderCompleted, "circular", undefined, selected);
+    icon = createPinIcon(
+      innerIcon,
+      0.9,
+      renderCompleted,
+      "circular",
+      undefined,
+      selected,
+      undefined,
+      theme,
+    );
   } else if (!rawIcon) {
     // No game icon for this subtype: fall back to the circular dot. Use the
     // subtype color as the inner dot when provided (non-black); otherwise the
     // default Lanhu blue is used.
     const dot =
       sub?.color && sub.color !== "#000000" ? sub.color : undefined;
-    icon = createPinIcon(innerIcon, iconScale, renderCompleted, "pin", dot, selected);
+    icon = createPinIcon(
+      innerIcon,
+      iconScale,
+      renderCompleted,
+      "pin",
+      dot,
+      selected,
+      undefined,
+      theme,
+    );
   } else {
     // Gathering nodes plus a few dense collection subtypes (fragments,
     // hiddenCube) render a touch smaller so dense clusters stay readable.
@@ -95,6 +121,7 @@ const GameMarkerInner: React.FC<Props> = ({
       undefined,
       selected,
       marker.fragmentType,
+      theme,
     );
   }
 

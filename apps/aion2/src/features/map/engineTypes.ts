@@ -2,14 +2,17 @@
 // engine components. Temporary home under the app: these interfaces move into
 // `@gamemap/map-engine` together with the components themselves in a later
 // step. Nothing in here may reference app contexts, i18n or app-only types.
-import type { RefObject } from "react";
+import type { ReactNode, RefObject } from "react";
 import type L from "leaflet";
+import type { MapTheme } from "@gamemap/map-engine";
 import type {
   GameMapMeta,
   MarkerInstance,
   MarkerTypeSubtype,
   RegionInstance,
 } from "@gamemap/data-contract";
+
+export type { MapTheme } from "@gamemap/map-engine";
 
 /**
  * Marker as the engine consumes it: pre-localized and with the subtype meta
@@ -37,12 +40,34 @@ export interface EngineMarker extends MarkerInstance {
   completed?: boolean;
 }
 
+/**
+ * Asset-URL resolution, injected by the app (the engine never builds URLs
+ * itself). No default exists — every game must provide one.
+ */
+export interface MapAssets {
+  /** URL of the map tile at grid indices (x, y). Indices are already clamped to the tile grid by the engine tile layer. */
+  tileUrl(map: GameMapMeta, x: number, y: number): string;
+  /**
+   * URL for a marker's game-icon image. `icon` may be "" / undefined (subtype
+   * without an icon) — implementations decide the fallback. `map` is provided
+   * for per-map variants (e.g. AION2 swaps Light→Dark icons on dark maps).
+   */
+  markerIconUrl(icon: string | undefined, map: GameMapMeta): string;
+  /** Optional watermark image tiled over the map at low opacity. Omit to disable the watermark layer. */
+  watermarkUrl?: string;
+}
+
 /** UI strings the engine renders itself (i18n stays app-side). */
 export interface GameMapViewLabels {
   /** Context-menu "copy position" entry; coordinates are appended by the engine. */
   copyPosition: string;
   /** Empty-state message shown when `map` is undefined. */
   noMapSelected: string;
+  /** Zoom-control accessibility labels. */
+  zoomIn: string;
+  zoomOut: string;
+  /** Footer line above the cursor pill (e.g. legal/ICP record). Empty/undefined = hidden. */
+  footerText?: string;
 }
 
 /**
@@ -84,5 +109,13 @@ export interface GameMapViewProps {
   flyToDuration: number;
   /** Escape hatch to the Leaflet map instance. */
   mapRef: RefObject<L.Map | null>;
+  /** Asset-URL resolver (tiles, marker icons, watermark). Required — no default. */
+  assets: MapAssets;
+  /** Color tokens for engine-rendered chrome; defaults to the AION2 Lanhu palette. */
+  theme?: MapTheme;
+  /** Renders the selected marker's popup body (app-side content: links, actions...). */
+  renderPopupContent: (marker: EngineMarker) => ReactNode;
+  /** Dev/test only: publish the Leaflet map on `window.__leafletMap` for e2e. */
+  exposeTestHandle?: boolean;
   labels?: GameMapViewLabels;
 }

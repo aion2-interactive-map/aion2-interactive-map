@@ -38,6 +38,12 @@ fragmentType:
   air: "Air"
   water: "Water"
 
+map:
+  copyPosition: "Copy position"
+  noMapSelected: "No map selected."
+  zoomIn: "Zoom in"
+  zoomOut: "Zoom out"
+
 menu:
   home: "Home"
   settings: "Settings"

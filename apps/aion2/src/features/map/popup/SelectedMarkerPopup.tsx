@@ -1,9 +1,8 @@
-import React, { useMemo } from "react";
+import React, { type ReactNode, useMemo } from "react";
 import { Popup } from "react-leaflet";
 
 import type { GameMapMeta } from "@gamemap/data-contract";
 import type { EngineMarker } from "@/features/map/engineTypes";
-import MarkerPopupContent from "@/features/map/popup/MarkerPopupContent";
 import { dataToLatLngTuple } from "@gamemap/map-engine";
 
 type Props = {
@@ -11,6 +10,7 @@ type Props = {
   /** The selected marker (resolved by GameMapView), or null when none. */
   marker: EngineMarker | null;
   onSelectMarker: (id: string | null) => void;
+  renderPopupContent: (marker: EngineMarker) => ReactNode;
 };
 
 // Popup vertical offset, tuned so the popup card bottom lines up with the marker
@@ -29,6 +29,7 @@ const SelectedMarkerPopup: React.FC<Props> = ({
   map,
   marker,
   onSelectMarker,
+  renderPopupContent,
 }) => {
   // DATA (image-space) → Leaflet [lat, lng] with the single vertical flip.
   // Memoize so the tuple keeps a STABLE reference across pan/zoom re-renders
@@ -80,7 +81,11 @@ const SelectedMarkerPopup: React.FC<Props> = ({
       autoClose={false}
       eventHandlers={{ remove: () => onSelectMarker(null) }}
     >
-      <MarkerPopupContent marker={marker} />
+      {/* Popup content is a render prop so the engine popup carries no app
+          content coupling; the position memo above is the anti-blink mechanism
+          and is untouched, so children may re-render freely without tearing the
+          popup down. */}
+      {renderPopupContent(marker)}
     </Popup>
   );
 };

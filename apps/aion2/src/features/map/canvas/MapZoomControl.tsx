@@ -4,14 +4,22 @@ import { useMap } from "react-leaflet";
 /**
  * Lanhu-style map controls (design "1天族"), pinned top-left inside the map:
  *  - a small vertical pill with + / − zoom buttons
- *    (light bg, #3D3D3D glyphs, rounded, subtle shadow)
+ *    (light bg, injected glyph color, rounded, subtle shadow)
  *
  * Replaces the default Leaflet zoom UI (MapContainer must set
  * `zoomControl={false}`).
  */
-const GLYPH = "#3D3D3D";
+type Props = {
+  glyphColor: string;
+  zoomInLabel: string;
+  zoomOutLabel: string;
+};
 
-const MapZoomControl: React.FC = () => {
+const MapZoomControl: React.FC<Props> = ({
+  glyphColor,
+  zoomInLabel,
+  zoomOutLabel,
+}) => {
   const map = useMap();
 
   return (
@@ -20,20 +28,20 @@ const MapZoomControl: React.FC = () => {
       <div className="flex flex-col overflow-hidden rounded-lg bg-white/95 shadow-md ring-1 ring-black/5">
         <button
           type="button"
-          aria-label="Zoom in"
+          aria-label={zoomInLabel}
           onClick={() => map.zoomIn()}
           className="flex h-8 w-8 items-center justify-center text-lg leading-none hover:bg-black/5"
-          style={{ color: GLYPH }}
+          style={{ color: glyphColor }}
         >
           +
         </button>
         <div className="h-px w-full bg-black/10" />
         <button
           type="button"
-          aria-label="Zoom out"
+          aria-label={zoomOutLabel}
           onClick={() => map.zoomOut()}
           className="flex h-8 w-8 items-center justify-center text-lg leading-none hover:bg-black/5"
-          style={{ color: GLYPH }}
+          style={{ color: glyphColor }}
         >
           −
         </button>

@@ -66,6 +66,12 @@ fragmentType:
   air: "空中"
   water: "水中"
 
+map:
+  copyPosition: "复制坐标"
+  noMapSelected: "未选择地图。"
+  zoomIn: "放大"
+  zoomOut: "缩小"
+
 menu:
   home: "首页"
   settings: "设置"

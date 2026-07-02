@@ -4,6 +4,7 @@ import { MapContainer, Marker, Polygon, Tooltip } from "react-leaflet";
 import { useTranslation } from "react-i18next";
 
 import { useGameMap } from "@/context/GameMapContext";
+import { aionAssets } from "@/features/map/aionAssets";
 import GameMapTiles from "@/features/map/canvas/GameMapTiles";
 // Importing the map-engine barrel also registers the smooth wheel-zoom handler.
 import { createPinIcon, dataToLatLng, dataToLatLngTuple } from "@gamemap/map-engine";
@@ -127,7 +128,7 @@ export default function EmbeddedMap({
         attributionControl={false}
         className="h-full w-full"
       >
-        <GameMapTiles selectedMap={map} />
+        <GameMapTiles selectedMap={map} assets={aionAssets} />
         {highlightRegions.map((region) =>
           region.borders.map((polygon, idx) => (
             <Polygon

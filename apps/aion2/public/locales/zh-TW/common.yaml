@@ -27,6 +27,12 @@ fragmentType:
   air: "空中"
   water: "水中"
 
+map:
+  copyPosition: "複製座標"
+  noMapSelected: "未選擇地圖。"
+  zoomIn: "放大"
+  zoomOut: "縮小"
+
 ui:
   confirm: "確認"
   cancel: "取消"

@@ -8,7 +8,7 @@ import type {
   GameMapViewLabels,
   GameMapViewProps,
 } from "@/features/map/engineTypes";
-import { dataToLatLng } from "@gamemap/map-engine"; // barrel also registers the smooth wheel-zoom handler
+import { DEFAULT_MAP_THEME, dataToLatLng } from "@gamemap/map-engine"; // barrel also registers the smooth wheel-zoom handler
 
 import GameMapTiles from "@/features/map/canvas/GameMapTiles";
 import GameMapBorders from "@/features/map/canvas/GameMapBorders";
@@ -26,6 +26,8 @@ import SelectedMarkerPopup from "@/features/map/popup/SelectedMarkerPopup";
 const DEFAULT_LABELS: GameMapViewLabels = {
   copyPosition: "Copy position",
   noMapSelected: "No map selected.",
+  zoomIn: "Zoom in",
+  zoomOut: "Zoom out",
 };
 
 /**
@@ -109,14 +111,13 @@ const DeselectOnMapClick: React.FC<{ onDeselect: () => void }> = ({
 };
 
 /**
- * Dev/test-only hook: publishes the Leaflet map instance on `window` so e2e
- * tests can project DATA coords through the real map (verifying the vertical
- * flip). No-op in production builds.
+ * Publishes the Leaflet map instance on `window` so e2e tests can project DATA
+ * coords through the real map (verifying the vertical flip). Dev/test gating
+ * lives in the app via the `exposeTestHandle` prop.
  */
 const TestMapHandle: React.FC = () => {
   const map = useMap();
   useEffect(() => {
-    if (!import.meta.env.DEV) return;
     (window as unknown as { __leafletMap?: unknown }).__leafletMap = map;
     return () => {
       delete (window as unknown as { __leafletMap?: unknown }).__leafletMap;
@@ -140,6 +141,10 @@ const GameMapView: React.FC<GameMapViewProps> = ({
   subzoneAt,
   flyToDuration,
   mapRef,
+  assets,
+  theme = DEFAULT_MAP_THEME,
+  renderPopupContent,
+  exposeTestHandle = false,
   labels = DEFAULT_LABELS,
 }) => {
   const [contextMenu, setContextMenu] = useState<ContextMenuState | null>(null);
@@ -365,10 +370,14 @@ const GameMapView: React.FC<GameMapViewProps> = ({
         zoomControl={false}
         ref={mapRef}
       >
-        <MapZoomControl />
+        <MapZoomControl
+          glyphColor={theme.zoomGlyph}
+          zoomInLabel={labels.zoomIn}
+          zoomOutLabel={labels.zoomOut}
+        />
         <ViewportWatcher onChange={handleViewport} />
         <DeselectOnMapClick onDeselect={() => onToggleMarker(null)} />
-        <TestMapHandle />
+        {exposeTestHandle && <TestMapHandle />}
         <CursorTracker map={selectedMap} />
 
         <MapContextMenu
@@ -377,7 +386,7 @@ const GameMapView: React.FC<GameMapViewProps> = ({
           onCloseMenu={() => setContextMenu(null)}
         />
 
-        <GameMapTiles selectedMap={selectedMap} />
+        <GameMapTiles selectedMap={selectedMap} assets={assets} />
         <GameMapBorders
           map={selectedMap}
           regions={regions}
@@ -396,6 +405,8 @@ const GameMapView: React.FC<GameMapViewProps> = ({
             showLabels={showLabels}
             onSelectMarker={onToggleMarker}
             selected={selectedMarkerId === marker.id}
+            assets={assets}
+            theme={theme}
           />
         ))}
 
@@ -411,12 +422,17 @@ const GameMapView: React.FC<GameMapViewProps> = ({
           map={selectedMap}
           marker={selectedMarker}
           onSelectMarker={onToggleMarker}
+          renderPopupContent={renderPopupContent}
         />
       </MapContainer>
 
       {/* Bottom status bar (Lanhu): subscribes to the cursor store itself so
           mousemove re-renders ONLY the bar, not the map layers. */}
-      <MapStatusBar subzoneAt={subzoneAt} />
+      <MapStatusBar
+        subzoneAt={subzoneAt}
+        footerText={labels.footerText}
+        pillBg={theme.statusPillBg}
+      />
 
       {/* Context menu overlay */}
       {contextMenu && (

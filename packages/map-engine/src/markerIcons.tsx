@@ -1,11 +1,7 @@
 import L from "leaflet";
 import { CheckCircle, ChevronDown, ChevronUp } from "lucide-react";
 import { renderToString } from "react-dom/server";
-
-/** Lanhu marker-pin colors (design "1天族"). */
-const LANHU_PIN_DISC_BG = "rgba(0,0,0,0.6)"; // 圆形 17 background
-const LANHU_PIN_BORDER = "rgba(255,255,255,1)"; // 0.5px hairline
-const LANHU_PIN_DOT = "#2E97FF"; // 圆形 18 inner dot (rgba 46,150,255)
+import { DEFAULT_PIN_THEME, type PinTheme } from "./theme.ts";
 
 export type PinVariant = "image" | "circular" | "pin";
 
@@ -17,7 +13,7 @@ export type PinVariant = "image" | "circular" | "pin";
  * - `pin`      — the Lanhu-style location pin: a dark translucent disc with a
  *                white hairline border around a colored inner dot. Fallback for
  *                subtypes that have no game-icon image. `innerColor` overrides
- *                the dot color (default blue #2E97FF).
+ *                the dot color (default comes from `theme.pinDot`).
  */
 /** Selected-marker emphasis: how much the icon grows and its lifted shadow. */
 const SELECTED_SCALE = 1.2;
@@ -46,11 +42,16 @@ export function createPinIcon(
   iconScale: number,
   completed: boolean,
   variant: PinVariant = "image",
-  innerColor: string = LANHU_PIN_DOT,
+  innerColor?: string,
   selected: boolean = false,
   fragmentType?: "ground" | "air" | "water",
+  theme: PinTheme = DEFAULT_PIN_THEME,
 ): L.DivIcon {
-  const cacheKey = `${variant}|${innerIcon}|${iconScale}|${completed ? 1 : 0}|${innerColor}|${selected ? 1 : 0}|${fragmentType ?? ""}`;
+  const dot = innerColor ?? theme.pinDot;
+  // Theme is fixed per game at startup, never varies at runtime, so it is
+  // deliberately NOT part of the key. A game that switches pin themes at
+  // runtime would need to fold the theme values in.
+  const cacheKey = `${variant}|${innerIcon}|${iconScale}|${completed ? 1 : 0}|${dot}|${selected ? 1 : 0}|${fragmentType ?? ""}`;
   const cached = iconCache.get(cacheKey);
   if (cached) return cached;
   const iconBaseSize = 40;
@@ -78,8 +79,8 @@ export function createPinIcon(
           width: `${outer}px`,
           height: `${outer}px`,
           borderRadius: "50%",
-          border: `1px solid ${LANHU_PIN_BORDER}`,
-          backgroundColor: LANHU_PIN_DISC_BG,
+          border: `1px solid ${theme.pinBorder}`,
+          backgroundColor: theme.pinDiscBg,
           boxShadow: "0 1px 3px rgba(0,0,0,0.45)",
           display: "flex",
           alignItems: "center",
@@ -91,7 +92,7 @@ export function createPinIcon(
             width: `${inner}px`,
             height: `${inner}px`,
             borderRadius: "50%",
-            backgroundColor: innerColor,
+            backgroundColor: dot,
           }}
         />
       </div>
@@ -172,7 +173,7 @@ export function createPinIcon(
             position: "absolute",
             right: `${badgeOffset}px`,
             bottom: `${badgeOffset}px`,
-            color: "#22c55e",
+            color: theme.completedAccent,
             filter: "drop-shadow(0 0 1.5px rgba(0,0,0,0.9))",
           }}
         />
@@ -191,7 +192,7 @@ export function createPinIcon(
               position: "absolute",
               right: `${badgeOffset}px`,
               bottom: `${badgeOffset}px`,
-              color: "#22c55e",
+              color: theme.completedAccent,
               filter: "drop-shadow(0 0 1.5px rgba(0,0,0,0.9))",
             }}
           />
@@ -203,7 +204,7 @@ export function createPinIcon(
               position: "absolute",
               right: `${badgeOffset}px`,
               bottom: `${badgeOffset}px`,
-              color: "#22c55e",
+              color: theme.completedAccent,
               filter: "drop-shadow(0 0 1.5px rgba(0,0,0,0.9))",
             }}
           />
