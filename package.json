@@ -2,6 +2,7 @@
   "name": "gamemap-workspace",
   "private": true,
   "type": "module",
+  "packageManager": "pnpm@9.12.0",
   "scripts": {
     "dev": "pnpm --filter aion2 dev",
     "build": "pnpm --filter aion2 build",

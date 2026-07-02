@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from "@tailwindcss/vite";
 import {tanstackRouter} from '@tanstack/router-plugin/vite'
 import {execSync} from "node:child_process";
-import path from "path";
+import path from "node:path";
 import fs from "node:fs";
 
 function getGitVersion() {

@@ -10,6 +10,14 @@ pnpm dev           # start dev server for aion2 app
 pnpm build         # build aion2 app
 ```
 
+The dev server serves game assets and data from sibling repos expected at
+`../resource` and `../data` (relative to this repo). If they live elsewhere,
+override with env vars:
+
+```bash
+RESOURCE_UI_DIR=/path/to/resource/UI DATA_DIR=/path/to/data pnpm dev
+```
+
 ### Monorepo layout
 
 | Path | Description |
@@ -26,15 +34,15 @@ This project consists of:
 
 | Component | Path | License |
 |----------|--------|----------|
-| Source Code | `/src` | GPL-3.0 |
-| Data (images, JSON, assets, etc.) | `/public/data` | CC BY-NC 4.0 |
+| Source Code | `apps/*`, `packages/*` | GPL-3.0 |
+| Data (images, JSON, assets, etc.) | sibling `data`/`resource` repos | CC BY-NC 4.0 |
 
 ---
 
 
 
 ### 🧠 Code — GPL-3.0
-The source code inside the `/src` directory is Free/Libre Open Source Software (FLOSS) under the GNU General Public License v3.
+The source code inside the `apps/` and `packages/` directories is Free/Libre Open Source Software (FLOSS) under the GNU General Public License v3.
 
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -53,7 +61,7 @@ See the LICENSE file for details.
 ---
 
 ### 📦 Data — CC BY-NC 4.0
-The data files under `/public/data` (including any images, datasets, metadata, or other content) are licensed under Creative Commons **Attribution-NonCommercial 4.0**.
+The game data files (served from the sibling `data` and `resource` repos: images, datasets, metadata, and other content) are licensed under Creative Commons **Attribution-NonCommercial 4.0**.
 
 You may reuse them only for **non-commercial** purposes and must give credit.
 
