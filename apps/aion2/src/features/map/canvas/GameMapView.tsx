@@ -7,8 +7,7 @@ import type { MapRef, MarkerWithTranslations } from "@/types/game";
 import { useGameMap } from "@/context/GameMapContext";
 import { useMarkers } from "@/context/MarkersContext";
 import { useGameData } from "@/context/GameDataContext";
-import { dataToLatLng } from "@/lib/coords";
-import "@/lib/leaflet-smooth-wheel-zoom"; // registers the smooth wheel-zoom handler
+import { dataToLatLng } from "@gamemap/map-engine"; // barrel also registers the smooth wheel-zoom handler
 
 import GameMapTiles from "@/features/map/canvas/GameMapTiles";
 import GameMapBorders from "@/features/map/canvas/GameMapBorders";
@@ -326,7 +325,7 @@ const GameMapView: React.FC<Props> = ({
         // fractional zoom (no stepping to 0.25 boundaries). The built-in
         // (discrete) wheel handler is disabled (scrollWheelZoom=false) in
         // favour of the smooth per-frame handler registered via
-        // "@/lib/leaflet-smooth-wheel-zoom"; it's configured through the
+        // "@gamemap/map-engine"; it's configured through the
         // smoothWheelZoom/smoothSensitivity props below (react-leaflet forwards
         // them into the Leaflet map options). Raise smoothSensitivity to zoom
         // faster, lower it to zoom slower. Tiles are CSS-scaled (maxNativeZoom

@@ -1,8 +1,7 @@
 import React from "react";
 import { useMapEvents } from "react-leaflet";
-import { cursorStore } from "@/features/map/canvas/cursorStore";
+import { cursorStore, latLngToData } from "@gamemap/map-engine";
 import { useGameMap } from "@/context/GameMapContext";
-import { latLngToData } from "@/lib/coords";
 
 /**
  * Writes the live cursor map-coordinates into an external store (NOT React

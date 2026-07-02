@@ -7,7 +7,7 @@ import type { MarkerWithTranslations } from "@/types/game";
 import { useMarkers } from "@/context/MarkersContext";
 import { useGameMap } from "@/context/GameMapContext";
 import { useGameData } from "@/context/GameDataContext";
-import { createPinIcon } from "@/features/map/canvas/markerIcons";
+import { createPinIcon } from "@gamemap/map-engine";
 import { parseIconUrl } from "@/lib/url";
 
 /**

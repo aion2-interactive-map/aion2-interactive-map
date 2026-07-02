@@ -1,5 +1,5 @@
 import React, { useSyncExternalStore } from "react";
-import { cursorStore } from "@/features/map/canvas/cursorStore";
+import { cursorStore } from "@gamemap/map-engine";
 import { useSubzoneLookup } from "@/features/map/useSubzoneLookup";
 
 const ICP = "沪ICP备2025152827号-1";

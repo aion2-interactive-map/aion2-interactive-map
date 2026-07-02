@@ -4,7 +4,7 @@ import { Popup } from "react-leaflet";
 import { useMarkers } from "@/context/MarkersContext";
 import { useGameMap } from "@/context/GameMapContext";
 import MarkerPopupContent from "@/features/map/popup/MarkerPopupContent";
-import { dataToLatLngTuple } from "@/lib/coords";
+import { dataToLatLngTuple } from "@gamemap/map-engine";
 
 type Props = {
   selectedMarkerId: string | null;

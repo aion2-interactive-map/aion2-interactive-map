@@ -18,7 +18,7 @@ import L from "leaflet";
  * are added to Leaflet's `MapOptions` by the `declare module` below, so they
  * type-check as props):
  *
- *   import "@/lib/leaflet-smooth-wheel-zoom";
+ *   import "@gamemap/map-engine"; // the package barrel imports this module
  *   <MapContainer
  *     scrollWheelZoom={false}   // disable the built-in (discrete) handler
  *     smoothWheelZoom={true}    // enable this one

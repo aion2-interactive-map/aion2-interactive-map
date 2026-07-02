@@ -3,7 +3,7 @@ import { useMap } from "react-leaflet";
 import { useMarkers } from "@/context/MarkersContext";
 import { useGameMap } from "@/context/GameMapContext";
 import { MAP_FLY_TO_DURATION } from "@/lib/constants";
-import { dataToLatLng } from "@/lib/coords";
+import { dataToLatLng } from "@gamemap/map-engine";
 
 type MarkerFocusControllerProps = {
   selectedMarkerId: string | null | undefined;

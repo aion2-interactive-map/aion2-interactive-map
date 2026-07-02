@@ -1,0 +1,32 @@
+{
+  "name": "@gamemap/map-engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@gamemap/data-contract": "workspace:*",
+    "lucide-react": "^1.21.0"
+  },
+  "peerDependencies": {
+    "react": "^19",
+    "react-dom": "^19",
+    "leaflet": "^1.9",
+    "react-leaflet": "^5"
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.9.21",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "leaflet": "^1.9.4",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-leaflet": "^5.0.0",
+    "typescript": "~5.9.3"
+  }
+}

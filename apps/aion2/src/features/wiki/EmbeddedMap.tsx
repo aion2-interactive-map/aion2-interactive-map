@@ -5,10 +5,9 @@ import { useTranslation } from "react-i18next";
 
 import { useGameMap } from "@/context/GameMapContext";
 import GameMapTiles from "@/features/map/canvas/GameMapTiles";
-import { createPinIcon } from "@/features/map/canvas/markerIcons";
-import { dataToLatLng, dataToLatLngTuple } from "@/lib/coords";
+// Importing the map-engine barrel also registers the smooth wheel-zoom handler.
+import { createPinIcon, dataToLatLng, dataToLatLngTuple } from "@gamemap/map-engine";
 import { loadGameData } from "@/lib/data";
-import "@/lib/leaflet-smooth-wheel-zoom";
 import type { WikiPoi } from "@/types/wiki";
 
 export type EmbeddedPoi = WikiPoi & { label?: string };
