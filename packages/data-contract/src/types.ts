@@ -36,9 +36,10 @@ export interface MarkerTypeSubtype {
   category?: string;
   /** Icon image resource path, e.g. "UI/Resource/Texture/Icon/UT_Marker_*.webp". */
   icon?: string;
-  /** Hex color string for the pin body, e.g. "#FFAA00". */
+  /** Multiplier applied to the icon's base render size. */
   iconScale?: number;
   hideTooltip?: boolean;
+  /** Hex color string for the pin body, e.g. "#FFAA00". */
   color?: string;
   /** Whether markers of this subtype can be marked as completed. */
   canComplete?: boolean;
@@ -71,10 +72,9 @@ export interface MarkerEntityRef {
 /**
  * A concrete marker instance on a map.
  *
- * IMPORTANT: position is [x, y] in DATA / image space (y increases DOWNWARD,
- * matching the tiles). When passing to Leaflet (CRS.Simple, y increases UP) we
- * flip vertically once: `lat = mapHeight - y`, `lng = x`. Use the helpers in
- * `@/lib/coords` (`dataToLatLng` / `latLngToData`) for every conversion.
+ * Coordinates (`x`, `y`) are in image-pixel space: y increases DOWNWARD,
+ * matching the map tiles. Consumers rendering in a y-up coordinate system
+ * (e.g. Leaflet CRS.Simple) must apply the vertical flip themselves.
  */
 export interface MarkerInstance {
   id: string;
@@ -107,51 +107,32 @@ export interface RegionInstance {
 }
 
 /**
- * Parsed maps.yaml
- *
- * Expected structure:
- * version: 1
- * maps:
- *   - id: "world"
- *     imageUrl: "/maps/world.webp"
- *     width: 2275
- *     height: 1285
+ * Root `maps.json`: the list of maps a game's data repo provides. Each entry
+ * is a {@link GameMapMeta} (tile grid dimensions + visibility); the map's
+ * pixel size is `tilesCountX * tileWidth` by `tilesCountY * tileHeight`.
  */
 export interface MapsFile {
-  // version: number;
   maps: GameMapMeta[];
 }
 
 /**
- * Parsed types.yaml
- *
- * Expected structure:
- * version: 1
- * categories:
- *   - id: "locations"
- *     icon: "UI/Resource/Texture/Icon/UT_Marker_Location.webp"
- *     subtypes: [...]
+ * Root `types.json`: the marker taxonomy — categories (e.g. "locations",
+ * "gatheringPoints") each containing subtypes with icon/color/display options.
  */
 export interface TypesFile {
-  // version: number;
   categories: MarkerTypeCategory[];
 }
 
 /**
- * Parsed markers YAML (e.g. data/markers/world.yaml).
- *
- * We only care that we can iterate:
- *   categoryId -> subtypeId -> markerId -> { position: [x, y], ... }
- *
- * So we keep it intentionally loose apart from the 'version' field.
+ * Per-map `markers/<Map>.json`: all marker instances placed on one map.
  */
 export interface RawMarkersFile {
-  // version: number;
-  // categories, gatheringPoints, questPoints, enemies, etc.
-  // [categoryId: string]: any;
   markers: MarkerInstance[];
 }
 
+/**
+ * Per-map `regions/<Map>.json`: named region polygons for one map.
+ */
 export interface RawRegionsFile {
   regions: RegionInstance[];
 }

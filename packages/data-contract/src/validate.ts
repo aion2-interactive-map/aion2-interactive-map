@@ -1,7 +1,7 @@
 // Node-only validation of a `data/` repo checkout against the contract.
 // Imports are kept erasable so Node can run this via native type stripping
 // (no build step); browser code should import types/schemas only.
-import { readFileSync, readdirSync, existsSync } from "node:fs";
+import { readFileSync, readdirSync, existsSync, statSync } from "node:fs";
 import { join } from "node:path";
 import type { z } from "zod";
 import {
@@ -30,8 +30,28 @@ function check(
   }
 }
 
-function readJson(path: string): unknown {
-  return JSON.parse(readFileSync(path, "utf8"));
+/**
+ * Read + parse a JSON file, then validate it against `schema`. A parse
+ * failure is reported as a ValidationIssue for `file` (repo-relative path)
+ * instead of throwing; schema validation is skipped for that file.
+ */
+function checkFile(
+  issues: ValidationIssue[],
+  file: string,
+  schema: z.ZodType,
+  path: string,
+): void {
+  let data: unknown;
+  try {
+    data = JSON.parse(readFileSync(path, "utf8"));
+  } catch (e) {
+    issues.push({
+      file,
+      message: `failed to parse JSON: ${e instanceof Error ? e.message : String(e)}`,
+    });
+    return;
+  }
+  check(issues, file, schema, data);
 }
 
 function jsonFiles(dir: string): string[] {
@@ -49,30 +69,37 @@ export function validateDataRepo(dir: string): ValidationIssue[] {
   const issues: ValidationIssue[] = [];
 
   const mapsPath = join(dir, "maps.json");
-  if (!existsSync(mapsPath)) return [{ file: mapsPath, message: "missing maps.json" }];
-  check(issues, "maps.json", mapsFileSchema, readJson(mapsPath));
+  if (!existsSync(mapsPath)) {
+    issues.push({ file: "maps.json", message: "missing maps.json" });
+  } else {
+    checkFile(issues, "maps.json", mapsFileSchema, mapsPath);
+  }
 
   const typesPath = join(dir, "types.json");
   if (!existsSync(typesPath)) {
-    issues.push({ file: typesPath, message: "missing types.json" });
+    issues.push({ file: "types.json", message: "missing types.json" });
   } else {
-    check(issues, "types.json", typesFileSchema, readJson(typesPath));
+    checkFile(issues, "types.json", typesFileSchema, typesPath);
   }
 
   const perMapFiles: Record<"markers" | "regions", string[]> = { markers: [], regions: [] };
   for (const sub of ["markers", "regions"] as const) {
     const subdir = join(dir, sub);
     if (!existsSync(subdir)) {
-      issues.push({ file: subdir, message: `missing ${sub}/` });
+      issues.push({ file: `${sub}/`, message: `missing ${sub}/` });
+      continue;
+    }
+    if (!statSync(subdir).isDirectory()) {
+      issues.push({ file: `${sub}/`, message: `${sub} is not a directory` });
       continue;
     }
     for (const f of jsonFiles(subdir)) {
       perMapFiles[sub].push(f);
-      check(
+      checkFile(
         issues,
         `${sub}/${f}`,
         sub === "markers" ? rawMarkersFileSchema : rawRegionsFileSchema,
-        readJson(join(subdir, f)),
+        join(subdir, f),
       );
     }
   }
@@ -82,9 +109,15 @@ export function validateDataRepo(dir: string): ValidationIssue[] {
   // for every per-map file that exists at the repo root.
   const localesDir = join(dir, "locales");
   if (!existsSync(localesDir)) {
-    issues.push({ file: localesDir, message: "missing locales/" });
+    issues.push({ file: "locales/", message: "missing locales/" });
+  } else if (!statSync(localesDir).isDirectory()) {
+    issues.push({ file: "locales/", message: "locales is not a directory" });
   } else {
-    for (const lng of readdirSync(localesDir)) {
+    // Only directories are language dirs; ignore stray files (e.g. .DS_Store).
+    const lngs = readdirSync(localesDir, { withFileTypes: true })
+      .filter((e) => e.isDirectory())
+      .map((e) => e.name);
+    for (const lng of lngs) {
       for (const ns of ["maps.json", "types.json"]) {
         if (!existsSync(join(localesDir, lng, ns))) {
           issues.push({ file: `locales/${lng}/${ns}`, message: "missing generated namespace" });
