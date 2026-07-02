@@ -12,8 +12,7 @@ test.describe("wiki", () => {
   }) => {
     await page.goto("/wiki/quest/main?lng=en");
     await expect(page.getByTestId("wiki-group-list")).toBeVisible();
-    const first = page.locator('[data-testid^="wiki-entry-"]').first();
-    await first.click();
+    await page.getByTestId("wiki-entry-1101010").click();
     await expect(page.getByTestId("wiki-quest-page")).toBeVisible();
     await expect(page.getByTestId("quest-rewards")).toBeVisible();
   });

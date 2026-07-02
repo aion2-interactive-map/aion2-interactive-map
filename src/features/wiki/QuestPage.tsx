@@ -1,24 +1,46 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 
 import EmbeddedMap, { type EmbeddedPoi } from "@/features/wiki/EmbeddedMap";
-import { loadQuest, lt } from "@/lib/wiki";
-import type { QuestEntity } from "@/types/wiki";
+import { loadQuest, loadWikiIndex, lt } from "@/lib/wiki";
+import type { QuestEntity, QuestObjective, WikiIndexDoc } from "@/types/wiki";
+
+const QUEST_PAGE_NAMESPACES = ["wiki", "wiki/taxonomy", "wiki/quest"];
+const QUEST_NAME_NAMESPACES = ["wiki/quest"];
+
+type ObjectiveEntry = {
+  stepOrder: number;
+  objectiveIndex: number;
+  objective: QuestObjective;
+};
 
 export default function QuestPage({ id }: { id: string }) {
-  const { t, i18n } = useTranslation(["wiki", "wiki/quest"]);
+  const { t, i18n } = useTranslation(QUEST_PAGE_NAMESPACES);
   const [loaded, setLoaded] = useState<{
     id: string;
     quest: QuestEntity;
+    indexDoc: WikiIndexDoc | null;
   } | null>(null);
   const [errorId, setErrorId] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
-    loadQuest(id)
-      .then((quest) => {
-        if (!cancelled) setLoaded({ id, quest });
+    Promise.all([
+      loadQuest(id),
+      loadWikiIndex("quest").catch((error) => {
+        console.error(error);
+        return { docs: [] as WikiIndexDoc[] };
+      }),
+    ])
+      .then(([quest, index]) => {
+        if (!cancelled) {
+          setLoaded({
+            id,
+            quest,
+            indexDoc: index.docs.find((d) => d.id === quest.id) ?? null,
+          });
+        }
       })
       .catch(() => {
         if (!cancelled) setErrorId(id);
@@ -29,7 +51,22 @@ export default function QuestPage({ id }: { id: string }) {
   }, [id]);
 
   const q = loaded?.id === id ? loaded.quest : null;
+  const indexDoc = loaded?.id === id ? loaded.indexDoc : null;
   const err = errorId === id;
+  const allObjectives = useMemo<ObjectiveEntry[]>(() => {
+    if (!q) return [];
+    return q.steps.flatMap((step) =>
+      step.objectives.map((objective, objectiveIndex) => ({
+        stepOrder: step.order,
+        objectiveIndex,
+        objective,
+      })),
+    );
+  }, [q]);
+  const objectiveSummary = useMemo(() => {
+    const markers = allObjectives.filter((entry) => entry.objective.marker);
+    return markers.length ? markers : allObjectives;
+  }, [allObjectives]);
 
   useEffect(() => {
     if (q) document.title = `${lt(q.name, i18n.language)} - AION2 Wiki`;
@@ -58,102 +95,310 @@ export default function QuestPage({ id }: { id: string }) {
           })),
         )
     : [];
+  const groupSlug = indexDoc?.group ?? null;
+  const sectionSlug = indexDoc?.section ?? null;
+  const hasRewards = q.rewards.exp > 0 || q.rewards.items.length > 0;
+  const hasChain = q.chain.prev.length > 0 || q.chain.next !== null;
 
   return (
-    <article data-testid="wiki-quest-page">
-      <header className="mb-4">
-        <h1 className="text-2xl font-bold">{lt(q.name, lang)}</h1>
-        <p className="mt-1 flex flex-wrap gap-2 text-sm text-muted-foreground">
-          <span className="rounded bg-secondary px-2 py-0.5">
-            {q.questType}
-          </span>
-          <span className="rounded bg-secondary px-2 py-0.5">
-            {t(`wiki:list.${q.race}`)}
-          </span>
-          <span className="rounded bg-secondary px-2 py-0.5">
-            {t("wiki:quest.level", { n: q.recommendedLevel })}
-          </span>
-          {q.repeatable && (
-            <span className="rounded bg-secondary px-2 py-0.5">
-              {t("wiki:quest.repeatable")}
-            </span>
+    <article data-testid="wiki-quest-page" className="space-y-6">
+      <header className="space-y-3">
+        <nav
+          aria-label={t("wiki:quest.breadcrumb")}
+          className="flex flex-wrap items-center gap-1 text-sm text-muted-foreground"
+        >
+          <Link to="/wiki" className="hover:text-foreground hover:underline">
+            {t("wiki:nav.wiki")}
+          </Link>
+          <BreadcrumbSeparator />
+          <Link
+            to="/wiki/$type"
+            params={{ type: "quest" }}
+            className="hover:text-foreground hover:underline"
+          >
+            {t("wiki/taxonomy:types.quest.name")}
+          </Link>
+          {groupSlug && (
+            <>
+              <BreadcrumbSeparator />
+              <Link
+                to="/wiki/$type/$slug"
+                params={{ type: "quest", slug: groupSlug }}
+                className="hover:text-foreground hover:underline"
+              >
+                {t(`wiki/taxonomy:groups.quest.${groupSlug}.name`)}
+              </Link>
+            </>
           )}
-        </p>
+          {groupSlug && sectionSlug && (
+            <>
+              <BreadcrumbSeparator />
+              <Link
+                to="/wiki/$type/$slug"
+                params={{ type: "quest", slug: groupSlug }}
+                hash={sectionSlug}
+                className="hover:text-foreground hover:underline"
+              >
+                {t(`wiki/taxonomy:sections.${sectionSlug}.name`)}
+              </Link>
+            </>
+          )}
+        </nav>
+        <h1 className="text-2xl font-bold">{lt(q.name, lang)}</h1>
       </header>
 
-      {mapName && pois.length > 0 ? (
-        <EmbeddedMap mapName={mapName} pois={pois} className="mb-6 h-80" />
-      ) : (
-        <p className="mb-6 text-sm text-muted-foreground">
-          {t("wiki:quest.locationUnknown")}
-        </p>
-      )}
+      <div className="grid gap-6 md:grid-cols-[minmax(0,1fr)_280px]">
+        <aside className="order-1 h-fit space-y-4 md:sticky md:top-4 md:order-2">
+          <QuestCard title={t("wiki:quest.info")}>
+            <InfoRows>
+              <InfoRow label={t("wiki:quest.type")} value={q.questType} />
+              <InfoRow
+                label={t("wiki:list.faction")}
+                value={t(`wiki:list.${q.race}`)}
+              />
+              <InfoRow
+                label={t("wiki:quest.unlockLevel")}
+                value={t("wiki:quest.level", { n: q.unlockLevel })}
+              />
+              <InfoRow
+                label={t("wiki:quest.recommendedLevel")}
+                value={t("wiki:quest.level", { n: q.recommendedLevel })}
+              />
+              {q.repeatable && (
+                <InfoRow
+                  label={t("wiki:quest.repeatable")}
+                  value={t("wiki:quest.yes")}
+                />
+              )}
+              {q.acquireMapName && (
+                <InfoRow
+                  label={t("wiki:quest.acquireMap")}
+                  value={
+                    <Link
+                      to="/"
+                      search={{ map: q.acquireMapName }}
+                      className="text-primary hover:underline"
+                    >
+                      {q.acquireMapName}
+                    </Link>
+                  }
+                />
+              )}
+            </InfoRows>
+          </QuestCard>
 
-      <h2 className="mb-2 text-lg font-semibold">{t("wiki:quest.steps")}</h2>
-      <ol className="mb-6 space-y-3">
-        {q.steps.map((s) => (
-          <li key={s.order} className="rounded-md border border-border p-3">
-            <p className="mb-1 text-sm font-medium text-muted-foreground">
-              {t("wiki:quest.step", { n: s.order })}
-            </p>
-            <ul className="space-y-1 text-sm">
-              {s.objectives.map((o, i) => (
-                <li key={i} className="flex items-baseline gap-2">
-                  <span>{lt(o.label, lang)}</span>
-                  {o.optional && (
-                    <span className="text-xs text-muted-foreground">
-                      (optional)
+          {hasRewards && (
+            <QuestCard title={t("wiki:quest.rewards")} testId="quest-rewards">
+              <ul className="divide-y divide-border/60 text-sm">
+                {q.rewards.exp > 0 && (
+                  <li className="flex items-baseline justify-between gap-3 pb-2">
+                    <span className="text-muted-foreground">
+                      {t("wiki:quest.exp")}
                     </span>
-                  )}
+                    <span className="font-medium tabular-nums">
+                      {q.rewards.exp.toLocaleString()}
+                    </span>
+                  </li>
+                )}
+                {q.rewards.items.map((it, i) => (
+                  <li
+                    key={`${lt(it.name, lang)}-${i}`}
+                    className="flex items-baseline justify-between gap-3 py-2 last:pb-0"
+                  >
+                    <span>{lt(it.name, lang)}</span>
+                    <span className="shrink-0 text-muted-foreground">
+                      {"\u00d7"} {it.count}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </QuestCard>
+          )}
+
+          {hasChain && (
+            <QuestCard title={t("wiki:quest.chain")}>
+              <InfoRows>
+                {q.chain.prev.length > 0 && (
+                  <InfoRow
+                    label={t("wiki:quest.chainPrev")}
+                    value={
+                      <QuestLinkList ids={q.chain.prev} linkClassName="block" />
+                    }
+                  />
+                )}
+                {q.chain.next && (
+                  <InfoRow
+                    label={t("wiki:quest.chainNext")}
+                    value={<QuestLink id={q.chain.next} />}
+                  />
+                )}
+              </InfoRows>
+            </QuestCard>
+          )}
+        </aside>
+
+        <div className="order-2 min-w-0 md:order-1">
+          <section className="mb-6 rounded-md border border-border bg-card p-4 text-card-foreground">
+            <h2 className="text-lg font-semibold">
+              {t("wiki:quest.objectives")}
+            </h2>
+            <ol className="mt-3 grid gap-2 text-sm sm:grid-cols-2">
+              {objectiveSummary.map((entry, i) => (
+                <li
+                  key={`${entry.stepOrder}-${entry.objectiveIndex}`}
+                  className="flex items-start gap-2"
+                >
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-secondary text-xs font-medium text-secondary-foreground">
+                    {i + 1}
+                  </span>
+                  <span>{lt(entry.objective.label, lang)}</span>
                 </li>
               ))}
-            </ul>
-          </li>
-        ))}
-      </ol>
+            </ol>
+          </section>
 
-      <h2 className="mb-2 text-lg font-semibold">{t("wiki:quest.rewards")}</h2>
-      <ul className="mb-6 space-y-1 text-sm" data-testid="quest-rewards">
-        {q.rewards.exp > 0 && (
-          <li>
-            {t("wiki:quest.exp")}: {q.rewards.exp.toLocaleString()}
-          </li>
-        )}
-        {q.rewards.items.map((it, i) => (
-          <li key={i}>
-            {lt(it.name, lang)} x {it.count}
-          </li>
-        ))}
-        {q.rewards.exp <= 0 && q.rewards.items.length === 0 && (
-          <li className="text-muted-foreground">{t("wiki:list.empty")}</li>
-        )}
-      </ul>
+          {mapName && pois.length > 0 ? (
+            <EmbeddedMap
+              mapName={mapName}
+              pois={pois}
+              className="mb-6 h-80"
+            />
+          ) : (
+            <p className="mb-6 text-sm text-muted-foreground">
+              {t("wiki:quest.locationUnknown")}
+            </p>
+          )}
 
-      <nav className="flex justify-between border-t border-border pt-3 text-sm">
-        <span>
-          {q.chain.prev.map((p) => (
-            <Link
-              key={p}
-              to="/wiki/$type/$slug"
-              params={{ type: "quest", slug: String(p) }}
-              className="mr-3 hover:underline"
-            >
-              {t("wiki:quest.chainPrev")}: {t(`wiki/quest:${p}.name`)}
-            </Link>
-          ))}
-        </span>
-        {q.chain.next && (
-          <Link
-            to="/wiki/$type/$slug"
-            params={{ type: "quest", slug: String(q.chain.next) }}
-            className="hover:underline"
-            data-testid="chain-next"
-          >
-            {t("wiki:quest.chainNext")}:{" "}
-            {t(`wiki/quest:${q.chain.next}.name`)}
-          </Link>
-        )}
-      </nav>
+          <section>
+            <h2 className="mb-2 text-lg font-semibold">
+              {t("wiki:quest.steps")}
+            </h2>
+            <ol className="space-y-3">
+              {q.steps.map((s) => (
+                <li
+                  key={s.order}
+                  className="rounded-md border border-border bg-card p-3"
+                >
+                  <p className="mb-1 text-sm font-medium text-muted-foreground">
+                    {t("wiki:quest.step", { n: s.order })}
+                  </p>
+                  <ul className="space-y-1 text-sm">
+                    {s.objectives.map((o, i) => (
+                      <li key={i} className="flex items-baseline gap-2">
+                        <span>{lt(o.label, lang)}</span>
+                        {o.optional && (
+                          <span className="text-xs text-muted-foreground">
+                            ({t("wiki:quest.optional")})
+                          </span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              ))}
+            </ol>
+          </section>
+        </div>
+      </div>
+
+      {hasChain && (
+        <nav className="flex flex-col gap-3 rounded-md border border-border bg-card p-4 text-sm sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-wrap gap-x-4 gap-y-2">
+            {q.chain.prev.map((p) => (
+              <QuestLink key={p} id={p} prefix={"\u2190 "} />
+            ))}
+          </div>
+          {q.chain.next && (
+            <QuestLink
+              id={q.chain.next}
+              suffix={" \u2192"}
+              className="self-start sm:self-auto"
+              testId="chain-next"
+            />
+          )}
+        </nav>
+      )}
     </article>
+  );
+}
+
+function BreadcrumbSeparator() {
+  return <span aria-hidden="true">{"\u203a"}</span>;
+}
+
+function QuestCard({
+  title,
+  children,
+  testId,
+}: {
+  title: string;
+  children: ReactNode;
+  testId?: string;
+}) {
+  return (
+    <section
+      className="rounded-md border border-border bg-card p-4 text-card-foreground shadow-sm"
+      data-testid={testId}
+    >
+      <h2 className="mb-3 text-sm font-semibold">{title}</h2>
+      {children}
+    </section>
+  );
+}
+
+function InfoRows({ children }: { children: ReactNode }) {
+  return <dl className="divide-y divide-border/60 text-sm">{children}</dl>;
+}
+
+function InfoRow({ label, value }: { label: string; value: ReactNode }) {
+  return (
+    <div className="grid grid-cols-[6.5rem_minmax(0,1fr)] gap-3 py-2 first:pt-0 last:pb-0">
+      <dt className="text-muted-foreground">{label}</dt>
+      <dd className="min-w-0 text-right font-medium break-words">{value}</dd>
+    </div>
+  );
+}
+
+function QuestLinkList({
+  ids,
+  linkClassName,
+}: {
+  ids: number[];
+  linkClassName?: string;
+}) {
+  return (
+    <>
+      {ids.map((questId) => (
+        <QuestLink key={questId} id={questId} className={linkClassName} />
+      ))}
+    </>
+  );
+}
+
+function QuestLink({
+  id,
+  prefix = "",
+  suffix = "",
+  className = "",
+  testId,
+}: {
+  id: number;
+  prefix?: string;
+  suffix?: string;
+  className?: string;
+  testId?: string;
+}) {
+  const { t } = useTranslation(QUEST_NAME_NAMESPACES);
+  return (
+    <Link
+      to="/wiki/$type/$slug"
+      params={{ type: "quest", slug: String(id) }}
+      className={`text-primary hover:underline ${className}`}
+      data-testid={testId}
+    >
+      {prefix}
+      {t(`wiki/quest:${id}.name`)}
+      {suffix}
+    </Link>
   );
 }
