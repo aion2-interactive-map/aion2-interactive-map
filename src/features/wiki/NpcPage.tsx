@@ -88,7 +88,16 @@ export default function NpcPage({ id }: { id: string }) {
     { label: name },
   ];
   const npcType = npc.npcType
-    ? `${npc.npcType}${npc.subType ? ` / ${npc.subType}` : ""}`
+    ? [
+        t(`wiki:npcTypes.${npc.npcType}`, { defaultValue: npc.npcType }),
+        npc.subType
+          ? t(`wiki:npcSubTypes.${npc.subType}`, {
+              defaultValue: npc.subType,
+            })
+          : null,
+      ]
+        .filter(Boolean)
+        .join(" / ")
     : null;
   const levelText = t("wiki:common.level", { n: npc.level });
   const questGroups = [
@@ -136,7 +145,12 @@ export default function NpcPage({ id }: { id: string }) {
               />
               <InfoRow label={t("wiki:npc.grade")} value={npc.grade} />
               {npc.funcType && (
-                <InfoRow label={t("wiki:npc.funcType")} value={npc.funcType} />
+                <InfoRow
+                  label={t("wiki:npc.funcType")}
+                  value={t(`wiki:funcTypes.${npc.funcType}`, {
+                    defaultValue: npc.funcType,
+                  })}
+                />
               )}
             </InfoRows>
           </WikiCard>
