@@ -15,8 +15,6 @@ export type EmbeddedPoi = WikiPoi & { label?: string };
 
 type EmbeddedRegion = {
   id: string;
-  name: string;
-  type: string;
   borders: number[][][];
 };
 
@@ -57,7 +55,7 @@ export default function EmbeddedMap({
     }
 
     const wanted = new Set(ids);
-    loadGameData<RegionsDoc>(`data/regions/${mapName}.json`)
+    loadGameData<RegionsDoc>(`data/wiki/regions/${mapName}.json`)
       .then((doc) => {
         if (!cancelled) {
           setHighlightRegions(
