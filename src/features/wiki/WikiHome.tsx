@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 
 import { loadTaxonomy } from "@/lib/wiki";
@@ -23,17 +24,19 @@ export default function WikiHome() {
       <h1 className="mb-6 text-2xl font-bold">{t("wiki:home.title")}</h1>
       {tax.types.map((type) => (
         <section key={type.slug} className="mb-8">
-          <a
-            href={`/wiki/${type.slug}`}
+          <Link
+            to="/wiki/$type"
+            params={{ type: type.slug }}
             className="text-xl font-semibold hover:underline"
           >
             {t(`wiki/taxonomy:types.${type.slug}.name`)} ({type.count})
-          </a>
+          </Link>
           <ul className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3">
             {type.groups.map((g) => (
               <li key={g.slug}>
-                <a
-                  href={`/wiki/${type.slug}/${g.slug}`}
+                <Link
+                  to="/wiki/$type/$slug"
+                  params={{ type: type.slug, slug: g.slug }}
                   className="block rounded-md border border-border p-3 hover:bg-accent"
                   data-testid={`wiki-group-${g.slug}`}
                 >
@@ -43,7 +46,7 @@ export default function WikiHome() {
                   <span className="ml-2 text-sm text-muted-foreground">
                     {g.count}
                   </span>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

@@ -12,6 +12,8 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as WikiRouteRouteImport } from './routes/wiki/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as WikiIndexRouteImport } from './routes/wiki/index'
+import { Route as WikiTypeIndexRouteImport } from './routes/wiki/$type/index'
+import { Route as WikiTypeSlugRouteImport } from './routes/wiki/$type/$slug'
 
 const WikiRouteRoute = WikiRouteRouteImport.update({
   id: '/wiki',
@@ -28,28 +30,45 @@ const WikiIndexRoute = WikiIndexRouteImport.update({
   path: '/',
   getParentRoute: () => WikiRouteRoute,
 } as any)
+const WikiTypeIndexRoute = WikiTypeIndexRouteImport.update({
+  id: '/$type/',
+  path: '/$type/',
+  getParentRoute: () => WikiRouteRoute,
+} as any)
+const WikiTypeSlugRoute = WikiTypeSlugRouteImport.update({
+  id: '/$type/$slug',
+  path: '/$type/$slug',
+  getParentRoute: () => WikiRouteRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/wiki': typeof WikiRouteRouteWithChildren
   '/wiki/': typeof WikiIndexRoute
+  '/wiki/$type/$slug': typeof WikiTypeSlugRoute
+  '/wiki/$type/': typeof WikiTypeIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/wiki': typeof WikiIndexRoute
+  '/wiki/$type/$slug': typeof WikiTypeSlugRoute
+  '/wiki/$type': typeof WikiTypeIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/wiki': typeof WikiRouteRouteWithChildren
   '/wiki/': typeof WikiIndexRoute
+  '/wiki/$type/$slug': typeof WikiTypeSlugRoute
+  '/wiki/$type/': typeof WikiTypeIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/wiki' | '/wiki/'
+  fullPaths: '/' | '/wiki' | '/wiki/' | '/wiki/$type/$slug' | '/wiki/$type/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/wiki'
-  id: '__root__' | '/' | '/wiki' | '/wiki/'
+  to: '/' | '/wiki' | '/wiki/$type/$slug' | '/wiki/$type'
+  id:
+    '__root__' | '/' | '/wiki' | '/wiki/' | '/wiki/$type/$slug' | '/wiki/$type/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -80,15 +99,33 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WikiIndexRouteImport
       parentRoute: typeof WikiRouteRoute
     }
+    '/wiki/$type/': {
+      id: '/wiki/$type/'
+      path: '/$type'
+      fullPath: '/wiki/$type/'
+      preLoaderRoute: typeof WikiTypeIndexRouteImport
+      parentRoute: typeof WikiRouteRoute
+    }
+    '/wiki/$type/$slug': {
+      id: '/wiki/$type/$slug'
+      path: '/$type/$slug'
+      fullPath: '/wiki/$type/$slug'
+      preLoaderRoute: typeof WikiTypeSlugRouteImport
+      parentRoute: typeof WikiRouteRoute
+    }
   }
 }
 
 interface WikiRouteRouteChildren {
   WikiIndexRoute: typeof WikiIndexRoute
+  WikiTypeSlugRoute: typeof WikiTypeSlugRoute
+  WikiTypeIndexRoute: typeof WikiTypeIndexRoute
 }
 
 const WikiRouteRouteChildren: WikiRouteRouteChildren = {
   WikiIndexRoute: WikiIndexRoute,
+  WikiTypeSlugRoute: WikiTypeSlugRoute,
+  WikiTypeIndexRoute: WikiTypeIndexRoute,
 }
 
 const WikiRouteRouteWithChildren = WikiRouteRoute._addFileChildren(
