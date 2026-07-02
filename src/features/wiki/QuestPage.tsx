@@ -1,8 +1,17 @@
-import { useEffect, useMemo, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 
 import EmbeddedMap, { type EmbeddedPoi } from "@/features/wiki/EmbeddedMap";
+import {
+  Breadcrumb,
+  type BreadcrumbItem,
+  InfoRow,
+  InfoRows,
+  WikiCard as QuestCard,
+  WikiLoading,
+  WikiNotFound,
+} from "@/features/wiki/ui";
 import { loadQuest, loadWikiIndex, lt } from "@/lib/wiki";
 import type { QuestEntity, QuestObjective, WikiIndexDoc } from "@/types/wiki";
 
@@ -72,12 +81,8 @@ export default function QuestPage({ id }: { id: string }) {
     if (q) document.title = `${lt(q.name, i18n.language)} - AION2 Wiki`;
   }, [q, i18n.language]);
 
-  if (err) {
-    return (
-      <p className="text-muted-foreground">404 - quest {id} not found.</p>
-    );
-  }
-  if (!q) return <p className="text-muted-foreground">Loading...</p>;
+  if (err) return <WikiNotFound id={id} />;
+  if (!q) return <WikiLoading />;
 
   const lang = i18n.language;
   const mapName =
@@ -97,53 +102,40 @@ export default function QuestPage({ id }: { id: string }) {
     : [];
   const groupSlug = indexDoc?.group ?? null;
   const sectionSlug = indexDoc?.section ?? null;
+  const breadcrumbItems: BreadcrumbItem[] = [
+    { label: t("wiki:nav.wiki"), to: "/wiki" },
+    {
+      label: t("wiki/taxonomy:types.quest.name"),
+      to: "/wiki/$type",
+      params: { type: "quest" },
+    },
+    ...(groupSlug
+      ? [
+          {
+            label: t(`wiki/taxonomy:groups.quest.${groupSlug}.name`),
+            to: "/wiki/$type/$slug",
+            params: { type: "quest", slug: groupSlug },
+          },
+        ]
+      : []),
+    ...(groupSlug && sectionSlug
+      ? [
+          {
+            label: t(`wiki/taxonomy:sections.${sectionSlug}.name`),
+            to: "/wiki/$type/$slug",
+            params: { type: "quest", slug: groupSlug },
+            hash: sectionSlug,
+          },
+        ]
+      : []),
+  ];
   const hasRewards = q.rewards.exp > 0 || q.rewards.items.length > 0;
   const hasChain = q.chain.prev.length > 0 || q.chain.next !== null;
 
   return (
     <article data-testid="wiki-quest-page" className="space-y-6">
       <header className="space-y-3">
-        <nav
-          aria-label={t("wiki:quest.breadcrumb")}
-          className="flex flex-wrap items-center gap-1 text-sm text-muted-foreground"
-        >
-          <Link to="/wiki" className="hover:text-foreground hover:underline">
-            {t("wiki:nav.wiki")}
-          </Link>
-          <BreadcrumbSeparator />
-          <Link
-            to="/wiki/$type"
-            params={{ type: "quest" }}
-            className="hover:text-foreground hover:underline"
-          >
-            {t("wiki/taxonomy:types.quest.name")}
-          </Link>
-          {groupSlug && (
-            <>
-              <BreadcrumbSeparator />
-              <Link
-                to="/wiki/$type/$slug"
-                params={{ type: "quest", slug: groupSlug }}
-                className="hover:text-foreground hover:underline"
-              >
-                {t(`wiki/taxonomy:groups.quest.${groupSlug}.name`)}
-              </Link>
-            </>
-          )}
-          {groupSlug && sectionSlug && (
-            <>
-              <BreadcrumbSeparator />
-              <Link
-                to="/wiki/$type/$slug"
-                params={{ type: "quest", slug: groupSlug }}
-                hash={sectionSlug}
-                className="hover:text-foreground hover:underline"
-              >
-                {t(`wiki/taxonomy:sections.${sectionSlug}.name`)}
-              </Link>
-            </>
-          )}
-        </nav>
+        <Breadcrumb items={breadcrumbItems} />
         <h1 className="text-2xl font-bold">{lt(q.name, lang)}</h1>
       </header>
 
@@ -319,43 +311,6 @@ export default function QuestPage({ id }: { id: string }) {
         </nav>
       )}
     </article>
-  );
-}
-
-function BreadcrumbSeparator() {
-  return <span aria-hidden="true">{"\u203a"}</span>;
-}
-
-function QuestCard({
-  title,
-  children,
-  testId,
-}: {
-  title: string;
-  children: ReactNode;
-  testId?: string;
-}) {
-  return (
-    <section
-      className="rounded-md border border-border bg-card p-4 text-card-foreground shadow-sm"
-      data-testid={testId}
-    >
-      <h2 className="mb-3 text-sm font-semibold">{title}</h2>
-      {children}
-    </section>
-  );
-}
-
-function InfoRows({ children }: { children: ReactNode }) {
-  return <dl className="divide-y divide-border/60 text-sm">{children}</dl>;
-}
-
-function InfoRow({ label, value }: { label: string; value: ReactNode }) {
-  return (
-    <div className="grid grid-cols-[6.5rem_minmax(0,1fr)] gap-3 py-2 first:pt-0 last:pb-0">
-      <dt className="text-muted-foreground">{label}</dt>
-      <dd className="min-w-0 text-right font-medium break-words">{value}</dd>
-    </div>
   );
 }
 
