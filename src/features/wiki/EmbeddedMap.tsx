@@ -1,25 +1,82 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import L from "leaflet";
-import { MapContainer, Marker, Tooltip } from "react-leaflet";
+import { MapContainer, Marker, Polygon, Tooltip } from "react-leaflet";
+import { useTranslation } from "react-i18next";
 
 import { useGameMap } from "@/context/GameMapContext";
 import GameMapTiles from "@/features/map/canvas/GameMapTiles";
 import { createPinIcon } from "@/features/map/canvas/markerIcons";
-import { dataToLatLng } from "@/lib/coords";
+import { dataToLatLng, dataToLatLngTuple } from "@/lib/coords";
+import { loadGameData } from "@/lib/data";
 import "@/lib/leaflet-smooth-wheel-zoom";
 import type { WikiPoi } from "@/types/wiki";
 
 export type EmbeddedPoi = WikiPoi & { label?: string };
 
+type EmbeddedRegion = {
+  id: string;
+  name: string;
+  type: string;
+  borders: number[][][];
+};
+
+type RegionsDoc = {
+  regions: EmbeddedRegion[];
+};
+
 type Props = {
   mapName: string;
   pois: EmbeddedPoi[];
+  highlightRegionIds?: string[];
   className?: string;
 };
 
-export default function EmbeddedMap({ mapName, pois, className }: Props) {
+export default function EmbeddedMap({
+  mapName,
+  pois,
+  highlightRegionIds,
+  className,
+}: Props) {
+  const { t } = useTranslation(["wiki"]);
   const { maps } = useGameMap();
   const map = maps.find((m) => m.name === mapName);
+  const highlightRegionKey = useMemo(
+    () => (highlightRegionIds ?? []).join(","),
+    [highlightRegionIds],
+  );
+  const [highlightRegions, setHighlightRegions] = useState<EmbeddedRegion[]>(
+    [],
+  );
+
+  useEffect(() => {
+    let cancelled = false;
+    const ids = highlightRegionKey.split(",").filter(Boolean);
+    if (!ids.length) {
+      setHighlightRegions([]);
+      return;
+    }
+
+    const wanted = new Set(ids);
+    loadGameData<RegionsDoc>(`data/regions/${mapName}.json`)
+      .then((doc) => {
+        if (!cancelled) {
+          setHighlightRegions(
+            doc.regions.filter((region) => wanted.has(region.id)),
+          );
+        }
+      })
+      .catch(() => {
+        if (!cancelled) setHighlightRegions([]);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [mapName, highlightRegionKey]);
+
+  const highlightRegionRenderKey = highlightRegions
+    .map((region) => region.id)
+    .join(",");
 
   const { bounds, fit } = useMemo(() => {
     if (!map) return { bounds: null, fit: null };
@@ -29,11 +86,17 @@ export default function EmbeddedMap({ mapName, pois, className }: Props) {
       [0, 0],
       [height, width],
     ];
-    if (!pois.length) return { bounds: full, fit: full };
+    const poiPoints = pois.map((p) => dataToLatLng(map, p.x, p.y));
+    const regionPoints = highlightRegions.flatMap((region) =>
+      region.borders.flatMap((polygon) =>
+        polygon.map(([x, y]) => dataToLatLng(map, x, y)),
+      ),
+    );
+    const points = [...poiPoints, ...regionPoints];
+    if (!points.length) return { bounds: full, fit: full };
 
-    const pts = pois.map((p) => dataToLatLng(map, p.x, p.y));
-    return { bounds: full, fit: L.latLngBounds(pts).pad(0.35) };
-  }, [map, pois]);
+    return { bounds: full, fit: L.latLngBounds(points).pad(0.35) };
+  }, [map, pois, highlightRegions]);
 
   if (!map || !bounds) return null;
 
@@ -50,7 +113,7 @@ export default function EmbeddedMap({ mapName, pois, className }: Props) {
       data-testid="embedded-map"
     >
       <MapContainer
-        key={`${map.id}:${pois.length}`}
+        key={`${map.id}:${pois.length}:${highlightRegionKey}:${highlightRegionRenderKey}`}
         bounds={fit ?? bounds}
         maxBounds={bounds}
         crs={L.CRS.Simple}
@@ -66,6 +129,23 @@ export default function EmbeddedMap({ mapName, pois, className }: Props) {
         className="h-full w-full"
       >
         <GameMapTiles selectedMap={map} />
+        {highlightRegions.map((region) =>
+          region.borders.map((polygon, idx) => (
+            <Polygon
+              key={`${region.id}-${idx}`}
+              positions={polygon.map(([x, y]) =>
+                dataToLatLngTuple(map, x, y),
+              )}
+              pathOptions={{
+                color: "#2E97FF",
+                weight: 1.5,
+                dashArray: "4 4",
+                fillOpacity: 0.15,
+              }}
+              interactive={false}
+            />
+          )),
+        )}
         {pois.map((p, i) => (
           <Marker
             key={i}
@@ -81,7 +161,7 @@ export default function EmbeddedMap({ mapName, pois, className }: Props) {
         className="absolute top-2 right-2 z-[500] rounded bg-background/80 px-2 py-1 text-xs hover:bg-background"
         data-testid="embed-open-full"
       >
-        Open
+        {t("wiki:common.open")}
       </a>
     </div>
   );
