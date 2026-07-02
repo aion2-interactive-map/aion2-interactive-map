@@ -9,6 +9,10 @@
     "lint": "pnpm --filter aion2 lint",
     "preview": "pnpm --filter aion2 preview",
     "e2e": "pnpm --filter aion2 exec playwright test",
+    "dev:palworld": "pnpm --filter palworld dev",
+    "build:palworld": "pnpm --filter palworld build",
+    "lint:palworld": "pnpm --filter palworld lint",
+    "e2e:palworld": "pnpm --filter palworld e2e",
     "test": "vitest run",
     "check:engine": "grep -rn --include=*.ts --include=*.tsx -P \"react-i18next|@tanstack/react-router|import\\.meta\\.env|localStorage|@/|[\\x22\\x27\\x60]UI/\" packages/map-engine/src && exit 1 || exit 0",
     "validate-data": "node packages/data-contract/scripts/validate-data.ts"
