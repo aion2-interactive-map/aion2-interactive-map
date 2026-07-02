@@ -6,18 +6,21 @@ import { loadTaxonomy, loadWikiIndex } from "@/lib/wiki";
 import type { WikiIndexDoc, WikiTaxonomy } from "@/types/wiki";
 
 const FACTIONS = ["all", "light", "dark"] as const;
+type Faction = (typeof FACTIONS)[number];
 
 export default function GroupList({
   type,
   group,
+  initialFaction,
 }: {
   type: string;
   group: string;
+  initialFaction?: Extract<Faction, "light" | "dark">;
 }) {
   const { t } = useTranslation(["wiki", "wiki/taxonomy", `wiki/${type}`]);
   const [tax, setTax] = useState<WikiTaxonomy | null>(null);
   const [docs, setDocs] = useState<WikiIndexDoc[]>([]);
-  const [faction, setFaction] = useState<(typeof FACTIONS)[number]>("all");
+  const [faction, setFaction] = useState<Faction>(initialFaction ?? "all");
 
   useEffect(() => {
     loadTaxonomy().then(setTax).catch(console.error);
@@ -76,6 +79,7 @@ export default function GroupList({
               type="button"
               onClick={() => setFaction(f)}
               data-testid={`faction-${f}`}
+              data-state={faction === f ? "on" : "off"}
               className={`rounded px-2 py-0.5 ${
                 faction === f
                   ? "bg-primary text-primary-foreground"

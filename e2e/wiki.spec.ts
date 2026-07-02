@@ -34,6 +34,21 @@ test.describe("wiki", () => {
     await expect(page.getByTestId("wiki-search-results")).toBeVisible();
   });
 
+  test("hub faction split", async ({ page }) => {
+    await page.goto("/wiki/quest?lng=en");
+    const mainGroup = page.getByTestId("wiki-hub-group-main");
+    await expect(mainGroup.getByTestId("faction-col-light")).toBeVisible();
+    await expect(mainGroup.getByTestId("faction-col-dark")).toBeVisible();
+  });
+
+  test("faction deep link", async ({ page }) => {
+    await page.goto("/wiki/quest/main?faction=dark&lng=en");
+    await expect(page.getByTestId("faction-dark")).toHaveAttribute(
+      "data-state",
+      "on",
+    );
+  });
+
   test("map deep-link ?pos= flies without error", async ({ page }) => {
     const errors: string[] = [];
     page.on("pageerror", (e) => errors.push(String(e)));

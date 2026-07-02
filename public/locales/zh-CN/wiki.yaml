@@ -30,3 +30,4 @@ list:
   all: "全部"
   light: "天族"
   dark: "魔族"
+  both: "双阵营通用"

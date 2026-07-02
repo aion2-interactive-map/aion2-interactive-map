@@ -30,3 +30,4 @@ list:
   all: "All"
   light: "Elyos"
   dark: "Asmodian"
+  both: "Both factions"
