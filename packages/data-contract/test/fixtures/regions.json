@@ -1,0 +1,17 @@
+{
+  "regions": [
+    {
+      "id": "2096",
+      "name": "AbandonedWindBreezeOffice",
+      "type": "village",
+      "borders": [
+        [
+          [3692.8, 5316],
+          [3697, 5310.8],
+          [3703.3, 5297.8],
+          [3703.6, 5275.2]
+        ]
+      ]
+    }
+  ]
+}

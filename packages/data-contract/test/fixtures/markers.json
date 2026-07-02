@@ -1,0 +1,30 @@
+{
+  "markers": [
+    {
+      "id": "World_L_A-battlefield-2025",
+      "category": "location",
+      "subtype": "battlefield",
+      "region": "CantasValleyEastern",
+      "x": 3219.7,
+      "y": 3235.8,
+      "z": 305.82,
+      "images": [],
+      "contributors": [],
+      "indexInSubtype": 0,
+      "tier": 1
+    },
+    {
+      "id": "World_L_A-battlefield-2027",
+      "category": "location",
+      "subtype": "battlefield",
+      "region": "CantasValleyWestern",
+      "x": 2890.7,
+      "y": 3393.6,
+      "z": 250.98,
+      "images": [],
+      "contributors": [],
+      "indexInSubtype": 1,
+      "tier": 1
+    }
+  ]
+}

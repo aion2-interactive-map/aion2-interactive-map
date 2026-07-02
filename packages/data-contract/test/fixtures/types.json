@@ -1,0 +1,23 @@
+{
+  "categories": [
+    {
+      "color": "#000000",
+      "icon": "",
+      "id": "06ae816a-f256-4174-9418-384bd09df2cc",
+      "name": "location",
+      "order": 0,
+      "subtypes": [
+        {
+          "canComplete": false,
+          "color": "#000000",
+          "hideTooltip": false,
+          "icon": "UI/Resource/Texture/Icon/UT_Marker_TeleportArtifact_Light_Engraved.webp",
+          "iconScale": 1.25,
+          "id": "033dc3f8-d7a5-40fd-83b3-45fbaa66971f",
+          "name": "teleport",
+          "order": 0
+        }
+      ]
+    }
+  ]
+}

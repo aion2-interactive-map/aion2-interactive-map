@@ -1,0 +1,15 @@
+{
+  "maps": [
+    {
+      "id": "1011",
+      "name": "World_L_B",
+      "type": "light",
+      "order": 0,
+      "isVisible": true,
+      "tileWidth": 1024,
+      "tileHeight": 1024,
+      "tilesCountX": 8,
+      "tilesCountY": 8
+    }
+  ]
+}

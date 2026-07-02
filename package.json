@@ -9,6 +9,7 @@
     "lint": "pnpm --filter aion2 lint",
     "preview": "pnpm --filter aion2 preview",
     "e2e": "pnpm --filter aion2 exec playwright test",
+    "test": "vitest run",
     "check:engine": "grep -rn --include=*.ts --include=*.tsx -P \"react-i18next|@tanstack/react-router|import\\.meta\\.env|localStorage|@/|[\\x22\\x27\\x60]UI/\" packages/map-engine/src && exit 1 || exit 0",
     "validate-data": "node packages/data-contract/scripts/validate-data.ts"
   },
@@ -16,5 +17,9 @@
     "overrides": {
       "vite": "npm:rolldown-vite@7.2.2"
     }
+  },
+  "devDependencies": {
+    "jsdom": "^29.1.1",
+    "vitest": "^4.1.9"
   }
 }
