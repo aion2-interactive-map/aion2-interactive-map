@@ -1,6 +1,6 @@
 // src/providers/GameDataProvider.tsx
 import React, {createContext, useContext, useEffect, useState} from "react";
-import type { GameMapMeta,MarkerTypeSubtype } from "@/types/game";
+import type { GameMapMeta, MarkerTypeSubtype } from "@gamemap/data-contract";
 import {useGameMap} from "@/context/GameMapContext";
 import {useMarkers} from "@/context/MarkersContext";
 import { VISIBLE_SUBTYPES_STORAGE_PREFIX, VISIBLE_REGIONS_STORAGE_PREFIX } from "@/lib/constants";

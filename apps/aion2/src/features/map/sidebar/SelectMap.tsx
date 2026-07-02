@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { useGameMap } from "@/context/GameMapContext";
-import type { GameMapMeta } from "@/types/game";
+import type { GameMapMeta } from "@gamemap/data-contract";
 import {
   Select,
   SelectContent,

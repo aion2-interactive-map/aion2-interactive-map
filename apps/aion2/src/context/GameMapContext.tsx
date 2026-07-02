@@ -1,4 +1,4 @@
-import type {GameMapMeta, MapsFile, MarkerTypeCategory, TypesFile} from "@/types/game";
+import type {GameMapMeta, MapsFile, MarkerTypeCategory, TypesFile} from "@gamemap/data-contract";
 import React, {createContext, useContext, useEffect, useState} from "react";
 import {loadGameData} from "@/lib/data";
 import {getQueryParam, setQueryParam} from "@/lib/url";

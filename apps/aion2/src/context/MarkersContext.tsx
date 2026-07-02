@@ -1,5 +1,6 @@
 import React, {createContext, useCallback, useContext, useEffect, useMemo, useState} from "react";
-import type {MarkerInstance, MarkerWithTranslations, RawMarkersFile, RawRegionsFile, RegionInstance} from "@/types/game";
+import type {MarkerInstance, RawMarkersFile, RawRegionsFile, RegionInstance} from "@gamemap/data-contract";
+import type {MarkerWithTranslations} from "@/types/game";
 import {loadGameData} from "@/lib/data";
 import {useGameMap} from "@/context/GameMapContext";
 import {useTranslation} from "react-i18next";

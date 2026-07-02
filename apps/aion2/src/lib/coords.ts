@@ -1,5 +1,5 @@
 import L from "leaflet";
-import type { GameMapMeta } from "@/types/game";
+import type { GameMapMeta } from "@gamemap/data-contract";
 
 /**
  * Coordinate conversion between DATA space and Leaflet `CRS.Simple`.

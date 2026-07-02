@@ -1,7 +1,7 @@
 import React, { memo, useMemo } from "react";
 import { LayerGroup, Polyline, Polygon } from "react-leaflet";
 import { useMarkers } from "@/context/MarkersContext";
-import type { RegionInstance } from "@/types/game";
+import type { RegionInstance } from "@gamemap/data-contract";
 import { useGameData } from "@/context/GameDataContext";
 import { useGameMap } from "@/context/GameMapContext";
 

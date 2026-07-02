@@ -8,7 +8,8 @@
     "build": "pnpm --filter aion2 build",
     "lint": "pnpm --filter aion2 lint",
     "preview": "pnpm --filter aion2 preview",
-    "e2e": "pnpm --filter aion2 exec playwright test"
+    "e2e": "pnpm --filter aion2 exec playwright test",
+    "validate-data": "node packages/data-contract/scripts/validate-data.ts"
   },
   "pnpm": {
     "overrides": {

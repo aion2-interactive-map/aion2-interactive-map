@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import L from "leaflet";
 import { useMap } from "react-leaflet";
-import type { GameMapMeta } from "@/types/game";
+import type { GameMapMeta } from "@gamemap/data-contract";
 import { getStaticUrl } from "@/lib/url";
 
 type GameTilesProps = {

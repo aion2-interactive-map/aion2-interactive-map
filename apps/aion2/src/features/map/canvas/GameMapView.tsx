@@ -2,11 +2,8 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { MapContainer, useMap, useMapEvents } from "react-leaflet";
 import L from "leaflet";
 
-import type {
-  MapRef,
-  MarkerWithTranslations,
-  RegionInstance,
-} from "@/types/game";
+import type { RegionInstance } from "@gamemap/data-contract";
+import type { MapRef, MarkerWithTranslations } from "@/types/game";
 import { useGameMap } from "@/context/GameMapContext";
 import { useMarkers } from "@/context/MarkersContext";
 import { useGameData } from "@/context/GameDataContext";
