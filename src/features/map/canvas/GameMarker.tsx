@@ -123,11 +123,11 @@ const GameMarkerInner: React.FC<Props> = ({
         },
       }}
     >
-      {showLabels && !hideTooltip && (
+      {showLabels && !hideTooltip && !selected && (
         <Tooltip
           permanent
           direction="top"
-          offset={[0, -15]}
+          offset={[0, -18]}
           className="game-marker-tooltip"
         >
           {localizedName}

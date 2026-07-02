@@ -299,11 +299,14 @@ body {
     filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.12));
 }
 
-/* Theme-aware tooltip for markers */
+/* Theme-aware tooltip for markers. Border is transparent (not var(--border)):
+   the down-pointing ::before tip sits below the box, and a visible bottom
+   border would draw a seam line across the top of the triangle — the same bug
+   fixed on the marker popup card. The shadow supplies the box definition. */
 .leaflet-tooltip.game-marker-tooltip {
     background: var(--card);
     color: var(--foreground);
-    border: 1px solid var(--border);
+    border: 1px solid transparent;
     padding: 2px 6px;
     font-size: 11px;
     border-radius: 4px;

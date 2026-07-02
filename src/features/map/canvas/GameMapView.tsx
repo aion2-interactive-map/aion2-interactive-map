@@ -98,6 +98,21 @@ const ViewportWatcher: React.FC<{
 };
 
 /**
+ * Closes the marker popup when the user clicks the empty map background. Leaflet's
+ * own `closePopupOnClick` is disabled on the popup (it closed out-of-band from
+ * React and desynced selection — see SelectedMarkerPopup), so deselection is
+ * driven here instead. Marker clicks do NOT reach this handler: Leaflet markers
+ * default to `bubblingMouseEvents: false`, so the map `click` event fires only for
+ * genuine background clicks, not for clicks on a marker.
+ */
+const DeselectOnMapClick: React.FC<{ onDeselect: () => void }> = ({
+  onDeselect,
+}) => {
+  useMapEvents({ click: () => onDeselect() });
+  return null;
+};
+
+/**
  * Dev/test-only hook: publishes the Leaflet map instance on `window` so e2e
  * tests can project DATA coords through the real map (verifying the vertical
  * flip). No-op in production builds.
@@ -333,6 +348,7 @@ const GameMapView: React.FC<Props> = ({
       >
         <MapZoomControl />
         <ViewportWatcher onChange={handleViewport} />
+        <DeselectOnMapClick onDeselect={() => onSelectMarker(null)} />
         <TestMapHandle />
         <CursorTracker />
 

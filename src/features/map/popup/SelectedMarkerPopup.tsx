@@ -11,14 +11,14 @@ type Props = {
   onSelectMarker: (id: string | null) => void;
 };
 
-// Lift the popup so its downward triangle (the card's ::after, ~9px tall,
-// hanging below the card bottom) sits just above the 40px, center-anchored
-// marker icon whose top edge is ~20px above the point. Leaflet places the
-// popup's bottom edge at `-offset.y` above the point, so the card bottom sits
-// 28px up and the triangle tip lands ~20px up — right at the icon's top.
-// Module-level so the reference stays stable across re-renders (see the
-// `position` memo note below).
-const POPUP_OFFSET: [number, number] = [0, -28];
+// Popup vertical offset. Leaflet places the popup's card bottom edge at
+// `-offset.y` above the marker point, so -18 sits the card bottom 18px above
+// the point — the same height as the marker name tooltip's box bottom
+// (Tooltip offset [0,-18] in GameMarker.tsx), so the popup and tooltip share a
+// common bottom edge. The card's downward ::after triangle then hangs ~8px
+// below that toward the icon. Module-level so the reference stays stable across
+// re-renders (see the `position` memo note below).
+const POPUP_OFFSET: [number, number] = [0, -18];
 
 const SelectedMarkerPopup: React.FC<Props> = ({
   selectedMarkerId,
@@ -60,6 +60,19 @@ const SelectedMarkerPopup: React.FC<Props> = ({
       minWidth={320}
       autoPan
       closeButton={false}
+      // React (`selectedMarkerId`) is the single source of truth for whether the
+      // popup is open. Leaflet's default `closePopupOnClick`/`autoClose` would
+      // close the popup out-of-band on `preclick` — which fires for EVERY click,
+      // including on a marker. On a double-click, click 2's `preclick` schedules
+      // `onSelectMarker(null)` while the marker's own `click` schedules
+      // `onSelectMarker(id)` in the same React batch; `id` wins, so React keeps
+      // the marker "selected" (tooltip hidden) while Leaflet has actually closed
+      // the popup — and since the props never changed, it never reopens (the
+      // marker gets stuck: no tooltip, no popup). Disabling both leaves closing
+      // entirely to React: a map-background click deselects (GameMapView), and
+      // the `remove` handler below covers the unmount path.
+      closeOnClick={false}
+      autoClose={false}
       eventHandlers={{ remove: () => onSelectMarker(null) }}
     >
       <MarkerPopupContent marker={marker} />
