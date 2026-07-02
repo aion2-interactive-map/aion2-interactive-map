@@ -85,21 +85,35 @@ export default function QuestPage({ id }: { id: string }) {
   if (!q) return <WikiLoading />;
 
   const lang = i18n.language;
-  const mapName =
-    q.acquireMapName ??
-    q.steps.flatMap((s) => s.objectives).find((o) => o.mapName)?.mapName ??
-    null;
-  const pois: EmbeddedPoi[] = mapName
-    ? q.steps
-        .flatMap((s) => s.objectives)
-        .filter((o) => o.mapName === mapName && o.marker && o.pois.length)
+  const objectives = q.steps.flatMap((s) => s.objectives);
+  const objectiveMapNames = [
+    q.acquireMapName,
+    ...objectives.flatMap((o) => [o.mapName, o.region?.mapName ?? null]),
+  ].filter((name): name is string => name !== null);
+  const objectiveMapEntries = [...new Set(objectiveMapNames)]
+    .map((entryMapName) => {
+      const pois: EmbeddedPoi[] = objectives
+        .filter(
+          (o) => o.mapName === entryMapName && o.marker && o.pois.length,
+        )
         .flatMap((o) =>
           o.pois.map((p) => ({
             ...p,
             label: lt(o.label, lang),
           })),
-        )
-    : [];
+        );
+      const highlightRegionIds = [
+        ...new Set(
+          objectives.flatMap((o) =>
+            o.region?.mapName === entryMapName ? [o.region.id] : [],
+          ),
+        ),
+      ];
+      return { mapName: entryMapName, pois, highlightRegionIds };
+    })
+    .filter(
+      (entry) => entry.pois.length > 0 || entry.highlightRegionIds.length > 0,
+    );
   const groupSlug = indexDoc?.group ?? null;
   const sectionSlug = indexDoc?.section ?? null;
   const breadcrumbItems: BreadcrumbItem[] = [
@@ -197,7 +211,17 @@ export default function QuestPage({ id }: { id: string }) {
                     key={`${lt(it.name, lang)}-${i}`}
                     className="flex items-baseline justify-between gap-3 py-2 last:pb-0"
                   >
-                    <span>{lt(it.name, lang)}</span>
+                    {it.id ? (
+                      <Link
+                        to="/wiki/$type/$slug"
+                        params={{ type: "item", slug: String(it.id) }}
+                        className="hover:underline"
+                      >
+                        {lt(it.name, lang)}
+                      </Link>
+                    ) : (
+                      <span>{lt(it.name, lang)}</span>
+                    )}
                     <span className="shrink-0 text-muted-foreground">
                       {"\u00d7"} {it.count}
                     </span>
@@ -243,18 +267,22 @@ export default function QuestPage({ id }: { id: string }) {
                   <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-secondary text-xs font-medium text-secondary-foreground">
                     {i + 1}
                   </span>
-                  <span>{lt(entry.objective.label, lang)}</span>
+                  <ObjectiveLabel objective={entry.objective} lang={lang} />
                 </li>
               ))}
             </ol>
           </section>
 
-          {mapName && pois.length > 0 ? (
-            <EmbeddedMap
-              mapName={mapName}
-              pois={pois}
-              className="mb-6 h-80"
-            />
+          {objectiveMapEntries.length > 0 ? (
+            objectiveMapEntries.map((entry) => (
+              <EmbeddedMap
+                key={entry.mapName}
+                mapName={entry.mapName}
+                pois={entry.pois}
+                highlightRegionIds={entry.highlightRegionIds}
+                className="mb-6 h-80"
+              />
+            ))
           ) : (
             <p className="mb-6 text-sm text-muted-foreground">
               {t("wiki:quest.locationUnknown")}
@@ -277,7 +305,7 @@ export default function QuestPage({ id }: { id: string }) {
                   <ul className="space-y-1 text-sm">
                     {s.objectives.map((o, i) => (
                       <li key={i} className="flex items-baseline gap-2">
-                        <span>{lt(o.label, lang)}</span>
+                        <ObjectiveLabel objective={o} lang={lang} />
                         {o.optional && (
                           <span className="text-xs text-muted-foreground">
                             ({t("wiki:quest.optional")})
@@ -312,6 +340,28 @@ export default function QuestPage({ id }: { id: string }) {
       )}
     </article>
   );
+}
+
+function ObjectiveLabel({
+  objective,
+  lang,
+}: {
+  objective: QuestObjective;
+  lang: string;
+}) {
+  const label = lt(objective.label, lang);
+  if (objective.target?.type === "npc") {
+    return (
+      <Link
+        to="/wiki/$type/$slug"
+        params={{ type: "npc", slug: String(objective.target.id) }}
+        className="hover:underline"
+      >
+        {label}
+      </Link>
+    );
+  }
+  return <span>{label}</span>;
 }
 
 function QuestLinkList({

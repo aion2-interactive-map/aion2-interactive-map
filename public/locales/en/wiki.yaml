@@ -39,7 +39,9 @@ list:
 npc:
   info: "NPC info"
   npcType: "Type"
+  level: "Level"
   grade: "Grade"
+  funcType: "Function"
   named: "Named"
   spawns: "Spawn locations"
   quests: "Related quests"

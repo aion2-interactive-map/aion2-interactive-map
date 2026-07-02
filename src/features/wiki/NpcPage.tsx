@@ -131,12 +131,12 @@ export default function NpcPage({ id }: { id: string }) {
                 value={t(`wiki:list.${npc.race}`)}
               />
               <InfoRow
-                label={t("wiki:common.level", { n: "" }).trim()}
+                label={t("wiki:npc.level")}
                 value={levelText}
               />
               <InfoRow label={t("wiki:npc.grade")} value={npc.grade} />
               {npc.funcType && (
-                <InfoRow label="funcType" value={npc.funcType} />
+                <InfoRow label={t("wiki:npc.funcType")} value={npc.funcType} />
               )}
             </InfoRows>
           </WikiCard>

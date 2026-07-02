@@ -39,7 +39,9 @@ list:
 npc:
   info: "NPC信息"
   npcType: "类型"
-  grade: "等级"
+  level: "等级"
+  grade: "品级"
+  funcType: "功能"
   named: "精英"
   spawns: "出没地点"
   quests: "相关任务"

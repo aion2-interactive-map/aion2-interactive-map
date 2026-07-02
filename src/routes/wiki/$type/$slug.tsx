@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import GroupList from "@/features/wiki/GroupList";
+import ItemPage from "@/features/wiki/ItemPage";
+import NpcPage from "@/features/wiki/NpcPage";
 import QuestPage from "@/features/wiki/QuestPage";
 import { isNumericSlug } from "@/lib/wiki";
 
@@ -20,6 +22,10 @@ export const Route = createFileRoute("/wiki/$type/$slug")({
 function Page() {
   const { type, slug } = Route.useParams();
   const { faction } = Route.useSearch();
-  if (type === "quest" && isNumericSlug(slug)) return <QuestPage id={slug} />;
+  if (isNumericSlug(slug)) {
+    if (type === "quest") return <QuestPage id={slug} />;
+    if (type === "npc") return <NpcPage id={slug} />;
+    if (type === "item") return <ItemPage id={slug} />;
+  }
   return <GroupList type={type} group={slug} initialFaction={faction} />;
 }
