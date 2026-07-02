@@ -165,6 +165,10 @@ export default function MarkerTypes() {
             subtypeKeys.length > 0 &&
             subtypeKeys.some((k) => visibleSubtypes?.has(k));
 
+          // Three visual states for the eye toggle:
+          //  none → faded eye  ·  some → solid eye  ·  all → solid eye w/ hide mark
+          const eyeState = allVisible ? "all" : anyVisible ? "some" : "none";
+
           const tooltipText = allVisible
             ? t("common:menu.hideCategory", "Hide all in this category")
             : t("common:menu.showCategory", "Show all in this category");
@@ -188,7 +192,7 @@ export default function MarkerTypes() {
               value={category.name}
               className="border-b-0"
             >
-              <AccordionTrigger className="px-0 pt-3 pb-0 hover:no-underline">
+              <AccordionTrigger className="cursor-default items-center gap-1 px-0 pt-3 pb-0 hover:no-underline [&>svg]:translate-y-0">
                 <div className="my-2 flex w-full items-center justify-between gap-2 px-0">
                   <div className="flex items-center gap-2">
                     <span className="flex h-4 w-4 items-center justify-center">
@@ -208,14 +212,15 @@ export default function MarkerTypes() {
                           tabIndex={0}
                           onClick={toggleCategory}
                           className={cn(
-                            "shrink-0 rounded-sm p-1 hover:bg-black/5 dark:hover:bg-white/10",
-                            anyVisible
-                              ? "text-[#3D3D3D] dark:text-[#C2C2C2]"
-                              : "text-muted-foreground",
+                            "shrink-0 rounded-sm p-1 text-[#3D3D3D] transition-opacity hover:bg-black/5 dark:text-[#C2C2C2] dark:hover:bg-white/10",
+                            // State 1 (nothing selected): faded eye.
+                            eyeState === "none" && "opacity-40",
                           )}
                           aria-label={tooltipText}
                         >
-                          {allVisible ? (
+                          {/* State 3 (all selected): solid eye with hide mark.
+                              States 1 & 2: eye (faded / solid via opacity above). */}
+                          {eyeState === "all" ? (
                             <EyeOff className="h-3.5 w-3.5" />
                           ) : (
                             <Eye className="h-3.5 w-3.5" />

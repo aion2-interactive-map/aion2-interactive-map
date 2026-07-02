@@ -199,6 +199,16 @@
     text-shadow: 0 0 1px #000, 0 0 1px #000, 0 0 1px #000;
 }
 
+/* Tailwind v4 Preflight drops the v3 `cursor: pointer` on buttons (it now
+   matches the browser default `cursor: default`). Restore the pointer for
+   enabled clickable elements. */
+@layer base {
+    button:not(:disabled),
+    [role="button"]:not(:disabled) {
+        cursor: pointer;
+    }
+}
+
 html,
 body,
 #root {
