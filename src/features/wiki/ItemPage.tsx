@@ -176,7 +176,9 @@ export default function ItemPage({ id }: { id: string }) {
                 {item.stats.map((stat) => (
                   <InfoRow
                     key={stat.key}
-                    label={stat.key}
+                    label={t(`wiki:stats.${stat.key}`, {
+                      defaultValue: stat.key,
+                    })}
                     value={stat.value.toLocaleString()}
                   />
                 ))}
