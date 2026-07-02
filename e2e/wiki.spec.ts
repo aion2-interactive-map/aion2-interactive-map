@@ -18,8 +18,7 @@ test.describe("wiki", () => {
   });
 
   test("quest page embedded map shows only POI pins", async ({ page }) => {
-    await page.goto("/wiki/quest/main?lng=en");
-    await page.locator('[data-testid^="wiki-entry-"]').first().click();
+    await page.goto("/wiki/quest/1101010?lng=en");
     const embed = page.getByTestId("embedded-map");
     if (await embed.isVisible()) {
       const pins = embed.locator(".leaflet-marker-icon");
@@ -47,6 +46,30 @@ test.describe("wiki", () => {
       "data-state",
       "on",
     );
+  });
+
+  test("npc hub, group list and npc page", async ({ page }) => {
+    await page.goto("/wiki/npc");
+    await expect(page.getByTestId("wiki-type-hub")).toBeVisible();
+    const firstGroup = page.getByTestId(/wiki-hub-group-/).first();
+    await firstGroup.locator("a").first().click();
+    await expect(page.getByTestId("wiki-group-list")).toBeVisible();
+    await page.getByTestId(/wiki-entry-/).first().click();
+    await expect(page.getByTestId("wiki-npc-page")).toBeVisible();
+  });
+
+  test("item page renders grade-colored name and links", async ({ page }) => {
+    await page.goto("/wiki/item");
+    await expect(page.getByTestId("wiki-type-hub")).toBeVisible();
+    const firstGroup = page.getByTestId(/wiki-hub-group-/).first();
+    await firstGroup.locator("a").first().click();
+    await page.getByTestId(/wiki-entry-/).first().click();
+    await expect(page.getByTestId("wiki-item-page")).toBeVisible();
+  });
+
+  test("quest region-only objective renders embedded map", async ({ page }) => {
+    await page.goto("/wiki/quest/1100010");
+    await expect(page.getByTestId("embedded-map")).toBeVisible();
   });
 
   test("map deep-link ?pos= flies without error", async ({ page }) => {

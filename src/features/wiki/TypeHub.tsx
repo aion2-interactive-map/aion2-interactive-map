@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import MiniSearch, { type SearchResult } from "minisearch";
 
 import { Input } from "@/components/ui/input";
+import { Breadcrumb } from "@/features/wiki/ui";
 import { loadTaxonomy, loadWikiIndex } from "@/lib/wiki";
 import type { WikiGroup, WikiIndexDoc, WikiTaxonomy } from "@/types/wiki";
 
@@ -36,6 +37,10 @@ export default function TypeHub({ type }: { type: string }) {
     loadWikiIndex(type).then((r) => setDocs(r.docs)).catch(console.error);
   }, [type]);
 
+  useEffect(() => {
+    document.title = `${t(`wiki/taxonomy:types.${type}.name`)} - AION2 Wiki`;
+  }, [t, type]);
+
   const ms = useMemo(() => {
     const m = new MiniSearch<SearchDoc>({
       fields: ["name"],
@@ -67,6 +72,7 @@ export default function TypeHub({ type }: { type: string }) {
     return counts;
   }, [docs]);
   if (!node) return null;
+  const typeName = t(`wiki/taxonomy:types.${type}.name`);
 
   function getGroupBuckets(group: WikiGroup) {
     const buckets = emptyBuckets();
@@ -116,9 +122,15 @@ export default function TypeHub({ type }: { type: string }) {
 
   return (
     <div data-testid="wiki-type-hub">
-      <h1 className="mb-4 text-2xl font-bold">
-        {t(`wiki/taxonomy:types.${type}.name`)}
-      </h1>
+      <div className="mb-4 space-y-3">
+        <Breadcrumb
+          items={[
+            { label: t("wiki:nav.wiki"), to: "/wiki" },
+            { label: typeName },
+          ]}
+        />
+        <h1 className="text-2xl font-bold">{typeName}</h1>
+      </div>
       <Input
         value={q}
         onChange={(e) => setQ(e.target.value)}

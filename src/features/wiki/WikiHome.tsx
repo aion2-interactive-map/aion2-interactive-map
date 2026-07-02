@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 
+import { WikiLoading } from "@/features/wiki/ui";
 import { loadTaxonomy } from "@/lib/wiki";
 import type { WikiTaxonomy } from "@/types/wiki";
 
@@ -17,7 +18,7 @@ export default function WikiHome() {
     document.title = t("wiki:home.title");
   }, [t]);
 
-  if (!tax) return <p className="text-muted-foreground">Loading...</p>;
+  if (!tax) return <WikiLoading />;
 
   return (
     <div data-testid="wiki-home">

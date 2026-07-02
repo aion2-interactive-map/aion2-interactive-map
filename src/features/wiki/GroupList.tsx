@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 
+import { GradeText } from "@/features/wiki/ui";
 import { loadTaxonomy, loadWikiIndex } from "@/lib/wiki";
 import type { WikiIndexDoc, WikiTaxonomy } from "@/types/wiki";
 
@@ -98,29 +99,68 @@ export default function GroupList({
               </h2>
               <table className="w-full text-sm">
                 <tbody>
-                  {sections[s.slug].map((d) => (
-                    <tr
-                      key={d.id}
-                      className="border-b border-border/50 hover:bg-accent/50"
-                    >
-                      <td className="w-16 py-1.5 text-muted-foreground">
-                        {t("wiki:quest.level", { n: d.level })}
-                      </td>
-                      <td>
-                        <Link
-                          to="/wiki/$type/$slug"
-                          params={{ type, slug: String(d.id) }}
-                          className="hover:underline"
-                          data-testid={`wiki-entry-${d.id}`}
-                        >
-                          {t(`wiki/${type}:${d.id}.name`)}
-                        </Link>
-                      </td>
-                      <td className="w-28 text-right text-muted-foreground">
-                        {d.mapId ?? ""}
-                      </td>
-                    </tr>
-                  ))}
+                  {sections[s.slug].map((d) => {
+                    const name = t(`wiki/${type}:${d.id}.name`);
+                    const link = (
+                      <Link
+                        to="/wiki/$type/$slug"
+                        params={{ type, slug: String(d.id) }}
+                        className="hover:underline"
+                        data-testid={`wiki-entry-${d.id}`}
+                      >
+                        {name}
+                      </Link>
+                    );
+                    let firstCell = t("wiki:quest.level", { n: d.level });
+                    let nameCell = link;
+                    let thirdCell = d.mapId ?? "";
+
+                    switch (type) {
+                      case "npc":
+                        thirdCell = d.mapId
+                          ? t(`wiki/taxonomy:sections.${d.mapId}.name`, {
+                              defaultValue: d.mapId,
+                            })
+                          : "";
+                        break;
+                      case "item":
+                        firstCell =
+                          d.level > 0
+                            ? t("wiki:quest.level", { n: d.level })
+                            : "";
+                        nameCell =
+                          typeof d.grade === "string" ? (
+                            <GradeText grade={d.grade}>{link}</GradeText>
+                          ) : (
+                            link
+                          );
+                        thirdCell = t(
+                          `wiki/taxonomy:sections.${d.section}.name`,
+                          {
+                            defaultValue: d.section,
+                          },
+                        );
+                        break;
+                      case "quest":
+                      default:
+                        break;
+                    }
+
+                    return (
+                      <tr
+                        key={d.id}
+                        className="border-b border-border/50 hover:bg-accent/50"
+                      >
+                        <td className="w-16 py-1.5 text-muted-foreground">
+                          {firstCell}
+                        </td>
+                        <td>{nameCell}</td>
+                        <td className="w-28 text-right text-muted-foreground">
+                          {thirdCell}
+                        </td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </section>
