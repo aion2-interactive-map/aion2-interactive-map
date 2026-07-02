@@ -44,13 +44,14 @@ export default function TopNavbar() {
       <Link
         to="/wiki"
         className="text-sm text-foreground/80 hover:text-foreground"
+        activeProps={{ className: "text-sm font-semibold text-primary" }}
       >
         {t("wiki:nav.wiki")}
       </Link>
 
       {/* Rebuild notice (nav tabs hidden during the rewrite) */}
       <div className="text-sm text-[#3D3D3D] dark:text-white/80">
-        已更新第四赛季新地图，全新版本重制中，旧版入口：
+        {t("common:topbar.rebuildNotice")}
         <a
           href={ARCHIVE_URL}
           target="_blank"

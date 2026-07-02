@@ -2,6 +2,8 @@ lang: "zh-TW"
 appName: "AION2 地圖"
 siteTitle: "AION2 互動地圖"
 mapSubtitle: "互動地圖"
+topbar:
+  rebuildNotice: "已更新第四賽季新地圖，全新版本重製中，舊版入口："
 
 nav:
   home: "首頁"

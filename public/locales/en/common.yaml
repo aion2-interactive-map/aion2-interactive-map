@@ -3,6 +3,8 @@ appName: "AION2 Map"
 siteTitle: "AION2\nInteractive Map"
 mapSubtitle: "Interactive Map"
 announcement: "200 monolith positions for in Abyss updated, screenshots will be added later."
+topbar:
+  rebuildNotice: "Season 4 maps added — full rebuild in progress. Legacy site: "
 
 nav:
   home: "Home"
