@@ -42,6 +42,8 @@
     --color-grade-epic: #ee6c2a;
     --color-grade-mythic: #c60000;
     --color-grade-special: #09ce9f;
+    --color-faction-light: var(--faction-light);
+    --color-faction-dark: var(--faction-dark);
 }
 
 /* ===== shadcn/ui token layer (Phase 2A) =====
@@ -69,6 +71,8 @@
     --border: rgba(0,0,0,0.1);
     --input: #ebebec;
     --ring: #2E97FF;
+    --faction-light: #b8860b;
+    --faction-dark: #7a5af8;
 }
 
 /* Lanhu "2魔族" dark board: purple-navy surfaces (panels/popups #2C293A,
@@ -93,6 +97,8 @@
     --border: rgba(255,255,255,0.12);
     --input: #423F5A;
     --ring: #2e97ff;
+    --faction-light: #e5b84b;
+    --faction-dark: #a78bfa;
 }
 
 /* Abyss shares the dark core palette (same as hero.ts); only chrome accents differ. */
@@ -116,6 +122,8 @@
     --border: #26262a;
     --input: #26262a;
     --ring: #2e97ff;
+    --faction-light: #e5b84b;
+    --faction-dark: #a78bfa;
 }
 
 /* Bridge raw tokens to Tailwind v4 color/radius utilities used by shadcn primitives. */

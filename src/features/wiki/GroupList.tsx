@@ -2,12 +2,19 @@ import { useEffect, useMemo, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 
-import { GradeText } from "@/features/wiki/ui";
+import { GradeText, WikiLoading } from "@/features/wiki/ui";
 import { loadTaxonomy, loadWikiIndex } from "@/lib/wiki";
 import type { WikiIndexDoc, WikiTaxonomy } from "@/types/wiki";
 
 const FACTIONS = ["all", "light", "dark"] as const;
 type Faction = (typeof FACTIONS)[number];
+
+function factionButtonClass(faction: Faction, active: boolean) {
+  if (!active) return "bg-muted text-muted-foreground hover:bg-accent";
+  if (faction === "light") return "bg-faction-light text-white";
+  if (faction === "dark") return "bg-faction-dark text-white";
+  return "bg-primary text-primary-foreground";
+}
 
 export default function GroupList({
   type,
@@ -49,6 +56,7 @@ export default function GroupList({
   const node = tax?.types
     .find((x) => x.slug === type)
     ?.groups.find((g) => g.slug === group);
+  if (!tax) return <WikiLoading />;
   if (!node) {
     return <p className="text-muted-foreground">{t("wiki:list.empty")}</p>;
   }
@@ -81,11 +89,10 @@ export default function GroupList({
               onClick={() => setFaction(f)}
               data-testid={`faction-${f}`}
               data-state={faction === f ? "on" : "off"}
-              className={`rounded px-2 py-0.5 ${
-                faction === f
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-secondary"
-              }`}
+              className={`rounded px-2 py-0.5 ${factionButtonClass(
+                f,
+                faction === f,
+              )}`}
             >
               {t(`wiki:list.${f}`)}
             </button>
@@ -143,6 +150,11 @@ export default function GroupList({
                         break;
                       case "quest":
                       default:
+                        thirdCell = d.mapId
+                          ? t(`wiki/taxonomy:sections.${d.mapId}.name`, {
+                              defaultValue: d.mapId,
+                            })
+                          : "";
                         break;
                     }
 

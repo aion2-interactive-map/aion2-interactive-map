@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import MiniSearch, { type SearchResult } from "minisearch";
 
 import { Input } from "@/components/ui/input";
-import { Breadcrumb } from "@/features/wiki/ui";
+import { Breadcrumb, WikiLoading } from "@/features/wiki/ui";
 import { loadTaxonomy, loadWikiIndex } from "@/lib/wiki";
 import type { WikiGroup, WikiIndexDoc, WikiTaxonomy } from "@/types/wiki";
 
@@ -71,6 +71,7 @@ export default function TypeHub({ type }: { type: string }) {
     }
     return counts;
   }, [docs]);
+  if (!tax) return <WikiLoading />;
   if (!node) return null;
   const typeName = t(`wiki/taxonomy:types.${type}.name`);
 
@@ -181,7 +182,13 @@ export default function TypeHub({ type }: { type: string }) {
                         className={bucket === "both" ? "md:col-span-2" : ""}
                       >
                         <h3
-                          className="text-sm font-semibold text-muted-foreground"
+                          className={`text-sm font-semibold ${
+                            bucket === "light"
+                              ? "text-faction-light"
+                              : bucket === "dark"
+                                ? "text-faction-dark"
+                                : "text-muted-foreground"
+                          }`}
                           data-testid={`faction-col-${bucket}`}
                         >
                           {t(`wiki:list.${bucket}`)}
