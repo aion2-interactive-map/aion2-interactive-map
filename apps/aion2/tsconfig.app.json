@@ -29,6 +29,5 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["src", "env.d.ts"],
-  "exclude": ["src/_legacy"]
+  "include": ["src", "env.d.ts"]
 }

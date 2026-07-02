@@ -23,7 +23,8 @@ RESOURCE_UI_DIR=/path/to/resource/UI DATA_DIR=/path/to/data pnpm dev
 | Path | Description |
 |------|-------------|
 | `apps/aion2/` | AION2 interactive map (React 19 / Vite / Tailwind / Leaflet) |
-| `packages/` | Shared packages (data-contract, map-engine – coming soon) |
+| `packages/data-contract/` | `@gamemap/data-contract` — contract types, zod schemas, `validate-data` CLI for the game-data repo format |
+| `packages/map-engine/` | `@gamemap/map-engine` — game-agnostic Leaflet map components (props-injection, no i18n/router/env inside) |
 
 
 ## 🔗 License
