@@ -56,7 +56,7 @@ export default function MapRoute() {
         return {
           ...m,
           subtypeMeta: sub,
-          subtypeLabel: t(`types:subtypes.${sub?.name}.name`),
+          subtypeLabel: sub ? t(`types:subtypes.${sub.name}.name`) : "",
           completed,
         };
       }),
