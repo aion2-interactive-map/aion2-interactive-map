@@ -150,7 +150,7 @@ export default function EmbeddedMap({
           <Marker
             key={i}
             position={dataToLatLng(map, p.x, p.y)}
-            icon={createPinIcon("", 1, false, "pin", "#2E97FF", false)}
+            icon={createPinIcon("", 1, false, { variant: "pin" })}
           >
             {p.label && <Tooltip direction="top">{p.label}</Tooltip>}
           </Marker>

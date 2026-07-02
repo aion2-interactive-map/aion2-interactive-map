@@ -31,7 +31,7 @@ class GameTileLayer extends L.TileLayer {
     const x = coords.x;
     const y = selectedMap.tilesCountY + coords.y;
 
-    // Clamp to grid (noWrap)
+    // Reject out-of-grid indices (noWrap): empty URL, no tile requested.
     if (
       x < 0 ||
       y < 0 ||

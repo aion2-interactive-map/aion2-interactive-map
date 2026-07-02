@@ -45,7 +45,12 @@ export interface EngineMarker extends MarkerInstance {
  * itself). No default exists — every game must provide one.
  */
 export interface MapAssets {
-  /** URL of the map tile at grid indices (x, y). Indices are already clamped to the tile grid by the engine tile layer. */
+  /**
+   * URL of the map tile at grid indices (x, y). The engine tile layer rejects
+   * out-of-range indices (it returns "" itself, without calling this) rather
+   * than clamping, so implementations only ever see indices inside the grid.
+   * Orientation: (x=0, y=0) is the top-left tile; y increases downward.
+   */
   tileUrl(map: GameMapMeta, x: number, y: number): string;
   /**
    * URL for a marker's game-icon image. `icon` may be "" / undefined (subtype

@@ -37,16 +37,31 @@ const SELECTED_SHADOW =
  */
 const iconCache = new Map<string, L.DivIcon>();
 
+/** Optional appearance knobs for {@link createPinIcon}. */
+export interface PinIconOptions {
+  variant?: PinVariant;
+  /** "pin" variant inner-dot color; defaults to `theme.pinDot`. */
+  innerColor?: string;
+  /** Selected-marker emphasis (scale-up + lifted shadow). */
+  selected?: boolean;
+  /** Fragment direction badge; "air" = up chevron, "water" = down, ground/none = no badge. */
+  fragmentType?: "ground" | "air" | "water";
+  theme?: PinTheme;
+}
+
 export function createPinIcon(
   innerIcon: string,
   iconScale: number,
   completed: boolean,
-  variant: PinVariant = "image",
-  innerColor?: string,
-  selected: boolean = false,
-  fragmentType?: "ground" | "air" | "water",
-  theme: PinTheme = DEFAULT_PIN_THEME,
+  options: PinIconOptions = {},
 ): L.DivIcon {
+  const {
+    variant = "image",
+    innerColor,
+    selected = false,
+    fragmentType,
+    theme = DEFAULT_PIN_THEME,
+  } = options;
   const dot = innerColor ?? theme.pinDot;
   // Theme is fixed per game at startup, never varies at runtime, so it is
   // deliberately NOT part of the key. A game that switches pin themes at
