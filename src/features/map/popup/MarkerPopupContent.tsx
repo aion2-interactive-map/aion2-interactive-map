@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 import { Check } from "lucide-react";
 
@@ -20,7 +21,7 @@ function resolveImage(src: string): string {
 const MarkerPopupContent: React.FC<Props> = ({ marker }) => {
   const { types } = useGameMap();
   const { completedBySubtype, toggleMarkerCompleted } = useMarkers();
-  const { t } = useTranslation();
+  const { t } = useTranslation(["common", "types", "wiki"]);
 
   // Locate subtype meta across categories.
   const sub = types
@@ -71,6 +72,19 @@ const MarkerPopupContent: React.FC<Props> = ({ marker }) => {
           {metaLine ? " " : ""}
           <span className="tabular-nums">{coords}</span>
         </div>
+        {marker.entity && (
+          <Link
+            to="/wiki/$type/$slug"
+            params={{
+              type: marker.entity.type,
+              slug: String(marker.entity.id),
+            }}
+            className="mt-1 inline-block text-sm text-primary hover:underline"
+            data-testid="popup-wiki-link"
+          >
+            {t("wiki:nav.wiki")} -&gt;
+          </Link>
+        )}
 
         {/* Description (with dividers above/below); grey placeholder if none */}
         <hr className="my-3 border-0 border-t border-border" />
