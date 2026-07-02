@@ -1,0 +1,22 @@
+nav: { wiki: "Wiki" }
+home:
+  title: "AION2 Wiki"
+  subtitle: "Auto-generated from game data"
+quest:
+  steps: "Walkthrough"
+  step: "Step {{n}}"
+  rewards: "Rewards"
+  exp: "EXP"
+  chainPrev: "Previous quest"
+  chainNext: "Next quest"
+  level: "Lv. {{n}}"
+  repeatable: "Repeatable"
+  locationUnknown: "Location unknown"
+  openInMap: "Open in map"
+list:
+  search: "Search..."
+  empty: "No entries"
+  faction: "Faction"
+  all: "All"
+  light: "Elyos"
+  dark: "Asmodian"

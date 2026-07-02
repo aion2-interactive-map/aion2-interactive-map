@@ -22,7 +22,8 @@ function isGameDataNs(ns: string): boolean {
   return (
     GAME_DATA_NS.includes(ns) ||
     ns.startsWith("markers/") ||
-    ns.startsWith("regions/")
+    ns.startsWith("regions/") ||
+    ns.startsWith("wiki/")
   );
 }
 

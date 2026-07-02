@@ -59,6 +59,11 @@ export interface MarkerTypeCategory {
   subtypes: MarkerTypeSubtype[];
 }
 
+export interface MarkerEntityRef {
+  type: "quest" | "npc" | "item";
+  id: number;
+}
+
 /**
  * A concrete marker instance on a map.
  *
@@ -87,6 +92,7 @@ export interface MarkerInstance {
   tier?: number;
   /** For fragment markers: which physical kind (drives dialog text + icon badge). */
   fragmentType?: "ground" | "air" | "water";
+  entity?: MarkerEntityRef;
 }
 
 export type MarkerWithTranslations = MarkerInstance & {
@@ -350,4 +356,3 @@ export type SkillMeta = {
 export type RawSkillsFile = {
   skills?: SkillMeta[];
 };
-

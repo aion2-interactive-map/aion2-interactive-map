@@ -1,0 +1,22 @@
+nav: { wiki: "百科" }
+home:
+  title: "AION2 百科"
+  subtitle: "由游戏数据自动生成"
+quest:
+  steps: "任务流程"
+  step: "步骤 {{n}}"
+  rewards: "奖励"
+  exp: "经验"
+  chainPrev: "前置任务"
+  chainNext: "后续任务"
+  level: "{{n}} 级"
+  repeatable: "可重复"
+  locationUnknown: "位置未知"
+  openInMap: "在地图中打开"
+list:
+  search: "搜索..."
+  empty: "暂无条目"
+  faction: "阵营"
+  all: "全部"
+  light: "天族"
+  dark: "魔族"
