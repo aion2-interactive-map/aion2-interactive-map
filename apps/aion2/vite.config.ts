@@ -25,7 +25,7 @@ const MIME: Record<string, string> = {
 function resourceUiProxy(): Plugin {
   const uiDir = path.resolve(
     __dirname,
-    process.env.RESOURCE_UI_DIR ?? "../resource/UI",
+    process.env.RESOURCE_UI_DIR ?? "../../../resource/UI",
   );
   return {
     name: "resource-ui-static",
@@ -54,7 +54,7 @@ function resourceUiProxy(): Plugin {
 // `/data` in dev. Mirrors the `/UI` resource proxy above. In prod the frontend
 // reads from VITE_DATA_BASE_URL instead. Override the dir with DATA_DIR.
 function dataRepoProxy(): Plugin {
-  const dataDir = path.resolve(__dirname, process.env.DATA_DIR ?? "../data");
+  const dataDir = path.resolve(__dirname, process.env.DATA_DIR ?? "../../../data");
   return {
     name: "data-repo-static",
     configureServer(server) {

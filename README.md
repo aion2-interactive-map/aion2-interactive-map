@@ -1,5 +1,22 @@
 # AION2 Interactive Map
 
+## Development
+
+This is a pnpm workspace monorepo. The map application lives in `apps/aion2`.
+
+```bash
+pnpm install       # install all workspace dependencies
+pnpm dev           # start dev server for aion2 app
+pnpm build         # build aion2 app
+```
+
+### Monorepo layout
+
+| Path | Description |
+|------|-------------|
+| `apps/aion2/` | AION2 interactive map (React 19 / Vite / Tailwind / Leaflet) |
+| `packages/` | Shared packages (data-contract, map-engine – coming soon) |
+
 
 ## 🔗 License
 

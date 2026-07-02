@@ -25,33 +25,26 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 22          # or 20/18, match your local
-          cache: yarn               # ✅ cache Yarn deps
+          node-version: 22
+          cache: pnpm
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
-
-      # (Optional) Cache Vite build artifacts for faster rebuilds
-      - name: Cache Vite build
-        uses: actions/cache@v4
-        with:
-          path: |
-            node_modules/.vite
-            **/.vite
-          key: ${{ runner.os }}-vite-${{ hashFiles('vite.config.*', 'package.json', 'yarn.lock', 'tsconfig.*', 'src/**/*', 'public/**/*') }}
-          restore-keys: |
-            ${{ runner.os }}-vite-
+        run: pnpm install --frozen-lockfile
 
       - name: Build
-        run: yarn build
+        run: pnpm --filter aion2 build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./apps/aion2/dist
           publish_branch: gh-pages
-

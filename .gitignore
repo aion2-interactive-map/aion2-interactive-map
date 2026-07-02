@@ -24,10 +24,3 @@ dist-ssr
 *.sw?
 .env
 .tanstack
-public/UI/
-
-# Playwright
-/test-results/
-/playwright-report/
-/.playwright/
-/.screenshots/
