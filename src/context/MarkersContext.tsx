@@ -79,7 +79,7 @@ export const MarkersProvider = ({children}: MarkersProviderProps) => {
   // loading outright (the marker locale is never fetched → every marker name is
   // blank). Keep it length-1: fall back to the already-loaded "common" ns until
   // a map is selected, which also avoids requesting the bogus "markers/undefined".
-  const {t, i18n} = useTranslation(selectedMap ? [markerNs] : ["common"]);
+  const {t} = useTranslation(selectedMap ? [markerNs] : ["common"]);
 
   const subtypeToCategory = useMemo(() => {
     const map: Record<string, string> = {};
@@ -142,7 +142,7 @@ export const MarkersProvider = ({children}: MarkersProviderProps) => {
         localizedDescription,
       };
     });
-  }, [baseMarkers, selectedMap, t, i18n.language, subtypeToCategory]);
+  }, [baseMarkers, selectedMap, markerNs, t, subtypeToCategory]);
 
   const markersById: Record<string, MarkerWithTranslations> = useMemo(() => {
     const dict: Record<string, MarkerWithTranslations> = {};

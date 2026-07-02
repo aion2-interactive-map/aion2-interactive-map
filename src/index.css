@@ -299,10 +299,18 @@ body {
     filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.12));
 }
 
-/* Theme-aware tooltip for markers. Border is transparent (not var(--border)):
-   the down-pointing ::before tip sits below the box, and a visible bottom
-   border would draw a seam line across the top of the triangle — the same bug
-   fixed on the marker popup card. The shadow supplies the box definition. */
+/* Theme-aware tooltip for markers. Two seam-avoidance details, mirroring the
+   marker popup pointer fix:
+   1. border is transparent (not var(--border)) — a visible bottom border would
+      draw a line across the top of the down-pointing ::before tip.
+   2. shadow is a `filter: drop-shadow` (NOT `box-shadow`). box-shadow outlines
+      the rectangular body only, so it paints a seam line across the base of the
+      triangle where the tip sticks out below the box. drop-shadow follows the
+      combined body + ::before-triangle silhouette as a single shape, so the tip
+      and body read as one piece with no internal seam.
+   (There is no `.leaflet-tooltip-tip` DOM node — Leaflet draws the tooltip tip
+   with the ::before pseudo-element, colored var(--card) via `.leaflet-tooltip
+   ::before` above.) */
 .leaflet-tooltip.game-marker-tooltip {
     background: var(--card);
     color: var(--foreground);
@@ -310,13 +318,7 @@ body {
     padding: 2px 6px;
     font-size: 11px;
     border-radius: 4px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
-}
-
-/* Match tip (arrow) color to the tooltip background */
-.leaflet-tooltip.game-marker-tooltip .leaflet-tooltip-tip {
-    background: var(--card);
-    border: 1px solid var(--border);
+    filter: drop-shadow(0 1px 1.5px rgba(0, 0, 0, 0.35));
 }
 
 .altcha {

@@ -11,14 +11,17 @@ type Props = {
   onSelectMarker: (id: string | null) => void;
 };
 
-// Popup vertical offset. Leaflet places the popup's card bottom edge at
-// `-offset.y` above the marker point, so -18 sits the card bottom 18px above
-// the point — the same height as the marker name tooltip's box bottom
-// (Tooltip offset [0,-18] in GameMarker.tsx), so the popup and tooltip share a
-// common bottom edge. The card's downward ::after triangle then hangs ~8px
+// Popup vertical offset, tuned so the popup card bottom lines up with the marker
+// name tooltip's box bottom (~25px above the marker point). NOTE the two do NOT
+// share the same offset→bottom relationship: Leaflet's popup wrapper reserves a
+// large fixed gap below the point (measured: offset -18 lands the card bottom
+// ~39px above the point), whereas a `direction=top` tooltip lands its box bottom
+// only ~6.5px higher than -offset.y (offset -18 → ~24.5px above). So to co-locate
+// the two bottoms the popup needs a much smaller magnitude (-4 → ~25px above)
+// than the tooltip (-18). The card's downward ::after triangle then hangs ~8px
 // below that toward the icon. Module-level so the reference stays stable across
 // re-renders (see the `position` memo note below).
-const POPUP_OFFSET: [number, number] = [0, -18];
+const POPUP_OFFSET: [number, number] = [0, -4];
 
 const SelectedMarkerPopup: React.FC<Props> = ({
   selectedMarkerId,
