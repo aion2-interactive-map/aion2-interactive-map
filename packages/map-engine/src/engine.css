@@ -1,6 +1,7 @@
 /* @gamemap/map-engine static styles — the engine is Tailwind-free, so the
  * chrome rendered by its components (map shell, zoom control, status bar,
- * context menu) is styled here. The consuming app must import this file once:
+ * context menu, marker tooltip, selected-marker popup) is styled here. The
+ * consuming app must import this file once:
  *
  *   import "@gamemap/map-engine/engine.css";
  *
@@ -169,4 +170,85 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+/* ---- Marker name tooltip (GameMarker) --------------------------------- */
+
+/* Theme-aware tooltip for markers. Two seam-avoidance details, mirroring the
+ * marker popup pointer fix below:
+ * 1. border is transparent (not var(--border)) — a visible bottom border would
+ *    draw a line across the top of the down-pointing ::before tip.
+ * 2. shadow is a `filter: drop-shadow` (NOT `box-shadow`). box-shadow outlines
+ *    the rectangular body only, so it paints a seam line across the base of the
+ *    triangle where the tip sticks out below the box. drop-shadow follows the
+ *    combined body + ::before-triangle silhouette as a single shape, so the tip
+ *    and body read as one piece with no internal seam. */
+.leaflet-tooltip.gm-marker-tooltip {
+  background: var(--card, #ffffff);
+  color: var(--foreground, #3d3d3d);
+  border: 1px solid transparent;
+  padding: 2px 6px;
+  font-size: 11px;
+  border-radius: 4px;
+  filter: drop-shadow(0 1px 1.5px rgba(0, 0, 0, 0.35));
+}
+
+/* There is no `.leaflet-tooltip-tip` DOM node — Leaflet draws the tooltip tip
+ * with the ::before pseudo-element; paint it in the body colour. */
+.leaflet-tooltip.gm-marker-tooltip::before {
+  border-top-color: var(--card, #ffffff) !important;
+}
+
+/* ---- Selected-marker popup (SelectedMarkerPopup) ----------------------- */
+
+/* The app's popup card (renderPopupContent) supplies its own surface, so the
+ * Leaflet wrapper and tip stay frameless; the pointer is re-drawn below as the
+ * card's own ::after in the card colour. */
+.gm-marker-popup .leaflet-popup-content-wrapper,
+.gm-marker-popup .leaflet-popup-tip {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.gm-marker-popup .leaflet-popup-content {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Marker popup pointer. The triangle is drawn as the card's own ::after, so it
+ * lives in the same React element as the card — the two then appear and vanish
+ * together. Leaflet's separate tip is its own DOM node that lingers during the
+ * popup's 200ms fade-out after the card has already unmounted (the card and the
+ * triangle wouldn't disappear at the same time), so it's hidden here. */
+.gm-marker-popup .leaflet-popup-tip-container {
+  display: none !important;
+}
+
+/* Borderless card (a 1px border otherwise leaves a seam line across the top of
+ * the triangle) and the offset parent for the ::after pointer below. The app's
+ * renderPopupContent root element must carry the `gm-popup-card` class. */
+.gm-marker-popup .gm-popup-card {
+  position: relative;
+  border-color: transparent !important;
+}
+
+/* Downward triangle pointer, in the card surface colour (theme-aware), centred
+ * under the card with a soft drop shadow. */
+.gm-marker-popup .gm-popup-card::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  /* Overlap the card by 1px so its flat top fuses with the card bottom — both
+   * are var(--card), so there's no seam and no sub-pixel gap (the card height
+   * is fractional, so a flush top: 100% leaves a 1px hairline). */
+  margin-top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 9px solid var(--card, #ffffff);
+  /* Shadow offset (3) ≥ blur (2), so it casts only downward — no halo line
+   * above the triangle where it joins the card. */
+  filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.12));
 }

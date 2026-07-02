@@ -135,7 +135,7 @@ const GameMarkerInner: React.FC<Props> = ({
           permanent
           direction="top"
           offset={[0, -18]}
-          className="game-marker-tooltip"
+          className="gm-marker-tooltip"
         >
           {localizedName}
         </Tooltip>

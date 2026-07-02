@@ -10,6 +10,9 @@ type Props = {
   /** The selected marker (resolved by GameMapView), or null when none. */
   marker: EngineMarker | null;
   onSelectMarker: (id: string | null) => void;
+  /** App-supplied popup card. The returned root element should carry the
+   * `gm-popup-card` class so engine.css can draw the downward pointer
+   * triangle and suppress the card border seam (see engine.css). */
   renderPopupContent: (marker: EngineMarker) => ReactNode;
 };
 
@@ -58,7 +61,7 @@ const SelectedMarkerPopup: React.FC<Props> = ({
     <Popup
       position={position}
       offset={POPUP_OFFSET}
-      className="marker-popup"
+      className="gm-marker-popup"
       // Match the 320px card. Leaflet's default maxWidth (300px) would clamp the
       // wrapper narrower than the card, so the centered tip lands left of the
       // card's true centre. Sizing the wrapper to the card re-centres the tip.

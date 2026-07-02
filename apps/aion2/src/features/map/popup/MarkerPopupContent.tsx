@@ -58,7 +58,9 @@ const MarkerPopupContent: React.FC<Props> = ({ marker }) => {
   return (
     <Card
       data-testid="marker-popup-card"
-      className="w-[320px] gap-0 py-0 rounded-[10px] border-border bg-card text-card-foreground shadow-lg"
+      // `gm-popup-card` is the engine.css hook that draws the popup's downward
+      // pointer triangle and suppresses the border seam (see engine.css).
+      className="gm-popup-card w-[320px] gap-0 py-0 rounded-[10px] border-border bg-card text-card-foreground shadow-lg"
     >
       <CardContent className="flex flex-col px-4 py-4">
         {/* Title */}
