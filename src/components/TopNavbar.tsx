@@ -28,7 +28,7 @@ const THEME_OPTIONS: Theme[] = ["auto", "light", "dark"];
 const ARCHIVE_URL = "https://archive.tc-imba.com/";
 
 export default function TopNavbar() {
-  const { t } = useTranslation();
+  const { t } = useTranslation(["common", "wiki"]);
   const { theme, setTheme } = useTheme();
   const currentLng = i18n.resolvedLanguage ?? i18n.language;
 
@@ -40,6 +40,12 @@ export default function TopNavbar() {
         className="text-lg font-bold tracking-tight text-[#2E97FF] select-none"
       >
         AION2
+      </Link>
+      <Link
+        to="/wiki"
+        className="text-sm text-foreground/80 hover:text-foreground"
+      >
+        {t("wiki:nav.wiki")}
       </Link>
 
       {/* Rebuild notice (nav tabs hidden during the rewrite) */}
