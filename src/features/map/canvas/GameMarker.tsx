@@ -17,6 +17,8 @@ import { parseIconUrl } from "@/lib/url";
 const COMPACT_SUBTYPES = new Set(["fragments", "hiddenCube"]);
 /** Scale applied to gathering nodes and the compact subtypes above. */
 const COMPACT_SCALE = 0.9;
+/** God fragments carry a directional badge, so they read a touch larger. */
+const FRAGMENT_SCALE = 1.1;
 
 type Props = {
   marker: MarkerWithTranslations;
@@ -89,7 +91,12 @@ const GameMarkerInner: React.FC<Props> = ({
     const compact =
       category === "gathering" ||
       (!!sub?.name && COMPACT_SUBTYPES.has(sub.name));
-    const imageScale = compact ? COMPACT_SCALE : iconScale;
+    const imageScale =
+      sub?.name === "fragments"
+        ? FRAGMENT_SCALE
+        : compact
+          ? COMPACT_SCALE
+          : iconScale;
     icon = createPinIcon(
       innerIcon,
       imageScale,

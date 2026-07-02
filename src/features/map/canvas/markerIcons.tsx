@@ -56,6 +56,16 @@ export function createPinIcon(
   const iconBaseSize = 40;
   const iconSize = iconBaseSize * iconScale;
 
+  // Corner badges (completed tick / fragment chevron) sit at the icon's
+  // visible bottom-right corner. The content is center-anchored inside the
+  // fixed `iconBaseSize` box, so as the icon scales its real corner moves
+  // out (larger) or in (smaller) by half the size delta. Deriving the offset
+  // from the rendered content size keeps the badge nestled `BADGE_INSET`px
+  // inside that corner at any scale, instead of drifting when we resize.
+  const BADGE_INSET = 3;
+  const contentSize = variant === "pin" ? 30 : iconSize;
+  const badgeOffset = iconBaseSize / 2 - contentSize / 2 + BADGE_INSET;
+
   let content: React.ReactNode;
   if (variant === "pin") {
     // Lanhu location pin: outer disc 30px (design 15px logical @2x), inner
@@ -156,38 +166,45 @@ export function createPinIcon(
 
       {completed && (
         <CheckCircle
-          size={12}
+          size={15}
+          strokeWidth={3.5}
           style={{
             position: "absolute",
-            right: "-2px",
-            bottom: "-2px",
+            right: `${badgeOffset}px`,
+            bottom: `${badgeOffset}px`,
             color: "#22c55e",
+            filter: "drop-shadow(0 0 1.5px rgba(0,0,0,0.9))",
           }}
         />
       )}
 
       {/* Air/water badge for fragments. Air = up, water = down; ground = none.
           Fragments use icon-swap completion (no green check), so this never
-          collides with the CheckCircle above. */}
+          collides with the CheckCircle above. Pulled in tight over the icon
+          with a heavy stroke + dark halo so the direction reads at a glance. */}
       {(fragmentType === "air" || fragmentType === "water") &&
         (fragmentType === "air" ? (
           <ChevronUp
-            size={12}
+            size={15}
+            strokeWidth={4}
             style={{
               position: "absolute",
-              right: "-2px",
-              bottom: "-2px",
+              right: `${badgeOffset}px`,
+              bottom: `${badgeOffset}px`,
               color: "#22c55e",
+              filter: "drop-shadow(0 0 1.5px rgba(0,0,0,0.9))",
             }}
           />
         ) : (
           <ChevronDown
-            size={12}
+            size={15}
+            strokeWidth={4}
             style={{
               position: "absolute",
-              right: "-2px",
-              bottom: "-2px",
+              right: `${badgeOffset}px`,
+              bottom: `${badgeOffset}px`,
               color: "#22c55e",
+              filter: "drop-shadow(0 0 1.5px rgba(0,0,0,0.9))",
             }}
           />
         ))}
