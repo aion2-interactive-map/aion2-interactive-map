@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { GameMapView, type EngineMarker, type MapRef } from '@gamemap/map-engine'
-import { FilterPanel, MarkerPopupCard, ShellMapSelect, ShellSidebar, ShellTopBar, type FilterCategory } from '@gamemap/map-shell'
+import { FilterPanel, MarkerPopupCard, SearchPanel, ShellMapSelect, ShellSidebar, ShellTopBar, type FilterCategory, type SearchItem } from '@gamemap/map-shell'
 import type { MarkerTypeSubtype } from '@gamemap/data-contract'
 import {
   loadStatic, loadMarkers,
@@ -25,6 +25,7 @@ export default function App() {
   const [markerData, setMarkerData] = useState<{ markers: MarkerRow[]; l10n: MarkerLocale } | null>(null)
   const [visible, setVisible] = useState<Set<string>>(new Set())
   const [selectedMarkerId, setSelectedMarkerId] = useState<string | null>(null)
+  const [selectedPosition, setSelectedPosition] = useState<{ x: number; y: number } | null>(null)
   const [loadError, setLoadError] = useState<string | null>(null)
 
   useEffect(() => {
@@ -52,6 +53,7 @@ export default function App() {
   useEffect(() => {
     setMarkerData(null)
     setSelectedMarkerId(null)
+    setSelectedPosition(null)
     let cancelled = false
     loadMarkers(mapId, lng)
       .then((d) => {
@@ -97,6 +99,33 @@ export default function App() {
       }
     })
   }, [staticData, markerData, subtypeMetaMap])
+
+  const searchItems: SearchItem[] = useMemo(() => {
+    if (!staticData) return []
+    return engineMarkers.map((m) => {
+      const catId = m.subtypeMeta?.category ?? m.category
+      const iconName = m.icon || m.subtypeMeta?.icon || ''
+      return {
+        id: m.id,
+        name: m.localizedName || '',
+        description: m.localizedDescription,
+        subtypeLabel: m.subtypeLabel ?? m.subtype,
+        categoryLabel: catId ? (staticData.typesL10n.categories[catId]?.name ?? catId) : '',
+        iconUrl: iconName && map ? palworldAssets.markerIconUrl(iconName, map) : undefined,
+        x: m.x,
+        y: m.y,
+      }
+    })
+  }, [engineMarkers, staticData, map])
+
+  const searchLabels = useMemo(() => ({
+    search: t('search'),
+    resultsCount: (n: number) => t('resultsCount', { count: n }),
+    unnamed: t('unnamed'),
+    noDescription: t('noDescription'),
+    scopeName: t('scopeName'),
+    scopeAll: t('scopeAll'),
+  }), [t])
 
   const onToggle = useCallback((id: string) => {
     setVisible((v) => {
@@ -244,7 +273,7 @@ export default function App() {
             showBorders={false}
             lodEnabled={false}
             selectedMarkerId={selectedMarkerId}
-            selectedPosition={null}
+            selectedPosition={selectedPosition}
             onToggleMarker={onToggleMarker}
             subzoneAt={subzoneAt}
             flyToDuration={0.5}
@@ -253,6 +282,12 @@ export default function App() {
             exposeTestHandle={import.meta.env.DEV}
             renderPopupContent={renderPopupContent}
             labels={labels}
+          />
+          <SearchPanel
+            items={searchItems}
+            onSelect={setSelectedMarkerId}
+            onFlyTo={setSelectedPosition}
+            labels={searchLabels}
           />
         </main>
       </div>

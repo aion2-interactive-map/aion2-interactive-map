@@ -336,6 +336,9 @@ importers:
       lucide-react:
         specifier: ^1.21.0
         version: 1.22.0(react@19.2.7)
+      minisearch:
+        specifier: ^7.2.0
+        version: 7.2.0
     devDependencies:
       '@testing-library/react':
         specifier: ^16.3.0
