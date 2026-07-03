@@ -76,7 +76,7 @@ const GameMarkerInner: React.FC<Props> = ({
   const innerIcon = assets.markerIconUrl(rawIcon, map);
   const renderCompleted = isCompleted && !useIconSwap;
   let icon: L.DivIcon;
-  if (category === "creature") {
+  if (category === "creature" || category === "pal") {
     icon = createPinIcon(innerIcon, 0.9, renderCompleted, {
       variant: "circular",
       selected,

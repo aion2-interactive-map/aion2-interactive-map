@@ -10,3 +10,4 @@ export {
 } from "./FilterPanel"
 export { deriveEyeState, syncExpanded, type EyeState } from "./filter-logic"
 export { ShellMapSelect, type ShellMapSelectProps } from "./ShellMapSelect"
+export { MarkerPopupCard, type MarkerPopupCardProps } from "./MarkerPopupCard"

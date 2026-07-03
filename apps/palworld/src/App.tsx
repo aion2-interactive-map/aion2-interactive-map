@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { GameMapView, type EngineMarker, type MapRef } from '@gamemap/map-engine'
-import { FilterPanel, ShellMapSelect, ShellSidebar, ShellTopBar, type FilterCategory } from '@gamemap/map-shell'
+import { FilterPanel, MarkerPopupCard, ShellMapSelect, ShellSidebar, ShellTopBar, type FilterCategory } from '@gamemap/map-shell'
 import type { MarkerTypeSubtype } from '@gamemap/data-contract'
 import {
   loadStatic, loadMarkers,
@@ -146,14 +146,23 @@ export default function App() {
     zoomOut: t('zoomOut'),
   }), [t])
 
-  const renderPopupContent = useCallback((marker: EngineMarker) => (
-    <div className="max-w-60">
-      <div className="font-semibold">{marker.localizedName}</div>
-      {marker.localizedDescription && (
-        <div className="mt-1 whitespace-pre-line text-xs text-[#9DC3D4]">{marker.localizedDescription}</div>
-      )}
-    </div>
-  ), [])
+  const renderPopupContent = useCallback((marker: EngineMarker) => {
+    const catId = marker.subtypeMeta?.category ?? marker.category
+    const catLabel = catId ? (staticData?.typesL10n.categories[catId]?.name ?? catId) : ''
+    const subLabel = marker.subtypeLabel ?? marker.subtype
+    const metaLine = [
+      [catLabel, subLabel].filter(Boolean).join(' / '),
+      `(${Math.round(marker.x)}, ${Math.round(marker.y)})`,
+    ].filter(Boolean).join(' ')
+    return (
+      <MarkerPopupCard
+        name={marker.localizedName || t('unnamed')}
+        metaLine={metaLine}
+        description={marker.localizedDescription}
+        noDescriptionLabel={t('noDescription')}
+      />
+    )
+  }, [staticData, t])
 
   if (loadError) {
     return (
