@@ -5,14 +5,20 @@ import path from 'node:path'
 import fs from 'node:fs'
 
 // Serve the sibling `data-palworld` / `resource-palworld` artifact repos in dev.
-// The worktree lives under `frontend/.claude/worktrees/<name>`, so the workspace
-// root (`E:/aion2-map`) is six levels up from `apps/palworld`. Override with
-// PALWORLD_DATA_DIR / PALWORLD_RES_DIR if needed. In prod the frontend reads
-// from VITE_DATA_BASE_URL / VITE_RESOURCE_BASE_URL instead.
-const DATA_DIR = process.env.PALWORLD_DATA_DIR
-  ?? path.resolve(__dirname, '../../../../../../data-palworld')
-const RES_DIR = process.env.PALWORLD_RES_DIR
-  ?? path.resolve(__dirname, '../../../../../../resource-palworld')
+// They live next to the frontend repo root (3 up from `apps/palworld`); when
+// running from a worktree under `frontend/.claude/worktrees/<name>` they are
+// 6 up instead, so probe both. Override with PALWORLD_DATA_DIR /
+// PALWORLD_RES_DIR if needed. In prod the frontend reads from
+// VITE_DATA_BASE_URL / VITE_RESOURCE_BASE_URL instead.
+function siblingRepo(name: string): string {
+  for (const up of ['../../..', '../../../../../..']) {
+    const p = path.resolve(__dirname, up, name)
+    if (fs.existsSync(p)) return p
+  }
+  return path.resolve(__dirname, '../../..', name)
+}
+const DATA_DIR = process.env.PALWORLD_DATA_DIR ?? siblingRepo('data-palworld')
+const RES_DIR = process.env.PALWORLD_RES_DIR ?? siblingRepo('resource-palworld')
 
 const MIME: Record<string, string> = {
   '.json': 'application/json',
