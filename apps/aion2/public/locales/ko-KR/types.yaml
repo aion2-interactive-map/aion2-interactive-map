@@ -68,11 +68,11 @@ subtypes:
     description: 이그드라실 원목
     name: 이그드라실 원목
   hiddenCube:
-    description: 숨겨진 가방
-    name: 숨겨진 가방
+    description: 히든 큐브
+    name: 히든 큐브
   monolithMaterial:
-    description: 모놀리스
-    name: 모놀리스
+    description: 모노리스
+    name: 모노리스
   occupation:
     description: 주둔지
     name: 주둔지
