@@ -1,4 +1,4 @@
-lang: "en"
+lang: "en-US"
 appName: "AION2 Map"
 siteTitle: "AION2\nInteractive Map"
 mapSubtitle: "Interactive Map"
@@ -13,9 +13,10 @@ nav:
 
 language:
   label: "Language"
-  en: "English"
+  en-US: "English"
   zh-CN: "Simplified Chinese"
   zh-TW: "Traditional Chinese"
+  ko-KR: "Korean"
 
 ui:
   confirm: "Confirm"

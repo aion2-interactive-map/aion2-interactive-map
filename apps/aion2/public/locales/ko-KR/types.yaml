@@ -1,0 +1,87 @@
+categories:
+  collection:
+    name: 수집품
+  creature:
+    name: 펫
+  gathering:
+    name: 채집 지점
+  location:
+    name: 지역
+  quest:
+    name: 퀘스트
+subtypes:
+  battlefield:
+    description: 전장
+    name: 전장
+  creatureFeral:
+    description: 페라
+    name: 페라
+  creatureIntellect:
+    description: 코그니
+    name: 코그니
+  creatureNature:
+    description: 나투라
+    name: 나투라
+  creatureSpecial:
+    description: 스페셜
+    name: 스페셜
+  creatureTrans:
+    description: 바리안
+    name: 바리안
+  gatheringAria:
+    description: 아리아
+    name: 아리아
+  gatheringCoriolus:
+    description: 코리올루스
+    name: 코리올루스
+  gatheringCypri:
+    description: 키프리
+    name: 키프리
+  gatheringDiamondGemstone:
+    description: 다이아몬드 원석
+    name: 다이아몬드 원석
+  gatheringInina:
+    description: 이니나
+    name: 이니나
+  gatheringKukuru:
+    description: 쿠쿠루
+    name: 쿠쿠루
+  gatheringMela:
+    description: 멜라
+    name: 멜라
+  gatheringOdyle:
+    description: 오드
+    name: 오드
+  gatheringOrichalcumOre:
+    description: 오리하르콘 광석
+    name: 오리하르콘 광석
+  gatheringRubyGemstone:
+    description: 루비 원석
+    name: 루비 원석
+  gatheringSapphireGemstone:
+    description: 사파이어 원석
+    name: 사파이어 원석
+  gatheringTargena:
+    description: 타르게나
+    name: 타르게나
+  gatheringYggdrasilLog:
+    description: 이그드라실 원목
+    name: 이그드라실 원목
+  hiddenCube:
+    description: 숨겨진 가방
+    name: 숨겨진 가방
+  monolithMaterial:
+    description: 모놀리스
+    name: 모놀리스
+  occupation:
+    description: 주둔지
+    name: 주둔지
+  seal:
+    description: 봉인
+    name: 봉인
+  teleport:
+    description: 키벨리스크
+    name: 키벨리스크
+  village:
+    description: 마을
+    name: 마을

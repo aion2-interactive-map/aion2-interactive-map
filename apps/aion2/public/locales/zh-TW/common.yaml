@@ -12,9 +12,10 @@ nav:
 
 language:
   label: "語言"
-  en: "English"
+  en-US: "英語"
   zh-CN: "簡體中文"
   zh-TW: "繁體中文"
+  ko-KR: "韓語"
 
 theme:
   auto: "自動（隨地圖切換）"
