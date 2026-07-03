@@ -17,7 +17,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { useTheme, type Theme } from "@/context/ThemeContext";
-import i18n, { SUPPORTED_LANGUAGES, type LanguageCode } from "@/i18n";
+import i18n, { SUPPORTED_LANGUAGES, LANGUAGE_LABELS, type LanguageCode } from "@/i18n";
 
 // "abyss" is disabled for now — kept in the Theme type + CSS for easy re-enable,
 // but not offered in the switcher.
@@ -83,7 +83,7 @@ export default function TopNavbar() {
                 data-testid={`lang-${lng}`}
                 onSelect={() => void i18n.changeLanguage(lng)}
               >
-                <span className="flex-1">{t(`common:language.${lng}`)}</span>
+                <span className="flex-1">{LANGUAGE_LABELS[lng]}</span>
                 {currentLng === lng && <CheckIcon className="size-4" />}
               </DropdownMenuItem>
             ))}

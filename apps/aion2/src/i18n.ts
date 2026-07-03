@@ -8,6 +8,16 @@ import { getStaticBaseUrl, getDataBaseUrl } from "@/lib/url";
 export type LanguageCode = "en-US" | "zh-CN" | "zh-TW" | "ko-KR";
 export const SUPPORTED_LANGUAGES: LanguageCode[] = ["en-US", "zh-CN", "zh-TW", "ko-KR"];
 
+// Native (endonym) display names — intentionally NOT translated so every
+// language is recognizable to its own speakers regardless of the current UI
+// language.
+export const LANGUAGE_LABELS: Record<LanguageCode, string> = {
+  "en-US": "English",
+  "zh-CN": "简体中文",
+  "zh-TW": "繁體中文",
+  "ko-KR": "한국어",
+};
+
 const base = getStaticBaseUrl();
 const dataBase = getDataBaseUrl();
 

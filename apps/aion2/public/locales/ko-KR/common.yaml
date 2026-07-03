@@ -11,12 +11,10 @@ nav:
   enhancement: "장비 강화"
   forum: "포럼"
 
+# 언어 표시 이름은 번역하지 않습니다: 전환 메뉴는 src/i18n.ts의 LANGUAGE_LABELS
+# (각 언어의 자기 표기)를 사용합니다.
 language:
   label: "언어"
-  en-US: "English"
-  zh-CN: "简体中文"
-  zh-TW: "繁體中文"
-  ko-KR: "한국어"
 
 ui:
   confirm: "확인"

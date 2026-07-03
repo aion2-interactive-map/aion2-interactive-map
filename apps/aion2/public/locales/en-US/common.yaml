@@ -11,12 +11,10 @@ nav:
   enhancement: "Equip Enhancement"
   forum: "Forum"
 
+# Language display names are NOT localized: the switcher shows native names
+# (endonyms) from LANGUAGE_LABELS in src/i18n.ts.
 language:
   label: "Language"
-  en-US: "English"
-  zh-CN: "Simplified Chinese"
-  zh-TW: "Traditional Chinese"
-  ko-KR: "Korean"
 
 ui:
   confirm: "Confirm"

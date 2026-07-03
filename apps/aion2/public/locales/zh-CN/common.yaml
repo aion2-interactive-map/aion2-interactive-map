@@ -11,12 +11,9 @@ nav:
   enhancement: "装备强化"
   forum: "论坛"
 
+# 语言显示名不做翻译：切换菜单使用 src/i18n.ts 中 LANGUAGE_LABELS 的本族语名称。
 language:
   label: "语言"
-  en-US: "英语"
-  zh-CN: "简体中文"
-  zh-TW: "繁体中文"
-  ko-KR: "韩语"
 
 ui:
   confirm: "确认"
