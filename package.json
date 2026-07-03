@@ -15,6 +15,7 @@
     "e2e:palworld": "pnpm --filter palworld e2e",
     "test": "vitest run",
     "check:engine": "grep -rn --include=*.ts --include=*.tsx -P \"react-i18next|@tanstack/react-router|import\\.meta\\.env|localStorage|@/|[\\x22\\x27\\x60]UI/\" packages/map-engine/src && exit 1 || exit 0",
+    "check:shell": "grep -rn --include=*.ts --include=*.tsx -P \"i18next|useTranslation|react-router|import\\.meta\\.env|localStorage|fetch\\(|@/\" packages/map-shell/src && exit 1 || exit 0",
     "validate-data": "node packages/data-contract/scripts/validate-data.ts"
   },
   "pnpm": {
