@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { GameMapView, type EngineMarker, type MapRef } from '@gamemap/map-engine'
+import { FilterPanel, ShellSidebar, ShellTopBar, type FilterCategory } from '@gamemap/map-shell'
 import type { MarkerTypeSubtype } from '@gamemap/data-contract'
 import {
   loadStatic, loadMarkers,
@@ -8,8 +9,7 @@ import {
 } from './lib/data'
 import { palworldAssets } from './lib/assets'
 import { palworldTheme } from './theme'
-import { TopBar } from './components/TopBar'
-import { Sidebar } from './components/Sidebar'
+import { LANGUAGES, LANGUAGE_LABELS } from './i18n'
 
 export default function App() {
   const { t, i18n } = useTranslation()
@@ -27,7 +27,6 @@ export default function App() {
   const [selectedMarkerId, setSelectedMarkerId] = useState<string | null>(null)
   const [loadError, setLoadError] = useState<string | null>(null)
 
-  // Fix 1 & 2: cancellation guard + error handling for loadStatic
   useEffect(() => {
     let cancelled = false
     setLoadError(null)
@@ -35,7 +34,7 @@ export default function App() {
       .then((d) => {
         if (cancelled) return
         setStaticData(d)
-        // Fix 3: only initialize visible set once; preserve user-set empty (Hide all)
+        // Only initialize visible set once; preserve user-set empty (Hide all)
         if (!visibleInitialized.current) {
           visibleInitialized.current = true
           setVisible(new Set(d.types.subtypes.map((s) => s.id)))
@@ -49,8 +48,7 @@ export default function App() {
     return () => { cancelled = true }
   }, [lng, t])
 
-  // Fix 1 & 2: cancellation guard + error handling for loadMarkers
-  // Fix 5: clear selection on map switch
+  // Clear selection on map switch
   useEffect(() => {
     setMarkerData(null)
     setSelectedMarkerId(null)
@@ -70,7 +68,6 @@ export default function App() {
 
   const map = staticData?.maps.find((m) => m.id === mapId) ?? undefined
 
-  // Fix 4: build a Map<id, subtypeMeta> once before the loop instead of O(n·m) find
   const subtypeMetaMap = useMemo(() => {
     if (!staticData) return new Map<string, MarkerTypeSubtype>()
     return new Map(staticData.types.subtypes.map((s) => [s.id, s]))
@@ -109,7 +106,33 @@ export default function App() {
     })
   }, [])
 
-  // Fix 6: memoize stable engine props + use i18n labels
+  const onSetCategory = useCallback((categoryId: string, show: boolean) => {
+    setVisible((v) => {
+      if (!staticData) return v
+      const next = new Set(v)
+      for (const s of staticData.types.subtypes) {
+        if (s.category !== categoryId) continue
+        if (show) next.add(s.id); else next.delete(s.id)
+      }
+      return next
+    })
+  }, [staticData])
+
+  const filterCategories: FilterCategory[] = useMemo(() => {
+    if (!staticData) return []
+    return staticData.types.categories.map((cat) => ({
+      id: cat.id,
+      label: staticData.typesL10n.categories[cat.id]?.name ?? cat.id,
+      subtypes: staticData.types.subtypes
+        .filter((s) => s.category === cat.id)
+        .map((s) => ({
+          id: s.id,
+          label: staticData.typesL10n.subtypes[s.id]?.name ?? s.id,
+          active: visible.has(s.id),
+        })),
+    }))
+  }, [staticData, visible])
+
   const onToggleMarker = useCallback((id: string | null) => {
     setSelectedMarkerId((cur) => (cur === id ? null : id))
   }, [])
@@ -144,19 +167,55 @@ export default function App() {
 
   return (
     <div className="flex h-screen flex-col bg-neutral-900">
-      <TopBar
-        maps={staticData.maps.map((m) => ({ id: m.id, label: staticData.mapsL10n[m.id]?.shortName ?? staticData.mapsL10n[m.id]?.name ?? m.id }))}
-        activeMapId={mapId}
-        onSelectMap={setMapId}
+      <ShellTopBar
+        classNames={{ root: 'border-b border-neutral-700 bg-neutral-900 text-neutral-100' }}
+        leftSlot={<h1 className="text-sm font-semibold">{t('title')}</h1>}
+        languageSwitcher={{
+          languages: LANGUAGES.map((code) => ({ code, label: LANGUAGE_LABELS[code] })),
+          current: lng,
+          onChange: (code) => void i18n.changeLanguage(code),
+          menuLabel: 'language',
+        }}
       />
       <div className="flex min-h-0 flex-1">
-        <Sidebar
-          types={staticData.types}
-          typesL10n={staticData.typesL10n}
-          visible={visible}
-          onToggle={onToggle}
-          onSetAll={(on) => setVisible(on ? new Set(staticData.types.subtypes.map((s) => s.id)) : new Set())}
-        />
+        <ShellSidebar
+          width={256}
+          collapseLabel={t('collapse')}
+          expandLabel={t('expand')}
+          classNames={{
+            root: 'border-r border-neutral-700 bg-neutral-900 text-sm text-neutral-100',
+            collapseButton: 'bg-neutral-800 text-neutral-100',
+            content: 'px-3 pt-3',
+          }}
+          mapSelector={{
+            maps: staticData.maps.map((m) => ({
+              id: m.id,
+              label: staticData.mapsL10n[m.id]?.shortName ?? staticData.mapsL10n[m.id]?.name ?? m.id,
+            })),
+            activeMapId: mapId,
+            onSelectMap: setMapId,
+          }}
+        >
+          <FilterPanel
+            categories={filterCategories}
+            onToggleSubtype={onToggle}
+            onSetCategory={onSetCategory}
+            categoryToggleLabels={{ show: t('showAll'), hide: t('hideAll') }}
+            controls={[
+              {
+                id: 'show-all',
+                label: t('showAll'),
+                onClick: () => setVisible(new Set(staticData.types.subtypes.map((s) => s.id))),
+              },
+              { id: 'hide-all', label: t('hideAll'), onClick: () => setVisible(new Set()) },
+            ]}
+            classNames={{
+              controlButton: 'bg-neutral-800 text-neutral-100',
+              subtypeButton: 'bg-neutral-800 text-neutral-100',
+              subtypeButtonActive: 'bg-amber-600 text-white',
+            }}
+          />
+        </ShellSidebar>
         <main className="relative flex min-w-0 flex-1 overflow-hidden">
           <GameMapView
             mapRef={mapRef}

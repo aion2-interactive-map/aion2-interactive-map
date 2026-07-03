@@ -204,6 +204,12 @@ importers:
       '@gamemap/map-engine':
         specifier: workspace:*
         version: link:../../packages/map-engine
+      '@gamemap/map-shell':
+        specifier: workspace:*
+        version: link:../../packages/map-shell
+      '@gamemap/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       i18next:
         specifier: ^25.6.2
         version: 25.10.10(typescript@5.9.3)

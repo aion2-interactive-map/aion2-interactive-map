@@ -13,6 +13,8 @@
   "dependencies": {
     "@gamemap/data-contract": "workspace:*",
     "@gamemap/map-engine": "workspace:*",
+    "@gamemap/map-shell": "workspace:*",
+    "@gamemap/ui": "workspace:*",
     "i18next": "^25.6.2",
     "i18next-browser-languagedetector": "^8.2.0",
     "leaflet": "^1.9.4",

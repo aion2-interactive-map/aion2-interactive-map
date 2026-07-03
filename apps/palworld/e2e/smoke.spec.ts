@@ -30,15 +30,16 @@ test('toggling a subtype hides its markers', async ({ page }) => {
     '.leaflet-marker-pane .leaflet-marker-icon img[src*="T_icon_compass_FTtower"]',
   )
   await expect(ftMarkers.first()).toBeVisible({ timeout: 15_000 })
-  // The testid is on the <input type="checkbox"> directly — uncheck works.
-  await page.getByTestId('subtype-toggle-fastTravel').uncheck()
+  // The testid is on an aria-pressed toggle button — click to hide.
+  await page.getByTestId('subtype-toggle-fastTravel').click()
   await expect(ftMarkers).toHaveCount(0, { timeout: 10_000 })
 })
 
 test('switching language to ko-KR localizes UI and data labels', async ({ page }) => {
   await page.goto('/')
   await expect(page.locator('.leaflet-container')).toBeVisible()
-  await page.getByLabel('language').selectOption('ko-KR')
+  await page.getByTestId('lang-menu').click()
+  await page.getByTestId('lang-ko-KR').click()
   // App UI string (i18n resources) + data-locale taxonomy label (types.json).
   await expect(page.getByRole('heading', { name: '팰월드 지도' })).toBeVisible()
   await expect(page.getByText('팰 출현 지점').first()).toBeVisible({ timeout: 10_000 })

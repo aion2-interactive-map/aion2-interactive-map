@@ -36,6 +36,8 @@ const resources = {
       noMapSelected: 'No map selected',
       zoomIn: 'Zoom in',
       zoomOut: 'Zoom out',
+      collapse: 'Collapse',
+      expand: 'Expand',
     },
   },
   'de-DE': {
@@ -49,6 +51,8 @@ const resources = {
       noMapSelected: 'Keine Karte ausgewählt',
       zoomIn: 'Vergrößern',
       zoomOut: 'Verkleinern',
+      collapse: 'Einklappen',
+      expand: 'Ausklappen',
     },
   },
   'es-ES': {
@@ -62,6 +66,8 @@ const resources = {
       noMapSelected: 'Ningún mapa seleccionado',
       zoomIn: 'Acercar',
       zoomOut: 'Alejar',
+      collapse: 'Contraer',
+      expand: 'Expandir',
     },
   },
   'es-MX': {
@@ -75,6 +81,8 @@ const resources = {
       noMapSelected: 'Ningún mapa seleccionado',
       zoomIn: 'Acercar',
       zoomOut: 'Alejar',
+      collapse: 'Contraer',
+      expand: 'Expandir',
     },
   },
   'fr-FR': {
@@ -88,6 +96,8 @@ const resources = {
       noMapSelected: 'Aucune carte sélectionnée',
       zoomIn: 'Zoom avant',
       zoomOut: 'Zoom arrière',
+      collapse: 'Réduire',
+      expand: 'Développer',
     },
   },
   'id-ID': {
@@ -101,6 +111,8 @@ const resources = {
       noMapSelected: 'Tidak ada peta yang dipilih',
       zoomIn: 'Perbesar',
       zoomOut: 'Perkecil',
+      collapse: 'Ciutkan',
+      expand: 'Perluas',
     },
   },
   'it-IT': {
@@ -114,6 +126,8 @@ const resources = {
       noMapSelected: 'Nessuna mappa selezionata',
       zoomIn: 'Ingrandisci',
       zoomOut: 'Riduci',
+      collapse: 'Comprimi',
+      expand: 'Espandi',
     },
   },
   'ko-KR': {
@@ -127,6 +141,8 @@ const resources = {
       noMapSelected: '선택된 지도가 없습니다',
       zoomIn: '확대',
       zoomOut: '축소',
+      collapse: '접기',
+      expand: '펼치기',
     },
   },
   'pl-PL': {
@@ -140,6 +156,8 @@ const resources = {
       noMapSelected: 'Nie wybrano mapy',
       zoomIn: 'Przybliż',
       zoomOut: 'Oddal',
+      collapse: 'Zwiń',
+      expand: 'Rozwiń',
     },
   },
   'pt-BR': {
@@ -153,6 +171,8 @@ const resources = {
       noMapSelected: 'Nenhum mapa selecionado',
       zoomIn: 'Aproximar',
       zoomOut: 'Afastar',
+      collapse: 'Recolher',
+      expand: 'Expandir',
     },
   },
   'ru-RU': {
@@ -166,6 +186,8 @@ const resources = {
       noMapSelected: 'Карта не выбрана',
       zoomIn: 'Приблизить',
       zoomOut: 'Отдалить',
+      collapse: 'Свернуть',
+      expand: 'Развернуть',
     },
   },
   'th-TH': {
@@ -179,6 +201,8 @@ const resources = {
       noMapSelected: 'ยังไม่ได้เลือกแผนที่',
       zoomIn: 'ซูมเข้า',
       zoomOut: 'ซูมออก',
+      collapse: 'ย่อ',
+      expand: 'ขยาย',
     },
   },
   'tr-TR': {
@@ -192,6 +216,8 @@ const resources = {
       noMapSelected: 'Harita seçilmedi',
       zoomIn: 'Yakınlaştır',
       zoomOut: 'Uzaklaştır',
+      collapse: 'Daralt',
+      expand: 'Genişlet',
     },
   },
   'vi-VN': {
@@ -205,6 +231,8 @@ const resources = {
       noMapSelected: 'Chưa chọn bản đồ',
       zoomIn: 'Phóng to',
       zoomOut: 'Thu nhỏ',
+      collapse: 'Thu gọn',
+      expand: 'Mở rộng',
     },
   },
   'zh-CN': {
@@ -218,6 +246,8 @@ const resources = {
       noMapSelected: '未选择地图',
       zoomIn: '放大',
       zoomOut: '缩小',
+      collapse: '收起',
+      expand: '展开',
     },
   },
   'zh-TW': {
@@ -231,6 +261,8 @@ const resources = {
       noMapSelected: '未選擇地圖',
       zoomIn: '放大',
       zoomOut: '縮小',
+      collapse: '收起',
+      expand: '展開',
     },
   },
 }
