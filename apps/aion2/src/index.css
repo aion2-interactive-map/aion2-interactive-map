@@ -4,6 +4,7 @@
 
 @plugin "@tailwindcss/typography";
 @source "../../../packages/ui/src";
+@source "../../../packages/map-shell/src";
 
 /* Dark mode variant so `.dark` on <html> or <body> works */
 @custom-variant dark (&:is(.dark *));

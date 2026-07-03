@@ -1,7 +1,6 @@
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
-import { ScrollArea } from "@gamemap/ui";
+import { Sparkles } from "lucide-react";
+import { ShellSidebar } from "@gamemap/map-shell";
 import { useTheme } from "@/context/ThemeContext";
 import { useGameMap } from "@/context/GameMapContext";
 import { getStaticUrl } from "@/lib/url";
@@ -9,11 +8,7 @@ import Logo from "./Logo";
 import SelectMap from "./SelectMap";
 import MarkerTypes from "./MarkerTypes";
 
-// Lanhu "1天族" board: sidebar container (容器 112) is 173 logical px wide → 346px @2x.
-const SIDEBAR_WIDTH = 346;
-
 export default function Sidebar() {
-  const [collapsed, setCollapsed] = useState(false);
   const { t } = useTranslation(["common"]);
   const { realTheme } = useTheme();
   const { selectedMap } = useGameMap();
@@ -24,72 +19,40 @@ export default function Sidebar() {
   );
 
   return (
-    <aside
-      className="relative flex h-full shrink-0 flex-col text-foreground transition-all duration-300"
-      style={{
-        width: collapsed ? 0 : SIDEBAR_WIDTH,
-        maxWidth: SIDEBAR_WIDTH,
-        backgroundImage: "var(--background-image-sidebar)",
+    <ShellSidebar
+      collapseLabel={t("common:menu.collapse", "Collapse")}
+      expandLabel={t("common:menu.expand", "Expand")}
+      classNames={{
+        root: "text-foreground bg-[image:var(--background-image-sidebar)]",
+        collapseButton: "text-[#3D3D3D] bg-[color:var(--color-sidebar-collapse)]",
       }}
+      backgroundSlot={
+        <div
+          className="pointer-events-none absolute inset-0 bg-no-repeat opacity-70"
+          style={{
+            backgroundImage: `url(${bgUrl})`,
+            backgroundSize: "346px auto",
+            backgroundPosition: "top left",
+          }}
+        />
+      }
+      headerSlot={<Logo />}
+      mapSelectorSlot={<SelectMap />}
     >
-      {/* Theme-aware background image overlay (top-left). */}
-      <div
-        className="pointer-events-none absolute inset-0 bg-no-repeat opacity-70"
-        style={{
-          backgroundImage: `url(${bgUrl})`,
-          backgroundSize: "346px auto",
-          backgroundPosition: "top left",
-        }}
-      />
-
-      {/* CONTENT */}
-      <ScrollArea className="h-full flex-1">
-        {!collapsed && (
-          <div className="flex flex-col px-0 pb-4">
-            <Logo />
-            <SelectMap />
-            {selectedMap && (
-              <div className="w-full">
-                {/* Static section header — no longer collapsible. */}
-                <div className="flex items-center gap-2 px-4 py-4">
-                  <span className="flex h-4 w-4 items-center justify-center">
-                    <Sparkles className="h-3.5 w-3.5 fill-primary text-primary" />
-                  </span>
-                  <span className="truncate text-base font-bold leading-[16px]">
-                    {t("common:menu.markerTypes", "Marker Types")}
-                  </span>
-                </div>
-                <MarkerTypes />
-              </div>
-            )}
+      {selectedMap && (
+        <div className="w-full">
+          {/* Static section header — no longer collapsible. */}
+          <div className="flex items-center gap-2 px-4 py-4">
+            <span className="flex h-4 w-4 items-center justify-center">
+              <Sparkles className="h-3.5 w-3.5 fill-primary text-primary" />
+            </span>
+            <span className="truncate text-base font-bold leading-[16px]">
+              {t("common:menu.markerTypes", "Marker Types")}
+            </span>
           </div>
-        )}
-      </ScrollArea>
-
-      {/* WHOLE-SIDEBAR COLLAPSE BUTTON (right edge) */}
-      <button
-        type="button"
-        data-testid="sidebar-toggle"
-        onClick={() => setCollapsed((c) => !c)}
-        aria-label={
-          collapsed
-            ? t("common:menu.expand", "Expand")
-            : t("common:menu.collapse", "Collapse")
-        }
-        className="absolute top-[100px] right-0 z-[20000] flex h-12 w-8 translate-x-full select-none flex-col items-center justify-center rounded-r-md rounded-l-none text-[#3D3D3D]"
-        style={{ background: "var(--color-sidebar-collapse)" }}
-      >
-        {collapsed ? (
-          <ChevronRight className="h-4 w-4" />
-        ) : (
-          <ChevronLeft className="h-4 w-4" />
-        )}
-        <span className="mt-0.5 whitespace-normal px-0.5 text-center text-[10px] leading-tight">
-          {collapsed
-            ? t("common:menu.expand", "Expand")
-            : t("common:menu.collapse", "Collapse")}
-        </span>
-      </button>
-    </aside>
+          <MarkerTypes />
+        </div>
+      )}
+    </ShellSidebar>
   );
 }

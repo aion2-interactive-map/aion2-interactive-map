@@ -29,6 +29,9 @@ importers:
       '@gamemap/map-engine':
         specifier: workspace:*
         version: link:../../packages/map-engine
+      '@gamemap/map-shell':
+        specifier: workspace:*
+        version: link:../../packages/map-shell
       '@gamemap/ui':
         specifier: workspace:*
         version: link:../../packages/ui
