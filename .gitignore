@@ -24,3 +24,15 @@ dist-ssr
 *.sw?
 .env
 .tanstack
+
+# Test & tooling artifacts
+.playwright-mcp/
+test-results/
+playwright-report/
+.screenshots/
+
+# Claude local worktrees / settings
+.claude/
+
+# Local debug screenshots (repo root only)
+/*.png
