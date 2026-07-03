@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { GameMapView, type EngineMarker, type MapRef } from '@gamemap/map-engine'
-import { FilterPanel, MarkerPopupCard, SearchPanel, ShellMapSelect, ShellSidebar, ShellTopBar, type FilterCategory, type SearchItem } from '@gamemap/map-shell'
+import { FilterPanel, MarkerPopupCard, SearchPanel, ShellMapSelect, ShellSidebar, ShellTopBar, ThemeToggle, type FilterCategory, type SearchItem } from '@gamemap/map-shell'
 import type { MarkerTypeSubtype } from '@gamemap/data-contract'
 import {
   loadStatic, loadMarkers,
@@ -195,18 +195,18 @@ export default function App() {
 
   if (loadError) {
     return (
-      <div className="flex h-screen items-center justify-center bg-[#0E2A3C] text-red-400">
+      <div className="flex h-screen items-center justify-center bg-background text-destructive">
         {loadError}
       </div>
     )
   }
 
-  if (!staticData) return <div className="flex h-screen items-center justify-center bg-[#0E2A3C] text-[#9DC3D4]">Loading…</div>
+  if (!staticData) return <div className="flex h-screen items-center justify-center bg-background text-muted-foreground">Loading…</div>
 
   return (
-    <div className="flex h-screen flex-col bg-[#0E2A3C]">
+    <div className="flex h-screen flex-col bg-background text-foreground">
       <ShellTopBar
-        classNames={{ root: 'border-b border-[#1C4A66] bg-[#0E2A3C] text-[#E8F4FA]' }}
+        classNames={{ root: 'border-b border-border bg-card text-card-foreground' }}
         leftSlot={<h1 className="text-sm font-semibold">{t('title')}</h1>}
         languageSwitcher={{
           languages: LANGUAGES.map((code) => ({ code, label: LANGUAGE_LABELS[code] })),
@@ -214,14 +214,19 @@ export default function App() {
           onChange: (code) => void i18n.changeLanguage(code),
           menuLabel: 'language',
         }}
+        rightExtras={
+          <ThemeToggle
+            labels={{ auto: t('themeAuto'), light: t('themeLight'), dark: t('themeDark') }}
+          />
+        }
       />
       <div className="flex min-h-0 flex-1">
         <ShellSidebar
           collapseLabel={t('collapse')}
           expandLabel={t('expand')}
           classNames={{
-            root: 'border-r border-[#1C4A66] bg-gradient-to-b from-[#12344A] to-[#0E2A3C] text-sm text-[#E8F4FA]',
-            collapseButton: 'bg-[#1C4A66] text-[#E8F4FA]',
+            root: 'border-r border-border bg-gradient-to-b from-card to-background text-sm text-card-foreground',
+            collapseButton: 'bg-secondary text-secondary-foreground',
             content: 'px-3 pt-3',
           }}
           mapSelectorSlot={
@@ -256,9 +261,9 @@ export default function App() {
               { id: 'hide-all', label: t('hideAll'), onClick: () => setVisible(new Set()) },
             ]}
             classNames={{
-              controlButton: 'bg-[#1C4A66] text-[#E8F4FA]',
-              subtypeButton: 'bg-[#1C4A66] text-[#E8F4FA]',
-              subtypeButtonActive: 'bg-[#35D0E8] text-[#06222F]',
+              controlButton: 'bg-secondary text-secondary-foreground',
+              subtypeButton: 'bg-secondary text-secondary-foreground',
+              subtypeButtonActive: 'bg-primary text-primary-foreground',
             }}
           />
         </ShellSidebar>

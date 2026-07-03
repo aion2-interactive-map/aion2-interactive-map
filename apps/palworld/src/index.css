@@ -6,6 +6,28 @@
 
 :root {
   --radius: 0.625rem;
+  --background: #F2FAFD;
+  --foreground: #0E2A3C;
+  --card: #FFFFFF;
+  --card-foreground: #0E2A3C;
+  --popover: #FFFFFF;
+  --popover-foreground: #0E2A3C;
+  --primary: #0E9BB5;
+  --primary-foreground: #FFFFFF;
+  --secondary: #DCEEF5;
+  --secondary-foreground: #0E2A3C;
+  --muted: #E4F1F7;
+  --muted-foreground: #4A6B7A;
+  --accent: #E0A600;
+  --accent-foreground: #FFFFFF;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: rgba(14, 42, 60, 0.15);
+  --input: #DCEEF5;
+  --ring: #0E9BB5;
+}
+
+.dark {
   --background: #0E2A3C;
   --foreground: #E8F4FA;
   --card: #12344A;
