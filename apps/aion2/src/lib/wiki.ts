@@ -26,6 +26,7 @@ export const loadItem = (id: string | number) =>
 /** Pick the current-language variant of an inline localized string. */
 export function lt(text: LText | undefined, lang: string): string {
   if (!text) return "";
+  if (lang.startsWith("ko")) return text.ko || text.en || text.zhCN;
   if (lang.startsWith("zh-TW")) return text.zhTW || text.zhCN || text.en;
   if (lang.startsWith("zh")) return text.zhCN || text.en;
   return text.en || text.zhCN;

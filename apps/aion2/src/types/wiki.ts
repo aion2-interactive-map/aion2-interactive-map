@@ -1,4 +1,4 @@
-export type LText = { en: string; zhCN: string; zhTW: string };
+export type LText = { en: string; zhCN: string; zhTW: string; ko?: string };
 
 export type ItemGrade =
   | "common"

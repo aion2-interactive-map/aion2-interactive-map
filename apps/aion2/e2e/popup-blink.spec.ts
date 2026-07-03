@@ -41,7 +41,7 @@ async function clickInViewportMarker(page: Page) {
 test("dragging the map does not blink the open marker popup", async ({
   page,
 }) => {
-  await page.goto("/?map=World_L_A&lng=en");
+  await page.goto("/?map=World_L_A&lng=en-US");
   await page
     .locator(".leaflet-marker-icon")
     .first()

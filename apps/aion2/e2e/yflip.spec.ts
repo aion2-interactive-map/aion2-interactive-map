@@ -14,7 +14,7 @@ import { test, expect } from "@playwright/test";
 test("markers are projected with the image->Leaflet vertical flip", async ({
   page,
 }) => {
-  await page.goto("/?map=World_L_A&lng=en");
+  await page.goto("/?map=World_L_A&lng=en-US");
   await page.locator(".leaflet-container").waitFor({ state: "visible" });
   await page.locator(".leaflet-marker-icon").first().waitFor({ timeout: 15_000 });
 

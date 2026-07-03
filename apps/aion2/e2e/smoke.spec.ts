@@ -11,7 +11,7 @@ test("map renders tiles and markers from local data, no console errors", async (
 });
 
 test("type filter toggles marker visibility", async ({ page }) => {
-  await page.goto("/?map=World_L_A&lng=en");
+  await page.goto("/?map=World_L_A&lng=en-US");
   await page.locator(".leaflet-marker-icon").first().waitFor({ timeout: 15_000 });
   // LOD is off by default, so the subtype toggle alone governs visibility.
   const before = await page.locator(".leaflet-marker-icon").count();
@@ -22,7 +22,7 @@ test("type filter toggles marker visibility", async ({ page }) => {
 });
 
 test("search returns hits", async ({ page }) => {
-  await page.goto("/?map=World_L_A&lng=en");
+  await page.goto("/?map=World_L_A&lng=en-US");
   await page.getByTestId("marker-search").fill("a");
   await expect(
     page.getByTestId("search-results").locator("li, button").first(),
@@ -30,7 +30,7 @@ test("search returns hits", async ({ page }) => {
 });
 
 test("clicking a marker opens a local popup", async ({ page }) => {
-  await page.goto("/?map=World_L_A&lng=en");
+  await page.goto("/?map=World_L_A&lng=en-US");
   await page.locator(".leaflet-marker-icon").first().waitFor({ timeout: 15_000 });
   // LOD is off by default, so higher-tier markers also render at the default zoom,
   // giving the in-viewport / clear-of-sidebar search plenty of clickable candidates.
@@ -71,14 +71,14 @@ test("clicking a marker opens a local popup", async ({ page }) => {
 });
 
 test("theme switch applies the theme class", async ({ page }) => {
-  await page.goto("/?map=World_L_A&lng=en");
+  await page.goto("/?map=World_L_A&lng=en-US");
   await page.getByTestId("theme-menu").click();
   await page.getByTestId("theme-dark").click();
   await expect(page.locator("html")).toHaveClass(/dark/);
 });
 
 test("language switch changes labels", async ({ page }) => {
-  await page.goto("/?map=World_L_A&lng=en");
+  await page.goto("/?map=World_L_A&lng=en-US");
   const sel = page.getByTestId("map-select");
   const enText = (await sel.textContent())?.trim() ?? "";
   await page.getByTestId("lang-menu").click();

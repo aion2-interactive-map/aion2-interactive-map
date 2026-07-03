@@ -6,7 +6,7 @@ import { test, expect } from "@playwright/test";
 test("cursor movement does not churn the region overlay (no flicker)", async ({
   page,
 }) => {
-  await page.goto("/?map=World_L_A&lng=en");
+  await page.goto("/?map=World_L_A&lng=en-US");
   await page.locator(".leaflet-marker-icon").first().waitFor({ timeout: 20_000 });
 
   // Labels on (permanent tooltips present) to mirror the reported scenario.

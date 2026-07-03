@@ -5,8 +5,8 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import { parse } from "yaml";
 import { getStaticBaseUrl, getDataBaseUrl } from "@/lib/url";
 
-export type LanguageCode = "en" | "zh-CN" | "zh-TW";
-export const SUPPORTED_LANGUAGES: LanguageCode[] = ["en", "zh-CN", "zh-TW"];
+export type LanguageCode = "en-US" | "zh-CN" | "zh-TW" | "ko-KR";
+export const SUPPORTED_LANGUAGES: LanguageCode[] = ["en-US", "zh-CN", "zh-TW", "ko-KR"];
 
 const base = getStaticBaseUrl();
 const dataBase = getDataBaseUrl();
@@ -38,6 +38,14 @@ function localeLoadPath(lngs: string[], nss: string[]): string {
   }
   // Hand-authored app-UI strings → YAML in public/locales.
   return `${base}/locales/${lng}/${ns}.yaml?${q}`;
+}
+
+const LEGACY_TAGS: Record<string, string> = { en: "en-US" };
+try {
+  const stored = localStorage.getItem("i18nextLng");
+  if (stored && LEGACY_TAGS[stored]) localStorage.setItem("i18nextLng", LEGACY_TAGS[stored]);
+} catch {
+  /* SSR/no storage */
 }
 
 i18n
