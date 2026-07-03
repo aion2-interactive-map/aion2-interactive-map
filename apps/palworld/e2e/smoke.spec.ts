@@ -51,7 +51,8 @@ test('map switch swaps tile URLs', async ({ page }) => {
   await expect(
     page.locator('img.leaflet-tile[src*="/palres/tiles/MainWorld/"]').first(),
   ).toBeVisible({ timeout: 15_000 })
-  await page.getByTestId('map-tab-WorldTree').click()
+  await page.getByTestId('map-select').click()
+  await page.getByTestId('map-option-WorldTree').click()
   await expect(
     page.locator('img.leaflet-tile[src*="/palres/tiles/WorldTree/"]').first(),
   ).toBeVisible({ timeout: 15_000 })

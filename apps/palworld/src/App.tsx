@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { GameMapView, type EngineMarker, type MapRef } from '@gamemap/map-engine'
-import { FilterPanel, ShellSidebar, ShellTopBar, type FilterCategory } from '@gamemap/map-shell'
+import { FilterPanel, ShellMapSelect, ShellSidebar, ShellTopBar, type FilterCategory } from '@gamemap/map-shell'
 import type { MarkerTypeSubtype } from '@gamemap/data-contract'
 import {
   loadStatic, loadMarkers,
@@ -150,25 +150,25 @@ export default function App() {
     <div className="max-w-60">
       <div className="font-semibold">{marker.localizedName}</div>
       {marker.localizedDescription && (
-        <div className="mt-1 whitespace-pre-line text-xs text-neutral-300">{marker.localizedDescription}</div>
+        <div className="mt-1 whitespace-pre-line text-xs text-[#9DC3D4]">{marker.localizedDescription}</div>
       )}
     </div>
   ), [])
 
   if (loadError) {
     return (
-      <div className="flex h-screen items-center justify-center bg-neutral-900 text-red-400">
+      <div className="flex h-screen items-center justify-center bg-[#0E2A3C] text-red-400">
         {loadError}
       </div>
     )
   }
 
-  if (!staticData) return <div className="flex h-screen items-center justify-center bg-neutral-900 text-neutral-400">Loading…</div>
+  if (!staticData) return <div className="flex h-screen items-center justify-center bg-[#0E2A3C] text-[#9DC3D4]">Loading…</div>
 
   return (
-    <div className="flex h-screen flex-col bg-neutral-900">
+    <div className="flex h-screen flex-col bg-[#0E2A3C]">
       <ShellTopBar
-        classNames={{ root: 'border-b border-neutral-700 bg-neutral-900 text-neutral-100' }}
+        classNames={{ root: 'border-b border-[#1C4A66] bg-[#0E2A3C] text-[#E8F4FA]' }}
         leftSlot={<h1 className="text-sm font-semibold">{t('title')}</h1>}
         languageSwitcher={{
           languages: LANGUAGES.map((code) => ({ code, label: LANGUAGE_LABELS[code] })),
@@ -179,22 +179,30 @@ export default function App() {
       />
       <div className="flex min-h-0 flex-1">
         <ShellSidebar
-          width={256}
           collapseLabel={t('collapse')}
           expandLabel={t('expand')}
           classNames={{
-            root: 'border-r border-neutral-700 bg-neutral-900 text-sm text-neutral-100',
-            collapseButton: 'bg-neutral-800 text-neutral-100',
+            root: 'border-r border-[#1C4A66] bg-gradient-to-b from-[#12344A] to-[#0E2A3C] text-sm text-[#E8F4FA]',
+            collapseButton: 'bg-[#1C4A66] text-[#E8F4FA]',
             content: 'px-3 pt-3',
           }}
-          mapSelector={{
-            maps: staticData.maps.map((m) => ({
-              id: m.id,
-              label: staticData.mapsL10n[m.id]?.shortName ?? staticData.mapsL10n[m.id]?.name ?? m.id,
-            })),
-            activeMapId: mapId,
-            onSelectMap: setMapId,
-          }}
+          mapSelectorSlot={
+            <ShellMapSelect
+              classNames={{ wrapper: "mb-3" }}
+              maps={staticData.maps.map((m) => ({
+                id: m.id,
+                label: staticData.mapsL10n[m.id]?.shortName ?? staticData.mapsL10n[m.id]?.name ?? m.id,
+              }))}
+              activeMapId={mapId}
+              onSelectMap={setMapId}
+              barStyle={{
+                background:
+                  "linear-gradient(90deg, rgba(53,208,232,0) 0%, rgba(53,208,232,0.35) 54%, rgba(53,208,232,0) 100%)",
+                borderImage:
+                  "linear-gradient(90deg, rgba(53,208,232,0), rgba(53,208,232,0.9), rgba(53,208,232,0)) 1",
+              }}
+            />
+          }
         >
           <FilterPanel
             categories={filterCategories}
@@ -210,9 +218,9 @@ export default function App() {
               { id: 'hide-all', label: t('hideAll'), onClick: () => setVisible(new Set()) },
             ]}
             classNames={{
-              controlButton: 'bg-neutral-800 text-neutral-100',
-              subtypeButton: 'bg-neutral-800 text-neutral-100',
-              subtypeButtonActive: 'bg-amber-600 text-white',
+              controlButton: 'bg-[#1C4A66] text-[#E8F4FA]',
+              subtypeButton: 'bg-[#1C4A66] text-[#E8F4FA]',
+              subtypeButtonActive: 'bg-[#35D0E8] text-[#06222F]',
             }}
           />
         </ShellSidebar>
