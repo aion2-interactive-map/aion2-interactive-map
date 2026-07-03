@@ -3,7 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 import MiniSearch, { type SearchResult } from "minisearch";
 
-import { Input } from "@/components/ui/input";
+import { Input } from "@gamemap/ui";
 import { loadTaxonomy, loadWikiIndex } from "@/lib/wiki";
 import type { WikiGroup, WikiIndexDoc, WikiTaxonomy } from "@/types/wiki";
 

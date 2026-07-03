@@ -6,8 +6,7 @@ import { Check } from "lucide-react";
 import type { MarkerWithTranslations } from "@/types/game";
 import { useGameMap } from "@/context/GameMapContext";
 import { useMarkers } from "@/context/MarkersContext";
-import { Card, CardContent } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
+import { Card, CardContent, cn } from "@gamemap/ui";
 import { getStaticUrl } from "@/lib/url";
 
 type Props = {

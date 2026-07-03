@@ -6,20 +6,11 @@ import { useGameMap } from "@/context/GameMapContext";
 import { useGameData } from "@/context/GameDataContext";
 import { useMarkers } from "@/context/MarkersContext";
 import { parseIconUrl } from "@/lib/url";
-import { cn } from "@/lib/utils";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import {
   AlertDialog,
   AlertDialogAction,
   AlertDialogCancel,
@@ -28,7 +19,12 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-} from "@/components/ui/alert-dialog";
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+  cn,
+} from "@gamemap/ui";
 
 /**
  * Flat sidebar button matching the old getCommonButtonProps colours:

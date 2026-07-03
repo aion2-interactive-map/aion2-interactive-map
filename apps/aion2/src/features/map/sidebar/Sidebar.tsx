@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { ScrollArea } from "@gamemap/ui";
 import { useTheme } from "@/context/ThemeContext";
 import { useGameMap } from "@/context/GameMapContext";
 import { getStaticUrl } from "@/lib/url";

@@ -7,7 +7,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "@gamemap/ui";
 
 /**
  * Single map dropdown inside a centered gradient bar (faithful port of the old

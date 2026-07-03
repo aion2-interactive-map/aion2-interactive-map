@@ -3,6 +3,7 @@
 @import 'tailwindcss';
 
 @plugin "@tailwindcss/typography";
+@source "../../../packages/ui/src";
 
 /* Dark mode variant so `.dark` on <html> or <body> works */
 @custom-variant dark (&:is(.dark *));

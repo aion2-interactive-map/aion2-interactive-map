@@ -7,7 +7,7 @@ import type { MarkerWithTranslations } from "@/types/game";
 import { parseIconUrl } from "@/lib/url";
 import { useSubzoneLookup } from "@/features/map/useSubzoneLookup";
 import { SEARCH_DEBOUNCE_MS } from "@/lib/constants";
-import { cn } from "@/lib/utils";
+import { cn } from "@gamemap/ui";
 
 type Props = {
   onSelectMarker: (id: string | null) => void;
