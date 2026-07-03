@@ -13,7 +13,7 @@ import { Sidebar } from './components/Sidebar'
 
 export default function App() {
   const { t, i18n } = useTranslation()
-  const lng = i18n.resolvedLanguage ?? 'en'
+  const lng = i18n.resolvedLanguage ?? 'en-US'
   const mapRef = useRef<MapRef>(null)
   // Track whether visible-subtypes have been initialized at least once
   const visibleInitialized = useRef(false)

@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { LANGUAGES } from '../i18n'
+import { LANGUAGES, LANGUAGE_LABELS } from '../i18n'
 
 interface Props {
   maps: { id: string; label: string }[]
@@ -30,7 +30,7 @@ export function TopBar({ maps, activeMapId, onSelectMap }: Props) {
         value={i18n.resolvedLanguage}
         onChange={(e) => i18n.changeLanguage(e.target.value)}
       >
-        {LANGUAGES.map((l) => <option key={l} value={l}>{l}</option>)}
+        {LANGUAGES.map((l) => <option key={l} value={l}>{LANGUAGE_LABELS[l]}</option>)}
       </select>
     </header>
   )
