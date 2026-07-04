@@ -178,8 +178,8 @@ export default function App() {
             id: s.id,
             label: staticData.typesL10n.subtypes[s.id]?.name ?? s.id,
             active: visible.has(s.id),
-            // Pal buttons show the Paldeck id; everything else shows a count.
-            badge: formatPalId(s.zukanIndex, s.zukanIndexSuffix),
+            // Pal buttons show the Paldeck id chip; everything else shows a count.
+            idLabel: formatPalId(s.zukanIndex, s.zukanIndexSuffix),
             count: cat.id === 'pal' ? undefined : (countBySubtype.get(s.id) ?? 0),
           })),
       }))
