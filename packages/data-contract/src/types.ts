@@ -138,6 +138,12 @@ export interface MarkerInstance {
   zukanIndex?: number;
   /** Paldeck variant suffix, e.g. "B" for elemental variants. */
   zukanIndexSuffix?: string;
+  /**
+   * Number of raw spawn points merged into this cluster marker. Absent or 1
+   * means the marker is not a cluster (or clustering doesn't apply). Drives the
+   * on-map count badge and the "N spawns" popup line.
+   */
+  count?: number;
 }
 
 export interface RegionInstance {

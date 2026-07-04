@@ -104,6 +104,7 @@ export default function App() {
         completed: false,
         zukanIndex: m.zukanIndex,
         zukanIndexSuffix: m.zukanIndexSuffix,
+        count: m.count,
       }
     })
   }, [staticData, markerData, subtypeMetaMap])
@@ -215,6 +216,7 @@ export default function App() {
       [catLabel, subLabel].filter(Boolean).join(' / '),
       `(${Math.round(g.x)}, ${Math.round(g.y)})`,
     ].filter(Boolean).join(' ')
+    const count = marker.count
     return (
       <MarkerPopupCard
         idLabel={idLabel}
@@ -222,7 +224,13 @@ export default function App() {
         metaLine={metaLine}
         description={marker.localizedDescription}
         noDescriptionLabel={t('noDescription')}
-      />
+      >
+        {count && count > 1 ? (
+          <div className="mt-2 text-[13px] text-muted-foreground">
+            {t('spawnCount', { count })}
+          </div>
+        ) : null}
+      </MarkerPopupCard>
     )
   }, [staticData, t, mapId])
 

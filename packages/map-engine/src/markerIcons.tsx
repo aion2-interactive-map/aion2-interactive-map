@@ -49,6 +49,9 @@ export interface PinIconOptions {
   selected?: boolean;
   /** Fragment direction badge; "air" = up chevron, "water" = down, ground/none = no badge. */
   fragmentType?: "ground" | "air" | "water";
+  /** Spawn points behind a cluster marker; when > 1, a count badge is drawn at
+   *  the top-right corner. Absent/1 = no badge. */
+  count?: number;
   theme?: PinTheme;
 }
 
@@ -64,14 +67,16 @@ export function createPinIcon(
     ringColor,
     selected = false,
     fragmentType,
+    count,
     theme = DEFAULT_PIN_THEME,
   } = options;
+  const showCount = typeof count === "number" && count > 1;
   const dot = innerColor ?? theme.pinDot;
   const ring = ringColor ?? theme.circularBorder;
   // Theme is fixed per game at startup, never varies at runtime, so it is
   // deliberately NOT part of the key. A game that switches pin themes at
   // runtime would need to fold the theme values in.
-  const cacheKey = `${variant}|${innerIcon}|${iconScale}|${completed ? 1 : 0}|${dot}|${ring}|${selected ? 1 : 0}|${fragmentType ?? ""}`;
+  const cacheKey = `${variant}|${innerIcon}|${iconScale}|${completed ? 1 : 0}|${dot}|${ring}|${selected ? 1 : 0}|${fragmentType ?? ""}|${showCount ? count : ""}`;
   const cached = iconCache.get(cacheKey);
   if (cached) return cached;
   const iconBaseSize = 40;
@@ -229,6 +234,38 @@ export function createPinIcon(
             }}
           />
         ))}
+
+      {/* Cluster count badge — how many spawn points this marker merges. Sits at
+          the top-right corner (completion tick + fragment chevron own the
+          bottom-right) as a compact dark pill so multi-digit counts stay legible
+          over busy tiles. */}
+      {showCount && (
+        <span
+          style={{
+            position: "absolute",
+            right: `${badgeOffset}px`,
+            top: `${badgeOffset}px`,
+            transform: "translate(35%, -35%)",
+            minWidth: "14px",
+            height: "14px",
+            padding: "0 3px",
+            boxSizing: "border-box",
+            borderRadius: "7px",
+            backgroundColor: "rgba(0,0,0,0.82)",
+            border: "1px solid rgba(255,255,255,0.85)",
+            color: "#fff",
+            fontSize: "10px",
+            lineHeight: "12px",
+            fontWeight: 700,
+            fontVariantNumeric: "tabular-nums",
+            textAlign: "center",
+            whiteSpace: "nowrap",
+            boxShadow: "0 0 2px rgba(0,0,0,0.9)",
+          }}
+        >
+          {count}
+        </span>
+      )}
     </div>,
   );
 

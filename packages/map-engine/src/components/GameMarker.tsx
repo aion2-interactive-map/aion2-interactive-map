@@ -90,6 +90,7 @@ const GameMarkerInner: React.FC<Props> = ({
       variant: "circular",
       ringColor: ring,
       selected,
+      count: marker.count,
       theme,
     });
   } else if (pinVariant === "pin" || !rawIcon) {
@@ -102,6 +103,7 @@ const GameMarkerInner: React.FC<Props> = ({
       variant: "pin",
       innerColor: dot,
       selected,
+      count: marker.count,
       theme,
     });
   } else {
@@ -120,6 +122,7 @@ const GameMarkerInner: React.FC<Props> = ({
       variant: "image",
       selected,
       fragmentType: marker.fragmentType,
+      count: marker.count,
       theme,
     });
   }

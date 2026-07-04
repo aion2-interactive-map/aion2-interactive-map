@@ -20,6 +20,8 @@ export interface MarkerRow {
   zukanIndexSuffix?: string
   id: string; subtype: string; category?: string; x: number; y: number; z?: number
   icon?: string; indexInSubtype: number
+  /** Spawn points merged into this cluster marker (absent/1 = not a cluster). */
+  count?: number
 }
 export type MarkerLocale = Record<string, { name?: string; description?: string }>
 export interface TypesLocale {
