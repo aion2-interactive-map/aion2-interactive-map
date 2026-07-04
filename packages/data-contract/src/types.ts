@@ -8,7 +8,23 @@
 export const CONTRACT_VERSION = 1;
 
 /**
+ * Axis mapping from world space to the tile-image pixel grid. Mirrors the
+ * `tools` pipeline transform: `pxAxis` picks which world axis drives the pixel
+ * X axis (the other drives pixel Y); `flipX`/`flipY` mirror that pixel axis.
+ */
+export interface MapOrientation {
+  pxAxis: "X" | "Y";
+  flipX: boolean;
+  flipY: boolean;
+}
+
+/**
  * Map metadata for background image + coordinate system.
+ *
+ * When {@link worldBounds} and {@link orientation} are present, marker/region
+ * `x,y` are RAW WORLD coordinates and consumers derive pixels via the
+ * world→pixel transform. When absent, `x,y` are already image-pixel
+ * coordinates (legacy) and the transform is treated as identity.
  */
 export interface GameMapMeta {
   id: string;
@@ -19,6 +35,10 @@ export interface GameMapMeta {
   tilesCountX: number;
   tilesCountY: number;
   isVisible: boolean;
+  /** World-space bounding box that maps onto the full pixel grid. */
+  worldBounds?: { min: { x: number; y: number }; max: { x: number; y: number } };
+  /** World→pixel axis mapping; required alongside {@link worldBounds}. */
+  orientation?: MapOrientation;
 }
 
 /**
@@ -86,9 +106,12 @@ export interface MarkerEntityRef {
 /**
  * A concrete marker instance on a map.
  *
- * Coordinates (`x`, `y`) are in image-pixel space: y increases DOWNWARD,
- * matching the map tiles. Consumers rendering in a y-up coordinate system
- * (e.g. Leaflet CRS.Simple) must apply the vertical flip themselves.
+ * Coordinates (`x`, `y`) are RAW WORLD coordinates when the owning
+ * {@link GameMapMeta} carries `worldBounds`+`orientation`; otherwise they are
+ * image-pixel coordinates (legacy), y increasing DOWNWARD to match the tiles.
+ * Either way, consumers rendering in a y-up system (Leaflet CRS.Simple) derive
+ * pixels via the map's world→pixel transform (identity in the legacy case) and
+ * then apply the vertical flip.
  */
 export interface MarkerInstance {
   id: string;

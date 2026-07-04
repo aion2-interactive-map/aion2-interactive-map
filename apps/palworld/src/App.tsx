@@ -334,6 +334,7 @@ export default function App() {
             onSelect={setSelectedMarkerId}
             onFlyTo={setSelectedPosition}
             labels={searchLabels}
+            displayCoords={displayCoords}
           />
         </main>
       </div>

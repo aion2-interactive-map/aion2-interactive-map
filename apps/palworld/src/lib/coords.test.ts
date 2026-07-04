@@ -3,29 +3,28 @@ import { describe, it, expect } from 'vitest'
 import { toGameCoords } from './coords'
 
 describe('toGameCoords', () => {
-  it('maps MainWorld tower pixels to their published in-game coords', () => {
-    // Verified reference points (tower entrances): our marker pixels vs the
-    // in-game coordinates published by community guides. Rounded values must
-    // land within eyeball tolerance of the guides (the guides eyeball too).
+  it('maps MainWorld world coords to published in-game coords', () => {
+    // Input is now RAW WORLD (x = worldX, y = worldY). Reference tower world
+    // coords (reconstructed from their pixel positions) vs the in-game coords
+    // published by community guides — within eyeball tolerance.
     const cases: [number, number, number, number][] = [
-      // px,   py,     gx,    gy
-      [1647, 6997, -1294, -1669], // Feybreak Tower
-      [6397, 1807, 561, 334], // PIDF Tower
-      [3446, 4055, -587, -517], // Eternal Pyre Tower
-      [5295, 3772, 113, -431], // Rayne Syndicate Tower
+      // worldX,   worldY,    gx,    gy
+      [-888057, -433119, -1294, -1669], // Feybreak Tower
+      [29822, 406944, 561, 334], // PIDF Tower
+      [-367749, -114957, -587, -517], // Eternal Pyre Tower
+      [-317719, 212051, 113, -431], // Rayne Syndicate Tower
     ]
-    for (const [px, py, gx, gy] of cases) {
-      const g = toGameCoords('MainWorld', px, py)
+    for (const [wx, wy, gx, gy] of cases) {
+      const g = toGameCoords('MainWorld', wx, wy)
       expect(Math.abs(Math.round(g.x) - gx)).toBeLessThanOrEqual(20)
       expect(Math.abs(Math.round(g.y) - gy)).toBeLessThanOrEqual(20)
     }
   })
 
-  it('centers roughly on the origin (landscape midpoint)', () => {
-    // Center pixel of the 8192 grid ≈ the map's coordinate origin region.
-    const g = toGameCoords('MainWorld', 4096, 4096)
-    expect(Math.abs(g.x)).toBeLessThan(600)
-    expect(Math.abs(g.y)).toBeLessThan(600)
+  it('maps the Paldex origin (world shift) to (0, 0)', () => {
+    const g = toGameCoords('MainWorld', -123888, 158000)
+    expect(g.x).toBeCloseTo(0, 6)
+    expect(g.y).toBeCloseTo(0, 6)
   })
 
   it('is identity for maps without a transform (e.g. WorldTree)', () => {

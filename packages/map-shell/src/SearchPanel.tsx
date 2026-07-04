@@ -30,6 +30,12 @@ export type SearchPanelProps = {
   labels: SearchPanelLabels
   debounceMs?: number
   classNames?: { root?: string }
+  /**
+   * Maps a result's DATA (x, y) to the coordinate pair shown on the card.
+   * Default: identity. Fly-to still uses the raw DATA coords. An app supplies
+   * this to display game-native coords (e.g. Palworld in-game coordinates).
+   */
+  displayCoords?: (x: number, y: number) => { x: number; y: number }
 }
 
 type Scope = "both" | "name"
@@ -46,6 +52,7 @@ export function SearchPanel({
   labels,
   debounceMs = 200,
   classNames,
+  displayCoords = (x, y) => ({ x, y }),
 }: SearchPanelProps) {
   const [query, setQuery] = useState("")
   const [debounced, setDebounced] = useState("")
@@ -194,7 +201,10 @@ export function SearchPanel({
                       {item.description || labels.noDescription}
                     </span>
                     <div className="mt-0.5 text-[11px] tabular-nums text-muted-foreground/70">
-                      ({Math.round(item.x)}, {Math.round(item.y)})
+                      {(() => {
+                        const c = displayCoords(item.x, item.y)
+                        return `(${Math.round(c.x)}, ${Math.round(c.y)})`
+                      })()}
                     </div>
                   </button>
                 </li>
