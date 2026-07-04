@@ -98,6 +98,30 @@ describe("SearchPanel", () => {
     expect(screen.getByText("Padded Pal")).toBeTruthy()
   })
 
+  it("treats a numeric query as an exact id lookup (no prefix range, no name levels)", () => {
+    renderSearchPanel([
+      item({ id: "pal-011", name: "Exact Pal", idLabel: "No.011" }),
+      item({ id: "pal-110", name: "Prefix Pal", idLabel: "No.110" }), // 11X, must not match "11"
+      item({ id: "pal-a", name: "Alpha Pal Lv.11", idLabel: "No.099" }), // level in name, must not match
+    ])
+
+    searchFor("11")
+
+    expect(screen.getByText("Exact Pal")).toBeTruthy()
+    expect(screen.queryByText("Prefix Pal")).toBeNull()
+    expect(screen.queryByText("Alpha Pal Lv.11")).toBeNull()
+  })
+
+  it("finds a suffixed id by its number", () => {
+    renderSearchPanel([
+      item({ id: "pal-111b", name: "Variant Pal", idLabel: "No.111B" }),
+    ])
+
+    searchFor("111")
+
+    expect(screen.getByText("Variant Pal")).toBeTruthy()
+  })
+
   it("still matches CJK names per character", () => {
     renderSearchPanel([
       item({ id: "pal-1", name: "皮皮鸡" }),

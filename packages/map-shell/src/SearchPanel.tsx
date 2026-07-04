@@ -91,13 +91,13 @@ export function SearchPanel({
         prefix: true,
         fuzzy: (term) => (/^\d+$/.test(term) ? false : 0.2),
       },
-      // Keep Latin/digit runs as whole tokens (so "123" only matches "123",
-      // not any id/name containing a 1, 2 or 3), but split CJK per character
-      // so Han/Kana/Hangul queries still match. Strip leading zeros from numeric
-      // tokens (index + query) so a query like "11" matches a zero-padded id
-      // token "011" (No.011).
+      // Tokenize into Latin-letter runs, digit runs, and single CJK chars.
+      // Splitting letters from digits means a suffixed id like "No.111B" yields
+      // the number token "111" (findable by a numeric query) while CJK still
+      // matches per character. Strip leading zeros from numeric tokens (index +
+      // query) so "11"/"011" both match a zero-padded id token "011" (No.011).
       tokenize: (s) =>
-        (s.match(/[a-zA-Z0-9]+|[぀-ヿ㐀-鿿豈-﫿가-힯]/g) ?? []).map((t) =>
+        (s.match(/[a-zA-Z]+|[0-9]+|[぀-ヿ㐀-鿿豈-﫿가-힯]/g) ?? []).map((t) =>
           /^\d+$/.test(t) ? t.replace(/^0+(?=\d)/, "") : t,
         ),
     })
@@ -111,10 +111,18 @@ export function SearchPanel({
   const results: SearchResult[] = useMemo(() => {
     const q = debounced.trim()
     if (!q) return []
+    // A purely-numeric query is an id lookup: match the idLabel field exactly
+    // (no prefix, no fuzzy) so "11"/"011" find only Paldeck No.011 — not the
+    // 110-119 prefix range, and not levels embedded in names ("… Lv.11").
+    if (/^\d+$/.test(q) && searchFields.includes("idLabel")) {
+      return miniSearch
+        .search(q, { fields: ["idLabel"], prefix: false, fuzzy: false })
+        .slice(0, 50)
+    }
     return miniSearch
       .search(q, { fields: scope === "name" ? ["name"] : undefined })
       .slice(0, 50)
-  }, [debounced, miniSearch, scope])
+  }, [debounced, miniSearch, scope, searchFields])
 
   const handleSelect = (id: string) => {
     const item = itemsById.get(id)
