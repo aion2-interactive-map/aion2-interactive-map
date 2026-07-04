@@ -35,10 +35,11 @@ export default function App() {
       .then((d) => {
         if (cancelled) return
         setStaticData(d)
-        // Only initialize visible set once; preserve user-set empty (Hide all)
+        // Only initialize visible set once; preserve user-set empty (Hide all).
+        // Default to showing just the location markers.
         if (!visibleInitialized.current) {
           visibleInitialized.current = true
-          setVisible(new Set(d.types.subtypes.map((s) => s.id)))
+          setVisible(new Set(d.types.subtypes.filter((s) => s.category === 'location').map((s) => s.id)))
         }
       })
       .catch((err) => {
