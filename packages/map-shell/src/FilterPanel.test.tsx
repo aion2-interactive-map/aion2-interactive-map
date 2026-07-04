@@ -40,7 +40,7 @@ describe("FilterPanel", () => {
     expect(onSet).toHaveBeenCalledWith("cat1", true)
   })
 
-  it("renders the count and badge on the right of the button", () => {
+  it("renders the count, badge, and idLabel on the right of the button", () => {
     const { getByTestId } = render(
       <FilterPanel
         categories={[
@@ -49,7 +49,8 @@ describe("FilterPanel", () => {
             label: "Category 1",
             subtypes: [
               { id: "counted", label: "Counted", active: true, count: 12 },
-              { id: "badged", label: "Badged", active: true, badge: "No.037" },
+              { id: "badged", label: "Badged", active: true, badge: "3/12" },
+              { id: "id", label: "Id", active: true, idLabel: "No.037" },
               { id: "plain", label: "Plain", active: true },
             ],
           },
@@ -58,7 +59,10 @@ describe("FilterPanel", () => {
       />,
     )
     expect(getByTestId("subtype-toggle-counted").textContent).toContain("12")
-    expect(getByTestId("subtype-toggle-badged").textContent).toContain("No.037")
+    expect(getByTestId("subtype-toggle-badged").textContent).toContain("3/12")
+    // idLabel renders as a styled chip (rounded bg-muted font-mono), unlike the plain badge.
+    const idChip = getByTestId("subtype-toggle-id").querySelector("span.font-mono")
+    expect(idChip?.textContent).toBe("No.037")
     expect(getByTestId("subtype-toggle-plain").textContent).toBe("Plain")
   })
 

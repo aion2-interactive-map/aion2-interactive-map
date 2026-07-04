@@ -18,7 +18,10 @@ export interface FilterSubtype {
   label: string
   active: boolean
   icon?: ReactNode
-  /** Free-text chip on the right of the button (e.g. an id like "No.037"). */
+  /** Chip label on the right of the button (e.g. an id like "No.037"), styled
+   *  to match the search result idLabel. */
+  idLabel?: string
+  /** Plain free-text on the right of the button (e.g. a "3/12" count string). */
   badge?: string
   /** Numeric marker count shown on the right of the button (rightmost). */
   count?: number
@@ -196,8 +199,13 @@ export function FilterPanel({
                           {sub.icon}
                           <span className="truncate text-left">{sub.label}</span>
                         </span>
-                        {(sub.badge !== undefined || sub.count !== undefined) && (
+                        {(sub.idLabel !== undefined || sub.badge !== undefined || sub.count !== undefined) && (
                           <span className="flex shrink-0 items-center gap-1.5 text-xs">
+                            {sub.idLabel !== undefined && (
+                              <span className="rounded bg-muted px-1 text-[11px] font-mono tabular-nums text-muted-foreground">
+                                {sub.idLabel}
+                              </span>
+                            )}
                             {sub.badge !== undefined && <span>{sub.badge}</span>}
                             {sub.count !== undefined && (
                               <span className="tabular-nums">{sub.count}</span>
