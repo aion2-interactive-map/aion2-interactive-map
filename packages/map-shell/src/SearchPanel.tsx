@@ -3,6 +3,7 @@ import MiniSearch, { type SearchResult } from "minisearch"
 import { cn } from "@gamemap/ui"
 
 export type SearchItem = {
+  idLabel?: string;
   id: string
   name: string
   description?: string
@@ -63,7 +64,7 @@ export function SearchPanel({
 
   const miniSearch = useMemo(() => {
     const ms = new MiniSearch<SearchItem>({
-      fields: ["name", "description"],
+      fields: ["name", "description", "idLabel"],
       storeFields: ["id"],
       searchOptions: { prefix: true, fuzzy: 0.2 },
       tokenize: (s) => [...s],
@@ -167,6 +168,11 @@ export function SearchPanel({
                           alt=""
                           className="size-[18px] shrink-0 object-contain"
                         />
+                      )}
+                      {item.idLabel && (
+                        <span className="shrink-0 rounded bg-muted px-1 text-[11px] font-mono tabular-nums text-muted-foreground">
+                          {item.idLabel}
+                        </span>
                       )}
                       <span className="min-w-0 flex-1 truncate text-sm font-semibold">
                         {item.name || labels.unnamed}
