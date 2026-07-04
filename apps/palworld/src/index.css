@@ -74,3 +74,12 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 }
+
+/* Region outside the map image (Leaflet void): match the map art's dark
+   blue-black ocean edge (MainWorld #0c161e, WorldTree #0d151c) so panning or
+   zooming past the map borders blends seamlessly instead of showing Leaflet's
+   default grey. Fixed color in both light and dark — it mirrors the map art,
+   not the UI theme. */
+.leaflet-container {
+  background: #0c161e;
+}
