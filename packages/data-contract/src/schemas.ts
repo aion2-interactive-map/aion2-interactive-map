@@ -31,6 +31,8 @@ export const gameMapMetaSchema = z.object({
 }) satisfies z.ZodType<GameMapMeta>;
 
 export const markerTypeSubtypeSchema = z.object({
+  zukanIndex: z.number().optional(),
+  zukanIndexSuffix: z.string().optional(),
   id: z.string(),
   name: z.string(),
   category: z.string().optional(),
@@ -56,6 +58,8 @@ export const markerEntityRefSchema = z.object({
 }) satisfies z.ZodType<MarkerEntityRef>;
 
 export const markerInstanceSchema = z.object({
+  zukanIndex: z.number().optional(),
+  zukanIndexSuffix: z.string().optional(),
   id: z.string(),
   category: z.string().optional(),
   subtype: z.string(),

@@ -47,6 +47,10 @@ export interface MarkerTypeSubtype {
    *  completion, e.g. the game's MonolithFragment_Complete asset). When set,
    *  the generic dim + green check are suppressed for completed markers. */
   iconComplete?: string;
+  /** Paldeck index (palworld). 1-based; absent/<=0 means uncatalogued. */
+  zukanIndex?: number;
+  /** Paldeck variant suffix, e.g. "B" for elemental variants. */
+  zukanIndexSuffix?: string;
 }
 
 /**
@@ -97,6 +101,10 @@ export interface MarkerInstance {
   /** For fragment markers: which physical kind (drives dialog text + icon badge). */
   fragmentType?: "ground" | "air" | "water";
   entity?: MarkerEntityRef;
+  /** Paldeck index (palworld). 1-based; absent/<=0 means uncatalogued. */
+  zukanIndex?: number;
+  /** Paldeck variant suffix, e.g. "B" for elemental variants. */
+  zukanIndexSuffix?: string;
 }
 
 export interface RegionInstance {
