@@ -83,6 +83,9 @@ export const GameDataProvider: React.FC<GameDataProviderProps> = ({
     types.forEach((cat) => {
       cat.subtypes.forEach((sub) => {
         sub.category = cat.name;
+        // Resolve the category's default pin style onto each subtype so the
+        // render engine reads it from `subtypeMeta` without knowing category names.
+        sub.pinVariant = sub.pinVariant ?? cat.pinVariant;
         all.set(sub.name, sub);
       });
     });

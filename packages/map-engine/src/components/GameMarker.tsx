@@ -75,17 +75,22 @@ const GameMarkerInner: React.FC<Props> = ({
     (useIconSwap ? sub?.iconComplete : marker.icon || sub?.icon) || "";
   const innerIcon = assets.markerIconUrl(rawIcon, map);
   const renderCompleted = isCompleted && !useIconSwap;
+  // Pin variant is declared by the taxonomy data (subtype's `pinVariant`,
+  // resolved from its category by the app loader) — the engine stays free of
+  // game-specific category names. "circular" = cropped portrait with a white
+  // border (creatures/pals/bosses). Absent → icon-based default below.
+  const pinVariant = sub?.pinVariant;
   let icon: L.DivIcon;
-  if (category === "creature" || category === "pal") {
+  if (pinVariant === "circular") {
     icon = createPinIcon(innerIcon, 0.9, renderCompleted, {
       variant: "circular",
       selected,
       theme,
     });
-  } else if (!rawIcon) {
-    // No game icon for this subtype: fall back to the circular dot. Use the
-    // subtype color as the inner dot when provided (non-black); otherwise the
-    // default Lanhu blue is used.
+  } else if (pinVariant === "pin" || !rawIcon) {
+    // No game icon (or data explicitly asked for the dot): fall back to the
+    // circular dot. Use the subtype color as the inner dot when provided
+    // (non-black); otherwise the default Lanhu blue is used.
     const dot =
       sub?.color && sub.color !== "#000000" ? sub.color : undefined;
     icon = createPinIcon(innerIcon, iconScale, renderCompleted, {

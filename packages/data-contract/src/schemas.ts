@@ -38,6 +38,7 @@ export const markerTypeSubtypeSchema = z.object({
   category: z.string().optional(),
   icon: z.string().optional(),
   iconScale: z.number().optional(),
+  pinVariant: z.enum(["image", "circular", "pin"]).optional(),
   hideTooltip: z.boolean().optional(),
   color: z.string().optional(),
   canComplete: z.boolean().optional(),
@@ -49,6 +50,7 @@ export const markerTypeCategorySchema = z.object({
   name: z.string(),
   icon: z.string().optional(),
   color: z.string().optional(),
+  pinVariant: z.enum(["image", "circular", "pin"]).optional(),
   subtypes: z.array(markerTypeSubtypeSchema),
 }) satisfies z.ZodType<MarkerTypeCategory>;
 

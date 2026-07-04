@@ -26,6 +26,10 @@ export interface GameMapMeta {
  * - locations.tpPoint
  * - gatheringPoints.mining
  */
+/** How a marker pin is rendered: full icon image, circular cropped portrait
+ *  with a white border (creatures/pals/bosses), or the fallback dot. */
+export type MarkerPinVariant = "image" | "circular" | "pin";
+
 export interface MarkerTypeSubtype {
   id: string;
   name: string;
@@ -38,6 +42,9 @@ export interface MarkerTypeSubtype {
   icon?: string;
   /** Multiplier applied to the icon's base render size. */
   iconScale?: number;
+  /** Pin render style. Falls back to the owning category's value, then to
+   *  icon-based defaults in the engine. */
+  pinVariant?: MarkerPinVariant;
   hideTooltip?: boolean;
   /** Hex color string for the pin body, e.g. "#FFAA00". */
   color?: string;
@@ -65,6 +72,9 @@ export interface MarkerTypeCategory {
   name: string;
   icon?: string;
   color?: string;
+  /** Default pin render style applied to all subtypes in this category
+   *  (a subtype may override it with its own `pinVariant`). */
+  pinVariant?: MarkerPinVariant;
   subtypes: MarkerTypeSubtype[];
 }
 

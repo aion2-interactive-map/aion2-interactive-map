@@ -1,4 +1,4 @@
-import type { GameMapMeta, MarkerTypeSubtype } from '@gamemap/data-contract'
+import type { GameMapMeta, MarkerPinVariant, MarkerTypeSubtype } from '@gamemap/data-contract'
 import { DATA_BASE } from './urls'
 
 const j = async <T>(url: string): Promise<T> => {
@@ -29,7 +29,11 @@ export interface TypesLocale {
 export type MapsLocale = Record<string, { name: string; shortName?: string }>
 
 interface TypesFile {
-  categories: { id: string; subtypes: { id: string; icon?: string; color?: string }[] }[]
+  categories: {
+    id: string
+    pinVariant?: MarkerPinVariant
+    subtypes: { id: string; icon?: string; color?: string; iconScale?: number; pinVariant?: MarkerPinVariant }[]
+  }[]
 }
 
 export async function loadStatic(lng: string) {
@@ -45,6 +49,7 @@ export async function loadStatic(lng: string) {
       c.subtypes.map((s): MarkerTypeSubtype => ({
         ...s,
         category: c.id,
+        pinVariant: s.pinVariant ?? c.pinVariant,
         // Use locale name if available; fall back to id so the required `name` field is always set
         name: typesL10n.subtypes[s.id]?.name ?? s.id,
       }))),
