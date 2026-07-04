@@ -271,13 +271,13 @@ export default function App() {
             content: 'px-3 pt-3',
           }}
           headerSlot={
-            <div className="mb-3 flex justify-center px-2">
+            <div className="mb-3 px-1">
               {/* Monochrome white logo: invert to black on the light sidebar,
                   keep white on the dark sidebar. */}
               <img
                 src={`${import.meta.env.BASE_URL}images/palworld-logo.webp`}
                 alt="Palworld"
-                className="h-10 w-auto object-contain invert dark:invert-0"
+                className="h-auto w-full object-contain invert dark:invert-0"
               />
             </div>
           }
