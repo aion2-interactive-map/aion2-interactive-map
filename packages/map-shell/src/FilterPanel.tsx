@@ -18,7 +18,10 @@ export interface FilterSubtype {
   label: string
   active: boolean
   icon?: ReactNode
+  /** Free-text chip on the right of the button (e.g. an id like "No.037"). */
   badge?: string
+  /** Numeric marker count shown on the right of the button (rightmost). */
+  count?: number
 }
 
 export interface FilterCategory {
@@ -188,13 +191,18 @@ export function FilterPanel({
                         sub.active && classNames?.subtypeButtonActive,
                       )}
                     >
-                      <div className="flex w-full items-center justify-between">
+                      <div className="flex w-full items-center justify-between gap-2">
                         <span className="flex min-w-0 items-center gap-1">
                           {sub.icon}
                           <span className="truncate text-left">{sub.label}</span>
                         </span>
-                        {sub.badge !== undefined && (
-                          <span className="ml-2 shrink-0 text-xs">{sub.badge}</span>
+                        {(sub.badge !== undefined || sub.count !== undefined) && (
+                          <span className="flex shrink-0 items-center gap-1.5 text-xs">
+                            {sub.badge !== undefined && <span>{sub.badge}</span>}
+                            {sub.count !== undefined && (
+                              <span className="tabular-nums">{sub.count}</span>
+                            )}
+                          </span>
                         )}
                       </div>
                     </button>

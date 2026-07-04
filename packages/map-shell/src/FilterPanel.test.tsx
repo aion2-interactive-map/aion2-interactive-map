@@ -40,6 +40,28 @@ describe("FilterPanel", () => {
     expect(onSet).toHaveBeenCalledWith("cat1", true)
   })
 
+  it("renders the count and badge on the right of the button", () => {
+    const { getByTestId } = render(
+      <FilterPanel
+        categories={[
+          {
+            id: "cat1",
+            label: "Category 1",
+            subtypes: [
+              { id: "counted", label: "Counted", active: true, count: 12 },
+              { id: "badged", label: "Badged", active: true, badge: "No.037" },
+              { id: "plain", label: "Plain", active: true },
+            ],
+          },
+        ]}
+        onToggleSubtype={() => {}}
+      />,
+    )
+    expect(getByTestId("subtype-toggle-counted").textContent).toContain("12")
+    expect(getByTestId("subtype-toggle-badged").textContent).toContain("No.037")
+    expect(getByTestId("subtype-toggle-plain").textContent).toBe("Plain")
+  })
+
   it("merges classNames on the subtype button with the active skin last", () => {
     const { getByTestId } = render(
       <FilterPanel
