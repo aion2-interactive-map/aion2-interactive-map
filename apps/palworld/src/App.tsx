@@ -29,6 +29,9 @@ export default function App() {
   const [selectedMarkerId, setSelectedMarkerId] = useState<string | null>(null)
   const [selectedPosition, setSelectedPosition] = useState<{ x: number; y: number } | null>(null)
   const [loadError, setLoadError] = useState<string | null>(null)
+  // When on, marker names show as permanent labels; when off, they appear on
+  // hover (handled by the engine). Off by default to keep the map uncluttered.
+  const [showLabels, setShowLabels] = useState(false)
 
   useEffect(() => {
     let cancelled = false
@@ -289,9 +292,16 @@ export default function App() {
                 onClick: () => setVisible(new Set(staticData.types.subtypes.map((s) => s.id))),
               },
               { id: 'hide-all', label: t('hideAll'), onClick: () => setVisible(new Set()) },
+              {
+                id: 'show-tooltip',
+                label: t('showTooltip'),
+                onClick: () => setShowLabels((v) => !v),
+                active: showLabels,
+              },
             ]}
             classNames={{
               controlButton: 'bg-secondary text-secondary-foreground',
+              controlButtonActive: 'bg-primary text-primary-foreground',
               subtypeButton: 'bg-secondary text-secondary-foreground',
               subtypeButtonActive: 'bg-primary text-primary-foreground',
             }}
@@ -304,7 +314,7 @@ export default function App() {
             markers={engineMarkers}
             regions={[]}
             visibleSubtypes={visible}
-            showLabels={false}
+            showLabels={showLabels}
             showBorders={false}
             lodEnabled={false}
             selectedMarkerId={selectedMarkerId}

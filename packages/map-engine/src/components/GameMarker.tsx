@@ -140,9 +140,16 @@ const GameMarkerInner: React.FC<Props> = ({
         },
       }}
     >
-      {showLabels && !hideTooltip && !selected && (
+      {/* Name label. Permanent when labels are on (and the subtype isn't
+          opted out of always-on labels via `hideTooltip`); otherwise a hover
+          tooltip, so mousing over any marker still reveals its name. The
+          selected marker shows its own popup, so it gets no tooltip. The `key`
+          forces a remount when the permanent-ness flips (react-leaflet doesn't
+          re-bind a tooltip's `permanent` option in place). */}
+      {!selected && (
         <Tooltip
-          permanent
+          key={showLabels && !hideTooltip ? "permanent" : "hover"}
+          permanent={showLabels && !hideTooltip}
           direction="top"
           offset={[0, -18]}
           className="gm-marker-tooltip"
