@@ -42,6 +42,9 @@ export interface PinIconOptions {
   variant?: PinVariant;
   /** "pin" variant inner-dot color; defaults to `theme.pinDot`. */
   innerColor?: string;
+  /** "circular" variant ring color; defaults to `theme.circularBorder`
+   *  (white). A subtype's taxonomy `color` flows here so e.g. bosses ring red. */
+  ringColor?: string;
   /** Selected-marker emphasis (scale-up + lifted shadow). */
   selected?: boolean;
   /** Fragment direction badge; "air" = up chevron, "water" = down, ground/none = no badge. */
@@ -58,15 +61,17 @@ export function createPinIcon(
   const {
     variant = "image",
     innerColor,
+    ringColor,
     selected = false,
     fragmentType,
     theme = DEFAULT_PIN_THEME,
   } = options;
   const dot = innerColor ?? theme.pinDot;
+  const ring = ringColor ?? theme.circularBorder;
   // Theme is fixed per game at startup, never varies at runtime, so it is
   // deliberately NOT part of the key. A game that switches pin themes at
   // runtime would need to fold the theme values in.
-  const cacheKey = `${variant}|${innerIcon}|${iconScale}|${completed ? 1 : 0}|${dot}|${selected ? 1 : 0}|${fragmentType ?? ""}`;
+  const cacheKey = `${variant}|${innerIcon}|${iconScale}|${completed ? 1 : 0}|${dot}|${ring}|${selected ? 1 : 0}|${fragmentType ?? ""}`;
   const cached = iconCache.get(cacheKey);
   if (cached) return cached;
   const iconBaseSize = 40;
@@ -120,7 +125,7 @@ export function createPinIcon(
           height: `${iconSize}px`,
           borderRadius: "50%",
           overflow: "hidden",
-          border: "1.5px solid rgba(255,255,255,0.9)",
+          border: `1.5px solid ${ring}`,
           boxShadow: "0 0 6px rgba(0,0,0,0.6)",
           display: "flex",
           alignItems: "center",

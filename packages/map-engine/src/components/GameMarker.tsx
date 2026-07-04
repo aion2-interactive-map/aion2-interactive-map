@@ -77,13 +77,18 @@ const GameMarkerInner: React.FC<Props> = ({
   const renderCompleted = isCompleted && !useIconSwap;
   // Pin variant is declared by the taxonomy data (subtype's `pinVariant`,
   // resolved from its category by the app loader) — the engine stays free of
-  // game-specific category names. "circular" = cropped portrait with a white
-  // border (creatures/pals/bosses). Absent → icon-based default below.
+  // game-specific category names. "circular" = cropped portrait with a ring
+  // (creatures/pals white by default; a subtype `color` overrides, e.g. boss
+  // red). Absent → icon-based default below.
   const pinVariant = sub?.pinVariant;
   let icon: L.DivIcon;
   if (pinVariant === "circular") {
+    // The taxonomy `color` (if any, non-black) tints the ring — e.g. bosses
+    // ring red — otherwise it falls back to the theme's default (white).
+    const ring = sub?.color && sub.color !== "#000000" ? sub.color : undefined;
     icon = createPinIcon(innerIcon, 0.9, renderCompleted, {
       variant: "circular",
+      ringColor: ring,
       selected,
       theme,
     });

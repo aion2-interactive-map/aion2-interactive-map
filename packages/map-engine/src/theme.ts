@@ -9,6 +9,9 @@ export interface PinTheme {
   pinBorder: string;
   /** Fallback "pin" variant: default inner-dot color (subtype color overrides). */
   pinDot: string;
+  /** "circular" variant: default ring color when a subtype declares no `color`
+   *  (e.g. wild pals stay white; a boss subtype can set red via its color). */
+  circularBorder: string;
   /** Completed tick + fragment air/water chevron badge color. */
   completedAccent: string;
 }
@@ -25,6 +28,7 @@ export const DEFAULT_PIN_THEME: PinTheme = {
   pinDiscBg: "rgba(0,0,0,0.6)", // 圆形 17 background
   pinBorder: "rgba(255,255,255,1)", // 0.5px hairline
   pinDot: "#2E97FF", // 圆形 18 inner dot (rgba 46,150,255)
+  circularBorder: "rgba(255,255,255,0.9)", // creatures/pals: white hairline ring
   completedAccent: "#22c55e",
 };
 
