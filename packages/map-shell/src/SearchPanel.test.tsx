@@ -88,6 +88,16 @@ describe("SearchPanel", () => {
     expect(screen.queryByText("Cattiva")).toBeNull()
   })
 
+  it("matches a zero-padded id token with an unpadded query", () => {
+    renderSearchPanel([
+      item({ id: "pal-011", name: "Padded Pal", idLabel: "No.011" }),
+    ])
+
+    searchFor("11")
+
+    expect(screen.getByText("Padded Pal")).toBeTruthy()
+  })
+
   it("still matches CJK names per character", () => {
     renderSearchPanel([
       item({ id: "pal-1", name: "皮皮鸡" }),

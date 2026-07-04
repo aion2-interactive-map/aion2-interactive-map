@@ -93,9 +93,13 @@ export function SearchPanel({
       },
       // Keep Latin/digit runs as whole tokens (so "123" only matches "123",
       // not any id/name containing a 1, 2 or 3), but split CJK per character
-      // so Han/Kana/Hangul queries still match.
+      // so Han/Kana/Hangul queries still match. Strip leading zeros from numeric
+      // tokens (index + query) so a query like "11" matches a zero-padded id
+      // token "011" (No.011).
       tokenize: (s) =>
-        s.match(/[a-zA-Z0-9]+|[぀-ヿ㐀-鿿豈-﫿가-힯]/g) ?? [],
+        (s.match(/[a-zA-Z0-9]+|[぀-ヿ㐀-鿿豈-﫿가-힯]/g) ?? []).map((t) =>
+          /^\d+$/.test(t) ? t.replace(/^0+(?=\d)/, "") : t,
+        ),
     })
     ms.addAll(items)
     return ms
