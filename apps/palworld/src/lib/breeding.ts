@@ -52,6 +52,18 @@ export const palIconUrl = (icon: string): string => `${RES_BASE}/icons/${icon}.w
 
 export const comboKey = (f: Combo): string => `${f.a}|${f.b}|${f.c}|${f.ag ?? ''}|${f.bg ?? ''}`
 
+/**
+ * Order-independent identity for favouriting: A+B=C and B+A=C are the same
+ * recipe. Gender travels with its parent, so the two gender-specific combos
+ * (Katress♂×Wixen♀ vs Katress♀×Wixen♂) stay distinct — the one special case.
+ */
+export const favKey = (f: Combo): string => {
+  const pa = `${f.a}:${f.ag ?? ''}`
+  const pb = `${f.b}:${f.bg ?? ''}`
+  const [lo, hi] = pa <= pb ? [pa, pb] : [pb, pa]
+  return `${lo}|${hi}=${f.c}`
+}
+
 const pairKey = (a: string, b: string) => (a < b ? `${a}|${b}` : `${b}|${a}`)
 
 /**

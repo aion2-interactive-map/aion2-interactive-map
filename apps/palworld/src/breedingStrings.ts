@@ -17,6 +17,7 @@ export interface BreedingStrings {
   clear: string
   showingSpecial: string
   unique: string
+  favorite: string
   more: string
 }
 
@@ -35,6 +36,7 @@ export const BREEDING_STRINGS: Record<Language, BreedingStrings> = {
     clear: 'Clear',
     showingSpecial: 'Unique recipes — pick a Pal to calculate every pairing',
     unique: 'Unique',
+    favorite: 'Favorite',
     more: '+{{count}} more — pick a parent to narrow',
   },
   'de-DE': {
@@ -51,6 +53,7 @@ export const BREEDING_STRINGS: Record<Language, BreedingStrings> = {
     clear: 'Zurücksetzen',
     showingSpecial: 'Einzigartige Rezepte — wähle ein Pal, um jede Paarung zu berechnen',
     unique: 'Einzigartig',
+    favorite: 'Favorit',
     more: '+{{count}} weitere — Elternteil wählen zum Eingrenzen',
   },
   'es-ES': {
@@ -67,6 +70,7 @@ export const BREEDING_STRINGS: Record<Language, BreedingStrings> = {
     clear: 'Limpiar',
     showingSpecial: 'Recetas únicas — elige un Pal para calcular cualquier cruce',
     unique: 'Único',
+    favorite: 'Favorito',
     more: '+{{count}} más — elige un progenitor para acotar',
   },
   'es-MX': {
@@ -83,6 +87,7 @@ export const BREEDING_STRINGS: Record<Language, BreedingStrings> = {
     clear: 'Limpiar',
     showingSpecial: 'Recetas únicas — elige un Pal para calcular cualquier cruce',
     unique: 'Único',
+    favorite: 'Favorito',
     more: '+{{count}} más — elige un progenitor para acotar',
   },
   'fr-FR': {
@@ -99,6 +104,7 @@ export const BREEDING_STRINGS: Record<Language, BreedingStrings> = {
     clear: 'Effacer',
     showingSpecial: 'Recettes uniques — choisissez un Pal pour calculer chaque croisement',
     unique: 'Unique',
+    favorite: 'Favori',
     more: '+{{count}} de plus — choisissez un parent pour affiner',
   },
   'id-ID': {
@@ -115,6 +121,7 @@ export const BREEDING_STRINGS: Record<Language, BreedingStrings> = {
     clear: 'Hapus',
     showingSpecial: 'Resep unik — pilih Pal untuk menghitung setiap perkawinan',
     unique: 'Unik',
+    favorite: 'Favorit',
     more: '+{{count}} lagi — pilih induk untuk mempersempit',
   },
   'it-IT': {
@@ -131,6 +138,7 @@ export const BREEDING_STRINGS: Record<Language, BreedingStrings> = {
     clear: 'Cancella',
     showingSpecial: 'Ricette uniche — scegli un Pal per calcolare ogni accoppiamento',
     unique: 'Unico',
+    favorite: 'Preferito',
     more: '+{{count}} altre — scegli un genitore per restringere',
   },
   'ja-JP': {
@@ -147,6 +155,7 @@ export const BREEDING_STRINGS: Record<Language, BreedingStrings> = {
     clear: 'クリア',
     showingSpecial: '固有レシピ — パルを選ぶとすべての組み合わせを計算します',
     unique: '固有',
+    favorite: 'お気に入り',
     more: '他 {{count}} 件 — 親を選ぶと絞り込めます',
   },
   'ko-KR': {
@@ -163,6 +172,7 @@ export const BREEDING_STRINGS: Record<Language, BreedingStrings> = {
     clear: '초기화',
     showingSpecial: '고유 레시피 — 팰을 선택하면 모든 조합을 계산합니다',
     unique: '고유',
+    favorite: '즐겨찾기',
     more: '+{{count}}개 더 — 부모를 선택해 좁히세요',
   },
   'pl-PL': {
@@ -179,6 +189,7 @@ export const BREEDING_STRINGS: Record<Language, BreedingStrings> = {
     clear: 'Wyczyść',
     showingSpecial: 'Receptury unikatowe — wybierz Pala, aby obliczyć każdą parę',
     unique: 'Unikat',
+    favorite: 'Ulubione',
     more: '+{{count}} więcej — wybierz rodzica, aby zawęzić',
   },
   'pt-BR': {
@@ -195,6 +206,7 @@ export const BREEDING_STRINGS: Record<Language, BreedingStrings> = {
     clear: 'Limpar',
     showingSpecial: 'Receitas únicas — escolha um Pal para calcular qualquer cruzamento',
     unique: 'Único',
+    favorite: 'Favorito',
     more: '+{{count}} mais — escolha um progenitor para refinar',
   },
   'ru-RU': {
@@ -211,6 +223,7 @@ export const BREEDING_STRINGS: Record<Language, BreedingStrings> = {
     clear: 'Сбросить',
     showingSpecial: 'Уникальные рецепты — выберите пала, чтобы рассчитать любую пару',
     unique: 'Уникальный',
+    favorite: 'Избранное',
     more: 'Ещё {{count}} — выберите родителя для сужения',
   },
   'th-TH': {
@@ -227,6 +240,7 @@ export const BREEDING_STRINGS: Record<Language, BreedingStrings> = {
     clear: 'ล้าง',
     showingSpecial: 'สูตรยูนีค — เลือก Pal เพื่อคำนวณทุกการผสม',
     unique: 'ยูนีค',
+    favorite: 'รายการโปรด',
     more: 'อีก {{count}} รายการ — เลือกพ่อแม่เพื่อจำกัดผล',
   },
   'tr-TR': {
@@ -243,6 +257,7 @@ export const BREEDING_STRINGS: Record<Language, BreedingStrings> = {
     clear: 'Temizle',
     showingSpecial: 'Benzersiz tarifler — her eşleşmeyi hesaplamak için bir Pal seç',
     unique: 'Benzersiz',
+    favorite: 'Favori',
     more: '+{{count}} tane daha — daraltmak için bir ebeveyn seç',
   },
   'vi-VN': {
@@ -259,6 +274,7 @@ export const BREEDING_STRINGS: Record<Language, BreedingStrings> = {
     clear: 'Xóa',
     showingSpecial: 'Công thức độc nhất — chọn một Pal để tính mọi cặp ghép',
     unique: 'Độc nhất',
+    favorite: 'Yêu thích',
     more: '+{{count}} nữa — chọn bố mẹ để thu hẹp',
   },
   'zh-CN': {
@@ -275,6 +291,7 @@ export const BREEDING_STRINGS: Record<Language, BreedingStrings> = {
     clear: '清除',
     showingSpecial: '独有配方 — 选择帕鲁以计算任意配对',
     unique: '独有',
+    favorite: '收藏',
     more: '还有 {{count}} 条 — 选择父母以缩小范围',
   },
   'zh-TW': {
@@ -291,6 +308,7 @@ export const BREEDING_STRINGS: Record<Language, BreedingStrings> = {
     clear: '清除',
     showingSpecial: '獨有配方 — 選擇帕魯以計算任意配對',
     unique: '獨有',
+    favorite: '收藏',
     more: '還有 {{count}} 筆 — 選擇父母以縮小範圍',
   },
 }
