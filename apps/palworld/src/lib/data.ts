@@ -16,6 +16,8 @@ export interface Taxonomy {
   subtypes: MarkerTypeSubtype[]
 }
 export interface MarkerRow {
+  zukanIndex?: number
+  zukanIndexSuffix?: string
   id: string; subtype: string; category?: string; x: number; y: number; z?: number
   icon?: string; indexInSubtype: number
 }

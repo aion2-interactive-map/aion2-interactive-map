@@ -10,6 +10,7 @@ import {
 import { palworldAssets } from './lib/assets'
 import { palworldTheme } from './theme'
 import { LANGUAGES, LANGUAGE_LABELS } from './i18n'
+import { formatPalId } from './lib/palId'
 
 export default function App() {
   const { t, i18n } = useTranslation()
@@ -97,6 +98,8 @@ export default function App() {
         subtypeLabel: subLabel,
         subtypeMeta,
         completed: false,
+        zukanIndex: m.zukanIndex,
+        zukanIndexSuffix: m.zukanIndexSuffix,
       }
     })
   }, [staticData, markerData, subtypeMetaMap])
@@ -109,6 +112,7 @@ export default function App() {
       return {
         id: m.id,
         name: m.localizedName || '',
+        idLabel: formatPalId(m.zukanIndex ?? m.subtypeMeta?.zukanIndex, m.zukanIndexSuffix ?? m.subtypeMeta?.zukanIndexSuffix),
         description: m.localizedDescription,
         subtypeLabel: m.subtypeLabel ?? m.subtype,
         categoryLabel: catId ? (staticData.typesL10n.categories[catId]?.name ?? catId) : '',
@@ -159,6 +163,7 @@ export default function App() {
           id: s.id,
           label: staticData.typesL10n.subtypes[s.id]?.name ?? s.id,
           active: visible.has(s.id),
+          badge: formatPalId(s.zukanIndex, s.zukanIndexSuffix),
         })),
     }))
   }, [staticData, visible])
@@ -177,6 +182,7 @@ export default function App() {
   }), [t])
 
   const renderPopupContent = useCallback((marker: EngineMarker) => {
+    const idLabel = formatPalId(marker.zukanIndex ?? marker.subtypeMeta?.zukanIndex, marker.zukanIndexSuffix ?? marker.subtypeMeta?.zukanIndexSuffix)
     const catId = marker.subtypeMeta?.category ?? marker.category
     const catLabel = catId ? (staticData?.typesL10n.categories[catId]?.name ?? catId) : ''
     const subLabel = marker.subtypeLabel ?? marker.subtype
@@ -186,6 +192,7 @@ export default function App() {
     ].filter(Boolean).join(' ')
     return (
       <MarkerPopupCard
+        idLabel={idLabel}
         name={marker.localizedName || t('unnamed')}
         metaLine={metaLine}
         description={marker.localizedDescription}
