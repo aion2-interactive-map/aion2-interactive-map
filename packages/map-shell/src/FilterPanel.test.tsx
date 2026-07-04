@@ -66,7 +66,7 @@ describe("FilterPanel", () => {
     // The accent segment ("B") is rendered in its own colored span.
     const accent = idChip?.querySelector("span")
     expect(accent?.textContent).toBe("B")
-    expect(accent?.className).toContain("text-primary")
+    expect(accent?.className).toContain("text-accent")
     expect(getByTestId("subtype-toggle-plain").textContent).toBe("Plain")
   })
 

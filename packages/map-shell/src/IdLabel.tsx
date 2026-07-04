@@ -17,7 +17,7 @@ export type IdLabelProps = {
   value: IdLabelValue
   /** Extra classes for the chip (e.g. to enlarge it in a popup). */
   className?: string
-  /** Overrides the accent color (defaults to the theme primary). */
+  /** Overrides the accent color (defaults to the theme accent color). */
   accentClassName?: string
 }
 
@@ -31,7 +31,7 @@ export function IdLabel({ value, className, accentClassName }: IdLabelProps) {
     >
       {value.text}
       {value.accent ? (
-        <span className={cn("text-primary", accentClassName)}>{value.accent}</span>
+        <span className={cn("font-semibold text-accent", accentClassName)}>{value.accent}</span>
       ) : null}
     </span>
   )
