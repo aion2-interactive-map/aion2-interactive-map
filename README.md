@@ -2,12 +2,16 @@
 
 ## Development
 
-This is a pnpm workspace monorepo. The map application lives in `apps/aion2`.
+This is a pnpm workspace monorepo. Each game map is its own app under `apps/`
+(`apps/aion2`, `apps/palworld`); commands are game-specific — there is no bare
+default.
 
 ```bash
-pnpm install       # install all workspace dependencies
-pnpm dev           # start dev server for aion2 app
-pnpm build         # build aion2 app
+pnpm install          # install all workspace dependencies
+pnpm dev:aion2        # start dev server for the aion2 app
+pnpm build:aion2      # build the aion2 app
+pnpm dev:palworld     # start dev server for the palworld app
+pnpm build:palworld   # build the palworld app
 ```
 
 The dev server serves game assets and data from sibling repos expected at
@@ -15,7 +19,7 @@ The dev server serves game assets and data from sibling repos expected at
 override with env vars:
 
 ```bash
-RESOURCE_UI_DIR=/path/to/resource/UI DATA_DIR=/path/to/data pnpm dev
+RESOURCE_UI_DIR=/path/to/resource/UI DATA_DIR=/path/to/data pnpm dev:aion2
 ```
 
 ### Monorepo layout
