@@ -6,6 +6,7 @@ import {
   type GameMapViewLabels,
   type MapRef,
 } from "@gamemap/map-engine";
+import { ShellLayout } from "@gamemap/map-shell";
 import { useGameMap } from "@/context/GameMapContext";
 import { useMarkers } from "@/context/MarkersContext";
 import { useGameData } from "@/context/GameDataContext";
@@ -127,38 +128,38 @@ export default function MapRoute() {
   }, [markersById]);
 
   return (
-    <div className="flex h-screen w-screen flex-col overflow-hidden bg-background text-foreground">
-      <TopNavbar />
-      <div className="flex flex-1 overflow-hidden">
-        <Sidebar />
-        <div className="relative flex flex-1 overflow-hidden">
-          <GameMapView
-            mapRef={mapRef}
-            map={selectedMap}
-            markers={engineMarkers}
-            regions={regions}
-            visibleSubtypes={visibleSubtypes}
-            visibleRegions={visibleRegions}
-            showLabels={showLabels}
-            showBorders={showBorders}
-            lodEnabled={lodEnabled}
-            selectedMarkerId={selectedMarkerId}
-            selectedPosition={selectedPosition}
-            onToggleMarker={handleToggleMarker}
-            subzoneAt={subzoneAt}
-            flyToDuration={MAP_FLY_TO_DURATION}
-            assets={aionAssets}
-            theme={aionTheme}
-            labels={labels}
-            renderPopupContent={renderPopupContent}
-            exposeTestHandle={import.meta.env.DEV}
-          />
-          <SearchPanel
-            onSelectMarker={setSelectedMarkerId}
-            onFlyTo={setSelectedPosition}
-          />
-        </div>
+    <ShellLayout
+      className="bg-background text-foreground"
+      topBar={<TopNavbar />}
+      sidebar={<Sidebar />}
+    >
+      <div className="relative flex flex-1 overflow-hidden">
+        <GameMapView
+          mapRef={mapRef}
+          map={selectedMap}
+          markers={engineMarkers}
+          regions={regions}
+          visibleSubtypes={visibleSubtypes}
+          visibleRegions={visibleRegions}
+          showLabels={showLabels}
+          showBorders={showBorders}
+          lodEnabled={lodEnabled}
+          selectedMarkerId={selectedMarkerId}
+          selectedPosition={selectedPosition}
+          onToggleMarker={handleToggleMarker}
+          subzoneAt={subzoneAt}
+          flyToDuration={MAP_FLY_TO_DURATION}
+          assets={aionAssets}
+          theme={aionTheme}
+          labels={labels}
+          renderPopupContent={renderPopupContent}
+          exposeTestHandle={import.meta.env.DEV}
+        />
+        <SearchPanel
+          onSelectMarker={setSelectedMarkerId}
+          onFlyTo={setSelectedPosition}
+        />
       </div>
-    </div>
+    </ShellLayout>
   );
 }

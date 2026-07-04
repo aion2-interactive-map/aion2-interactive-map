@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { GameMapView, type EngineMarker, type MapRef } from '@gamemap/map-engine'
-import { FilterPanel, MarkerPopupCard, SearchPanel, ShellMapSelect, ShellSidebar, ShellTopBar, ThemeToggle, type FilterCategory, type SearchItem } from '@gamemap/map-shell'
+import { FilterPanel, MarkerPopupCard, SearchPanel, ShellLayout, ShellMapSelect, ShellSidebar, ShellTopBar, ThemeToggle, type FilterCategory, type SearchItem } from '@gamemap/map-shell'
 import type { MarkerTypeSubtype } from '@gamemap/data-contract'
 import {
   loadStatic, loadMarkers,
@@ -245,23 +245,26 @@ export default function App() {
   if (!staticData) return <div className="flex h-screen items-center justify-center bg-background text-muted-foreground">Loading…</div>
 
   return (
-    <div className="flex h-screen flex-col bg-background text-foreground">
-      <ShellTopBar
-        classNames={{ root: 'border-b border-border bg-card text-card-foreground' }}
-        leftSlot={<h1 className="text-sm font-semibold">{t('title')}</h1>}
-        languageSwitcher={{
-          languages: LANGUAGES.map((code) => ({ code, label: LANGUAGE_LABELS[code] })),
-          current: lng,
-          onChange: (code) => void i18n.changeLanguage(code),
-          menuLabel: 'language',
-        }}
-        rightExtras={
-          <ThemeToggle
-            labels={{ auto: t('themeAuto'), light: t('themeLight'), dark: t('themeDark') }}
-          />
-        }
-      />
-      <div className="flex min-h-0 flex-1">
+    <ShellLayout
+      className="bg-background text-foreground"
+      topBar={
+        <ShellTopBar
+          classNames={{ root: 'border-b border-border bg-card text-card-foreground' }}
+          leftSlot={<h1 className="text-sm font-semibold">{t('title')}</h1>}
+          languageSwitcher={{
+            languages: LANGUAGES.map((code) => ({ code, label: LANGUAGE_LABELS[code] })),
+            current: lng,
+            onChange: (code) => void i18n.changeLanguage(code),
+            menuLabel: 'language',
+          }}
+          rightExtras={
+            <ThemeToggle
+              labels={{ auto: t('themeAuto'), light: t('themeLight'), dark: t('themeDark') }}
+            />
+          }
+        />
+      }
+      sidebar={
         <ShellSidebar
           collapseLabel={t('collapse')}
           expandLabel={t('expand')}
@@ -326,7 +329,9 @@ export default function App() {
             }}
           />
         </ShellSidebar>
-        <main className="relative flex min-w-0 flex-1 overflow-hidden">
+      }
+    >
+      <main className="relative flex min-w-0 flex-1 overflow-hidden">
           <GameMapView
             mapRef={mapRef}
             map={map}
@@ -359,8 +364,7 @@ export default function App() {
             // of that level. Search name + Paldeck id only.
             searchFields={['name', 'idLabel']}
           />
-        </main>
-      </div>
-    </div>
+      </main>
+    </ShellLayout>
   )
 }
