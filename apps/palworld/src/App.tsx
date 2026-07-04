@@ -13,6 +13,13 @@ import { palworldTheme } from './theme'
 import { LANGUAGES, LANGUAGE_LABELS } from './i18n'
 import { formatPalId, palIdText } from './lib/palId'
 
+// A purely-numeric query is an exact Paldeck-id lookup: search only the idLabel
+// field, no prefix/fuzzy, so "11"/"011" find only No.011 — not the 110-119
+// prefix range, nor the levels embedded in alpha-pal names ("… Lv.11"). This is
+// the game-specific rule the generic SearchPanel doesn't know about.
+const palIdLookup = (q: string) =>
+  /^\d+$/.test(q) ? { fields: ['idLabel'], prefix: false, fuzzy: false } : undefined
+
 export default function App() {
   const { t, i18n } = useTranslation()
   const lng = i18n.resolvedLanguage ?? 'en-US'
@@ -363,6 +370,7 @@ export default function App() {
             // real text — searching it makes a numeric query match every marker
             // of that level. Search name + Paldeck id only.
             searchFields={['name', 'idLabel']}
+            resolveSearchOptions={palIdLookup}
           />
       </main>
     </ShellLayout>

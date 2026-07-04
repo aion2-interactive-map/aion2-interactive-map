@@ -6,7 +6,7 @@ import {
   type GameMapViewLabels,
   type MapRef,
 } from "@gamemap/map-engine";
-import { ShellLayout } from "@gamemap/map-shell";
+import { ShellLayout, SearchPanel, type SearchItem } from "@gamemap/map-shell";
 import { useGameMap } from "@/context/GameMapContext";
 import { useMarkers } from "@/context/MarkersContext";
 import { useGameData } from "@/context/GameDataContext";
@@ -15,9 +15,8 @@ import { aionAssets } from "@/features/map/aionAssets";
 import { aionTheme } from "@/features/map/aionTheme";
 import MarkerPopupContent from "@/features/map/popup/MarkerPopupContent";
 import Sidebar from "@/features/map/sidebar/Sidebar";
-import SearchPanel from "@/features/map/search/SearchPanel";
 import TopNavbar from "@/components/TopNavbar";
-import { getQueryParam } from "@/lib/url";
+import { getQueryParam, parseIconUrl } from "@/lib/url";
 import { ICP_RECORD, MAP_FLY_TO_DURATION } from "@/lib/constants";
 
 export default function MapRoute() {
@@ -27,7 +26,7 @@ export default function MapRoute() {
   // App contexts → engine props. MapRoute is the ADAPTER: the engine
   // components (@gamemap/map-engine) read no app context themselves;
   // everything they need is derived here and passed down.
-  const { selectedMap } = useGameMap();
+  const { selectedMap, types } = useGameMap();
   const { markers, markersById, regions, showLabels, completedBySubtype } =
     useMarkers();
   const { visibleSubtypes, visibleRegions, showBorders, lodEnabled, allSubtypes } =
@@ -86,6 +85,63 @@ export default function MapRoute() {
         };
       }),
     [markers, allSubtypes, completedBySubtype, t],
+  );
+
+  // subtype name → { category id, game icon } for each result's icon + label.
+  const subtypeMeta = useMemo(() => {
+    const m: Record<string, { categoryId: string; iconName: string }> = {};
+    for (const c of types) {
+      for (const s of c.subtypes) {
+        m[s.name] = {
+          categoryId: s.category ?? c.name,
+          iconName: s.icon || c.icon || "",
+        };
+      }
+    }
+    return m;
+  }, [types]);
+
+  // App markers → the context-free `SearchItem[]` the shared SearchPanel indexes.
+  // i18n labels + icon URLs are resolved here (the panel is i18n-free); the
+  // subzone is resolved lazily per shown result via `resultAside` below.
+  const searchItems = useMemo<SearchItem[]>(
+    () =>
+      markers.map((m) => {
+        const meta = subtypeMeta[m.subtype];
+        const categoryId = meta?.categoryId ?? m.category;
+        return {
+          id: m.id,
+          name: m.localizedName || "",
+          description: m.localizedDescription,
+          subtypeLabel: t(`types:subtypes.${m.subtype}.name`, m.subtype),
+          categoryLabel: categoryId
+            ? t(`types:categories.${categoryId}.name`, categoryId)
+            : "",
+          iconUrl:
+            meta?.iconName && selectedMap
+              ? parseIconUrl(meta.iconName, selectedMap)
+              : undefined,
+          x: m.x,
+          y: m.y,
+        };
+      }),
+    [markers, subtypeMeta, t, selectedMap],
+  );
+
+  const searchLabels = useMemo(
+    () => ({
+      search: t("common:ui.search", "Search"),
+      resultsCount: (n: number) =>
+        t("common:search.resultsCount", {
+          count: n,
+          defaultValue: "{{count}} results",
+        }),
+      unnamed: t("common:markerSearch.unnamed", "Unnamed marker"),
+      noDescription: t("common:ui.noDescription", "No description"),
+      scopeName: t("common:search.scopeName", "Name"),
+      scopeAll: t("common:search.scopeBoth", "All"),
+    }),
+    [t],
   );
 
   // Marker-click selection is a TOGGLE: clicking the already-selected marker
@@ -156,8 +212,12 @@ export default function MapRoute() {
           exposeTestHandle={import.meta.env.DEV}
         />
         <SearchPanel
-          onSelectMarker={setSelectedMarkerId}
+          items={searchItems}
+          onSelect={setSelectedMarkerId}
           onFlyTo={setSelectedPosition}
+          labels={searchLabels}
+          searchFields={["name", "description"]}
+          resultAside={(itm) => subzoneAt(itm.x, itm.y) || undefined}
         />
       </div>
     </ShellLayout>

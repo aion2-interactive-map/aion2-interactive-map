@@ -1,18 +1,21 @@
 import { useEffect, useMemo, useState } from "react"
-import MiniSearch, { type SearchResult } from "minisearch"
+import MiniSearch, { type SearchOptions, type SearchResult } from "minisearch"
 import { cn } from "@gamemap/ui"
 
 export type SearchItem = {
-  idLabel?: string;
   id: string
   name: string
   description?: string
+  idLabel?: string
   subtypeLabel?: string
   categoryLabel?: string
   iconUrl?: string
   x: number
   y: number
 }
+
+/** A `SearchItem` text field that can be indexed for searching. */
+export type SearchField = "name" | "description" | "idLabel"
 
 export type SearchPanelLabels = {
   search: string
@@ -37,23 +40,36 @@ export type SearchPanelProps = {
    */
   displayCoords?: (x: number, y: number) => { x: number; y: number }
   /**
-   * Which item fields are indexed for searching. Default is name + description
-   * + idLabel. Apps whose `description` is non-textual noise (e.g. Palworld,
-   * where it holds a spawn level range like "Lv.10–14") pass a narrower list so
-   * a numeric query doesn't match every marker of that level. `description` is
-   * still rendered on the result card regardless of whether it's searched.
+   * Which item fields are indexed for searching. Required — the panel makes no
+   * assumption about the item shape. E.g. AION2 passes `["name","description"]`;
+   * Palworld passes `["name","idLabel"]` (its `description` is a non-textual
+   * spawn level range). Fields not listed are still rendered on the card.
    */
-  searchFields?: SearchField[]
+  searchFields: SearchField[]
+  /**
+   * Optional per-query hook to override how a query is matched. Return a
+   * MiniSearch `SearchOptions` to take over matching for that query, or
+   * `undefined` to use the default (scope-aware prefix search). This is where
+   * an app injects game-specific rules without the panel hardcoding fields —
+   * e.g. Palworld treats a numeric query as an exact Paldeck-id lookup:
+   * `(q) => /^\d+$/.test(q) ? { fields: ["idLabel"], prefix: false, fuzzy: false } : undefined`.
+   */
+  resolveSearchOptions?: (query: string) => SearchOptions | undefined
+  /**
+   * Optional secondary line rendered right-aligned in the coords row, computed
+   * lazily per shown result (so an app can do a point lookup for only the ≤50
+   * visible cards rather than every marker). AION2 uses it for the subzone.
+   */
+  resultAside?: (item: SearchItem) => string | undefined
 }
-
-type SearchField = "name" | "description" | "idLabel"
 
 type Scope = "both" | "name"
 
 /**
- * Context-free right-side search overlay. MiniSearch with a per-character
- * tokenizer (so CJK queries match) + prefix/fuzzy. Styling reads theme tokens
- * so each app's palette drives the accent.
+ * Context-free right-side search overlay. MiniSearch with a letter/digit/CJK
+ * tokenizer (so numeric-id, Latin and CJK queries all match) + prefix/fuzzy.
+ * The item shape and matching rules are supplied by the caller; styling reads
+ * theme tokens so each app's palette drives the accent.
  */
 export function SearchPanel({
   items,
@@ -63,7 +79,9 @@ export function SearchPanel({
   debounceMs = 200,
   classNames,
   displayCoords = (x, y) => ({ x, y }),
-  searchFields = ["name", "description", "idLabel"],
+  searchFields,
+  resolveSearchOptions,
+  resultAside,
 }: SearchPanelProps) {
   const [query, setQuery] = useState("")
   const [debounced, setDebounced] = useState("")
@@ -111,18 +129,14 @@ export function SearchPanel({
   const results: SearchResult[] = useMemo(() => {
     const q = debounced.trim()
     if (!q) return []
-    // A purely-numeric query is an id lookup: match the idLabel field exactly
-    // (no prefix, no fuzzy) so "11"/"011" find only Paldeck No.011 — not the
-    // 110-119 prefix range, and not levels embedded in names ("… Lv.11").
-    if (/^\d+$/.test(q) && searchFields.includes("idLabel")) {
-      return miniSearch
-        .search(q, { fields: ["idLabel"], prefix: false, fuzzy: false })
-        .slice(0, 50)
+    // An app-supplied resolver may take over matching for this query (e.g.
+    // Palworld's numeric-id lookup); otherwise search the scope's fields with
+    // the default prefix/fuzzy options set on the index.
+    const opts: SearchOptions = resolveSearchOptions?.(q) ?? {
+      fields: scope === "name" ? ["name"] : searchFields,
     }
-    return miniSearch
-      .search(q, { fields: scope === "name" ? ["name"] : undefined })
-      .slice(0, 50)
-  }, [debounced, miniSearch, scope, searchFields])
+    return miniSearch.search(q, opts).slice(0, 50)
+  }, [debounced, miniSearch, scope, searchFields, resolveSearchOptions])
 
   const handleSelect = (id: string) => {
     const item = itemsById.get(id)
@@ -236,10 +250,18 @@ export function SearchPanel({
                     >
                       {item.description || labels.noDescription}
                     </span>
-                    <div className="mt-0.5 text-[11px] tabular-nums text-muted-foreground/70">
+                    <div className="mt-0.5 flex items-center justify-between gap-2 text-[11px] text-muted-foreground/70">
+                      <span className="shrink-0 tabular-nums">
+                        {(() => {
+                          const c = displayCoords(item.x, item.y)
+                          return `(${Math.round(c.x)}, ${Math.round(c.y)})`
+                        })()}
+                      </span>
                       {(() => {
-                        const c = displayCoords(item.x, item.y)
-                        return `(${Math.round(c.x)}, ${Math.round(c.y)})`
+                        const aside = resultAside?.(item)
+                        return aside ? (
+                          <span className="truncate text-right">{aside}</span>
+                        ) : null
                       })()}
                     </div>
                   </button>
