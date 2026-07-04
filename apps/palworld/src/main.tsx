@@ -1,11 +1,19 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import {
+  createRootRoute,
+  createRoute,
+  createRouter,
+  Outlet,
+  RouterProvider,
+} from '@tanstack/react-router'
 import { ThemeProvider, type Theme, type ThemeStorage } from '@gamemap/map-shell'
 import 'leaflet/dist/leaflet.css'
 import '@gamemap/map-engine/engine.css'
 import './index.css'
 import './i18n'
 import App from './App'
+import BreedingPage from './features/breeding/BreedingPage'
 
 const THEME_KEY = 'palworld.theme'
 const themeStorage: ThemeStorage = {
@@ -24,10 +32,25 @@ const themeStorage: ThemeStorage = {
   },
 }
 
+const rootRoute = createRootRoute({ component: () => <Outlet /> })
+const mapRoute = createRoute({ getParentRoute: () => rootRoute, path: '/', component: App })
+const breedingRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/breeding',
+  component: BreedingPage,
+})
+const routeTree = rootRoute.addChildren([mapRoute, breedingRoute])
+const router = createRouter({ routeTree, basepath: import.meta.env.BASE_URL })
+declare module '@tanstack/react-router' {
+  interface Register {
+    router: typeof router
+  }
+}
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ThemeProvider defaultTheme="auto" storage={themeStorage}>
-      <App />
+      <RouterProvider router={router} />
     </ThemeProvider>
   </StrictMode>,
 )

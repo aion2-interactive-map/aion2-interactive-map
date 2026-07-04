@@ -210,6 +210,9 @@ importers:
       '@gamemap/ui':
         specifier: workspace:*
         version: link:../../packages/ui
+      '@tanstack/react-router':
+        specifier: ^1.170.16
+        version: 1.170.16(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       i18next:
         specifier: ^25.6.2
         version: 25.10.10(typescript@5.9.3)
@@ -219,6 +222,9 @@ importers:
       leaflet:
         specifier: ^1.9.4
         version: 1.9.4
+      lucide-react:
+        specifier: ^1.21.0
+        version: 1.22.0(react@19.2.7)
       react:
         specifier: ^19.2.0
         version: 19.2.7

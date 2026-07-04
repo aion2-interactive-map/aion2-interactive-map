@@ -1,6 +1,7 @@
 import i18n from 'i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
 import { initReactI18next } from 'react-i18next'
+import { BREEDING_STRINGS } from './breedingStrings'
 
 export const LANGUAGES = ['en-US', 'de-DE', 'es-ES', 'es-MX', 'fr-FR', 'id-ID', 'it-IT', 'ja-JP', 'ko-KR', 'pl-PL', 'pt-BR', 'ru-RU', 'th-TH', 'tr-TR', 'vi-VN', 'zh-CN', 'zh-TW'] as const
 export type Language = (typeof LANGUAGES)[number]
@@ -482,5 +483,10 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
   fallbackLng: 'en-US',
   interpolation: { escapeValue: false },
 })
+
+// Merge the breeding-calculator strings under `translation.breeding`.
+for (const lng of LANGUAGES) {
+  i18n.addResourceBundle(lng, 'translation', { breeding: BREEDING_STRINGS[lng] }, true, true)
+}
 
 export default i18n

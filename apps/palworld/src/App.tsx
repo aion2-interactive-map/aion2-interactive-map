@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { Link } from '@tanstack/react-router'
 import { GameMapView, type EngineMarker, type MapRef } from '@gamemap/map-engine'
 import { FilterPanel, MarkerPopupCard, SearchPanel, ShellLayout, ShellMapSelect, ShellSidebar, ShellTopBar, ThemeToggle, type FilterCategory, type SearchItem } from '@gamemap/map-shell'
 import type { MarkerTypeSubtype } from '@gamemap/data-contract'
@@ -257,7 +258,14 @@ export default function App() {
       topBar={
         <ShellTopBar
           classNames={{ root: 'border-b border-border bg-card text-card-foreground' }}
-          leftSlot={<h1 className="text-sm font-semibold">{t('title')}</h1>}
+          leftSlot={
+            <>
+              <h1 className="text-sm font-semibold">{t('title')}</h1>
+              <Link to="/breeding" className="text-sm text-foreground/70 hover:text-foreground">
+                {t('breeding.navBreeding')}
+              </Link>
+            </>
+          }
           languageSwitcher={{
             languages: LANGUAGES.map((code) => ({ code, label: LANGUAGE_LABELS[code] })),
             current: lng,
