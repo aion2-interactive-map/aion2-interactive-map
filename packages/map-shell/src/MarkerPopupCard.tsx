@@ -1,8 +1,9 @@
 import type { ReactNode } from "react"
 import { Card, CardContent, cn } from "@gamemap/ui"
+import { IdLabel, type IdLabelValue } from "./IdLabel"
 
 export type MarkerPopupCardProps = {
-  idLabel?: string;
+  idLabel?: IdLabelValue;
   name: string
   metaLine?: string
   description?: string
@@ -29,11 +30,7 @@ export function MarkerPopupCard({
           <span className="text-[18px] font-bold leading-snug text-[#3D3D3D] dark:text-white">
             {name}
           </span>
-          {idLabel && (
-            <span className="shrink-0 rounded bg-muted px-1.5 py-0.5 text-[12px] font-mono tabular-nums text-muted-foreground">
-              {idLabel}
-            </span>
-          )}
+          {idLabel && <IdLabel value={idLabel} className="px-1.5 py-0.5 text-[12px]" />}
         </div>
         {metaLine ? (
           <div className="mt-2 text-[14px] leading-tight text-[rgba(0,0,0,0.6)] dark:text-[rgba(255,255,255,0.6)]">

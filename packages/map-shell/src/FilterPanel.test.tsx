@@ -50,7 +50,7 @@ describe("FilterPanel", () => {
             subtypes: [
               { id: "counted", label: "Counted", active: true, count: 12 },
               { id: "badged", label: "Badged", active: true, badge: "3/12" },
-              { id: "id", label: "Id", active: true, idLabel: "No.037" },
+              { id: "id", label: "Id", active: true, idLabel: { text: "No.037", accent: "B" } },
               { id: "plain", label: "Plain", active: true },
             ],
           },
@@ -62,7 +62,11 @@ describe("FilterPanel", () => {
     expect(getByTestId("subtype-toggle-badged").textContent).toContain("3/12")
     // idLabel renders as a styled chip (rounded bg-muted font-mono), unlike the plain badge.
     const idChip = getByTestId("subtype-toggle-id").querySelector("span.font-mono")
-    expect(idChip?.textContent).toBe("No.037")
+    expect(idChip?.textContent).toBe("No.037B")
+    // The accent segment ("B") is rendered in its own colored span.
+    const accent = idChip?.querySelector("span")
+    expect(accent?.textContent).toBe("B")
+    expect(accent?.className).toContain("text-primary")
     expect(getByTestId("subtype-toggle-plain").textContent).toBe("Plain")
   })
 

@@ -12,15 +12,16 @@ import {
   TooltipTrigger,
 } from "@gamemap/ui"
 import { deriveEyeState, syncExpanded } from "./filter-logic"
+import { IdLabel, type IdLabelValue } from "./IdLabel"
 
 export interface FilterSubtype {
   id: string
   label: string
   active: boolean
   icon?: ReactNode
-  /** Chip label on the right of the button (e.g. an id like "No.037"), styled
-   *  to match the search result idLabel. */
-  idLabel?: string
+  /** Id chip on the right of the button (e.g. "No.037" with an accented "B"),
+   *  styled by the shared IdLabel component. */
+  idLabel?: IdLabelValue
   /** Plain free-text on the right of the button (e.g. a "3/12" count string). */
   badge?: string
   /** Numeric marker count shown on the right of the button (rightmost). */
@@ -201,11 +202,7 @@ export function FilterPanel({
                         </span>
                         {(sub.idLabel !== undefined || sub.badge !== undefined || sub.count !== undefined) && (
                           <span className="flex shrink-0 items-center gap-1.5 text-xs">
-                            {sub.idLabel !== undefined && (
-                              <span className="rounded bg-muted px-1 text-[11px] font-mono tabular-nums text-muted-foreground">
-                                {sub.idLabel}
-                              </span>
-                            )}
+                            {sub.idLabel !== undefined && <IdLabel value={sub.idLabel} />}
                             {sub.badge !== undefined && <span>{sub.badge}</span>}
                             {sub.count !== undefined && (
                               <span className="tabular-nums">{sub.count}</span>

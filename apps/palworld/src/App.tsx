@@ -11,7 +11,7 @@ import { palworldAssets } from './lib/assets'
 import { toGameCoords } from './lib/coords'
 import { palworldTheme } from './theme'
 import { LANGUAGES, LANGUAGE_LABELS } from './i18n'
-import { formatPalId } from './lib/palId'
+import { formatPalId, palIdText } from './lib/palId'
 
 export default function App() {
   const { t, i18n } = useTranslation()
@@ -116,7 +116,7 @@ export default function App() {
       return {
         id: m.id,
         name: m.localizedName || '',
-        idLabel: formatPalId(m.zukanIndex ?? m.subtypeMeta?.zukanIndex, m.zukanIndexSuffix ?? m.subtypeMeta?.zukanIndexSuffix),
+        idLabel: palIdText(formatPalId(m.zukanIndex ?? m.subtypeMeta?.zukanIndex, m.zukanIndexSuffix ?? m.subtypeMeta?.zukanIndexSuffix)),
         description: m.localizedDescription,
         subtypeLabel: m.subtypeLabel ?? m.subtype,
         categoryLabel: catId ? (staticData.typesL10n.categories[catId]?.name ?? catId) : '',

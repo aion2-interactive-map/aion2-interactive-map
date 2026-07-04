@@ -10,6 +10,7 @@ export {
 } from "./FilterPanel"
 export { deriveEyeState, syncExpanded, type EyeState } from "./filter-logic"
 export { ShellMapSelect, type ShellMapSelectProps } from "./ShellMapSelect"
+export { IdLabel, type IdLabelValue, type IdLabelProps } from "./IdLabel"
 export { MarkerPopupCard, type MarkerPopupCardProps } from "./MarkerPopupCard"
 export { SearchPanel, type SearchPanelProps, type SearchItem, type SearchPanelLabels } from "./SearchPanel"
 export { ThemeProvider, useTheme, type Theme, type ThemeStorage } from "./theme/ThemeProvider"
