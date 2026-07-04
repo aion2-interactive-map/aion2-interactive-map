@@ -74,12 +74,12 @@
   color: var(--accent-foreground, #3d3d3d);
 }
 
-/* ---- Zoom control (Lanhu-style +/− pill, top-left) -------------------- */
+/* ---- Zoom control (Lanhu-style +/− pill, bottom-right) --------------- */
 
 .gm-zoom {
   position: absolute;
-  left: 0.75rem;
-  top: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.75rem;
   z-index: 1000;
   display: flex;
   flex-direction: column;

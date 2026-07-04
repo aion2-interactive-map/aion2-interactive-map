@@ -2,7 +2,7 @@ import React from "react";
 import { useMap } from "react-leaflet";
 
 /**
- * Lanhu-style map controls (design "1天族"), pinned top-left inside the map:
+ * Lanhu-style map controls (design "1天族"), pinned bottom-right inside the map:
  *  - a small vertical pill with + / − zoom buttons
  *    (light bg, injected glyph color, rounded, subtle shadow)
  *
