@@ -36,7 +36,17 @@ export type SearchPanelProps = {
    * this to display game-native coords (e.g. Palworld in-game coordinates).
    */
   displayCoords?: (x: number, y: number) => { x: number; y: number }
+  /**
+   * Which item fields are indexed for searching. Default is name + description
+   * + idLabel. Apps whose `description` is non-textual noise (e.g. Palworld,
+   * where it holds a spawn level range like "Lv.10–14") pass a narrower list so
+   * a numeric query doesn't match every marker of that level. `description` is
+   * still rendered on the result card regardless of whether it's searched.
+   */
+  searchFields?: SearchField[]
 }
+
+type SearchField = "name" | "description" | "idLabel"
 
 type Scope = "both" | "name"
 
@@ -53,6 +63,7 @@ export function SearchPanel({
   debounceMs = 200,
   classNames,
   displayCoords = (x, y) => ({ x, y }),
+  searchFields = ["name", "description", "idLabel"],
 }: SearchPanelProps) {
   const [query, setQuery] = useState("")
   const [debounced, setDebounced] = useState("")
@@ -71,14 +82,27 @@ export function SearchPanel({
 
   const miniSearch = useMemo(() => {
     const ms = new MiniSearch<SearchItem>({
-      fields: ["name", "description", "idLabel"],
+      fields: searchFields,
       storeFields: ["id"],
-      searchOptions: { prefix: true, fuzzy: 0.2 },
-      tokenize: (s) => [...s],
+      // Fuzzy helps typo'd names, but on a purely-numeric query (an id like
+      // "123") it matches every edit-distance-1 neighbour (No.113, No.12x…),
+      // flooding results — so disable fuzzy for numeric terms; prefix stays on.
+      searchOptions: {
+        prefix: true,
+        fuzzy: (term) => (/^\d+$/.test(term) ? false : 0.2),
+      },
+      // Keep Latin/digit runs as whole tokens (so "123" only matches "123",
+      // not any id/name containing a 1, 2 or 3), but split CJK per character
+      // so Han/Kana/Hangul queries still match.
+      tokenize: (s) =>
+        s.match(/[a-zA-Z0-9]+|[぀-ヿ㐀-鿿豈-﫿가-힯]/g) ?? [],
     })
     ms.addAll(items)
     return ms
-  }, [items])
+    // searchFields is joined so a fresh array literal with the same contents
+    // doesn't needlessly rebuild the index.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [items, searchFields.join(",")])
 
   const results: SearchResult[] = useMemo(() => {
     const q = debounced.trim()

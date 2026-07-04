@@ -335,6 +335,10 @@ export default function App() {
             onFlyTo={setSelectedPosition}
             labels={searchLabels}
             displayCoords={displayCoords}
+            // Palworld's `description` is a spawn level range ("Lv.10–14"), not
+            // real text — searching it makes a numeric query match every marker
+            // of that level. Search name + Paldeck id only.
+            searchFields={['name', 'idLabel']}
           />
         </main>
       </div>

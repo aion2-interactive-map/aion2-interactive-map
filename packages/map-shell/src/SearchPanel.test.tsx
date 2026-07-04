@@ -48,6 +48,57 @@ describe("SearchPanel", () => {
     expect(screen.getByText("Catalog Pal")).toBeTruthy()
   })
 
+  it("matches a numeric id query exactly, not digit-sharing or fuzzy neighbours", () => {
+    renderSearchPanel([
+      item({ id: "pal-123", name: "Exact Pal", idLabel: "No.123" }),
+      item({ id: "pal-231", name: "Reorder Pal", idLabel: "No.231" }), // shares digits
+      item({ id: "pal-012", name: "Padded Pal", idLabel: "No.012" }),  // shares digits
+      item({ id: "pal-124", name: "Neighbour Pal", idLabel: "No.124" }), // edit-distance 1
+    ])
+
+    searchFor("123")
+
+    expect(screen.getByText("Exact Pal")).toBeTruthy()
+    expect(screen.queryByText("Reorder Pal")).toBeNull()
+    expect(screen.queryByText("Padded Pal")).toBeNull()
+    expect(screen.queryByText("Neighbour Pal")).toBeNull()
+  })
+
+  it("does not search fields excluded via searchFields", () => {
+    // Palworld puts a spawn level range in description; excluding it means a
+    // numeric query no longer matches every marker of that level.
+    render(
+      <SearchPanel
+        items={[
+          item({ id: "a", name: "Lamball", description: "Lv.22" }),
+          item({ id: "b", name: "Cattiva", description: "Lv.22" }),
+        ]}
+        labels={labels}
+        onFlyTo={vi.fn()}
+        onSelect={vi.fn()}
+        searchFields={["name", "idLabel"]}
+      />,
+    )
+
+    fireEvent.change(screen.getByTestId("marker-search"), { target: { value: "22" } })
+    const buttons = screen.getAllByRole("button", { name: labels.search })
+    fireEvent.click(buttons[buttons.length - 1])
+
+    expect(screen.queryByText("Lamball")).toBeNull()
+    expect(screen.queryByText("Cattiva")).toBeNull()
+  })
+
+  it("still matches CJK names per character", () => {
+    renderSearchPanel([
+      item({ id: "pal-1", name: "皮皮鸡" }),
+      item({ id: "pal-2", name: "冰企鹅" }),
+    ])
+
+    searchFor("皮鸡")
+
+    expect(screen.getByText("皮皮鸡")).toBeTruthy()
+  })
+
   it("renders an idLabel badge only for items that provide one", () => {
     const { container } = renderSearchPanel([
       item({ id: "pal-037", name: "Catalog Pal", description: "Forest runner", idLabel: "No.037" }),
