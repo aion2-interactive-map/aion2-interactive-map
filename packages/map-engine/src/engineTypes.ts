@@ -126,4 +126,12 @@ export interface GameMapViewProps {
   /** Dev/test only: publish the Leaflet map on `window.__leafletMap` for e2e. */
   exposeTestHandle?: boolean;
   labels?: GameMapViewLabels;
+  /**
+   * Maps a DATA-space (pixel) coordinate to the coordinate shown in the
+   * readout (cursor status bar + "Copy position"). Default: identity (show
+   * raw DATA coords). An app supplies this to display game-native coords.
+   * NOTE: only affects displayed/copied numbers — marker placement, subzone
+   * lookup, and everything else stay in DATA space.
+   */
+  displayCoords?: (x: number, y: number) => { x: number; y: number };
 }

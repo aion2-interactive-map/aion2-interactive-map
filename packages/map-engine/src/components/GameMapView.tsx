@@ -148,6 +148,7 @@ const GameMapView: React.FC<GameMapViewProps> = ({
   renderPopupContent,
   exposeTestHandle = false,
   labels = DEFAULT_LABELS,
+  displayCoords = (x, y) => ({ x, y }),
 }) => {
   const [contextMenu, setContextMenu] = useState<ContextMenuState | null>(null);
   const [hoveredRegion, setHoveredRegion] = useState<RegionInstance | undefined>(
@@ -428,13 +429,16 @@ const GameMapView: React.FC<GameMapViewProps> = ({
       {/* Bottom status bar (Lanhu): subscribes to the cursor store itself so
           mousemove re-renders ONLY the bar, not the map layers. */}
       <MapStatusBar
+        displayCoords={displayCoords}
         subzoneAt={subzoneAt}
         footerText={labels.footerText}
         pillBg={theme.statusPillBg}
       />
 
       {/* Context menu overlay */}
-      {contextMenu && (
+      {contextMenu && (() => {
+        const disp = displayCoords(contextMenu.mapX, contextMenu.mapY);
+        return (
         <div
           className="gm-context-menu"
           style={{ left: contextMenu.x, top: contextMenu.y }}
@@ -445,15 +449,16 @@ const GameMapView: React.FC<GameMapViewProps> = ({
             className="gm-context-menu-item"
             onClick={(e) => {
               e.stopPropagation();
-              handleCopyPosition(contextMenu.mapX, contextMenu.mapY);
+                  handleCopyPosition(disp.x, disp.y);
               setContextMenu(null);
             }}
           >
-            {labels.copyPosition} ({Math.round(contextMenu.mapX)},{" "}
-            {Math.round(contextMenu.mapY)})
+            {labels.copyPosition} ({Math.round(disp.x)},{" "}
+            {Math.round(disp.y)})
           </button>
         </div>
-      )}
+        );
+      })()}
     </div>
   );
 };

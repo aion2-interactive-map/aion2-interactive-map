@@ -8,6 +8,7 @@ import {
   type MapMeta, type Taxonomy, type TypesLocale, type MapsLocale, type MarkerRow, type MarkerLocale
 } from './lib/data'
 import { palworldAssets } from './lib/assets'
+import { toGameCoords } from './lib/coords'
 import { palworldTheme } from './theme'
 import { LANGUAGES, LANGUAGE_LABELS } from './i18n'
 import { formatPalId } from './lib/palId'
@@ -37,10 +38,10 @@ export default function App() {
         if (cancelled) return
         setStaticData(d)
         // Only initialize visible set once; preserve user-set empty (Hide all).
-        // Default to showing just the location markers.
+        // Default to showing just the location markers, minus dungeons.
         if (!visibleInitialized.current) {
           visibleInitialized.current = true
-          setVisible(new Set(d.types.subtypes.filter((s) => s.category === 'location').map((s) => s.id)))
+          setVisible(new Set(d.types.subtypes.filter((s) => s.category === 'location' && s.id !== 'dungeon').map((s) => s.id)))
         }
       })
       .catch((err) => {
@@ -172,6 +173,12 @@ export default function App() {
     setSelectedMarkerId((cur) => (cur === id ? null : id))
   }, [])
 
+  // Show the game's in-game map coordinates in the readout (cursor + copy).
+  const displayCoords = useCallback(
+    (x: number, y: number) => toGameCoords(mapId, x, y),
+    [mapId],
+  )
+
   const subzoneAt = useCallback(() => '', [])
 
   const labels = useMemo(() => ({
@@ -186,9 +193,10 @@ export default function App() {
     const catId = marker.subtypeMeta?.category ?? marker.category
     const catLabel = catId ? (staticData?.typesL10n.categories[catId]?.name ?? catId) : ''
     const subLabel = marker.subtypeLabel ?? marker.subtype
+    const g = toGameCoords(mapId, marker.x, marker.y)
     const metaLine = [
       [catLabel, subLabel].filter(Boolean).join(' / '),
-      `(${Math.round(marker.x)}, ${Math.round(marker.y)})`,
+      `(${Math.round(g.x)}, ${Math.round(g.y)})`,
     ].filter(Boolean).join(' ')
     return (
       <MarkerPopupCard
@@ -199,7 +207,7 @@ export default function App() {
         noDescriptionLabel={t('noDescription')}
       />
     )
-  }, [staticData, t])
+  }, [staticData, t, mapId])
 
   if (loadError) {
     return (
@@ -289,6 +297,7 @@ export default function App() {
             selectedPosition={selectedPosition}
             onToggleMarker={onToggleMarker}
             subzoneAt={subzoneAt}
+            displayCoords={displayCoords}
             flyToDuration={0.5}
             assets={palworldAssets}
             theme={palworldTheme}
