@@ -153,21 +153,35 @@ export default function App() {
     })
   }, [staticData])
 
+  // Marker count per subtype on the current map (drives the button count +
+  // hides subtypes absent from this map).
+  const countBySubtype = useMemo(() => {
+    const counts = new Map<string, number>()
+    if (!markerData) return counts
+    for (const m of markerData.markers) counts.set(m.subtype, (counts.get(m.subtype) ?? 0) + 1)
+    return counts
+  }, [markerData])
+
   const filterCategories: FilterCategory[] = useMemo(() => {
     if (!staticData) return []
-    return staticData.types.categories.map((cat) => ({
-      id: cat.id,
-      label: staticData.typesL10n.categories[cat.id]?.name ?? cat.id,
-      subtypes: staticData.types.subtypes
-        .filter((s) => s.category === cat.id)
-        .map((s) => ({
-          id: s.id,
-          label: staticData.typesL10n.subtypes[s.id]?.name ?? s.id,
-          active: visible.has(s.id),
-          badge: formatPalId(s.zukanIndex, s.zukanIndexSuffix),
-        })),
-    }))
-  }, [staticData, visible])
+    return staticData.types.categories
+      .map((cat) => ({
+        id: cat.id,
+        label: staticData.typesL10n.categories[cat.id]?.name ?? cat.id,
+        subtypes: staticData.types.subtypes
+          .filter((s) => s.category === cat.id)
+          .filter((s) => (countBySubtype.get(s.id) ?? 0) > 0)
+          .map((s) => ({
+            id: s.id,
+            label: staticData.typesL10n.subtypes[s.id]?.name ?? s.id,
+            active: visible.has(s.id),
+            // Pal buttons show the Paldeck id; everything else shows a count.
+            badge: formatPalId(s.zukanIndex, s.zukanIndexSuffix),
+            count: cat.id === 'pal' ? undefined : (countBySubtype.get(s.id) ?? 0),
+          })),
+      }))
+      .filter((cat) => cat.subtypes.length > 0)
+  }, [staticData, visible, countBySubtype])
 
   const onToggleMarker = useCallback((id: string | null) => {
     setSelectedMarkerId((cur) => (cur === id ? null : id))
