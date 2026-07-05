@@ -36,9 +36,20 @@ const themeStorage: ThemeStorage = {
 
 const rootRoute = createRootRoute({ component: () => <Outlet /> })
 const mapRoute = createRoute({ getParentRoute: () => rootRoute, path: '/', component: App })
+export interface BreedingSearch {
+  a?: string
+  b?: string
+  c?: string
+}
 const breedingRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/breeding',
+  // Parent A / Parent B / Child prefill, e.g. /breeding?c=Anubis
+  validateSearch: (s: Record<string, unknown>): BreedingSearch => ({
+    a: typeof s.a === 'string' ? s.a : undefined,
+    b: typeof s.b === 'string' ? s.b : undefined,
+    c: typeof s.c === 'string' ? s.c : undefined,
+  }),
   component: BreedingPage,
 })
 const palsRoute = createRoute({

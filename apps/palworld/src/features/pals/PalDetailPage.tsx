@@ -69,7 +69,13 @@ function BreedingLinks({
           <RecipeCard key={comboKey(f)} f={f} names={names} meta={meta} uniqueLabel={t('breeding.unique')} />
         ))}
       </div>
-      <Link to="/breeding" className="inline-block text-sm text-primary hover:underline">
+      <Link
+        to="/breeding"
+        search={{ c: pal.id }}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block text-sm text-primary hover:underline"
+      >
         {t('pal.openBreeding')}
       </Link>
     </div>

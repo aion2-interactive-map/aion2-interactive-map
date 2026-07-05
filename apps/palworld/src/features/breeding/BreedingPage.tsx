@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Link } from '@tanstack/react-router'
+import { Link, useSearch } from '@tanstack/react-router'
 import { ShellTopBar, ThemeToggle } from '@gamemap/map-shell'
 import { Button } from '@gamemap/ui'
 import { LANGUAGES, LANGUAGE_LABELS } from '../../i18n'
@@ -28,11 +28,15 @@ export default function BreedingPage() {
   const { t, i18n } = useTranslation()
   const lng = i18n.resolvedLanguage ?? 'en-US'
 
+  // Prefill Parent A / Parent B / Child from ?a=&b=&c= (e.g. opened from a
+  // Paldeck page). Read once to seed state; invalid ids are dropped after load.
+  const search = useSearch({ from: '/breeding' })
+
   const [payload, setPayload] = useState<{ data: BreedingData; names: NameMap } | null>(null)
   const [loadError, setLoadError] = useState<string | null>(null)
-  const [aSel, setASel] = useState<string | null>(null)
-  const [bSel, setBSel] = useState<string | null>(null)
-  const [cSel, setCSel] = useState<string | null>(null)
+  const [aSel, setASel] = useState<string | null>(search.a ?? null)
+  const [bSel, setBSel] = useState<string | null>(search.b ?? null)
+  const [cSel, setCSel] = useState<string | null>(search.c ?? null)
   const [favs, setFavs] = useState<Set<string>>(() => {
     try {
       const raw = localStorage.getItem(FAV_STORAGE_KEY)
@@ -72,6 +76,16 @@ export default function BreedingPage() {
       cancelled = true
     }
   }, [lng, t])
+
+  // Drop any prefilled selection that isn't a real roster Pal.
+  useEffect(() => {
+    if (!payload) return
+    const ids = new Set(payload.data.pals.map((p) => p.id))
+    const clean = (v: string | null) => (v && !ids.has(v) ? null : v)
+    setASel(clean)
+    setBSel(clean)
+    setCSel(clean)
+  }, [payload])
 
   const engine = useMemo(() => (payload ? makeEngine(payload.data) : null), [payload])
 
