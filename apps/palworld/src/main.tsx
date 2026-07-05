@@ -14,6 +14,8 @@ import './index.css'
 import './i18n'
 import App from './App'
 import BreedingPage from './features/breeding/BreedingPage'
+import PalListPage from './features/pals/PalListPage'
+import PalDetailPage from './features/pals/PalDetailPage'
 
 const THEME_KEY = 'palworld.theme'
 const themeStorage: ThemeStorage = {
@@ -39,7 +41,17 @@ const breedingRoute = createRoute({
   path: '/breeding',
   component: BreedingPage,
 })
-const routeTree = rootRoute.addChildren([mapRoute, breedingRoute])
+const palsRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/pals',
+  component: PalListPage,
+})
+const palDetailRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/pals/$id',
+  component: PalDetailPage,
+})
+const routeTree = rootRoute.addChildren([mapRoute, breedingRoute, palsRoute, palDetailRoute])
 const router = createRouter({ routeTree, basepath: import.meta.env.BASE_URL })
 declare module '@tanstack/react-router' {
   interface Register {

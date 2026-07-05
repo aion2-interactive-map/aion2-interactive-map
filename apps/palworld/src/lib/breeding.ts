@@ -1,4 +1,4 @@
-import { DATA_BASE, RES_BASE } from './urls'
+import { DATA_BASE } from './urls'
 
 export type Gender = 'M' | 'F'
 
@@ -13,6 +13,8 @@ export interface BreedingPal {
   idx: number
   /** Eligible as a rank-average child (not a combo-only child, not a legendary). */
   breedChild: boolean
+  /** Legendary (self-bred only) — flagged for distinct styling. */
+  legendary?: boolean
 }
 
 /** A + B = C. `ag`/`bg` mark a gender-specific parent (only two combos have them). */
@@ -48,7 +50,7 @@ export async function loadBreeding(lng: string): Promise<{ data: BreedingData; n
   return { data, names }
 }
 
-export const palIconUrl = (icon: string): string => `${RES_BASE}/icons/${icon}.webp`
+export { palIconUrl } from './assets'
 
 export const comboKey = (f: Combo): string => `${f.a}|${f.b}|${f.c}|${f.ag ?? ''}|${f.bg ?? ''}`
 

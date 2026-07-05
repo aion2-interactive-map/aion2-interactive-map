@@ -8,7 +8,9 @@ import {
   loadStatic, loadMarkers,
   type MapMeta, type Taxonomy, type TypesLocale, type MapsLocale, type MarkerRow, type MarkerLocale
 } from './lib/data'
-import { palworldAssets } from './lib/assets'
+import { palworldAssets, workIconUrl } from './lib/assets'
+import { loadPals, type PalsBundle } from './lib/pals'
+import { ElementBadge } from './features/pals/components'
 import { toGameCoords } from './lib/coords'
 import { palworldTheme } from './theme'
 import { LANGUAGES, LANGUAGE_LABELS } from './i18n'
@@ -32,6 +34,7 @@ export default function App() {
     maps: MapMeta[]; types: Taxonomy; mapsL10n: MapsLocale; typesL10n: TypesLocale
   } | null>(null)
   const [mapId, setMapId] = useState('MainWorld')
+  const [palsBundle, setPalsBundle] = useState<PalsBundle | null>(null)
   const [markerData, setMarkerData] = useState<{ markers: MarkerRow[]; l10n: MarkerLocale } | null>(null)
   const [visible, setVisible] = useState<Set<string>>(new Set())
   const [selectedMarkerId, setSelectedMarkerId] = useState<string | null>(null)
@@ -62,6 +65,15 @@ export default function App() {
       })
     return () => { cancelled = true }
   }, [lng, t])
+
+  // Encyclopedia data (elements/best-work) for enriching pal marker popups.
+  useEffect(() => {
+    let cancelled = false
+    loadPals(lng)
+      .then((b) => { if (!cancelled) setPalsBundle(b) })
+      .catch((err) => console.error(err))
+    return () => { cancelled = true }
+  }, [lng])
 
   // Clear selection on map switch
   useEffect(() => {
@@ -225,6 +237,8 @@ export default function App() {
       `(${Math.round(g.x)}, ${Math.round(g.y)})`,
     ].filter(Boolean).join(' ')
     const count = marker.count
+    const isPal = catId === 'pal'
+    const pal = isPal && palsBundle ? palsBundle.byId.get(marker.subtype) : undefined
     return (
       <MarkerPopupCard
         idLabel={idLabel}
@@ -233,14 +247,36 @@ export default function App() {
         description={marker.localizedDescription}
         noDescriptionLabel={t('noDescription')}
       >
+        {pal ? (
+          <div className="mt-2 flex flex-wrap items-center gap-1.5">
+            {pal.elements.map((e) => (
+              <ElementBadge key={e} element={e} label={palsBundle!.enums.elements[e] ?? e} size={16} />
+            ))}
+            {pal.bestWork ? (
+              <span className="inline-flex items-center gap-1 rounded-full bg-secondary px-2 py-0.5 text-xs text-secondary-foreground">
+                <img src={workIconUrl(pal.bestWork)} alt="" width={16} height={16} className="object-contain" />
+                {palsBundle!.enums.work[pal.bestWork] ?? pal.bestWork}
+              </span>
+            ) : null}
+          </div>
+        ) : null}
         {count && count > 1 ? (
           <div className="mt-2 text-[13px] text-muted-foreground">
             {t('spawnCount', { count })}
           </div>
         ) : null}
+        {isPal ? (
+          <Link
+            to="/pals/$id"
+            params={{ id: marker.subtype }}
+            className="mt-2 inline-block text-[13px] text-primary hover:underline"
+          >
+            {t('pal.viewInEncyclopedia')}
+          </Link>
+        ) : null}
       </MarkerPopupCard>
     )
-  }, [staticData, t, mapId])
+  }, [staticData, t, mapId, palsBundle])
 
   if (loadError) {
     return (
@@ -261,6 +297,9 @@ export default function App() {
           leftSlot={
             <>
               <h1 className="text-sm font-semibold">{t('title')}</h1>
+              <Link to="/pals" className="text-sm text-foreground/70 hover:text-foreground">
+                {t('pal.title')}
+              </Link>
               <Link to="/breeding" className="text-sm text-foreground/70 hover:text-foreground">
                 {t('breeding.navBreeding')}
               </Link>

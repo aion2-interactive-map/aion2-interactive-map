@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from '@tanstack/react-router'
-import { Sparkles, Star } from 'lucide-react'
+import { Sparkles, Star, Zap } from 'lucide-react'
 import { ShellTopBar, ThemeToggle } from '@gamemap/map-shell'
 import { Button, cn } from '@gamemap/ui'
 import { LANGUAGES, LANGUAGE_LABELS } from '../../i18n'
@@ -27,7 +27,13 @@ const RENDER_CAP = 500
 
 const FAV_STORAGE_KEY = 'palworld.breeding.favs'
 
-type ZukanMap = Map<string, { zukanIndex: number; zukanIndexSuffix: string }>
+type ZukanMap = Map<
+  string,
+  { zukanIndex: number; zukanIndexSuffix: string; rank: number; legendary?: boolean }
+>
+
+// Gold ring + glow marking a legendary Pal's icon (self-bred only).
+const LEGENDARY_ICON = 'ring-2 ring-amber-400 shadow-[0_0_6px_1px_rgba(251,191,36,0.55)]'
 
 function GenderMark({ g }: { g?: Gender }) {
   if (!g) return null
@@ -60,13 +66,20 @@ function PalChip({
   const z = zukanById.get(id)
   const pid = z ? formatPalId(z.zukanIndex, z.zukanIndexSuffix) : undefined
   return (
-    <span className="flex min-w-0 items-center gap-1.5">
+    <Link
+      to="/pals/$id"
+      params={{ id }}
+      className="flex min-w-0 items-center gap-1.5 rounded hover:bg-accent"
+    >
       {icon ? (
         <img
           src={palIconUrl(icon)}
           alt=""
           loading="lazy"
-          className="size-7 shrink-0 rounded-full bg-black/5 object-contain dark:bg-white/10"
+          className={cn(
+            'size-7 shrink-0 rounded-full bg-black/5 object-contain dark:bg-white/10',
+            z?.legendary && LEGENDARY_ICON,
+          )}
         />
       ) : null}
       <span className="flex min-w-0 flex-col leading-tight">
@@ -74,14 +87,22 @@ function PalChip({
           {names[id] ?? id}
           <GenderMark g={gender} />
         </span>
-        {pid ? (
-          <span className="text-[10px] tabular-nums text-muted-foreground">
-            {pid.text}
-            {pid.accent ? <span className="text-primary">{pid.accent}</span> : null}
-          </span>
-        ) : null}
+        <span className="flex items-center gap-1 text-[10px] tabular-nums text-muted-foreground">
+          {pid ? (
+            <span>
+              {pid.text}
+              {pid.accent ? <span className="text-primary">{pid.accent}</span> : null}
+            </span>
+          ) : null}
+          {z ? (
+            <span className="inline-flex items-center gap-0.5">
+              <Zap className="size-2.5 shrink-0" />
+              {z.rank}
+            </span>
+          ) : null}
+        </span>
       </span>
-    </span>
+    </Link>
   )
 }
 
@@ -201,7 +222,7 @@ export default function BreedingPage() {
       new Map(
         (payload?.data.pals ?? []).map((p) => [
           p.id,
-          { zukanIndex: p.zukanIndex, zukanIndexSuffix: p.zukanIndexSuffix },
+          { zukanIndex: p.zukanIndex, zukanIndexSuffix: p.zukanIndexSuffix, rank: p.rank, legendary: p.legendary },
         ]),
       ),
     [payload],

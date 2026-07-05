@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { Check, ChevronsUpDown, X } from 'lucide-react'
+import { Check, ChevronsUpDown, X, Zap } from 'lucide-react'
 import {
   Button,
   Command,
@@ -23,18 +23,28 @@ function PalIcon({ pal }: { pal: BreedingPal }) {
       src={palIconUrl(pal.icon)}
       alt=""
       loading="lazy"
-      className="size-6 shrink-0 rounded-full bg-black/5 object-contain dark:bg-white/10"
+      className={cn(
+        'size-6 shrink-0 rounded-full bg-black/5 object-contain dark:bg-white/10',
+        pal.legendary && 'ring-2 ring-amber-400 shadow-[0_0_6px_1px_rgba(251,191,36,0.55)]',
+      )}
     />
   )
 }
 
-function PalIdChip({ pal }: { pal: BreedingPal }) {
+function PalMeta({ pal }: { pal: BreedingPal }) {
   const id = formatPalId(pal.zukanIndex, pal.zukanIndexSuffix)
-  if (!id) return null
   return (
-    <span className="ml-auto shrink-0 text-xs tabular-nums text-muted-foreground">
-      {id.text}
-      {id.accent ? <span className="text-primary">{id.accent}</span> : null}
+    <span className="ml-auto flex shrink-0 items-center gap-1.5 text-xs tabular-nums text-muted-foreground">
+      {id ? (
+        <span>
+          {id.text}
+          {id.accent ? <span className="text-primary">{id.accent}</span> : null}
+        </span>
+      ) : null}
+      <span className="inline-flex items-center gap-0.5">
+        <Zap className="size-3 shrink-0" />
+        {pal.rank}
+      </span>
     </span>
   )
 }
@@ -77,7 +87,7 @@ export function PalPicker({ label, pals, names, value, onChange, labels }: PalPi
               <>
                 <PalIcon pal={selected} />
                 <span className="truncate">{names[selected.id] ?? selected.id}</span>
-                <PalIdChip pal={selected} />
+                <PalMeta pal={selected} />
               </>
             ) : (
               <span className="text-muted-foreground">{labels.anyPal}</span>
@@ -118,7 +128,7 @@ export function PalPicker({ label, pals, names, value, onChange, labels }: PalPi
                   >
                     <PalIcon pal={p} />
                     <span className="truncate">{names[p.id] ?? p.id}</span>
-                    <PalIdChip pal={p} />
+                    <PalMeta pal={p} />
                     <Check className={cn('ml-1 size-4 shrink-0', p.id === value ? 'opacity-100' : 'opacity-0')} />
                   </CommandItem>
                 ))}

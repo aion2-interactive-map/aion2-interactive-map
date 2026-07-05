@@ -9,3 +9,10 @@ export const palworldAssets: MapAssets = {
   markerIconUrl: (icon) =>
     icon ? `${RES_BASE}/icons/${icon}.webp` : '',
 }
+
+/** Pal roster icon (e.g. `T_Anubis_icon_normal`). */
+export const palIconUrl = (icon: string): string => `${RES_BASE}/icons/${icon}.webp`
+/** Element badge icon; every element has one. */
+export const elementIconUrl = (element: string): string => `${RES_BASE}/icons/element_${element}.webp`
+/** Work-suitability icon; OilExtraction has none (callers fall back to the label). */
+export const workIconUrl = (work: string): string => `${RES_BASE}/icons/work_${work}.webp`
