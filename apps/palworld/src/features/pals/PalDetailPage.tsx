@@ -183,6 +183,9 @@ export default function PalDetailPage() {
     const workEntries = (Object.entries(pal.work) as [WorkType, number][])
       .filter(([, lvl]) => lvl > 0)
       .sort((a, b) => b[1] - a[1])
+    // Highlight every suitability at the pal's top level (not just the game's
+    // single BestWorkSuitability), so ties all read as "best".
+    const maxWorkLevel = workEntries[0]?.[1] ?? 0
     const partnerName = text?.partnerSkill?.name
     const ps = pal.partnerSkill
     const partnerDesc =
@@ -371,7 +374,7 @@ export default function PalDetailPage() {
                       work={w}
                       level={lvl}
                       label={bundle.enums.work[w] ?? w}
-                      highlight={w === pal.bestWork}
+                      highlight={lvl === maxWorkLevel}
                     />
                   ))}
                 </div>
