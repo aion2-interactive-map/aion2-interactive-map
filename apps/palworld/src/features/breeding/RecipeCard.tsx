@@ -65,7 +65,7 @@ function PalChip({
     <Link
       to="/pals/$id"
       params={{ id }}
-      className="flex min-w-0 items-center gap-1.5 rounded hover:bg-accent"
+      className="group flex min-w-0 items-center gap-1.5"
     >
       {m?.icon ? (
         <img
@@ -79,7 +79,12 @@ function PalChip({
         />
       ) : null}
       <span className="flex min-w-0 flex-col leading-tight">
-        <span className={emphasis ? 'truncate font-semibold' : 'truncate'}>
+        <span
+          className={cn(
+            'truncate decoration-primary/40 underline-offset-2 group-hover:text-primary group-hover:underline',
+            emphasis && 'font-semibold',
+          )}
+        >
           {names[id] ?? id}
           <GenderMark g={gender} />
         </span>
