@@ -9,8 +9,29 @@ import {
   DropdownMenuTrigger,
 } from "@gamemap/ui"
 
+export interface ShellNavItem {
+  /** Stable key, e.g. the route path. */
+  key: string
+  label: ReactNode
+  active?: boolean
+}
+
+export interface ShellTopBarNav {
+  items: ShellNavItem[]
+  /**
+   * Render one item as a link/button. The shell computes the class string
+   * (base + active/inactive, incl. per-site overrides) and passes it in — the
+   * app just wraps `label` in its router's Link. Keeps the shell router-agnostic.
+   */
+  renderItem: (item: ShellNavItem, className: string) => ReactNode
+  /** Per-site overrides appended to the default inactive / active classes. */
+  classNames?: { item?: string; itemActive?: string }
+}
+
 export interface ShellTopBarProps {
   leftSlot?: ReactNode
+  /** Highlighted navigation shown in the left area; the active item is styled distinctly. */
+  nav?: ShellTopBarNav
   rightExtras?: ReactNode
   languageSwitcher?: {
     languages: { code: string; label: string }[]
@@ -35,6 +56,7 @@ export interface ShellTopBarProps {
 
 export function ShellTopBar({
   leftSlot,
+  nav,
   rightExtras,
   languageSwitcher,
   themeSwitcher,
@@ -42,8 +64,23 @@ export function ShellTopBar({
 }: ShellTopBarProps) {
   return (
     <header className={cn("flex h-12 shrink-0 items-center gap-6 px-4", classNames?.root)}>
-      {leftSlot && (
-        <div className={cn("flex items-center gap-6", classNames?.left)}>{leftSlot}</div>
+      {(leftSlot || nav) && (
+        <div className={cn("flex items-center gap-6", classNames?.left)}>
+          {leftSlot}
+          {nav?.items.map((item) => (
+            <span key={item.key}>
+              {nav.renderItem(
+                item,
+                cn(
+                  "text-sm transition-colors",
+                  item.active
+                    ? cn("font-semibold text-primary", nav.classNames?.itemActive)
+                    : cn("text-foreground/70 hover:text-foreground", nav.classNames?.item),
+                ),
+              )}
+            </span>
+          ))}
+        </div>
       )}
       <div className={cn("ml-auto flex items-center gap-1", classNames?.right)}>
         {languageSwitcher && (

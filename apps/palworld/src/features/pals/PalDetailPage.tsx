@@ -1,8 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link, useParams } from '@tanstack/react-router'
-import { ShellTopBar, ThemeToggle } from '@gamemap/map-shell'
-import { LANGUAGES, LANGUAGE_LABELS } from '../../i18n'
+import { TopNav } from '../../components/TopNav'
 import {
   loadPals,
   fillPassiveDesc,
@@ -108,31 +107,6 @@ export default function PalDetailPage() {
       cancelled = true
     }
   }, [lng, t])
-
-  const topBar = (
-    <ShellTopBar
-      classNames={{ root: 'border-b border-border bg-card text-card-foreground' }}
-      leftSlot={
-        <>
-          <Link to="/" className="text-sm text-foreground/70 hover:text-foreground">
-            {t('breeding.navMap')}
-          </Link>
-          <Link to="/pals" className="text-sm text-foreground/70 hover:text-foreground">
-            {t('pal.title')}
-          </Link>
-        </>
-      }
-      languageSwitcher={{
-        languages: LANGUAGES.map((code) => ({ code, label: LANGUAGE_LABELS[code] })),
-        current: lng,
-        onChange: (code) => void i18n.changeLanguage(code),
-        menuLabel: 'language',
-      }}
-      rightExtras={
-        <ThemeToggle labels={{ auto: t('themeAuto'), light: t('themeLight'), dark: t('themeDark') }} />
-      }
-    />
-  )
 
   const pal = bundle?.byId.get(id)
 
@@ -305,7 +279,7 @@ export default function PalDetailPage() {
 
   return (
     <div className="flex h-screen flex-col bg-background text-foreground">
-      {topBar}
+      <TopNav active="/pals" />
       <div className="min-h-0 flex-1 overflow-y-auto">
         <div className="mx-auto w-full max-w-5xl px-4 py-6">{body}</div>
       </div>

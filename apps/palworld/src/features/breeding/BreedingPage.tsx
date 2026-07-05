@@ -1,9 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Link, useSearch } from '@tanstack/react-router'
-import { ShellTopBar, ThemeToggle } from '@gamemap/map-shell'
+import { useSearch } from '@tanstack/react-router'
 import { Button } from '@gamemap/ui'
-import { LANGUAGES, LANGUAGE_LABELS } from '../../i18n'
+import { TopNav } from '../../components/TopNav'
 import {
   comboKey,
   favKey,
@@ -115,32 +114,9 @@ export default function BreedingPage() {
     noPalFound: t('breeding.noPalFound'),
   }
 
-  const topBar = (
-    <ShellTopBar
-      classNames={{ root: 'border-b border-border bg-card text-card-foreground' }}
-      leftSlot={
-        <>
-          <Link to="/" className="text-sm text-foreground/70 hover:text-foreground">
-            {t('breeding.navMap')}
-          </Link>
-          <span className="text-sm font-semibold">{t('breeding.title')}</span>
-        </>
-      }
-      languageSwitcher={{
-        languages: LANGUAGES.map((code) => ({ code, label: LANGUAGE_LABELS[code] })),
-        current: lng,
-        onChange: (code) => void i18n.changeLanguage(code),
-        menuLabel: 'language',
-      }}
-      rightExtras={
-        <ThemeToggle labels={{ auto: t('themeAuto'), light: t('themeLight'), dark: t('themeDark') }} />
-      }
-    />
-  )
-
   return (
     <div className="flex h-screen flex-col bg-background text-foreground">
-      {topBar}
+      <TopNav active="/breeding" />
       <div className="min-h-0 flex-1 overflow-y-auto">
         <div className="mx-auto w-full max-w-4xl px-4 py-6">
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">

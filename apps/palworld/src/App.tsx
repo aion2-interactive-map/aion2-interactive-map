@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from '@tanstack/react-router'
 import { GameMapView, type EngineMarker, type MapRef } from '@gamemap/map-engine'
-import { FilterPanel, MarkerPopupCard, SearchPanel, ShellLayout, ShellMapSelect, ShellSidebar, ShellTopBar, ThemeToggle, type FilterCategory, type SearchItem } from '@gamemap/map-shell'
+import { FilterPanel, MarkerPopupCard, SearchPanel, ShellLayout, ShellMapSelect, ShellSidebar, type FilterCategory, type SearchItem } from '@gamemap/map-shell'
 import type { MarkerTypeSubtype } from '@gamemap/data-contract'
 import {
   loadStatic, loadMarkers,
@@ -13,8 +13,8 @@ import { loadPals, type PalsBundle } from './lib/pals'
 import { ElementBadge } from './features/pals/components'
 import { toGameCoords } from './lib/coords'
 import { palworldTheme } from './theme'
-import { LANGUAGES, LANGUAGE_LABELS } from './i18n'
 import { formatPalId, palIdText } from './lib/palId'
+import { TopNav } from './components/TopNav'
 
 // A purely-numeric query is an exact Paldeck-id lookup: search only the idLabel
 // field, no prefix/fuzzy, so "11"/"011" find only No.011 — not the 110-119
@@ -291,33 +291,7 @@ export default function App() {
   return (
     <ShellLayout
       className="bg-background text-foreground"
-      topBar={
-        <ShellTopBar
-          classNames={{ root: 'border-b border-border bg-card text-card-foreground' }}
-          leftSlot={
-            <>
-              <h1 className="text-sm font-semibold">{t('title')}</h1>
-              <Link to="/pals" className="text-sm text-foreground/70 hover:text-foreground">
-                {t('pal.title')}
-              </Link>
-              <Link to="/breeding" className="text-sm text-foreground/70 hover:text-foreground">
-                {t('breeding.navBreeding')}
-              </Link>
-            </>
-          }
-          languageSwitcher={{
-            languages: LANGUAGES.map((code) => ({ code, label: LANGUAGE_LABELS[code] })),
-            current: lng,
-            onChange: (code) => void i18n.changeLanguage(code),
-            menuLabel: 'language',
-          }}
-          rightExtras={
-            <ThemeToggle
-              labels={{ auto: t('themeAuto'), light: t('themeLight'), dark: t('themeDark') }}
-            />
-          }
-        />
-      }
+      topBar={<TopNav active="/" />}
       sidebar={
         <ShellSidebar
           collapseLabel={t('collapse')}
