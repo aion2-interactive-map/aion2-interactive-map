@@ -234,7 +234,14 @@ export default function PalDetailPage() {
                 <div className="text-sm font-medium">{partnerName}</div>
                 {unlockItemName ? (
                   <div className="mt-1 text-xs text-muted-foreground">
-                    {t('pal.unlockItem')}: <span className="text-foreground">{unlockItemName}</span>
+                    {t('pal.unlockItem')}:{' '}
+                    <Link
+                      to="/items/$id"
+                      params={{ id: ps.unlockItem! }}
+                      className="text-primary hover:underline"
+                    >
+                      {unlockItemName}
+                    </Link>
                   </div>
                 ) : null}
                 {partnerDesc ? (
@@ -387,6 +394,7 @@ export default function PalDetailPage() {
                   {pal.drops.map((d) => (
                     <DropRow
                       key={d.item}
+                      id={d.item}
                       name={bundle.items[d.item] ?? d.item}
                       rate={d.rate}
                       min={d.min}

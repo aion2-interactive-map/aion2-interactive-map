@@ -110,6 +110,7 @@ export interface PalsBundle {
   passivesById: Map<string, Passive>
   passiveText: Record<string, SkillText>
   skills: Record<string, SkillText>
+  /** itemId -> localized name (from the shared items locale; description omitted here). */
   items: Record<string, string>
   enums: EnumsLocale
   /** partner-skill effect type -> localized label (fallback lang -> en-US -> raw enum). */
@@ -127,7 +128,7 @@ async function fetchBundle(lng: string): Promise<PalsBundle> {
     j<Record<string, PalText>>(`${DATA_BASE}/locales/${lng}/pals.json`),
     j<Record<string, SkillText>>(`${DATA_BASE}/locales/${lng}/passives.json`),
     j<Record<string, SkillText>>(`${DATA_BASE}/locales/${lng}/skills.json`),
-    j<Record<string, string>>(`${DATA_BASE}/locales/${lng}/items.json`),
+    j<Record<string, { name: string }>>(`${DATA_BASE}/locales/${lng}/items.json`),
     j<EnumsLocale>(`${DATA_BASE}/locales/${lng}/enums.json`),
     j<Record<string, string>>(`${DATA_BASE}/locales/${lng}/partnerEffects.json`),
     j<Record<string, string>>(`${DATA_BASE}/locales/${lng}/partnerTargets.json`),
@@ -140,7 +141,7 @@ async function fetchBundle(lng: string): Promise<PalsBundle> {
     passivesById: new Map(passivesFile.passives.map((p) => [p.id, p])),
     passiveText,
     skills,
-    items,
+    items: Object.fromEntries(Object.entries(items).map(([id, v]) => [id, v.name])),
     enums,
     partnerEffects,
     partnerTargets,

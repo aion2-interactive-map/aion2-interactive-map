@@ -16,6 +16,11 @@ import App from './App'
 import BreedingPage from './features/breeding/BreedingPage'
 import PalListPage from './features/pals/PalListPage'
 import PalDetailPage from './features/pals/PalDetailPage'
+import ItemListPage from './features/items/ItemListPage'
+import ItemDetailPage from './features/items/ItemDetailPage'
+import BuildingListPage from './features/buildings/BuildingListPage'
+import BuildingDetailPage from './features/buildings/BuildingDetailPage'
+import TechnologyPage from './features/technology/TechnologyPage'
 
 const THEME_KEY = 'palworld.theme'
 const themeStorage: ThemeStorage = {
@@ -76,7 +81,42 @@ const palDetailRoute = createRoute({
   path: '/pals/$id',
   component: PalDetailPage,
 })
-const routeTree = rootRoute.addChildren([mapRoute, breedingRoute, palsRoute, palDetailRoute])
+const itemsRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/items',
+  component: ItemListPage,
+})
+const itemDetailRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/items/$id',
+  component: ItemDetailPage,
+})
+const buildingsRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/buildings',
+  component: BuildingListPage,
+})
+const buildingDetailRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/buildings/$id',
+  component: BuildingDetailPage,
+})
+const technologyRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/technology',
+  component: TechnologyPage,
+})
+const routeTree = rootRoute.addChildren([
+  mapRoute,
+  breedingRoute,
+  palsRoute,
+  palDetailRoute,
+  itemsRoute,
+  itemDetailRoute,
+  buildingsRoute,
+  buildingDetailRoute,
+  technologyRoute,
+])
 const router = createRouter({ routeTree, basepath: import.meta.env.BASE_URL })
 declare module '@tanstack/react-router' {
   interface Register {

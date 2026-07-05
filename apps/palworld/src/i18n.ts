@@ -2,6 +2,7 @@ import i18n from 'i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
 import { initReactI18next } from 'react-i18next'
 import { BREEDING_STRINGS } from './breedingStrings'
+import { CATALOG_STRINGS } from './catalogStrings'
 import { PAL_STRINGS } from './palStrings'
 
 export const LANGUAGES = ['en-US', 'de-DE', 'es-ES', 'es-MX', 'fr-FR', 'id-ID', 'it-IT', 'ja-JP', 'ko-KR', 'pl-PL', 'pt-BR', 'ru-RU', 'th-TH', 'tr-TR', 'vi-VN', 'zh-CN', 'zh-TW'] as const
@@ -485,13 +486,21 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
   interpolation: { escapeValue: false },
 })
 
-// Merge the breeding-calculator strings under `translation.breeding` and the
-// pal-encyclopedia strings under `translation.pal`.
+// Merge the breeding-calculator strings under `translation.breeding`, the
+// pal-encyclopedia strings under `translation.pal`, and the item / building /
+// technology encyclopedia strings under `translation.{item,building,tech}`.
 for (const lng of LANGUAGES) {
   i18n.addResourceBundle(
     lng,
     'translation',
-    { breeding: BREEDING_STRINGS[lng], pal: PAL_STRINGS[lng] },
+    {
+      breeding: BREEDING_STRINGS[lng],
+      pal: PAL_STRINGS[lng],
+      item: CATALOG_STRINGS[lng].item,
+      building: CATALOG_STRINGS[lng].building,
+      tech: CATALOG_STRINGS[lng].tech,
+      catalogLoading: CATALOG_STRINGS[lng].loading,
+    },
     true,
     true,
   )
