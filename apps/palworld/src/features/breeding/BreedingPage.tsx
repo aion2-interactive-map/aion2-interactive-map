@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useSearch } from '@tanstack/react-router'
+import { useNavigate, useSearch } from '@tanstack/react-router'
 import { Button } from '@gamemap/ui'
 import { TopNav } from '../../components/TopNav'
 import {
@@ -27,15 +27,24 @@ export default function BreedingPage() {
   const { t, i18n } = useTranslation()
   const lng = i18n.resolvedLanguage ?? 'en-US'
 
-  // Prefill Parent A / Parent B / Child from ?a=&b=&c= (e.g. opened from a
-  // Paldeck page). Read once to seed state; invalid ids are dropped after load.
+  // The URL query (?a=&b=&c=) is the source of truth for the selections, so a
+  // pick updates the address bar and pushes a history entry (Back undoes it),
+  // and the calculator can be opened prefilled from a Paldeck page.
   const search = useSearch({ from: '/breeding' })
+  const navigate = useNavigate({ from: '/breeding' })
+  const aSel = search.a ?? null
+  const bSel = search.b ?? null
+  const cSel = search.c ?? null
+
+  const setParam = useCallback(
+    (key: 'a' | 'b' | 'c', id: string | null) => {
+      navigate({ search: (prev) => ({ ...prev, [key]: id ?? undefined }) })
+    },
+    [navigate],
+  )
 
   const [payload, setPayload] = useState<{ data: BreedingData; names: NameMap } | null>(null)
   const [loadError, setLoadError] = useState<string | null>(null)
-  const [aSel, setASel] = useState<string | null>(search.a ?? null)
-  const [bSel, setBSel] = useState<string | null>(search.b ?? null)
-  const [cSel, setCSel] = useState<string | null>(search.c ?? null)
   const [favs, setFavs] = useState<Set<string>>(() => {
     try {
       const raw = localStorage.getItem(FAV_STORAGE_KEY)
@@ -76,15 +85,16 @@ export default function BreedingPage() {
     }
   }, [lng, t])
 
-  // Drop any prefilled selection that isn't a real roster Pal.
+  // Drop any query selection that isn't a real roster Pal (replace, not push).
   useEffect(() => {
     if (!payload) return
     const ids = new Set(payload.data.pals.map((p) => p.id))
-    const clean = (v: string | null) => (v && !ids.has(v) ? null : v)
-    setASel(clean)
-    setBSel(clean)
-    setCSel(clean)
-  }, [payload])
+    const keep = (v?: string) => (v && ids.has(v) ? v : undefined)
+    const cleaned = { a: keep(search.a), b: keep(search.b), c: keep(search.c) }
+    if (cleaned.a !== search.a || cleaned.b !== search.b || cleaned.c !== search.c) {
+      navigate({ search: cleaned, replace: true })
+    }
+  }, [payload, search.a, search.b, search.c, navigate])
 
   const engine = useMemo(() => (payload ? makeEngine(payload.data) : null), [payload])
 
@@ -125,7 +135,7 @@ export default function BreedingPage() {
               pals={payload?.data.pals ?? []}
               names={payload?.names ?? {}}
               value={aSel}
-              onChange={setASel}
+              onChange={(id) => setParam('a', id)}
               labels={pickerLabels}
             />
             <PalPicker
@@ -133,7 +143,7 @@ export default function BreedingPage() {
               pals={payload?.data.pals ?? []}
               names={payload?.names ?? {}}
               value={bSel}
-              onChange={setBSel}
+              onChange={(id) => setParam('b', id)}
               labels={pickerLabels}
             />
             <PalPicker
@@ -141,7 +151,7 @@ export default function BreedingPage() {
               pals={payload?.data.pals ?? []}
               names={payload?.names ?? {}}
               value={cSel}
-              onChange={setCSel}
+              onChange={(id) => setParam('c', id)}
               labels={pickerLabels}
             />
           </div>
@@ -156,11 +166,7 @@ export default function BreedingPage() {
               <Button
                 variant="ghost"
                 size="sm"
-                onClick={() => {
-                  setASel(null)
-                  setBSel(null)
-                  setCSel(null)
-                }}
+                onClick={() => navigate({ search: {} })}
               >
                 {t('breeding.clear')}
               </Button>
