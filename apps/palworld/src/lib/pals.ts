@@ -30,8 +30,17 @@ export interface ActiveSkill {
   wazaId: string; level: number; element: string; category: string
   power: number; coolTime: number
 }
-/** Empty for buff-type partner skills (name still comes from the locale). */
-export interface PartnerSkill { wazaId?: string; element?: string; rankValues?: number[] }
+/** One buff effect of a partner skill: effect type, target, and per-rank values. */
+export interface PartnerEffect { type: string; target: string; values: number[] }
+/** Attack-type carries waza/element/rankValues; buff-type carries effects. Both
+ *  may carry unlockItem. The name always comes from the locale. */
+export interface PartnerSkill {
+  wazaId?: string
+  element?: string
+  rankValues?: number[]
+  unlockItem?: string
+  effects?: PartnerEffect[]
+}
 export interface Drop { item: string; rate: number; min: number; max: number }
 
 export interface PalEntry {
@@ -86,12 +95,16 @@ export interface PalsBundle {
   skills: Record<string, SkillText>
   items: Record<string, string>
   enums: EnumsLocale
+  /** partner-skill effect type -> localized label (fallback lang -> en-US -> raw enum). */
+  partnerEffects: Record<string, string>
+  /** partner-skill effect target -> localized label (same fallback). */
+  partnerTargets: Record<string, string>
 }
 
 const cache = new Map<string, Promise<PalsBundle>>()
 
 async function fetchBundle(lng: string): Promise<PalsBundle> {
-  const [palsFile, passivesFile, text, passiveText, skills, items, enums] = await Promise.all([
+  const [palsFile, passivesFile, text, passiveText, skills, items, enums, partnerEffects, partnerTargets] = await Promise.all([
     j<{ pals: PalEntry[] }>(`${DATA_BASE}/pals.json`),
     j<{ passives: Passive[] }>(`${DATA_BASE}/passives.json`),
     j<Record<string, PalText>>(`${DATA_BASE}/locales/${lng}/pals.json`),
@@ -99,6 +112,8 @@ async function fetchBundle(lng: string): Promise<PalsBundle> {
     j<Record<string, SkillText>>(`${DATA_BASE}/locales/${lng}/skills.json`),
     j<Record<string, string>>(`${DATA_BASE}/locales/${lng}/items.json`),
     j<EnumsLocale>(`${DATA_BASE}/locales/${lng}/enums.json`),
+    j<Record<string, string>>(`${DATA_BASE}/locales/${lng}/partnerEffects.json`),
+    j<Record<string, string>>(`${DATA_BASE}/locales/${lng}/partnerTargets.json`),
   ])
   return {
     pals: palsFile.pals,
@@ -110,6 +125,8 @@ async function fetchBundle(lng: string): Promise<PalsBundle> {
     skills,
     items,
     enums,
+    partnerEffects,
+    partnerTargets,
   }
 }
 

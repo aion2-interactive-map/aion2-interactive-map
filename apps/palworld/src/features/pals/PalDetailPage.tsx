@@ -124,7 +124,11 @@ export default function PalDetailPage() {
       .filter(([, lvl]) => lvl > 0)
       .sort((a, b) => b[1] - a[1])
     const partnerName = text?.partnerSkill?.name
-    const partnerDesc = resolveCharacterNames(text?.partnerSkill?.desc, bundle.text)
+    const ps = pal.partnerSkill
+    const partnerDesc =
+      resolveCharacterNames(text?.partnerSkill?.desc, bundle.text) ||
+      (ps.wazaId ? resolveCharacterNames(bundle.skills[ps.wazaId]?.description, bundle.text) : '')
+    const unlockItemName = ps.unlockItem ? bundle.items[ps.unlockItem] ?? ps.unlockItem : ''
 
     body = (
       <div className="space-y-6">
@@ -165,12 +169,37 @@ export default function PalDetailPage() {
             {partnerName ? (
               <PalSection title={t('pal.section.partnerSkill')}>
                 <div className="text-sm font-medium">{partnerName}</div>
+                {unlockItemName ? (
+                  <div className="mt-1 text-xs text-muted-foreground">
+                    {t('pal.unlockItem')}: <span className="text-foreground">{unlockItemName}</span>
+                  </div>
+                ) : null}
                 {partnerDesc ? (
                   <p className="mt-1 text-sm text-muted-foreground">{partnerDesc}</p>
                 ) : null}
-                {pal.partnerSkill.rankValues?.length ? (
+                {ps.effects?.length ? (
+                  <ul className="mt-2 space-y-1">
+                    {ps.effects.map((e, i) => (
+                      <li
+                        key={`${e.type}-${e.target}-${i}`}
+                        className="flex items-baseline justify-between gap-3 text-sm"
+                      >
+                        <span>
+                          {bundle.partnerEffects[e.type] ?? e.type}
+                          <span className="ml-1 text-xs text-muted-foreground">
+                            {bundle.partnerTargets[e.target] ?? e.target}
+                          </span>
+                        </span>
+                        <span className="shrink-0 tabular-nums text-muted-foreground">
+                          {e.values.join(' / ')}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+                {ps.rankValues?.length ? (
                   <div className="mt-2 text-xs tabular-nums text-muted-foreground">
-                    {t('pal.rankScaling')}: {pal.partnerSkill.rankValues.join(' / ')}
+                    {t('pal.rankScaling')}: {ps.rankValues.join(' / ')}
                   </div>
                 ) : null}
                 <div className="mt-2 text-xs text-muted-foreground">{t('pal.condensation')}</div>
@@ -220,7 +249,7 @@ export default function PalDetailPage() {
             ) : null}
 
             <PalSection title={t('pal.section.spawns')}>
-              <PalSpawnMap palId={pal.id} palIcon={pal.icon} className="h-64" />
+              <PalSpawnMap palId={pal.id} palIcon={pal.icon} className="aspect-square" />
             </PalSection>
           </div>
 
