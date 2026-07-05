@@ -219,27 +219,9 @@ export default function PalDetailPage() {
               </PalSection>
             ) : null}
 
-            {pal.drops.length ? (
-              <PalSection title={t('pal.section.drops')}>
-                <div className="divide-y divide-border/60">
-                  {pal.drops.map((d) => (
-                    <DropRow
-                      key={d.item}
-                      name={bundle.items[d.item] ?? d.item}
-                      rate={d.rate}
-                      min={d.min}
-                      max={d.max}
-                    />
-                  ))}
-                </div>
-              </PalSection>
-            ) : null}
-
-            {breeding ? (
-              <PalSection title={t('pal.section.breeding')}>
-                <BreedingLinks pal={pal} data={breeding.data} names={breeding.names} />
-              </PalSection>
-            ) : null}
+            <PalSection title={t('pal.section.spawns')}>
+              <PalSpawnMap palId={pal.id} palIcon={pal.icon} className="h-64" />
+            </PalSection>
           </div>
 
           {/* Sidebar */}
@@ -268,9 +250,27 @@ export default function PalDetailPage() {
               </PalSection>
             ) : null}
 
-            <PalSection title={t('pal.section.spawns')}>
-              <PalSpawnMap palId={pal.id} palIcon={pal.icon} className="h-64" />
-            </PalSection>
+            {pal.drops.length ? (
+              <PalSection title={t('pal.section.drops')}>
+                <div className="divide-y divide-border/60">
+                  {pal.drops.map((d) => (
+                    <DropRow
+                      key={d.item}
+                      name={bundle.items[d.item] ?? d.item}
+                      rate={d.rate}
+                      min={d.min}
+                      max={d.max}
+                    />
+                  ))}
+                </div>
+              </PalSection>
+            ) : null}
+
+            {breeding ? (
+              <PalSection title={t('pal.section.breeding')}>
+                <BreedingLinks pal={pal} data={breeding.data} names={breeding.names} />
+              </PalSection>
+            ) : null}
           </div>
         </div>
       </div>
