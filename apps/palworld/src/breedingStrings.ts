@@ -19,6 +19,11 @@ export interface BreedingStrings {
   unique: string
   favorite: string
   more: string
+  /** Label for a Pal's CombiRank (shown in the Paldeck breeding section). */
+  breedingPower: string
+  /** Pager button labels (Paldeck breeding section). */
+  prevPage: string
+  nextPage: string
 }
 
 export const BREEDING_STRINGS: Record<Language, BreedingStrings> = {
@@ -38,6 +43,9 @@ export const BREEDING_STRINGS: Record<Language, BreedingStrings> = {
     unique: 'Unique',
     favorite: 'Favorite',
     more: '+{{count}} more — pick a parent to narrow',
+    breedingPower: 'Breeding Power',
+    prevPage: 'Previous page',
+    nextPage: 'Next page',
   },
   'de-DE': {
     navMap: 'Karte',
@@ -55,6 +63,9 @@ export const BREEDING_STRINGS: Record<Language, BreedingStrings> = {
     unique: 'Einzigartig',
     favorite: 'Favorit',
     more: '+{{count}} weitere — Elternteil wählen zum Eingrenzen',
+    breedingPower: 'Zuchtstärke',
+    prevPage: 'Vorherige Seite',
+    nextPage: 'Nächste Seite',
   },
   'es-ES': {
     navMap: 'Mapa',
@@ -72,6 +83,9 @@ export const BREEDING_STRINGS: Record<Language, BreedingStrings> = {
     unique: 'Único',
     favorite: 'Favorito',
     more: '+{{count}} más — elige un progenitor para acotar',
+    breedingPower: 'Poder de crianza',
+    prevPage: 'Página anterior',
+    nextPage: 'Página siguiente',
   },
   'es-MX': {
     navMap: 'Mapa',
@@ -89,6 +103,9 @@ export const BREEDING_STRINGS: Record<Language, BreedingStrings> = {
     unique: 'Único',
     favorite: 'Favorito',
     more: '+{{count}} más — elige un progenitor para acotar',
+    breedingPower: 'Poder de crianza',
+    prevPage: 'Página anterior',
+    nextPage: 'Página siguiente',
   },
   'fr-FR': {
     navMap: 'Carte',
@@ -106,6 +123,9 @@ export const BREEDING_STRINGS: Record<Language, BreedingStrings> = {
     unique: 'Unique',
     favorite: 'Favori',
     more: '+{{count}} de plus — choisissez un parent pour affiner',
+    breedingPower: "Puissance d'élevage",
+    prevPage: 'Page précédente',
+    nextPage: 'Page suivante',
   },
   'id-ID': {
     navMap: 'Peta',
@@ -123,6 +143,9 @@ export const BREEDING_STRINGS: Record<Language, BreedingStrings> = {
     unique: 'Unik',
     favorite: 'Favorit',
     more: '+{{count}} lagi — pilih induk untuk mempersempit',
+    breedingPower: 'Kekuatan Ternak',
+    prevPage: 'Halaman sebelumnya',
+    nextPage: 'Halaman berikutnya',
   },
   'it-IT': {
     navMap: 'Mappa',
@@ -140,6 +163,9 @@ export const BREEDING_STRINGS: Record<Language, BreedingStrings> = {
     unique: 'Unico',
     favorite: 'Preferito',
     more: '+{{count}} altre — scegli un genitore per restringere',
+    breedingPower: 'Potenza di allevamento',
+    prevPage: 'Pagina precedente',
+    nextPage: 'Pagina successiva',
   },
   'ja-JP': {
     navMap: 'マップ',
@@ -157,6 +183,9 @@ export const BREEDING_STRINGS: Record<Language, BreedingStrings> = {
     unique: '固有',
     favorite: 'お気に入り',
     more: '他 {{count}} 件 — 親を選ぶと絞り込めます',
+    breedingPower: '交配ランク',
+    prevPage: '前のページ',
+    nextPage: '次のページ',
   },
   'ko-KR': {
     navMap: '지도',
@@ -174,6 +203,9 @@ export const BREEDING_STRINGS: Record<Language, BreedingStrings> = {
     unique: '고유',
     favorite: '즐겨찾기',
     more: '+{{count}}개 더 — 부모를 선택해 좁히세요',
+    breedingPower: '교배 랭크',
+    prevPage: '이전 페이지',
+    nextPage: '다음 페이지',
   },
   'pl-PL': {
     navMap: 'Mapa',
@@ -191,6 +223,9 @@ export const BREEDING_STRINGS: Record<Language, BreedingStrings> = {
     unique: 'Unikat',
     favorite: 'Ulubione',
     more: '+{{count}} więcej — wybierz rodzica, aby zawęzić',
+    breedingPower: 'Moc hodowlana',
+    prevPage: 'Poprzednia strona',
+    nextPage: 'Następna strona',
   },
   'pt-BR': {
     navMap: 'Mapa',
@@ -208,6 +243,9 @@ export const BREEDING_STRINGS: Record<Language, BreedingStrings> = {
     unique: 'Único',
     favorite: 'Favorito',
     more: '+{{count}} mais — escolha um progenitor para refinar',
+    breedingPower: 'Poder de reprodução',
+    prevPage: 'Página anterior',
+    nextPage: 'Próxima página',
   },
   'ru-RU': {
     navMap: 'Карта',
@@ -225,6 +263,9 @@ export const BREEDING_STRINGS: Record<Language, BreedingStrings> = {
     unique: 'Уникальный',
     favorite: 'Избранное',
     more: 'Ещё {{count}} — выберите родителя для сужения',
+    breedingPower: 'Сила разведения',
+    prevPage: 'Предыдущая страница',
+    nextPage: 'Следующая страница',
   },
   'th-TH': {
     navMap: 'แผนที่',
@@ -242,6 +283,9 @@ export const BREEDING_STRINGS: Record<Language, BreedingStrings> = {
     unique: 'ยูนีค',
     favorite: 'รายการโปรด',
     more: 'อีก {{count}} รายการ — เลือกพ่อแม่เพื่อจำกัดผล',
+    breedingPower: 'พลังการผสมพันธุ์',
+    prevPage: 'หน้าก่อนหน้า',
+    nextPage: 'หน้าถัดไป',
   },
   'tr-TR': {
     navMap: 'Harita',
@@ -259,6 +303,9 @@ export const BREEDING_STRINGS: Record<Language, BreedingStrings> = {
     unique: 'Benzersiz',
     favorite: 'Favori',
     more: '+{{count}} tane daha — daraltmak için bir ebeveyn seç',
+    breedingPower: 'Üretme Gücü',
+    prevPage: 'Önceki sayfa',
+    nextPage: 'Sonraki sayfa',
   },
   'vi-VN': {
     navMap: 'Bản đồ',
@@ -276,6 +323,9 @@ export const BREEDING_STRINGS: Record<Language, BreedingStrings> = {
     unique: 'Độc nhất',
     favorite: 'Yêu thích',
     more: '+{{count}} nữa — chọn bố mẹ để thu hẹp',
+    breedingPower: 'Sức nhân giống',
+    prevPage: 'Trang trước',
+    nextPage: 'Trang sau',
   },
   'zh-CN': {
     navMap: '地图',
@@ -293,6 +343,9 @@ export const BREEDING_STRINGS: Record<Language, BreedingStrings> = {
     unique: '独有',
     favorite: '收藏',
     more: '还有 {{count}} 条 — 选择父母以缩小范围',
+    breedingPower: '配种能力',
+    prevPage: '上一页',
+    nextPage: '下一页',
   },
   'zh-TW': {
     navMap: '地圖',
@@ -310,5 +363,8 @@ export const BREEDING_STRINGS: Record<Language, BreedingStrings> = {
     unique: '獨有',
     favorite: '收藏',
     more: '還有 {{count}} 筆 — 選擇父母以縮小範圍',
+    breedingPower: '配種能力',
+    prevPage: '上一頁',
+    nextPage: '下一頁',
   },
 }

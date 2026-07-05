@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link, useParams } from '@tanstack/react-router'
+import { ChevronLeft, ChevronRight, Zap } from 'lucide-react'
 import { TopNav } from '../../components/TopNav'
 import {
   loadPals,
@@ -41,6 +42,12 @@ const STAT_KEYS = [
   'price',
 ] as const
 
+// Join per-rank values with " / ", but collapse to a single value when every rank
+// is identical (e.g. 100 / 100 / 100 / 100 / 100 → 100).
+function joinRanks(vals: readonly (number | string)[]): string {
+  return vals.every((v) => v === vals[0]) ? String(vals[0]) : vals.join(' / ')
+}
+
 function BreedingLinks({
   pal,
   data,
@@ -51,21 +58,49 @@ function BreedingLinks({
   names: NameMap
 }) {
   const { t } = useTranslation()
+  const [page, setPage] = useState(0)
   const { parents, meta } = useMemo(() => {
     const engine = makeEngine(data)
     const { list } = queryFormulas(engine, data, { a: null, b: null, c: pal.id })
-    return { parents: list.slice(0, 12), meta: buildRecipeMeta(data.pals) }
+    return { parents: list, meta: buildRecipeMeta(data.pals) }
   }, [data, pal.id])
+
+  // Back to the first page whenever the pal changes.
+  useEffect(() => {
+    setPage(0)
+  }, [pal.id])
 
   if (parents.length === 0) {
     return <p className="text-sm text-muted-foreground">{t('pal.noBreeding')}</p>
   }
+  // This pal's own breeding power (CombiRank). Every recipe here produces this
+  // same pal, so the result chip is dropped and the power shown once up top.
+  const rank = meta.get(pal.id)?.rank
+  const PAGE_SIZE = 10
+  const pageCount = Math.ceil(parents.length / PAGE_SIZE)
+  // Clamp: `page` state can lag a pal change for one render before the effect resets it.
+  const curPage = Math.min(page, pageCount - 1)
+  const shown = parents.slice(curPage * PAGE_SIZE, curPage * PAGE_SIZE + PAGE_SIZE)
   return (
     <div className="space-y-2">
-      <div className="text-xs text-muted-foreground">{t('pal.bredFrom')}</div>
+      {rank != null ? (
+        <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+          <span>{t('breeding.breedingPower')}:</span>
+          <span className="inline-flex items-center gap-0.5 tabular-nums text-foreground">
+            <Zap className="size-3 shrink-0" />
+            {rank}
+          </span>
+        </div>
+      ) : null}
+      <div className="text-xs text-muted-foreground">
+        {t('pal.bredFrom')}:{' '}
+        <span className="tabular-nums text-foreground">
+          {t('breeding.combinations', { count: parents.length })}
+        </span>
+      </div>
       <div className="grid grid-cols-1 gap-2">
-        {parents.map((f) => (
-          <RecipeCard key={comboKey(f)} f={f} names={names} meta={meta} uniqueLabel={t('breeding.unique')} />
+        {shown.map((f) => (
+          <RecipeCard key={comboKey(f)} f={f} names={names} meta={meta} uniqueLabel={t('breeding.unique')} hideResult />
         ))}
       </div>
       <Link
@@ -77,6 +112,31 @@ function BreedingLinks({
       >
         {t('pal.openBreeding')}
       </Link>
+      {pageCount > 1 ? (
+        <div className="flex items-center justify-center gap-3 text-xs text-muted-foreground">
+          <button
+            type="button"
+            onClick={() => setPage(Math.max(0, curPage - 1))}
+            disabled={curPage === 0}
+            aria-label={t('breeding.prevPage')}
+            className="rounded p-1 hover:bg-accent hover:text-foreground disabled:opacity-40 disabled:hover:bg-transparent"
+          >
+            <ChevronLeft className="size-4" />
+          </button>
+          <span className="tabular-nums">
+            {curPage + 1} / {pageCount}
+          </span>
+          <button
+            type="button"
+            onClick={() => setPage(Math.min(pageCount - 1, curPage + 1))}
+            disabled={curPage >= pageCount - 1}
+            aria-label={t('breeding.nextPage')}
+            className="rounded p-1 hover:bg-accent hover:text-foreground disabled:opacity-40 disabled:hover:bg-transparent"
+          >
+            <ChevronRight className="size-4" />
+          </button>
+        </div>
+      ) : null}
     </div>
   )
 }
@@ -191,15 +251,54 @@ export default function PalDetailPage() {
                           </span>
                         </span>
                         <span className="shrink-0 tabular-nums text-muted-foreground">
-                          {e.values.join(' / ')}
+                          {joinRanks(e.values)}
                         </span>
                       </li>
                     ))}
                   </ul>
                 ) : null}
+                {ps.action ? (
+                  <ul className="mt-2 space-y-1 text-sm">
+                    {ps.effectTimeByRank?.length ? (
+                      <li className="flex items-baseline justify-between gap-3">
+                        <span className="text-muted-foreground">{t('pal.effectTime')}</span>
+                        <span className="shrink-0 tabular-nums text-muted-foreground">
+                          {joinRanks(ps.effectTimeByRank)}
+                        </span>
+                      </li>
+                    ) : ps.action.effectTime > 0 ? (
+                      <li className="flex items-baseline justify-between gap-3">
+                        <span className="text-muted-foreground">{t('pal.effectTime')}</span>
+                        <span className="shrink-0 tabular-nums">{ps.action.effectTime}s</span>
+                      </li>
+                    ) : null}
+                    {ps.coolTimeByRank?.length ? (
+                      <li className="flex items-baseline justify-between gap-3">
+                        <span className="text-muted-foreground">{t('pal.cooldown')}</span>
+                        <span className="shrink-0 tabular-nums text-muted-foreground">
+                          {joinRanks(ps.coolTimeByRank)}
+                        </span>
+                      </li>
+                    ) : ps.action.coolTime > 0 ? (
+                      <li className="flex items-baseline justify-between gap-3">
+                        <span className="text-muted-foreground">{t('pal.cooldown')}</span>
+                        <span className="shrink-0 tabular-nums">{ps.action.coolTime}s</span>
+                      </li>
+                    ) : null}
+                    {ps.action.execCost > 0 ? (
+                      <li className="flex items-baseline justify-between gap-3">
+                        <span className="text-muted-foreground">{t('pal.cost')}</span>
+                        <span className="shrink-0 tabular-nums">{ps.action.execCost}</span>
+                      </li>
+                    ) : null}
+                    {ps.action.toggle ? (
+                      <li className="text-xs text-muted-foreground">{t('pal.toggle')}</li>
+                    ) : null}
+                  </ul>
+                ) : null}
                 {ps.rankValues?.length ? (
                   <div className="mt-2 text-xs tabular-nums text-muted-foreground">
-                    {t('pal.rankScaling')}: {ps.rankValues.join(' / ')}
+                    {t('pal.rankScaling')}: {joinRanks(ps.rankValues)}
                   </div>
                 ) : null}
                 <div className="mt-2 text-xs text-muted-foreground">{t('pal.condensation')}</div>

@@ -32,14 +32,31 @@ export interface ActiveSkill {
 }
 /** One buff effect of a partner skill: effect type, target, and per-rank values. */
 export interface PartnerEffect { type: string; target: string; values: number[] }
-/** Attack-type carries waza/element/rankValues; buff-type carries effects. Both
- *  may carry unlockItem. The name always comes from the locale. */
+/** Fixed metadata of an action-type partner skill (from DT_PartnerSkill). */
+export interface PartnerAction {
+  effectTime: number
+  coolTime: number
+  execCost: number
+  idleCost: number
+  toggle: boolean
+  canChangeWeapon?: boolean
+  canThrowPal?: boolean
+}
+/** A partner skill in one of three shapes (see tools/palworld/encyclopedia.py):
+ *  - attack: `wazaId`/`element` + per-rank `rankValues` (power multiplier).
+ *  - buff:   `effects` (each with per-rank `values`).
+ *  - action: `action` metadata + optional per-rank `rankValues` / `coolTimeByRank`
+ *            / `effectTimeByRank`.
+ *  Any shape may carry `unlockItem`. The name always comes from the locale. */
 export interface PartnerSkill {
   wazaId?: string
   element?: string
   rankValues?: number[]
+  coolTimeByRank?: number[]
+  effectTimeByRank?: number[]
   unlockItem?: string
   effects?: PartnerEffect[]
+  action?: PartnerAction
 }
 export interface Drop { item: string; rate: number; min: number; max: number }
 
