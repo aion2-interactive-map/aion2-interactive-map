@@ -1,24 +1,21 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from '@tanstack/react-router'
-import { Sparkles, Star, Zap } from 'lucide-react'
 import { ShellTopBar, ThemeToggle } from '@gamemap/map-shell'
-import { Button, cn } from '@gamemap/ui'
+import { Button } from '@gamemap/ui'
 import { LANGUAGES, LANGUAGE_LABELS } from '../../i18n'
 import {
   comboKey,
   favKey,
   loadBreeding,
   makeEngine,
-  palIconUrl,
   queryFormulas,
   type BreedingData,
   type Combo,
-  type Gender,
   type NameMap,
 } from '../../lib/breeding'
-import { formatPalId } from '../../lib/palId'
 import { PalPicker } from './PalPicker'
+import { RecipeCard, buildRecipeMeta } from './RecipeCard'
 
 // Cap on rendered cards; a target-only query can match >1000 parent pairs. Set
 // above the default browse list (~365: every Pal + special combos) so that view
@@ -26,141 +23,6 @@ import { PalPicker } from './PalPicker'
 const RENDER_CAP = 500
 
 const FAV_STORAGE_KEY = 'palworld.breeding.favs'
-
-type ZukanMap = Map<
-  string,
-  { zukanIndex: number; zukanIndexSuffix: string; rank: number; legendary?: boolean }
->
-
-// Gold ring + glow marking a legendary Pal's icon (self-bred only).
-const LEGENDARY_ICON = 'ring-2 ring-amber-400 shadow-[0_0_6px_1px_rgba(251,191,36,0.55)]'
-
-function GenderMark({ g }: { g?: Gender }) {
-  if (!g) return null
-  return (
-    <span
-      className={g === 'M' ? 'font-semibold text-sky-500' : 'font-semibold text-pink-500'}
-      title={g === 'M' ? 'Male' : 'Female'}
-    >
-      {g === 'M' ? '♂' : '♀'}
-    </span>
-  )
-}
-
-function PalChip({
-  id,
-  names,
-  iconById,
-  zukanById,
-  gender,
-  emphasis,
-}: {
-  id: string
-  names: NameMap
-  iconById: Map<string, string>
-  zukanById: ZukanMap
-  gender?: Gender
-  emphasis?: boolean
-}) {
-  const icon = iconById.get(id)
-  const z = zukanById.get(id)
-  const pid = z ? formatPalId(z.zukanIndex, z.zukanIndexSuffix) : undefined
-  return (
-    <Link
-      to="/pals/$id"
-      params={{ id }}
-      className="flex min-w-0 items-center gap-1.5 rounded hover:bg-accent"
-    >
-      {icon ? (
-        <img
-          src={palIconUrl(icon)}
-          alt=""
-          loading="lazy"
-          className={cn(
-            'size-7 shrink-0 rounded-full bg-black/5 object-contain dark:bg-white/10',
-            z?.legendary && LEGENDARY_ICON,
-          )}
-        />
-      ) : null}
-      <span className="flex min-w-0 flex-col leading-tight">
-        <span className={emphasis ? 'truncate font-semibold' : 'truncate'}>
-          {names[id] ?? id}
-          <GenderMark g={gender} />
-        </span>
-        <span className="flex items-center gap-1 text-[10px] tabular-nums text-muted-foreground">
-          {pid ? (
-            <span>
-              {pid.text}
-              {pid.accent ? <span className="text-primary">{pid.accent}</span> : null}
-            </span>
-          ) : null}
-          {z ? (
-            <span className="inline-flex items-center gap-0.5">
-              <Zap className="size-2.5 shrink-0" />
-              {z.rank}
-            </span>
-          ) : null}
-        </span>
-      </span>
-    </Link>
-  )
-}
-
-function FormulaCard({
-  f,
-  names,
-  iconById,
-  zukanById,
-  uniqueLabel,
-  isFav,
-  onToggleFav,
-  favLabel,
-}: {
-  f: Combo
-  names: NameMap
-  iconById: Map<string, string>
-  zukanById: ZukanMap
-  uniqueLabel: string
-  isFav: boolean
-  onToggleFav: () => void
-  favLabel: string
-}) {
-  return (
-    <div
-      className={cn(
-        'relative grid grid-cols-[1fr_auto_1fr_auto_1fr_auto] items-center gap-1.5 rounded-lg border px-3 py-2 text-sm',
-        f.unique
-          ? 'border-amber-400/70 bg-amber-400/10 ring-1 ring-amber-400/30'
-          : 'border-border bg-card',
-      )}
-    >
-      {f.unique ? (
-        <span
-          className="absolute -top-2 right-8 inline-flex items-center gap-1 rounded-full border border-amber-400/70 bg-amber-100 px-1.5 py-0.5 text-[10px] font-medium text-amber-700 dark:bg-amber-950 dark:text-amber-300"
-          title={uniqueLabel}
-        >
-          <Sparkles className="size-3" />
-          {uniqueLabel}
-        </span>
-      ) : null}
-      <PalChip id={f.a} names={names} iconById={iconById} zukanById={zukanById} gender={f.ag} />
-      <span className="text-muted-foreground">+</span>
-      <PalChip id={f.b} names={names} iconById={iconById} zukanById={zukanById} gender={f.bg} />
-      <span className="text-muted-foreground">=</span>
-      <PalChip id={f.c} names={names} iconById={iconById} zukanById={zukanById} emphasis />
-      <button
-        type="button"
-        onClick={onToggleFav}
-        aria-label={favLabel}
-        aria-pressed={isFav}
-        title={favLabel}
-        className="ml-1 rounded p-1 text-muted-foreground hover:bg-accent hover:text-foreground"
-      >
-        <Star className={cn('size-4', isFav && 'fill-amber-400 text-amber-400')} />
-      </button>
-    </div>
-  )
-}
 
 export default function BreedingPage() {
   const { t, i18n } = useTranslation()
@@ -213,20 +75,7 @@ export default function BreedingPage() {
 
   const engine = useMemo(() => (payload ? makeEngine(payload.data) : null), [payload])
 
-  const iconById = useMemo(
-    () => new Map((payload?.data.pals ?? []).map((p) => [p.id, p.icon])),
-    [payload],
-  )
-  const zukanById: ZukanMap = useMemo(
-    () =>
-      new Map(
-        (payload?.data.pals ?? []).map((p) => [
-          p.id,
-          { zukanIndex: p.zukanIndex, zukanIndexSuffix: p.zukanIndexSuffix, rank: p.rank, legendary: p.legendary },
-        ]),
-      ),
-    [payload],
-  )
+  const meta = useMemo(() => buildRecipeMeta(payload?.data.pals ?? []), [payload])
 
   const result = useMemo(() => {
     if (!payload || !engine) return { list: [] as Combo[], total: 0, browsingSpecial: false }
@@ -336,16 +185,13 @@ export default function BreedingPage() {
                 {shown.map((f) => {
                   const fk = favKey(f)
                   return (
-                    <FormulaCard
+                    <RecipeCard
                       key={comboKey(f)}
                       f={f}
                       names={payload?.names ?? {}}
-                      iconById={iconById}
-                      zukanById={zukanById}
+                      meta={meta}
                       uniqueLabel={t('breeding.unique')}
-                      isFav={favs.has(fk)}
-                      onToggleFav={() => toggleFav(fk)}
-                      favLabel={t('breeding.favorite')}
+                      fav={{ isFav: favs.has(fk), onToggle: () => toggleFav(fk), label: t('breeding.favorite') }}
                     />
                   )
                 })}

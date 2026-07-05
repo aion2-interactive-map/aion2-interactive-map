@@ -11,7 +11,8 @@ import {
   type PalEntry,
   type WorkType,
 } from '../../lib/pals'
-import { loadBreeding, makeEngine, queryFormulas, type BreedingData, type NameMap } from '../../lib/breeding'
+import { comboKey, loadBreeding, makeEngine, queryFormulas, type BreedingData, type NameMap } from '../../lib/breeding'
+import { RecipeCard, buildRecipeMeta } from '../breeding/RecipeCard'
 import { palIconUrl } from '../../lib/assets'
 import { formatPalId } from '../../lib/palId'
 import {
@@ -51,10 +52,10 @@ function BreedingLinks({
   names: NameMap
 }) {
   const { t } = useTranslation()
-  const parents = useMemo(() => {
+  const { parents, meta } = useMemo(() => {
     const engine = makeEngine(data)
     const { list } = queryFormulas(engine, data, { a: null, b: null, c: pal.id })
-    return list.slice(0, 12)
+    return { parents: list.slice(0, 12), meta: buildRecipeMeta(data.pals) }
   }, [data, pal.id])
 
   if (parents.length === 0) {
@@ -63,19 +64,11 @@ function BreedingLinks({
   return (
     <div className="space-y-2">
       <div className="text-xs text-muted-foreground">{t('pal.bredFrom')}</div>
-      <ul className="space-y-1 text-sm">
+      <div className="grid grid-cols-1 gap-2">
         {parents.map((f) => (
-          <li key={`${f.a}|${f.b}`} className="tabular-nums">
-            <Link to="/pals/$id" params={{ id: f.a }} className="hover:text-primary hover:underline">
-              {names[f.a] ?? f.a}
-            </Link>
-            <span className="text-muted-foreground"> + </span>
-            <Link to="/pals/$id" params={{ id: f.b }} className="hover:text-primary hover:underline">
-              {names[f.b] ?? f.b}
-            </Link>
-          </li>
+          <RecipeCard key={comboKey(f)} f={f} names={names} meta={meta} uniqueLabel={t('breeding.unique')} />
         ))}
-      </ul>
+      </div>
       <Link to="/breeding" className="inline-block text-sm text-primary hover:underline">
         {t('pal.openBreeding')}
       </Link>
