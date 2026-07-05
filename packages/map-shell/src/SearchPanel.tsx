@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 import MiniSearch, { type SearchOptions, type SearchResult } from "minisearch"
 import { cn } from "@gamemap/ui"
 
@@ -56,11 +56,35 @@ export type SearchPanelProps = {
    */
   resolveSearchOptions?: (query: string) => SearchOptions | undefined
   /**
+   * App-wide base MiniSearch options, merged UNDER the scope's fields and under
+   * any `resolveSearchOptions` per-query override. Lets an app change matching
+   * for every query without the panel hardcoding it. E.g. the Palworld map
+   * passes `{ combineWith: "AND", fuzzy: false }`: pal names tokenize per CJK
+   * character, so the MiniSearch default (OR-combine) makes "云海鹿" match every
+   * pal sharing a single character — AND requires all characters instead. Pass
+   * a STABLE reference (module constant / memoized); an inline object literal
+   * re-runs the search every render.
+   */
+  searchOptions?: SearchOptions
+  /**
    * Optional secondary line rendered right-aligned in the coords row, computed
    * lazily per shown result (so an app can do a point lookup for only the ≤50
    * visible cards rather than every marker). AION2 uses it for the subzone.
    */
   resultAside?: (item: SearchItem) => string | undefined
+  /**
+   * Seed the search box from outside (e.g. a `?q=` deep link). Prefills the
+   * input and runs the search immediately. Re-applied whenever the value
+   * changes; a later user edit is preserved until the value changes again.
+   */
+  initialQuery?: string
+  /**
+   * Called with the ids of the currently shown results whenever they change
+   * (empty array when the query is blank). Lets the host force those markers
+   * onto the map even when their subtype filter is off. Must be a stable
+   * callback (e.g. a `useState` setter or `useCallback`).
+   */
+  onResultsChange?: (ids: string[]) => void
 }
 
 type Scope = "both" | "name"
@@ -81,16 +105,29 @@ export function SearchPanel({
   displayCoords = (x, y) => ({ x, y }),
   searchFields,
   resolveSearchOptions,
+  searchOptions,
   resultAside,
+  initialQuery,
+  onResultsChange,
 }: SearchPanelProps) {
-  const [query, setQuery] = useState("")
-  const [debounced, setDebounced] = useState("")
+  const [query, setQuery] = useState(initialQuery ?? "")
+  const [debounced, setDebounced] = useState(initialQuery ?? "")
   const [scope, setScope] = useState<Scope>("both")
 
   useEffect(() => {
     const id = setTimeout(() => setDebounced(query), debounceMs)
     return () => clearTimeout(id)
   }, [query, debounceMs])
+
+  // Re-seed from an externally supplied query (URL deep link / navigation).
+  // Runs only when `initialQuery` actually changes, so a user edit afterwards
+  // is never clobbered by an unrelated re-render. Bypasses the debounce so the
+  // deep-linked search shows immediately.
+  useEffect(() => {
+    if (initialQuery === undefined) return
+    setQuery(initialQuery)
+    setDebounced(initialQuery)
+  }, [initialQuery])
 
   const itemsById = useMemo(() => {
     const m = new Map<string, SearchItem>()
@@ -129,14 +166,35 @@ export function SearchPanel({
   const results: SearchResult[] = useMemo(() => {
     const q = debounced.trim()
     if (!q) return []
-    // An app-supplied resolver may take over matching for this query (e.g.
-    // Palworld's numeric-id lookup); otherwise search the scope's fields with
-    // the default prefix/fuzzy options set on the index.
-    const opts: SearchOptions = resolveSearchOptions?.(q) ?? {
+    // Layer the options: app-wide base (`searchOptions`) < the scope's fields <
+    // an app-supplied per-query override (`resolveSearchOptions`, e.g. Palworld's
+    // numeric-id lookup) which wins. `...undefined` spreads to nothing, so an
+    // absent base or resolver simply drops out.
+    const opts: SearchOptions = {
+      ...searchOptions,
       fields: scope === "name" ? ["name"] : searchFields,
+      ...resolveSearchOptions?.(q),
     }
     return miniSearch.search(q, opts).slice(0, 50)
-  }, [debounced, miniSearch, scope, searchFields, resolveSearchOptions])
+    // searchFields is joined (not referenced) so a fresh array literal with the
+    // same contents doesn't churn `results` every render — which, via the
+    // onResultsChange effect below, would loop setState→render→setState.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [debounced, miniSearch, scope, searchFields.join(","), resolveSearchOptions, searchOptions])
+
+  // Report the shown result ids so the host can force those markers onto the
+  // map even when their subtype filter is off (see SearchPanelProps). Guarded
+  // by the last-reported id list so an unstable `results`/`onResultsChange`
+  // reference can't spin an update loop: we only call out when the ids change.
+  const lastReportedIds = useRef<string | null>(null)
+  useEffect(() => {
+    if (!onResultsChange) return
+    const ids = results.map((r) => r.id as string)
+    const key = ids.join(" ")
+    if (key === lastReportedIds.current) return
+    lastReportedIds.current = key
+    onResultsChange(ids)
+  }, [results, onResultsChange])
 
   const handleSelect = (id: string) => {
     const item = itemsById.get(id)

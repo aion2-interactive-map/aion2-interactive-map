@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Link } from '@tanstack/react-router'
+import { Link, useSearch } from '@tanstack/react-router'
 import { GameMapView, type EngineMarker, type MapRef } from '@gamemap/map-engine'
 import { FilterPanel, MarkerPopupCard, SearchPanel, ShellLayout, ShellMapSelect, ShellSidebar, type FilterCategory, type SearchItem } from '@gamemap/map-shell'
 import type { MarkerTypeSubtype } from '@gamemap/data-contract'
@@ -23,6 +23,13 @@ import { TopNav } from './components/TopNav'
 const palIdLookup = (q: string) =>
   /^\d+$/.test(q) ? { fields: ['idLabel'], prefix: false, fuzzy: false } : undefined
 
+// Pal names tokenize per CJK character, and MiniSearch's default OR-combine then
+// matches any pal sharing a SINGLE character — searching "云海鹿" surfaces every
+// 海/鹿 pal. Require ALL query tokens (AND) and drop fuzzy so the map search is
+// precise; prefix stays on so partial queries ("云海") still match, and numeric
+// queries still go through palIdLookup above.
+const PAL_SEARCH_OPTIONS = { combineWith: 'AND', fuzzy: false } as const
+
 export default function App() {
   const { t, i18n } = useTranslation()
   const lng = i18n.resolvedLanguage ?? 'en-US'
@@ -30,10 +37,17 @@ export default function App() {
   // Track whether visible-subtypes have been initialized at least once
   const visibleInitialized = useRef(false)
 
+  // Deep-link params (?map=… & ?q=…): open a given map with the search box
+  // prefilled — used by the Paldeck "view on full map" link.
+  const { q: initialQuery, map: mapParam } = useSearch({ from: '/' })
+
   const [staticData, setStaticData] = useState<{
     maps: MapMeta[]; types: Taxonomy; mapsL10n: MapsLocale; typesL10n: TypesLocale
   } | null>(null)
-  const [mapId, setMapId] = useState('MainWorld')
+  const [mapId, setMapId] = useState(mapParam ?? 'MainWorld')
+  // Ids of the markers currently in the search results — forced onto the map so
+  // a hit shows even when its subtype filter is off (see SearchPanel).
+  const [searchResultIds, setSearchResultIds] = useState<string[]>([])
   const [palsBundle, setPalsBundle] = useState<PalsBundle | null>(null)
   const [markerData, setMarkerData] = useState<{ markers: MarkerRow[]; l10n: MarkerLocale } | null>(null)
   const [visible, setVisible] = useState<Set<string>>(new Set())
@@ -94,6 +108,14 @@ export default function App() {
     return () => { cancelled = true }
   }, [mapId, lng, t])
 
+  // A bad `?map=` deep link would otherwise leave the engine in its empty
+  // state; fall back to the default once the map list is known.
+  useEffect(() => {
+    if (staticData && !staticData.maps.some((m) => m.id === mapId)) {
+      setMapId('MainWorld')
+    }
+  }, [staticData, mapId])
+
   const map = staticData?.maps.find((m) => m.id === mapId) ?? undefined
 
   const subtypeMetaMap = useMemo(() => {
@@ -128,6 +150,8 @@ export default function App() {
       }
     })
   }, [staticData, markerData, subtypeMetaMap])
+
+  const forceShowIds = useMemo(() => new Set(searchResultIds), [searchResultIds])
 
   const searchItems: SearchItem[] = useMemo(() => {
     if (!staticData) return []
@@ -370,6 +394,7 @@ export default function App() {
             showBorders={false}
             lodEnabled={false}
             selectedMarkerId={selectedMarkerId}
+            forceShowIds={forceShowIds}
             selectedPosition={selectedPosition}
             onToggleMarker={onToggleMarker}
             subzoneAt={subzoneAt}
@@ -385,6 +410,8 @@ export default function App() {
             items={searchItems}
             onSelect={setSelectedMarkerId}
             onFlyTo={setSelectedPosition}
+            onResultsChange={setSearchResultIds}
+            initialQuery={initialQuery}
             labels={searchLabels}
             displayCoords={displayCoords}
             // Palworld's `description` is a spawn level range ("Lv.10–14"), not
@@ -392,6 +419,7 @@ export default function App() {
             // of that level. Search name + Paldeck id only.
             searchFields={['name', 'idLabel']}
             resolveSearchOptions={palIdLookup}
+            searchOptions={PAL_SEARCH_OPTIONS}
           />
       </main>
     </ShellLayout>

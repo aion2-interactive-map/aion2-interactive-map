@@ -58,6 +58,15 @@ export default function MapRoute() {
     y: number;
   } | null>(null);
 
+  // Ids of the current search results — forced onto the map so a hit shows even
+  // when its subtype filter is off (the engine bypasses the filter for these).
+  const [searchResultIds, setSearchResultIds] = useState<string[]>([]);
+  const forceShowIds = useMemo(() => new Set(searchResultIds), [searchResultIds]);
+
+  // Prefill the search box from a `?q=` deep link (read once on mount, like the
+  // marker/pos deep link below).
+  const initialQuery = useMemo(() => getQueryParam("q") ?? undefined, []);
+
   /**
    * App markers (already translated) + subtype taxonomy + completion state →
    * the pre-resolved `EngineMarker[]` the engine components consume.
@@ -201,6 +210,7 @@ export default function MapRoute() {
           showBorders={showBorders}
           lodEnabled={lodEnabled}
           selectedMarkerId={selectedMarkerId}
+          forceShowIds={forceShowIds}
           selectedPosition={selectedPosition}
           onToggleMarker={handleToggleMarker}
           subzoneAt={subzoneAt}
@@ -215,6 +225,8 @@ export default function MapRoute() {
           items={searchItems}
           onSelect={setSelectedMarkerId}
           onFlyTo={setSelectedPosition}
+          onResultsChange={setSearchResultIds}
+          initialQuery={initialQuery}
           labels={searchLabels}
           searchFields={["name", "description"]}
           resultAside={(itm) => subzoneAt(itm.x, itm.y) || undefined}

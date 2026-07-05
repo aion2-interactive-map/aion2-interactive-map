@@ -249,7 +249,7 @@ export default function PalDetailPage() {
             ) : null}
 
             <PalSection title={t('pal.section.spawns')}>
-              <PalSpawnMap palId={pal.id} palIcon={pal.icon} className="aspect-square" />
+              <PalSpawnMap palId={pal.id} palIcon={pal.icon} palName={text?.name ?? pal.id} className="aspect-square" />
             </PalSection>
           </div>
 

@@ -35,7 +35,21 @@ const themeStorage: ThemeStorage = {
 }
 
 const rootRoute = createRootRoute({ component: () => <Outlet /> })
-const mapRoute = createRoute({ getParentRoute: () => rootRoute, path: '/', component: App })
+export interface MapSearch {
+  /** Prefill the marker search box (e.g. a pal name from the encyclopedia). */
+  q?: string
+  /** Open a specific map instead of the default MainWorld. */
+  map?: string
+}
+const mapRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/',
+  validateSearch: (s: Record<string, unknown>): MapSearch => ({
+    q: typeof s.q === 'string' ? s.q : undefined,
+    map: typeof s.map === 'string' ? s.map : undefined,
+  }),
+  component: App,
+})
 export interface BreedingSearch {
   a?: string
   b?: string

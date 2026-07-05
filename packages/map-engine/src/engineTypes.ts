@@ -104,6 +104,13 @@ export interface GameMapViewProps {
   /** Gate higher-tier markers behind minimum zoom levels (game-like LOD). */
   lodEnabled: boolean;
   selectedMarkerId: string | null;
+  /**
+   * Markers to show regardless of the subtype filter and LOD (e.g. the active
+   * search results). Like selection, these bypass subtype/LOD gating so a
+   * result whose subtype is toggled off still appears; viewport culling still
+   * applies. Undefined/empty = no forced markers.
+   */
+  forceShowIds?: Set<string>;
   /** Position to fly to (search / deep-link), DATA image-space. */
   selectedPosition: { x: number; y: number } | null;
   /**

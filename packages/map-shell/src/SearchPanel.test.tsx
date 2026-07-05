@@ -26,6 +26,7 @@ const palworldNumericLookup = (q: string): SearchOptions | undefined =>
 type Overrides = {
   searchFields?: SearchField[]
   resolveSearchOptions?: (query: string) => SearchOptions | undefined
+  searchOptions?: SearchOptions
   resultAside?: (item: SearchItem) => string | undefined
 }
 
@@ -38,6 +39,7 @@ function renderSearchPanel(items: SearchItem[], over: Overrides = {}) {
       onSelect={vi.fn()}
       searchFields={over.searchFields ?? ["name", "description", "idLabel"]}
       resolveSearchOptions={over.resolveSearchOptions}
+      searchOptions={over.searchOptions}
       resultAside={over.resultAside}
     />,
   )
@@ -160,6 +162,73 @@ describe("SearchPanel", () => {
     searchFor("皮鸡")
 
     expect(screen.getByText("皮皮鸡")).toBeTruthy()
+  })
+
+  it("default OR-combine surfaces pals sharing a single CJK character", () => {
+    // Documents the problem searchOptions solves: "云海鹿" tokenizes to 云/海/鹿
+    // and OR matches anything containing any one of them.
+    renderSearchPanel(
+      [
+        item({ id: "t", name: "云海鹿" }),
+        item({ id: "sea", name: "海獭" }), // shares 海
+        item({ id: "deer", name: "岩角鹿" }), // shares 鹿
+      ],
+      { searchFields: ["name"] },
+    )
+
+    searchFor("云海鹿")
+
+    expect(screen.getByText("云海鹿")).toBeTruthy()
+    expect(screen.getByText("海獭")).toBeTruthy()
+    expect(screen.getByText("岩角鹿")).toBeTruthy()
+  })
+
+  it("searchOptions combineWith:AND requires every query token to match", () => {
+    renderSearchPanel(
+      [
+        item({ id: "t", name: "云海鹿" }),
+        item({ id: "sea", name: "海獭" }), // shares 海 only
+        item({ id: "deer", name: "岩角鹿" }), // shares 鹿 only
+      ],
+      { searchFields: ["name"], searchOptions: { combineWith: "AND" } },
+    )
+
+    searchFor("云海鹿")
+
+    expect(screen.getByText("云海鹿")).toBeTruthy()
+    expect(screen.queryByText("海獭")).toBeNull()
+    expect(screen.queryByText("岩角鹿")).toBeNull()
+  })
+
+  it("combineWith:AND still matches a partial CJK query via prefix", () => {
+    renderSearchPanel(
+      [
+        item({ id: "t", name: "云海鹿" }),
+        item({ id: "sea", name: "海獭" }),
+      ],
+      { searchFields: ["name"], searchOptions: { combineWith: "AND" } },
+    )
+
+    searchFor("云海")
+
+    expect(screen.getByText("云海鹿")).toBeTruthy()
+    expect(screen.queryByText("海獭")).toBeNull()
+  })
+
+  it("a per-query resolver still overrides the searchOptions base", () => {
+    // Base sets AND, but the numeric resolver takes over for a numeric query.
+    renderSearchPanel(
+      [
+        item({ id: "pal-123", name: "Exact Pal", idLabel: "No.123" }),
+        item({ id: "pal-124", name: "Neighbour Pal", idLabel: "No.124" }),
+      ],
+      { ...palworld, searchOptions: { combineWith: "AND", fuzzy: false } },
+    )
+
+    searchFor("123")
+
+    expect(screen.getByText("Exact Pal")).toBeTruthy()
+    expect(screen.queryByText("Neighbour Pal")).toBeNull()
   })
 
   it("renders an idLabel badge only for items that provide one", () => {

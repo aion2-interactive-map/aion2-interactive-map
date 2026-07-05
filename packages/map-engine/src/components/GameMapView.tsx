@@ -138,6 +138,7 @@ const GameMapView: React.FC<GameMapViewProps> = ({
   showBorders,
   lodEnabled,
   selectedMarkerId,
+  forceShowIds,
   selectedPosition,
   onToggleMarker,
   subzoneAt,
@@ -225,9 +226,13 @@ const GameMapView: React.FC<GameMapViewProps> = ({
     const out: { marker: EngineMarker; position: L.LatLng }[] = [];
     for (const m of markers) {
       // Selection always overrides subtype filter, LOD and culling so the
-      // focused marker (and its popup) render even when off-screen.
+      // focused marker (and its popup) render even when off-screen. Forced
+      // markers (active search results) bypass the subtype filter and LOD too
+      // — so a hit whose subtype is toggled off still shows — but stay subject
+      // to viewport culling below.
       const isSelected = selectedMarkerId === m.id;
-      if (!isSelected) {
+      const isForced = !isSelected && !!forceShowIds?.has(m.id);
+      if (!isSelected && !isForced) {
         if (!visibleSubtypes?.has(m.subtype)) continue;
         if (lodEnabled) {
           if (m.tier == null) continue;
@@ -251,6 +256,7 @@ const GameMapView: React.FC<GameMapViewProps> = ({
     zoom,
     viewBounds,
     selectedMarkerId,
+    forceShowIds,
   ]);
 
   /**

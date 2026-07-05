@@ -141,26 +141,37 @@ export function loadPals(lng: string): Promise<PalsBundle> {
 }
 
 // --- spawn markers (for the embedded per-pal map) ---------------------------
-/** A pal's spawn points on one map. `count` (>1) marks a pre-clustered point. */
-export interface SpawnPoint { x: number; y: number; count?: number }
+/**
+ * A pal's spawn point on one map. `count` (>1) marks a pre-clustered point;
+ * `level` is that spawn's localized level range (e.g. "Lv.1–3"), read from the
+ * marker locale — the same string the main map shows.
+ */
+export interface SpawnPoint { x: number; y: number; count?: number; level?: string }
 export interface PalSpawns { map: GameMapMeta; points: SpawnPoint[] }
 
-interface SpawnMarker { subtype: string; x: number; y: number; count?: number }
+interface SpawnMarker { id: string; subtype: string; x: number; y: number; count?: number }
 
 /**
  * Every map on which `palId` spawns, with that pal's spawn points. Reuses the
  * per-pal markers already in `markers/<map>.json` (subtype = pal id); maps with
  * no spawns are omitted. Points are the data's pre-clustered markers rendered
- * individually (no further clustering) so each shows on the embedded map.
+ * individually (no further clustering) so each shows on the embedded map. The
+ * per-marker `level` range comes from the `<lng>` marker locale (missing locale
+ * ⇒ level simply omitted).
  */
-export async function loadPalSpawns(palId: string): Promise<PalSpawns[]> {
+export async function loadPalSpawns(palId: string, lng: string): Promise<PalSpawns[]> {
   const { maps } = await j<{ maps: GameMapMeta[] }>(`${DATA_BASE}/maps.json`)
   const per = await Promise.all(
     maps.map(async (map) => {
-      const { markers } = await j<{ markers: SpawnMarker[] }>(`${DATA_BASE}/markers/${map.id}.json`)
+      const [{ markers }, loc] = await Promise.all([
+        j<{ markers: SpawnMarker[] }>(`${DATA_BASE}/markers/${map.id}.json`),
+        j<Record<string, { description?: string }>>(
+          `${DATA_BASE}/locales/${lng}/markers/${map.id}.json`,
+        ).catch(() => ({}) as Record<string, { description?: string }>),
+      ])
       const points = markers
         .filter((m) => m.subtype === palId)
-        .map((m) => ({ x: m.x, y: m.y, count: m.count }))
+        .map((m) => ({ x: m.x, y: m.y, count: m.count, level: loc[m.id]?.description }))
       return { map, points }
     }),
   )
