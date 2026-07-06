@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "aion2-frontend",
+      "runtimeExecutable": "yarn",
+      "runtimeArgs": ["--cwd", "frontend", "dev", "--port", "5173"],
+      "port": 5173,
+      "autoPort": false
+    }
+  ]
+}
