@@ -81,6 +81,13 @@ export interface CatalogText {
   description?: string
 }
 
+/** Localized category (typeA) labels: {typeA: label}. From locales/<lng>/labels.json. */
+export type TypeLabels = Record<string, string>
+interface LabelsFile {
+  item: TypeLabels
+  building: TypeLabels
+}
+
 // --- loaders -----------------------------------------------------------------
 const j = async <T>(url: string): Promise<T> => {
   const r = await fetch(url)
@@ -92,11 +99,13 @@ export interface ItemsBundle {
   items: ItemEntry[]
   byId: Map<string, ItemEntry>
   text: Record<string, CatalogText>
+  typeLabels: TypeLabels
 }
 export interface BuildingsBundle {
   buildings: BuildingEntry[]
   byId: Map<string, BuildingEntry>
   text: Record<string, CatalogText>
+  typeLabels: TypeLabels
 }
 export interface TechBundle {
   techs: TechEntry[]
@@ -109,19 +118,31 @@ const buildingsCache = new Map<string, Promise<BuildingsBundle>>()
 const techCache = new Map<string, Promise<TechBundle>>()
 
 async function fetchItems(lng: string): Promise<ItemsBundle> {
-  const [file, text] = await Promise.all([
+  const [file, text, labels] = await Promise.all([
     j<{ items: ItemEntry[] }>(`${DATA_BASE}/items.json`),
     j<Record<string, CatalogText>>(`${DATA_BASE}/locales/${lng}/items.json`),
+    j<LabelsFile>(`${DATA_BASE}/locales/${lng}/labels.json`),
   ])
-  return { items: file.items, byId: new Map(file.items.map((i) => [i.id, i])), text }
+  return {
+    items: file.items,
+    byId: new Map(file.items.map((i) => [i.id, i])),
+    text,
+    typeLabels: labels.item,
+  }
 }
 
 async function fetchBuildings(lng: string): Promise<BuildingsBundle> {
-  const [file, text] = await Promise.all([
+  const [file, text, labels] = await Promise.all([
     j<{ buildings: BuildingEntry[] }>(`${DATA_BASE}/buildings.json`),
     j<Record<string, CatalogText>>(`${DATA_BASE}/locales/${lng}/buildings.json`),
+    j<LabelsFile>(`${DATA_BASE}/locales/${lng}/labels.json`),
   ])
-  return { buildings: file.buildings, byId: new Map(file.buildings.map((b) => [b.id, b])), text }
+  return {
+    buildings: file.buildings,
+    byId: new Map(file.buildings.map((b) => [b.id, b])),
+    text,
+    typeLabels: labels.building,
+  }
 }
 
 async function fetchTech(lng: string): Promise<TechBundle> {
@@ -163,5 +184,6 @@ export function loadTech(lng: string): Promise<TechBundle> {
 }
 
 // --- building icon -----------------------------------------------------------
-/** Building icon (e.g. `build_Workbench`); items have no icons in the export. */
+/** Building icon (e.g. `build_Workbench`). Item icons live under the game's
+ *  /Game/Others/InventoryItemIcon tree, which isn't in the current raw export. */
 export const buildingIconUrl = (icon: string): string => `${RES_BASE}/icons/${icon}.webp`

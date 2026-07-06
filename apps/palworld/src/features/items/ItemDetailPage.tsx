@@ -91,7 +91,7 @@ export default function ItemDetailPage() {
         <div className="space-y-6">
           {/* Header */}
           <div className="min-w-0">
-            <div className="text-sm text-muted-foreground">{itemTypeLabel(item.typeA)}</div>
+            <div className="text-sm text-muted-foreground">{itemTypeLabel(item.typeA, b.items.typeLabels)}</div>
             <h1 className="text-2xl font-bold">{text?.name ?? item.id}</h1>
           </div>
 
@@ -219,7 +219,7 @@ export default function ItemDetailPage() {
             <div className="space-y-6 md:order-2">
               <CatalogSection title={t('item.section.properties')} testId="item-properties">
                 <InfoRows>
-                  <StatRow label={t('item.type')} value={itemTypeLabel(item.typeA)} />
+                  <StatRow label={t('item.type')} value={itemTypeLabel(item.typeA, b.items.typeLabels)} />
                   <StatRow label={t('item.rarity')} value={item.rarity} />
                   {item.rank ? <StatRow label={t('item.rank')} value={item.rank} /> : null}
                   {elementLabel ? <StatRow label={t('item.element')} value={elementLabel} /> : null}

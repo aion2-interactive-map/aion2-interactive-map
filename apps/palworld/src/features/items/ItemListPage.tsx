@@ -43,7 +43,9 @@ export default function ItemListPage() {
   const categories = useMemo(() => {
     if (!bundle) return []
     const set = new Set(bundle.items.map((i) => i.typeA))
-    return [...set].sort((a, b) => itemTypeLabel(a).localeCompare(itemTypeLabel(b)))
+    return [...set].sort((a, b) =>
+      itemTypeLabel(a, bundle.typeLabels).localeCompare(itemTypeLabel(b, bundle.typeLabels)),
+    )
   }, [bundle])
 
   const list = useMemo(() => {
@@ -75,7 +77,7 @@ export default function ItemListPage() {
                 <SelectItem value="all">{t('item.all')}</SelectItem>
                 {categories.map((c) => (
                   <SelectItem key={c} value={c}>
-                    {itemTypeLabel(c)}
+                    {itemTypeLabel(c, bundle?.typeLabels)}
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -104,7 +106,7 @@ export default function ItemListPage() {
                   <span className="line-clamp-2 text-sm font-medium leading-tight">
                     {bundle.text[i.id]?.name ?? i.id}
                   </span>
-                  <span className="text-[11px] text-muted-foreground">{itemTypeLabel(i.typeA)}</span>
+                  <span className="text-[11px] text-muted-foreground">{itemTypeLabel(i.typeA, bundle.typeLabels)}</span>
                 </Link>
               ))}
             </div>

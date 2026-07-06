@@ -42,7 +42,9 @@ export default function BuildingListPage() {
   const categories = useMemo(() => {
     if (!bundle) return []
     const set = new Set(bundle.buildings.map((b) => b.typeA))
-    return [...set].sort((a, b) => buildingTypeLabel(a).localeCompare(buildingTypeLabel(b)))
+    return [...set].sort((a, b) =>
+      buildingTypeLabel(a, bundle.typeLabels).localeCompare(buildingTypeLabel(b, bundle.typeLabels)),
+    )
   }, [bundle])
 
   const list = useMemo(() => {
@@ -74,7 +76,7 @@ export default function BuildingListPage() {
                 <SelectItem value="all">{t('building.all')}</SelectItem>
                 {categories.map((c) => (
                   <SelectItem key={c} value={c}>
-                    {buildingTypeLabel(c)}
+                    {buildingTypeLabel(c, bundle?.typeLabels)}
                   </SelectItem>
                 ))}
               </SelectContent>

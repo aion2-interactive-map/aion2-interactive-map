@@ -86,7 +86,7 @@ export default function BuildingDetailPage() {
               />
             ) : null}
             <div className="min-w-0">
-              <div className="text-sm text-muted-foreground">{buildingTypeLabel(bld.typeA)}</div>
+              <div className="text-sm text-muted-foreground">{buildingTypeLabel(bld.typeA, b.buildings.typeLabels)}</div>
               <h1 className="text-2xl font-bold">{text?.name ?? bld.id}</h1>
             </div>
           </div>
@@ -131,7 +131,7 @@ export default function BuildingDetailPage() {
             <div className="space-y-6 md:order-2">
               <CatalogSection title={t('building.section.info')}>
                 <InfoRows>
-                  <StatRow label={t('building.type')} value={buildingTypeLabel(bld.typeA)} />
+                  <StatRow label={t('building.type')} value={buildingTypeLabel(bld.typeA, b.buildings.typeLabels)} />
                   {bld.rank ? <StatRow label={t('building.rank')} value={bld.rank} /> : null}
                   {bld.work ? <StatRow label={t('building.work')} value={bld.work} /> : null}
                   {energy ? <StatRow label={t('building.energy')} value={energy} /> : null}
