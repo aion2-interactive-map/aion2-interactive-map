@@ -1,0 +1,49 @@
+[
+ {
+  "ID": {
+   "Value": 1101010
+  },
+  "Name": "HQ1101010",
+  "Race": "ERace::Light",
+  "UnlockLevel": 1,
+  "RecommendedLevel": 3,
+  "QuestText": "STR_HQ1101010",
+  "Type": "EQuestType::Hero",
+  "Part": "hero_poeta_01",
+  "Grade": "EItemGrade::Mythic",
+  "SubzoneGroup": "ESubzoneGroupID::ESubzoneGroupID_None",
+  "AcquirableConditions": [],
+  "AcquireType": "EQuestAcquireType::Npc",
+  "AcquireValue": "N_L0_Q_GuardSylvar_01",
+  "AcquireValue2": "",
+  "AcquireMapId": {
+   "Value": 1000
+  },
+  "AcquireTeleportName": "None",
+  "AcquireBeforeNpcTalk": "HQ1101010_00_Accept",
+  "AcquireAfterNpcTalk": "None",
+  "AcquireNotiNpcTalk": "None",
+  "AcquireNote": "None",
+  "AcquireItemList": [],
+  "CompleteType": "EQuestCompleteType::Npc",
+  "CompleteValue": "N_L0_Commander_01",
+  "CompleteTravelType": "EQuestAreaTravelType::All",
+  "CompleteArrivalAction": "EArrivalActionType::AutoInteraction",
+  "CompleteMapId": {
+   "Value": 1000
+  },
+  "CompleteTeleportName": "None",
+  "CompleteTeleportCost": 0,
+  "bCompleteTeleportHideInTargetMap": false,
+  "CompleteNpcTalk": "HQ1101010_00_Complete",
+  "CompleteAutomoveType": "EAutomoveType::None",
+  "DestPlaceType": "EDestPlaceType::None",
+  "bCompleteArrivalKeepFlying": false,
+  "bEnableGiveup": false,
+  "NextQuestName": "HQ1101011",
+  "DistrictQuestGroup": "None",
+  "RaceTag": "ERace::All",
+  "ExplorationType": "EExplorationType::None",
+  "RepeatType": "EQuestRepeatType::None"
+ }
+]

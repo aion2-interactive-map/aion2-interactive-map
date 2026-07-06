@@ -1,0 +1,1722 @@
+[
+ {
+  "ID": {
+   "Value": 110120001
+  },
+  "Name": "equip_wp_Greatsword_L_e_craftdraconic_001a_s",
+  "Desc": {
+   "Key": "STR_ITEM_EQUIP_WP_GREATSWORD_L_E_CRAFTDRACONIC_001A_S"
+  },
+  "DescLong": {
+   "Key": "None"
+  },
+  "ItemType": "EItemType::Equip",
+  "ItemLevel": 108,
+  "ItemGrade": "EItemGrade::Epic",
+  "ItemTier": "EItemTier::t3",
+  "ItemRace": "ERace::Light",
+  "IconRes": "Icon_WP_GS_0110_T05",
+  "IconFx": "None",
+  "SoundMaterial": "Greatsword",
+  "PermitLevelMin": 45,
+  "PermitLevelMax": 99,
+  "MaxStackCount": 0,
+  "ExchangeType": "EExchangeType::SoulBind",
+  "TradeCategory": "ETradeItemCategory::Greatsword",
+  "CanStorage": 1,
+  "CanGuildStorage": 1,
+  "CanLock": 1,
+  "CanSell": 1,
+  "SellCurrencyType": "ECurrencyCategory::Gold",
+  "SellPrice": 153915,
+  "CanDelete": 1,
+  "CanDecompose": 1,
+  "DecomposeCostGold": 16000,
+  "DecomposeResultItemGroup": [
+   "De_Package_Epic_108",
+   "De_Package_Level108"
+  ],
+  "DropIconShow": 1,
+  "DropMeshKey": "I_Drop_Greatsword",
+  "Costume_res_key_m": "GS_0110_T05",
+  "ResScale_m": 1000,
+  "Costume_res_key_f": "GS_0110_T05",
+  "ResScale_f": 1000,
+  "Costume_res_Material": "ERace::Light",
+  "bShowGetRoute": true,
+  "FixedLimitTime": {
+   "Ticks": 0
+  },
+  "MaintainTime": 0,
+  "DeleteType": "EPeriodItemDeleteType::DeleteItem",
+  "ReplaceItem": "None",
+  "CanSoulSelect": true,
+  "CanCharacterStorage": true,
+  "EquipCategory": "EEquipCategory::Greatsword",
+  "ItemBasicLevel": 80,
+  "AdditionalStatInfo": "None",
+  "SoulbindCostName": "Epic_Cost",
+  "SoulbindAddMagicStone": 0,
+  "CanEnchant": 1,
+  "EnchantEffectGroup": "Weapon_Epic",
+  "EnchantGroup": "Enchant_Epic_108",
+  "ExceedEnchantGroup": "Weapon_Craft_Epic",
+  "EnchantSubstatInterval": 0,
+  "AttackSpeed": 0,
+  "WeaponAttackRange": 150.0,
+  "WeaponAttackHeightRange": 300.0,
+  "WeaponFollowRange": 140.0,
+  "WeaponFollowHeightRange": 0.0,
+  "WeaponLockOnRange": 1,
+  "WeaponCritical": 0,
+  "WeaponCriAddRate": 15000,
+  "ExtendingWeapon": false,
+  "ExtendingWeaponAttackFollowRange": 0.0,
+  "ExtendingWeaponAttackFollowHeightRange": 0.0,
+  "ExtendingWeaponAttackRange": 0.0,
+  "ExtendingWeaponAttackHeightRange": 0.0,
+  "MainStatCount": 0,
+  "MainStats": [
+   {
+    "Key": "EStat::WeaponMinDamage",
+    "Value": 463
+   },
+   {
+    "Key": "EStat::WeaponDamage",
+    "Value": 627
+   },
+   {
+    "Key": "EStat::WeaponAccuracy",
+    "Value": 100
+   },
+   {
+    "Key": "EStat::Critical",
+    "Value": 150
+   },
+   {
+    "Key": "EStat::Block",
+    "Value": 150
+   },
+   {
+    "Key": "EStat::DecreaseWeaponBlock",
+    "Value": 3700
+   },
+   {
+    "Key": "EStat::MaxWeaponBlock",
+    "Value": 100000
+   },
+   {
+    "Key": "EStat::PvEAmplifyDamage",
+    "Value": 500
+   }
+  ],
+  "SubStats": [
+   {
+    "Key": "EStat::CombatSpeed",
+    "Value": {
+     "MinValue": 1377,
+     "MaxValue": 1591,
+     "RandomWeight": 4000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::AmplifyWeaponDamage",
+    "Value": {
+     "MinValue": 1492,
+     "MaxValue": 1723,
+     "RandomWeight": 4000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::AbnormalAccuracy",
+    "Value": {
+     "MinValue": 2295,
+     "MaxValue": 2646,
+     "RandomWeight": 4000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::AmplifyAllDamage",
+    "Value": {
+     "MinValue": 619,
+     "MaxValue": 719,
+     "RandomWeight": 2000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::AdditionalHitRate",
+    "Value": {
+     "MinValue": 975,
+     "MaxValue": 1128,
+     "RandomWeight": 6000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::STR",
+    "Value": {
+     "MinValue": 81,
+     "MaxValue": 100,
+     "RandomWeight": 6000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::AGI",
+    "Value": {
+     "MinValue": 81,
+     "MaxValue": 100,
+     "RandomWeight": 7000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::WeaponFixingDamage",
+    "Value": {
+     "MinValue": 32,
+     "MaxValue": 44,
+     "RandomWeight": 7000,
+     "ValueWeight": 1455
+    }
+   },
+   {
+    "Key": "EStat::Critical",
+    "Value": {
+     "MinValue": 37,
+     "MaxValue": 50,
+     "RandomWeight": 7000,
+     "ValueWeight": 1417
+    }
+   },
+   {
+    "Key": "EStat::CriticalAddDamage",
+    "Value": {
+     "MinValue": 52,
+     "MaxValue": 67,
+     "RandomWeight": 8000,
+     "ValueWeight": 1357
+    }
+   },
+   {
+    "Key": "EStat::BackAttackDamage",
+    "Value": {
+     "MinValue": 52,
+     "MaxValue": 67,
+     "RandomWeight": 7000,
+     "ValueWeight": 1357
+    }
+   },
+   {
+    "Key": "EStat::WeaponAccuracy",
+    "Value": {
+     "MinValue": 68,
+     "MaxValue": 85,
+     "RandomWeight": 8000,
+     "ValueWeight": 1311
+    }
+   },
+   {
+    "Key": "EStat::Block",
+    "Value": {
+     "MinValue": 57,
+     "MaxValue": 73,
+     "RandomWeight": 7000,
+     "ValueWeight": 1332
+    }
+   },
+   {
+    "Key": "EStat::MPMax",
+    "Value": {
+     "MinValue": 153,
+     "MaxValue": 183,
+     "RandomWeight": 8000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::HPMax",
+    "Value": {
+     "MinValue": 306,
+     "MaxValue": 359,
+     "RandomWeight": 8000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::FrontAttackDamage",
+    "Value": {
+     "MinValue": 52,
+     "MaxValue": 67,
+     "RandomWeight": 7000,
+     "ValueWeight": 1357
+    }
+   }
+  ],
+  "SoulbindFixedSubStats": [],
+  "SoulbindRandomStat": true,
+  "SoulbindRandomStatCount": 6,
+  "SoulbindRandomSkillCountMax": 6,
+  "SubStatCountMin": 0,
+  "SubStatCountMax": 0,
+  "SubStatSkillSelectProb": 2000,
+  "bUseSubStatSkill": true,
+  "SoulbindRandomSkillGroup": "Active_EnchantEffect",
+  "EnchantVFX": "EnchantDefault",
+  "MagicStoneSlotCount": 5,
+  "ImprintMagicStoneCostGold": 3000,
+  "MagicStoneGroups": [
+   "Magicstone_Group_Equip"
+  ],
+  "AdditionalHitRef": "Greatsword",
+  "ArmorType": "EArmorMaterialType::None",
+  "bCanExtractionSkin": false,
+  "ExtractionSkinCount": 0,
+  "ExtractionSkins": [
+   "WP_0110_T05_GS"
+  ],
+  "ExtractionSkinRate": 1000,
+  "GodStoneSlotCount": 1,
+  "SetNames": [],
+  "EmblemType": "EEmblemType::None",
+  "SuccessionGroup": "Succession_Epic_Greatsword",
+  "SoulAddGroup": "SoulAdd_Epic_Tier_1",
+  "SurpassGroup": "None"
+ },
+ {
+  "ID": {
+   "Value": 110120002
+  },
+  "Name": "equip_wp_Greatsword_D_e_craftdraconic_001a_s",
+  "Desc": {
+   "Key": "STR_ITEM_EQUIP_WP_GREATSWORD_D_E_CRAFTDRACONIC_001A_S"
+  },
+  "DescLong": {
+   "Key": "None"
+  },
+  "ItemType": "EItemType::Equip",
+  "ItemLevel": 108,
+  "ItemGrade": "EItemGrade::Epic",
+  "ItemTier": "EItemTier::t3",
+  "ItemRace": "ERace::Dark",
+  "IconRes": "Icon_WP_GS_0110_T05",
+  "IconFx": "None",
+  "SoundMaterial": "Greatsword",
+  "PermitLevelMin": 45,
+  "PermitLevelMax": 99,
+  "MaxStackCount": 0,
+  "ExchangeType": "EExchangeType::SoulBind",
+  "TradeCategory": "ETradeItemCategory::Greatsword",
+  "CanStorage": 1,
+  "CanGuildStorage": 1,
+  "CanLock": 1,
+  "CanSell": 1,
+  "SellCurrencyType": "ECurrencyCategory::Gold",
+  "SellPrice": 153915,
+  "CanDelete": 1,
+  "CanDecompose": 1,
+  "DecomposeCostGold": 16000,
+  "DecomposeResultItemGroup": [
+   "De_Package_Epic_108",
+   "De_Package_Level108"
+  ],
+  "DropIconShow": 1,
+  "DropMeshKey": "I_Drop_Greatsword",
+  "Costume_res_key_m": "GS_0110_T05",
+  "ResScale_m": 1000,
+  "Costume_res_key_f": "GS_0110_T05",
+  "ResScale_f": 1000,
+  "Costume_res_Material": "ERace::Dark",
+  "bShowGetRoute": true,
+  "FixedLimitTime": {
+   "Ticks": 0
+  },
+  "MaintainTime": 0,
+  "DeleteType": "EPeriodItemDeleteType::DeleteItem",
+  "ReplaceItem": "None",
+  "CanSoulSelect": true,
+  "CanCharacterStorage": true,
+  "EquipCategory": "EEquipCategory::Greatsword",
+  "ItemBasicLevel": 80,
+  "AdditionalStatInfo": "None",
+  "SoulbindCostName": "Epic_Cost",
+  "SoulbindAddMagicStone": 0,
+  "CanEnchant": 1,
+  "EnchantEffectGroup": "Weapon_Epic",
+  "EnchantGroup": "Enchant_Epic_108",
+  "ExceedEnchantGroup": "Weapon_Craft_Epic",
+  "EnchantSubstatInterval": 0,
+  "AttackSpeed": 0,
+  "WeaponAttackRange": 150.0,
+  "WeaponAttackHeightRange": 300.0,
+  "WeaponFollowRange": 140.0,
+  "WeaponFollowHeightRange": 0.0,
+  "WeaponLockOnRange": 1,
+  "WeaponCritical": 0,
+  "WeaponCriAddRate": 15000,
+  "ExtendingWeapon": false,
+  "ExtendingWeaponAttackFollowRange": 0.0,
+  "ExtendingWeaponAttackFollowHeightRange": 0.0,
+  "ExtendingWeaponAttackRange": 0.0,
+  "ExtendingWeaponAttackHeightRange": 0.0,
+  "MainStatCount": 0,
+  "MainStats": [
+   {
+    "Key": "EStat::WeaponMinDamage",
+    "Value": 463
+   },
+   {
+    "Key": "EStat::WeaponDamage",
+    "Value": 627
+   },
+   {
+    "Key": "EStat::WeaponAccuracy",
+    "Value": 100
+   },
+   {
+    "Key": "EStat::Critical",
+    "Value": 150
+   },
+   {
+    "Key": "EStat::Block",
+    "Value": 150
+   },
+   {
+    "Key": "EStat::DecreaseWeaponBlock",
+    "Value": 3700
+   },
+   {
+    "Key": "EStat::MaxWeaponBlock",
+    "Value": 100000
+   },
+   {
+    "Key": "EStat::PvEAmplifyDamage",
+    "Value": 500
+   }
+  ],
+  "SubStats": [
+   {
+    "Key": "EStat::CombatSpeed",
+    "Value": {
+     "MinValue": 1377,
+     "MaxValue": 1591,
+     "RandomWeight": 4000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::AmplifyWeaponDamage",
+    "Value": {
+     "MinValue": 1492,
+     "MaxValue": 1723,
+     "RandomWeight": 4000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::AbnormalAccuracy",
+    "Value": {
+     "MinValue": 2295,
+     "MaxValue": 2646,
+     "RandomWeight": 4000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::AmplifyAllDamage",
+    "Value": {
+     "MinValue": 619,
+     "MaxValue": 719,
+     "RandomWeight": 2000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::AdditionalHitRate",
+    "Value": {
+     "MinValue": 975,
+     "MaxValue": 1128,
+     "RandomWeight": 6000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::STR",
+    "Value": {
+     "MinValue": 81,
+     "MaxValue": 100,
+     "RandomWeight": 6000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::AGI",
+    "Value": {
+     "MinValue": 81,
+     "MaxValue": 100,
+     "RandomWeight": 7000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::WeaponFixingDamage",
+    "Value": {
+     "MinValue": 32,
+     "MaxValue": 44,
+     "RandomWeight": 7000,
+     "ValueWeight": 1455
+    }
+   },
+   {
+    "Key": "EStat::Critical",
+    "Value": {
+     "MinValue": 37,
+     "MaxValue": 50,
+     "RandomWeight": 7000,
+     "ValueWeight": 1417
+    }
+   },
+   {
+    "Key": "EStat::CriticalAddDamage",
+    "Value": {
+     "MinValue": 52,
+     "MaxValue": 67,
+     "RandomWeight": 8000,
+     "ValueWeight": 1357
+    }
+   },
+   {
+    "Key": "EStat::BackAttackDamage",
+    "Value": {
+     "MinValue": 52,
+     "MaxValue": 67,
+     "RandomWeight": 7000,
+     "ValueWeight": 1357
+    }
+   },
+   {
+    "Key": "EStat::WeaponAccuracy",
+    "Value": {
+     "MinValue": 68,
+     "MaxValue": 85,
+     "RandomWeight": 8000,
+     "ValueWeight": 1311
+    }
+   },
+   {
+    "Key": "EStat::Block",
+    "Value": {
+     "MinValue": 57,
+     "MaxValue": 73,
+     "RandomWeight": 7000,
+     "ValueWeight": 1332
+    }
+   },
+   {
+    "Key": "EStat::MPMax",
+    "Value": {
+     "MinValue": 153,
+     "MaxValue": 183,
+     "RandomWeight": 8000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::HPMax",
+    "Value": {
+     "MinValue": 306,
+     "MaxValue": 359,
+     "RandomWeight": 8000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::FrontAttackDamage",
+    "Value": {
+     "MinValue": 52,
+     "MaxValue": 67,
+     "RandomWeight": 7000,
+     "ValueWeight": 1357
+    }
+   }
+  ],
+  "SoulbindFixedSubStats": [],
+  "SoulbindRandomStat": true,
+  "SoulbindRandomStatCount": 6,
+  "SoulbindRandomSkillCountMax": 6,
+  "SubStatCountMin": 0,
+  "SubStatCountMax": 0,
+  "SubStatSkillSelectProb": 2000,
+  "bUseSubStatSkill": true,
+  "SoulbindRandomSkillGroup": "Active_EnchantEffect",
+  "EnchantVFX": "EnchantDefault",
+  "MagicStoneSlotCount": 5,
+  "ImprintMagicStoneCostGold": 3000,
+  "MagicStoneGroups": [
+   "Magicstone_Group_Equip"
+  ],
+  "AdditionalHitRef": "Greatsword",
+  "ArmorType": "EArmorMaterialType::None",
+  "bCanExtractionSkin": false,
+  "ExtractionSkinCount": 0,
+  "ExtractionSkins": [
+   "WP_0110_T05_GS"
+  ],
+  "ExtractionSkinRate": 1000,
+  "GodStoneSlotCount": 1,
+  "SetNames": [],
+  "EmblemType": "EEmblemType::None",
+  "SuccessionGroup": "Succession_Epic_Greatsword",
+  "SoulAddGroup": "SoulAdd_Epic_Tier_1",
+  "SurpassGroup": "None"
+ },
+ {
+  "ID": {
+   "Value": 110120003
+  },
+  "Name": "equip_wp_Greatsword_A_e_dropRaid_001a_s",
+  "Desc": {
+   "Key": "STR_ITEM_EQUIP_WP_GREATSWORD_A_E_DROPRAID_001A_S"
+  },
+  "DescLong": {
+   "Key": "None"
+  },
+  "ItemType": "EItemType::Equip",
+  "ItemLevel": 98,
+  "ItemGrade": "EItemGrade::Epic",
+  "ItemTier": "EItemTier::t2",
+  "ItemRace": "ERace::All",
+  "IconRes": "Icon_WP_GS_0108_T06",
+  "IconFx": "None",
+  "SoundMaterial": "Greatsword",
+  "PermitLevelMin": 45,
+  "PermitLevelMax": 99,
+  "MaxStackCount": 0,
+  "ExchangeType": "EExchangeType::SoulBind_Acquire",
+  "TradeCategory": "ETradeItemCategory::None",
+  "CanStorage": 1,
+  "CanGuildStorage": 1,
+  "CanLock": 1,
+  "CanSell": 1,
+  "SellCurrencyType": "ECurrencyCategory::Gold",
+  "SellPrice": 59720,
+  "CanDelete": 1,
+  "CanDecompose": 1,
+  "DecomposeCostGold": 16000,
+  "DecomposeResultItemGroup": [
+   "De_Package_Epic_98",
+   "De_Package_Level98"
+  ],
+  "DropIconShow": 1,
+  "DropMeshKey": "I_Drop_Greatsword",
+  "Costume_res_key_m": "GS_0108_T06",
+  "ResScale_m": 1000,
+  "Costume_res_key_f": "GS_0108_T06",
+  "ResScale_f": 1000,
+  "Costume_res_Material": "ERace::Light",
+  "bShowGetRoute": true,
+  "FixedLimitTime": {
+   "Ticks": 0
+  },
+  "MaintainTime": 0,
+  "DeleteType": "EPeriodItemDeleteType::DeleteItem",
+  "ReplaceItem": "None",
+  "CanSoulSelect": true,
+  "CanCharacterStorage": true,
+  "EquipCategory": "EEquipCategory::Greatsword",
+  "ItemBasicLevel": 72,
+  "AdditionalStatInfo": "None",
+  "SoulbindCostName": "Epic_Cost",
+  "SoulbindAddMagicStone": 0,
+  "CanEnchant": 1,
+  "EnchantEffectGroup": "Weapon_Epic",
+  "EnchantGroup": "Enchant_Epic_98",
+  "ExceedEnchantGroup": "Weapon_Dungeon_Epic",
+  "EnchantSubstatInterval": 0,
+  "AttackSpeed": 0,
+  "WeaponAttackRange": 150.0,
+  "WeaponAttackHeightRange": 300.0,
+  "WeaponFollowRange": 140.0,
+  "WeaponFollowHeightRange": 0.0,
+  "WeaponLockOnRange": 1,
+  "WeaponCritical": 0,
+  "WeaponCriAddRate": 15000,
+  "ExtendingWeapon": true,
+  "ExtendingWeaponAttackFollowRange": 200.0,
+  "ExtendingWeaponAttackFollowHeightRange": 200.0,
+  "ExtendingWeaponAttackRange": 200.0,
+  "ExtendingWeaponAttackHeightRange": 200.0,
+  "MainStatCount": 0,
+  "MainStats": [
+   {
+    "Key": "EStat::WeaponMinDamage",
+    "Value": 421
+   },
+   {
+    "Key": "EStat::WeaponDamage",
+    "Value": 569
+   },
+   {
+    "Key": "EStat::WeaponAccuracy",
+    "Value": 100
+   },
+   {
+    "Key": "EStat::Critical",
+    "Value": 150
+   },
+   {
+    "Key": "EStat::Block",
+    "Value": 150
+   },
+   {
+    "Key": "EStat::DecreaseWeaponBlock",
+    "Value": 3700
+   },
+   {
+    "Key": "EStat::MaxWeaponBlock",
+    "Value": 100000
+   }
+  ],
+  "SubStats": [
+   {
+    "Key": "EStat::CombatSpeed",
+    "Value": {
+     "MinValue": 1300,
+     "MaxValue": 1502,
+     "RandomWeight": 4000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::AmplifyWeaponDamage",
+    "Value": {
+     "MinValue": 1409,
+     "MaxValue": 1627,
+     "RandomWeight": 4000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::AbnormalAccuracy",
+    "Value": {
+     "MinValue": 2167,
+     "MaxValue": 2499,
+     "RandomWeight": 4000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::AmplifyAllDamage",
+    "Value": {
+     "MinValue": 585,
+     "MaxValue": 680,
+     "RandomWeight": 2000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::AdditionalHitRate",
+    "Value": {
+     "MinValue": 921,
+     "MaxValue": 1066,
+     "RandomWeight": 6000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::STR",
+    "Value": {
+     "MinValue": 76,
+     "MaxValue": 94,
+     "RandomWeight": 6000,
+     "ValueWeight": 1293
+    }
+   },
+   {
+    "Key": "EStat::AGI",
+    "Value": {
+     "MinValue": 76,
+     "MaxValue": 94,
+     "RandomWeight": 7000,
+     "ValueWeight": 1293
+    }
+   },
+   {
+    "Key": "EStat::WeaponFixingDamage",
+    "Value": {
+     "MinValue": 30,
+     "MaxValue": 42,
+     "RandomWeight": 7000,
+     "ValueWeight": 1455
+    }
+   },
+   {
+    "Key": "EStat::Critical",
+    "Value": {
+     "MinValue": 35,
+     "MaxValue": 47,
+     "RandomWeight": 7000,
+     "ValueWeight": 1455
+    }
+   },
+   {
+    "Key": "EStat::CriticalAddDamage",
+    "Value": {
+     "MinValue": 49,
+     "MaxValue": 63,
+     "RandomWeight": 8000,
+     "ValueWeight": 1384
+    }
+   },
+   {
+    "Key": "EStat::BackAttackDamage",
+    "Value": {
+     "MinValue": 49,
+     "MaxValue": 63,
+     "RandomWeight": 7000,
+     "ValueWeight": 1384
+    }
+   },
+   {
+    "Key": "EStat::WeaponAccuracy",
+    "Value": {
+     "MinValue": 64,
+     "MaxValue": 81,
+     "RandomWeight": 8000,
+     "ValueWeight": 1311
+    }
+   },
+   {
+    "Key": "EStat::Block",
+    "Value": {
+     "MinValue": 54,
+     "MaxValue": 69,
+     "RandomWeight": 7000,
+     "ValueWeight": 1357
+    }
+   },
+   {
+    "Key": "EStat::MPMax",
+    "Value": {
+     "MinValue": 144,
+     "MaxValue": 173,
+     "RandomWeight": 8000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::HPMax",
+    "Value": {
+     "MinValue": 289,
+     "MaxValue": 339,
+     "RandomWeight": 8000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::FrontAttackDamage",
+    "Value": {
+     "MinValue": 49,
+     "MaxValue": 63,
+     "RandomWeight": 7000,
+     "ValueWeight": 1384
+    }
+   }
+  ],
+  "SoulbindFixedSubStats": [],
+  "SoulbindRandomStat": true,
+  "SoulbindRandomStatCount": 4,
+  "SoulbindRandomSkillCountMax": 4,
+  "SubStatCountMin": 0,
+  "SubStatCountMax": 0,
+  "SubStatSkillSelectProb": 2000,
+  "bUseSubStatSkill": true,
+  "SoulbindRandomSkillGroup": "Active_EnchantEffect",
+  "EnchantVFX": "EnchantDefault",
+  "MagicStoneSlotCount": 5,
+  "ImprintMagicStoneCostGold": 3000,
+  "MagicStoneGroups": [
+   "Magicstone_Group_Equip"
+  ],
+  "AdditionalHitRef": "Greatsword",
+  "ArmorType": "EArmorMaterialType::None",
+  "bCanExtractionSkin": false,
+  "ExtractionSkinCount": 0,
+  "ExtractionSkins": [
+   "WP_0108_T06_GS"
+  ],
+  "ExtractionSkinRate": 1000,
+  "GodStoneSlotCount": 1,
+  "SetNames": [],
+  "EmblemType": "EEmblemType::None",
+  "SuccessionGroup": "Succession_Epic_Greatsword",
+  "SoulAddGroup": "SoulAdd_Epic_Tier_1",
+  "SurpassGroup": "Surpass_Epic_Tier3_Weapon"
+ },
+ {
+  "ID": {
+   "Value": 110120004
+  },
+  "Name": "equip_wp_Greatsword_L_e_shopAbyss_001a_s",
+  "Desc": {
+   "Key": "STR_ITEM_EQUIP_WP_GREATSWORD_L_E_SHOPABYSS_001A_S"
+  },
+  "DescLong": {
+   "Key": "None"
+  },
+  "ItemType": "EItemType::Equip",
+  "ItemLevel": 108,
+  "ItemGrade": "EItemGrade::Epic",
+  "ItemTier": "EItemTier::t3",
+  "ItemRace": "ERace::All",
+  "IconRes": "Icon_WP_GS_Moon_01",
+  "IconFx": "None",
+  "SoundMaterial": "Greatsword",
+  "PermitLevelMin": 45,
+  "PermitLevelMax": 99,
+  "MaxStackCount": 0,
+  "ExchangeType": "EExchangeType::SoulBind_Acquire",
+  "TradeCategory": "ETradeItemCategory::None",
+  "CanStorage": 1,
+  "CanGuildStorage": 1,
+  "CanLock": 1,
+  "CanSell": 1,
+  "SellCurrencyType": "ECurrencyCategory::Gold",
+  "SellPrice": 727246,
+  "CanDelete": 1,
+  "CanDecompose": 1,
+  "DecomposeCostGold": 16000,
+  "DecomposeResultItemGroup": [
+   "De_Package_Epic_108",
+   "De_Package_Level108",
+   "De_Package_Abyss_wp_E3_80"
+  ],
+  "DropIconShow": 1,
+  "DropMeshKey": "I_Drop_Greatsword",
+  "Costume_res_key_m": "GS_Moon_01",
+  "ResScale_m": 1000,
+  "Costume_res_key_f": "GS_Moon_01",
+  "ResScale_f": 1000,
+  "Costume_res_Material": "ERace::Light",
+  "bShowGetRoute": true,
+  "FixedLimitTime": {
+   "Ticks": 0
+  },
+  "MaintainTime": 0,
+  "DeleteType": "EPeriodItemDeleteType::DeleteItem",
+  "ReplaceItem": "None",
+  "CanSoulSelect": true,
+  "CanCharacterStorage": true,
+  "EquipCategory": "EEquipCategory::Greatsword",
+  "ItemBasicLevel": 80,
+  "AdditionalStatInfo": "None",
+  "SoulbindCostName": "Epic_Cost",
+  "SoulbindAddMagicStone": 0,
+  "CanEnchant": 1,
+  "EnchantEffectGroup": "Weapon_Epic",
+  "EnchantGroup": "Enchant_Epic_108",
+  "ExceedEnchantGroup": "Weapon_Abyss_Epic",
+  "EnchantSubstatInterval": 0,
+  "AttackSpeed": 0,
+  "WeaponAttackRange": 150.0,
+  "WeaponAttackHeightRange": 300.0,
+  "WeaponFollowRange": 140.0,
+  "WeaponFollowHeightRange": 0.0,
+  "WeaponLockOnRange": 1,
+  "WeaponCritical": 0,
+  "WeaponCriAddRate": 15000,
+  "ExtendingWeapon": false,
+  "ExtendingWeaponAttackFollowRange": 0.0,
+  "ExtendingWeaponAttackFollowHeightRange": 0.0,
+  "ExtendingWeaponAttackRange": 0.0,
+  "ExtendingWeaponAttackHeightRange": 0.0,
+  "MainStatCount": 0,
+  "MainStats": [
+   {
+    "Key": "EStat::WeaponMinDamage",
+    "Value": 463
+   },
+   {
+    "Key": "EStat::WeaponDamage",
+    "Value": 627
+   },
+   {
+    "Key": "EStat::WeaponAccuracy",
+    "Value": 100
+   },
+   {
+    "Key": "EStat::Critical",
+    "Value": 150
+   },
+   {
+    "Key": "EStat::Block",
+    "Value": 150
+   },
+   {
+    "Key": "EStat::DecreaseWeaponBlock",
+    "Value": 3700
+   },
+   {
+    "Key": "EStat::MaxWeaponBlock",
+    "Value": 100000
+   },
+   {
+    "Key": "EStat::PvPAmplifyDamage",
+    "Value": 1000
+   }
+  ],
+  "SubStats": [
+   {
+    "Key": "EStat::CombatSpeed",
+    "Value": {
+     "MinValue": 1377,
+     "MaxValue": 1591,
+     "RandomWeight": 4000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::AmplifyWeaponDamage",
+    "Value": {
+     "MinValue": 1492,
+     "MaxValue": 1723,
+     "RandomWeight": 4000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::AbnormalAccuracy",
+    "Value": {
+     "MinValue": 2295,
+     "MaxValue": 2646,
+     "RandomWeight": 4000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::AmplifyAllDamage",
+    "Value": {
+     "MinValue": 619,
+     "MaxValue": 719,
+     "RandomWeight": 2000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::AdditionalHitRate",
+    "Value": {
+     "MinValue": 975,
+     "MaxValue": 1128,
+     "RandomWeight": 6000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::STR",
+    "Value": {
+     "MinValue": 81,
+     "MaxValue": 100,
+     "RandomWeight": 6000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::AGI",
+    "Value": {
+     "MinValue": 81,
+     "MaxValue": 100,
+     "RandomWeight": 7000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::WeaponFixingDamage",
+    "Value": {
+     "MinValue": 32,
+     "MaxValue": 44,
+     "RandomWeight": 7000,
+     "ValueWeight": 1455
+    }
+   },
+   {
+    "Key": "EStat::Critical",
+    "Value": {
+     "MinValue": 37,
+     "MaxValue": 50,
+     "RandomWeight": 7000,
+     "ValueWeight": 1417
+    }
+   },
+   {
+    "Key": "EStat::CriticalAddDamage",
+    "Value": {
+     "MinValue": 52,
+     "MaxValue": 67,
+     "RandomWeight": 8000,
+     "ValueWeight": 1357
+    }
+   },
+   {
+    "Key": "EStat::BackAttackDamage",
+    "Value": {
+     "MinValue": 52,
+     "MaxValue": 67,
+     "RandomWeight": 7000,
+     "ValueWeight": 1357
+    }
+   },
+   {
+    "Key": "EStat::WeaponAccuracy",
+    "Value": {
+     "MinValue": 68,
+     "MaxValue": 85,
+     "RandomWeight": 8000,
+     "ValueWeight": 1311
+    }
+   },
+   {
+    "Key": "EStat::Block",
+    "Value": {
+     "MinValue": 57,
+     "MaxValue": 73,
+     "RandomWeight": 7000,
+     "ValueWeight": 1332
+    }
+   },
+   {
+    "Key": "EStat::MPMax",
+    "Value": {
+     "MinValue": 153,
+     "MaxValue": 183,
+     "RandomWeight": 8000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::HPMax",
+    "Value": {
+     "MinValue": 306,
+     "MaxValue": 359,
+     "RandomWeight": 8000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::FrontAttackDamage",
+    "Value": {
+     "MinValue": 52,
+     "MaxValue": 67,
+     "RandomWeight": 7000,
+     "ValueWeight": 1357
+    }
+   }
+  ],
+  "SoulbindFixedSubStats": [],
+  "SoulbindRandomStat": true,
+  "SoulbindRandomStatCount": 5,
+  "SoulbindRandomSkillCountMax": 5,
+  "SubStatCountMin": 0,
+  "SubStatCountMax": 0,
+  "SubStatSkillSelectProb": 2000,
+  "bUseSubStatSkill": true,
+  "SoulbindRandomSkillGroup": "Active_EnchantEffect",
+  "EnchantVFX": "EnchantDefault",
+  "MagicStoneSlotCount": 5,
+  "ImprintMagicStoneCostGold": 3000,
+  "MagicStoneGroups": [
+   "Magicstone_Group_Equip"
+  ],
+  "AdditionalHitRef": "Greatsword",
+  "ArmorType": "EArmorMaterialType::None",
+  "bCanExtractionSkin": false,
+  "ExtractionSkinCount": 0,
+  "ExtractionSkins": [
+   "WP_Moon_01_GS"
+  ],
+  "ExtractionSkinRate": 10000,
+  "GodStoneSlotCount": 1,
+  "SetNames": [],
+  "EmblemType": "EEmblemType::None",
+  "SuccessionGroup": "Succession_Epic_Greatsword",
+  "SoulAddGroup": "SoulAdd_Epic_Tier_1",
+  "SurpassGroup": "Surpass_Epic_Abyss1_Weapon"
+ },
+ {
+  "ID": {
+   "Value": 110120005
+  },
+  "Name": "equip_wp_Greatsword_D_e_shopAbyss_001a_s",
+  "Desc": {
+   "Key": "STR_ITEM_EQUIP_WP_GREATSWORD_D_E_SHOPABYSS_001A_S"
+  },
+  "DescLong": {
+   "Key": "None"
+  },
+  "ItemType": "EItemType::Equip",
+  "ItemLevel": 108,
+  "ItemGrade": "EItemGrade::Epic",
+  "ItemTier": "EItemTier::t3",
+  "ItemRace": "ERace::All",
+  "IconRes": "Icon_WP_GS_Moon_01",
+  "IconFx": "None",
+  "SoundMaterial": "Greatsword",
+  "PermitLevelMin": 45,
+  "PermitLevelMax": 99,
+  "MaxStackCount": 0,
+  "ExchangeType": "EExchangeType::SoulBind_Acquire",
+  "TradeCategory": "ETradeItemCategory::None",
+  "CanStorage": 1,
+  "CanGuildStorage": 1,
+  "CanLock": 1,
+  "CanSell": 1,
+  "SellCurrencyType": "ECurrencyCategory::Gold",
+  "SellPrice": 727246,
+  "CanDelete": 1,
+  "CanDecompose": 1,
+  "DecomposeCostGold": 16000,
+  "DecomposeResultItemGroup": [
+   "De_Package_Epic_108",
+   "De_Package_Level108",
+   "De_Package_Abyss_wp_E3_80"
+  ],
+  "DropIconShow": 1,
+  "DropMeshKey": "I_Drop_Greatsword",
+  "Costume_res_key_m": "GS_Moon_01",
+  "ResScale_m": 1000,
+  "Costume_res_key_f": "GS_Moon_01",
+  "ResScale_f": 1000,
+  "Costume_res_Material": "ERace::Dark",
+  "bShowGetRoute": true,
+  "FixedLimitTime": {
+   "Ticks": 0
+  },
+  "MaintainTime": 0,
+  "DeleteType": "EPeriodItemDeleteType::DeleteItem",
+  "ReplaceItem": "None",
+  "CanSoulSelect": true,
+  "CanCharacterStorage": true,
+  "EquipCategory": "EEquipCategory::Greatsword",
+  "ItemBasicLevel": 80,
+  "AdditionalStatInfo": "None",
+  "SoulbindCostName": "Epic_Cost",
+  "SoulbindAddMagicStone": 0,
+  "CanEnchant": 1,
+  "EnchantEffectGroup": "Weapon_Epic",
+  "EnchantGroup": "Enchant_Epic_108",
+  "ExceedEnchantGroup": "Weapon_Abyss_Epic",
+  "EnchantSubstatInterval": 0,
+  "AttackSpeed": 0,
+  "WeaponAttackRange": 150.0,
+  "WeaponAttackHeightRange": 300.0,
+  "WeaponFollowRange": 140.0,
+  "WeaponFollowHeightRange": 0.0,
+  "WeaponLockOnRange": 1,
+  "WeaponCritical": 0,
+  "WeaponCriAddRate": 15000,
+  "ExtendingWeapon": false,
+  "ExtendingWeaponAttackFollowRange": 0.0,
+  "ExtendingWeaponAttackFollowHeightRange": 0.0,
+  "ExtendingWeaponAttackRange": 0.0,
+  "ExtendingWeaponAttackHeightRange": 0.0,
+  "MainStatCount": 0,
+  "MainStats": [
+   {
+    "Key": "EStat::WeaponMinDamage",
+    "Value": 463
+   },
+   {
+    "Key": "EStat::WeaponDamage",
+    "Value": 627
+   },
+   {
+    "Key": "EStat::WeaponAccuracy",
+    "Value": 100
+   },
+   {
+    "Key": "EStat::Critical",
+    "Value": 150
+   },
+   {
+    "Key": "EStat::Block",
+    "Value": 150
+   },
+   {
+    "Key": "EStat::DecreaseWeaponBlock",
+    "Value": 3700
+   },
+   {
+    "Key": "EStat::MaxWeaponBlock",
+    "Value": 100000
+   },
+   {
+    "Key": "EStat::PvPAmplifyDamage",
+    "Value": 1000
+   }
+  ],
+  "SubStats": [
+   {
+    "Key": "EStat::CombatSpeed",
+    "Value": {
+     "MinValue": 1377,
+     "MaxValue": 1591,
+     "RandomWeight": 4000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::AmplifyWeaponDamage",
+    "Value": {
+     "MinValue": 1492,
+     "MaxValue": 1723,
+     "RandomWeight": 4000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::AbnormalAccuracy",
+    "Value": {
+     "MinValue": 2295,
+     "MaxValue": 2646,
+     "RandomWeight": 4000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::AmplifyAllDamage",
+    "Value": {
+     "MinValue": 619,
+     "MaxValue": 719,
+     "RandomWeight": 2000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::AdditionalHitRate",
+    "Value": {
+     "MinValue": 975,
+     "MaxValue": 1128,
+     "RandomWeight": 6000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::STR",
+    "Value": {
+     "MinValue": 81,
+     "MaxValue": 100,
+     "RandomWeight": 6000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::AGI",
+    "Value": {
+     "MinValue": 81,
+     "MaxValue": 100,
+     "RandomWeight": 7000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::WeaponFixingDamage",
+    "Value": {
+     "MinValue": 32,
+     "MaxValue": 44,
+     "RandomWeight": 7000,
+     "ValueWeight": 1455
+    }
+   },
+   {
+    "Key": "EStat::Critical",
+    "Value": {
+     "MinValue": 37,
+     "MaxValue": 50,
+     "RandomWeight": 7000,
+     "ValueWeight": 1417
+    }
+   },
+   {
+    "Key": "EStat::CriticalAddDamage",
+    "Value": {
+     "MinValue": 52,
+     "MaxValue": 67,
+     "RandomWeight": 8000,
+     "ValueWeight": 1357
+    }
+   },
+   {
+    "Key": "EStat::BackAttackDamage",
+    "Value": {
+     "MinValue": 52,
+     "MaxValue": 67,
+     "RandomWeight": 7000,
+     "ValueWeight": 1357
+    }
+   },
+   {
+    "Key": "EStat::WeaponAccuracy",
+    "Value": {
+     "MinValue": 68,
+     "MaxValue": 85,
+     "RandomWeight": 8000,
+     "ValueWeight": 1311
+    }
+   },
+   {
+    "Key": "EStat::Block",
+    "Value": {
+     "MinValue": 57,
+     "MaxValue": 73,
+     "RandomWeight": 7000,
+     "ValueWeight": 1332
+    }
+   },
+   {
+    "Key": "EStat::MPMax",
+    "Value": {
+     "MinValue": 153,
+     "MaxValue": 183,
+     "RandomWeight": 8000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::HPMax",
+    "Value": {
+     "MinValue": 306,
+     "MaxValue": 359,
+     "RandomWeight": 8000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::FrontAttackDamage",
+    "Value": {
+     "MinValue": 52,
+     "MaxValue": 67,
+     "RandomWeight": 7000,
+     "ValueWeight": 1357
+    }
+   }
+  ],
+  "SoulbindFixedSubStats": [],
+  "SoulbindRandomStat": true,
+  "SoulbindRandomStatCount": 5,
+  "SoulbindRandomSkillCountMax": 5,
+  "SubStatCountMin": 0,
+  "SubStatCountMax": 0,
+  "SubStatSkillSelectProb": 2000,
+  "bUseSubStatSkill": true,
+  "SoulbindRandomSkillGroup": "Active_EnchantEffect",
+  "EnchantVFX": "EnchantDefault",
+  "MagicStoneSlotCount": 5,
+  "ImprintMagicStoneCostGold": 3000,
+  "MagicStoneGroups": [
+   "Magicstone_Group_Equip"
+  ],
+  "AdditionalHitRef": "Greatsword",
+  "ArmorType": "EArmorMaterialType::None",
+  "bCanExtractionSkin": false,
+  "ExtractionSkinCount": 0,
+  "ExtractionSkins": [
+   "WP_Moon_01_GS"
+  ],
+  "ExtractionSkinRate": 10000,
+  "GodStoneSlotCount": 1,
+  "SetNames": [],
+  "EmblemType": "EEmblemType::None",
+  "SuccessionGroup": "Succession_Epic_Greatsword",
+  "SoulAddGroup": "SoulAdd_Epic_Tier_1",
+  "SurpassGroup": "Surpass_Epic_Abyss1_Weapon"
+ },
+ {
+  "ID": {
+   "Value": 110120006
+  },
+  "Name": "equip_wp_Greatsword_L_e_craftdraconicCombo_001a_s",
+  "Desc": {
+   "Key": "STR_ITEM_EQUIP_WP_GREATSWORD_L_E_CRAFTDRACONICCOMBO_001A_S"
+  },
+  "DescLong": {
+   "Key": "None"
+  },
+  "ItemType": "EItemType::Equip",
+  "ItemLevel": 114,
+  "ItemGrade": "EItemGrade::Epic",
+  "ItemTier": "EItemTier::t4",
+  "ItemRace": "ERace::Light",
+  "IconRes": "Icon_WP_GS_0110_T05",
+  "IconFx": "None",
+  "SoundMaterial": "Greatsword",
+  "PermitLevelMin": 45,
+  "PermitLevelMax": 99,
+  "MaxStackCount": 0,
+  "ExchangeType": "EExchangeType::SoulBind",
+  "TradeCategory": "ETradeItemCategory::Greatsword",
+  "CanStorage": 1,
+  "CanGuildStorage": 1,
+  "CanLock": 1,
+  "CanSell": 1,
+  "SellCurrencyType": "ECurrencyCategory::Gold",
+  "SellPrice": 1059191,
+  "CanDelete": 1,
+  "CanDecompose": 1,
+  "DecomposeCostGold": 16000,
+  "DecomposeResultItemGroup": [
+   "De_Package_Epic_114",
+   "De_Package_Level114"
+  ],
+  "DropIconShow": 1,
+  "DropMeshKey": "I_Drop_Greatsword",
+  "Costume_res_key_m": "GS_0110_T05",
+  "ResScale_m": 1000,
+  "Costume_res_key_f": "GS_0110_T05",
+  "ResScale_f": 1000,
+  "Costume_res_Material": "ERace::Light",
+  "bShowGetRoute": true,
+  "FixedLimitTime": {
+   "Ticks": 0
+  },
+  "MaintainTime": 0,
+  "DeleteType": "EPeriodItemDeleteType::DeleteItem",
+  "ReplaceItem": "None",
+  "CanSoulSelect": true,
+  "CanCharacterStorage": true,
+  "EquipCategory": "EEquipCategory::Greatsword",
+  "ItemBasicLevel": 84,
+  "AdditionalStatInfo": "None",
+  "SoulbindCostName": "Epic_Cost",
+  "SoulbindAddMagicStone": 0,
+  "CanEnchant": 1,
+  "EnchantEffectGroup": "Weapon_Epic",
+  "EnchantGroup": "Enchant_Epic_114",
+  "ExceedEnchantGroup": "Weapon_Craft_Epic",
+  "EnchantSubstatInterval": 0,
+  "AttackSpeed": 0,
+  "WeaponAttackRange": 150.0,
+  "WeaponAttackHeightRange": 300.0,
+  "WeaponFollowRange": 140.0,
+  "WeaponFollowHeightRange": 0.0,
+  "WeaponLockOnRange": 1,
+  "WeaponCritical": 0,
+  "WeaponCriAddRate": 15000,
+  "ExtendingWeapon": false,
+  "ExtendingWeaponAttackFollowRange": 0.0,
+  "ExtendingWeaponAttackFollowHeightRange": 0.0,
+  "ExtendingWeaponAttackRange": 0.0,
+  "ExtendingWeaponAttackHeightRange": 0.0,
+  "MainStatCount": 0,
+  "MainStats": [
+   {
+    "Key": "EStat::WeaponMinDamage",
+    "Value": 489
+   },
+   {
+    "Key": "EStat::WeaponDamage",
+    "Value": 661
+   },
+   {
+    "Key": "EStat::WeaponAccuracy",
+    "Value": 100
+   },
+   {
+    "Key": "EStat::Critical",
+    "Value": 150
+   },
+   {
+    "Key": "EStat::Block",
+    "Value": 150
+   },
+   {
+    "Key": "EStat::DecreaseWeaponBlock",
+    "Value": 3700
+   },
+   {
+    "Key": "EStat::MaxWeaponBlock",
+    "Value": 100000
+   },
+   {
+    "Key": "EStat::PvEAmplifyDamage",
+    "Value": 500
+   }
+  ],
+  "SubStats": [
+   {
+    "Key": "EStat::CombatSpeed",
+    "Value": {
+     "MinValue": 1377,
+     "MaxValue": 1591,
+     "RandomWeight": 4000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::AmplifyWeaponDamage",
+    "Value": {
+     "MinValue": 1492,
+     "MaxValue": 1723,
+     "RandomWeight": 4000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::AbnormalAccuracy",
+    "Value": {
+     "MinValue": 2295,
+     "MaxValue": 2646,
+     "RandomWeight": 4000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::AmplifyAllDamage",
+    "Value": {
+     "MinValue": 619,
+     "MaxValue": 719,
+     "RandomWeight": 2000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::AdditionalHitRate",
+    "Value": {
+     "MinValue": 975,
+     "MaxValue": 1128,
+     "RandomWeight": 6000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::STR",
+    "Value": {
+     "MinValue": 81,
+     "MaxValue": 100,
+     "RandomWeight": 6000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::AGI",
+    "Value": {
+     "MinValue": 81,
+     "MaxValue": 100,
+     "RandomWeight": 7000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::WeaponFixingDamage",
+    "Value": {
+     "MinValue": 32,
+     "MaxValue": 44,
+     "RandomWeight": 7000,
+     "ValueWeight": 1455
+    }
+   },
+   {
+    "Key": "EStat::Critical",
+    "Value": {
+     "MinValue": 37,
+     "MaxValue": 50,
+     "RandomWeight": 7000,
+     "ValueWeight": 1417
+    }
+   },
+   {
+    "Key": "EStat::CriticalAddDamage",
+    "Value": {
+     "MinValue": 52,
+     "MaxValue": 67,
+     "RandomWeight": 8000,
+     "ValueWeight": 1357
+    }
+   },
+   {
+    "Key": "EStat::BackAttackDamage",
+    "Value": {
+     "MinValue": 52,
+     "MaxValue": 67,
+     "RandomWeight": 7000,
+     "ValueWeight": 1357
+    }
+   },
+   {
+    "Key": "EStat::WeaponAccuracy",
+    "Value": {
+     "MinValue": 68,
+     "MaxValue": 85,
+     "RandomWeight": 8000,
+     "ValueWeight": 1311
+    }
+   },
+   {
+    "Key": "EStat::Block",
+    "Value": {
+     "MinValue": 57,
+     "MaxValue": 73,
+     "RandomWeight": 7000,
+     "ValueWeight": 1332
+    }
+   },
+   {
+    "Key": "EStat::MPMax",
+    "Value": {
+     "MinValue": 153,
+     "MaxValue": 183,
+     "RandomWeight": 8000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::HPMax",
+    "Value": {
+     "MinValue": 306,
+     "MaxValue": 359,
+     "RandomWeight": 8000,
+     "ValueWeight": 1276
+    }
+   },
+   {
+    "Key": "EStat::FrontAttackDamage",
+    "Value": {
+     "MinValue": 52,
+     "MaxValue": 67,
+     "RandomWeight": 7000,
+     "ValueWeight": 1357
+    }
+   }
+  ],
+  "SoulbindFixedSubStats": [],
+  "SoulbindRandomStat": true,
+  "SoulbindRandomStatCount": 6,
+  "SoulbindRandomSkillCountMax": 6,
+  "SubStatCountMin": 0,
+  "SubStatCountMax": 0,
+  "SubStatSkillSelectProb": 2000,
+  "bUseSubStatSkill": true,
+  "SoulbindRandomSkillGroup": "Active_EnchantEffect",
+  "EnchantVFX": "EnchantDefault",
+  "MagicStoneSlotCount": 5,
+  "ImprintMagicStoneCostGold": 3000,
+  "MagicStoneGroups": [
+   "Magicstone_Group_Equip"
+  ],
+  "AdditionalHitRef": "Greatsword",
+  "ArmorType": "EArmorMaterialType::None",
+  "bCanExtractionSkin": false,
+  "ExtractionSkinCount": 0,
+  "ExtractionSkins": [
+   "WP_0110_T05_GS"
+  ],
+  "ExtractionSkinRate": 1000,
+  "GodStoneSlotCount": 1,
+  "SetNames": [],
+  "EmblemType": "EEmblemType::None",
+  "SuccessionGroup": "Succession_Epic_Greatsword",
+  "SoulAddGroup": "SoulAdd_Epic_Tier_1",
+  "SurpassGroup": "None"
+ }
+]

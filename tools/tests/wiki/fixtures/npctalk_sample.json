@@ -1,0 +1,86 @@
+[
+ {
+  "ID": {
+   "Value": 100
+  },
+  "Name": "Detector_acquire_noti_Test_01",
+  "Order": 1,
+  "Type": "ENpcTalkType::Caption",
+  "ChatTitle": {
+   "Key": "NpcTalk_AC4957058EFE4720946B4EFEF1E2E021_chat_title",
+   "StringKey": "None"
+  },
+  "ChatDescription": {
+   "Key": "NpcTalk_AC4957058EFE4720946B4EFEF1E2E021_cv_text",
+   "StringKey": "None"
+  },
+  "PlayTime": 3000,
+  "bAbleToSkip": true,
+  "SpeakerType": "ENpcTalkSpeakerType::Npc",
+  "LanguageType": "ENpcLanguageType::None",
+  "SpeakerValue": "N_L1_Q_Gabrunerk_01",
+  "Camera": "None",
+  "CameraTarget": "None",
+  "Portrait": "NPC_Portrait_ShugoM_01",
+  "Act": "None",
+  "FinishTalk": "None",
+  "FinishAct": "None",
+  "CvRes": "None"
+ },
+ {
+  "ID": {
+   "Value": 101
+  },
+  "Name": "Detector_acquire_noti_Test_01",
+  "Order": 2,
+  "Type": "ENpcTalkType::Caption",
+  "ChatTitle": {
+   "Key": "NpcTalk_9B8C4D8D35E54CA3895B181F6A5E71E5_chat_title",
+   "StringKey": "None"
+  },
+  "ChatDescription": {
+   "Key": "NpcTalk_9B8C4D8D35E54CA3895B181F6A5E71E5_cv_text",
+   "StringKey": "None"
+  },
+  "PlayTime": 3000,
+  "bAbleToSkip": true,
+  "SpeakerType": "ENpcTalkSpeakerType::Npc",
+  "LanguageType": "ENpcLanguageType::None",
+  "SpeakerValue": "N_L1_Q_Gabrunerk_01",
+  "Camera": "None",
+  "CameraTarget": "None",
+  "Portrait": "NPC_Portrait_ShugoM_01",
+  "Act": "None",
+  "FinishTalk": "None",
+  "FinishAct": "None",
+  "CvRes": "None"
+ },
+ {
+  "ID": {
+   "Value": 102
+  },
+  "Name": "Detector_acquire_noti_Test_02",
+  "Order": 1,
+  "Type": "ENpcTalkType::Caption",
+  "ChatTitle": {
+   "Key": "NpcTalk_211776CDA5354CE2913B25BC2ABB3F09_chat_title",
+   "StringKey": "None"
+  },
+  "ChatDescription": {
+   "Key": "NpcTalk_211776CDA5354CE2913B25BC2ABB3F09_cv_text",
+   "StringKey": "None"
+  },
+  "PlayTime": 3000,
+  "bAbleToSkip": true,
+  "SpeakerType": "ENpcTalkSpeakerType::Npc",
+  "LanguageType": "ENpcLanguageType::None",
+  "SpeakerValue": "N_L1_Q_Gabrunerk_01",
+  "Camera": "None",
+  "CameraTarget": "None",
+  "Portrait": "NPC_Portrait_ShugoM_01",
+  "Act": "None",
+  "FinishTalk": "None",
+  "FinishAct": "None",
+  "CvRes": "None"
+ }
+]

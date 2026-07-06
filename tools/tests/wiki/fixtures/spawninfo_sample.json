@@ -1,0 +1,874 @@
+[
+ {
+  "Name": "EnvObj_Field_L1_GT_H5_Insk_01_1",
+  "NpcIdList": [],
+  "Positions": [
+   {
+    "Location": {
+     "X": 86133.5625,
+     "Y": 55156.0390625,
+     "Z": 11490.466796875
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 67.5,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "EnvObj_Field_L1_GT_R4_Insk_01_1",
+  "NpcIdList": [],
+  "Positions": [
+   {
+    "Location": {
+     "X": 41911.88671875,
+     "Y": 131936.140625,
+     "Z": 24723.189453125
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 268.59375,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_ForestWisp_01_1",
+  "NpcIdList": [
+   {
+    "Value": 2100601
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 77694.953125,
+     "Y": 71026.015625,
+     "Z": 11087.3427734375
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 326.25,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_ForestWisp_01_10",
+  "NpcIdList": [
+   {
+    "Value": 2100601
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 92464.3515625,
+     "Y": 81300.0234375,
+     "Z": 11363.6328125
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 254.53125,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_ForestWisp_01_11",
+  "NpcIdList": [
+   {
+    "Value": 2100601
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 95002.0078125,
+     "Y": 78954.3984375,
+     "Z": 11112.0751953125
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 364.21875,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_ForestWisp_01_12",
+  "NpcIdList": [
+   {
+    "Value": 2100601
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 89275.0,
+     "Y": 80704.25,
+     "Z": 11761.72265625
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 254.53125,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_ForestWisp_01_13",
+  "NpcIdList": [
+   {
+    "Value": 2100601
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 93685.6015625,
+     "Y": 73067.34375,
+     "Z": 11604.66015625
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 254.53125,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_ForestWisp_01_14",
+  "NpcIdList": [
+   {
+    "Value": 2100601
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 92610.9609375,
+     "Y": 75555.7578125,
+     "Z": 11313.939453125
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 174.375,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_ForestWisp_01_15",
+  "NpcIdList": [
+   {
+    "Value": 2100601
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 94570.4609375,
+     "Y": 71156.9453125,
+     "Z": 11645.177734375
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 254.53125,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_ForestWisp_01_16",
+  "NpcIdList": [
+   {
+    "Value": 2100601
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 95196.9375,
+     "Y": 75352.890625,
+     "Z": 11047.90625
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 254.53125,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_ForestWisp_01_17",
+  "NpcIdList": [
+   {
+    "Value": 2100601
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 89899.2734375,
+     "Y": 76806.375,
+     "Z": 11559.3154296875
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 191.25,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_ForestWisp_01_18",
+  "NpcIdList": [
+   {
+    "Value": 2100601
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 95510.4296875,
+     "Y": 73387.9921875,
+     "Z": 11208.5107421875
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 444.375,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_ForestWisp_01_19",
+  "NpcIdList": [
+   {
+    "Value": 2100601
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 98264.515625,
+     "Y": 72904.6875,
+     "Z": 10999.96484375
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 109.6875,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_ForestWisp_01_2",
+  "NpcIdList": [
+   {
+    "Value": 2100601
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 83491.9609375,
+     "Y": 67970.15625,
+     "Z": 11141.2001953125
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 70.3125,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_ForestWisp_01_20",
+  "NpcIdList": [
+   {
+    "Value": 2100601
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 82406.6328125,
+     "Y": 71957.015625,
+     "Z": 11027.8056640625
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 70.3125,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_ForestWisp_01_21",
+  "NpcIdList": [
+   {
+    "Value": 2100601
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 80236.2734375,
+     "Y": 69984.8828125,
+     "Z": 11111.1005859375
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 326.25,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_ForestWisp_01_22",
+  "NpcIdList": [
+   {
+    "Value": 2100601
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 89895.9375,
+     "Y": 66962.140625,
+     "Z": 11661.1328125
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 185.625,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_ForestWisp_01_23",
+  "NpcIdList": [
+   {
+    "Value": 2100601
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 81391.90625,
+     "Y": 75519.96875,
+     "Z": 11119.6484375
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 254.53125,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_ForestWisp_01_3",
+  "NpcIdList": [
+   {
+    "Value": 2100601
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 84943.1015625,
+     "Y": 73769.78125,
+     "Z": 11034.20703125
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 70.3125,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_ForestWisp_01_4",
+  "NpcIdList": [
+   {
+    "Value": 2100601
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 87246.28125,
+     "Y": 72869.703125,
+     "Z": 11042.56640625
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 291.09375,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_ForestWisp_01_5",
+  "NpcIdList": [
+   {
+    "Value": 2100601
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 84558.8984375,
+     "Y": 70214.609375,
+     "Z": 11026.5205078125
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 125.15625,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_ForestWisp_01_6",
+  "NpcIdList": [
+   {
+    "Value": 2100601
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 86930.46875,
+     "Y": 66671.21875,
+     "Z": 11292.837890625
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 357.1875,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_ForestWisp_01_7",
+  "NpcIdList": [
+   {
+    "Value": 2100601
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 86113.0390625,
+     "Y": 69035.8125,
+     "Z": 11027.8056640625
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 254.53125,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_ForestWisp_01_8",
+  "NpcIdList": [
+   {
+    "Value": 2100601
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 79443.5625,
+     "Y": 73690.90625,
+     "Z": 11128.1787109375
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 254.53125,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_ForestWisp_01_9",
+  "NpcIdList": [
+   {
+    "Value": 2100601
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 90551.75,
+     "Y": 78769.6015625,
+     "Z": 11474.3369140625
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 254.53125,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_Odspider_V02_1",
+  "NpcIdList": [
+   {
+    "Value": 2100603
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 83371.34375,
+     "Y": 72270.1484375,
+     "Z": 11027.8056640625
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 122.34375,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_Odspider_V02_10",
+  "NpcIdList": [
+   {
+    "Value": 2100603
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 87945.40625,
+     "Y": 64623.6953125,
+     "Z": 11419.1162109375
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 240.46875,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_Odspider_V02_11",
+  "NpcIdList": [
+   {
+    "Value": 2100603
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 89587.0078125,
+     "Y": 65959.4140625,
+     "Z": 11584.810546875
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 68.90625,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_Odspider_V02_12",
+  "NpcIdList": [
+   {
+    "Value": 2100603
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 79612.265625,
+     "Y": 76959.9296875,
+     "Z": 11282.859375
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 106.875,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_Odspider_V02_13",
+  "NpcIdList": [
+   {
+    "Value": 2100603
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 77826.3515625,
+     "Y": 71360.8671875,
+     "Z": 11088.869140625
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 330.46875,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_Odspider_V02_14",
+  "NpcIdList": [
+   {
+    "Value": 2100603
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 90930.4921875,
+     "Y": 79045.640625,
+     "Z": 11436.0244140625
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 149.0625,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_Odspider_V02_15",
+  "NpcIdList": [
+   {
+    "Value": 2100603
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 90804.015625,
+     "Y": 76054.6484375,
+     "Z": 11378.1953125
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 295.3125,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_Odspider_V02_16",
+  "NpcIdList": [
+   {
+    "Value": 2100603
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 97057.609375,
+     "Y": 78148.0,
+     "Z": 11100.87890625
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 171.5625,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_Odspider_V02_17",
+  "NpcIdList": [
+   {
+    "Value": 2100603
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 95832.953125,
+     "Y": 79717.640625,
+     "Z": 11298.23046875
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 270.0,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_Odspider_V02_18",
+  "NpcIdList": [
+   {
+    "Value": 2100603
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 92757.859375,
+     "Y": 75322.3671875,
+     "Z": 11345.1416015625
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 25.3125,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_Odspider_V02_19",
+  "NpcIdList": [
+   {
+    "Value": 2100603
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 96103.53125,
+     "Y": 72627.7734375,
+     "Z": 11201.642578125
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 163.125,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_Odspider_V02_2",
+  "NpcIdList": [
+   {
+    "Value": 2100603
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 78128.578125,
+     "Y": 71009.7734375,
+     "Z": 11060.1484375
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 49.21875,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_Odspider_V02_20",
+  "NpcIdList": [
+   {
+    "Value": 2100603
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 100371.03125,
+     "Y": 76472.2578125,
+     "Z": 11124.162109375
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 340.3125,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_Odspider_V02_21",
+  "NpcIdList": [
+   {
+    "Value": 2100603
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 94494.953125,
+     "Y": 70652.5703125,
+     "Z": 11724.7578125
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 299.53125,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "M_L1_AC_A_Odspider_V02_22",
+  "NpcIdList": [
+   {
+    "Value": 2100603
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 79508.796875,
+     "Y": 70605.3828125,
+     "Z": 11136.1591796875
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 8.4375,
+     "Roll": 0.0
+    }
+   }
+  ]
+ }
+]

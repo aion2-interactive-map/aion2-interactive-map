@@ -1,0 +1,71 @@
+{
+  "map_name": "World_L_A",
+  "orientation": {
+    "px_from": "X",
+    "flip_x": false,
+    "flip_y": true
+  },
+  "pixel_width": 8192.0,
+  "pixel_height": 8192.0,
+  "residual_px": 238.59,
+  "runner_up_residual_px": 1175.04,
+  "num_matches": 14,
+  "pairs": [
+    {
+      "name": "ZumionVillage",
+      "dist": 20.66
+    },
+    {
+      "name": "CantasValley_Eastern",
+      "dist": 21.65
+    },
+    {
+      "name": "AltamiaHighland_Western",
+      "dist": 34.2
+    },
+    {
+      "name": "EasternTolbasForest",
+      "dist": 113.05
+    },
+    {
+      "name": "TolbasForest_Southern",
+      "dist": 120.03
+    },
+    {
+      "name": "DranaPlantation",
+      "dist": 133.88
+    },
+    {
+      "name": "CantasValley_Western",
+      "dist": 270.73
+    },
+    {
+      "name": "AltamiaCanyon",
+      "dist": 273.32
+    },
+    {
+      "name": "TolbasForest_Northern",
+      "dist": 296.31
+    },
+    {
+      "name": "AltamiaHighland_Southern",
+      "dist": 297.31
+    },
+    {
+      "name": "DawnLegionBase",
+      "dist": 340.56
+    },
+    {
+      "name": "TolbasForest",
+      "dist": 455.95
+    },
+    {
+      "name": "EllunRiverMarsh",
+      "dist": 476.27
+    },
+    {
+      "name": "AltamiaHighland_Eastern",
+      "dist": 486.36
+    }
+  ]
+}

@@ -1,0 +1,332 @@
+[
+ {
+  "ID": {
+   "Value": 2000000
+  },
+  "Name": "SandbagMonster",
+  "Desc": {
+   "Key": "STR_test_SandbagMonster"
+  },
+  "SubDesc": {
+   "Key": "STR_sub_test_sandbag_01"
+  },
+  "ResourceKey": "MOB_KrallWar_01",
+  "bUseTableCollision": true,
+  "CollisionCylinderRadius": 110,
+  "CollisionCylinderHeight": 220,
+  "Level": 10,
+  "NpcType": "ENpcType::Monster",
+  "NpcSubType": "ENpcSubType::NormalMonster",
+  "NpcCreatureType": "ECreatureType::Intellect",
+  "LanguageType": "ENpcLanguageType::None",
+  "ObjectTerrainType": "EObjectTerrainType::Ground",
+  "RelationshipEntity": "ERelationshipEntity::Monster",
+  "AggroType": "EAggroType::AggroNormal",
+  "AggroDetectRange": "F_Ground_Arc_01",
+  "Scale": 10000,
+  "FxScale": 10000,
+  "bCanBeAttacked": true,
+  "bNoRotation": false,
+  "NpcNameplate": "ENpcNameplate::Target",
+  "NameplateOffset": 0.0,
+  "DamageFloaterOffset": 0.0,
+  "DamageGlancRate": 0,
+  "DropRadiusMin": 100.0,
+  "DropRadiusMax": 150.0,
+  "ActiveSkillList": [
+   {
+    "Value": 1215460
+   },
+   {
+    "Value": 1215470
+   },
+   {
+    "Value": 1215510
+   },
+   {
+    "Value": 1215515
+   },
+   {
+    "Value": 1215490
+   },
+   {
+    "Value": 1215500
+   }
+  ],
+  "ArtMoveSpeed": 500.0,
+  "ArtWalkSpeed": 150.0,
+  "BaseMoveSpeed": 500.0,
+  "BaseWalkSpeed": 150.0,
+  "BaseFlySpeed": 0.0,
+  "BaseFlyWalkSpeed": 0.0,
+  "BaseSwimSpeed": 0.0,
+  "BaseSwimWalkSpeed": 0.0,
+  "bRagdollDeath": true,
+  "GroggyTime": 0,
+  "NpcGroggyType": "ENpcGroggyType::None",
+  "GroggyAttackCountTimeLimit": 0,
+  "GroggyAttackMaxCount": 0,
+  "PartsTableRefList": [],
+  "NpcTargetAble": "ENpcTargetAble::Able",
+  "bMouseOverAble": true,
+  "bDoAdditionalHitMotion": true,
+  "bHideOutline": false,
+  "Grade": 1,
+  "bHitCountBased": false,
+  "bNamed": false,
+  "FunctionType": "ENpcFuncType::None",
+  "FuncValues": [],
+  "InteractRange": 10,
+  "CloseEventRange": 10,
+  "bPeriodObj": false,
+  "bAutoBattleTargetException": false,
+  "SpawnActName": "None",
+  "DespawnActName": "None",
+  "DeadDespawnActName": "None",
+  "DieActName": "None",
+  "Portrait": "None",
+  "bUseRayTestHeightOverride": false,
+  "RayTestHeight": 0,
+  "LevelScaleType": "ELevelScaleType::None",
+  "WorldLevelScaleType": "ELevelScaleType::None",
+  "bHideWorldMapMarker": false,
+  "bHideMiniMapMarker": false,
+  "bTribalistic": false,
+  "Tribe": "None",
+  "bSkipDeadDespawn": false,
+  "RotateAngleMax": 0,
+  "ActionKeyDesc": {
+   "Key": "None",
+   "StringKey": "UI_HUD_KEYGUIDE_DESC_TALK"
+  },
+  "bEssentialLoad": false,
+  "bBlockedOthersForceMove": false,
+  "bUseBossBerserk": false,
+  "BossBerserkInvokeTime": 0,
+  "bHideWorldMapMonsterList": false,
+  "JumpBoardId": {
+   "Value": 0
+  },
+  "bUseDirectionMarker": false,
+  "DirectionMarkerRadiusOverride": 0,
+  "bAutoDamageAnalyze": false
+ },
+ {
+  "ID": {
+   "Value": 2000001
+  },
+  "Name": "SandbagMonster_melee",
+  "Desc": {
+   "Key": "STR_test_SandbagMonster"
+  },
+  "SubDesc": {
+   "Key": "STR_sub_test_sandbag_01"
+  },
+  "ResourceKey": "MOB_KrallWar_01",
+  "bUseTableCollision": true,
+  "CollisionCylinderRadius": 110,
+  "CollisionCylinderHeight": 220,
+  "Level": 10,
+  "NpcType": "ENpcType::Monster",
+  "NpcSubType": "ENpcSubType::NormalMonster",
+  "NpcCreatureType": "ECreatureType::Intellect",
+  "LanguageType": "ENpcLanguageType::None",
+  "ObjectTerrainType": "EObjectTerrainType::Ground",
+  "RelationshipEntity": "ERelationshipEntity::Monster_AntiCompanion",
+  "AggroType": "EAggroType::AggroNormal",
+  "AggroDetectRange": "F_Ground_Arc_01",
+  "Scale": 10000,
+  "FxScale": 8000,
+  "bCanBeAttacked": true,
+  "bNoRotation": false,
+  "NpcNameplate": "ENpcNameplate::Target",
+  "NameplateOffset": 0.0,
+  "DamageFloaterOffset": 0.0,
+  "DamageGlancRate": 0,
+  "DropRadiusMin": 100.0,
+  "DropRadiusMax": 150.0,
+  "ActiveSkillList": [
+   {
+    "Value": 1215460
+   },
+   {
+    "Value": 1215470
+   },
+   {
+    "Value": 1215510
+   },
+   {
+    "Value": 1215515
+   },
+   {
+    "Value": 1215490
+   },
+   {
+    "Value": 1215500
+   }
+  ],
+  "ArtMoveSpeed": 500.0,
+  "ArtWalkSpeed": 150.0,
+  "BaseMoveSpeed": 500.0,
+  "BaseWalkSpeed": 150.0,
+  "BaseFlySpeed": 0.0,
+  "BaseFlyWalkSpeed": 0.0,
+  "BaseSwimSpeed": 0.0,
+  "BaseSwimWalkSpeed": 0.0,
+  "bRagdollDeath": true,
+  "GroggyTime": 0,
+  "NpcGroggyType": "ENpcGroggyType::None",
+  "GroggyAttackCountTimeLimit": 0,
+  "GroggyAttackMaxCount": 0,
+  "PartsTableRefList": [],
+  "NpcTargetAble": "ENpcTargetAble::Able",
+  "bMouseOverAble": true,
+  "bDoAdditionalHitMotion": true,
+  "bHideOutline": false,
+  "Grade": 1,
+  "bHitCountBased": false,
+  "bNamed": false,
+  "FunctionType": "ENpcFuncType::None",
+  "FuncValues": [],
+  "InteractRange": 10,
+  "CloseEventRange": 10,
+  "bPeriodObj": false,
+  "bAutoBattleTargetException": false,
+  "SpawnActName": "None",
+  "DespawnActName": "None",
+  "DeadDespawnActName": "None",
+  "DieActName": "None",
+  "Portrait": "None",
+  "bUseRayTestHeightOverride": false,
+  "RayTestHeight": 0,
+  "LevelScaleType": "ELevelScaleType::None",
+  "WorldLevelScaleType": "ELevelScaleType::None",
+  "bHideWorldMapMarker": false,
+  "bHideMiniMapMarker": false,
+  "bTribalistic": false,
+  "Tribe": "None",
+  "bSkipDeadDespawn": false,
+  "RotateAngleMax": 0,
+  "ActionKeyDesc": {
+   "Key": "None",
+   "StringKey": "UI_HUD_KEYGUIDE_DESC_TALK"
+  },
+  "bEssentialLoad": false,
+  "bBlockedOthersForceMove": false,
+  "bUseBossBerserk": false,
+  "BossBerserkInvokeTime": 0,
+  "bHideWorldMapMonsterList": false,
+  "JumpBoardId": {
+   "Value": 0
+  },
+  "bUseDirectionMarker": false,
+  "DirectionMarkerRadiusOverride": 0,
+  "bAutoDamageAnalyze": false
+ },
+ {
+  "ID": {
+   "Value": 2000002
+  },
+  "Name": "Mob_DraconuteArcher_01",
+  "Desc": {
+   "Key": "STR_M_DraconuteArcher_01"
+  },
+  "SubDesc": {
+   "Key": "None"
+  },
+  "ResourceKey": "MOB_DracoArc_01",
+  "bUseTableCollision": true,
+  "CollisionCylinderRadius": 100,
+  "CollisionCylinderHeight": 320,
+  "Level": 20,
+  "NpcType": "ENpcType::Monster",
+  "NpcSubType": "ENpcSubType::EliteMonster",
+  "NpcCreatureType": "ECreatureType::Intellect",
+  "LanguageType": "ENpcLanguageType::None",
+  "ObjectTerrainType": "EObjectTerrainType::Ground",
+  "RelationshipEntity": "ERelationshipEntity::Monster",
+  "AggroType": "EAggroType::AggroNormal",
+  "AggroDetectRange": "F_Ground_Arc_01",
+  "Scale": 12000,
+  "FxScale": 10000,
+  "bCanBeAttacked": true,
+  "bNoRotation": false,
+  "NpcNameplate": "ENpcNameplate::Always",
+  "NameplateOffset": 0.0,
+  "DamageFloaterOffset": 0.0,
+  "DamageGlancRate": 0,
+  "DropRadiusMin": 100.0,
+  "DropRadiusMax": 150.0,
+  "ActiveSkillList": [
+   {
+    "Value": 1215410
+   },
+   {
+    "Value": 1215440
+   },
+   {
+    "Value": 1215455
+   },
+   {
+    "Value": 1215445
+   }
+  ],
+  "ArtMoveSpeed": 600.0,
+  "ArtWalkSpeed": 160.0,
+  "BaseMoveSpeed": 720.0,
+  "BaseWalkSpeed": 192.0,
+  "BaseFlySpeed": 0.0,
+  "BaseFlyWalkSpeed": 0.0,
+  "BaseSwimSpeed": 0.0,
+  "BaseSwimWalkSpeed": 0.0,
+  "bRagdollDeath": true,
+  "GroggyTime": 0,
+  "NpcGroggyType": "ENpcGroggyType::None",
+  "GroggyAttackCountTimeLimit": 0,
+  "GroggyAttackMaxCount": 0,
+  "PartsTableRefList": [],
+  "NpcTargetAble": "ENpcTargetAble::Able",
+  "bMouseOverAble": true,
+  "bDoAdditionalHitMotion": true,
+  "bHideOutline": false,
+  "Grade": 1,
+  "bHitCountBased": false,
+  "bNamed": false,
+  "FunctionType": "ENpcFuncType::None",
+  "FuncValues": [],
+  "InteractRange": 10,
+  "CloseEventRange": 10,
+  "bPeriodObj": false,
+  "bAutoBattleTargetException": false,
+  "SpawnActName": "None",
+  "DespawnActName": "None",
+  "DeadDespawnActName": "None",
+  "DieActName": "None",
+  "Portrait": "None",
+  "bUseRayTestHeightOverride": false,
+  "RayTestHeight": 0,
+  "LevelScaleType": "ELevelScaleType::None",
+  "WorldLevelScaleType": "ELevelScaleType::None",
+  "bHideWorldMapMarker": false,
+  "bHideMiniMapMarker": false,
+  "bTribalistic": false,
+  "Tribe": "None",
+  "bSkipDeadDespawn": false,
+  "RotateAngleMax": 0,
+  "ActionKeyDesc": {
+   "Key": "None",
+   "StringKey": "UI_HUD_KEYGUIDE_DESC_TALK"
+  },
+  "bEssentialLoad": false,
+  "bBlockedOthersForceMove": false,
+  "bUseBossBerserk": false,
+  "BossBerserkInvokeTime": 0,
+  "bHideWorldMapMonsterList": false,
+  "JumpBoardId": {
+   "Value": 0
+  },
+  "bUseDirectionMarker": false,
+  "DirectionMarkerRadiusOverride": 0,
+  "bAutoDamageAnalyze": false
+ }
+]

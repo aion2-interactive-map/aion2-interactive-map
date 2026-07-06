@@ -1,0 +1,401 @@
+# Partner-skill effect-type + target labels, localized to all 17 UI languages.
+#
+# The emitter (encyclopedia.py) writes data-palworld/locales/<tag>/partnerEffects.json
+# and partnerTargets.json. Label resolution per effect type:
+#   1. FAMILY effects (elements / status ailments / work suitability) are COMPOSED at
+#      emit time from the game's own localized term (element/work from enums,
+#      ailment from ADDITIONAL_EFFECT_*) inserted into a `connectors:` template.
+#      These are NOT listed under `effects:` below — they need no hand translation.
+#   2. STANDALONE effects fall back to the hand-authored label under `effects:`.
+#   3. Anything still missing falls back  tag -> regional sibling -> en-US -> raw enum.
+#
+# es-MX is intentionally omitted throughout (falls back to es-ES via _LANG_BASE).
+# zh-CN / zh-TW are authored separately (simplified vs traditional script).
+
+# --- connector templates ({name} = localized game term) ----------------------
+# resist:            ElementResist_<E> + ResistAdditionalEffect_<S>
+# inflict:           AdditionalEffect_<S>
+# damageVs:          DamageRateIfDefender_<S>   (bonus damage to afflicted foes)
+# captureVs:         CaptureLevelUpIfTarget_<S> (capture rate vs afflicted foes)
+# elementDropUp:     ElementAddItemDrop_<E>
+# elementWeakDamage: ElementBoostWeakness_<E>
+# elementAttackUp:   ElementBoost_<E>
+# elementAttack:     Element<E>                 (mount changes attack element)
+# workAptitude:      WorkSuitabilityAddRank_<W>
+connectors:
+  resist:
+    de-DE: "{name}-Resistenz"
+    en-US: "{name} Resistance"
+    es-ES: "Resistencia a {name}"
+    fr-FR: "Résistance à {name}"
+    id-ID: "Resistansi {name}"
+    it-IT: "Resistenza a {name}"
+    ja-JP: "{name}耐性"
+    ko-KR: "{name} 저항"
+    pl-PL: "Odporność na {name}"
+    pt-BR: "Resistência a {name}"
+    ru-RU: "Сопротивление: {name}"
+    th-TH: "ต้านทาน{name}"
+    tr-TR: "{name} Direnci"
+    vi-VN: "Kháng {name}"
+    zh-CN: "{name}抗性"
+    zh-TW: "{name}抗性"
+  inflict:
+    de-DE: "{name} zufügen"
+    en-US: "Inflict {name}"
+    es-ES: "Inflige {name}"
+    fr-FR: "Inflige {name}"
+    id-ID: "Menyebabkan {name}"
+    it-IT: "Infliggi {name}"
+    ja-JP: "{name}付与"
+    ko-KR: "{name} 부여"
+    pl-PL: "Zadaje: {name}"
+    pt-BR: "Inflige {name}"
+    ru-RU: "Наложение: {name}"
+    th-TH: "ทำให้เกิด{name}"
+    tr-TR: "{name} Uygular"
+    vi-VN: "Gây {name}"
+    zh-CN: "附加{name}"
+    zh-TW: "附加{name}"
+  damageVs:
+    de-DE: "Schaden gegen {name}-Gegner"
+    en-US: "Damage vs {name} Foes"
+    es-ES: "Daño a enemigos con {name}"
+    fr-FR: "Dégâts aux ennemis sous {name}"
+    id-ID: "Damage ke musuh {name}"
+    it-IT: "Danni ai nemici con {name}"
+    ja-JP: "{name}状態の敵へのダメージ"
+    ko-KR: "{name} 상태 적에게 피해"
+    pl-PL: "Obrażenia wobec celów: {name}"
+    pt-BR: "Dano a inimigos com {name}"
+    ru-RU: "Урон целям «{name}»"
+    th-TH: "ดาเมจต่อศัตรูที่ติด{name}"
+    tr-TR: "{name} Etkili Düşmanlara Hasar"
+    vi-VN: "Sát thương lên kẻ địch bị {name}"
+    zh-CN: "对{name}状态敌人伤害"
+    zh-TW: "對{name}狀態敵人傷害"
+  captureVs:
+    de-DE: "Fangrate gegen {name}-Gegner"
+    en-US: "Capture Rate: {name} Foes"
+    es-ES: "Captura de enemigos con {name}"
+    fr-FR: "Capture des ennemis sous {name}"
+    id-ID: "Tangkap musuh {name}"
+    it-IT: "Cattura dei nemici con {name}"
+    ja-JP: "{name}状態の捕獲率"
+    ko-KR: "{name} 상태 포획률"
+    pl-PL: "Szansa złapania celów: {name}"
+    pt-BR: "Captura de inimigos com {name}"
+    ru-RU: "Шанс поимки целей «{name}»"
+    th-TH: "อัตราจับศัตรูที่ติด{name}"
+    tr-TR: "{name} Etkili Düşmanları Yakalama"
+    vi-VN: "Tỉ lệ bắt kẻ địch bị {name}"
+    zh-CN: "对{name}状态敌人捕获率"
+    zh-TW: "對{name}狀態敵人捕捉率"
+  elementDropUp:
+    de-DE: "{name}-Pal-Beute erhöht"
+    en-US: "{name} Pal Drop Up"
+    es-ES: "Botín de Pals de {name}"
+    fr-FR: "Butin des Pals {name}"
+    id-ID: "Drop Pal {name} Naik"
+    it-IT: "Bottino dei Pal {name}"
+    ja-JP: "{name}パルのドロップ増加"
+    ko-KR: "{name} 팰 드롭 증가"
+    pl-PL: "Więcej łupów z Pali: {name}"
+    pt-BR: "Itens de Pals de {name}"
+    ru-RU: "Добыча с Палов стихии «{name}»"
+    th-TH: "ไอเทมดรอปจากพัลธาตุ{name}"
+    tr-TR: "{name} Pal Ganimeti Artışı"
+    vi-VN: "Tăng rơi đồ từ Pal hệ {name}"
+    zh-CN: "{name}帕鲁掉落增加"
+    zh-TW: "{name}帕魯掉落增加"
+  elementWeakDamage:
+    de-DE: "{name}-Schaden erhöht"
+    en-US: "{name} Damage Up"
+    es-ES: "Daño de {name}"
+    fr-FR: "Dégâts {name}"
+    id-ID: "Damage {name} Naik"
+    it-IT: "Danni di {name}"
+    ja-JP: "{name}ダメージ上昇"
+    ko-KR: "{name} 피해 증가"
+    pl-PL: "Obrażenia: {name}"
+    pt-BR: "Dano de {name}"
+    ru-RU: "Урон стихии «{name}»"
+    th-TH: "เพิ่มดาเมจธาตุ{name}"
+    tr-TR: "{name} Hasarı Artışı"
+    vi-VN: "Tăng sát thương hệ {name}"
+    zh-CN: "{name}伤害提升"
+    zh-TW: "{name}傷害提升"
+  elementAttackUp:
+    de-DE: "{name}-Angriff erhöht"
+    en-US: "{name} Attack Up"
+    es-ES: "Ataque de {name}"
+    fr-FR: "Attaque {name}"
+    id-ID: "Serangan {name} Naik"
+    it-IT: "Attacco di {name}"
+    ja-JP: "{name}攻撃強化"
+    ko-KR: "{name} 공격 강화"
+    pl-PL: "Atak: {name}"
+    pt-BR: "Ataque de {name}"
+    ru-RU: "Атака стихии «{name}»"
+    th-TH: "เพิ่มการโจมตีธาตุ{name}"
+    tr-TR: "{name} Saldırısı Artışı"
+    vi-VN: "Tăng tấn công hệ {name}"
+    zh-CN: "{name}攻击强化"
+    zh-TW: "{name}攻擊強化"
+  elementAttack:
+    de-DE: "{name}-Angriff"
+    en-US: "{name} Attack"
+    es-ES: "Ataque de {name}"
+    fr-FR: "Attaque {name}"
+    id-ID: "Serangan {name}"
+    it-IT: "Attacco di {name}"
+    ja-JP: "{name}属性攻撃"
+    ko-KR: "{name} 속성 공격"
+    pl-PL: "Atak żywiołu: {name}"
+    pt-BR: "Ataque de {name}"
+    ru-RU: "Атака стихии «{name}»"
+    th-TH: "โจมตีธาตุ{name}"
+    tr-TR: "{name} Saldırısı"
+    vi-VN: "Tấn công hệ {name}"
+    zh-CN: "{name}属性攻击"
+    zh-TW: "{name}屬性攻擊"
+  workAptitude:
+    de-DE: "{name}-Eignung erhöht"
+    en-US: "{name} Aptitude Up"
+    es-ES: "Aptitud de {name}"
+    fr-FR: "Aptitude {name}"
+    id-ID: "Bakat {name} Naik"
+    it-IT: "Attitudine a {name}"
+    ja-JP: "{name}適性上昇"
+    ko-KR: "{name} 적성 상승"
+    pl-PL: "Zdolność: {name}"
+    pt-BR: "Aptidão de {name}"
+    ru-RU: "Способность: {name}"
+    th-TH: "เพิ่มความถนัด{name}"
+    tr-TR: "{name} Yeteneği Artışı"
+    vi-VN: "Tăng năng lực {name}"
+    zh-CN: "{name}适性提升"
+    zh-TW: "{name}適性提升"
+
+# --- standalone effect types -------------------------------------------------
+effects:
+  # --- carrying / movement ---------------------------------------------------
+  MaxInventoryWeight: { de-DE: "Tragfähigkeit erhöht", en-US: "Carry Weight Up", es-ES: "Capacidad de carga", fr-FR: "Charge max augmentée", id-ID: "Kapasitas Bawaan Naik", it-IT: "Capacità di carico", ja-JP: "所持重量アップ", ko-KR: "소지 무게 증가", pl-PL: "Udźwig +", pt-BR: "Capacidade de carga", ru-RU: "Переносимый вес +", th-TH: "เพิ่มน้ำหนักบรรทุก", tr-TR: "Taşıma Kapasitesi Artışı", vi-VN: "Tăng sức mang", zh-CN: "负重上限提升", zh-TW: "負重上限提升" }
+  ItemWeightReduction: { de-DE: "Gegenstandsgewicht verringert", en-US: "Item Weight Reduction", es-ES: "Peso de objetos reducido", fr-FR: "Poids des objets réduit", id-ID: "Berat Item Berkurang", it-IT: "Peso oggetti ridotto", ja-JP: "アイテム重量軽減", ko-KR: "아이템 무게 감소", pl-PL: "Mniejsza waga przedmiotów", pt-BR: "Peso de itens reduzido", ru-RU: "Вес предметов снижен", th-TH: "ลดน้ำหนักไอเทม", tr-TR: "Eşya Ağırlığı Azalır", vi-VN: "Giảm trọng lượng vật phẩm", zh-CN: "物品重量减轻", zh-TW: "物品重量減輕" }
+  MoveSpeed: { de-DE: "Tempo erhöht", en-US: "Move Speed Up", es-ES: "Velocidad de movimiento", fr-FR: "Vitesse de déplacement", id-ID: "Kecepatan Gerak Naik", it-IT: "Velocità di movimento", ja-JP: "移動速度アップ", ko-KR: "이동 속도 증가", pl-PL: "Prędkość ruchu +", pt-BR: "Velocidade de movimento", ru-RU: "Скорость передвижения +", th-TH: "เพิ่มความเร็วเคลื่อนที่", tr-TR: "Hareket Hızı Artışı", vi-VN: "Tăng tốc di chuyển", zh-CN: "移动速度提升", zh-TW: "移動速度提升" }
+  MoveSpeed_Grass: { de-DE: "Tempo erhöht (Wiese)", en-US: "Move Speed Up (Grassland)", es-ES: "Velocidad de movimiento (pradera)", fr-FR: "Vitesse de déplacement (prairie)", id-ID: "Kecepatan Gerak Naik (Padang Rumput)", it-IT: "Velocità di movimento (prateria)", ja-JP: "移動速度アップ(草原)", ko-KR: "이동 속도 증가(초원)", pl-PL: "Prędkość ruchu + (łąka)", pt-BR: "Velocidade de movimento (campina)", ru-RU: "Скорость передвижения + (луга)", th-TH: "เพิ่มความเร็วเคลื่อนที่ (ทุ่งหญ้า)", tr-TR: "Hareket Hızı Artışı (Çayır)", vi-VN: "Tăng tốc di chuyển (đồng cỏ)", zh-CN: "移动速度提升(草原)", zh-TW: "移動速度提升(草原)" }
+  MoveSpeed_Ground: { de-DE: "Tempo erhöht (Sand)", en-US: "Move Speed Up (Sand)", es-ES: "Velocidad de movimiento (arena)", fr-FR: "Vitesse de déplacement (sable)", id-ID: "Kecepatan Gerak Naik (Pasir)", it-IT: "Velocità di movimento (sabbia)", ja-JP: "移動速度アップ(砂地)", ko-KR: "이동 속도 증가(모래)", pl-PL: "Prędkość ruchu + (piasek)", pt-BR: "Velocidade de movimento (areia)", ru-RU: "Скорость передвижения + (песок)", th-TH: "เพิ่มความเร็วเคลื่อนที่ (พื้นทราย)", tr-TR: "Hareket Hızı Artışı (Kum)", vi-VN: "Tăng tốc di chuyển (cát)", zh-CN: "移动速度提升(沙地)", zh-TW: "移動速度提升(沙地)" }
+  MoveSpeed_Snow: { de-DE: "Tempo erhöht (Schnee)", en-US: "Move Speed Up (Snow)", es-ES: "Velocidad de movimiento (nieve)", fr-FR: "Vitesse de déplacement (neige)", id-ID: "Kecepatan Gerak Naik (Salju)", it-IT: "Velocità di movimento (neve)", ja-JP: "移動速度アップ(雪原)", ko-KR: "이동 속도 증가(설원)", pl-PL: "Prędkość ruchu + (śnieg)", pt-BR: "Velocidade de movimento (neve)", ru-RU: "Скорость передвижения + (снег)", th-TH: "เพิ่มความเร็วเคลื่อนที่ (หิมะ)", tr-TR: "Hareket Hızı Artışı (Kar)", vi-VN: "Tăng tốc di chuyển (tuyết)", zh-CN: "移动速度提升(雪原)", zh-TW: "移動速度提升(雪原)" }
+  ClimbMoveSpeedRate: { de-DE: "Klettertempo erhöht", en-US: "Climbing Speed Up", es-ES: "Velocidad de escalada", fr-FR: "Vitesse d'escalade", id-ID: "Kecepatan Memanjat Naik", it-IT: "Velocità di arrampicata", ja-JP: "登坂速度アップ", ko-KR: "등반 속도 증가", pl-PL: "Prędkość wspinaczki +", pt-BR: "Velocidade de escalada", ru-RU: "Скорость лазания +", th-TH: "เพิ่มความเร็วปีนป่าย", tr-TR: "Tırmanma Hızı Artışı", vi-VN: "Tăng tốc leo trèo", zh-CN: "攀爬速度提升", zh-TW: "攀爬速度提升" }
+  SwimSpeed: { de-DE: "Schwimmtempo erhöht", en-US: "Swim Speed Up", es-ES: "Velocidad de nado", fr-FR: "Vitesse de nage", id-ID: "Kecepatan Berenang Naik", it-IT: "Velocità di nuoto", ja-JP: "遊泳速度アップ", ko-KR: "수영 속도 증가", pl-PL: "Prędkość pływania +", pt-BR: "Velocidade de natação", ru-RU: "Скорость плавания +", th-TH: "เพิ่มความเร็วว่ายน้ำ", tr-TR: "Yüzme Hızı Artışı", vi-VN: "Tăng tốc bơi", zh-CN: "游泳速度提升", zh-TW: "游泳速度提升" }
+  AirDash: { de-DE: "Luft-Dash", en-US: "Air Dash", es-ES: "Impulso aéreo", fr-FR: "Dash aérien", id-ID: "Lesat Udara", it-IT: "Scatto aereo", ja-JP: "空中ダッシュ", ko-KR: "공중 대시", pl-PL: "Skok w powietrzu", pt-BR: "Corrida no ar", ru-RU: "Рывок в воздухе", th-TH: "พุ่งกลางอากาศ", tr-TR: "Havada Atılış", vi-VN: "Lướt trên không", zh-CN: "空中冲刺", zh-TW: "空中衝刺" }
+  JumpPower_Increase: { de-DE: "Sprungkraft erhöht", en-US: "Jump Power Up", es-ES: "Potencia de salto", fr-FR: "Puissance de saut", id-ID: "Kekuatan Lompat Naik", it-IT: "Potenza di salto", ja-JP: "ジャンプ力アップ", ko-KR: "점프력 증가", pl-PL: "Siła skoku +", pt-BR: "Força de salto", ru-RU: "Сила прыжка +", th-TH: "เพิ่มแรงกระโดด", tr-TR: "Zıplama Gücü Artışı", vi-VN: "Tăng sức nhảy", zh-CN: "跳跃力提升", zh-TW: "跳躍力提升" }
+  JumpCount_Increase: { de-DE: "Zusätzlicher Sprung", en-US: "Extra Jump", es-ES: "Salto adicional", fr-FR: "Saut supplémentaire", id-ID: "Lompatan Ekstra", it-IT: "Salto extra", ja-JP: "追加ジャンプ", ko-KR: "추가 점프", pl-PL: "Dodatkowy skok", pt-BR: "Salto extra", ru-RU: "Дополнительный прыжок", th-TH: "กระโดดเพิ่ม", tr-TR: "Ekstra Zıplama", vi-VN: "Nhảy thêm", zh-CN: "额外跳跃", zh-TW: "額外跳躍" }
+  LowGravity: { de-DE: "Geringe Schwerkraft", en-US: "Low Gravity", es-ES: "Gravedad reducida", fr-FR: "Gravité réduite", id-ID: "Gravitasi Rendah", it-IT: "Gravità ridotta", ja-JP: "低重力", ko-KR: "저중력", pl-PL: "Niska grawitacja", pt-BR: "Gravidade reduzida", ru-RU: "Пониженная гравитация", th-TH: "แรงโน้มถ่วงต่ำ", tr-TR: "Düşük Yer Çekimi", vi-VN: "Trọng lực thấp", zh-CN: "低重力", zh-TW: "低重力" }
+  FallDamageRate: { de-DE: "Sturzschaden verringert", en-US: "Fall Damage Reduction", es-ES: "Daño por caída reducido", fr-FR: "Dégâts de chute réduits", id-ID: "Damage Jatuh Berkurang", it-IT: "Danni da caduta ridotti", ja-JP: "落下ダメージ軽減", ko-KR: "낙하 피해 감소", pl-PL: "Mniejsze obrażenia od upadku", pt-BR: "Dano de queda reduzido", ru-RU: "Урон от падения снижен", th-TH: "ลดดาเมจจากการตกกระแทก", tr-TR: "Düşme Hasarı Azalır", vi-VN: "Giảm sát thương rơi ngã", zh-CN: "坠落伤害减免", zh-TW: "墜落傷害減免" }
+
+  # --- combat ----------------------------------------------------------------
+  ShotAttack: { de-DE: "Fernangriff erhöht", en-US: "Shot Attack Up", es-ES: "Ataque a distancia", fr-FR: "Attaque à distance", id-ID: "Serangan Tembak Naik", it-IT: "Attacco a distanza", ja-JP: "遠距離攻撃アップ", ko-KR: "원거리 공격 증가", pl-PL: "Atak dystansowy +", pt-BR: "Ataque à distância", ru-RU: "Дальняя атака +", th-TH: "เพิ่มการโจมตีระยะไกล", tr-TR: "Menzilli Saldırı Artışı", vi-VN: "Tăng tấn công tầm xa", zh-CN: "远程攻击提升", zh-TW: "遠程攻擊提升" }
+  Defense: { de-DE: "Verteidigung erhöht", en-US: "Defense Up", es-ES: "Defensa", fr-FR: "Défense", id-ID: "Pertahanan Naik", it-IT: "Difesa", ja-JP: "防御力アップ", ko-KR: "방어력 증가", pl-PL: "Obrona +", pt-BR: "Defesa", ru-RU: "Защита +", th-TH: "เพิ่มการป้องกัน", tr-TR: "Savunma Artışı", vi-VN: "Tăng phòng thủ", zh-CN: "防御力提升", zh-TW: "防禦力提升" }
+  AttackSpeedUp: { de-DE: "Angriffstempo erhöht", en-US: "Attack Speed Up", es-ES: "Velocidad de ataque", fr-FR: "Vitesse d'attaque", id-ID: "Kecepatan Serang Naik", it-IT: "Velocità d'attacco", ja-JP: "攻撃速度アップ", ko-KR: "공격 속도 증가", pl-PL: "Szybkość ataku +", pt-BR: "Velocidade de ataque", ru-RU: "Скорость атаки +", th-TH: "เพิ่มความเร็วโจมตี", tr-TR: "Saldırı Hızı Artışı", vi-VN: "Tăng tốc tấn công", zh-CN: "攻击速度提升", zh-TW: "攻擊速度提升" }
+  ReloadSpeedUp: { de-DE: "Nachladetempo erhöht", en-US: "Reload Speed Up", es-ES: "Velocidad de recarga", fr-FR: "Vitesse de rechargement", id-ID: "Kecepatan Reload Naik", it-IT: "Velocità di ricarica", ja-JP: "リロード速度アップ", ko-KR: "재장전 속도 증가", pl-PL: "Szybkość przeładowania +", pt-BR: "Velocidade de recarga", ru-RU: "Скорость перезарядки +", th-TH: "เพิ่มความเร็วรีโหลด", tr-TR: "Şarjör Değiştirme Hızı Artışı", vi-VN: "Tăng tốc nạp đạn", zh-CN: "装填速度提升", zh-TW: "裝填速度提升" }
+  LifeSteal: { de-DE: "Lebensraub", en-US: "Life Steal", es-ES: "Robo de vida", fr-FR: "Vol de vie", id-ID: "Serap Nyawa", it-IT: "Furto vita", ja-JP: "ライフスティール", ko-KR: "생명력 흡수", pl-PL: "Kradzież życia", pt-BR: "Roubo de vida", ru-RU: "Кража здоровья", th-TH: "ดูดเลือด", tr-TR: "Can Çalma", vi-VN: "Hút máu", zh-CN: "生命偷取", zh-TW: "生命偷取" }
+  LifeDrainPower_AttackUp: { de-DE: "Angriff durch Lebensentzug", en-US: "Life Drain Attack Up", es-ES: "Ataque por drenaje de vida", fr-FR: "Attaque par drain de vie", id-ID: "Serangan Kuras Nyawa", it-IT: "Attacco con drenaggio vita", ja-JP: "HP消費で攻撃アップ", ko-KR: "체력 소모 공격 증가", pl-PL: "Atak kosztem życia", pt-BR: "Ataque por drenar vida", ru-RU: "Атака за счёт здоровья", th-TH: "แลกเลือดเพิ่มโจมตี", tr-TR: "Can Bedeliyle Saldırı Artışı", vi-VN: "Đổi máu tăng tấn công", zh-CN: "消耗生命提升攻击", zh-TW: "消耗生命提升攻擊" }
+  AttackRateHPThreshold: { de-DE: "Angriff bei geringem LP", en-US: "Attack Up at Low HP", es-ES: "Ataque con vida baja", fr-FR: "Attaque à faibles PV", id-ID: "Serangan Naik saat HP Rendah", it-IT: "Attacco con PS bassi", ja-JP: "低HP時に攻撃アップ", ko-KR: "낮은 체력 시 공격 증가", pl-PL: "Atak przy niskim HP", pt-BR: "Ataque com vida baixa", ru-RU: "Атака при низком ХП", th-TH: "เพิ่มโจมตีเมื่อ HP ต่ำ", tr-TR: "Düşük CanKen Saldırı Artışı", vi-VN: "Tăng tấn công khi HP thấp", zh-CN: "低血量时攻击提升", zh-TW: "低血量時攻擊提升" }
+  DamageRateByEquippedWeapon: { de-DE: "Nahkampfwaffen-Schaden erhöht", en-US: "Melee Weapon Damage Up", es-ES: "Daño de arma cuerpo a cuerpo", fr-FR: "Dégâts d'arme de mêlée", id-ID: "Damage Senjata Jarak Dekat Naik", it-IT: "Danni armi da mischia", ja-JP: "近接武器ダメージアップ", ko-KR: "근접 무기 피해 증가", pl-PL: "Obrażenia broni białej +", pt-BR: "Dano de arma corpo a corpo", ru-RU: "Урон ближним оружием +", th-TH: "เพิ่มดาเมจอาวุธระยะประชิด", tr-TR: "Yakın Dövüş Silah Hasarı Artışı", vi-VN: "Tăng sát thương vũ khí cận chiến", zh-CN: "近战武器伤害提升", zh-TW: "近戰武器傷害提升" }
+  DamageUp_LastBullet: { de-DE: "Schaden der letzten Kugel erhöht", en-US: "Last Bullet Damage Up", es-ES: "Daño de la última bala", fr-FR: "Dégâts de la dernière balle", id-ID: "Damage Peluru Terakhir Naik", it-IT: "Danni ultimo proiettile", ja-JP: "最終弾ダメージアップ", ko-KR: "마지막 탄환 피해 증가", pl-PL: "Obrażenia ostatniego pocisku +", pt-BR: "Dano da última bala", ru-RU: "Урон последнего патрона +", th-TH: "เพิ่มดาเมจกระสุนนัดสุดท้าย", tr-TR: "Son Mermi Hasarı Artışı", vi-VN: "Tăng sát thương viên đạn cuối", zh-CN: "最后一发子弹伤害提升", zh-TW: "最後一發子彈傷害提升" }
+  DamageUpToNonBattleEnemy: { de-DE: "Hinterhalt-Schaden erhöht", en-US: "Ambush Damage Up", es-ES: "Daño de emboscada", fr-FR: "Dégâts d'embuscade", id-ID: "Damage Serangan Kejutan Naik", it-IT: "Danni da imboscata", ja-JP: "不意打ちダメージアップ", ko-KR: "기습 피해 증가", pl-PL: "Obrażenia z zaskoczenia +", pt-BR: "Dano de emboscada", ru-RU: "Урон из засады +", th-TH: "เพิ่มดาเมจลอบโจมตี", tr-TR: "Pusu Hasarı Artışı", vi-VN: "Tăng sát thương phục kích", zh-CN: "偷袭伤害提升", zh-TW: "偷襲傷害提升" }
+  DamageUpPartnerSkillAttack: { de-DE: "Partnerfähigkeitsschaden erhöht", en-US: "Partner Skill Damage Up", es-ES: "Daño de habilidad de compañero", fr-FR: "Dégâts de compétence de partenaire", id-ID: "Damage Skill Partner Naik", it-IT: "Danni abilità partner", ja-JP: "パートナースキルダメージアップ", ko-KR: "파트너 스킬 피해 증가", pl-PL: "Obrażenia zdolności partnera +", pt-BR: "Dano de habilidade de parceiro", ru-RU: "Урон навыка напарника +", th-TH: "เพิ่มดาเมจสกิลคู่หู", tr-TR: "Ortak Beceri Hasarı Artışı", vi-VN: "Tăng sát thương kỹ năng đồng hành", zh-CN: "伙伴技能伤害提升", zh-TW: "夥伴技能傷害提升" }
+  BodyPartsWeakDamage: { de-DE: "Schwachstellen-Schaden erhöht", en-US: "Weak Point Damage Up", es-ES: "Daño a puntos débiles", fr-FR: "Dégâts aux points faibles", id-ID: "Damage Titik Lemah Naik", it-IT: "Danni ai punti deboli", ja-JP: "弱点ダメージアップ", ko-KR: "약점 피해 증가", pl-PL: "Obrażenia w słabe punkty +", pt-BR: "Dano a pontos fracos", ru-RU: "Урон по слабым местам +", th-TH: "เพิ่มดาเมจจุดอ่อน", tr-TR: "Zayıf Nokta Hasarı Artışı", vi-VN: "Tăng sát thương điểm yếu", zh-CN: "弱点伤害提升", zh-TW: "弱點傷害提升" }
+  PlayerInflictEffect_WeakPointHit_DamageUp: { de-DE: "Schwachstellen-Kombo", en-US: "Weak Point Combo Up", es-ES: "Combo a punto débil", fr-FR: "Combo point faible", id-ID: "Kombo Titik Lemah", it-IT: "Combo punto debole", ja-JP: "弱点連続攻撃アップ", ko-KR: "약점 연계 피해 증가", pl-PL: "Kombo w słaby punkt", pt-BR: "Combo em ponto fraco", ru-RU: "Комбо по слабому месту", th-TH: "คอมโบจุดอ่อน", tr-TR: "Zayıf Nokta Komboları", vi-VN: "Combo điểm yếu", zh-CN: "弱点连击强化", zh-TW: "弱點連擊強化" }
+  AvoidDurationUp_PartnerSkill: { de-DE: "Ausweich-Unverwundbarkeit erhöht", en-US: "Dodge Invincibility Up", es-ES: "Invulnerabilidad al esquivar", fr-FR: "Invincibilité à l'esquive", id-ID: "Kebal saat Menghindar", it-IT: "Invulnerabilità in schivata", ja-JP: "回避無敵時間アップ", ko-KR: "회피 무적 시간 증가", pl-PL: "Nietykalność przy uniku +", pt-BR: "Invencibilidade ao esquivar", ru-RU: "Неуязвимость при уклонении +", th-TH: "เพิ่มเวลาอมตะตอนหลบ", tr-TR: "Kaçınma Dokunulmazlığı Artışı", vi-VN: "Tăng thời gian bất tử khi né", zh-CN: "闪避无敌时间提升", zh-TW: "閃避無敵時間提升" }
+  BulletHit_StackBuff: { de-DE: "Fernkampf-Trefferbonus", en-US: "Ranged Hit Buff", es-ES: "Mejora por impacto a distancia", fr-FR: "Bonus de coup à distance", id-ID: "Buff Tembakan Kena", it-IT: "Bonus per colpo a distanza", ja-JP: "射撃命中で強化", ko-KR: "사격 명중 시 강화", pl-PL: "Wzmocnienie za trafienie", pt-BR: "Bônus por acerto à distância", ru-RU: "Усиление за попадание", th-TH: "บัฟเมื่อยิงโดน", tr-TR: "İsabetli Atışta Güçlenme", vi-VN: "Buff khi bắn trúng", zh-CN: "射击命中叠加增益", zh-TW: "射擊命中疊加增益" }
+  DefeatEnemy_StackBuff: { de-DE: "Bonus bei Gegnertötung", en-US: "Buff on Defeat", es-ES: "Mejora al derrotar", fr-FR: "Bonus à l'élimination", id-ID: "Buff saat Mengalahkan", it-IT: "Bonus a ogni sconfitta", ja-JP: "敵撃破で強化", ko-KR: "적 처치 시 강화", pl-PL: "Wzmocnienie za pokonanie", pt-BR: "Bônus ao derrotar", ru-RU: "Усиление за победу", th-TH: "บัฟเมื่อล้มศัตรู", tr-TR: "Düşman Yenince Güçlenme", vi-VN: "Buff khi hạ gục", zh-CN: "击败敌人叠加增益", zh-TW: "擊敗敵人疊加增益" }
+  DefeatEnemy_ActiveSkillCoolTime_Decrease: { de-DE: "Abklingzeit bei Gegnertötung", en-US: "Cooldown Down on Defeat", es-ES: "Enfriamiento al derrotar", fr-FR: "Recharge à l'élimination", id-ID: "Cooldown Turun saat Mengalahkan", it-IT: "Ricarica a ogni sconfitta", ja-JP: "敵撃破でクールタイム短縮", ko-KR: "적 처치 시 쿨타임 감소", pl-PL: "Odnowienie za pokonanie", pt-BR: "Recarga ao derrotar", ru-RU: "Перезарядка за победу", th-TH: "ลดคูลดาวน์เมื่อล้มศัตรู", tr-TR: "Düşman Yenince Bekleme Azalır", vi-VN: "Giảm hồi chiêu khi hạ gục", zh-CN: "击败敌人减少冷却", zh-TW: "擊敗敵人減少冷卻" }
+  RecoverHPOnHPThreshold: { de-DE: "Notheilung", en-US: "Emergency Heal", es-ES: "Curación de emergencia", fr-FR: "Soin d'urgence", id-ID: "Penyembuhan Darurat", it-IT: "Cura d'emergenza", ja-JP: "緊急回復", ko-KR: "긴급 회복", pl-PL: "Leczenie awaryjne", pt-BR: "Cura de emergência", ru-RU: "Экстренное лечение", th-TH: "ฟื้นฟูฉุกเฉิน", tr-TR: "Acil İyileşme", vi-VN: "Hồi máu khẩn cấp", zh-CN: "紧急治疗", zh-TW: "緊急治療" }
+  Regene_HP_Rate: { de-DE: "LP-Regeneration", en-US: "HP Regeneration", es-ES: "Regeneración de vida", fr-FR: "Régénération de PV", id-ID: "Regenerasi HP", it-IT: "Rigenerazione PS", ja-JP: "HP自動回復", ko-KR: "체력 자동 회복", pl-PL: "Regeneracja HP", pt-BR: "Regeneração de vida", ru-RU: "Регенерация ХП", th-TH: "ฟื้นฟู HP อัตโนมัติ", tr-TR: "Can Yenilenmesi", vi-VN: "Hồi HP tự động", zh-CN: "生命自动回复", zh-TW: "生命自動回復" }
+  ShieldDamageCutRate: { de-DE: "Schildschaden verringert", en-US: "Shield Damage Reduction", es-ES: "Daño al escudo reducido", fr-FR: "Dégâts au bouclier réduits", id-ID: "Damage Perisai Berkurang", it-IT: "Danni allo scudo ridotti", ja-JP: "シールドダメージ軽減", ko-KR: "실드 피해 감소", pl-PL: "Mniejsze obrażenia tarczy", pt-BR: "Dano ao escudo reduzido", ru-RU: "Урон по щиту снижен", th-TH: "ลดดาเมจโล่", tr-TR: "Kalkan Hasarı Azalır", vi-VN: "Giảm sát thương lên khiên", zh-CN: "护盾伤害减免", zh-TW: "護盾傷害減免" }
+  PlayerShield_RecoverStartTimeRate: { de-DE: "Schnellere Schildregeneration", en-US: "Faster Shield Recovery", es-ES: "Recuperación de escudo más rápida", fr-FR: "Récupération de bouclier accélérée", id-ID: "Pemulihan Perisai Lebih Cepat", it-IT: "Recupero scudo più rapido", ja-JP: "シールド回復開始短縮", ko-KR: "실드 회복 개시 단축", pl-PL: "Szybsza regeneracja tarczy", pt-BR: "Recuperação de escudo mais rápida", ru-RU: "Быстрее восстановление щита", th-TH: "ฟื้นฟูโล่เร็วขึ้น", tr-TR: "Daha Hızlı Kalkan Yenilenmesi", vi-VN: "Hồi khiên nhanh hơn", zh-CN: "护盾恢复更快", zh-TW: "護盾恢復更快" }
+  PlayerLowHealthBlast: { de-DE: "Explosion bei geringem LP", en-US: "Low HP Blast", es-ES: "Explosión con vida baja", fr-FR: "Explosion à faibles PV", id-ID: "Ledakan saat HP Rendah", it-IT: "Esplosione con PS bassi", ja-JP: "低HP時に爆発", ko-KR: "낮은 체력 시 폭발", pl-PL: "Wybuch przy niskim HP", pt-BR: "Explosão com vida baixa", ru-RU: "Взрыв при низком ХП", th-TH: "ระเบิดเมื่อ HP ต่ำ", tr-TR: "Düşük Canda Patlama", vi-VN: "Nổ khi HP thấp", zh-CN: "低血量爆发", zh-TW: "低血量爆發" }
+  Player_ArrowExplosion: { de-DE: "Explosive Pfeile", en-US: "Explosive Arrows", es-ES: "Flechas explosivas", fr-FR: "Flèches explosives", id-ID: "Panah Peledak", it-IT: "Frecce esplosive", ja-JP: "爆発する矢", ko-KR: "폭발하는 화살", pl-PL: "Wybuchowe strzały", pt-BR: "Flechas explosivas", ru-RU: "Взрывные стрелы", th-TH: "ลูกศรระเบิด", tr-TR: "Patlayıcı Oklar", vi-VN: "Mũi tên nổ", zh-CN: "爆炸箭矢", zh-TW: "爆炸箭矢" }
+  PlayerInflictEffect_MeleeHitBarrier: { de-DE: "Nahkampf-Kombo-Barriere", en-US: "Melee Combo Barrier", es-ES: "Barrera por combo cuerpo a cuerpo", fr-FR: "Barrière de combo au corps à corps", id-ID: "Barier Kombo Jarak Dekat", it-IT: "Barriera da combo in mischia", ja-JP: "近接連続攻撃でバリア", ko-KR: "근접 연타 시 보호막", pl-PL: "Bariera za kombo w zwarciu", pt-BR: "Barreira por combo corpo a corpo", ru-RU: "Барьер за ближнее комбо", th-TH: "เกราะจากคอมโบระยะประชิด", tr-TR: "Yakın Dövüş Kombo Bariyeri", vi-VN: "Khiên chắn từ combo cận chiến", zh-CN: "近战连击生成护罩", zh-TW: "近戰連擊生成護罩" }
+  CurveType: { de-DE: "Zielsuchende Sphären", en-US: "Sphere Homing", es-ES: "Esferas teledirigidas", fr-FR: "Sphères à tête chercheuse", id-ID: "Sphere Pelacak", it-IT: "Sfere a ricerca", ja-JP: "スフィアホーミング", ko-KR: "스피어 유도", pl-PL: "Naprowadzane sfery", pt-BR: "Esferas teleguiadas", ru-RU: "Самонаводящиеся сферы", th-TH: "โกลนำวิถี", tr-TR: "Küre Güdümü", vi-VN: "Cầu tự tìm mục tiêu", zh-CN: "精灵球追踪", zh-TW: "精靈球追蹤" }
+
+  # --- environment resistances -----------------------------------------------
+  TemperatureResist_Cold: { de-DE: "Kälteresistenz", en-US: "Cold Resistance", es-ES: "Resistencia al frío", fr-FR: "Résistance au froid", id-ID: "Resistansi Dingin", it-IT: "Resistenza al freddo", ja-JP: "寒さ耐性", ko-KR: "추위 저항", pl-PL: "Odporność na zimno", pt-BR: "Resistência ao frio", ru-RU: "Сопротивление холоду", th-TH: "ต้านทานความหนาว", tr-TR: "Soğuk Direnci", vi-VN: "Kháng lạnh", zh-CN: "耐寒", zh-TW: "耐寒" }
+  TemperatureResist_Heat: { de-DE: "Hitzeresistenz", en-US: "Heat Resistance", es-ES: "Resistencia al calor", fr-FR: "Résistance à la chaleur", id-ID: "Resistansi Panas", it-IT: "Resistenza al caldo", ja-JP: "暑さ耐性", ko-KR: "더위 저항", pl-PL: "Odporność na gorąco", pt-BR: "Resistência ao calor", ru-RU: "Сопротивление жаре", th-TH: "ต้านทานความร้อน", tr-TR: "Sıcak Direnci", vi-VN: "Kháng nóng", zh-CN: "耐热", zh-TW: "耐熱" }
+  ExplosionResist: { de-DE: "Explosionsresistenz", en-US: "Explosion Resistance", es-ES: "Resistencia a explosiones", fr-FR: "Résistance aux explosions", id-ID: "Resistansi Ledakan", it-IT: "Resistenza alle esplosioni", ja-JP: "爆発耐性", ko-KR: "폭발 저항", pl-PL: "Odporność na wybuchy", pt-BR: "Resistência a explosões", ru-RU: "Сопротивление взрывам", th-TH: "ต้านทานการระเบิด", tr-TR: "Patlama Direnci", vi-VN: "Kháng nổ", zh-CN: "爆炸抗性", zh-TW: "爆炸抗性" }
+  InvalidToxicGas: { de-DE: "Giftgas-Immunität", en-US: "Toxic Gas Immunity", es-ES: "Inmunidad a gas tóxico", fr-FR: "Immunité au gaz toxique", id-ID: "Kebal Gas Beracun", it-IT: "Immunità al gas tossico", ja-JP: "毒ガス無効", ko-KR: "독가스 무효", pl-PL: "Odporność na trujący gaz", pt-BR: "Imunidade a gás tóxico", ru-RU: "Иммунитет к ядовитому газу", th-TH: "ภูมิคุ้มกันแก๊สพิษ", tr-TR: "Zehirli Gaz Bağışıklığı", vi-VN: "Miễn nhiễm khí độc", zh-CN: "毒气免疫", zh-TW: "毒氣免疫" }
+  LavaDamageInvalid: { de-DE: "Lavaschaden-Immunität", en-US: "Lava Damage Immunity", es-ES: "Inmunidad al daño de lava", fr-FR: "Immunité aux dégâts de lave", id-ID: "Kebal Damage Lava", it-IT: "Immunità ai danni della lava", ja-JP: "溶岩ダメージ無効", ko-KR: "용암 피해 무효", pl-PL: "Odporność na lawę", pt-BR: "Imunidade a dano de lava", ru-RU: "Иммунитет к урону от лавы", th-TH: "ภูมิคุ้มกันดาเมจลาวา", tr-TR: "Lav Hasarı Bağışıklığı", vi-VN: "Miễn nhiễm sát thương dung nham", zh-CN: "熔岩伤害免疫", zh-TW: "熔岩傷害免疫" }
+
+  # --- gathering / work ------------------------------------------------------
+  Mining: { de-DE: "Bergbau", en-US: "Mining", es-ES: "Minería", fr-FR: "Minage", id-ID: "Menambang", it-IT: "Estrazione", ja-JP: "採掘", ko-KR: "채굴", pl-PL: "Górnictwo", pt-BR: "Mineração", ru-RU: "Добыча руды", th-TH: "ทำเหมือง", tr-TR: "Madencilik", vi-VN: "Khai khoáng", zh-CN: "采矿", zh-TW: "採礦" }
+  Logging: { de-DE: "Holzfällen", en-US: "Logging", es-ES: "Tala", fr-FR: "Bûcheronnage", id-ID: "Menebang", it-IT: "Disboscamento", ja-JP: "伐採", ko-KR: "벌목", pl-PL: "Wyrąb drewna", pt-BR: "Extração de madeira", ru-RU: "Заготовка леса", th-TH: "ตัดไม้", tr-TR: "Odunculuk", vi-VN: "Đốn gỗ", zh-CN: "伐木", zh-TW: "伐木" }
+  CraftSpeed: { de-DE: "Arbeitstempo erhöht", en-US: "Work Speed Up", es-ES: "Velocidad de trabajo", fr-FR: "Vitesse de travail", id-ID: "Kecepatan Kerja Naik", it-IT: "Velocità di lavoro", ja-JP: "作業速度アップ", ko-KR: "작업 속도 증가", pl-PL: "Szybkość pracy +", pt-BR: "Velocidade de trabalho", ru-RU: "Скорость работы +", th-TH: "เพิ่มความเร็วทำงาน", tr-TR: "Çalışma Hızı Artışı", vi-VN: "Tăng tốc làm việc", zh-CN: "工作速度提升", zh-TW: "工作速度提升" }
+  CollectItemDrop: { de-DE: "Sammelertrag erhöht", en-US: "Gathering Yield Up", es-ES: "Recolección aumentada", fr-FR: "Récolte augmentée", id-ID: "Hasil Kumpul Naik", it-IT: "Raccolta aumentata", ja-JP: "採集量アップ", ko-KR: "채집량 증가", pl-PL: "Więcej ze zbierania", pt-BR: "Coleta aumentada", ru-RU: "Больше при сборе", th-TH: "เพิ่มผลผลิตเก็บเกี่ยว", tr-TR: "Toplama Verimi Artışı", vi-VN: "Tăng thu hoạch khi hái lượm", zh-CN: "采集量提升", zh-TW: "採集量提升" }
+  EquipmentDurabilityRate: { de-DE: "Ausrüstungshaltbarkeit erhöht", en-US: "Equipment Durability Up", es-ES: "Durabilidad del equipo", fr-FR: "Durabilité de l'équipement", id-ID: "Durabilitas Perlengkapan Naik", it-IT: "Durabilità equipaggiamento", ja-JP: "装備耐久度アップ", ko-KR: "장비 내구도 증가", pl-PL: "Wytrzymałość ekwipunku +", pt-BR: "Durabilidade do equipamento", ru-RU: "Прочность снаряжения +", th-TH: "เพิ่มความทนทานอุปกรณ์", tr-TR: "Ekipman Dayanıklılığı Artışı", vi-VN: "Tăng độ bền trang bị", zh-CN: "装备耐久提升", zh-TW: "裝備耐久提升" }
+  MeatCutAddItemDrop: { de-DE: "Fleischausbeute erhöht", en-US: "Meat Harvest Up", es-ES: "Botín de carne aumentado", fr-FR: "Récolte de viande augmentée", id-ID: "Hasil Daging Naik", it-IT: "Raccolta di carne aumentata", ja-JP: "解体アイテム増加", ko-KR: "해체 획득량 증가", pl-PL: "Więcej mięsa", pt-BR: "Colheita de carne aumentada", ru-RU: "Больше мяса при разделке", th-TH: "เพิ่มไอเทมจากชำแหละ", tr-TR: "Et Hasadı Artışı", vi-VN: "Tăng thịt thu được", zh-CN: "屠宰产物增加", zh-TW: "屠宰產物增加" }
+  GainItemDrop: { de-DE: "Gegnerbeute erhöht", en-US: "Enemy Drop Up", es-ES: "Botín de enemigos aumentado", fr-FR: "Butin d'ennemis augmenté", id-ID: "Drop Musuh Naik", it-IT: "Bottino nemici aumentato", ja-JP: "敵ドロップ増加", ko-KR: "적 드롭 증가", pl-PL: "Więcej łupów z wrogów", pt-BR: "Itens de inimigos aumentados", ru-RU: "Больше добычи с врагов", th-TH: "เพิ่มไอเทมดรอปจากศัตรู", tr-TR: "Düşman Ganimeti Artışı", vi-VN: "Tăng rơi đồ từ kẻ địch", zh-CN: "敌人掉落增加", zh-TW: "敵人掉落增加" }
+
+  # --- fishing ---------------------------------------------------------------
+  Fishing_StartProgressAdd: { de-DE: "Angel-Startvorteil", en-US: "Fishing Head Start", es-ES: "Ventaja inicial de pesca", fr-FR: "Avance de pêche", id-ID: "Awal Memancing Unggul", it-IT: "Vantaggio iniziale pesca", ja-JP: "釣り開始ゲージ増加", ko-KR: "낚시 시작 게이지 증가", pl-PL: "Przewaga na starcie łowienia", pt-BR: "Vantagem inicial na pesca", ru-RU: "Фора при рыбалке", th-TH: "เริ่มตกปลาได้เปรียบ", tr-TR: "Balıkçılık Başlangıç Avantajı", vi-VN: "Lợi thế đầu khi câu cá", zh-CN: "钓鱼起始进度增加", zh-TW: "釣魚起始進度增加" }
+  Fishing_SuccessAmountUp: { de-DE: "Angelfortschritt erhöht", en-US: "Fishing Catch Up", es-ES: "Progreso de pesca", fr-FR: "Progression de pêche", id-ID: "Progres Memancing Naik", it-IT: "Progresso pesca aumentato", ja-JP: "釣り成功量アップ", ko-KR: "낚시 성공량 증가", pl-PL: "Postęp łowienia +", pt-BR: "Progresso de pesca", ru-RU: "Прогресс рыбалки +", th-TH: "เพิ่มความคืบหน้าตกปลา", tr-TR: "Balıkçılık İlerlemesi Artışı", vi-VN: "Tăng tiến độ câu cá", zh-CN: "钓鱼进度提升", zh-TW: "釣魚進度提升" }
+  Fishing_FailedAmountDown: { de-DE: "Angelhilfe", en-US: "Fishing Assist", es-ES: "Ayuda de pesca", fr-FR: "Aide à la pêche", id-ID: "Bantuan Memancing", it-IT: "Assistenza pesca", ja-JP: "釣りゲージ減少緩和", ko-KR: "낚시 게이지 감소 완화", pl-PL: "Wsparcie łowienia", pt-BR: "Auxílio de pesca", ru-RU: "Помощь при рыбалке", th-TH: "ช่วยตกปลา", tr-TR: "Balıkçılık Yardımı", vi-VN: "Hỗ trợ câu cá", zh-CN: "钓鱼进度衰减减缓", zh-TW: "釣魚進度衰減減緩" }
+  Fishing_ItemAddDrop: { de-DE: "Angelertrag erhöht", en-US: "Fishing Yield Up", es-ES: "Botín de pesca aumentado", fr-FR: "Prises de pêche augmentées", id-ID: "Hasil Memancing Naik", it-IT: "Pescato aumentato", ja-JP: "釣り入手量アップ", ko-KR: "낚시 획득량 증가", pl-PL: "Więcej ze wędkowania", pt-BR: "Pesca aumentada", ru-RU: "Больше улова", th-TH: "เพิ่มไอเทมจากตกปลา", tr-TR: "Balıkçılık Verimi Artışı", vi-VN: "Tăng vật phẩm câu cá", zh-CN: "钓鱼收获增加", zh-TW: "釣魚收穫增加" }
+  Fishing_EnemyAddDrop: { de-DE: "Angel-Bonusbeute", en-US: "Fishing Extra Drop", es-ES: "Botín extra de pesca", fr-FR: "Butin de pêche supplémentaire", id-ID: "Drop Ekstra Memancing", it-IT: "Bottino extra pesca", ja-JP: "釣り追加ドロップ", ko-KR: "낚시 추가 드롭", pl-PL: "Dodatkowy łup z łowienia", pt-BR: "Item extra na pesca", ru-RU: "Доп. добыча при рыбалке", th-TH: "ไอเทมพิเศษจากตกปลา", tr-TR: "Balıkçılık Ek Ganimeti", vi-VN: "Rơi đồ thêm khi câu cá", zh-CN: "钓鱼额外掉落", zh-TW: "釣魚額外掉落" }
+  Fishing_GoodTalentPalProbability: { de-DE: "Talentierter Fang wahrscheinlicher", en-US: "Talented Catch Chance Up", es-ES: "Prob. de pescar Pal talentoso", fr-FR: "Chance de pêcher un Pal doué", id-ID: "Peluang Pal Berbakat Naik", it-IT: "Prob. di pescare Pal dotati", ja-JP: "才能持ちパル遭遇率アップ", ko-KR: "재능 팰 낚을 확률 증가", pl-PL: "Szansa na uzdolnionego Pala", pt-BR: "Chance de Pal talentoso", ru-RU: "Шанс поймать одарённого Пала", th-TH: "เพิ่มโอกาสตกพัลพรสวรรค์", tr-TR: "Yetenekli Pal Yakalama Şansı", vi-VN: "Tăng tỉ lệ câu Pal có tố chất", zh-CN: "钓获天赋帕鲁概率提升", zh-TW: "釣獲天賦帕魯機率提升" }
+  FishingSalvage_ItemDrop: { de-DE: "Bergungsertrag erhöht", en-US: "Salvage Yield Up", es-ES: "Botín de rescate aumentado", fr-FR: "Butin de récupération augmenté", id-ID: "Hasil Salvage Naik", it-IT: "Recupero aumentato", ja-JP: "サルベージ入手量アップ", ko-KR: "인양 획득량 증가", pl-PL: "Więcej z wyławiania", pt-BR: "Recuperação aumentada", ru-RU: "Больше при вылавливании", th-TH: "เพิ่มไอเทมจากงมของ", tr-TR: "Kurtarma Verimi Artışı", vi-VN: "Tăng vật phẩm trục vớt", zh-CN: "打捞收获增加", zh-TW: "打撈收穫增加" }
+
+  # --- base / breeding / farming ---------------------------------------------
+  FarmCropGrowupSpeed: { de-DE: "Pflanzenwachstum beschleunigt", en-US: "Crop Growth Speed Up", es-ES: "Velocidad de cultivo", fr-FR: "Croissance des cultures", id-ID: "Kecepatan Tumbuh Tanaman Naik", it-IT: "Crescita colture", ja-JP: "作物成長速度アップ", ko-KR: "작물 성장 속도 증가", pl-PL: "Szybszy wzrost upraw", pt-BR: "Crescimento de plantação", ru-RU: "Рост урожая ускорен", th-TH: "เพิ่มความเร็วโตของพืช", tr-TR: "Ekin Büyüme Hızı Artışı", vi-VN: "Tăng tốc lớn của cây trồng", zh-CN: "作物生长加速", zh-TW: "作物生長加速" }
+  FarmCropHarvestNumRate: { de-DE: "Ernteertrag erhöht", en-US: "Crop Yield Up", es-ES: "Cosecha aumentada", fr-FR: "Récolte augmentée", id-ID: "Hasil Panen Naik", it-IT: "Raccolto aumentato", ja-JP: "収穫量アップ", ko-KR: "수확량 증가", pl-PL: "Większe plony", pt-BR: "Colheita aumentada", ru-RU: "Урожайность +", th-TH: "เพิ่มผลผลิตเก็บเกี่ยว", tr-TR: "Hasat Miktarı Artışı", vi-VN: "Tăng sản lượng thu hoạch", zh-CN: "收获量提升", zh-TW: "收穫量提升" }
+  BreedSpeed_InBaseCamp: { de-DE: "Zuchttempo erhöht", en-US: "Breeding Speed Up", es-ES: "Velocidad de cría", fr-FR: "Vitesse d'élevage", id-ID: "Kecepatan Ternak Naik", it-IT: "Velocità di allevamento", ja-JP: "牧場作業速度アップ", ko-KR: "번식 속도 증가", pl-PL: "Szybkość hodowli +", pt-BR: "Velocidade de criação", ru-RU: "Скорость разведения +", th-TH: "เพิ่มความเร็วผสมพันธุ์", tr-TR: "Üreme Hızı Artışı", vi-VN: "Tăng tốc phối giống", zh-CN: "繁殖速度提升", zh-TW: "繁殖速度提升" }
+  PalEggHatchingSpeed: { de-DE: "Bruttempo erhöht", en-US: "Egg Hatching Speed Up", es-ES: "Velocidad de incubación", fr-FR: "Vitesse d'incubation", id-ID: "Kecepatan Menetas Naik", it-IT: "Velocità di schiusa", ja-JP: "孵化速度アップ", ko-KR: "부화 속도 증가", pl-PL: "Szybkość wylęgania +", pt-BR: "Velocidade de incubação", ru-RU: "Скорость вылупления +", th-TH: "เพิ่มความเร็วฟักไข่", tr-TR: "Yumurta Kuluçka Hızı Artışı", vi-VN: "Tăng tốc ấp trứng", zh-CN: "孵化速度提升", zh-TW: "孵化速度提升" }
+  EggAlphaConversion: { de-DE: "Alpha-Ei-Chance erhöht", en-US: "Alpha Egg Chance Up", es-ES: "Prob. de huevo alfa", fr-FR: "Chance d'œuf alpha", id-ID: "Peluang Telur Alfa Naik", it-IT: "Prob. uovo alfa", ja-JP: "アルファの卵確率アップ", ko-KR: "알파 알 확률 증가", pl-PL: "Szansa na jajo alfa +", pt-BR: "Chance de ovo alfa", ru-RU: "Шанс альфа-яйца +", th-TH: "เพิ่มโอกาสไข่อัลฟ่า", tr-TR: "Alfa Yumurta Şansı Artışı", vi-VN: "Tăng tỉ lệ trứng Alpha", zh-CN: "头目蛋概率提升", zh-TW: "頭目蛋機率提升" }
+  EggObtainExtraEgg: { de-DE: "Zusätzliches Ei-Chance", en-US: "Extra Egg Chance Up", es-ES: "Prob. de huevo extra", fr-FR: "Chance d'œuf supplémentaire", id-ID: "Peluang Telur Ekstra Naik", it-IT: "Prob. uovo extra", ja-JP: "追加の卵確率アップ", ko-KR: "추가 알 확률 증가", pl-PL: "Szansa na dodatkowe jajo +", pt-BR: "Chance de ovo extra", ru-RU: "Шанс доп. яйца +", th-TH: "เพิ่มโอกาสได้ไข่พิเศษ", tr-TR: "Ekstra Yumurta Şansı Artışı", vi-VN: "Tăng tỉ lệ trứng thêm", zh-CN: "额外获蛋概率提升", zh-TW: "額外獲蛋機率提升" }
+  PalExp_Increase: { de-DE: "Pal-EP erhöht", en-US: "Pal EXP Up", es-ES: "EXP de Pals aumentada", fr-FR: "EXP des Pals augmentée", id-ID: "EXP Pal Naik", it-IT: "PES dei Pal aumentati", ja-JP: "パル経験値アップ", ko-KR: "팰 경험치 증가", pl-PL: "Więcej PD Pali", pt-BR: "EXP de Pal aumentada", ru-RU: "Опыт Палов +", th-TH: "เพิ่ม EXP พัล", tr-TR: "Pal Tecrübe Puanı Artışı", vi-VN: "Tăng EXP của Pal", zh-CN: "帕鲁经验提升", zh-TW: "帕魯經驗提升" }
+  FullStomatch_Decrease: { de-DE: "Langsamerer Hunger", en-US: "Slower Hunger", es-ES: "Hambre más lenta", fr-FR: "Faim ralentie", id-ID: "Lapar Lebih Lambat", it-IT: "Fame più lenta", ja-JP: "満腹度低下緩和", ko-KR: "포만도 감소 완화", pl-PL: "Wolniejszy głód", pt-BR: "Fome mais lenta", ru-RU: "Голод медленнее", th-TH: "หิวช้าลง", tr-TR: "Daha Yavaş Açlık", vi-VN: "Đói chậm hơn", zh-CN: "饱食度下降减缓", zh-TW: "飽食度下降減緩" }
+  Regene_Stomatch_Hungriest: { de-DE: "Basis-Pal-Fütterung", en-US: "Base Pal Feeding", es-ES: "Alimenta a Pals de la base", fr-FR: "Nourrit les Pals de la base", id-ID: "Beri Makan Pal Markas", it-IT: "Nutrimento Pal della base", ja-JP: "拠点パルの満腹回復", ko-KR: "거점 팰 포만 회복", pl-PL: "Karmienie Pali w bazie", pt-BR: "Alimenta Pals da base", ru-RU: "Кормёжка Палов базы", th-TH: "ให้อาหารพัลในฐาน", tr-TR: "Üs Pallarını Besleme", vi-VN: "Cho Pal ở căn cứ ăn", zh-CN: "据点帕鲁喂食", zh-TW: "據點帕魯餵食" }
+  Sanity_Decrease: { de-DE: "Langsamerer SAN-Verlust", en-US: "Slower SAN Loss", es-ES: "Pérdida de cordura más lenta", fr-FR: "Perte de santé mentale ralentie", id-ID: "Penurunan SAN Lebih Lambat", it-IT: "Perdita di SAN più lenta", ja-JP: "SAN値低下緩和", ko-KR: "SAN 수치 감소 완화", pl-PL: "Wolniejszy spadek SAN", pt-BR: "Perda de SAN mais lenta", ru-RU: "Замедление потери рассудка", th-TH: "ลดการเสีย SAN", tr-TR: "Daha Yavaş SAN Kaybı", vi-VN: "Giảm mất SAN chậm hơn", zh-CN: "理智值下降减缓", zh-TW: "理智值下降減緩" }
+  ItemCorruptionSpeedRate: { de-DE: "Langsameres Verderben", en-US: "Slower Spoilage", es-ES: "Descomposición más lenta", fr-FR: "Pourrissement ralenti", id-ID: "Pembusukan Lebih Lambat", it-IT: "Deterioramento più lento", ja-JP: "腐敗速度低下", ko-KR: "부패 속도 감소", pl-PL: "Wolniejsze psucie", pt-BR: "Deterioração mais lenta", ru-RU: "Медленнее порча", th-TH: "เน่าเสียช้าลง", tr-TR: "Daha Yavaş Bozulma", vi-VN: "Hư hỏng chậm hơn", zh-CN: "腐坏速度减缓", zh-TW: "腐壞速度減緩" }
+
+  # --- fusion / capture / utility --------------------------------------------
+  CaptureLevel_SneakBonus: { de-DE: "Schleichfang-Bonus", en-US: "Sneak Capture Up", es-ES: "Captura sigilosa", fr-FR: "Capture furtive", id-ID: "Tangkap Diam-diam Naik", it-IT: "Cattura furtiva", ja-JP: "不意打ち捕獲率アップ", ko-KR: "기습 포획률 증가", pl-PL: "Skradankowe łapanie +", pt-BR: "Captura furtiva", ru-RU: "Скрытная поимка +", th-TH: "เพิ่มอัตราจับแบบลอบ", tr-TR: "Gizli Yakalama Artışı", vi-VN: "Tăng bắt lén", zh-CN: "偷袭捕获率提升", zh-TW: "偷襲捕捉率提升" }
+  SphereRecovery: { de-DE: "Sphären-Ersparnis", en-US: "Sphere Saver", es-ES: "Ahorro de esferas", fr-FR: "Économie de sphères", id-ID: "Hemat Sphere", it-IT: "Risparmio sfere", ja-JP: "スフィア消費節約", ko-KR: "스피어 소모 절약", pl-PL: "Oszczędność sfer", pt-BR: "Economia de esferas", ru-RU: "Экономия сфер", th-TH: "ประหยัดโกล", tr-TR: "Küre Tasarrufu", vi-VN: "Tiết kiệm cầu", zh-CN: "节省精灵球", zh-TW: "節省精靈球" }
+  SyncroPassiveWhenCapture: { de-DE: "Passivfähigkeit-Sync", en-US: "Passive Skill Sync", es-ES: "Sincronía de habilidad pasiva", fr-FR: "Synchronisation de passif", id-ID: "Sinkron Skill Pasif", it-IT: "Sincronia abilità passive", ja-JP: "パッシブスキル同調", ko-KR: "패시브 스킬 동조", pl-PL: "Synchronizacja pasywek", pt-BR: "Sincronia de habilidade passiva", ru-RU: "Синхронизация пассивок", th-TH: "ซิงค์สกิลพาสซีฟ", tr-TR: "Pasif Beceri Eşlemesi", vi-VN: "Đồng bộ kỹ năng bị động", zh-CN: "被动技能同步", zh-TW: "被動技能同步" }
+  EnemySightDetectionRate: { de-DE: "Geringere Entdeckung", en-US: "Reduced Detection", es-ES: "Detección reducida", fr-FR: "Détection réduite", id-ID: "Deteksi Berkurang", it-IT: "Rilevamento ridotto", ja-JP: "敵の発見率低下", ko-KR: "적 발견율 감소", pl-PL: "Mniejsza wykrywalność", pt-BR: "Detecção reduzida", ru-RU: "Меньше шанс обнаружения", th-TH: "ลดการถูกตรวจจับ", tr-TR: "Daha Az Fark Edilme", vi-VN: "Giảm bị phát hiện", zh-CN: "降低被发现率", zh-TW: "降低被發現率" }
+
+  # --- elemental follow-up effects (attack combos) ---------------------------
+  Defuser_ExplosiveSpore: { de-DE: "Efeu-Explosion", en-US: "Ivy Explosion", es-ES: "Explosión de hiedra", fr-FR: "Explosion de lierre", id-ID: "Ledakan Ivy", it-IT: "Esplosione d'edera", ja-JP: "ツタまみれ爆発", ko-KR: "덩굴 폭발", pl-PL: "Wybuch bluszczu", pt-BR: "Explosão de hera", ru-RU: "Взрыв плюща", th-TH: "ระเบิดเถาวัลย์", tr-TR: "Sarmaşık Patlaması", vi-VN: "Nổ dây leo", zh-CN: "缠绕爆炸", zh-TW: "纏繞爆炸" }
+  PlayerElementStepAttack_Leaf: { de-DE: "Gras-Ausweichangriff", en-US: "Grass Dodge Attack", es-ES: "Ataque de esquiva de hierba", fr-FR: "Attaque d'esquive Herbe", id-ID: "Serangan Hindar Rumput", it-IT: "Attacco in schivata Erba", ja-JP: "草回避攻撃", ko-KR: "풀 회피 공격", pl-PL: "Trawiasty atak z uniku", pt-BR: "Ataque de esquiva de grama", ru-RU: "Травяная атака при уклонении", th-TH: "โจมตีหลบธาตุหญ้า", tr-TR: "Çim Kaçınma Saldırısı", vi-VN: "Đòn né hệ cỏ", zh-CN: "草属性闪避攻击", zh-TW: "草屬性閃避攻擊" }
+  PlayerInflictEffect_AttackBurning_ApplyExplosion: { de-DE: "Verbrennung → Explosion", en-US: "Burn → Explosion", es-ES: "Quemadura → Explosión", fr-FR: "Brûlure → Explosion", id-ID: "Terbakar → Ledakan", it-IT: "Ustione → Esplosione", ja-JP: "炎上→爆発", ko-KR: "화상 → 폭발", pl-PL: "Podpalenie → Wybuch", pt-BR: "Queimadura → Explosão", ru-RU: "Ожог → Взрыв", th-TH: "ไหม้ → ระเบิด", tr-TR: "Yanma → Patlama", vi-VN: "Bỏng → Nổ", zh-CN: "点燃→爆炸", zh-TW: "點燃→爆炸" }
+  PlayerInflictEffect_AttackBurning_ApplyFireVortex: { de-DE: "Verbrennung → Flammen", en-US: "Burn → Flames", es-ES: "Quemadura → Llamas", fr-FR: "Brûlure → Flammes", id-ID: "Terbakar → Kobaran Api", it-IT: "Ustione → Fiamme", ja-JP: "炎上→火炎", ko-KR: "화상 → 화염", pl-PL: "Podpalenie → Płomienie", pt-BR: "Queimadura → Chamas", ru-RU: "Ожог → Пламя", th-TH: "ไหม้ → เปลวไฟ", tr-TR: "Yanma → Alevler", vi-VN: "Bỏng → Ngọn lửa", zh-CN: "点燃→烈焰", zh-TW: "點燃→烈焰" }
+  PlayerInflictEffect_AttackElectrified_ApplySpark: { de-DE: "Elektrisiert → Funken", en-US: "Electrify → Spark", es-ES: "Electrocución → Chispa", fr-FR: "Électrisation → Étincelle", id-ID: "Tersengat → Percikan", it-IT: "Elettrificazione → Scintilla", ja-JP: "帯電→放電", ko-KR: "감전 → 방전", pl-PL: "Porażenie → Iskra", pt-BR: "Eletrocussão → Faísca", ru-RU: "Разряд → Искра", th-TH: "ช็อต → ประกายไฟ", tr-TR: "Elektriklenme → Kıvılcım", vi-VN: "Nhiễm điện → Tia lửa", zh-CN: "感电→放电", zh-TW: "感電→放電" }
+  PlayerInflictEffect_AttackIvyCling_ApplyExplosion: { de-DE: "Efeu → Explosion", en-US: "Ivy → Explosion", es-ES: "Hiedra → Explosión", fr-FR: "Lierre → Explosion", id-ID: "Ivy → Ledakan", it-IT: "Edera → Esplosione", ja-JP: "ツタまみれ→爆発", ko-KR: "덩굴 → 폭발", pl-PL: "Bluszcz → Wybuch", pt-BR: "Hera → Explosão", ru-RU: "Плющ → Взрыв", th-TH: "เถาวัลย์ → ระเบิด", tr-TR: "Sarmaşık → Patlama", vi-VN: "Dây leo → Nổ", zh-CN: "缠绕→爆炸", zh-TW: "纏繞→爆炸" }
+  PlayerInflictEffect_AttackPoisoned_ApplyAttackDown: { de-DE: "Gift → Angriff gesenkt", en-US: "Poison → Attack Down", es-ES: "Veneno → Ataque reducido", fr-FR: "Poison → Attaque réduite", id-ID: "Racun → Serangan Turun", it-IT: "Veleno → Attacco ridotto", ja-JP: "毒→攻撃低下", ko-KR: "중독 → 공격 감소", pl-PL: "Trucizna → Osłabienie ataku", pt-BR: "Veneno → Ataque reduzido", ru-RU: "Яд → Атака снижена", th-TH: "พิษ → ลดโจมตี", tr-TR: "Zehir → Saldırı Düşer", vi-VN: "Độc → Giảm tấn công", zh-CN: "中毒→攻击下降", zh-TW: "中毒→攻擊下降" }
+  PlayerInflictEffect_AttackWet_ApplyFreeze: { de-DE: "Nass → Einfrieren", en-US: "Soak → Freeze", es-ES: "Empapado → Congelación", fr-FR: "Trempé → Gel", id-ID: "Basah → Beku", it-IT: "Fradicio → Congelamento", ja-JP: "ずぶ濡れ→氷結", ko-KR: "젖음 → 빙결", pl-PL: "Przemoczenie → Zamrożenie", pt-BR: "Encharcado → Congelamento", ru-RU: "Промокание → Заморозка", th-TH: "เปียก → แช่แข็ง", tr-TR: "Islanma → Donma", vi-VN: "Ướt → Đóng băng", zh-CN: "浸湿→冻结", zh-TW: "浸濕→凍結" }
+
+  # --- misc cooldown ---------------------------------------------------------
+  PartnerSkillCoolTime_Decrease: { de-DE: "Partnerfähigkeit-Abklingzeit verringert", en-US: "Partner Skill Cooldown Down", es-ES: "Enfriamiento de habilidad de compañero", fr-FR: "Recharge de compétence de partenaire", id-ID: "Cooldown Skill Partner Turun", it-IT: "Ricarica abilità partner ridotta", ja-JP: "パートナースキルCT短縮", ko-KR: "파트너 스킬 쿨타임 감소", pl-PL: "Krótsze odnowienie zdolności partnera", pt-BR: "Recarga de habilidade de parceiro", ru-RU: "Перезарядка навыка напарника снижена", th-TH: "ลดคูลดาวน์สกิลคู่หู", tr-TR: "Ortak Beceri Beklemesi Azalır", vi-VN: "Giảm hồi chiêu kỹ năng đồng hành", zh-CN: "伙伴技能冷却缩短", zh-TW: "夥伴技能冷卻縮短" }
+
+# --- effect targets ----------------------------------------------------------
+targets:
+  ToTrainer:
+    de-DE: "für dich"
+    en-US: "to you"
+    es-ES: "a ti"
+    fr-FR: "à vous"
+    id-ID: "untukmu"
+    it-IT: "a te"
+    ja-JP: "自分に"
+    ko-KR: "자신에게"
+    pl-PL: "dla ciebie"
+    pt-BR: "para você"
+    ru-RU: "вам"
+    th-TH: "แก่คุณ"
+    tr-TR: "sana"
+    vi-VN: "cho bạn"
+    zh-CN: "对你"
+    zh-TW: "對你"
+  ToSelf:
+    de-DE: "für diesen Pal"
+    en-US: "to this Pal"
+    es-ES: "a este Pal"
+    fr-FR: "à ce Pal"
+    id-ID: "untuk Pal ini"
+    it-IT: "a questo Pal"
+    ja-JP: "このパルに"
+    ko-KR: "이 팰에게"
+    pl-PL: "dla tego Pala"
+    pt-BR: "para este Pal"
+    ru-RU: "этому Палу"
+    th-TH: "แก่พัลตัวนี้"
+    tr-TR: "bu Pal'a"
+    vi-VN: "cho Pal này"
+    zh-CN: "对此帕鲁"
+    zh-TW: "對此帕魯"
+  ToSelfAndTrainer:
+    de-DE: "für dich und diesen Pal"
+    en-US: "to you and this Pal"
+    es-ES: "a ti y a este Pal"
+    fr-FR: "à vous et ce Pal"
+    id-ID: "untukmu dan Pal ini"
+    it-IT: "a te e a questo Pal"
+    ja-JP: "自分とこのパルに"
+    ko-KR: "자신과 이 팰에게"
+    pl-PL: "dla ciebie i tego Pala"
+    pt-BR: "para você e este Pal"
+    ru-RU: "вам и этому Палу"
+    th-TH: "แก่คุณและพัลตัวนี้"
+    tr-TR: "sana ve bu Pal'a"
+    vi-VN: "cho bạn và Pal này"
+    zh-CN: "对你和此帕鲁"
+    zh-TW: "對你和此帕魯"
+  ToOtomo:
+    de-DE: "für deine Pals"
+    en-US: "to your Pals"
+    es-ES: "a tus Pals"
+    fr-FR: "à vos Pals"
+    id-ID: "untuk Pal-mu"
+    it-IT: "ai tuoi Pal"
+    ja-JP: "手持ちのパルに"
+    ko-KR: "보유 팰에게"
+    pl-PL: "dla twoich Pali"
+    pt-BR: "para seus Pals"
+    ru-RU: "вашим Палам"
+    th-TH: "แก่พัลของคุณ"
+    tr-TR: "Pallarına"
+    vi-VN: "cho các Pal của bạn"
+    zh-CN: "对你的帕鲁"
+    zh-TW: "對你的帕魯"
+  ToActiveOtomo:
+    de-DE: "für deinen aktiven Pal"
+    en-US: "to your active Pal"
+    es-ES: "a tu Pal activo"
+    fr-FR: "à votre Pal actif"
+    id-ID: "untuk Pal aktifmu"
+    it-IT: "al tuo Pal attivo"
+    ja-JP: "戦闘中のパルに"
+    ko-KR: "출전 중인 팰에게"
+    pl-PL: "dla aktywnego Pala"
+    pt-BR: "para seu Pal ativo"
+    ru-RU: "вашему активному Палу"
+    th-TH: "แก่พัลที่ออกสู้"
+    tr-TR: "aktif Pal'ına"
+    vi-VN: "cho Pal đang chiến đấu"
+    zh-CN: "对出战帕鲁"
+    zh-TW: "對出戰帕魯"
+  ToBaseCampPal:
+    de-DE: "für Basis-Pals"
+    en-US: "to base Pals"
+    es-ES: "a los Pals de la base"
+    fr-FR: "aux Pals de la base"
+    id-ID: "untuk Pal markas"
+    it-IT: "ai Pal della base"
+    ja-JP: "拠点のパルに"
+    ko-KR: "거점 팰에게"
+    pl-PL: "dla Pali w bazie"
+    pt-BR: "para Pals da base"
+    ru-RU: "Палам на базе"
+    th-TH: "แก่พัลในฐาน"
+    tr-TR: "üs Pallarına"
+    vi-VN: "cho Pal ở căn cứ"
+    zh-CN: "对据点帕鲁"
+    zh-TW: "對據點帕魯"
+  ToBuildObject:
+    de-DE: "für Bauwerke"
+    en-US: "to structures"
+    es-ES: "a las estructuras"
+    fr-FR: "aux structures"
+    id-ID: "untuk bangunan"
+    it-IT: "alle strutture"
+    ja-JP: "建造物に"
+    ko-KR: "건축물에"
+    pl-PL: "dla budowli"
+    pt-BR: "para estruturas"
+    ru-RU: "постройкам"
+    th-TH: "แก่สิ่งก่อสร้าง"
+    tr-TR: "yapılara"
+    vi-VN: "cho công trình"
+    zh-CN: "对建筑"
+    zh-TW: "對建築"

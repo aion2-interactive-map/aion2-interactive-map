@@ -1,0 +1,46 @@
+# Local env (secrets + per-machine paths) — copy from .env.example
+.env
+
+# uv / virtualenv
+.venv/
+
+# IDE / tool caches
+.idea/
+.ruff_cache/
+
+# Claude Code worktrees (isolated feature branches)
+.claude/worktrees/
+
+# Python caches
+__pycache__/
+*.pyc
+
+# Raw game export — large local input (lives under G:\NCSoft\Export; Perforce later)
+/game_data/
+
+# Generated output / scratch dirs (regenerable, not source)
+/parsed_data/
+/public/
+aion2/tools/daevanion/downloads/
+
+# Derived data & visual overlays — tool inputs/outputs, regenerable, NOT source.
+# This repo is source-only (the `aion2` Python package). Parsed game datasets live
+# in the `data` repo; raw inputs come from the game export. If a module ever needs a
+# specific data file bundled, add it deliberately with `git add -f <file>`.
+*.png
+*.webp
+*.jpg
+*.jpeg
+*.svg
+*.zip
+*.otf
+*.xlsx
+*.json
+*.yaml
+*.yml
+*.csv
+*.txt
+
+# Loose scratch scripts at the repo root (not part of the `aion2` package)
+/*.py
+/*.js

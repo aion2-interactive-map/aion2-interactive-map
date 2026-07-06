@@ -1,0 +1,502 @@
+[
+ {
+  "Name": "START",
+  "ID": {
+   "Value": 1
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Map_Tutorial"
+  }
+ },
+ {
+  "Name": "Abyss_Reshanta_A",
+  "ID": {
+   "Value": 20
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Map_Abyss_Reshanta_A"
+  }
+ },
+ {
+  "Name": "Abyss_Reshanta_C",
+  "ID": {
+   "Value": 22
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Map_Abyss_Reshanta_C"
+  }
+ },
+ {
+  "Name": "Abyss_Reshanta_D",
+  "ID": {
+   "Value": 23
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Map_Abyss_Reshanta_D"
+  }
+ },
+ {
+  "Name": "Legion_Agit_01",
+  "ID": {
+   "Value": 50
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Map_Legion_Agit_01"
+  }
+ },
+ {
+  "Name": "Fire_Temple_Arena",
+  "ID": {
+   "Value": 60
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Map_Fire_Temple_Arena"
+  }
+ },
+ {
+  "Name": "Impetusium_Arena",
+  "ID": {
+   "Value": 61
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Map_Impetusium_Arena"
+  }
+ },
+ {
+  "Name": "Battlefield_A_1",
+  "ID": {
+   "Value": 62
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Map_Battlefield_A_1"
+  }
+ },
+ {
+  "Name": "Battlefield_B_1",
+  "ID": {
+   "Value": 63
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Map_Battlefield_B_1"
+  }
+ },
+ {
+  "Name": "Battlefield_C_1",
+  "ID": {
+   "Value": 64
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Map_Battlefield_C_1"
+  }
+ },
+ {
+  "Name": "Abyss_Battlefield_A_01",
+  "ID": {
+   "Value": 80
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Map_Abyss_Battlefield_A_01"
+  }
+ },
+ {
+  "Name": "D1_Agit_1",
+  "ID": {
+   "Value": 901
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Subzone_D1_Agit_1"
+  }
+ },
+ {
+  "Name": "L1_Agit_1",
+  "ID": {
+   "Value": 902
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Subzone_L1_Agit_1"
+  }
+ },
+ {
+  "Name": "L2_Agit_1",
+  "ID": {
+   "Value": 904
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Subzone_L2_Agit_1"
+  }
+ },
+ {
+  "Name": "D2_Agit_1",
+  "ID": {
+   "Value": 905
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Subzone_D2_Agit_1"
+  }
+ },
+ {
+  "Name": "World_L_Starter",
+  "ID": {
+   "Value": 1000
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Map_Poeta"
+  }
+ },
+ {
+  "Name": "World_L_A",
+  "ID": {
+   "Value": 1010
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Map_World_L_A"
+  }
+ },
+ {
+  "Name": "World_L_B",
+  "ID": {
+   "Value": 1011
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Map_World_L_B"
+  }
+ },
+ {
+  "Name": "World_D_Starter",
+  "ID": {
+   "Value": 1100
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Map_World_D_Starter"
+  }
+ },
+ {
+  "Name": "World_D_A",
+  "ID": {
+   "Value": 1110
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Map_World_D_A"
+  }
+ },
+ {
+  "Name": "World_D_B",
+  "ID": {
+   "Value": 1111
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Map_World_D_B"
+  }
+ },
+ {
+  "Name": "World_L_Starter_InstanceLayer_1",
+  "ID": {
+   "Value": 100001
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Map_Poeta"
+  }
+ },
+ {
+  "Name": "World_L_Starter_InstanceLayer_2",
+  "ID": {
+   "Value": 100002
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Map_Poeta"
+  }
+ },
+ {
+  "Name": "World_L_Starter_HQ001",
+  "ID": {
+   "Value": 100010
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_World_L_Starter_HQ001"
+  }
+ },
+ {
+  "Name": "World_L_Starter_HQ002",
+  "ID": {
+   "Value": 100011
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Subzone_Poeta_Forest_3"
+  }
+ },
+ {
+  "Name": "World_L_Starter_HQ003",
+  "ID": {
+   "Value": 100012
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_World_L_Starter_HQ003"
+  }
+ },
+ {
+  "Name": "World_L_Starter_HQ004",
+  "ID": {
+   "Value": 100013
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_World_L_Starter_HQ004"
+  }
+ },
+ {
+  "Name": "World_L_A_Layer_01",
+  "ID": {
+   "Value": 101001
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Subzone_KalidsBarracks"
+  }
+ },
+ {
+  "Name": "World_L_A_Layer_06",
+  "ID": {
+   "Value": 101006
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Subzone_DawnBegionBase_Crematorium"
+  }
+ },
+ {
+  "Name": "World_L_A_Layer_CommandPost_01",
+  "ID": {
+   "Value": 101007
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Map_World_L_A_DawnCommandPost_01"
+  }
+ },
+ {
+  "Name": "World_L_A_Layer_OratoryOfIllusion_01",
+  "ID": {
+   "Value": 101008
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Map_World_L_A_OratoryOfIllusion_01"
+  }
+ },
+ {
+  "Name": "World_L_A_Layer_VF_KrallCommandPost",
+  "ID": {
+   "Value": 101009
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Subzone_KrallCommandPost"
+  }
+ },
+ {
+  "Name": "World_L_A_Layer_TF_EliteBeastA_01",
+  "ID": {
+   "Value": 101012
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Subzone_TF_CaveOfEliteBeast_A_01"
+  }
+ },
+ {
+  "Name": "World_L_A_Layer_TF_CochirunTent",
+  "ID": {
+   "Value": 101014
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Subzone_TF_CochirunTent_Subzone"
+  }
+ },
+ {
+  "Name": "World_L_A_Layer_TF_NightyDewCave",
+  "ID": {
+   "Value": 101015
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Subzone_TolbasForest_NightlyDewCave"
+  }
+ },
+ {
+  "Name": "World_L_A_Layer_Owl_PlaceOfOwlamus",
+  "ID": {
+   "Value": 101016
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Subzone_TF_Owl_PlaceOfOwlamus_Subzone"
+  }
+ },
+ {
+  "Name": "World_L_A_Layer_AC_IllusionCurtain",
+  "ID": {
+   "Value": 101019
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Map_Dungeon_L_0008"
+  }
+ },
+ {
+  "Name": "World_L_A_Layer_ZV_BlessingRoom",
+  "ID": {
+   "Value": 101020
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Subzone_ZumionVillage_BlessingRoom"
+  }
+ },
+ {
+  "Name": "World_L_A_Layer_AH_AltarOfPurification",
+  "ID": {
+   "Value": 101021
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Subzone_AltarofPurification"
+  }
+ },
+ {
+  "Name": "World_L_A_Layer_ZumionVillage_NortosLegionOffice",
+  "ID": {
+   "Value": 101022
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Subzone_ZumionVillage_NortosLegionOffice"
+  }
+ },
+ {
+  "Name": "World_L_A_Layer_HQ001",
+  "ID": {
+   "Value": 101027
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Subzone_CantasValley_Western"
+  }
+ },
+ {
+  "Name": "World_L_A_Layer_HQ002",
+  "ID": {
+   "Value": 101028
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Subzone_CantasValley_Western"
+  }
+ },
+ {
+  "Name": "World_L_A_Layer_HQ003",
+  "ID": {
+   "Value": 101029
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Subzone_EllunRiverMarsh"
+  }
+ },
+ {
+  "Name": "World_L_A_Layer_HQ004",
+  "ID": {
+   "Value": 101033
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Subzone_EllunRiverMarsh"
+  }
+ },
+ {
+  "Name": "World_L_A_Layer_HQ005",
+  "ID": {
+   "Value": 101034
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Subzone_VerteronCitadelRuin"
+  }
+ },
+ {
+  "Name": "World_L_A_Layer_HQ006",
+  "ID": {
+   "Value": 101035
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Subzone_EllunRiver_Middle"
+  }
+ },
+ {
+  "Name": "World_L_A_Layer_HQ007",
+  "ID": {
+   "Value": 101036
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Subzone_PilgrimsRidgePath"
+  }
+ },
+ {
+  "Name": "World_L_A_Layer_HQ008",
+  "ID": {
+   "Value": 101037
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Subzone_TolbasForest_Southern"
+  }
+ },
+ {
+  "Name": "World_L_A_Layer_HQ009",
+  "ID": {
+   "Value": 101038
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Subzone_OwllauDeportation"
+  }
+ },
+ {
+  "Name": "World_L_A_Layer_HQ010",
+  "ID": {
+   "Value": 101039
+  },
+  "MapId": null,
+  "Desc": {
+   "Key": "STR_Subzone_OwllauVillage"
+  }
+ }
+]

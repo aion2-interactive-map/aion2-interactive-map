@@ -1,0 +1,805 @@
+[
+ {
+  "ItemId": {
+   "Value": 533700375
+  },
+  "MonsterGetRoutes": [
+   {
+    "NpcId": {
+     "Value": 2101074
+    },
+    "RegionInfo": {
+     "MapId": {
+      "Value": 1010
+     },
+     "SubzoneId": {
+      "Value": 2124
+     },
+     "KibeliskIds": []
+    }
+   }
+  ],
+  "CraftGetRoutes": [],
+  "GatherGetRoutes": [],
+  "QuestGetRoutes": [],
+  "PartyDungeonGetRoutes": [],
+  "ConversionRecipeGetRoutes": [],
+  "BossChallengeInfo": {
+   "bBossChallenge": false,
+   "Race": "ERace::None"
+  },
+  "bVehicle": false,
+  "DecomposeItemInfos": [],
+  "bArena": false,
+  "AchievementInfo": [],
+  "BattlePassInfo": [],
+  "RankingInfo": [],
+  "PeriodCollectionInfo": [],
+  "NPCShopInfo": [],
+  "CoinShopInfo": [],
+  "BMShopInfo": [],
+  "RandomShopInfo": [],
+  "FieldEventInfo": [],
+  "SkinInfo": {
+   "ItemIds": [],
+   "ShopData": {}
+  },
+  "RaidInfo": [],
+  "SuppressionInfo": [],
+  "AwakenInfo": [],
+  "MonolithInfo": [],
+  "DailyInfo": [],
+  "SubscribeInfo": [],
+  "ExtraInfo": [],
+  "ExplorationSealInfo": {
+   "TableIds": []
+  },
+  "ExplorationGarrisionInfo": {
+   "TableIds": []
+  },
+  "AscensionInfo": [],
+  "HiddenCubeInfo": [],
+  "RewardBoxInfo": {
+   "BoxDatas": [],
+   "BoxClassDatas": []
+  },
+  "AttendanceInfo": []
+ },
+ {
+  "ItemId": {
+   "Value": 533700394
+  },
+  "MonsterGetRoutes": [
+   {
+    "NpcId": {
+     "Value": 2400659
+    },
+    "RegionInfo": {
+     "MapId": {
+      "Value": 1110
+     },
+     "SubzoneId": {
+      "Value": 1092
+     },
+     "KibeliskIds": []
+    }
+   }
+  ],
+  "CraftGetRoutes": [],
+  "GatherGetRoutes": [],
+  "QuestGetRoutes": [],
+  "PartyDungeonGetRoutes": [],
+  "ConversionRecipeGetRoutes": [],
+  "BossChallengeInfo": {
+   "bBossChallenge": false,
+   "Race": "ERace::None"
+  },
+  "bVehicle": false,
+  "DecomposeItemInfos": [],
+  "bArena": false,
+  "AchievementInfo": [],
+  "BattlePassInfo": [],
+  "RankingInfo": [],
+  "PeriodCollectionInfo": [],
+  "NPCShopInfo": [],
+  "CoinShopInfo": [],
+  "BMShopInfo": [],
+  "RandomShopInfo": [],
+  "FieldEventInfo": [],
+  "SkinInfo": {
+   "ItemIds": [],
+   "ShopData": {}
+  },
+  "RaidInfo": [],
+  "SuppressionInfo": [],
+  "AwakenInfo": [],
+  "MonolithInfo": [],
+  "DailyInfo": [],
+  "SubscribeInfo": [],
+  "ExtraInfo": [],
+  "ExplorationSealInfo": {
+   "TableIds": []
+  },
+  "ExplorationGarrisionInfo": {
+   "TableIds": []
+  },
+  "AscensionInfo": [],
+  "HiddenCubeInfo": [],
+  "RewardBoxInfo": {
+   "BoxDatas": [],
+   "BoxClassDatas": []
+  },
+  "AttendanceInfo": []
+ },
+ {
+  "ItemId": {
+   "Value": 511490001
+  },
+  "MonsterGetRoutes": [],
+  "CraftGetRoutes": [],
+  "GatherGetRoutes": [
+   {
+    "EnvObjId": {
+     "Value": 1500012
+    },
+    "RegionInfo": {
+     "MapId": {
+      "Value": 1010
+     },
+     "SubzoneId": {
+      "Value": 2049
+     },
+     "KibeliskIds": [
+      {
+       "Value": 1200669
+      }
+     ]
+    }
+   },
+   {
+    "EnvObjId": {
+     "Value": 1500012
+    },
+    "RegionInfo": {
+     "MapId": {
+      "Value": 1010
+     },
+     "SubzoneId": {
+      "Value": 2050
+     },
+     "KibeliskIds": [
+      {
+       "Value": 1200073
+      }
+     ]
+    }
+   },
+   {
+    "EnvObjId": {
+     "Value": 1500012
+    },
+    "RegionInfo": {
+     "MapId": {
+      "Value": 1010
+     },
+     "SubzoneId": {
+      "Value": 2034
+     },
+     "KibeliskIds": [
+      {
+       "Value": 1200085
+      }
+     ]
+    }
+   },
+   {
+    "EnvObjId": {
+     "Value": 1500012
+    },
+    "RegionInfo": {
+     "MapId": {
+      "Value": 1010
+     },
+     "SubzoneId": {
+      "Value": 2036
+     },
+     "KibeliskIds": [
+      {
+       "Value": 1200054
+      }
+     ]
+    }
+   },
+   {
+    "EnvObjId": {
+     "Value": 1500012
+    },
+    "RegionInfo": {
+     "MapId": {
+      "Value": 1010
+     },
+     "SubzoneId": {
+      "Value": 2035
+     },
+     "KibeliskIds": [
+      {
+       "Value": 1200054
+      }
+     ]
+    }
+   },
+   {
+    "EnvObjId": {
+     "Value": 1500012
+    },
+    "RegionInfo": {
+     "MapId": {
+      "Value": 1010
+     },
+     "SubzoneId": {
+      "Value": 2032
+     },
+     "KibeliskIds": [
+      {
+       "Value": 1200055
+      }
+     ]
+    }
+   },
+   {
+    "EnvObjId": {
+     "Value": 1500012
+    },
+    "RegionInfo": {
+     "MapId": {
+      "Value": 1010
+     },
+     "SubzoneId": {
+      "Value": 2030
+     },
+     "KibeliskIds": [
+      {
+       "Value": 1200054
+      }
+     ]
+    }
+   },
+   {
+    "EnvObjId": {
+     "Value": 1500012
+    },
+    "RegionInfo": {
+     "MapId": {
+      "Value": 1010
+     },
+     "SubzoneId": {
+      "Value": 2081
+     },
+     "KibeliskIds": [
+      {
+       "Value": 1200079
+      }
+     ]
+    }
+   },
+   {
+    "EnvObjId": {
+     "Value": 1500012
+    },
+    "RegionInfo": {
+     "MapId": {
+      "Value": 1010
+     },
+     "SubzoneId": {
+      "Value": 2086
+     },
+     "KibeliskIds": [
+      {
+       "Value": 1200063
+      }
+     ]
+    }
+   },
+   {
+    "EnvObjId": {
+     "Value": 1500012
+    },
+    "RegionInfo": {
+     "MapId": {
+      "Value": 1010
+     },
+     "SubzoneId": {
+      "Value": 2064
+     },
+     "KibeliskIds": [
+      {
+       "Value": 1200075
+      }
+     ]
+    }
+   },
+   {
+    "EnvObjId": {
+     "Value": 1500012
+    },
+    "RegionInfo": {
+     "MapId": {
+      "Value": 1011
+     },
+     "SubzoneId": {
+      "Value": 5030
+     },
+     "KibeliskIds": [
+      {
+       "Value": 1201561
+      }
+     ]
+    }
+   },
+   {
+    "EnvObjId": {
+     "Value": 1500012
+    },
+    "RegionInfo": {
+     "MapId": {
+      "Value": 1011
+     },
+     "SubzoneId": {
+      "Value": 33013
+     },
+     "KibeliskIds": [
+      {
+       "Value": 1201568
+      }
+     ]
+    }
+   },
+   {
+    "EnvObjId": {
+     "Value": 1500012
+    },
+    "RegionInfo": {
+     "MapId": {
+      "Value": 1011
+     },
+     "SubzoneId": {
+      "Value": 5001
+     },
+     "KibeliskIds": [
+      {
+       "Value": 1201424
+      }
+     ]
+    }
+   },
+   {
+    "EnvObjId": {
+     "Value": 1550012
+    },
+    "RegionInfo": {
+     "MapId": {
+      "Value": 1110
+     },
+     "SubzoneId": {
+      "Value": 1008
+     },
+     "KibeliskIds": [
+      {
+       "Value": 1300026
+      }
+     ]
+    }
+   },
+   {
+    "EnvObjId": {
+     "Value": 1550012
+    },
+    "RegionInfo": {
+     "MapId": {
+      "Value": 1110
+     },
+     "SubzoneId": {
+      "Value": 1018
+     },
+     "KibeliskIds": [
+      {
+       "Value": 1300026
+      }
+     ]
+    }
+   },
+   {
+    "EnvObjId": {
+     "Value": 1550012
+    },
+    "RegionInfo": {
+     "MapId": {
+      "Value": 1110
+     },
+     "SubzoneId": {
+      "Value": 1031
+     },
+     "KibeliskIds": [
+      {
+       "Value": 1300044
+      }
+     ]
+    }
+   },
+   {
+    "EnvObjId": {
+     "Value": 1550012
+    },
+    "RegionInfo": {
+     "MapId": {
+      "Value": 1110
+     },
+     "SubzoneId": {
+      "Value": 1012
+     },
+     "KibeliskIds": [
+      {
+       "Value": 1300032
+      }
+     ]
+    }
+   },
+   {
+    "EnvObjId": {
+     "Value": 1550012
+    },
+    "RegionInfo": {
+     "MapId": {
+      "Value": 1110
+     },
+     "SubzoneId": {
+      "Value": 1013
+     },
+     "KibeliskIds": [
+      {
+       "Value": 1300056
+      }
+     ]
+    }
+   },
+   {
+    "EnvObjId": {
+     "Value": 1550012
+    },
+    "RegionInfo": {
+     "MapId": {
+      "Value": 1110
+     },
+     "SubzoneId": {
+      "Value": 1052
+     },
+     "KibeliskIds": [
+      {
+       "Value": 1300038
+      }
+     ]
+    }
+   },
+   {
+    "EnvObjId": {
+     "Value": 1550012
+    },
+    "RegionInfo": {
+     "MapId": {
+      "Value": 1110
+     },
+     "SubzoneId": {
+      "Value": 1066
+     },
+     "KibeliskIds": [
+      {
+       "Value": 1300064
+      }
+     ]
+    }
+   },
+   {
+    "EnvObjId": {
+     "Value": 1550012
+    },
+    "RegionInfo": {
+     "MapId": {
+      "Value": 1110
+     },
+     "SubzoneId": {
+      "Value": 1096
+     },
+     "KibeliskIds": [
+      {
+       "Value": 1300045
+      }
+     ]
+    }
+   },
+   {
+    "EnvObjId": {
+     "Value": 1550012
+    },
+    "RegionInfo": {
+     "MapId": {
+      "Value": 1110
+     },
+     "SubzoneId": {
+      "Value": 1087
+     },
+     "KibeliskIds": [
+      {
+       "Value": 1300072
+      }
+     ]
+    }
+   },
+   {
+    "EnvObjId": {
+     "Value": 1550012
+    },
+    "RegionInfo": {
+     "MapId": {
+      "Value": 1111
+     },
+     "SubzoneId": {
+      "Value": 1210
+     },
+     "KibeliskIds": [
+      {
+       "Value": 1301206
+      }
+     ]
+    }
+   },
+   {
+    "EnvObjId": {
+     "Value": 1550012
+    },
+    "RegionInfo": {
+     "MapId": {
+      "Value": 1111
+     },
+     "SubzoneId": {
+      "Value": 1201
+     },
+     "KibeliskIds": [
+      {
+       "Value": 1301185
+      }
+     ]
+    }
+   },
+   {
+    "EnvObjId": {
+     "Value": 1550012
+    },
+    "RegionInfo": {
+     "MapId": {
+      "Value": 1111
+     },
+     "SubzoneId": {
+      "Value": 1202
+     },
+     "KibeliskIds": [
+      {
+       "Value": 1301324
+      }
+     ]
+    }
+   }
+  ],
+  "QuestGetRoutes": [],
+  "PartyDungeonGetRoutes": [],
+  "ConversionRecipeGetRoutes": [],
+  "BossChallengeInfo": {
+   "bBossChallenge": false,
+   "Race": "ERace::None"
+  },
+  "bVehicle": false,
+  "DecomposeItemInfos": [],
+  "bArena": false,
+  "AchievementInfo": [],
+  "BattlePassInfo": [],
+  "RankingInfo": [],
+  "PeriodCollectionInfo": [],
+  "NPCShopInfo": [],
+  "CoinShopInfo": [],
+  "BMShopInfo": [],
+  "RandomShopInfo": [],
+  "FieldEventInfo": [
+   {
+    "Key": "ERace::Light",
+    "Value": {
+     "FiledEvents": [
+      "STR_CONTENTS_TITLE_FE_JUMPJUMP",
+      "STR_CONTENTS_TITLE_FE_SPECTER",
+      "STR_CONTENTS_TITLE_FE_RACING",
+      "STR_CONTENTS_TITLE_FE_LUGGI",
+      "STR_CONTENTS_TITLE_FE_ODBUBBLE",
+      "STR_CONTENTS_TITLE_FE_TREASURE",
+      "STR_CONTENTS_TITLE_FE_DEFENCE",
+      "STR_CONTENTS_TITLE_FE_HIGHHIGH",
+      "STR_CONTENTS_TITLE_FE_TRAPBOARD",
+      "STR_CONTENTS_TITLE_FE_PANG",
+      "STR_CONTENTS_TITLE_FE_DILEMMA"
+     ],
+     "FiledBattleEvents": []
+    }
+   },
+   {
+    "Key": "ERace::Dark",
+    "Value": {
+     "FiledEvents": [
+      "STR_CONTENTS_TITLE_FE_JUMPJUMP",
+      "STR_CONTENTS_TITLE_FE_SPECTER",
+      "STR_CONTENTS_TITLE_FE_RACING",
+      "STR_CONTENTS_TITLE_FE_LUGGI",
+      "STR_CONTENTS_TITLE_FE_ODBUBBLE",
+      "STR_CONTENTS_TITLE_FE_TREASURE",
+      "STR_CONTENTS_TITLE_FE_DEFENCE",
+      "STR_CONTENTS_TITLE_FE_HIGHHIGH",
+      "STR_CONTENTS_TITLE_FE_TRAPBOARD",
+      "STR_CONTENTS_TITLE_FE_PANG",
+      "STR_CONTENTS_TITLE_FE_DILEMMA"
+     ],
+     "FiledBattleEvents": []
+    }
+   }
+  ],
+  "SkinInfo": {
+   "ItemIds": [],
+   "ShopData": {}
+  },
+  "RaidInfo": [],
+  "SuppressionInfo": [],
+  "AwakenInfo": [],
+  "MonolithInfo": [],
+  "DailyInfo": [],
+  "SubscribeInfo": [],
+  "ExtraInfo": [],
+  "ExplorationSealInfo": {
+   "TableIds": []
+  },
+  "ExplorationGarrisionInfo": {
+   "TableIds": []
+  },
+  "AscensionInfo": [],
+  "HiddenCubeInfo": [
+   "ERace::Light",
+   "ERace::Dark"
+  ],
+  "RewardBoxInfo": {
+   "BoxDatas": [],
+   "BoxClassDatas": []
+  },
+  "AttendanceInfo": []
+ },
+ {
+  "ItemId": {
+   "Value": 532360076
+  },
+  "MonsterGetRoutes": [],
+  "CraftGetRoutes": [],
+  "GatherGetRoutes": [],
+  "QuestGetRoutes": [],
+  "PartyDungeonGetRoutes": [],
+  "ConversionRecipeGetRoutes": [],
+  "BossChallengeInfo": {
+   "bBossChallenge": false,
+   "Race": "ERace::None"
+  },
+  "bVehicle": false,
+  "DecomposeItemInfos": [],
+  "bArena": false,
+  "AchievementInfo": [],
+  "BattlePassInfo": [],
+  "RankingInfo": [],
+  "PeriodCollectionInfo": [],
+  "NPCShopInfo": [
+   {
+    "Key": {
+     "Value": 2941024
+    },
+    "Value": {
+     "MapIdList": [
+      {
+       "Value": 20
+      }
+     ],
+     "SubZoneIdList": [
+      {
+       "Value": 601
+      }
+     ]
+    }
+   }
+  ],
+  "CoinShopInfo": [],
+  "BMShopInfo": [],
+  "RandomShopInfo": [],
+  "FieldEventInfo": [],
+  "SkinInfo": {
+   "ItemIds": [],
+   "ShopData": {}
+  },
+  "RaidInfo": [],
+  "SuppressionInfo": [],
+  "AwakenInfo": [],
+  "MonolithInfo": [],
+  "DailyInfo": [],
+  "SubscribeInfo": [],
+  "ExtraInfo": [],
+  "ExplorationSealInfo": {
+   "TableIds": []
+  },
+  "ExplorationGarrisionInfo": {
+   "TableIds": []
+  },
+  "AscensionInfo": [],
+  "HiddenCubeInfo": [],
+  "RewardBoxInfo": {
+   "BoxDatas": [],
+   "BoxClassDatas": []
+  },
+  "AttendanceInfo": []
+ },
+ {
+  "ItemId": {
+   "Value": 210160026
+  },
+  "MonsterGetRoutes": [],
+  "CraftGetRoutes": [],
+  "GatherGetRoutes": [],
+  "QuestGetRoutes": [
+   {
+    "Class": "ECharacterClass::None",
+    "QuestId": {
+     "Value": 1101011
+    }
+   }
+  ],
+  "PartyDungeonGetRoutes": [],
+  "ConversionRecipeGetRoutes": [],
+  "BossChallengeInfo": {
+   "bBossChallenge": false,
+   "Race": "ERace::None"
+  },
+  "bVehicle": false,
+  "DecomposeItemInfos": [],
+  "bArena": false,
+  "AchievementInfo": [],
+  "BattlePassInfo": [],
+  "RankingInfo": [],
+  "PeriodCollectionInfo": [],
+  "NPCShopInfo": [],
+  "CoinShopInfo": [],
+  "BMShopInfo": [],
+  "RandomShopInfo": [],
+  "FieldEventInfo": [],
+  "SkinInfo": {
+   "ItemIds": [],
+   "ShopData": {}
+  },
+  "RaidInfo": [],
+  "SuppressionInfo": [],
+  "AwakenInfo": [],
+  "MonolithInfo": [],
+  "DailyInfo": [],
+  "SubscribeInfo": [],
+  "ExtraInfo": [],
+  "ExplorationSealInfo": {
+   "TableIds": []
+  },
+  "ExplorationGarrisionInfo": {
+   "TableIds": []
+  },
+  "AscensionInfo": [],
+  "HiddenCubeInfo": [],
+  "RewardBoxInfo": {
+   "BoxDatas": [],
+   "BoxClassDatas": []
+  },
+  "AttendanceInfo": []
+ }
+]

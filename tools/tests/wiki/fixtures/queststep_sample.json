@@ -1,0 +1,128 @@
+[
+ {
+  "ID": {
+   "Value": 110101001
+  },
+  "QuestName": "HQ1101010",
+  "Order": 1,
+  "TravelType": "EQuestAreaTravelType::All",
+  "StartNpcTalk": "HQ1101010_00_caption_01",
+  "ClearNpcTalk": "None",
+  "bUnifiedObjectives": false,
+  "UnifiedObjectiveScore": 0,
+  "bProgressBar": false,
+  "bCompleteMsgInvisible": false,
+  "TeleportCost": 0,
+  "GoalList": [
+   {
+    "Type": "EQuestObjectiveType::AskNpc",
+    "Value": [
+     "N_L0_Nania_01",
+     "HQ1101010_01_Ask1",
+     "",
+     "",
+     ""
+    ],
+    "MapId": {
+     "Value": 1000
+    },
+    "TeleportName": "None",
+    "bTeleportHideInTargetMap": false,
+    "QuestMovePointName": "None",
+    "ArrivalAction": "EArrivalActionType::AutoInteraction",
+    "bMarker": true,
+    "bArrivalKeepFlying": false,
+    "AutomoveType": "EAutomoveType::None",
+    "DestPlaceType": "EDestPlaceType::None",
+    "bHideUI": false,
+    "bOptional": false
+   }
+  ],
+  "FailConditionType": "EQuestFailCondition::None",
+  "FailGoToStep": 0
+ },
+ {
+  "ID": {
+   "Value": 110101002
+  },
+  "QuestName": "HQ1101010",
+  "Order": 2,
+  "TravelType": "EQuestAreaTravelType::All",
+  "StartNpcTalk": "None",
+  "ClearNpcTalk": "None",
+  "bUnifiedObjectives": false,
+  "UnifiedObjectiveScore": 0,
+  "bProgressBar": false,
+  "bCompleteMsgInvisible": false,
+  "TeleportCost": 0,
+  "GoalList": [
+   {
+    "Type": "EQuestObjectiveType::AskNpc",
+    "Value": [
+     "N_L0_Commander_01",
+     "HQ1101010_02_Ask1",
+     "",
+     "",
+     ""
+    ],
+    "MapId": {
+     "Value": 1000
+    },
+    "TeleportName": "None",
+    "bTeleportHideInTargetMap": false,
+    "QuestMovePointName": "None",
+    "ArrivalAction": "EArrivalActionType::AutoInteraction",
+    "bMarker": true,
+    "bArrivalKeepFlying": false,
+    "AutomoveType": "EAutomoveType::None",
+    "DestPlaceType": "EDestPlaceType::None",
+    "bHideUI": false,
+    "bOptional": false
+   }
+  ],
+  "FailConditionType": "EQuestFailCondition::None",
+  "FailGoToStep": 0
+ },
+ {
+  "ID": {
+   "Value": 110101003
+  },
+  "QuestName": "HQ1101010",
+  "Order": 3,
+  "TravelType": "EQuestAreaTravelType::All",
+  "StartNpcTalk": "None",
+  "ClearNpcTalk": "None",
+  "bUnifiedObjectives": false,
+  "UnifiedObjectiveScore": 0,
+  "bProgressBar": false,
+  "bCompleteMsgInvisible": false,
+  "TeleportCost": 0,
+  "GoalList": [
+   {
+    "Type": "EQuestObjectiveType::EngraveTeleportArtifact",
+    "Value": [
+     "TeleportArtifact_1051035",
+     "",
+     "",
+     "",
+     ""
+    ],
+    "MapId": {
+     "Value": 1000
+    },
+    "TeleportName": "None",
+    "bTeleportHideInTargetMap": false,
+    "QuestMovePointName": "None",
+    "ArrivalAction": "EArrivalActionType::None",
+    "bMarker": true,
+    "bArrivalKeepFlying": false,
+    "AutomoveType": "EAutomoveType::None",
+    "DestPlaceType": "EDestPlaceType::None",
+    "bHideUI": false,
+    "bOptional": false
+   }
+  ],
+  "FailConditionType": "EQuestFailCondition::None",
+  "FailGoToStep": 0
+ }
+]

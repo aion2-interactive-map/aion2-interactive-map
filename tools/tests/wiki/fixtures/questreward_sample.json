@@ -1,0 +1,22 @@
+[
+ {
+  "Group": "1101010",
+  "ExpReward": 1133,
+  "ItemRewards": [
+   {
+    "Item": "Gold",
+    "Count": 1400,
+    "EnchantedLevel": 0
+   }
+  ],
+  "ItemNormalRewards": [
+   {
+    "Item": "Potion_HP_Dot_A_c_01a_b",
+    "Count": 50,
+    "EnchantedLevel": 0
+   }
+  ],
+  "ItemSelectRewards": [],
+  "RandomReward": "None"
+ }
+]

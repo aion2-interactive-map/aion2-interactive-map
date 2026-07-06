@@ -1,0 +1,180 @@
+# Wiki taxonomy: game enum -> URL slug + display labels. Order = display order.
+quest:
+  labels: { en: "Quests", zhCN: "任务", ko: "퀘스트" }
+  groups:
+    - slug: main
+      types: [Hero]
+      labels: { en: "Main quests", zhCN: "主线任务", ko: "메인 퀘스트" }
+    - slug: side
+      types: [District]
+      labels: { en: "Side quests", zhCN: "支线任务", ko: "서브 퀘스트" }
+    - slug: duty
+      types: [DutyMission, DutyScroll]
+      labels: { en: "Duty quests", zhCN: "使命任务", ko: "사명 퀘스트" }
+    - slug: exploration
+      types: [Exploration]
+      labels: { en: "Exploration", zhCN: "探索任务", ko: "탐험 퀘스트" }
+    - slug: ascension
+      types: [Ascension]
+      labels: { en: "Ascension", zhCN: "飞升任务", ko: "승천 퀘스트" }
+    - slug: mastery
+      types: [GatherCraftMastery, Daevagauge]
+      labels: { en: "Mastery & misc", zhCN: "专精与其他", ko: "숙련 & 기타" }
+npc:
+  labels: { en: "NPCs & Monsters", zhCN: "NPC与怪物", ko: "NPC & 몬스터" }
+  groups:
+    - slug: boss
+      labels: { en: "Named & bosses", zhCN: "精英与首领", ko: "네임드 & 보스" }
+    - slug: monster
+      labels: { en: "Monsters", zhCN: "怪物", ko: "몬스터" }
+    - slug: citizen
+      labels: { en: "NPCs", zhCN: "NPC", ko: "NPC" }
+item:
+  labels: { en: "Items", zhCN: "物品", ko: "아이템" }
+  groups:
+    - slug: equipment
+      types: [Equip]
+      labels: { en: "Equipment", zhCN: "装备", ko: "장비" }
+    - slug: usable
+      types: [Usable]
+      labels: { en: "Consumables & usables", zhCN: "消耗与可用品", ko: "소모품 & 사용 아이템" }
+    - slug: material
+      types: [Misc]
+      labels: { en: "Materials & misc", zhCN: "材料与杂项", ko: "재료 & 기타" }
+    - slug: currency
+      types: [Currency]
+      labels: { en: "Currency", zhCN: "货币", ko: "화폐" }
+# Hand-authored section labels (slug -> per-language). Missing slugs fall back to
+# title-cased slug (en) - emitter warns so new categories get labels added here.
+sections:
+  # equip categories
+  pants: { en: "Pants", zhCN: "下装", ko: "하의" }
+  shoulder: { en: "Shoulders", zhCN: "护肩", ko: "어깨 보호구" }
+  cape: { en: "Cape", zhCN: "披风", ko: "망토" }
+  brooch: { en: "Brooch", zhCN: "胸针", ko: "브로치" }
+  amulet: { en: "Amulet", zhCN: "护身符", ko: "아뮬렛" }
+  pendant: { en: "Pendant", zhCN: "坠饰", ko: "펜던트" }
+  rune: { en: "Rune", zhCN: "符文", ko: "룬" }
+  gauntlet: { en: "Gauntlets", zhCN: "拳套", ko: "건틀릿" }
+  guarder: { en: "Guarder", zhCN: "护手", ko: "가더" }
+  magicbook: { en: "Spellbook", zhCN: "魔导书", ko: "마도서" }
+  greatsword: { en: "Greatsword", zhCN: "大剑", ko: "대검" }
+  sword: { en: "Sword", zhCN: "单手剑", ko: "장검" }
+  dagger: { en: "Dagger", zhCN: "短剑", ko: "단검" }
+  mace: { en: "Mace", zhCN: "钉锤", ko: "전곤" }
+  staff: { en: "Staff", zhCN: "法杖", ko: "지팡이" }
+  orb: { en: "Orb", zhCN: "宝珠", ko: "보주" }
+  spellbook: { en: "Spellbook", zhCN: "魔导书", ko: "마도서" }
+  bow: { en: "Bow", zhCN: "弓", ko: "활" }
+  shield: { en: "Shield", zhCN: "盾牌", ko: "방패" }
+  torso: { en: "Torso", zhCN: "上衣", ko: "상의" }
+  legs: { en: "Legs", zhCN: "下装", ko: "하의" }
+  boots: { en: "Boots", zhCN: "鞋子", ko: "신발" }
+  gloves: { en: "Gloves", zhCN: "手套", ko: "장갑" }
+  shoulders: { en: "Shoulders", zhCN: "护肩", ko: "어깨 보호구" }
+  helmet: { en: "Helmet", zhCN: "头盔", ko: "투구" }
+  earring: { en: "Earring", zhCN: "耳环", ko: "귀걸이" }
+  necklace: { en: "Necklace", zhCN: "项链", ko: "목걸이" }
+  ring: { en: "Ring", zhCN: "戒指", ko: "반지" }
+  belt: { en: "Belt", zhCN: "腰带", ko: "허리띠" }
+  bracelet: { en: "Bracelet", zhCN: "手镯", ko: "팔찌" }
+  # usable categories
+  scroll: { en: "Scroll", zhCN: "卷轴", ko: "주문서" }
+  teleportscroll: { en: "Teleport Scroll", zhCN: "传送卷轴", ko: "텔레포트 주문서" }
+  drink: { en: "Drink", zhCN: "饮品", ko: "음료" }
+  magicstone: { en: "Magic Stone", zhCN: "魔石", ko: "마석" }
+  polymorph: { en: "Transformation", zhCN: "变身", ko: "변신" }
+  petpolymorph: { en: "Pet Transformation", zhCN: "宠物变身", ko: "펫 변신" }
+  kinabox: { en: "Kinah Box", zhCN: "基纳宝箱", ko: "키나 상자" }
+  ticket: { en: "Ticket", zhCN: "票券", ko: "이용권" }
+  sealstone: { en: "Sealstone", zhCN: "封印石", ko: "봉인석" }
+  souladd: { en: "Soul Infusion", zhCN: "附魂", ko: "영혼 부여" }
+  battlepass: { en: "Battle Pass", zhCN: "通行证", ko: "배틀 패스" }
+  customize: { en: "Customization", zhCN: "自定义", ko: "커스터마이징" }
+  note: { en: "Note", zhCN: "笔记", ko: "노트" }
+  contentssweepticket: { en: "Content Sweep Ticket", zhCN: "副本扫荡券", ko: "소탕권" }
+  addcontentsticketcount: { en: "Entry Count Ticket", zhCN: "入场次数券", ko: "입장 횟수권" }
+  addcontentstickettime: { en: "Entry Time Ticket", zhCN: "入场时间券", ko: "입장 시간권" }
+  getsocialaction: { en: "Social Action", zhCN: "社交动作", ko: "소셜 액션" }
+  getwing: { en: "Wings", zhCN: "翅膀", ko: "날개" }
+  getpoint: { en: "Point Reward", zhCN: "点数奖励", ko: "포인트 보상" }
+  getgamecash: { en: "Game Cash", zhCN: "游戏点券", ko: "게임 캐시" }
+  getgodstone: { en: "Godstone", zhCN: "神石", ko: "신석" }
+  subscribe: { en: "Subscription", zhCN: "订阅", ko: "구독" }
+  extension: { en: "Expansion", zhCN: "扩展", ko: "확장" }
+  characterslotunlock: { en: "Character Slot Unlock", zhCN: "角色栏位解锁", ko: "캐릭터 슬롯 해금" }
+  setupkisk: { en: "Kisk Setup", zhCN: "奇斯克设置", ko: "키스크 설치" }
+  skincombine: { en: "Skin Combine", zhCN: "外观合成", ko: "외형 합성" }
+  skinextraction: { en: "Skin Extraction", zhCN: "外观提取", ko: "외형 추출" }
+  elevate: { en: "Elevation", zhCN: "提升", ko: "승급" }
+  rebirth: { en: "Rebirth", zhCN: "重生", ko: "환생" }
+  succession: { en: "Succession", zhCN: "继承", ko: "계승" }
+  surpass: { en: "Surpass", zhCN: "突破", ko: "돌파" }
+  ascensiongrade: { en: "Ascension Grade", zhCN: "升阶等级", ko: "승천 등급" }
+  monolithallclear: { en: "Monolith Clear", zhCN: "方尖碑清除", ko: "모노리스 클리어" }
+  monolithtoken: { en: "Monolith Token", zhCN: "方尖碑代币", ko: "모노리스 토큰" }
+  occupationterritoryallclear: { en: "Territory Clear", zhCN: "占领地清除", ko: "점령지 클리어" }
+  sealallclear: { en: "Seal Clear", zhCN: "封印清除", ko: "봉인 클리어" }
+  conversionrecipe: { en: "Conversion Recipe", zhCN: "转换配方", ko: "변환 레시피" }
+  skinshop: { en: "Appearance", zhCN: "外观", ko: "외형" }
+  gettitle: { en: "Titles", zhCN: "称号", ko: "칭호" }
+  vehiclesoul: { en: "Vehicle souls", zhCN: "坐骑之魂", ko: "탈것의 혼" }
+  rewardbox: { en: "Reward boxes", zhCN: "奖励宝箱", ko: "보상 상자" }
+  food: { en: "Food", zhCN: "食物", ko: "음식" }
+  potion: { en: "Potions", zhCN: "药水", ko: "물약" }
+  questscroll: { en: "Quest scrolls", zhCN: "任务卷轴", ko: "퀘스트 주문서" }
+  # misc categories
+  material: { en: "Material", zhCN: "材料", ko: "재료" }
+  misc: { en: "Miscellaneous", zhCN: "杂项", ko: "기타" }
+  gather: { en: "Gathering", zhCN: "采集物", ko: "채집물" }
+  deco: { en: "Decoration", zhCN: "装饰", ko: "장식" }
+  conversionresource: { en: "Conversion Resource", zhCN: "转换材料", ko: "변환 재료" }
+  conversionresource_special: { en: "Special Conversion Resource", zhCN: "特殊转换材料", ko: "특수 변환 재료" }
+  arcanamaterial: { en: "Arcana Material", zhCN: "奥术材料", ko: "아르카나 재료" }
+  createarcanamaterial: { en: "Arcana Craft Material", zhCN: "奥术制作材料", ko: "아르카나 제작 재료" }
+  getarcana: { en: "Arcana", zhCN: "奥术", ko: "아르카나" }
+  arcanabell: { en: "Arcana Bell", zhCN: "奥术铃", ko: "아르카나 종" }
+  arcanacompass: { en: "Arcana Compass", zhCN: "奥术罗盘", ko: "아르카나 나침반" }
+  arcanagrail: { en: "Arcana Grail", zhCN: "奥术圣杯", ko: "아르카나 성배" }
+  arcanahourglass: { en: "Arcana Hourglass", zhCN: "奥术沙漏", ko: "아르카나 모래시계" }
+  arcanakey: { en: "Arcana Key", zhCN: "奥术钥匙", ko: "아르카나 열쇠" }
+  arcanalibra: { en: "Arcana Libra", zhCN: "奥术天秤", ko: "아르카나 천칭" }
+  arcanamirror: { en: "Arcana Mirror", zhCN: "奥术镜", ko: "아르카나 거울" }
+  arcanaparchment: { en: "Arcana Parchment", zhCN: "奥术卷轴", ko: "아르카나 양피지" }
+  vehiclesoulcrystal: { en: "Vehicle Soul Crystal", zhCN: "坐骑魂晶", ko: "탈것의 혼 결정" }
+  craftresource: { en: "Craft resources", zhCN: "制作材料", ko: "제작 재료" }
+  gatherresource: { en: "Gather resources", zhCN: "采集材料", ko: "채집 재료" }
+  hero_ishalgen_00: { en: "Ishalgen — Chapter 00", zhCN: "伊斯夏尔肯 第00章", ko: "이스할겐 제00장" }
+  hero_ishalgen_01: { en: "Ishalgen — Chapter 01", zhCN: "伊斯夏尔肯 第01章", ko: "이스할겐 제01장" }
+  hero_poeta_00: { en: "Poeta — Chapter 00", zhCN: "波伊塔 第00章", ko: "포에타 제00장" }
+  hero_poeta_01: { en: "Poeta — Chapter 01", zhCN: "波伊塔 第01章", ko: "포에타 제01장" }
+  hero_altgard_02: { en: "Altgard — Chapter 02", zhCN: "亚尔特盖德 第02章", ko: "알트가르드 제02장" }
+  hero_altgard_03: { en: "Altgard — Chapter 03", zhCN: "亚尔特盖德 第03章", ko: "알트가르드 제03장" }
+  hero_altgard_04: { en: "Altgard — Chapter 04", zhCN: "亚尔特盖德 第04章", ko: "알트가르드 제04장" }
+  hero_altgard_05: { en: "Altgard — Chapter 05", zhCN: "亚尔特盖德 第05章", ko: "알트가르드 제05장" }
+  hero_altgard_06: { en: "Altgard — Chapter 06", zhCN: "亚尔特盖德 第06章", ko: "알트가르드 제06장" }
+  hero_verteron_02: { en: "Verteron — Chapter 02", zhCN: "斐尔特朗 第02章", ko: "베르테론 제02장" }
+  hero_verteron_03: { en: "Verteron — Chapter 03", zhCN: "斐尔特朗 第03章", ko: "베르테론 제03장" }
+  hero_verteron_04: { en: "Verteron — Chapter 04", zhCN: "斐尔特朗 第04章", ko: "베르테론 제04장" }
+  hero_verteron_05: { en: "Verteron — Chapter 05", zhCN: "斐尔特朗 第05章", ko: "베르테론 제05장" }
+  hero_verteron_06: { en: "Verteron — Chapter 06", zhCN: "斐尔特朗 第06章", ko: "베르테론 제06장" }
+  hero_Eltnen_01: { en: "Eltnen — Chapter 01", zhCN: "耶尔特奈 第01章", ko: "엘테넨 제01장" }
+  hero_Eltnen_02: { en: "Eltnen — Chapter 02", zhCN: "耶尔特奈 第02章", ko: "엘테넨 제02장" }
+  hero_Morheim_01: { en: "Morheim — Chapter 01", zhCN: "莫尔海姆 第01章", ko: "모르헤임 제01장" }
+  hero_Morheim_02: { en: "Morheim — Chapter 02", zhCN: "莫尔海姆 第02章", ko: "모르헤임 제02장" }
+  ascension_01to02_light: { en: "Ascension 1→2 (Elyos)", zhCN: "飞升 1→2（天族）", ko: "승천 1→2 (천족)" }
+  ascension_01to02_dark: { en: "Ascension 1→2 (Asmodian)", zhCN: "飞升 1→2（魔族）", ko: "승천 1→2 (마족)" }
+  ascension_02to03_light: { en: "Ascension 2→3 (Elyos)", zhCN: "飞升 2→3（天族）", ko: "승천 2→3 (천족)" }
+  ascension_02to03_dark: { en: "Ascension 2→3 (Asmodian)", zhCN: "飞升 2→3（魔族）", ko: "승천 2→3 (마족)" }
+  ascension_03to04_light: { en: "Ascension 3→4 (Elyos)", zhCN: "飞升 3→4（天族）", ko: "승천 3→4 (천족)" }
+  ascension_03to04_dark: { en: "Ascension 3→4 (Asmodian)", zhCN: "飞升 3→4（魔族）", ko: "승천 3→4 (마족)" }
+  ascension_04to05_light: { en: "Ascension 4→5 (Elyos)", zhCN: "飞升 4→5（天族）", ko: "승천 4→5 (천족)" }
+  ascension_04to05_dark: { en: "Ascension 4→5 (Asmodian)", zhCN: "飞升 4→5（魔族）", ko: "승천 4→5 (마족)" }
+  ascension_05to06_light: { en: "Ascension 5→6 (Elyos)", zhCN: "飞升 5→6（天族）", ko: "승천 5→6 (천족)" }
+  ascension_05to06_dark: { en: "Ascension 5→6 (Asmodian)", zhCN: "飞升 5→6（魔族）", ko: "승천 5→6 (마족)" }
+  craftmastery: { en: "Crafting Mastery", zhCN: "制作专精", ko: "제작 숙련" }
+  gathermastery: { en: "Gathering Mastery", zhCN: "采集专精", ko: "채집 숙련" }
+  # generic
+  currency: { en: "Currency", zhCN: "货币", ko: "화폐" }
+  unknown: { en: "Unknown", zhCN: "未知", ko: "알 수 없음" }
+  other: { en: "Other", zhCN: "其他", ko: "기타" }

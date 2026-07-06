@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "aion2-interactive-map-backend-client"
+version = "0.1.0"
+description = "A client library for accessing AION2 Interactive Map Backend"
+authors = []
+readme = "README.md"
+packages = [
+    { include = "aion2_interactive_map_backend_client" },
+]
+include = ["aion2_interactive_map_backend_client/py.typed"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+httpx = ">=0.23.0,<0.29.0"
+attrs = ">=22.2.0"
+python-dateutil = "^2.8.0"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["F", "I", "UP"]

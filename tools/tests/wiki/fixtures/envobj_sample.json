@@ -1,0 +1,254 @@
+[
+ {
+  "ID": {
+   "Value": 1000000
+  },
+  "Name": "Basic_SparkieEgg_01_attack_1",
+  "Desc": {
+   "Key": "EnvObjData_Basic_SparkieEgg_01_attack_1_desc",
+   "StringKey": "None"
+  },
+  "ResourceKey": "SparkieEgg_01_attack_1",
+  "Nameplate": "EEnvObjNameplate::Always",
+  "NameplateOffset": 0,
+  "Usage": "EEnvObjectUsage::Normal",
+  "UsageValue": "None",
+  "UsageValue2": "None",
+  "UsageValue3": {
+   "Key": "None"
+  },
+  "UsageValue4": {
+   "Key": "None"
+  },
+  "InteractRange": 83,
+  "HUDButtonPath": "HUD_Click",
+  "GaugeIconPath": "None",
+  "OccupancyCount": 0,
+  "Category": "EEnvObjCategory::None",
+  "InteractTime": 0,
+  "bIgnoreHit": false,
+  "InteractCount": 1,
+  "HitLimit": 5,
+  "RequireType": "EMonetaryType::None",
+  "bIsOptionalRequirement": false,
+  "bIsKeyOnly": false,
+  "RequireValues": [],
+  "RequireCount": 0,
+  "bRequireConfirm": false,
+  "RequireConfirmImage": "None",
+  "RequireConfirmDesc": {
+   "Key": "None"
+  },
+  "FinishDuration": 2100,
+  "bDespawn": true,
+  "RelationshipEntity": "ERelationshipEntity::EnvObj_Destroy",
+  "bCanBeAttacked": true,
+  "bUseTableCollision": false,
+  "CollisionCylinderRadius": 10,
+  "CollisionCylinderHeight": 10,
+  "PickingCylinderRadius": 80,
+  "PickingCylinderHeight": 150,
+  "DrawScale": 1.0,
+  "FxScale": 10000,
+  "InteractDesc": {
+   "Key": "None",
+   "StringKey": "None"
+  },
+  "InteractMotion": "None",
+  "ObjectTerrainType": "EObjectTerrainType::Ground",
+  "bShowCompleteToOthers": false,
+  "bHideOutline": false,
+  "bHideTargetMark": false,
+  "bPeriodObj": false,
+  "VisibleRangeType": "EActorVisibleRangeType::NormalRange",
+  "bHideWorldMapMarker": true,
+  "IgnoreUseAim": true,
+  "Portrait": "None",
+  "bUseRayTestHeightOverride": false,
+  "RayTestHeight": 0,
+  "bHideMiniMapMarker": true,
+  "bGetRewardOnce": false,
+  "InteractConditionList": [],
+  "ActionKeyDesc": {
+   "Key": "None",
+   "StringKey": "None"
+  },
+  "LifeTime": 0,
+  "bEssentialLoad": false,
+  "HitSkillIdList": [],
+  "Level": 0,
+  "ItemLevel": 0,
+  "CombatPower": 0,
+  "SocialActionId": {
+   "Value": 0
+  }
+ },
+ {
+  "ID": {
+   "Value": 1000001
+  },
+  "Name": "Basic_MirajuStatue",
+  "Desc": {
+   "Key": "EnvObjData_Basic_MirajuStatue_desc",
+   "StringKey": "None"
+  },
+  "ResourceKey": "MirajuStatue",
+  "Nameplate": "EEnvObjNameplate::Always",
+  "NameplateOffset": 0,
+  "Usage": "EEnvObjectUsage::Normal",
+  "UsageValue": "None",
+  "UsageValue2": "None",
+  "UsageValue3": {
+   "Key": "None"
+  },
+  "UsageValue4": {
+   "Key": "None"
+  },
+  "InteractRange": 80,
+  "HUDButtonPath": "HUD_Click",
+  "GaugeIconPath": "None",
+  "OccupancyCount": 0,
+  "Category": "EEnvObjCategory::None",
+  "InteractTime": 2500,
+  "bIgnoreHit": false,
+  "InteractCount": 1,
+  "HitLimit": 1,
+  "RequireType": "EMonetaryType::None",
+  "bIsOptionalRequirement": false,
+  "bIsKeyOnly": false,
+  "RequireValues": [],
+  "RequireCount": 0,
+  "bRequireConfirm": false,
+  "RequireConfirmImage": "None",
+  "RequireConfirmDesc": {
+   "Key": "None"
+  },
+  "FinishDuration": 0,
+  "bDespawn": true,
+  "RelationshipEntity": "ERelationshipEntity::EnvObj_Neutral",
+  "bCanBeAttacked": false,
+  "bUseTableCollision": false,
+  "CollisionCylinderRadius": 64,
+  "CollisionCylinderHeight": 434,
+  "PickingCylinderRadius": 110,
+  "PickingCylinderHeight": 460,
+  "DrawScale": 1.0,
+  "FxScale": 10000,
+  "InteractDesc": {
+   "Key": "None",
+   "StringKey": "None"
+  },
+  "InteractMotion": "EnvObjInteraction",
+  "ObjectTerrainType": "EObjectTerrainType::Ground",
+  "bShowCompleteToOthers": false,
+  "bHideOutline": false,
+  "bHideTargetMark": false,
+  "bPeriodObj": false,
+  "VisibleRangeType": "EActorVisibleRangeType::NormalRange",
+  "bHideWorldMapMarker": true,
+  "IgnoreUseAim": false,
+  "Portrait": "None",
+  "bUseRayTestHeightOverride": false,
+  "RayTestHeight": 0,
+  "bHideMiniMapMarker": true,
+  "bGetRewardOnce": false,
+  "InteractConditionList": [],
+  "ActionKeyDesc": {
+   "Key": "None",
+   "StringKey": "UI_HUD_KEYGUIDE_DESC_CONTROL"
+  },
+  "LifeTime": 0,
+  "bEssentialLoad": false,
+  "HitSkillIdList": [],
+  "Level": 0,
+  "ItemLevel": 0,
+  "CombatPower": 0,
+  "SocialActionId": {
+   "Value": 0
+  }
+ },
+ {
+  "ID": {
+   "Value": 1000002
+  },
+  "Name": "Basic_VegetableMela",
+  "Desc": {
+   "Key": "EnvObjData_Basic_VegetableMela_desc",
+   "StringKey": "None"
+  },
+  "ResourceKey": "VegetableMela",
+  "Nameplate": "EEnvObjNameplate::Range",
+  "NameplateOffset": 0,
+  "Usage": "EEnvObjectUsage::GatherSource",
+  "UsageValue": "Gather_Herb_lv1_Common_001_f",
+  "UsageValue2": "None",
+  "UsageValue3": {
+   "Key": "None"
+  },
+  "UsageValue4": {
+   "Key": "None"
+  },
+  "InteractRange": 110,
+  "HUDButtonPath": "HUD_Collect",
+  "GaugeIconPath": "InteractionGauge_Gather",
+  "OccupancyCount": 0,
+  "Category": "EEnvObjCategory::None",
+  "InteractTime": 3000,
+  "bIgnoreHit": false,
+  "InteractCount": 3,
+  "HitLimit": 1,
+  "RequireType": "EMonetaryType::None",
+  "bIsOptionalRequirement": false,
+  "bIsKeyOnly": false,
+  "RequireValues": [],
+  "RequireCount": 0,
+  "bRequireConfirm": false,
+  "RequireConfirmImage": "None",
+  "RequireConfirmDesc": {
+   "Key": "None"
+  },
+  "FinishDuration": 4000,
+  "bDespawn": true,
+  "RelationshipEntity": "ERelationshipEntity::EnvObj_Neutral",
+  "bCanBeAttacked": false,
+  "bUseTableCollision": false,
+  "CollisionCylinderRadius": 30,
+  "CollisionCylinderHeight": 190,
+  "PickingCylinderRadius": 90,
+  "PickingCylinderHeight": 280,
+  "DrawScale": 1.0,
+  "FxScale": 10000,
+  "InteractDesc": {
+   "Key": "None",
+   "StringKey": "STR_EnvObj_CASTING_Gather_EF"
+  },
+  "InteractMotion": "Gather",
+  "ObjectTerrainType": "EObjectTerrainType::Ground",
+  "bShowCompleteToOthers": false,
+  "bHideOutline": false,
+  "bHideTargetMark": false,
+  "bPeriodObj": false,
+  "VisibleRangeType": "EActorVisibleRangeType::NormalRange",
+  "bHideWorldMapMarker": true,
+  "IgnoreUseAim": false,
+  "Portrait": "None",
+  "bUseRayTestHeightOverride": false,
+  "RayTestHeight": 0,
+  "bHideMiniMapMarker": true,
+  "bGetRewardOnce": false,
+  "InteractConditionList": [],
+  "ActionKeyDesc": {
+   "Key": "None",
+   "StringKey": "UI_HUD_KEYGUIDE_DESC_CONTROL"
+  },
+  "LifeTime": 0,
+  "bEssentialLoad": false,
+  "HitSkillIdList": [],
+  "Level": 0,
+  "ItemLevel": 0,
+  "CombatPower": 0,
+  "SocialActionId": {
+   "Value": 0
+  }
+ }
+]

@@ -1,0 +1,254 @@
+{
+ "SubzoneVolumeInfoMap": [
+  {
+   "Key": "AbandonedWindBreezeOffice_Subzone",
+   "Value": {
+    "LabelName": "AbandonedWindBreezeOffice_Subzone",
+    "Location": {
+     "X": -42282.98046875,
+     "Y": 118922.59375,
+     "Z": 26064.728515625
+    },
+    "Points": [
+     {
+      "X": -40161.0,
+      "Y": 121521.0
+     },
+     {
+      "X": -39743.79296875,
+      "Y": 121007.640625
+     },
+     {
+      "X": -39120.42578125,
+      "Y": 119708.9609375
+     },
+     {
+      "X": -39087.26171875,
+      "Y": 117461.421875
+     },
+     {
+      "X": -39258.71484375,
+      "Y": 117044.3828125
+     },
+     {
+      "X": -41078.578125,
+      "Y": 115193.5625
+     },
+     {
+      "X": -42635.46875,
+      "Y": 115386.4453125
+     },
+     {
+      "X": -44388.24609375,
+      "Y": 116007.0078125
+     },
+     {
+      "X": -45211.23046875,
+      "Y": 116838.9765625
+     },
+     {
+      "X": -45478.6953125,
+      "Y": 119104.3359375
+     },
+     {
+      "X": -44947.30859375,
+      "Y": 121715.6640625
+     },
+     {
+      "X": -42539.48828125,
+      "Y": 122651.625
+     },
+     {
+      "X": -40161.0,
+      "Y": 121521.0
+     }
+    ],
+    "HeightMax": 23907.363,
+    "HeightMin": 8907.364,
+    "RadiusSquared": 0.0,
+    "SubzoneTableId": 2096,
+    "Boundary2D": {
+     "Min": {
+      "X": -45478.6953125,
+      "Y": 115193.5625
+     },
+     "Max": {
+      "X": -39087.26171875,
+      "Y": 122651.625
+     },
+     "bIsValid": true
+    }
+   }
+  },
+  {
+   "Key": "AlertGuardPost_Subzone",
+   "Value": {
+    "LabelName": "AlertGuardPost_Subzone",
+    "Location": {
+     "X": 123736.140625,
+     "Y": 33850.37890625,
+     "Z": 57902.60546875
+    },
+    "Points": [
+     {
+      "X": 122831.03125,
+      "Y": 31434.578125
+     },
+     {
+      "X": 122189.1953125,
+      "Y": 31400.419921875
+     },
+     {
+      "X": 121313.0390625,
+      "Y": 33533.78515625
+     },
+     {
+      "X": 121062.1484375,
+      "Y": 34578.640625
+     },
+     {
+      "X": 121702.5078125,
+      "Y": 35135.33203125
+     },
+     {
+      "X": 122867.203125,
+      "Y": 35575.6171875
+     },
+     {
+      "X": 125066.3515625,
+      "Y": 36300.3359375
+     },
+     {
+      "X": 125574.578125,
+      "Y": 35303.5234375
+     },
+     {
+      "X": 126410.140625,
+      "Y": 32880.4921875
+     },
+     {
+      "X": 124015.2109375,
+      "Y": 31560.923828125
+     },
+     {
+      "X": 122831.03125,
+      "Y": 31434.578125
+     }
+    ],
+    "HeightMax": 71451.305,
+    "HeightMin": 1451.3022,
+    "RadiusSquared": 0.0,
+    "SubzoneTableId": 2057,
+    "Boundary2D": {
+     "Min": {
+      "X": 121062.1484375,
+      "Y": 31400.419921875
+     },
+     "Max": {
+      "X": 126410.140625,
+      "Y": 36300.3359375
+     },
+     "bIsValid": true
+    }
+   }
+  }
+ ],
+ "TriggerActorDataMap": [
+  {
+   "Key": {
+    "Value": 2418854974553274069
+   },
+   "Value": {
+    "ID": {
+     "Value": 2418854974553274069
+    },
+    "Name": "DaevaHunter_L1_10_Trigger",
+    "Location": {
+     "X": 116670.2421875,
+     "Y": 50181.37890625,
+     "Z": 35109.953125
+    },
+    "Direction": 0.0,
+    "CollisionType": "ETriggerActorCollisionType::Cylinder",
+    "BoxSize": {
+     "X": 0.0,
+     "Y": 0.0
+    },
+    "Radius": 2300.0,
+    "InnerRadius": 0.0,
+    "Height": 5000.0,
+    "FuncType": "ETriggerActorFuncType::EnterInstanceLayer",
+    "DungeonId": {
+     "Value": 151010
+    },
+    "EnvObjId": {
+     "Value": 1100001
+    },
+    "bHideWorldMapMarker": false,
+    "bHideMiniMapMarker": false
+   }
+  },
+  {
+   "Key": {
+    "Value": 2418860041071179479
+   },
+   "Value": {
+    "ID": {
+     "Value": 2418860041071179479
+    },
+    "Name": "DaevaHunter_L1_11_Trigger",
+    "Location": {
+     "X": 68765.921875,
+     "Y": 136071.296875,
+     "Z": 21542.37890625
+    },
+    "Direction": 0.0,
+    "CollisionType": "ETriggerActorCollisionType::Cylinder",
+    "BoxSize": {
+     "X": 0.0,
+     "Y": 0.0
+    },
+    "Radius": 2300.0,
+    "InnerRadius": 0.0,
+    "Height": 5000.0,
+    "FuncType": "ETriggerActorFuncType::EnterInstanceLayer",
+    "DungeonId": {
+     "Value": 151011
+    },
+    "EnvObjId": {
+     "Value": 1100001
+    },
+    "bHideWorldMapMarker": false,
+    "bHideMiniMapMarker": false
+   }
+  }
+ ],
+ "QuestMovePointDataMap": [
+  {
+   "Key": "QuestMove_AltamiaHighland_1",
+   "Value": {
+    "LabelName": "QuestMove_AltamiaHighland_1",
+    "Location": {
+     "X": 59340.6953125,
+     "Y": 33827.6640625,
+     "Z": 31378.021484375
+    },
+    "Radius": 8000.0,
+    "Height": 0.0
+   }
+  },
+  {
+   "Key": "QuestMove_CantasValley_A_1",
+   "Value": {
+    "LabelName": "QuestMove_CantasValley_A_1",
+    "Location": {
+     "X": -84917.7265625,
+     "Y": -42563.92578125,
+     "Z": 15009.013671875
+    },
+    "Radius": 5000.0,
+    "Height": 0.0
+   }
+  }
+ ]
+}

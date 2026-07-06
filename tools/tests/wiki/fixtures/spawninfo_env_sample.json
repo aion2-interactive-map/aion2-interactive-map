@@ -1,0 +1,112 @@
+[
+ {
+  "Name": "EnvObj_Field_L1_GT_H5_Insk_01_1",
+  "EnvObjIdList": [
+   {
+    "Value": 1200113
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 86133.5625,
+     "Y": 55156.0390625,
+     "Z": 11490.466796875
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 67.5,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "EnvObj_Field_L1_GT_R4_Insk_01_1",
+  "EnvObjIdList": [
+   {
+    "Value": 1200107
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 41911.88671875,
+     "Y": 131936.140625,
+     "Z": 24723.189453125
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 268.59375,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "EnvObj_L1_AH_IllusionCurtain_Enter",
+  "EnvObjIdList": [
+   {
+    "Value": 1200342
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 171173.359375,
+     "Y": 24366.62890625,
+     "Z": 36283.41796875
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 160.3125,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "EnvObj_L1_CT_R5_Insk_01",
+  "EnvObjIdList": [
+   {
+    "Value": 1200108
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": 118601.578125,
+     "Y": 77171.453125,
+     "Z": 24464.416015625
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 354.375,
+     "Roll": 0.0
+    }
+   }
+  ]
+ },
+ {
+  "Name": "E_L1_Garrison_D1_Insk_001",
+  "EnvObjIdList": [
+   {
+    "Value": 1200114
+   }
+  ],
+  "Positions": [
+   {
+    "Location": {
+     "X": -5957.7470703125,
+     "Y": -31887.173828125,
+     "Z": 7732.40283203125
+    },
+    "Rotation": {
+     "Pitch": 0.0,
+     "Yaw": 180.0,
+     "Roll": 0.0
+    }
+   }
+  ]
+ }
+]
