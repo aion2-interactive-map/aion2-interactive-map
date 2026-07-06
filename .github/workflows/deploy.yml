@@ -35,16 +35,19 @@ jobs:
         with:
           node-version: 22
           cache: pnpm
+          cache-dependency-path: frontend/pnpm-lock.yaml
 
       - name: Install dependencies
+        working-directory: frontend
         run: pnpm install --frozen-lockfile
 
       - name: Build
+        working-directory: frontend
         run: pnpm --filter aion2 build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./apps/aion2/dist
+          publish_dir: ./frontend/apps/aion2/dist
           publish_branch: gh-pages
