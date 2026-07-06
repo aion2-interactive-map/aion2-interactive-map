@@ -1,15 +1,23 @@
 # AION2 Interactive Map — Workspace
 
-This folder co-locates five **independent** git repos. It is NOT a monorepo: each
-sub-repo keeps its own remote and history; this root repo tracks only shared meta
-(this file, `.claude/skills/`, `docs/`).
+This is the **monorepo** for the platform: `frontend/`, `backend/`, and `tools/` live here
+together (consolidated 2026-07-06 via history-preserving `git filter-repo` import; commit
+messages rescoped to `type(scope):`). The derived-artifact repos `data/` and `resource/` (and
+their per-game variants) remain **separate**, pulled over HTTP.
 
-## Repos
-- `frontend/` — unified map + admin app (React 19 / Vite / Tailwind / shadcn / Leaflet).
-- `backend/`  — FastAPI + PostgreSQL + S3; dynamic/user data only.
-- `tools/`    — Python; transforms the raw game export into `data/` + `resource/`.
-- `resource/` — derived WebP image set under a `UI/` root, served over HTTP.
-- `data/`     — derived parsed dataset (markers, regions, tables, locales), served over HTTP.
+## Layout
+- `frontend/` — pnpm workspace: `apps/` (aion2, palworld) + `packages/` (ui, map-engine,
+  map-shell, data-contract). React 19 / Vite / Tailwind / shadcn / Leaflet.
+- `backend/`  — FastAPI + PostgreSQL + S3; dynamic/user data only. One **shared** service
+  (auth, comments, uploads, artifact voting) — not per-game.
+- `tools/`    — Python (uv): `apps/` (aion2, palworld pipelines) + `packages/` (shared
+  framework `tools`, generated `backend-client`). Transforms the raw game export into the
+  `data/` + `resource/` artifacts.
+- `docs/`, `CLAUDE.md`, `.claude/`, `BOOTSTRAP.md` — workspace meta (also here).
+
+Separate artifact repos (NOT in this monorepo; served over HTTP):
+- `resource/` (+`resource-palworld/`) — derived WebP image set under a `UI/` root.
+- `data/` (+`data-palworld/`) — derived parsed dataset (markers, regions, tables, locales).
 
 ## Data-flow contract
 Raw game export (`G:\NCSoft\Export\Exports\AION2\Content\`, Perforce later)
@@ -40,7 +48,7 @@ Dawn Legion Base = upper-left. This matches the raw **map image** (image Y incre
   should standardize on the image-space (no-flip) convention to remove the discrepancy.
 
 The orientation is expected to hold for all maps (same engine), but **re-verify per map** via
-landmarks/overlay. Implementation: `tools/aion2/tools/maps/` (`WorldMapTransform`).
+landmarks/overlay. Implementation: `tools/apps/aion2/tools/maps/` (`WorldMapTransform`).
 
 ## Conventions
 - **New features:** open a git worktree for the work (isolate from the current workspace).
