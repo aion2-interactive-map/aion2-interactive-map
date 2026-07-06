@@ -1,0 +1,9 @@
+data
+.idea
+.env
+public
+
+# Python caches
+__pycache__/
+*.pyc
+

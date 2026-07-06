@@ -1,0 +1,51 @@
+version: '3.5'
+services:
+  postgres:
+    image: postgres:18
+    restart: always
+    environment:
+      - POSTGRES_USER=aion2
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-pass}
+      - POSTGRES_DB=aion2
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    networks:
+      - aion2-network
+    ports:
+      - "15432:5432"
+    command: postgres -c 'max_connections=1000'
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+  redis:
+    image: redis:8-alpine
+    restart: always
+    command: redis-server --requirepass aion2
+    networks:
+      - aion2-network
+    ports:
+      - "16379:6379"
+  core:
+    image: tcimba/aion2-backend
+    restart: always
+    volumes:
+      - ./aion2/backend:/root/aion2-backend/aion2/backend
+      - ./data/public:/root/aion2-backend/public
+    build:
+      context: .
+      args:
+        DOCKER_BUILDKIT: 1
+        PYPI_MIRROR: https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
+    ports:
+      - "9000:9000"
+    networks:
+      - aion2-network
+    environment:
+      - DEBUG=${DEBUG:-false}
+      - HOST=core
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-pass}
+      - REDIS_HOST=redis
+    depends_on:
+      - postgres
+networks:
+  aion2-network:

@@ -1,0 +1,52 @@
+[project]
+name = "aion2-interactive-map-backend"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Liu Yihao",email = "liuyh970615@gmail.com"}
+]
+readme = "README.md"
+requires-python = "<4,>=3.11"
+dependencies = [
+    "fastapi[standard] (>=0.121.2,<0.122.0)",
+    "sqlalchemy (>=2.0.44,<3.0.0)",
+    "asyncpg (>=0.30.0,<0.31.0)",
+    "alembic (>=1.17.2,<2.0.0)",
+    "fastapi-users (>=15.0.1,<16.0.0)",
+    "fastapi-users-db-sqlalchemy (>=7.0.0,<8.0.0)",
+    "fastcrud (>=0.19.2,<0.20.0)",
+    "pydantic (>=2.12.4,<3.0.0)",
+    "pydantic-settings (>=2.12.0,<3.0.0)",
+    "python-dotenv (>=1.2.1,<2.0.0)",
+    "loguru (>=0.7.3,<0.8.0)",
+    "python-decouple (>=3.8,<4.0)",
+    "tenacity (>=9.1.2,<10.0.0)",
+    "pyhumps (>=3.8.0,<4.0.0)",
+    "fastapi-utils[all] (>=0.8.0,<0.9.0)",
+    "pillow (>=12.0.0,<13.0.0)",
+    "pyyaml (>=6.0.3,<7.0.0)",
+    "aioboto3 (>=15.5.0,<16.0.0)",
+    "slowapi (>=0.1.9,<0.2.0)",
+    "altcha (>=0.2.0,<0.3.0)",
+    "aiocache[redis] (>=0.12.3,<0.13.0)",
+    "celery (>=5.6.1,<6.0.0)",
+]
+
+[tool.poetry]
+package-mode = true
+packages = [
+    { include = "aion2" },
+]
+
+[tool.poetry.scripts]
+aion2 = "aion2.backend.__main__:cli"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "watchfiles (>=1.1.1,<2.0.0)"
+]
+

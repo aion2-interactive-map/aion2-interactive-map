@@ -1,0 +1,37 @@
+version: '3.5'
+services:
+  celery_preview:
+    image: tcimba/aion2-backend
+    restart: always
+    build:
+      context: .
+      args:
+        DOCKER_BUILDKIT: 1
+        PYPI_MIRROR: https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
+    networks:
+      - aion2-network
+    environment:
+      - REDIS_HOST=aion2.tc-imba.com
+      - REDIS_PORT=16379
+    command: >
+      poetry run aion2 celery preview
+      --pool=prefork
+
+  celery_default:
+    image: tcimba/aion2-backend
+    restart: always
+    build:
+      context: .
+      args:
+        DOCKER_BUILDKIT: 1
+        PYPI_MIRROR: https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
+    networks:
+      - aion2-network
+    environment:
+      - REDIS_HOST=aion2.tc-imba.com
+      - REDIS_PORT=16379
+    command: >
+      poetry run aion2 celery default
+      --pool=prefork
+networks:
+  aion2-network:
